@@ -1,0 +1,754 @@
+{
+  "bundle": {
+    "path": "2026-09-06-lc-2013h2e-bundle",
+    "files": {
+      "context.parquet": "2b3a8e3f5df9158823ebe0f7efedbd7effa2aa6349fd10ddd7d7eecd670fb419",
+      "scored.parquet": "081986152e46f634b22959d9affab86888918d34e4161de9362a00f6341c8a5f"
+    },
+    "build": {
+      "build_id": "2013H2-E",
+      "as_of": "2013-12-31",
+      "arm": "E",
+      "label_lag_months": 12,
+      "knowable_through": "2012-12-31",
+      "train_rows": 85453,
+      "train_first": "2010-04-01",
+      "train_last": "2012-12-01",
+      "train_quarters": [
+        "2010Q2",
+        "2010Q3",
+        "2010Q4",
+        "2011Q1",
+        "2011Q2",
+        "2011Q3",
+        "2011Q4",
+        "2012Q1",
+        "2012Q2",
+        "2012Q3",
+        "2012Q4"
+      ],
+      "blind_rows": 134814,
+      "test_cohorts": {
+        "2014Q1": 20000,
+        "2014Q2": 20000,
+        "2014Q3": 20000,
+        "2014Q4": 20000,
+        "2015Q1": 20000,
+        "2015Q2": 20000,
+        "2015Q3": 20000,
+        "2015Q4": 20000,
+        "2016Q1": 20000,
+        "2016Q2": 20000,
+        "2016Q3": 20000,
+        "2016Q4": 20000,
+        "2017Q1": 20000,
+        "2017Q2": 20000,
+        "2017Q3": 20000,
+        "2017Q4": 20000,
+        "2018Q1": 20000
+      },
+      "test_rows": 340000,
+      "notes": [
+        "134814 rows originated in (2012-12-31, 2013-12-31] carry no mature label at the as-of date and are neither trained on nor scored"
+      ]
+    },
+    "features": [
+      "annual_inc",
+      "credit_history_months",
+      "delinq_2yrs",
+      "dti",
+      "emp_length",
+      "fico_range_low",
+      "home_ownership",
+      "inq_last_6mths",
+      "loan_amnt",
+      "mths_since_last_delinq",
+      "open_acc",
+      "pub_rec",
+      "pub_rec_bankruptcies",
+      "purpose",
+      "revol_bal",
+      "revol_util",
+      "sub_grade",
+      "term",
+      "total_acc",
+      "verification_status"
+    ],
+    "categorical": [
+      "home_ownership",
+      "purpose",
+      "verification_status"
+    ]
+  },
+  "environment": {
+    "python": "3.12.14",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "processor": "arm",
+    "packages": {
+      "torch": "2.14.0",
+      "tabpfn": "8.5.0",
+      "tabicl": "2.1.1",
+      "numpy": "2.5.2",
+      "pandas": "3.0.5",
+      "scikit-learn": "1.9.0"
+    },
+    "device": "mps",
+    "device_name": "Apple Silicon GPU (arm64)",
+    "cuda": null,
+    "memory_is_unified": true
+  },
+  "cohorts": [
+    "2014Q1",
+    "2014Q2",
+    "2014Q3",
+    "2014Q4",
+    "2015Q1",
+    "2015Q2",
+    "2015Q3",
+    "2015Q4",
+    "2016Q1",
+    "2016Q2",
+    "2016Q3",
+    "2016Q4",
+    "2017Q1",
+    "2017Q2",
+    "2017Q3",
+    "2017Q4",
+    "2018Q1"
+  ],
+  "context_seeds": [
+    20260911,
+    20260912,
+    20260913
+  ],
+  "models": {
+    "tabpfn/20260911": {
+      "context_rows": 50000,
+      "fit_seconds": 1.196,
+      "parameters": {
+        "auto_scale_n_estimators": true,
+        "average_before_softmax": false,
+        "balance_probabilities": false,
+        "categorical_features_indices": [
+          6,
+          13,
+          19
+        ],
+        "device": "auto",
+        "differentiable_input": false,
+        "eval_metric": null,
+        "fit_mode": "fit_preprocessors",
+        "ignore_pretraining_limits": true,
+        "inference_config": null,
+        "inference_precision": "auto",
+        "keep_cache_on_device": true,
+        "kv_cache_precision": null,
+        "memory_saving_mode": "auto",
+        "model_path": "auto",
+        "n_estimators": "auto",
+        "n_jobs": null,
+        "n_preprocessing_jobs": 1,
+        "random_state": 0,
+        "show_progress_bar": false,
+        "softmax_temperature": 0.9,
+        "tuning_config": null
+      }
+    },
+    "tabpfn/20260912": {
+      "context_rows": 50000,
+      "fit_seconds": 0.367,
+      "parameters": {
+        "auto_scale_n_estimators": true,
+        "average_before_softmax": false,
+        "balance_probabilities": false,
+        "categorical_features_indices": [
+          6,
+          13,
+          19
+        ],
+        "device": "auto",
+        "differentiable_input": false,
+        "eval_metric": null,
+        "fit_mode": "fit_preprocessors",
+        "ignore_pretraining_limits": true,
+        "inference_config": null,
+        "inference_precision": "auto",
+        "keep_cache_on_device": true,
+        "kv_cache_precision": null,
+        "memory_saving_mode": "auto",
+        "model_path": "auto",
+        "n_estimators": "auto",
+        "n_jobs": null,
+        "n_preprocessing_jobs": 1,
+        "random_state": 0,
+        "show_progress_bar": false,
+        "softmax_temperature": 0.9,
+        "tuning_config": null
+      }
+    },
+    "tabpfn/20260913": {
+      "context_rows": 50000,
+      "fit_seconds": 0.352,
+      "parameters": {
+        "auto_scale_n_estimators": true,
+        "average_before_softmax": false,
+        "balance_probabilities": false,
+        "categorical_features_indices": [
+          6,
+          13,
+          19
+        ],
+        "device": "auto",
+        "differentiable_input": false,
+        "eval_metric": null,
+        "fit_mode": "fit_preprocessors",
+        "ignore_pretraining_limits": true,
+        "inference_config": null,
+        "inference_precision": "auto",
+        "keep_cache_on_device": true,
+        "kv_cache_precision": null,
+        "memory_saving_mode": "auto",
+        "model_path": "auto",
+        "n_estimators": "auto",
+        "n_jobs": null,
+        "n_preprocessing_jobs": 1,
+        "random_state": 0,
+        "show_progress_bar": false,
+        "softmax_temperature": 0.9,
+        "tuning_config": null
+      }
+    }
+  },
+  "cells": [
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "reference",
+      "rows": 50000,
+      "seconds": 443.688,
+      "peak_gpu_gb": 3.619,
+      "mean_pd": 0.017728
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2014Q1",
+      "rows": 20000,
+      "seconds": 328.963,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.019072
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2014Q2",
+      "rows": 20000,
+      "seconds": 334.836,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.020283
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2014Q3",
+      "rows": 20000,
+      "seconds": 332.572,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.020213
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2014Q4",
+      "rows": 20000,
+      "seconds": 326.353,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.01876
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2015Q1",
+      "rows": 20000,
+      "seconds": 321.329,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.018518
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2015Q2",
+      "rows": 20000,
+      "seconds": 320.508,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.018676
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2015Q3",
+      "rows": 20000,
+      "seconds": 319.563,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.018424
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2015Q4",
+      "rows": 20000,
+      "seconds": 320.026,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.017713
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2016Q1",
+      "rows": 20000,
+      "seconds": 321.52,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.017691
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2016Q2",
+      "rows": 20000,
+      "seconds": 330.716,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.017967
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2016Q3",
+      "rows": 20000,
+      "seconds": 338.012,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.018663
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2016Q4",
+      "rows": 20000,
+      "seconds": 341.549,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.018178
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2017Q1",
+      "rows": 20000,
+      "seconds": 335.129,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.017465
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2017Q2",
+      "rows": 20000,
+      "seconds": 328.23,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.017553
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2017Q3",
+      "rows": 20000,
+      "seconds": 327.642,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.018283
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2017Q4",
+      "rows": 20000,
+      "seconds": 323.815,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.01777
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2018Q1",
+      "rows": 20000,
+      "seconds": 319.518,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.017101
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "reference",
+      "rows": 50000,
+      "seconds": 449.283,
+      "peak_gpu_gb": 3.619,
+      "mean_pd": 0.017734
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2014Q1",
+      "rows": 20000,
+      "seconds": 325.546,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.019081
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2014Q2",
+      "rows": 20000,
+      "seconds": 327.143,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.01998
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2014Q3",
+      "rows": 20000,
+      "seconds": 335.74,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.019997
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2014Q4",
+      "rows": 20000,
+      "seconds": 332.49,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.018795
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2015Q1",
+      "rows": 20000,
+      "seconds": 329.273,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.01864
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2015Q2",
+      "rows": 20000,
+      "seconds": 327.752,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.01871
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2015Q3",
+      "rows": 20000,
+      "seconds": 325.358,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.018406
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2015Q4",
+      "rows": 20000,
+      "seconds": 323.82,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.017864
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2016Q1",
+      "rows": 20000,
+      "seconds": 322.611,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.017822
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2016Q2",
+      "rows": 20000,
+      "seconds": 328.924,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.018014
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2016Q3",
+      "rows": 20000,
+      "seconds": 335.632,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.018642
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2016Q4",
+      "rows": 20000,
+      "seconds": 335.762,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.018203
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2017Q1",
+      "rows": 20000,
+      "seconds": 332.06,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.017409
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2017Q2",
+      "rows": 20000,
+      "seconds": 325.027,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.017546
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2017Q3",
+      "rows": 20000,
+      "seconds": 323.162,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.01827
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2017Q4",
+      "rows": 20000,
+      "seconds": 321.082,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.017919
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2018Q1",
+      "rows": 20000,
+      "seconds": 317.123,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.017299
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "reference",
+      "rows": 50000,
+      "seconds": 452.458,
+      "peak_gpu_gb": 3.627,
+      "mean_pd": 0.017747
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2014Q1",
+      "rows": 20000,
+      "seconds": 323.976,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.018378
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2014Q2",
+      "rows": 20000,
+      "seconds": 322.523,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.01946
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2014Q3",
+      "rows": 20000,
+      "seconds": 318.754,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.019093
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2014Q4",
+      "rows": 20000,
+      "seconds": 315.855,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.017903
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2015Q1",
+      "rows": 20000,
+      "seconds": 312.34,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.017707
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2015Q2",
+      "rows": 20000,
+      "seconds": 325.936,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.017838
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2015Q3",
+      "rows": 20000,
+      "seconds": 322.167,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.017539
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2015Q4",
+      "rows": 20000,
+      "seconds": 322.657,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.01701
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2016Q1",
+      "rows": 20000,
+      "seconds": 322.448,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.016845
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2016Q2",
+      "rows": 20000,
+      "seconds": 321.078,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.017034
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2016Q3",
+      "rows": 20000,
+      "seconds": 318.699,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.017812
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2016Q4",
+      "rows": 20000,
+      "seconds": 315.066,
+      "peak_gpu_gb": 2.52,
+      "mean_pd": 0.017253
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2017Q1",
+      "rows": 20000,
+      "seconds": 314.571,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.016619
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2017Q2",
+      "rows": 20000,
+      "seconds": 321.095,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.016782
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2017Q3",
+      "rows": 20000,
+      "seconds": 321.724,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.017487
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2017Q4",
+      "rows": 20000,
+      "seconds": 322.604,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.0175
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2018Q1",
+      "rows": 20000,
+      "seconds": 322.059,
+      "peak_gpu_gb": 3.594,
+      "mean_pd": 0.017156
+    }
+  ],
+  "repeats": [
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2014Q1",
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "rows_differing": 0
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2014Q1",
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "rows_differing": 0
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2014Q1",
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "rows_differing": 0
+    }
+  ],
+  "command": {
+    "models": [
+      "tabpfn"
+    ],
+    "nearest": null,
+    "device": "auto",
+    "chunk": 0,
+    "repeat": true,
+    "settings": {}
+  },
+  "tuning_budget": "none: zero trials, no validation split, every parameter at the library default except those the command names; the classical models this is paired with were tuned on their own pool and the asymmetry runs both ways, since the 50,000-row control inherits the point chosen on the full pool",
+  "wall_seconds": 18896.0,
+  "checkpoints": {
+    "tabpfn-v3-classifier-v3_default.ckpt": "d0d865d54dfbc524f5703104be90620182dca7e5fb2c16de72e9959ea18f3988",
+    "tabicl-classifier-v2-20260212.ckpt": "bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0"
+  },
+  "scored_rows": 1020000,
+  "reference_rows": 150000
+}

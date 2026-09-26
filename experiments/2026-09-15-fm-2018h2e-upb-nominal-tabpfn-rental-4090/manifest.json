@@ -1,0 +1,141 @@
+{
+ "slug": "fm-2018h2e-upb-nominal-tabpfn-rental-4090",
+ "recorded_utc": "2026-09-15T13:47:37+00:00",
+ "git_sha": "3425cde2f47e71ab1d9050484bc99dfaf76df6af",
+ "git_dirty": false,
+ "scorer_commit": "Byte-identical to scripts/score_context.py at b3b2f45, c44985a and HEAD 3425cde (diffed directly against the git blobs, zero bytes differ); the last commit touching the file is fd5eadf.",
+ "written_by_hand": "This run was made on a rented instance that holds no copy of the repository, so record_run.py could not record it. The manifest is assembled from what the node returned (node.json), from the job archive and result archive it travelled in, and from the arrival checks run against them; node.json is the scorer's own account of its environment and its cells, and score.log is the slice of the node's console log that belongs to this job.",
+ "host": "Rented instance, 1x NVIDIA GeForce RTX 4090 (24564 MiB), driver 615.71.09 (gpu.txt), Linux-7.0.0-31-generic-x86_64-with-glibc2.43, Python 3.12.14, torch 2.14.0 built against CUDA 13.0; vCPU count, RAM and the driver's CUDA version are not recorded in the result archive. This environment differs from the primary grid's (experiments/2026-09-14-fm-grid-rental-4090: Python 3.12.3, Linux-6.17.0-20-generic-x86_64-with-glibc2.39, driver 595.58.03) in the interpreter patch release, the kernel and glibc, and the driver; torch, tabpfn, tabicl, numpy, pandas, scikit-learn, the CUDA build and both checkpoints are the same. It equals the environment of the 2004H2-E draws run on this matrix (experiments/2026-09-14-fm-2004h2e-upb-nominal-tabpfn-draws-rental-4090).",
+ "gpu": "NVIDIA GeForce RTX 4090, 24564 MiB (25.34 GB reported by torch), torch 2.14.0 on cuda",
+ "job": "tabpfn@2026-09-15-fm-2018h2e-bundle-upb-nominal",
+ "command": "python score_context.py 2026-09-15-fm-2018h2e-bundle-upb-nominal --out-dir 2026-09-15-fm-2018h2e-bundle-upb-nominal-scored-tabpfn --models tabpfn --chunk 20000, run by node_jobs.py through run.sh from the unpacked job archive, one of 34 jobs of the upb_nominal grid run (job list order matches jobs.json; this is job 18).",
+ "session": "One process, 34 jobs, one continuous run.sh call over the 17-bundle upb_nominal job list (outoftime-run-grid-fm-upb.tar.gz.jobs.json): this job started 2026-09-15T04:48:03+00:00 and finished 2026-09-15T05:02:40+00:00 after 876.9s by the runner's own tally (jobs-done.json); node.json's own wall_seconds for this job is 875.2. The whole run ran 49,481.2s of scoring (tally total over all 34 jobs), from 2026-09-14T21:31:49+00:00 to 2026-09-15T11:16:31+00:00, and run.sh started every job within 0.8s of the previous one's finish.",
+ "grid_index": "experiments/2026-09-15-fm-grid-upb-rental-4090 holds the node's whole console log, the 34-job list, the runner's tally and the archive-level checks; this directory is one of the 34 it indexes.",
+ "job_archive": {
+  "path": "data/derived/node/outoftime-run-grid-fm-upb.tar.gz",
+  "sha256": "d5ccded5d1fd7c58ab541bddc1cafc9ebb7d53171e20adabf2dba1f160210807",
+  "built_by": "scripts/pack_node_run.py --format cuda over the 17 upb_nominal bundles (nine E builds 2002H2-E to 2018H2-E and eight R builds 2004H2-R to 2018H2-R), job list 'grid-fm-upb' with two jobs per bundle (tabicl, tabpfn), as a tar for node_run_cuda.sh with the TabPFN checkpoint inside; packed at c44985a (the archive's member times and the commit time agree to the minute), sidecars outoftime-run-grid-fm-upb.tar.gz.sha256 and .jobs.json beside it",
+  "score_context_py_sha256": "66e8933d67fea5f8140f31f5229a305a15d3f1eb20e0fd67e15546037ff9f0dc",
+  "score_context_py_provenance": "Byte-identical to scripts/score_context.py at b3b2f45, c44985a and HEAD 3425cde (diffed directly against the git blobs, zero bytes differ); the last commit touching the file is fd5eadf.",
+  "checkpoint": {
+   "name": "tabpfn-v3-classifier-v3_default.ckpt",
+   "sha256": "d0d865d54dfbc524f5703104be90620182dca7e5fb2c16de72e9959ea18f3988",
+   "provenance": "Travelled inside the job archive; hash checked directly against the pinned value, matches."
+  }
+ },
+ "result_archive": {
+  "name": "outoftime-result-grid-fm-upb.tar.gz",
+  "sha256": "4afe3a9b63ef61a3184cedad35af07f02f95442095b3d4198503bebc6a37d548",
+  "contents": "2026-09-15-fm-2018h2e-bundle-upb-nominal-scored-tabpfn/ (node.json, scores.parquet, reference.parquet, parts/) copied here unchanged; score.log, jobs.json, jobs-done.json and gpu.txt of the archive are in experiments/2026-09-15-fm-grid-upb-rental-4090, and score.log here is lines 1637-1681 of the archive's own.",
+  "sha256_of_files_here": {
+   "scores.parquet": "6e7afa93741ed17b28455403a0a9aa23f2c22f48787f5b626b29b739b86e6c86",
+   "reference.parquet": "66aaa6c47dee57db5bd8ff20d4ac83c1da81c03b208b685a7d4dc26a7ac1261f",
+   "node.json": "e290a3e7ef1ca809332518ae6133a5dbedaed661282c28805a8f23fc3b850b7e"
+  }
+ },
+ "bundle_check": {
+  "build_id": "2018H2-E",
+  "as_of": "2018-12-31",
+  "arm": "E",
+  "train_rows": 856861,
+  "test_rows": 248746,
+  "cohorts_in_build": 10,
+  "files": {
+   "context.parquet": "34ecb91af9d78bcc46dc2216259369fe6c2effc6922dc837d3200b59b88ecf92",
+   "scored.parquet": "a9f80e837ba873db0922cb10cec6665aca91670f2c19c2c98170f4900a3ae2c9"
+  },
+  "how": "The hashes node.json recorded for the bundle it read equal bundle.json of experiments/2026-09-15-fm-2018h2e-bundle-upb-nominal, and that bundle.json's parsed build block equals node.json's own bundle.build block exactly (checked field for field). The scorer refuses a bundle whose files do not hash to bundle.json (load_bundle in score_context.py), so the node scored the recorded rows. bundle.json is a tracked file, recorded at b3b2f45; the job archive's copy is byte-identical to its blob at HEAD 3425cde, the working-tree copy has no difference from HEAD, and context.parquet and scored.parquet as packed and as kept in the repository both hash to the recorded values."
+ },
+ "parts_check": "Part files under parts/, one per (model, context seed, cell): 33 expected, equal to node.json's 33 cell records; the parts concatenated are scores.parquet and reference.parquet row for row and probability for probability (checked directly, zero rows differing on either concatenation).",
+ "row_check": {
+  "scored": "746,238 rows over 10 cohorts (2019H1 to 2023H2) and 3 context seeds; every (cohort, row) pair, its outcome and its age quarters match the bundle's own scored.parquet, the full-GBM rows and the GBM-50k rows of the build's own upb_nominal score run (experiments/2026-09-13-fm-2018h2e-scores-upb-nominal), zero mismatches on every comparison, summed over all 30 scored cells.",
+  "reference": "150,000 rows (3 seeds x 50,000); every row and its outcome match the GBM-50k reference of the same context seed and the bundle's own context.parquet of the same seed, zero mismatches.",
+  "seeds": [
+   20260911,
+   20260912,
+   20260913
+  ],
+  "method": "Totals below are summed over every part of this job and every comparison against the bundle's own scored.parquet/context.parquet and the build's own upb_nominal score run (full GBM, GBM-50k, key columns cohort, row, outcome, age_quarters); not broken out cohort by cohort here because this job scores every cohort of the build.",
+  "totals": {
+   "not_in_gbm": 0,
+   "gbm_not_scored": 0,
+   "not_in_gbm50k_same_seed": 0,
+   "gbm50k_same_seed_not_scored": 0,
+   "not_in_bundle": 0,
+   "bundle_not_scored": 0,
+   "order_vs_bundle": 0,
+   "not_in_gbm50k_reference": 0,
+   "gbm50k_reference_not_scored": 0,
+   "order_vs_gbm50k_reference": 0,
+   "not_in_bundle_context": 0,
+   "bundle_context_not_scored": 0,
+   "order_vs_bundle_context": 0
+  },
+  "pd_range": {
+   "nonfinite": 0,
+   "below_0": 0,
+   "above_1": 0
+  }
+ },
+ "console_log": "score.log here is lines 1637-1681 of the archive's full console log (the result archive's score.log, 3,072 lines for the whole run); this is the slice belonging to job tabpfn@2026-09-15-fm-2018h2e-bundle-upb-nominal. Read in full: no home path beyond /home/node/outoftime-node, no account name. No occurrence of the word 'token'.",
+ "question_this_run_was_sent_to_answer": "EXP-005's upb_nominal ablation trigger (docs/experiments/EXP-005-tfm-out-of-time-second-book.md, the paragraph on the nominal amount as the second ablation) fired: on the falsifying cells the difference-of-gains interval against GBM-50k excluded zero on the Brier score for tabicl and tabpfn at 0.9 (experiments/2026-09-14-fm-2004h2e-ablation-upb-nominal/summary.json, whose trigger list also names tabicl@t1 and tabpfn@t1, rows the note of 2026-09-14 leaves outside the trigger; ablation_intervals.py counts the eight rows of the note from 9b84a0b), and over the three context draws for tabicl and tabpfn (experiments/2026-09-14-fm-2004h2e-ablation-upb-nominal-draws/summary.json). The pre-registered consequence is that the foundation-model grid is scored on the nominal matrix as well and every verdict is reported on both, the ratio matrix's reading remaining the criterion's. This job scores tabpfn on build 2018H2-E's upb_nominal bundle, every cohort of the build (10 cohorts) and its own context, on all 3 context seeds, at softmax_temperature 0.9 (the library default).",
+ "what_it_measured": {
+  "model": "tabpfn, checkpoint(s) present on the node: {\"tabpfn-v3-classifier-v3_default.ckpt\": \"d0d865d54dfbc524f5703104be90620182dca7e5fb2c16de72e9959ea18f3988\", \"tabicl-classifier-v2-20260212.ckpt\": \"bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0\"}",
+  "device": "cuda",
+  "context": "50,000 rows per seed drawn from the build's training pool (856,861 rows, experiments/2026-09-13-fm-2018h2e-scores-upb-nominal/build.json train_rows), context seeds [20260911, 20260912, 20260913]",
+  "chunk": "20,000 scored rows per forward call (--chunk 20000); rows are scored independently and the chunking changes no probability",
+  "cell_summary": {
+   "reference_cells": 3,
+   "reference_rows_each": 50000,
+   "reference_seconds": {
+    "min": 36.242,
+    "median": 36.267,
+    "max": 36.892
+   },
+   "cohort_cells": 30,
+   "cohort_rows_total": 746238,
+   "cohort_seconds": {
+    "min": 22.574,
+    "median": 22.8375,
+    "max": 23.301
+   },
+   "cohort_us_per_row": {
+    "min": 909.3943537360251,
+    "median": 917.4902210834222,
+    "max": 935.4450198723353
+   },
+   "peak_gpu_gb_max": 1.066,
+   "peak_gpu_gb_min": 1.066
+  },
+  "fit_seconds_per_seed": {
+   "tabpfn/20260911": 2.104,
+   "tabpfn/20260912": 0.798,
+   "tabpfn/20260913": 0.794
+  },
+  "wall_seconds": 875.2,
+  "tally_seconds": 876.9,
+  "repeat": [
+   {
+    "context_seed": 20260911,
+    "cell": "2019H1",
+    "max_abs_difference": 0.0,
+    "rows_differing": 0
+   },
+   {
+    "context_seed": 20260912,
+    "cell": "2019H1",
+    "max_abs_difference": 0.0,
+    "rows_differing": 0
+   },
+   {
+    "context_seed": 20260913,
+    "cell": "2019H1",
+    "max_abs_difference": 0.0,
+    "rows_differing": 0
+   }
+  ]
+ },
+ "timing_caveat": "Every cell of the 34 jobs is within twice its grid-wide same-label-and-kind median (this job's slowest cohort cell is 1.02x the tabpfn cohort median), no job's wall-minus-cells gap exceeds twice its label's median, and run.sh started each job within a second of the previous one's finish; the medians are recorded at the index (experiments/2026-09-15-fm-grid-upb-rental-4090). Nothing in the archive records whether any other process shared the instance.",
+ "tuning_budget": "Zero trials, no validation split, every parameter at the library default except those the command names. The classical models this pairs with were tuned on their own pool (build.json of the build's upb_nominal score run); the asymmetry runs both ways, since the 50,000-row control inherits the point chosen on the full pool.",
+ "not_in_this_run": "The other job of this bundle in the same run: tabicl@2026-09-15-fm-2018h2e-bundle-upb-nominal. TabPFN at 1.0 is not scored on the nominal grid: its rows at 1.0 are derived from its rows at 0.9 by rule 2's formula under EXP-005's note of 2026-09-14 (the approximate derivation by the logit scale, the error measured per cell, a cell above 8.4e-3 refused), checked through 2004H2-E's nominal cells scored at 1.0 (experiments/2026-09-13-fm-2004h2e-upb-nominal-tabpfn-t1-rental-4090). TabICL at 1.0 is derived from its rows at 0.9 likewise, by the exact scale. The dti_kept matrix is not in this grid."
+}

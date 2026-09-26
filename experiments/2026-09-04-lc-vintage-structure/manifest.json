@@ -1,0 +1,44 @@
+{
+  "slug": "lc-vintage-structure",
+  "command": [
+    "C:/Users/node/Documents/GitHub/outoftime/.venv/Scripts/python.exe",
+    "scripts/vintage_structure.py",
+    "data/raw/accepted_2007_to_2018Q4.csv.gz",
+    "--out-dir",
+    "experiments/2026-09-04-lc-vintage-structure"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-09-04T08:00:30.193001+00:00",
+  "finished_utc": "2026-09-04T08:01:30.410124+00:00",
+  "wall_seconds": 60.217,
+  "git_sha": "f486c8d8ec0926c4155dfc686307a3f8df43a35d",
+  "git_dirty": false,
+  "host": "WIN-612LDG3827A",
+  "os": "Windows 11",
+  "cpu": "Intel(R) Core(TM) i7-3635QM CPU @ 2.40GHz",
+  "gpu": null,
+  "python": "3.12.1",
+  "packages": {
+    "numpy": "2.5.2",
+    "scipy": null,
+    "pandas": "3.0.5",
+    "polars": null,
+    "pyarrow": "25.0.1",
+    "scikit-learn": null,
+    "lightgbm": null,
+    "xgboost": null,
+    "catboost": null,
+    "torch": null,
+    "tabpfn": null,
+    "tabicl": null,
+    "optbinning": null,
+    "statsmodels": null,
+    "matplotlib": "3.11.1",
+    "shap": null
+  },
+  "input_sha256": {
+    "C:/Users/node/Documents/GitHub/outoftime/.venv/Scripts/python.exe": "9648d84a822ffd73cc22013052c9dbc307c1bc56746239173b30eb5d7dfb56ef",
+    "scripts/vintage_structure.py": "d78ce71d35d9715ca678c28cff14a92d80c2788987ffffc6ba0f280cfb76ee70",
+    "data/raw/accepted_2007_to_2018Q4.csv.gz": "55c16f75120f897683f02e7aabcf080d0e4a20c4832feb1d592cfa941bd62a2d"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "cells": 64,
+  "builds": {
+    "2013H1-E": {
+      "cells": 15,
+      "cells_second_psi": 14,
+      "age_sum_of_squares": 280.0,
+      "weight_mean": 0.234375,
+      "weight_second_psi": 0.25,
+      "weight_auc_slope_build": 0.4166666666666667,
+      "weight_builds": 0.125
+    },
+    "2013H2-E": {
+      "cells": 13,
+      "cells_second_psi": 12,
+      "age_sum_of_squares": 182.0,
+      "weight_mean": 0.203125,
+      "weight_second_psi": 0.21428571428571427,
+      "weight_auc_slope_build": 0.2708333333333333,
+      "weight_builds": 0.125
+    },
+    "2014H1-E": {
+      "cells": 11,
+      "cells_second_psi": 10,
+      "age_sum_of_squares": 110.0,
+      "weight_mean": 0.171875,
+      "weight_second_psi": 0.17857142857142858,
+      "weight_auc_slope_build": 0.1636904761904762,
+      "weight_builds": 0.125
+    },
+    "2014H2-E": {
+      "cells": 9,
+      "cells_second_psi": 8,
+      "age_sum_of_squares": 60.0,
+      "weight_mean": 0.140625,
+      "weight_second_psi": 0.14285714285714285,
+      "weight_auc_slope_build": 0.08928571428571429,
+      "weight_builds": 0.125
+    },
+    "2015H1-E": {
+      "cells": 7,
+      "cells_second_psi": 6,
+      "age_sum_of_squares": 28.0,
+      "weight_mean": 0.109375,
+      "weight_second_psi": 0.10714285714285714,
+      "weight_auc_slope_build": 0.041666666666666664,
+      "weight_builds": 0.125
+    },
+    "2015H2-E": {
+      "cells": 5,
+      "cells_second_psi": 4,
+      "age_sum_of_squares": 10.0,
+      "weight_mean": 0.078125,
+      "weight_second_psi": 0.07142857142857142,
+      "weight_auc_slope_build": 0.01488095238095238,
+      "weight_builds": 0.125
+    },
+    "2016H1-E": {
+      "cells": 3,
+      "cells_second_psi": 2,
+      "age_sum_of_squares": 2.0,
+      "weight_mean": 0.046875,
+      "weight_second_psi": 0.03571428571428571,
+      "weight_auc_slope_build": 0.002976190476190476,
+      "weight_builds": 0.125
+    },
+    "2016H2-E": {
+      "cells": 1,
+      "cells_second_psi": 0,
+      "age_sum_of_squares": 0.0,
+      "weight_mean": 0.015625,
+      "weight_second_psi": 0.0,
+      "weight_auc_slope_build": 0.0,
+      "weight_builds": 0.125
+    }
+  },
+  "reading": {
+    "weight_mean": "share of the pooled cells: gini, abs_log_oe, cox_slope_deviation, cox_slope and psi at the arm's scope",
+    "weight_second_psi": "share of the pooled cells less each build's first scored cohort: psi_first_cohort at the arm's scope",
+    "weight_auc_slope_build": "share of the summed squared deviations of the cells' ages from their build's mean: auc_slope_build at the arm's scope",
+    "weight_builds": "every build alike: the builds scope"
+  }
+}

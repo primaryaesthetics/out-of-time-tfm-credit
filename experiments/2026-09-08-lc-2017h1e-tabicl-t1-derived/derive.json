@@ -1,0 +1,106 @@
+{
+  "model": "tabicl",
+  "derived_as": "tabicl@t1",
+  "to_temperature": 1.0,
+  "formula": "logit(pd_to) = logit(pd_from) * (from_temperature / to_temperature)",
+  "library": {
+    "tabicl": "2.1.1"
+  },
+  "checkpoints": {
+    "tabicl-classifier-v2-20260212.ckpt": "bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0"
+  },
+  "sources": [
+    {
+      "directory": "experiments/2026-09-08-lc-2017h1e-tabicl-colab-t4",
+      "sha256": {
+        "scores.parquet": "cf5a617a3492a1002d8b22374b81b1a1ab7ddfde5bfc6ec73e7193cd36e5224d",
+        "reference.parquet": "35af8029ac1d2c55071780e546b876a4b3e7df9698d86336c7a888464ba21684",
+        "node.json": "a1e4049b55613ea24c5cc57bc6a7db34e0fa9728b6479cd99c768ed40c0e3012"
+      },
+      "context_seeds": [
+        20260911,
+        20260912,
+        20260913
+      ],
+      "from_temperature": {
+        "20260911": 0.9,
+        "20260912": 0.9,
+        "20260913": 0.9
+      },
+      "scored_rows": 180000,
+      "reference_rows": 150000
+    }
+  ],
+  "check": {
+    "directory": "experiments/2026-09-08-lc-2017h1e-tabicl-t1-check-colab-t4",
+    "sha256": {
+      "scores.parquet": "b3f1490ad257b2bfcf54efdcea3266ddde8e865c265177c3f07eec9563774083",
+      "reference.parquet": "5ff6fb2a905e0ebdf84ee76f274fb96fbbc9946ec28f175b34c196b401608d9a",
+      "node.json": "edb076438f3b7b67a93c6c556982c9187d1f0ab1c04129346fe3e97c59445dde"
+    },
+    "tolerance_on_pd": 1e-06,
+    "cells": [
+      {
+        "context_seed": 20260911,
+        "cell": "2017Q3",
+        "rows": 20000,
+        "max_abs_pd_gap": 1.6275599104553784e-07,
+        "max_abs_logit_gap": 1.1491960245635369e-06
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "reference",
+        "rows": 50000,
+        "max_abs_pd_gap": 1.4864348171772512e-07,
+        "max_abs_logit_gap": 1.1028204709440104e-06
+      }
+    ],
+    "rows_checked": 70000,
+    "max_abs_pd_gap": 1.6275599104553784e-07,
+    "max_abs_logit_gap": 1.1491960245635369e-06,
+    "unchecked_cells": [
+      {
+        "context_seed": 20260911,
+        "cell": "2017Q4"
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2018Q1"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2017Q3"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2017Q4"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2018Q1"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "reference"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2017Q3"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2017Q4"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2018Q1"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "reference"
+      }
+    ]
+  },
+  "scored_rows": 180000,
+  "reference_rows": 150000
+}

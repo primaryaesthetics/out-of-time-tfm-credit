@@ -1,0 +1,13 @@
+derived tabpfn@t1 at 1 from experiments/2026-09-15-fm-2002h2e-upb-nominal-tabpfn-rental-4090
+library               : tabpfn 8.5.0
+  experiments/2026-09-15-fm-2002h2e-upb-nominal-tabpfn-rental-4090: seeds [20260911, 20260912, 20260913], from [0.9], 3,083,739 scored + 150,000 reference rows
+check source          : experiments/2026-09-13-fm-2004h2e-upb-nominal-tabpfn-rental-4090 (build 2004H2-E, seeds [20260911], NVIDIA GeForce RTX 4090)
+check                 : experiments/2026-09-13-fm-2004h2e-upb-nominal-tabpfn-t1-rental-4090
+  2004H2-E 20260911/2005H1        24,233 rows  max |d pd| 6.32e-04  max |d logit| 2.42e-02  |b - 1| 1.70e-04
+  2004H2-E 20260911/2005H2        24,082 rows  max |d pd| 5.77e-04  max |d logit| 2.29e-02  |b - 1| 1.77e-04
+  2004H2-E 20260911/2006H1        23,280 rows  max |d pd| 7.05e-04  max |d logit| 2.56e-02  |b - 1| 1.73e-04
+  2004H2-E 20260911/reference     50,000 rows  max |d pd| 1.31e-03  max |d logit| 3.69e-02  |b - 1| 1.26e-04
+derived - scored      : Cox slope worst +3.49e-04, mean +2.31e-04; O/E worst -9.96e-04, mean -6.98e-04; 0 cells with a Cox fit that did not finish
+rows checked          : 121,595 of the check source's 121,595, on build 2004H2-E, worst |b - 1| 1.77e-04, mean 1.61e-04, 0 of 4 cells above the Lending Club figure 0.00084, within 0.0084, approximate
+derived rows checked  : none by row; 129 cells of build 2002H2-E carried by the error measured on the check source under tabpfn 8.5.0, the checkpoint and the source temperature
+written               : experiments/2026-09-15-fm-2002h2e-upb-nominal-tabpfn-t1-derived

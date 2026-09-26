@@ -1,0 +1,209 @@
+{
+  "file": "accepted_2007_to_2018Q4.csv.gz",
+  "rows": 2260668,
+  "rows_without_an_origination_date": 33,
+  "origination_column": "issue_d",
+  "origination_span": {
+    "first": "2007-06-01",
+    "last": "2018-12-01",
+    "quarterly_cohorts": 47
+  },
+  "date_column_audit": {
+    "issue_d": {
+      "min": "2007-06-01",
+      "max": "2018-12-01",
+      "null_fraction": 0.0,
+      "reaches_past_last_origination": false
+    },
+    "earliest_cr_line": {
+      "min": "1933-03-01",
+      "max": "2015-11-01",
+      "null_fraction": 1.3e-05,
+      "reaches_past_last_origination": false
+    },
+    "last_pymnt_d": {
+      "min": "2007-12-01",
+      "max": "2019-03-01",
+      "null_fraction": 0.001074,
+      "reaches_past_last_origination": true
+    },
+    "next_pymnt_d": {
+      "min": "2008-01-01",
+      "max": "2019-05-01",
+      "null_fraction": 0.595094,
+      "reaches_past_last_origination": true
+    },
+    "last_credit_pull_d": {
+      "min": "2007-05-01",
+      "max": "2019-04-01",
+      "null_fraction": 3.2e-05,
+      "reaches_past_last_origination": true
+    },
+    "sec_app_earliest_cr_line": {
+      "min": "1934-03-01",
+      "max": "2018-06-01",
+      "null_fraction": 0.952217,
+      "reaches_past_last_origination": false
+    },
+    "hardship_start_date": {
+      "min": "2017-01-01",
+      "max": "2019-03-01",
+      "null_fraction": 0.995171,
+      "reaches_past_last_origination": true
+    },
+    "hardship_end_date": {
+      "min": "2017-03-01",
+      "max": "2019-06-01",
+      "null_fraction": 0.995171,
+      "reaches_past_last_origination": true
+    },
+    "payment_plan_start_date": {
+      "min": "2017-02-01",
+      "max": "2019-04-01",
+      "null_fraction": 0.995171,
+      "reaches_past_last_origination": true
+    },
+    "debt_settlement_flag_date": {
+      "min": "2010-02-01",
+      "max": "2019-03-01",
+      "null_fraction": 0.984851,
+      "reaches_past_last_origination": true
+    },
+    "settlement_date": {
+      "min": "2009-03-01",
+      "max": "2019-03-01",
+      "null_fraction": 0.984851,
+      "reaches_past_last_origination": true
+    }
+  },
+  "columns_reaching_past_last_origination": [
+    "last_pymnt_d",
+    "next_pymnt_d",
+    "last_credit_pull_d",
+    "hardship_start_date",
+    "hardship_end_date",
+    "payment_plan_start_date",
+    "debt_settlement_flag_date",
+    "settlement_date"
+  ],
+  "loan_status_counts": {
+    "Fully Paid": 1076751,
+    "Current": 878317,
+    "Charged Off": 268559,
+    "Late (31-120 days)": 21467,
+    "In Grace Period": 8436,
+    "Late (16-30 days)": 4349,
+    "Does not meet the credit policy. Status:Fully Paid": 1988,
+    "Does not meet the credit policy. Status:Charged Off": 761,
+    "Default": 40
+  },
+  "resolved": {
+    "definition": [
+      "Charged Off",
+      "Default",
+      "Does not meet the credit policy. Status:Charged Off",
+      "Does not meet the credit policy. Status:Fully Paid",
+      "Fully Paid"
+    ],
+    "count": 1348099,
+    "fraction": 0.5963
+  },
+  "cohort_sizes": {
+    "2007Q2": 24,
+    "2007Q3": 190,
+    "2007Q4": 389,
+    "2008Q1": 1013,
+    "2008Q2": 498,
+    "2008Q3": 298,
+    "2008Q4": 584,
+    "2009Q1": 895,
+    "2009Q2": 1098,
+    "2009Q3": 1364,
+    "2009Q4": 1924,
+    "2010Q1": 2172,
+    "2010Q2": 3006,
+    "2010Q3": 3568,
+    "2010Q4": 3791,
+    "2011Q1": 4126,
+    "2011Q2": 5102,
+    "2011Q3": 5876,
+    "2011Q4": 6617,
+    "2012Q1": 8076,
+    "2012Q2": 10447,
+    "2012Q3": 16133,
+    "2012Q4": 18711,
+    "2013Q1": 22706,
+    "2013Q2": 30668,
+    "2013Q3": 37571,
+    "2013Q4": 43869,
+    "2014Q1": 47410,
+    "2014Q2": 55349,
+    "2014Q3": 58726,
+    "2014Q4": 74144,
+    "2015Q1": 84277,
+    "2015Q2": 95825,
+    "2015Q3": 110489,
+    "2015Q4": 130504,
+    "2016Q1": 133887,
+    "2016Q2": 97854,
+    "2016Q3": 99120,
+    "2016Q4": 103546,
+    "2017Q1": 96779,
+    "2017Q2": 105451,
+    "2017Q3": 122701,
+    "2017Q4": 118648,
+    "2018Q1": 107864,
+    "2018Q2": 130772,
+    "2018Q3": 128194,
+    "2018Q4": 128412
+  },
+  "resolved_fraction_by_cohort": {
+    "2007Q2": 1.0,
+    "2007Q3": 1.0,
+    "2007Q4": 1.0,
+    "2008Q1": 1.0,
+    "2008Q2": 1.0,
+    "2008Q3": 1.0,
+    "2008Q4": 1.0,
+    "2009Q1": 1.0,
+    "2009Q2": 1.0,
+    "2009Q3": 1.0,
+    "2009Q4": 1.0,
+    "2010Q1": 1.0,
+    "2010Q2": 1.0,
+    "2010Q3": 1.0,
+    "2010Q4": 1.0,
+    "2011Q1": 1.0,
+    "2011Q2": 1.0,
+    "2011Q3": 1.0,
+    "2011Q4": 1.0,
+    "2012Q1": 1.0,
+    "2012Q2": 1.0,
+    "2012Q3": 1.0,
+    "2012Q4": 1.0,
+    "2013Q1": 1.0,
+    "2013Q2": 1.0,
+    "2013Q3": 1.0,
+    "2013Q4": 0.9998,
+    "2014Q1": 0.9916,
+    "2014Q2": 0.9477,
+    "2014Q3": 0.9406,
+    "2014Q4": 0.9225,
+    "2015Q1": 0.9113,
+    "2015Q2": 0.8969,
+    "2015Q3": 0.8861,
+    "2015Q4": 0.8804,
+    "2016Q1": 0.836,
+    "2016Q2": 0.6433,
+    "2016Q3": 0.6143,
+    "2016Q4": 0.5537,
+    "2017Q1": 0.4843,
+    "2017Q2": 0.4219,
+    "2017Q3": 0.3574,
+    "2017Q4": 0.2874,
+    "2018Q1": 0.2089,
+    "2018Q2": 0.1411,
+    "2018Q3": 0.0804,
+    "2018Q4": 0.0392
+  }
+}

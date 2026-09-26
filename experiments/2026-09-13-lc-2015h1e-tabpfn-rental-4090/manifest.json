@@ -1,0 +1,89 @@
+{
+  "slug": "lc-2015h1e-tabpfn-rental-4090",
+  "recorded_utc": "2026-09-13T09:13:34+00:00",
+  "git_sha": "001b24bd38526af6c15eecfc49fef93c9263b782",
+  "git_dirty": false,
+  "scorer_commit": "The score_context.py that ran is byte-identical to scripts/score_context.py at commit fd5eadf and at HEAD 001b24b; the file has not changed between them.",
+  "written_by_hand": "This run was made on a rented instance that holds no copy of the repository, so record_run.py could not record it. The manifest is assembled from what the node returned; node.json is the scorer's own account of its environment and its cells, and score.log is the slice of the node's console log that belongs to this job.",
+  "host": "Rented instance, 1x NVIDIA GeForce RTX 4090 (24564 MiB), driver 595.58.03, 8 vCPU, 15 GB RAM, Ubuntu Linux x86_64, Python 3.12.3, CUDA 13.2 at the driver, torch built against CUDA 13.0",
+  "gpu": "NVIDIA GeForce RTX 4090, 24564 MiB (25.25 GB reported by torch), torch 2.14.0 on cuda",
+  "job": "tabpfn@2026-09-05-lc-2015h1e-bundle",
+  "command": "python score_context.py 2026-09-05-lc-2015h1e-bundle --out-dir 2026-09-05-lc-2015h1e-bundle-scored-tabpfn --models tabpfn --nearest 3 --seeds 20260911 --chunk 20000, run by node_jobs.py through run.sh from the unpacked job archive as job 1 of 4",
+  "session": "One process, four jobs: node_jobs.py walked jobs.json in one call of run.sh on a freshly rented instance, each job finishing in the order tabpfn, tabpfn-t1, tabicl, tabicl-t1 between 2026-09-13T08:05:59Z and 2026-09-13T08:09:32Z (jobs-done.json), this job finishing in 99.5s by the tally. The FM run of the same session follows immediately after (2026-09-13-fm-2004h2e-rental-4090).",
+  "grid_index": "experiments/2026-09-13-lc-rental-probe-4090 holds the node's whole console log, the job list, the runner's tally and the archive-level checks; this directory is one of the four it indexes.",
+  "job_archive": {
+    "path": "data/derived/node/outoftime-run-rental-probe-2015h1e.tar.gz",
+    "sha256": "bb01546788b528cd1cb7c42fb4dd911351be9402c2f5efc1efb2959c58a0bcba",
+    "built_by": "scripts/pack_node_run.py --format cuda over the one bundle of the timing probe, as a tar for node_run_cuda.sh (commit e7e2978), sidecars outoftime-run-rental-probe-2015h1e.tar.gz.sha256 and .jobs.json beside it",
+    "score_context_py_sha256": "66e8933d67fea5f8140f31f5229a305a15d3f1eb20e0fd67e15546037ff9f0dc",
+    "score_context_py_provenance": "Hash of the copy inside the archive, LF-ended; byte-identical to scripts/score_context.py at HEAD 001b24b and unchanged since commit fd5eadf."
+  },
+  "result_archive": {
+    "name": "outoftime-result-rental-probe-2015h1e.tar.gz",
+    "sha256": "96af4ce75afd526648e7c16b13fda9e0352c09fdda79b1f77f83ffaa57c7af99",
+    "contents": "2026-09-05-lc-2015h1e-bundle-scored-tabpfn/ (node.json, scores.parquet, reference.parquet, parts/) copied here unchanged; score.log, jobs.json and jobs-done.json of the archive are in experiments/2026-09-13-lc-rental-probe-4090, and score.log here is lines 2 to 12 of the archive's",
+    "sha256_of_files_here": {
+      "scores.parquet": "1efa5a4661f6b9e6f85844c3110a765258c5f6ec769ca8223371d9396889cd47",
+      "reference.parquet": "4ebaa10d61973a8343410674b225aee36c504bc5efcd40696e79faaaa29bdcfe",
+      "node.json": "304a3035c40ed3f95b86d71e13a573076eaefe0ed249b9d1b6f198dba0643447"
+    }
+  },
+  "bundle_check": {
+    "context.parquet": "6416fe6560268bef4b0341e545c37918a1ef2aabed6689cdff5287e45a9738c6",
+    "scored.parquet": "0e7bc300b9bc16360152be39e0d9ea0c663289897dcf90ea9536a748438bc09e",
+    "how": "The hashes the scorer recorded in node.json for the bundle it read, equal to bundle.json of experiments/2026-09-05-lc-2015h1e-bundle. The scorer refuses a bundle whose hashes differ from bundle.json, so the node scored the recorded rows."
+  },
+  "parts_check": "4 part files under parts/, one per (model, context seed, cell), equal to the 4 cell records of node.json; the parts concatenated are scores.parquet and reference.parquet row for row and probability for probability.",
+  "row_check": {
+    "scored": "60,000 rows over 3 cohorts (2015Q3 to 2016Q1); every (cohort, row) pair, its outcome and its age match the gbm rows of experiments/2026-09-05-lc-2015h1e-scores/scores.parquet, zero mismatches, no missing probability",
+    "reference": "50,000 rows; every row and its outcome match the gbm-50k reference of context seed 20260911 in experiments/2026-09-05-lc-2015h1e-scores/reference.parquet, zero mismatches",
+    "seeds": [
+      20260911
+    ]
+  },
+  "console_log": "score.log is the node's console output for this job: the scorer's own per-cell summary, the repeat check and the totals. It was read in full and holds no home path beyond /home/node/outoftime-node, no account name and no token; the TabPFN checkpoint travelled in the job archive, and run.sh checks it against sha256 d0d865d5…3988 before copying it into the node's cache and refuses any other (scripts/node_run_cuda.sh).",
+  "question_this_run_was_sent_to_answer": "The one-hour device timing probe EXP-005 names before any Freddie Mac model is scored (\"The accelerator, and the rule that sizes the grid\", docs/experiments/EXP-005-tfm-out-of-time-second-book.md): seconds per scored row including context set-up for TabPFN and TabICL on a rented CUDA device, on the Lending Club 2015H1-E bundle at a 50,000-row context, at both softmax temperatures, so scripts/fm_grid_budget.py can size the Freddie Mac grid's wall time before it runs. Scored on the same rows and context seed as the LC grid's other recordings of this build, so the reading also carries the device term against the Apple GPU and the Tesla T4.",
+  "what_it_measured": {
+    "model": "tabpfn, library tabpfn 8.5.0; checkpoint(s) present on the node: tabpfn-v3-classifier-v3_default.ckpt (sha256 d0d865d5...)",
+    "device": "cuda",
+    "context": "50,000 rows, context seed 20260911; softmax_temperature 0.9, categorical_features_indices [6, 13, 19], ignore_pretraining_limits true, n_estimators auto, random_state 0, balance_probabilities false",
+    "chunk": "20,000 scored rows per forward call (--chunk 20000); the 50,000-row reference cell ran in three calls; rows are scored independently and the chunking changes no probability",
+    "cells": {
+      "reference": {
+        "rows": 50000,
+        "seconds": 37.822,
+        "us_per_row": 756.4
+      },
+      "2015Q3": {
+        "rows": 20000,
+        "seconds": 13.008,
+        "us_per_row": 650.4
+      },
+      "2015Q4": {
+        "rows": 20000,
+        "seconds": 13.008,
+        "us_per_row": 650.4
+      },
+      "2016Q1": {
+        "rows": 20000,
+        "seconds": 13.138,
+        "us_per_row": 656.9
+      }
+    },
+    "fit_seconds": 4.308,
+    "wall_seconds": 97.5,
+    "tally_seconds": 99.5,
+    "peak_gpu_gb_max": 1.071,
+    "repeat": "2015Q3 scored twice from a fresh fit: largest absolute disagreement 0.0, no row differs; the second pass is the repeat check and its own seconds are not recorded separately in node.json, only the probability agreement."
+  },
+  "timing_caveat": "This is a measurement, not a caveated reading: the rented instance was idle and dedicated to this run (four probe jobs, then the twelve Freddie Mac jobs, back to back, no other process). Per-cell seconds and wall_seconds in node.json stand as recorded.",
+  "tuning_budget": "Zero trials, no validation split, every parameter at the library default except those the command names. The classical models this pairs with were tuned on their own pool (build.json of the build's score run); the asymmetry runs both ways, since the 50,000-row control inherits the point chosen on the full pool.",
+  "not_in_this_run": "The other three jobs of this probe: tabpfn-t1@2026-09-05-lc-2015h1e-bundle, tabicl@2026-09-05-lc-2015h1e-bundle, tabicl-t1@2026-09-05-lc-2015h1e-bundle. The Freddie Mac falsifying run this probe was timed ahead of is experiments/2026-09-13-fm-2004h2e-rental-4090.",
+  "cross_device": {
+    "against": [
+      "2026-09-06-lc-2015h1e-tabpfn-m4pro (Apple M4 Pro, MPS)",
+      "2026-09-11-lc-2015h1e-tabpfn-m4pro (Apple M4 Pro, MPS, the grid's own run)"
+    ],
+    "reading": "against 2026-09-06-lc-2015h1e-tabpfn-m4pro: scored rows mean|Δpd| 8.54e-05, max 1.81e-03 (60000 of 60000 differ); reference rows mean|Δpd| 1.18e-04, max 2.96e-02 (50000 of 50000 differ) | against 2026-09-11-lc-2015h1e-tabpfn-m4pro: scored rows mean|Δpd| 8.54e-05, max 1.81e-03 (60000 of 60000 differ); reference rows mean|Δpd| 1.18e-04, max 2.96e-02 (50000 of 50000 differ)"
+  }
+}

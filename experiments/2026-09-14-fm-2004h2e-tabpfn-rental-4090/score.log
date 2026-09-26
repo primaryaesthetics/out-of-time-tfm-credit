@@ -1,0 +1,129 @@
+### tabpfn@2026-09-13-fm-2004h2e-bundle: /home/node/outoftime-node/.venv/bin/python score_context.py 2026-09-13-fm-2004h2e-bundle --out-dir 2026-09-13-fm-2004h2e-bundle-scored-tabpfn --models tabpfn --chunk 20000
+tabpfn/20260911: context 50,000 rows read in 1.9s
+  reference   50,000 rows     36.6s  mean pd 0.0089
+  2005H1      24,233 rows     22.6s  mean pd 0.0084
+  2005H2      24,082 rows     22.4s  mean pd 0.0084
+  2006H1      23,280 rows     22.4s  mean pd 0.0101
+  2006H2      23,898 rows     22.4s  mean pd 0.0105
+  2007H1      23,169 rows     22.3s  mean pd 0.0112
+  2007H2      24,367 rows     22.6s  mean pd 0.0123
+  2008H1      24,660 rows     22.6s  mean pd 0.0078
+  2008H2      24,746 rows     22.5s  mean pd 0.0061
+  2009H1      24,844 rows     22.6s  mean pd 0.0028
+  2009H2      24,709 rows     22.6s  mean pd 0.0039
+  2010H1      24,843 rows     22.6s  mean pd 0.0042
+  2010H2      24,683 rows     22.7s  mean pd 0.0034
+  2011H1      24,614 rows     22.7s  mean pd 0.0047
+  2011H2      24,646 rows     22.6s  mean pd 0.0036
+  2012H1      24,306 rows     22.7s  mean pd 0.0056
+  2012H2      24,538 rows     22.7s  mean pd 0.0054
+  2013H1      24,341 rows     22.6s  mean pd 0.0062
+  2013H2      23,974 rows     22.3s  mean pd 0.0072
+  2014H1      24,341 rows     22.6s  mean pd 0.0065
+  2014H2      24,213 rows     22.7s  mean pd 0.0058
+  2015H1      24,159 rows     22.8s  mean pd 0.0048
+  2015H2      24,159 rows     22.6s  mean pd 0.0054
+  2016H1      24,632 rows     22.6s  mean pd 0.0052
+  2016H2      24,760 rows     22.6s  mean pd 0.0045
+  2017H1      24,541 rows     22.7s  mean pd 0.0057
+  2017H2      24,680 rows     22.7s  mean pd 0.0056
+  2018H1      24,416 rows     22.7s  mean pd 0.0057
+  2018H2      24,543 rows     22.7s  mean pd 0.0060
+  2019H1      24,752 rows     22.7s  mean pd 0.0057
+  2019H2      24,861 rows     22.7s  mean pd 0.0048
+  2020H1      24,880 rows     22.6s  mean pd 0.0041
+  2020H2      24,919 rows     22.6s  mean pd 0.0033
+  2021H1      24,909 rows     22.7s  mean pd 0.0040
+  2021H2      24,929 rows     22.7s  mean pd 0.0049
+  2022H1      24,889 rows     22.8s  mean pd 0.0063
+  2022H2      24,859 rows     22.6s  mean pd 0.0062
+  2023H1      24,882 rows     22.7s  mean pd 0.0062
+  2023H2      24,866 rows     22.7s  mean pd 0.0058
+  repeat 2005H1: largest disagreement 0.00e+00, 0 rows differ
+tabpfn/20260912: context 50,000 rows read in 0.8s
+  reference   50,000 rows     36.2s  mean pd 0.0084
+  2005H1      24,233 rows     22.7s  mean pd 0.0076
+  2005H2      24,082 rows     22.5s  mean pd 0.0075
+  2006H1      23,280 rows     22.4s  mean pd 0.0092
+  2006H2      23,898 rows     22.5s  mean pd 0.0097
+  2007H1      23,169 rows     22.5s  mean pd 0.0105
+  2007H2      24,367 rows     22.8s  mean pd 0.0117
+  2008H1      24,660 rows     22.8s  mean pd 0.0071
+  2008H2      24,746 rows     22.8s  mean pd 0.0054
+  2009H1      24,844 rows     22.7s  mean pd 0.0024
+  2009H2      24,709 rows     22.7s  mean pd 0.0034
+  2010H1      24,843 rows     22.8s  mean pd 0.0038
+  2010H2      24,683 rows     22.8s  mean pd 0.0031
+  2011H1      24,614 rows     22.7s  mean pd 0.0042
+  2011H2      24,646 rows     22.8s  mean pd 0.0032
+  2012H1      24,306 rows     22.7s  mean pd 0.0054
+  2012H2      24,538 rows     22.8s  mean pd 0.0052
+  2013H1      24,341 rows     22.7s  mean pd 0.0059
+  2013H2      23,974 rows     22.5s  mean pd 0.0068
+  2014H1      24,341 rows     22.7s  mean pd 0.0060
+  2014H2      24,213 rows     22.6s  mean pd 0.0053
+  2015H1      24,159 rows     22.7s  mean pd 0.0043
+  2015H2      24,159 rows     22.7s  mean pd 0.0048
+  2016H1      24,632 rows     22.7s  mean pd 0.0045
+  2016H2      24,760 rows     22.8s  mean pd 0.0039
+  2017H1      24,541 rows     22.8s  mean pd 0.0051
+  2017H2      24,680 rows     22.9s  mean pd 0.0049
+  2018H1      24,416 rows     22.7s  mean pd 0.0051
+  2018H2      24,543 rows     22.6s  mean pd 0.0054
+  2019H1      24,752 rows     22.8s  mean pd 0.0051
+  2019H2      24,861 rows     22.9s  mean pd 0.0042
+  2020H1      24,880 rows     22.8s  mean pd 0.0035
+  2020H2      24,919 rows     22.8s  mean pd 0.0028
+  2021H1      24,909 rows     22.7s  mean pd 0.0034
+  2021H2      24,929 rows     22.7s  mean pd 0.0041
+  2022H1      24,889 rows     22.8s  mean pd 0.0054
+  2022H2      24,859 rows     22.7s  mean pd 0.0057
+  2023H1      24,882 rows     22.9s  mean pd 0.0057
+  2023H2      24,866 rows     22.8s  mean pd 0.0054
+  repeat 2005H1: largest disagreement 0.00e+00, 0 rows differ
+tabpfn/20260913: context 50,000 rows read in 0.8s
+  reference   50,000 rows     36.3s  mean pd 0.0084
+  2005H1      24,233 rows     22.8s  mean pd 0.0077
+  2005H2      24,082 rows     22.5s  mean pd 0.0077
+  2006H1      23,280 rows     22.6s  mean pd 0.0093
+  2006H2      23,898 rows     22.6s  mean pd 0.0097
+  2007H1      23,169 rows     22.6s  mean pd 0.0104
+  2007H2      24,367 rows     22.9s  mean pd 0.0111
+  2008H1      24,660 rows     22.8s  mean pd 0.0067
+  2008H2      24,746 rows     22.9s  mean pd 0.0050
+  2009H1      24,844 rows     23.0s  mean pd 0.0025
+  2009H2      24,709 rows     23.0s  mean pd 0.0040
+  2010H1      24,843 rows     22.9s  mean pd 0.0047
+  2010H2      24,683 rows     22.9s  mean pd 0.0039
+  2011H1      24,614 rows     22.9s  mean pd 0.0056
+  2011H2      24,646 rows     22.8s  mean pd 0.0041
+  2012H1      24,306 rows     22.9s  mean pd 0.0079
+  2012H2      24,538 rows     22.8s  mean pd 0.0072
+  2013H1      24,341 rows     22.7s  mean pd 0.0077
+  2013H2      23,974 rows     22.4s  mean pd 0.0082
+  2014H1      24,341 rows     22.8s  mean pd 0.0066
+  2014H2      24,213 rows     22.9s  mean pd 0.0054
+  2015H1      24,159 rows     22.8s  mean pd 0.0043
+  2015H2      24,159 rows     22.8s  mean pd 0.0047
+  2016H1      24,632 rows     22.8s  mean pd 0.0044
+  2016H2      24,760 rows     23.0s  mean pd 0.0037
+  2017H1      24,541 rows     23.0s  mean pd 0.0048
+  2017H2      24,680 rows     23.0s  mean pd 0.0045
+  2018H1      24,416 rows     22.9s  mean pd 0.0046
+  2018H2      24,543 rows     22.8s  mean pd 0.0048
+  2019H1      24,752 rows     22.9s  mean pd 0.0045
+  2019H2      24,861 rows     22.9s  mean pd 0.0038
+  2020H1      24,880 rows     22.9s  mean pd 0.0031
+  2020H2      24,919 rows     22.8s  mean pd 0.0026
+  2021H1      24,909 rows     22.8s  mean pd 0.0031
+  2021H2      24,929 rows     22.7s  mean pd 0.0038
+  2022H1      24,889 rows     22.8s  mean pd 0.0048
+  2022H2      24,859 rows     22.9s  mean pd 0.0048
+  2023H1      24,882 rows     22.9s  mean pd 0.0047
+  2023H2      24,866 rows     22.8s  mean pd 0.0044
+  repeat 2005H1: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 2,793,369
+reference rows        : 150,000
+wall                  : 2784s
+

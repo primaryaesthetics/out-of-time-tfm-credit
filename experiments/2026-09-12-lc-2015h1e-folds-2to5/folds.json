@@ -1,0 +1,6874 @@
+{
+  "build": {
+    "build_id": "2015H1-E",
+    "as_of": "2015-06-30",
+    "arm": "E",
+    "label_lag_months": 12,
+    "knowable_through": "2014-06-30",
+    "train_rows": 323026,
+    "train_first": "2010-04-01",
+    "train_last": "2014-06-01",
+    "train_quarters": [
+      "2010Q2",
+      "2010Q3",
+      "2010Q4",
+      "2011Q1",
+      "2011Q2",
+      "2011Q3",
+      "2011Q4",
+      "2012Q1",
+      "2012Q2",
+      "2012Q3",
+      "2012Q4",
+      "2013Q1",
+      "2013Q2",
+      "2013Q3",
+      "2013Q4",
+      "2014Q1",
+      "2014Q2"
+    ],
+    "blind_rows": 312972,
+    "test_cohorts": {
+      "2015Q3": 20000,
+      "2015Q4": 20000,
+      "2016Q1": 20000,
+      "2016Q2": 20000,
+      "2016Q3": 20000,
+      "2016Q4": 20000,
+      "2017Q1": 20000,
+      "2017Q2": 20000,
+      "2017Q3": 20000,
+      "2017Q4": 20000,
+      "2018Q1": 20000
+    },
+    "test_rows": 220000,
+    "notes": [
+      "312972 rows originated in (2014-06-30, 2015-06-30] carry no mature label at the as-of date and are neither trained on nor scored"
+    ]
+  },
+  "label": {
+    "definition": {
+      "window_months": 12,
+      "snapshot": "2019-03-01",
+      "charge_off_lag_months": 5,
+      "last_labelable_origination": "2018-03-01",
+      "bad_statuses": [
+        "Charged Off",
+        "Default",
+        "Does not meet the credit policy. Status:Charged Off"
+      ],
+      "good_statuses": [
+        "Does not meet the credit policy. Status:Fully Paid",
+        "Fully Paid"
+      ]
+    },
+    "labelled": 1873290,
+    "defaults": 54305,
+    "default_rate": 0.028989,
+    "dropped_immature": 387378,
+    "still_running_at_snapshot": 558979,
+    "unrecognised": 0,
+    "notes": [
+      "387378 loans originated after 2018-03-01 were dropped as immature, not labelled non-default",
+      "558979 loans were still running at the snapshot and are labelled non-default: this definition turns on charge-off, not on days past due, and those are the rows where the two differ",
+      "1937 bad loans had no last payment and were dated at origination plus 5 months",
+      "0 labelled loans stopped paying early enough to be in-window defaults and had not been charged off at the snapshot; they are labelled non-default and each is a default the window misses"
+    ]
+  },
+  "snapshot": "2019-03-01",
+  "protocol": {
+    "folds": 5,
+    "fold_seed": 20260912,
+    "run_folds": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "stratified": "classes dealt round the folds in a seeded shuffle",
+    "validation_share": 0.2,
+    "validation_seed": "fold_seed + fold",
+    "gbm": "the study's grid, the point chosen on the validation fifth by AUC, stopped on it, the shipped model fitted on the four fifths without refit",
+    "control": "the full model's point on a 50,000-row sample of the four fifths per context seed, stopped on the same fifth; the sample is the context",
+    "threshold": "the score maximising F1 on the validation fifth, per model and seed",
+    "cells": {
+      "rows": 20000,
+      "seed": "fold_seed * 100 + fold",
+      "parts": [
+        "validation",
+        "test"
+      ]
+    }
+  },
+  "features": [
+    "annual_inc",
+    "credit_history_months",
+    "delinq_2yrs",
+    "dti",
+    "emp_length",
+    "fico_range_low",
+    "home_ownership",
+    "inq_last_6mths",
+    "loan_amnt",
+    "mths_since_last_delinq",
+    "open_acc",
+    "pub_rec",
+    "pub_rec_bankruptcies",
+    "purpose",
+    "revol_bal",
+    "revol_util",
+    "sub_grade",
+    "term",
+    "total_acc",
+    "verification_status"
+  ],
+  "categorical": [
+    "home_ownership",
+    "purpose",
+    "verification_status"
+  ],
+  "context": {
+    "rows": 50000,
+    "seeds": [
+      20260911,
+      20260912,
+      20260913
+    ]
+  },
+  "seeds": {
+    "fold": 20260912,
+    "context": [
+      20260911,
+      20260912,
+      20260913
+    ],
+    "booster": 20260904
+  },
+  "policy": {
+    "scorecard": {
+      "iv_min": 0.02,
+      "max_characteristics": 20,
+      "monotonic_trend": "auto_asc_desc",
+      "max_n_prebins": 20,
+      "min_prebin_size": 0.02,
+      "min_bin_size": 0.05,
+      "max_n_bins": 6,
+      "min_missing_count": 100,
+      "drop_wrong_sign": true,
+      "solver": "mip",
+      "mip_solver": "bop",
+      "solver_time_limit": 100,
+      "logistic_tol": 1e-08
+    },
+    "gbm": {
+      "num_leaves": [
+        7,
+        15,
+        31
+      ],
+      "learning_rate": [
+        0.03,
+        0.1
+      ],
+      "min_child_samples": [
+        200,
+        1000
+      ],
+      "feature_fraction": [
+        0.4,
+        0.6,
+        1.0
+      ],
+      "grid_points": 36,
+      "max_rounds": 2000,
+      "early_stopping_rounds": 50,
+      "validation_quarters_max": 4,
+      "validation_row_share": 0.2,
+      "min_validation_rows": 1000,
+      "seed": 20260904
+    }
+  },
+  "units": {
+    "fold2/scorecard": {
+      "fold": 2,
+      "model": "scorecard",
+      "context_seed": null,
+      "fit_rows": 206737,
+      "validation_rows": 51684,
+      "fit_seconds": 8.98,
+      "summary": {
+        "policy": {
+          "iv_min": 0.02,
+          "max_characteristics": 20,
+          "monotonic_trend": "auto_asc_desc",
+          "max_n_prebins": 20,
+          "min_prebin_size": 0.02,
+          "min_bin_size": 0.05,
+          "max_n_bins": 6,
+          "min_missing_count": 100,
+          "drop_wrong_sign": true,
+          "solver": "mip",
+          "mip_solver": "bop",
+          "solver_time_limit": 100,
+          "logistic_tol": 1e-08
+        },
+        "train_rows": 206737,
+        "train_default_rate": 0.023329,
+        "intercept": -3.735388,
+        "characteristics": [
+          {
+            "name": "annual_inc",
+            "dtype": "numerical",
+            "iv": 0.068512,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.759911
+          },
+          {
+            "name": "credit_history_months",
+            "dtype": "numerical",
+            "iv": 0.04568,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.343597
+          },
+          {
+            "name": "emp_length",
+            "dtype": "numerical",
+            "iv": 0.02444,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.589298
+          },
+          {
+            "name": "fico_range_low",
+            "dtype": "numerical",
+            "iv": 0.072932,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.025076
+          },
+          {
+            "name": "home_ownership",
+            "dtype": "categorical",
+            "iv": 0.032524,
+            "n_bins": 3,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.324639
+          },
+          {
+            "name": "inq_last_6mths",
+            "dtype": "numerical",
+            "iv": 0.084062,
+            "n_bins": 4,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.695741
+          },
+          {
+            "name": "purpose",
+            "dtype": "categorical",
+            "iv": 0.076689,
+            "n_bins": 4,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.560212
+          },
+          {
+            "name": "revol_bal",
+            "dtype": "numerical",
+            "iv": 0.028358,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.408889
+          },
+          {
+            "name": "sub_grade",
+            "dtype": "numerical",
+            "iv": 0.306559,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.829225
+          },
+          {
+            "name": "term",
+            "dtype": "numerical",
+            "iv": 0.026897,
+            "n_bins": 2,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.160757
+          },
+          {
+            "name": "total_acc",
+            "dtype": "numerical",
+            "iv": 0.022122,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.004245
+          }
+        ],
+        "n_characteristics": 11,
+        "constant_on_train": [],
+        "screened_out": [
+          "delinq_2yrs",
+          "dti",
+          "loan_amnt",
+          "mths_since_last_delinq",
+          "open_acc",
+          "pub_rec",
+          "pub_rec_bankruptcies",
+          "revol_util",
+          "verification_status"
+        ],
+        "dropped_wrong_sign": [],
+        "neutral_missing": [],
+        "iv_all": [
+          {
+            "name": "sub_grade",
+            "iv": 0.306559
+          },
+          {
+            "name": "inq_last_6mths",
+            "iv": 0.084062
+          },
+          {
+            "name": "purpose",
+            "iv": 0.076689
+          },
+          {
+            "name": "fico_range_low",
+            "iv": 0.072932
+          },
+          {
+            "name": "annual_inc",
+            "iv": 0.068512
+          },
+          {
+            "name": "credit_history_months",
+            "iv": 0.04568
+          },
+          {
+            "name": "home_ownership",
+            "iv": 0.032524
+          },
+          {
+            "name": "revol_bal",
+            "iv": 0.028358
+          },
+          {
+            "name": "term",
+            "iv": 0.026897
+          },
+          {
+            "name": "emp_length",
+            "iv": 0.02444
+          },
+          {
+            "name": "total_acc",
+            "iv": 0.022122
+          },
+          {
+            "name": "open_acc",
+            "iv": 0.014232
+          },
+          {
+            "name": "revol_util",
+            "iv": 0.012536
+          },
+          {
+            "name": "loan_amnt",
+            "iv": 0.00894
+          },
+          {
+            "name": "verification_status",
+            "iv": 0.005194
+          },
+          {
+            "name": "mths_since_last_delinq",
+            "iv": 0.00496
+          },
+          {
+            "name": "delinq_2yrs",
+            "iv": 0.001373
+          },
+          {
+            "name": "pub_rec_bankruptcies",
+            "iv": 0.000448
+          },
+          {
+            "name": "pub_rec",
+            "iv": 0.000412
+          },
+          {
+            "name": "dti",
+            "iv": 0.000219
+          }
+        ],
+        "notes": []
+      }
+    },
+    "fold2/gbm": {
+      "fold": 2,
+      "model": "gbm",
+      "context_seed": null,
+      "fit_rows": 206737,
+      "validation_rows": 51684,
+      "fit_seconds": 181.01,
+      "summary": {
+        "policy": {
+          "num_leaves": [
+            7,
+            15,
+            31
+          ],
+          "learning_rate": [
+            0.03,
+            0.1
+          ],
+          "min_child_samples": [
+            200,
+            1000
+          ],
+          "feature_fraction": [
+            0.4,
+            0.6,
+            1.0
+          ],
+          "grid_points": 36,
+          "max_rounds": 2000,
+          "early_stopping_rounds": 50,
+          "validation_quarters_max": 4,
+          "validation_row_share": 0.2,
+          "min_validation_rows": 1000,
+          "seed": 20260904
+        },
+        "params": {
+          "objective": "binary",
+          "boosting_type": "gbdt",
+          "metric": [
+            "auc",
+            "binary_logloss"
+          ],
+          "bagging_fraction": 1.0,
+          "bagging_freq": 0,
+          "lambda_l1": 0.0,
+          "lambda_l2": 0.0,
+          "min_split_gain": 0.0,
+          "max_bin": 255,
+          "deterministic": true,
+          "force_row_wise": true,
+          "num_leaves": 7,
+          "learning_rate": 0.03,
+          "min_child_samples": 1000,
+          "feature_fraction": 0.6,
+          "first_metric_only": true,
+          "seed": 20260904,
+          "num_threads": 0
+        },
+        "rounds": 886,
+        "seed": 20260904,
+        "train_rows": 258421,
+        "fit_rows": 206737,
+        "train_default_rate": 0.02333,
+        "train_quarters": [
+          "2010Q2",
+          "2010Q3",
+          "2010Q4",
+          "2011Q1",
+          "2011Q2",
+          "2011Q3",
+          "2011Q4",
+          "2012Q1",
+          "2012Q2",
+          "2012Q3",
+          "2012Q4",
+          "2013Q1",
+          "2013Q2",
+          "2013Q3",
+          "2013Q4",
+          "2014Q1",
+          "2014Q2"
+        ],
+        "validation_quarters": [],
+        "validation_rows": 51684,
+        "validation_logloss": 0.10444423,
+        "objective": "auc",
+        "validation_auc": 0.70660573,
+        "refitted": false,
+        "n_features": 20,
+        "unseen_categories": {
+          "home_ownership": 5,
+          "purpose": 14,
+          "verification_status": 3
+        },
+        "trials": [
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 686,
+            "validation_logloss": 0.10467488,
+            "seconds": 9.342,
+            "validation_auc": 0.70374756
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 638,
+            "validation_logloss": 0.10460677,
+            "seconds": 9.53,
+            "validation_auc": 0.70501754
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 785,
+            "validation_logloss": 0.10457574,
+            "seconds": 12.246,
+            "validation_auc": 0.70546741
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 635,
+            "validation_logloss": 0.10466758,
+            "seconds": 9.032,
+            "validation_auc": 0.70422453
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 886,
+            "validation_logloss": 0.10444423,
+            "seconds": 13.372,
+            "validation_auc": 0.70660573
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 811,
+            "validation_logloss": 0.10447676,
+            "seconds": 12.155,
+            "validation_auc": 0.70643154
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 206,
+            "validation_logloss": 0.10468557,
+            "seconds": 3.149,
+            "validation_auc": 0.70308001
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 92,
+            "validation_logloss": 0.10494304,
+            "seconds": 2.104,
+            "validation_auc": 0.70036634
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 263,
+            "validation_logloss": 0.10454772,
+            "seconds": 4.291,
+            "validation_auc": 0.70564859
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 210,
+            "validation_logloss": 0.1048359,
+            "seconds": 3.271,
+            "validation_auc": 0.70126564
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 228,
+            "validation_logloss": 0.10455505,
+            "seconds": 3.964,
+            "validation_auc": 0.70523733
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 275,
+            "validation_logloss": 0.10452741,
+            "seconds": 4.598,
+            "validation_auc": 0.70600926
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 455,
+            "validation_logloss": 0.10457827,
+            "seconds": 7.003,
+            "validation_auc": 0.70541734
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 186,
+            "validation_logloss": 0.10474138,
+            "seconds": 4.071,
+            "validation_auc": 0.70403988
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 189,
+            "validation_logloss": 0.10476804,
+            "seconds": 4.135,
+            "validation_auc": 0.70359266
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 402,
+            "validation_logloss": 0.1046289,
+            "seconds": 6.573,
+            "validation_auc": 0.70416625
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 217,
+            "validation_logloss": 0.10469461,
+            "seconds": 4.728,
+            "validation_auc": 0.70344454
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 205,
+            "validation_logloss": 0.10468454,
+            "seconds": 4.516,
+            "validation_auc": 0.70388121
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 83,
+            "validation_logloss": 0.10486447,
+            "seconds": 1.861,
+            "validation_auc": 0.70161219
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 73,
+            "validation_logloss": 0.10488117,
+            "seconds": 1.976,
+            "validation_auc": 0.70179827
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 49,
+            "validation_logloss": 0.10500872,
+            "seconds": 1.666,
+            "validation_auc": 0.70076747
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 133,
+            "validation_logloss": 0.10461896,
+            "seconds": 2.645,
+            "validation_auc": 0.70427026
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 74,
+            "validation_logloss": 0.1046653,
+            "seconds": 2.095,
+            "validation_auc": 0.70415184
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 56,
+            "validation_logloss": 0.10473393,
+            "seconds": 1.854,
+            "validation_auc": 0.70347935
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 232,
+            "validation_logloss": 0.10470091,
+            "seconds": 4.64,
+            "validation_auc": 0.703793
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 154,
+            "validation_logloss": 0.10471254,
+            "seconds": 4.044,
+            "validation_auc": 0.70426366
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 127,
+            "validation_logloss": 0.10481062,
+            "seconds": 3.622,
+            "validation_auc": 0.70279306
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 321,
+            "validation_logloss": 0.10454698,
+            "seconds": 6.446,
+            "validation_auc": 0.70511496
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 102,
+            "validation_logloss": 0.1049289,
+            "seconds": 3.329,
+            "validation_auc": 0.70257898
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 175,
+            "validation_logloss": 0.104572,
+            "seconds": 4.836,
+            "validation_auc": 0.70448607
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 69,
+            "validation_logloss": 0.10472372,
+            "seconds": 1.922,
+            "validation_auc": 0.70241997
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 64,
+            "validation_logloss": 0.10472025,
+            "seconds": 2.117,
+            "validation_auc": 0.70309321
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 48,
+            "validation_logloss": 0.10495198,
+            "seconds": 1.872,
+            "validation_auc": 0.70036603
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 84,
+            "validation_logloss": 0.1047398,
+            "seconds": 2.327,
+            "validation_auc": 0.70253877
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 42,
+            "validation_logloss": 0.1046808,
+            "seconds": 1.935,
+            "validation_auc": 0.70464456
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 58,
+            "validation_logloss": 0.10467129,
+            "seconds": 2.201,
+            "validation_auc": 0.70431202
+          }
+        ],
+        "importances": [
+          {
+            "feature": "sub_grade",
+            "gain": 23936.244624,
+            "splits": 450,
+            "gain_share": 0.348729
+          },
+          {
+            "feature": "annual_inc",
+            "gain": 6652.068679,
+            "splits": 493,
+            "gain_share": 0.096914
+          },
+          {
+            "feature": "purpose",
+            "gain": 5860.794518,
+            "splits": 406,
+            "gain_share": 0.085386
+          },
+          {
+            "feature": "credit_history_months",
+            "gain": 4220.452592,
+            "splits": 478,
+            "gain_share": 0.061488
+          },
+          {
+            "feature": "inq_last_6mths",
+            "gain": 4099.112172,
+            "splits": 186,
+            "gain_share": 0.05972
+          },
+          {
+            "feature": "revol_bal",
+            "gain": 3731.866404,
+            "splits": 446,
+            "gain_share": 0.05437
+          },
+          {
+            "feature": "revol_util",
+            "gain": 3196.983957,
+            "splits": 469,
+            "gain_share": 0.046577
+          },
+          {
+            "feature": "dti",
+            "gain": 2992.49395,
+            "splits": 359,
+            "gain_share": 0.043598
+          },
+          {
+            "feature": "loan_amnt",
+            "gain": 2675.694921,
+            "splits": 418,
+            "gain_share": 0.038982
+          },
+          {
+            "feature": "emp_length",
+            "gain": 2365.928104,
+            "splits": 247,
+            "gain_share": 0.034469
+          },
+          {
+            "feature": "fico_range_low",
+            "gain": 2025.142929,
+            "splits": 276,
+            "gain_share": 0.029504
+          },
+          {
+            "feature": "mths_since_last_delinq",
+            "gain": 1900.647224,
+            "splits": 257,
+            "gain_share": 0.027691
+          },
+          {
+            "feature": "total_acc",
+            "gain": 1352.42642,
+            "splits": 271,
+            "gain_share": 0.019704
+          },
+          {
+            "feature": "open_acc",
+            "gain": 1141.196246,
+            "splits": 218,
+            "gain_share": 0.016626
+          },
+          {
+            "feature": "home_ownership",
+            "gain": 1060.130105,
+            "splits": 72,
+            "gain_share": 0.015445
+          },
+          {
+            "feature": "term",
+            "gain": 531.218817,
+            "splits": 72,
+            "gain_share": 0.007739
+          },
+          {
+            "feature": "verification_status",
+            "gain": 402.032001,
+            "splits": 100,
+            "gain_share": 0.005857
+          },
+          {
+            "feature": "pub_rec",
+            "gain": 308.078278,
+            "splits": 60,
+            "gain_share": 0.004488
+          },
+          {
+            "feature": "delinq_2yrs",
+            "gain": 102.392285,
+            "splits": 23,
+            "gain_share": 0.001492
+          },
+          {
+            "feature": "pub_rec_bankruptcies",
+            "gain": 83.66115,
+            "splits": 15,
+            "gain_share": 0.001219
+          }
+        ],
+        "notes": [
+          "the early-stopping set is 51684 rows named by the caller, not the pool's time-ordered tail",
+          "the search point was chosen by the validation AUC, not log-loss",
+          "the chosen point sits on the grid's edge: num_leaves=7",
+          "chosen over the runner-up by 1.74e-04 in AUC",
+          "the shipped model was not refitted on the validation rows"
+        ]
+      }
+    },
+    "fold2/gbm-50k/20260911": {
+      "fold": 2,
+      "model": "gbm-50k",
+      "context_seed": 20260911,
+      "fit_rows": 50000,
+      "validation_rows": 51684,
+      "fit_seconds": 3.79,
+      "summary": {
+        "policy": {
+          "num_leaves": [
+            7,
+            15,
+            31
+          ],
+          "learning_rate": [
+            0.03,
+            0.1
+          ],
+          "min_child_samples": [
+            200,
+            1000
+          ],
+          "feature_fraction": [
+            0.4,
+            0.6,
+            1.0
+          ],
+          "grid_points": 36,
+          "max_rounds": 2000,
+          "early_stopping_rounds": 50,
+          "validation_quarters_max": 4,
+          "validation_row_share": 0.2,
+          "min_validation_rows": 1000,
+          "seed": 20260904
+        },
+        "params": {
+          "objective": "binary",
+          "boosting_type": "gbdt",
+          "metric": [
+            "auc",
+            "binary_logloss"
+          ],
+          "bagging_fraction": 1.0,
+          "bagging_freq": 0,
+          "lambda_l1": 0.0,
+          "lambda_l2": 0.0,
+          "min_split_gain": 0.0,
+          "max_bin": 255,
+          "deterministic": true,
+          "force_row_wise": true,
+          "num_leaves": 7,
+          "learning_rate": 0.03,
+          "min_child_samples": 1000,
+          "feature_fraction": 0.6,
+          "first_metric_only": true,
+          "seed": 20260904,
+          "num_threads": 0
+        },
+        "rounds": 212,
+        "seed": 20260904,
+        "train_rows": 101684,
+        "fit_rows": 50000,
+        "train_default_rate": 0.023937,
+        "train_quarters": [
+          "2010Q2",
+          "2010Q3",
+          "2010Q4",
+          "2011Q1",
+          "2011Q2",
+          "2011Q3",
+          "2011Q4",
+          "2012Q1",
+          "2012Q2",
+          "2012Q3",
+          "2012Q4",
+          "2013Q1",
+          "2013Q2",
+          "2013Q3",
+          "2013Q4",
+          "2014Q1",
+          "2014Q2"
+        ],
+        "validation_quarters": [],
+        "validation_rows": 51684,
+        "validation_logloss": 0.10556526,
+        "objective": "auc",
+        "validation_auc": 0.69103416,
+        "refitted": false,
+        "n_features": 20,
+        "unseen_categories": {
+          "home_ownership": 5,
+          "purpose": 14,
+          "verification_status": 3
+        },
+        "trials": [
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 212,
+            "validation_logloss": 0.10556526,
+            "seconds": 1.941,
+            "validation_auc": 0.69103416
+          }
+        ],
+        "importances": [
+          {
+            "feature": "sub_grade",
+            "gain": 5634.591998,
+            "splits": 189,
+            "gain_share": 0.333229
+          },
+          {
+            "feature": "purpose",
+            "gain": 2016.648482,
+            "splits": 146,
+            "gain_share": 0.119264
+          },
+          {
+            "feature": "annual_inc",
+            "gain": 1781.57298,
+            "splits": 142,
+            "gain_share": 0.105362
+          },
+          {
+            "feature": "inq_last_6mths",
+            "gain": 1023.350047,
+            "splits": 88,
+            "gain_share": 0.060521
+          },
+          {
+            "feature": "emp_length",
+            "gain": 988.995339,
+            "splits": 79,
+            "gain_share": 0.058489
+          },
+          {
+            "feature": "credit_history_months",
+            "gain": 782.889395,
+            "splits": 61,
+            "gain_share": 0.0463
+          },
+          {
+            "feature": "dti",
+            "gain": 776.293402,
+            "splits": 94,
+            "gain_share": 0.04591
+          },
+          {
+            "feature": "revol_bal",
+            "gain": 731.164499,
+            "splits": 85,
+            "gain_share": 0.043241
+          },
+          {
+            "feature": "revol_util",
+            "gain": 704.797755,
+            "splits": 103,
+            "gain_share": 0.041682
+          },
+          {
+            "feature": "loan_amnt",
+            "gain": 577.896413,
+            "splits": 63,
+            "gain_share": 0.034177
+          },
+          {
+            "feature": "fico_range_low",
+            "gain": 574.26087,
+            "splits": 56,
+            "gain_share": 0.033962
+          },
+          {
+            "feature": "mths_since_last_delinq",
+            "gain": 468.239452,
+            "splits": 62,
+            "gain_share": 0.027692
+          },
+          {
+            "feature": "total_acc",
+            "gain": 388.275663,
+            "splits": 46,
+            "gain_share": 0.022963
+          },
+          {
+            "feature": "open_acc",
+            "gain": 230.700161,
+            "splits": 24,
+            "gain_share": 0.013644
+          },
+          {
+            "feature": "home_ownership",
+            "gain": 93.21036,
+            "splits": 11,
+            "gain_share": 0.005512
+          },
+          {
+            "feature": "term",
+            "gain": 66.55144,
+            "splits": 8,
+            "gain_share": 0.003936
+          },
+          {
+            "feature": "verification_status",
+            "gain": 38.01971,
+            "splits": 6,
+            "gain_share": 0.002248
+          },
+          {
+            "feature": "pub_rec_bankruptcies",
+            "gain": 26.55461,
+            "splits": 8,
+            "gain_share": 0.00157
+          },
+          {
+            "feature": "pub_rec",
+            "gain": 5.04122,
+            "splits": 1,
+            "gain_share": 0.000298
+          },
+          {
+            "feature": "delinq_2yrs",
+            "gain": 0.0,
+            "splits": 0,
+            "gain_share": 0.0
+          }
+        ],
+        "notes": [
+          "the early-stopping set is 51684 rows named by the caller, not the pool's time-ordered tail",
+          "the search point was chosen by the validation AUC, not log-loss",
+          "the shipped model was not refitted on the validation rows"
+        ]
+      }
+    },
+    "fold2/gbm-50k/20260912": {
+      "fold": 2,
+      "model": "gbm-50k",
+      "context_seed": 20260912,
+      "fit_rows": 50000,
+      "validation_rows": 51684,
+      "fit_seconds": 4.14,
+      "summary": {
+        "policy": {
+          "num_leaves": [
+            7,
+            15,
+            31
+          ],
+          "learning_rate": [
+            0.03,
+            0.1
+          ],
+          "min_child_samples": [
+            200,
+            1000
+          ],
+          "feature_fraction": [
+            0.4,
+            0.6,
+            1.0
+          ],
+          "grid_points": 36,
+          "max_rounds": 2000,
+          "early_stopping_rounds": 50,
+          "validation_quarters_max": 4,
+          "validation_row_share": 0.2,
+          "min_validation_rows": 1000,
+          "seed": 20260904
+        },
+        "params": {
+          "objective": "binary",
+          "boosting_type": "gbdt",
+          "metric": [
+            "auc",
+            "binary_logloss"
+          ],
+          "bagging_fraction": 1.0,
+          "bagging_freq": 0,
+          "lambda_l1": 0.0,
+          "lambda_l2": 0.0,
+          "min_split_gain": 0.0,
+          "max_bin": 255,
+          "deterministic": true,
+          "force_row_wise": true,
+          "num_leaves": 7,
+          "learning_rate": 0.03,
+          "min_child_samples": 1000,
+          "feature_fraction": 0.6,
+          "first_metric_only": true,
+          "seed": 20260904,
+          "num_threads": 0
+        },
+        "rounds": 265,
+        "seed": 20260904,
+        "train_rows": 101684,
+        "fit_rows": 50000,
+        "train_default_rate": 0.023603,
+        "train_quarters": [
+          "2010Q2",
+          "2010Q3",
+          "2010Q4",
+          "2011Q1",
+          "2011Q2",
+          "2011Q3",
+          "2011Q4",
+          "2012Q1",
+          "2012Q2",
+          "2012Q3",
+          "2012Q4",
+          "2013Q1",
+          "2013Q2",
+          "2013Q3",
+          "2013Q4",
+          "2014Q1",
+          "2014Q2"
+        ],
+        "validation_quarters": [],
+        "validation_rows": 51684,
+        "validation_logloss": 0.1052039,
+        "objective": "auc",
+        "validation_auc": 0.69692243,
+        "refitted": false,
+        "n_features": 20,
+        "unseen_categories": {
+          "home_ownership": 5,
+          "purpose": 14,
+          "verification_status": 3
+        },
+        "trials": [
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 265,
+            "validation_logloss": 0.1052039,
+            "seconds": 2.27,
+            "validation_auc": 0.69692243
+          }
+        ],
+        "importances": [
+          {
+            "feature": "sub_grade",
+            "gain": 5964.972126,
+            "splits": 196,
+            "gain_share": 0.34473
+          },
+          {
+            "feature": "annual_inc",
+            "gain": 1955.182458,
+            "splits": 184,
+            "gain_share": 0.112995
+          },
+          {
+            "feature": "purpose",
+            "gain": 1341.725643,
+            "splits": 134,
+            "gain_share": 0.077542
+          },
+          {
+            "feature": "credit_history_months",
+            "gain": 1254.464714,
+            "splits": 121,
+            "gain_share": 0.072499
+          },
+          {
+            "feature": "dti",
+            "gain": 1102.826129,
+            "splits": 136,
+            "gain_share": 0.063735
+          },
+          {
+            "feature": "revol_bal",
+            "gain": 848.168238,
+            "splits": 108,
+            "gain_share": 0.049018
+          },
+          {
+            "feature": "inq_last_6mths",
+            "gain": 829.841872,
+            "splits": 85,
+            "gain_share": 0.047959
+          },
+          {
+            "feature": "emp_length",
+            "gain": 736.578938,
+            "splits": 95,
+            "gain_share": 0.042569
+          },
+          {
+            "feature": "loan_amnt",
+            "gain": 664.940371,
+            "splits": 111,
+            "gain_share": 0.038429
+          },
+          {
+            "feature": "revol_util",
+            "gain": 560.98882,
+            "splits": 90,
+            "gain_share": 0.032421
+          },
+          {
+            "feature": "fico_range_low",
+            "gain": 548.295738,
+            "splits": 58,
+            "gain_share": 0.031687
+          },
+          {
+            "feature": "mths_since_last_delinq",
+            "gain": 445.190344,
+            "splits": 73,
+            "gain_share": 0.025729
+          },
+          {
+            "feature": "total_acc",
+            "gain": 375.98464,
+            "splits": 66,
+            "gain_share": 0.021729
+          },
+          {
+            "feature": "open_acc",
+            "gain": 293.1776,
+            "splits": 55,
+            "gain_share": 0.016943
+          },
+          {
+            "feature": "home_ownership",
+            "gain": 137.78137,
+            "splits": 23,
+            "gain_share": 0.007963
+          },
+          {
+            "feature": "term",
+            "gain": 108.630569,
+            "splits": 16,
+            "gain_share": 0.006278
+          },
+          {
+            "feature": "verification_status",
+            "gain": 64.96965,
+            "splits": 21,
+            "gain_share": 0.003755
+          },
+          {
+            "feature": "pub_rec",
+            "gain": 38.54553,
+            "splits": 9,
+            "gain_share": 0.002228
+          },
+          {
+            "feature": "delinq_2yrs",
+            "gain": 24.22119,
+            "splits": 8,
+            "gain_share": 0.0014
+          },
+          {
+            "feature": "pub_rec_bankruptcies",
+            "gain": 6.80796,
+            "splits": 1,
+            "gain_share": 0.000393
+          }
+        ],
+        "notes": [
+          "the early-stopping set is 51684 rows named by the caller, not the pool's time-ordered tail",
+          "the search point was chosen by the validation AUC, not log-loss",
+          "the shipped model was not refitted on the validation rows"
+        ]
+      }
+    },
+    "fold2/gbm-50k/20260913": {
+      "fold": 2,
+      "model": "gbm-50k",
+      "context_seed": 20260913,
+      "fit_rows": 50000,
+      "validation_rows": 51684,
+      "fit_seconds": 3.26,
+      "summary": {
+        "policy": {
+          "num_leaves": [
+            7,
+            15,
+            31
+          ],
+          "learning_rate": [
+            0.03,
+            0.1
+          ],
+          "min_child_samples": [
+            200,
+            1000
+          ],
+          "feature_fraction": [
+            0.4,
+            0.6,
+            1.0
+          ],
+          "grid_points": 36,
+          "max_rounds": 2000,
+          "early_stopping_rounds": 50,
+          "validation_quarters_max": 4,
+          "validation_row_share": 0.2,
+          "min_validation_rows": 1000,
+          "seed": 20260904
+        },
+        "params": {
+          "objective": "binary",
+          "boosting_type": "gbdt",
+          "metric": [
+            "auc",
+            "binary_logloss"
+          ],
+          "bagging_fraction": 1.0,
+          "bagging_freq": 0,
+          "lambda_l1": 0.0,
+          "lambda_l2": 0.0,
+          "min_split_gain": 0.0,
+          "max_bin": 255,
+          "deterministic": true,
+          "force_row_wise": true,
+          "num_leaves": 7,
+          "learning_rate": 0.03,
+          "min_child_samples": 1000,
+          "feature_fraction": 0.6,
+          "first_metric_only": true,
+          "seed": 20260904,
+          "num_threads": 0
+        },
+        "rounds": 172,
+        "seed": 20260904,
+        "train_rows": 101684,
+        "fit_rows": 50000,
+        "train_default_rate": 0.023514,
+        "train_quarters": [
+          "2010Q2",
+          "2010Q3",
+          "2010Q4",
+          "2011Q1",
+          "2011Q2",
+          "2011Q3",
+          "2011Q4",
+          "2012Q1",
+          "2012Q2",
+          "2012Q3",
+          "2012Q4",
+          "2013Q1",
+          "2013Q2",
+          "2013Q3",
+          "2013Q4",
+          "2014Q1",
+          "2014Q2"
+        ],
+        "validation_quarters": [],
+        "validation_rows": 51684,
+        "validation_logloss": 0.10560656,
+        "objective": "auc",
+        "validation_auc": 0.69072752,
+        "refitted": false,
+        "n_features": 20,
+        "unseen_categories": {
+          "home_ownership": 5,
+          "purpose": 14,
+          "verification_status": 3
+        },
+        "trials": [
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 172,
+            "validation_logloss": 0.10560656,
+            "seconds": 1.692,
+            "validation_auc": 0.69072752
+          }
+        ],
+        "importances": [
+          {
+            "feature": "sub_grade",
+            "gain": 5555.015323,
+            "splits": 143,
+            "gain_share": 0.37139
+          },
+          {
+            "feature": "annual_inc",
+            "gain": 1345.658772,
+            "splits": 113,
+            "gain_share": 0.089966
+          },
+          {
+            "feature": "inq_last_6mths",
+            "gain": 1131.990261,
+            "splits": 70,
+            "gain_share": 0.075681
+          },
+          {
+            "feature": "purpose",
+            "gain": 1028.220675,
+            "splits": 97,
+            "gain_share": 0.068743
+          },
+          {
+            "feature": "mths_since_last_delinq",
+            "gain": 797.953569,
+            "splits": 67,
+            "gain_share": 0.053349
+          },
+          {
+            "feature": "revol_bal",
+            "gain": 796.795499,
+            "splits": 66,
+            "gain_share": 0.053271
+          },
+          {
+            "feature": "credit_history_months",
+            "gain": 727.066154,
+            "splits": 71,
+            "gain_share": 0.048609
+          },
+          {
+            "feature": "emp_length",
+            "gain": 687.775302,
+            "splits": 69,
+            "gain_share": 0.045982
+          },
+          {
+            "feature": "revol_util",
+            "gain": 678.628097,
+            "splits": 78,
+            "gain_share": 0.045371
+          },
+          {
+            "feature": "fico_range_low",
+            "gain": 630.656446,
+            "splits": 57,
+            "gain_share": 0.042164
+          },
+          {
+            "feature": "dti",
+            "gain": 587.72028,
+            "splits": 68,
+            "gain_share": 0.039293
+          },
+          {
+            "feature": "open_acc",
+            "gain": 326.835211,
+            "splits": 38,
+            "gain_share": 0.021851
+          },
+          {
+            "feature": "loan_amnt",
+            "gain": 263.638529,
+            "splits": 36,
+            "gain_share": 0.017626
+          },
+          {
+            "feature": "total_acc",
+            "gain": 158.93593,
+            "splits": 26,
+            "gain_share": 0.010626
+          },
+          {
+            "feature": "verification_status",
+            "gain": 80.96569,
+            "splits": 10,
+            "gain_share": 0.005413
+          },
+          {
+            "feature": "home_ownership",
+            "gain": 62.792471,
+            "splits": 9,
+            "gain_share": 0.004198
+          },
+          {
+            "feature": "term",
+            "gain": 58.03967,
+            "splits": 7,
+            "gain_share": 0.00388
+          },
+          {
+            "feature": "pub_rec_bankruptcies",
+            "gain": 27.51631,
+            "splits": 5,
+            "gain_share": 0.00184
+          },
+          {
+            "feature": "delinq_2yrs",
+            "gain": 5.72059,
+            "splits": 1,
+            "gain_share": 0.000382
+          },
+          {
+            "feature": "pub_rec",
+            "gain": 5.43308,
+            "splits": 1,
+            "gain_share": 0.000363
+          }
+        ],
+        "notes": [
+          "the early-stopping set is 51684 rows named by the caller, not the pool's time-ordered tail",
+          "the search point was chosen by the validation AUC, not log-loss",
+          "the shipped model was not refitted on the validation rows"
+        ]
+      }
+    },
+    "fold3/scorecard": {
+      "fold": 3,
+      "model": "scorecard",
+      "context_seed": null,
+      "fit_rows": 206737,
+      "validation_rows": 51684,
+      "fit_seconds": 4.17,
+      "summary": {
+        "policy": {
+          "iv_min": 0.02,
+          "max_characteristics": 20,
+          "monotonic_trend": "auto_asc_desc",
+          "max_n_prebins": 20,
+          "min_prebin_size": 0.02,
+          "min_bin_size": 0.05,
+          "max_n_bins": 6,
+          "min_missing_count": 100,
+          "drop_wrong_sign": true,
+          "solver": "mip",
+          "mip_solver": "bop",
+          "solver_time_limit": 100,
+          "logistic_tol": 1e-08
+        },
+        "train_rows": 206737,
+        "train_default_rate": 0.023329,
+        "intercept": -3.735176,
+        "characteristics": [
+          {
+            "name": "annual_inc",
+            "dtype": "numerical",
+            "iv": 0.063331,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.692488
+          },
+          {
+            "name": "credit_history_months",
+            "dtype": "numerical",
+            "iv": 0.043352,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.280633
+          },
+          {
+            "name": "emp_length",
+            "dtype": "numerical",
+            "iv": 0.021558,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.544778
+          },
+          {
+            "name": "home_ownership",
+            "dtype": "categorical",
+            "iv": 0.048448,
+            "n_bins": 3,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.461761
+          },
+          {
+            "name": "inq_last_6mths",
+            "dtype": "numerical",
+            "iv": 0.083498,
+            "n_bins": 4,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.709797
+          },
+          {
+            "name": "purpose",
+            "dtype": "categorical",
+            "iv": 0.07327,
+            "n_bins": 4,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.53504
+          },
+          {
+            "name": "revol_bal",
+            "dtype": "numerical",
+            "iv": 0.025239,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.267055
+          },
+          {
+            "name": "sub_grade",
+            "dtype": "numerical",
+            "iv": 0.327307,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.842781
+          },
+          {
+            "name": "term",
+            "dtype": "numerical",
+            "iv": 0.024794,
+            "n_bins": 2,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.091355
+          },
+          {
+            "name": "total_acc",
+            "dtype": "numerical",
+            "iv": 0.030465,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.197688
+          }
+        ],
+        "n_characteristics": 10,
+        "constant_on_train": [],
+        "screened_out": [
+          "delinq_2yrs",
+          "dti",
+          "loan_amnt",
+          "mths_since_last_delinq",
+          "open_acc",
+          "pub_rec",
+          "pub_rec_bankruptcies",
+          "revol_util",
+          "verification_status"
+        ],
+        "dropped_wrong_sign": [
+          "fico_range_low"
+        ],
+        "neutral_missing": [],
+        "iv_all": [
+          {
+            "name": "sub_grade",
+            "iv": 0.327307
+          },
+          {
+            "name": "inq_last_6mths",
+            "iv": 0.083498
+          },
+          {
+            "name": "purpose",
+            "iv": 0.07327
+          },
+          {
+            "name": "fico_range_low",
+            "iv": 0.067184
+          },
+          {
+            "name": "annual_inc",
+            "iv": 0.063331
+          },
+          {
+            "name": "home_ownership",
+            "iv": 0.048448
+          },
+          {
+            "name": "credit_history_months",
+            "iv": 0.043352
+          },
+          {
+            "name": "total_acc",
+            "iv": 0.030465
+          },
+          {
+            "name": "revol_bal",
+            "iv": 0.025239
+          },
+          {
+            "name": "term",
+            "iv": 0.024794
+          },
+          {
+            "name": "emp_length",
+            "iv": 0.021558
+          },
+          {
+            "name": "open_acc",
+            "iv": 0.016142
+          },
+          {
+            "name": "revol_util",
+            "iv": 0.013084
+          },
+          {
+            "name": "loan_amnt",
+            "iv": 0.007619
+          },
+          {
+            "name": "verification_status",
+            "iv": 0.007418
+          },
+          {
+            "name": "mths_since_last_delinq",
+            "iv": 0.0055
+          },
+          {
+            "name": "delinq_2yrs",
+            "iv": 0.000891
+          },
+          {
+            "name": "pub_rec_bankruptcies",
+            "iv": 0.000648
+          },
+          {
+            "name": "pub_rec",
+            "iv": 0.000556
+          },
+          {
+            "name": "dti",
+            "iv": 8.3e-05
+          }
+        ],
+        "notes": []
+      }
+    },
+    "fold3/gbm": {
+      "fold": 3,
+      "model": "gbm",
+      "context_seed": null,
+      "fit_rows": 206737,
+      "validation_rows": 51684,
+      "fit_seconds": 156.76,
+      "summary": {
+        "policy": {
+          "num_leaves": [
+            7,
+            15,
+            31
+          ],
+          "learning_rate": [
+            0.03,
+            0.1
+          ],
+          "min_child_samples": [
+            200,
+            1000
+          ],
+          "feature_fraction": [
+            0.4,
+            0.6,
+            1.0
+          ],
+          "grid_points": 36,
+          "max_rounds": 2000,
+          "early_stopping_rounds": 50,
+          "validation_quarters_max": 4,
+          "validation_row_share": 0.2,
+          "min_validation_rows": 1000,
+          "seed": 20260904
+        },
+        "params": {
+          "objective": "binary",
+          "boosting_type": "gbdt",
+          "metric": [
+            "auc",
+            "binary_logloss"
+          ],
+          "bagging_fraction": 1.0,
+          "bagging_freq": 0,
+          "lambda_l1": 0.0,
+          "lambda_l2": 0.0,
+          "min_split_gain": 0.0,
+          "max_bin": 255,
+          "deterministic": true,
+          "force_row_wise": true,
+          "num_leaves": 15,
+          "learning_rate": 0.1,
+          "min_child_samples": 1000,
+          "feature_fraction": 1.0,
+          "first_metric_only": true,
+          "seed": 20260904,
+          "num_threads": 0
+        },
+        "rounds": 103,
+        "seed": 20260904,
+        "train_rows": 258421,
+        "fit_rows": 206737,
+        "train_default_rate": 0.02333,
+        "train_quarters": [
+          "2010Q2",
+          "2010Q3",
+          "2010Q4",
+          "2011Q1",
+          "2011Q2",
+          "2011Q3",
+          "2011Q4",
+          "2012Q1",
+          "2012Q2",
+          "2012Q3",
+          "2012Q4",
+          "2013Q1",
+          "2013Q2",
+          "2013Q3",
+          "2013Q4",
+          "2014Q1",
+          "2014Q2"
+        ],
+        "validation_quarters": [],
+        "validation_rows": 51684,
+        "validation_logloss": 0.10423702,
+        "objective": "auc",
+        "validation_auc": 0.71092996,
+        "refitted": false,
+        "n_features": 20,
+        "unseen_categories": {
+          "home_ownership": 5,
+          "purpose": 14,
+          "verification_status": 3
+        },
+        "trials": [
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 606,
+            "validation_logloss": 0.10437983,
+            "seconds": 7.99,
+            "validation_auc": 0.70774352
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 710,
+            "validation_logloss": 0.10438251,
+            "seconds": 10.647,
+            "validation_auc": 0.70819151
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 471,
+            "validation_logloss": 0.10444526,
+            "seconds": 7.452,
+            "validation_auc": 0.70770732
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 443,
+            "validation_logloss": 0.10441855,
+            "seconds": 6.346,
+            "validation_auc": 0.70680273
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 606,
+            "validation_logloss": 0.10438899,
+            "seconds": 9.488,
+            "validation_auc": 0.70788974
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 497,
+            "validation_logloss": 0.10446075,
+            "seconds": 7.97,
+            "validation_auc": 0.70668553
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 98,
+            "validation_logloss": 0.10455325,
+            "seconds": 1.872,
+            "validation_auc": 0.70496845
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 262,
+            "validation_logloss": 0.10437445,
+            "seconds": 4.369,
+            "validation_auc": 0.70863816
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 153,
+            "validation_logloss": 0.10446428,
+            "seconds": 2.813,
+            "validation_auc": 0.70725681
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 187,
+            "validation_logloss": 0.10441297,
+            "seconds": 3.161,
+            "validation_auc": 0.70712644
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 146,
+            "validation_logloss": 0.10445927,
+            "seconds": 2.985,
+            "validation_auc": 0.70601146
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 169,
+            "validation_logloss": 0.10455168,
+            "seconds": 3.129,
+            "validation_auc": 0.70544029
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 352,
+            "validation_logloss": 0.10435264,
+            "seconds": 5.646,
+            "validation_auc": 0.70860305
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 365,
+            "validation_logloss": 0.1044015,
+            "seconds": 6.786,
+            "validation_auc": 0.70798004
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 196,
+            "validation_logloss": 0.10452295,
+            "seconds": 4.335,
+            "validation_auc": 0.70711447
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 242,
+            "validation_logloss": 0.10432335,
+            "seconds": 4.369,
+            "validation_auc": 0.70850014
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 251,
+            "validation_logloss": 0.10443162,
+            "seconds": 5.253,
+            "validation_auc": 0.70740456
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 213,
+            "validation_logloss": 0.10447446,
+            "seconds": 4.675,
+            "validation_auc": 0.70737657
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 156,
+            "validation_logloss": 0.10440964,
+            "seconds": 2.773,
+            "validation_auc": 0.70736599
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 58,
+            "validation_logloss": 0.10456847,
+            "seconds": 1.808,
+            "validation_auc": 0.70668888
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 73,
+            "validation_logloss": 0.1044196,
+            "seconds": 1.962,
+            "validation_auc": 0.70802489
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 103,
+            "validation_logloss": 0.10437632,
+            "seconds": 2.244,
+            "validation_auc": 0.70828216
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 84,
+            "validation_logloss": 0.10440139,
+            "seconds": 2.287,
+            "validation_auc": 0.7073353
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 103,
+            "validation_logloss": 0.10423702,
+            "seconds": 2.533,
+            "validation_auc": 0.71092996
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 248,
+            "validation_logloss": 0.10439241,
+            "seconds": 4.849,
+            "validation_auc": 0.70850733
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 168,
+            "validation_logloss": 0.10428268,
+            "seconds": 4.313,
+            "validation_auc": 0.71030634
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 160,
+            "validation_logloss": 0.10446753,
+            "seconds": 4.246,
+            "validation_auc": 0.70752824
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 251,
+            "validation_logloss": 0.10430715,
+            "seconds": 5.186,
+            "validation_auc": 0.70873419
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 197,
+            "validation_logloss": 0.10431784,
+            "seconds": 5.214,
+            "validation_auc": 0.70886044
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 164,
+            "validation_logloss": 0.10445642,
+            "seconds": 4.547,
+            "validation_auc": 0.70788621
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 65,
+            "validation_logloss": 0.10449791,
+            "seconds": 1.871,
+            "validation_auc": 0.70504429
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 77,
+            "validation_logloss": 0.10442902,
+            "seconds": 2.28,
+            "validation_auc": 0.70673759
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 24,
+            "validation_logloss": 0.10494232,
+            "seconds": 1.455,
+            "validation_auc": 0.70246749
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 74,
+            "validation_logloss": 0.10445454,
+            "seconds": 2.12,
+            "validation_auc": 0.70649176
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 43,
+            "validation_logloss": 0.10444288,
+            "seconds": 1.911,
+            "validation_auc": 0.70733348
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 45,
+            "validation_logloss": 0.10442194,
+            "seconds": 1.93,
+            "validation_auc": 0.70670912
+          }
+        ],
+        "importances": [
+          {
+            "feature": "sub_grade",
+            "gain": 8177.769547,
+            "splits": 127,
+            "gain_share": 0.365856
+          },
+          {
+            "feature": "annual_inc",
+            "gain": 1951.334682,
+            "splits": 134,
+            "gain_share": 0.087299
+          },
+          {
+            "feature": "purpose",
+            "gain": 1628.946795,
+            "splits": 117,
+            "gain_share": 0.072876
+          },
+          {
+            "feature": "revol_bal",
+            "gain": 1445.961926,
+            "splits": 139,
+            "gain_share": 0.064689
+          },
+          {
+            "feature": "inq_last_6mths",
+            "gain": 1167.0316,
+            "splits": 60,
+            "gain_share": 0.052211
+          },
+          {
+            "feature": "credit_history_months",
+            "gain": 1054.346388,
+            "splits": 106,
+            "gain_share": 0.047169
+          },
+          {
+            "feature": "revol_util",
+            "gain": 1038.909981,
+            "splits": 121,
+            "gain_share": 0.046479
+          },
+          {
+            "feature": "dti",
+            "gain": 932.848628,
+            "splits": 113,
+            "gain_share": 0.041734
+          },
+          {
+            "feature": "mths_since_last_delinq",
+            "gain": 865.62141,
+            "splits": 80,
+            "gain_share": 0.038726
+          },
+          {
+            "feature": "loan_amnt",
+            "gain": 819.835116,
+            "splits": 101,
+            "gain_share": 0.036678
+          },
+          {
+            "feature": "emp_length",
+            "gain": 794.749473,
+            "splits": 72,
+            "gain_share": 0.035555
+          },
+          {
+            "feature": "home_ownership",
+            "gain": 602.910454,
+            "splits": 23,
+            "gain_share": 0.026973
+          },
+          {
+            "feature": "total_acc",
+            "gain": 521.545579,
+            "splits": 58,
+            "gain_share": 0.023333
+          },
+          {
+            "feature": "fico_range_low",
+            "gain": 512.538662,
+            "splits": 70,
+            "gain_share": 0.02293
+          },
+          {
+            "feature": "open_acc",
+            "gain": 363.308309,
+            "splits": 52,
+            "gain_share": 0.016254
+          },
+          {
+            "feature": "verification_status",
+            "gain": 206.324159,
+            "splits": 29,
+            "gain_share": 0.009231
+          },
+          {
+            "feature": "pub_rec",
+            "gain": 135.527089,
+            "splits": 21,
+            "gain_share": 0.006063
+          },
+          {
+            "feature": "term",
+            "gain": 103.348119,
+            "splits": 13,
+            "gain_share": 0.004624
+          },
+          {
+            "feature": "delinq_2yrs",
+            "gain": 23.18184,
+            "splits": 5,
+            "gain_share": 0.001037
+          },
+          {
+            "feature": "pub_rec_bankruptcies",
+            "gain": 6.38933,
+            "splits": 1,
+            "gain_share": 0.000286
+          }
+        ],
+        "notes": [
+          "the early-stopping set is 51684 rows named by the caller, not the pool's time-ordered tail",
+          "the search point was chosen by the validation AUC, not log-loss",
+          "the chosen point sits on the grid's edge: feature_fraction=1.0",
+          "chosen over the runner-up by 6.24e-04 in AUC",
+          "the shipped model was not refitted on the validation rows"
+        ]
+      }
+    },
+    "fold3/gbm-50k/20260911": {
+      "fold": 3,
+      "model": "gbm-50k",
+      "context_seed": 20260911,
+      "fit_rows": 50000,
+      "validation_rows": 51684,
+      "fit_seconds": 2.04,
+      "summary": {
+        "policy": {
+          "num_leaves": [
+            7,
+            15,
+            31
+          ],
+          "learning_rate": [
+            0.03,
+            0.1
+          ],
+          "min_child_samples": [
+            200,
+            1000
+          ],
+          "feature_fraction": [
+            0.4,
+            0.6,
+            1.0
+          ],
+          "grid_points": 36,
+          "max_rounds": 2000,
+          "early_stopping_rounds": 50,
+          "validation_quarters_max": 4,
+          "validation_row_share": 0.2,
+          "min_validation_rows": 1000,
+          "seed": 20260904
+        },
+        "params": {
+          "objective": "binary",
+          "boosting_type": "gbdt",
+          "metric": [
+            "auc",
+            "binary_logloss"
+          ],
+          "bagging_fraction": 1.0,
+          "bagging_freq": 0,
+          "lambda_l1": 0.0,
+          "lambda_l2": 0.0,
+          "min_split_gain": 0.0,
+          "max_bin": 255,
+          "deterministic": true,
+          "force_row_wise": true,
+          "num_leaves": 15,
+          "learning_rate": 0.1,
+          "min_child_samples": 1000,
+          "feature_fraction": 1.0,
+          "first_metric_only": true,
+          "seed": 20260904,
+          "num_threads": 0
+        },
+        "rounds": 36,
+        "seed": 20260904,
+        "train_rows": 101684,
+        "fit_rows": 50000,
+        "train_default_rate": 0.023081,
+        "train_quarters": [
+          "2010Q2",
+          "2010Q3",
+          "2010Q4",
+          "2011Q1",
+          "2011Q2",
+          "2011Q3",
+          "2011Q4",
+          "2012Q1",
+          "2012Q2",
+          "2012Q3",
+          "2012Q4",
+          "2013Q1",
+          "2013Q2",
+          "2013Q3",
+          "2013Q4",
+          "2014Q1",
+          "2014Q2"
+        ],
+        "validation_quarters": [],
+        "validation_rows": 51684,
+        "validation_logloss": 0.10495868,
+        "objective": "auc",
+        "validation_auc": 0.69839107,
+        "refitted": false,
+        "n_features": 20,
+        "unseen_categories": {
+          "home_ownership": 5,
+          "purpose": 14,
+          "verification_status": 3
+        },
+        "trials": [
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 36,
+            "validation_logloss": 0.10495868,
+            "seconds": 0.786,
+            "validation_auc": 0.69839107
+          }
+        ],
+        "importances": [
+          {
+            "feature": "sub_grade",
+            "gain": 1900.111376,
+            "splits": 66,
+            "gain_share": 0.345172
+          },
+          {
+            "feature": "annual_inc",
+            "gain": 524.411489,
+            "splits": 56,
+            "gain_share": 0.095264
+          },
+          {
+            "feature": "revol_util",
+            "gain": 380.441161,
+            "splits": 48,
+            "gain_share": 0.069111
+          },
+          {
+            "feature": "purpose",
+            "gain": 356.293059,
+            "splits": 39,
+            "gain_share": 0.064724
+          },
+          {
+            "feature": "dti",
+            "gain": 315.641278,
+            "splits": 38,
+            "gain_share": 0.057339
+          },
+          {
+            "feature": "revol_bal",
+            "gain": 278.75471,
+            "splits": 34,
+            "gain_share": 0.050638
+          },
+          {
+            "feature": "credit_history_months",
+            "gain": 235.644328,
+            "splits": 32,
+            "gain_share": 0.042807
+          },
+          {
+            "feature": "loan_amnt",
+            "gain": 227.46546,
+            "splits": 32,
+            "gain_share": 0.041321
+          },
+          {
+            "feature": "inq_last_6mths",
+            "gain": 209.872439,
+            "splits": 23,
+            "gain_share": 0.038125
+          },
+          {
+            "feature": "mths_since_last_delinq",
+            "gain": 196.785431,
+            "splits": 23,
+            "gain_share": 0.035748
+          },
+          {
+            "feature": "emp_length",
+            "gain": 176.19536,
+            "splits": 25,
+            "gain_share": 0.032007
+          },
+          {
+            "feature": "fico_range_low",
+            "gain": 155.559962,
+            "splits": 18,
+            "gain_share": 0.028259
+          },
+          {
+            "feature": "total_acc",
+            "gain": 152.936611,
+            "splits": 19,
+            "gain_share": 0.027782
+          },
+          {
+            "feature": "open_acc",
+            "gain": 134.604571,
+            "splits": 20,
+            "gain_share": 0.024452
+          },
+          {
+            "feature": "home_ownership",
+            "gain": 114.410731,
+            "splits": 11,
+            "gain_share": 0.020784
+          },
+          {
+            "feature": "verification_status",
+            "gain": 98.819279,
+            "splits": 13,
+            "gain_share": 0.017951
+          },
+          {
+            "feature": "term",
+            "gain": 25.25196,
+            "splits": 3,
+            "gain_share": 0.004587
+          },
+          {
+            "feature": "pub_rec_bankruptcies",
+            "gain": 13.49269,
+            "splits": 2,
+            "gain_share": 0.002451
+          },
+          {
+            "feature": "pub_rec",
+            "gain": 8.12626,
+            "splits": 2,
+            "gain_share": 0.001476
+          },
+          {
+            "feature": "delinq_2yrs",
+            "gain": 0.0,
+            "splits": 0,
+            "gain_share": 0.0
+          }
+        ],
+        "notes": [
+          "the early-stopping set is 51684 rows named by the caller, not the pool's time-ordered tail",
+          "the search point was chosen by the validation AUC, not log-loss",
+          "every search point stopped within the early-stopping patience; the learning rates in the grid are too high for this pool",
+          "the shipped model was not refitted on the validation rows"
+        ]
+      }
+    },
+    "fold3/gbm-50k/20260912": {
+      "fold": 3,
+      "model": "gbm-50k",
+      "context_seed": 20260912,
+      "fit_rows": 50000,
+      "validation_rows": 51684,
+      "fit_seconds": 1.86,
+      "summary": {
+        "policy": {
+          "num_leaves": [
+            7,
+            15,
+            31
+          ],
+          "learning_rate": [
+            0.03,
+            0.1
+          ],
+          "min_child_samples": [
+            200,
+            1000
+          ],
+          "feature_fraction": [
+            0.4,
+            0.6,
+            1.0
+          ],
+          "grid_points": 36,
+          "max_rounds": 2000,
+          "early_stopping_rounds": 50,
+          "validation_quarters_max": 4,
+          "validation_row_share": 0.2,
+          "min_validation_rows": 1000,
+          "seed": 20260904
+        },
+        "params": {
+          "objective": "binary",
+          "boosting_type": "gbdt",
+          "metric": [
+            "auc",
+            "binary_logloss"
+          ],
+          "bagging_fraction": 1.0,
+          "bagging_freq": 0,
+          "lambda_l1": 0.0,
+          "lambda_l2": 0.0,
+          "min_split_gain": 0.0,
+          "max_bin": 255,
+          "deterministic": true,
+          "force_row_wise": true,
+          "num_leaves": 15,
+          "learning_rate": 0.1,
+          "min_child_samples": 1000,
+          "feature_fraction": 1.0,
+          "first_metric_only": true,
+          "seed": 20260904,
+          "num_threads": 0
+        },
+        "rounds": 16,
+        "seed": 20260904,
+        "train_rows": 101684,
+        "fit_rows": 50000,
+        "train_default_rate": 0.022885,
+        "train_quarters": [
+          "2010Q2",
+          "2010Q3",
+          "2010Q4",
+          "2011Q1",
+          "2011Q2",
+          "2011Q3",
+          "2011Q4",
+          "2012Q1",
+          "2012Q2",
+          "2012Q3",
+          "2012Q4",
+          "2013Q1",
+          "2013Q2",
+          "2013Q3",
+          "2013Q4",
+          "2014Q1",
+          "2014Q2"
+        ],
+        "validation_quarters": [],
+        "validation_rows": 51684,
+        "validation_logloss": 0.10572997,
+        "objective": "auc",
+        "validation_auc": 0.69083093,
+        "refitted": false,
+        "n_features": 20,
+        "unseen_categories": {
+          "home_ownership": 5,
+          "purpose": 14,
+          "verification_status": 3
+        },
+        "trials": [
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 16,
+            "validation_logloss": 0.10572997,
+            "seconds": 0.665,
+            "validation_auc": 0.69083093
+          }
+        ],
+        "importances": [
+          {
+            "feature": "sub_grade",
+            "gain": 1936.938573,
+            "splits": 50,
+            "gain_share": 0.478635
+          },
+          {
+            "feature": "inq_last_6mths",
+            "gain": 276.259183,
+            "splits": 18,
+            "gain_share": 0.068266
+          },
+          {
+            "feature": "annual_inc",
+            "gain": 274.45898,
+            "splits": 25,
+            "gain_share": 0.067821
+          },
+          {
+            "feature": "revol_bal",
+            "gain": 184.716023,
+            "splits": 13,
+            "gain_share": 0.045645
+          },
+          {
+            "feature": "purpose",
+            "gain": 183.166828,
+            "splits": 13,
+            "gain_share": 0.045262
+          },
+          {
+            "feature": "mths_since_last_delinq",
+            "gain": 180.8897,
+            "splits": 14,
+            "gain_share": 0.044699
+          },
+          {
+            "feature": "revol_util",
+            "gain": 168.92222,
+            "splits": 14,
+            "gain_share": 0.041742
+          },
+          {
+            "feature": "total_acc",
+            "gain": 142.24852,
+            "splits": 9,
+            "gain_share": 0.035151
+          },
+          {
+            "feature": "emp_length",
+            "gain": 114.834721,
+            "splits": 12,
+            "gain_share": 0.028377
+          },
+          {
+            "feature": "home_ownership",
+            "gain": 114.462841,
+            "splits": 6,
+            "gain_share": 0.028285
+          },
+          {
+            "feature": "credit_history_months",
+            "gain": 111.421929,
+            "splits": 12,
+            "gain_share": 0.027533
+          },
+          {
+            "feature": "dti",
+            "gain": 109.85168,
+            "splits": 13,
+            "gain_share": 0.027145
+          },
+          {
+            "feature": "open_acc",
+            "gain": 93.372979,
+            "splits": 6,
+            "gain_share": 0.023073
+          },
+          {
+            "feature": "fico_range_low",
+            "gain": 56.69065,
+            "splits": 6,
+            "gain_share": 0.014009
+          },
+          {
+            "feature": "loan_amnt",
+            "gain": 49.558329,
+            "splits": 6,
+            "gain_share": 0.012246
+          },
+          {
+            "feature": "verification_status",
+            "gain": 34.887881,
+            "splits": 5,
+            "gain_share": 0.008621
+          },
+          {
+            "feature": "term",
+            "gain": 14.11738,
+            "splits": 2,
+            "gain_share": 0.003489
+          },
+          {
+            "feature": "delinq_2yrs",
+            "gain": 0.0,
+            "splits": 0,
+            "gain_share": 0.0
+          },
+          {
+            "feature": "pub_rec",
+            "gain": 0.0,
+            "splits": 0,
+            "gain_share": 0.0
+          },
+          {
+            "feature": "pub_rec_bankruptcies",
+            "gain": 0.0,
+            "splits": 0,
+            "gain_share": 0.0
+          }
+        ],
+        "notes": [
+          "the early-stopping set is 51684 rows named by the caller, not the pool's time-ordered tail",
+          "the search point was chosen by the validation AUC, not log-loss",
+          "every search point stopped within the early-stopping patience; the learning rates in the grid are too high for this pool",
+          "the shipped model was not refitted on the validation rows"
+        ]
+      }
+    },
+    "fold3/gbm-50k/20260913": {
+      "fold": 3,
+      "model": "gbm-50k",
+      "context_seed": 20260913,
+      "fit_rows": 50000,
+      "validation_rows": 51684,
+      "fit_seconds": 1.83,
+      "summary": {
+        "policy": {
+          "num_leaves": [
+            7,
+            15,
+            31
+          ],
+          "learning_rate": [
+            0.03,
+            0.1
+          ],
+          "min_child_samples": [
+            200,
+            1000
+          ],
+          "feature_fraction": [
+            0.4,
+            0.6,
+            1.0
+          ],
+          "grid_points": 36,
+          "max_rounds": 2000,
+          "early_stopping_rounds": 50,
+          "validation_quarters_max": 4,
+          "validation_row_share": 0.2,
+          "min_validation_rows": 1000,
+          "seed": 20260904
+        },
+        "params": {
+          "objective": "binary",
+          "boosting_type": "gbdt",
+          "metric": [
+            "auc",
+            "binary_logloss"
+          ],
+          "bagging_fraction": 1.0,
+          "bagging_freq": 0,
+          "lambda_l1": 0.0,
+          "lambda_l2": 0.0,
+          "min_split_gain": 0.0,
+          "max_bin": 255,
+          "deterministic": true,
+          "force_row_wise": true,
+          "num_leaves": 15,
+          "learning_rate": 0.1,
+          "min_child_samples": 1000,
+          "feature_fraction": 1.0,
+          "first_metric_only": true,
+          "seed": 20260904,
+          "num_threads": 0
+        },
+        "rounds": 23,
+        "seed": 20260904,
+        "train_rows": 101684,
+        "fit_rows": 50000,
+        "train_default_rate": 0.022826,
+        "train_quarters": [
+          "2010Q2",
+          "2010Q3",
+          "2010Q4",
+          "2011Q1",
+          "2011Q2",
+          "2011Q3",
+          "2011Q4",
+          "2012Q1",
+          "2012Q2",
+          "2012Q3",
+          "2012Q4",
+          "2013Q1",
+          "2013Q2",
+          "2013Q3",
+          "2013Q4",
+          "2014Q1",
+          "2014Q2"
+        ],
+        "validation_quarters": [],
+        "validation_rows": 51684,
+        "validation_logloss": 0.10531174,
+        "objective": "auc",
+        "validation_auc": 0.69415417,
+        "refitted": false,
+        "n_features": 20,
+        "unseen_categories": {
+          "home_ownership": 5,
+          "purpose": 14,
+          "verification_status": 3
+        },
+        "trials": [
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 23,
+            "validation_logloss": 0.10531174,
+            "seconds": 0.717,
+            "validation_auc": 0.69415417
+          }
+        ],
+        "importances": [
+          {
+            "feature": "sub_grade",
+            "gain": 2197.106252,
+            "splits": 57,
+            "gain_share": 0.427217
+          },
+          {
+            "feature": "purpose",
+            "gain": 467.836361,
+            "splits": 33,
+            "gain_share": 0.090968
+          },
+          {
+            "feature": "annual_inc",
+            "gain": 435.94012,
+            "splits": 35,
+            "gain_share": 0.084766
+          },
+          {
+            "feature": "inq_last_6mths",
+            "gain": 305.04293,
+            "splits": 25,
+            "gain_share": 0.059314
+          },
+          {
+            "feature": "mths_since_last_delinq",
+            "gain": 245.611509,
+            "splits": 19,
+            "gain_share": 0.047758
+          },
+          {
+            "feature": "revol_bal",
+            "gain": 185.776069,
+            "splits": 22,
+            "gain_share": 0.036123
+          },
+          {
+            "feature": "home_ownership",
+            "gain": 184.37535,
+            "splits": 13,
+            "gain_share": 0.035851
+          },
+          {
+            "feature": "dti",
+            "gain": 174.438961,
+            "splits": 19,
+            "gain_share": 0.033919
+          },
+          {
+            "feature": "total_acc",
+            "gain": 167.238948,
+            "splits": 13,
+            "gain_share": 0.032519
+          },
+          {
+            "feature": "emp_length",
+            "gain": 162.535761,
+            "splits": 16,
+            "gain_share": 0.031604
+          },
+          {
+            "feature": "loan_amnt",
+            "gain": 160.611701,
+            "splits": 18,
+            "gain_share": 0.03123
+          },
+          {
+            "feature": "credit_history_months",
+            "gain": 144.598832,
+            "splits": 13,
+            "gain_share": 0.028117
+          },
+          {
+            "feature": "revol_util",
+            "gain": 117.52157,
+            "splits": 14,
+            "gain_share": 0.022851
+          },
+          {
+            "feature": "fico_range_low",
+            "gain": 75.83853,
+            "splits": 10,
+            "gain_share": 0.014746
+          },
+          {
+            "feature": "pub_rec_bankruptcies",
+            "gain": 32.527069,
+            "splits": 4,
+            "gain_share": 0.006325
+          },
+          {
+            "feature": "verification_status",
+            "gain": 31.673931,
+            "splits": 4,
+            "gain_share": 0.006159
+          },
+          {
+            "feature": "open_acc",
+            "gain": 22.60206,
+            "splits": 3,
+            "gain_share": 0.004395
+          },
+          {
+            "feature": "term",
+            "gain": 16.27135,
+            "splits": 2,
+            "gain_share": 0.003164
+          },
+          {
+            "feature": "pub_rec",
+            "gain": 15.29224,
+            "splits": 2,
+            "gain_share": 0.002974
+          },
+          {
+            "feature": "delinq_2yrs",
+            "gain": 0.0,
+            "splits": 0,
+            "gain_share": 0.0
+          }
+        ],
+        "notes": [
+          "the early-stopping set is 51684 rows named by the caller, not the pool's time-ordered tail",
+          "the search point was chosen by the validation AUC, not log-loss",
+          "every search point stopped within the early-stopping patience; the learning rates in the grid are too high for this pool",
+          "the shipped model was not refitted on the validation rows"
+        ]
+      }
+    },
+    "fold4/scorecard": {
+      "fold": 4,
+      "model": "scorecard",
+      "context_seed": null,
+      "fit_rows": 206737,
+      "validation_rows": 51684,
+      "fit_seconds": 3.82,
+      "summary": {
+        "policy": {
+          "iv_min": 0.02,
+          "max_characteristics": 20,
+          "monotonic_trend": "auto_asc_desc",
+          "max_n_prebins": 20,
+          "min_prebin_size": 0.02,
+          "min_bin_size": 0.05,
+          "max_n_bins": 6,
+          "min_missing_count": 100,
+          "drop_wrong_sign": true,
+          "solver": "mip",
+          "mip_solver": "bop",
+          "solver_time_limit": 100,
+          "logistic_tol": 1e-08
+        },
+        "train_rows": 206737,
+        "train_default_rate": 0.023329,
+        "intercept": -3.735013,
+        "characteristics": [
+          {
+            "name": "annual_inc",
+            "dtype": "numerical",
+            "iv": 0.065274,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.754951
+          },
+          {
+            "name": "credit_history_months",
+            "dtype": "numerical",
+            "iv": 0.045643,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.31419
+          },
+          {
+            "name": "emp_length",
+            "dtype": "numerical",
+            "iv": 0.028524,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.625499
+          },
+          {
+            "name": "fico_range_low",
+            "dtype": "numerical",
+            "iv": 0.075486,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.024299
+          },
+          {
+            "name": "home_ownership",
+            "dtype": "categorical",
+            "iv": 0.034558,
+            "n_bins": 3,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.34216
+          },
+          {
+            "name": "inq_last_6mths",
+            "dtype": "numerical",
+            "iv": 0.079443,
+            "n_bins": 4,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.686368
+          },
+          {
+            "name": "purpose",
+            "dtype": "categorical",
+            "iv": 0.086098,
+            "n_bins": 4,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.60079
+          },
+          {
+            "name": "revol_bal",
+            "dtype": "numerical",
+            "iv": 0.022951,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.210021
+          },
+          {
+            "name": "sub_grade",
+            "dtype": "numerical",
+            "iv": 0.330047,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.821521
+          },
+          {
+            "name": "term",
+            "dtype": "numerical",
+            "iv": 0.03226,
+            "n_bins": 2,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.195567
+          },
+          {
+            "name": "total_acc",
+            "dtype": "numerical",
+            "iv": 0.023458,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.12479
+          }
+        ],
+        "n_characteristics": 11,
+        "constant_on_train": [],
+        "screened_out": [
+          "delinq_2yrs",
+          "dti",
+          "loan_amnt",
+          "mths_since_last_delinq",
+          "open_acc",
+          "pub_rec",
+          "pub_rec_bankruptcies",
+          "revol_util",
+          "verification_status"
+        ],
+        "dropped_wrong_sign": [],
+        "neutral_missing": [],
+        "iv_all": [
+          {
+            "name": "sub_grade",
+            "iv": 0.330047
+          },
+          {
+            "name": "purpose",
+            "iv": 0.086098
+          },
+          {
+            "name": "inq_last_6mths",
+            "iv": 0.079443
+          },
+          {
+            "name": "fico_range_low",
+            "iv": 0.075486
+          },
+          {
+            "name": "annual_inc",
+            "iv": 0.065274
+          },
+          {
+            "name": "credit_history_months",
+            "iv": 0.045643
+          },
+          {
+            "name": "home_ownership",
+            "iv": 0.034558
+          },
+          {
+            "name": "term",
+            "iv": 0.03226
+          },
+          {
+            "name": "emp_length",
+            "iv": 0.028524
+          },
+          {
+            "name": "total_acc",
+            "iv": 0.023458
+          },
+          {
+            "name": "revol_bal",
+            "iv": 0.022951
+          },
+          {
+            "name": "revol_util",
+            "iv": 0.016243
+          },
+          {
+            "name": "open_acc",
+            "iv": 0.013991
+          },
+          {
+            "name": "loan_amnt",
+            "iv": 0.009549
+          },
+          {
+            "name": "verification_status",
+            "iv": 0.008405
+          },
+          {
+            "name": "mths_since_last_delinq",
+            "iv": 0.003567
+          },
+          {
+            "name": "pub_rec",
+            "iv": 0.000743
+          },
+          {
+            "name": "delinq_2yrs",
+            "iv": 0.000652
+          },
+          {
+            "name": "pub_rec_bankruptcies",
+            "iv": 0.000651
+          },
+          {
+            "name": "dti",
+            "iv": 0.0
+          }
+        ],
+        "notes": []
+      }
+    },
+    "fold4/gbm": {
+      "fold": 4,
+      "model": "gbm",
+      "context_seed": null,
+      "fit_rows": 206737,
+      "validation_rows": 51684,
+      "fit_seconds": 174.3,
+      "summary": {
+        "policy": {
+          "num_leaves": [
+            7,
+            15,
+            31
+          ],
+          "learning_rate": [
+            0.03,
+            0.1
+          ],
+          "min_child_samples": [
+            200,
+            1000
+          ],
+          "feature_fraction": [
+            0.4,
+            0.6,
+            1.0
+          ],
+          "grid_points": 36,
+          "max_rounds": 2000,
+          "early_stopping_rounds": 50,
+          "validation_quarters_max": 4,
+          "validation_row_share": 0.2,
+          "min_validation_rows": 1000,
+          "seed": 20260904
+        },
+        "params": {
+          "objective": "binary",
+          "boosting_type": "gbdt",
+          "metric": [
+            "auc",
+            "binary_logloss"
+          ],
+          "bagging_fraction": 1.0,
+          "bagging_freq": 0,
+          "lambda_l1": 0.0,
+          "lambda_l2": 0.0,
+          "min_split_gain": 0.0,
+          "max_bin": 255,
+          "deterministic": true,
+          "force_row_wise": true,
+          "num_leaves": 7,
+          "learning_rate": 0.1,
+          "min_child_samples": 1000,
+          "feature_fraction": 0.6,
+          "first_metric_only": true,
+          "seed": 20260904,
+          "num_threads": 0
+        },
+        "rounds": 217,
+        "seed": 20260904,
+        "train_rows": 258421,
+        "fit_rows": 206737,
+        "train_default_rate": 0.02333,
+        "train_quarters": [
+          "2010Q2",
+          "2010Q3",
+          "2010Q4",
+          "2011Q1",
+          "2011Q2",
+          "2011Q3",
+          "2011Q4",
+          "2012Q1",
+          "2012Q2",
+          "2012Q3",
+          "2012Q4",
+          "2013Q1",
+          "2013Q2",
+          "2013Q3",
+          "2013Q4",
+          "2014Q1",
+          "2014Q2"
+        ],
+        "validation_quarters": [],
+        "validation_rows": 51684,
+        "validation_logloss": 0.10490947,
+        "objective": "auc",
+        "validation_auc": 0.70225145,
+        "refitted": false,
+        "n_features": 20,
+        "unseen_categories": {
+          "home_ownership": 5,
+          "purpose": 14,
+          "verification_status": 3
+        },
+        "trials": [
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 555,
+            "validation_logloss": 0.10499739,
+            "seconds": 7.398,
+            "validation_auc": 0.699679
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 625,
+            "validation_logloss": 0.1050167,
+            "seconds": 9.485,
+            "validation_auc": 0.70004104
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 481,
+            "validation_logloss": 0.10512187,
+            "seconds": 7.552,
+            "validation_auc": 0.69758871
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 401,
+            "validation_logloss": 0.10502898,
+            "seconds": 5.919,
+            "validation_auc": 0.69889291
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 676,
+            "validation_logloss": 0.10488387,
+            "seconds": 10.511,
+            "validation_auc": 0.70116818
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 590,
+            "validation_logloss": 0.10491019,
+            "seconds": 9.222,
+            "validation_auc": 0.70063654
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 133,
+            "validation_logloss": 0.10498806,
+            "seconds": 2.351,
+            "validation_auc": 0.69903656
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 123,
+            "validation_logloss": 0.10510037,
+            "seconds": 2.504,
+            "validation_auc": 0.69923515
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 211,
+            "validation_logloss": 0.10526647,
+            "seconds": 3.605,
+            "validation_auc": 0.69651275
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 179,
+            "validation_logloss": 0.1049338,
+            "seconds": 2.937,
+            "validation_auc": 0.70058931
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 217,
+            "validation_logloss": 0.10490947,
+            "seconds": 3.84,
+            "validation_auc": 0.70225145
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 187,
+            "validation_logloss": 0.10496608,
+            "seconds": 3.399,
+            "validation_auc": 0.70011711
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 374,
+            "validation_logloss": 0.10495589,
+            "seconds": 5.992,
+            "validation_auc": 0.70087057
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 471,
+            "validation_logloss": 0.10507842,
+            "seconds": 8.281,
+            "validation_auc": 0.69910584
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 292,
+            "validation_logloss": 0.10511163,
+            "seconds": 5.698,
+            "validation_auc": 0.69764598
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 420,
+            "validation_logloss": 0.10483752,
+            "seconds": 6.914,
+            "validation_auc": 0.70191638
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 369,
+            "validation_logloss": 0.10490106,
+            "seconds": 7.079,
+            "validation_auc": 0.70127295
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 408,
+            "validation_logloss": 0.10490965,
+            "seconds": 7.743,
+            "validation_auc": 0.70006778
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 138,
+            "validation_logloss": 0.10500102,
+            "seconds": 2.58,
+            "validation_auc": 0.70013356
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 150,
+            "validation_logloss": 0.10509736,
+            "seconds": 3.134,
+            "validation_auc": 0.69924871
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 139,
+            "validation_logloss": 0.10525307,
+            "seconds": 2.921,
+            "validation_auc": 0.69590959
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 118,
+            "validation_logloss": 0.1049723,
+            "seconds": 2.417,
+            "validation_auc": 0.70055855
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 137,
+            "validation_logloss": 0.10512027,
+            "seconds": 3.098,
+            "validation_auc": 0.69873554
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 73,
+            "validation_logloss": 0.1051541,
+            "seconds": 2.091,
+            "validation_auc": 0.69647845
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 233,
+            "validation_logloss": 0.10488544,
+            "seconds": 4.674,
+            "validation_auc": 0.70195876
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 235,
+            "validation_logloss": 0.10498615,
+            "seconds": 5.46,
+            "validation_auc": 0.69916661
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 160,
+            "validation_logloss": 0.10523691,
+            "seconds": 4.199,
+            "validation_auc": 0.69498229
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 269,
+            "validation_logloss": 0.10494695,
+            "seconds": 5.62,
+            "validation_auc": 0.70205321
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 177,
+            "validation_logloss": 0.10492647,
+            "seconds": 4.795,
+            "validation_auc": 0.69992237
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 222,
+            "validation_logloss": 0.1050277,
+            "seconds": 5.745,
+            "validation_auc": 0.69825032
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 52,
+            "validation_logloss": 0.10508725,
+            "seconds": 1.648,
+            "validation_auc": 0.69876884
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 43,
+            "validation_logloss": 0.10514419,
+            "seconds": 1.77,
+            "validation_auc": 0.69797822
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 44,
+            "validation_logloss": 0.10544772,
+            "seconds": 1.772,
+            "validation_auc": 0.69214862
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 90,
+            "validation_logloss": 0.10507307,
+            "seconds": 2.46,
+            "validation_auc": 0.69898787
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 57,
+            "validation_logloss": 0.1050263,
+            "seconds": 2.155,
+            "validation_auc": 0.69942175
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 76,
+            "validation_logloss": 0.10507175,
+            "seconds": 2.529,
+            "validation_auc": 0.69814359
+          }
+        ],
+        "importances": [
+          {
+            "feature": "sub_grade",
+            "gain": 8084.414572,
+            "splits": 119,
+            "gain_share": 0.393757
+          },
+          {
+            "feature": "purpose",
+            "gain": 1911.792595,
+            "splits": 108,
+            "gain_share": 0.093115
+          },
+          {
+            "feature": "annual_inc",
+            "gain": 1648.337194,
+            "splits": 114,
+            "gain_share": 0.080283
+          },
+          {
+            "feature": "inq_last_6mths",
+            "gain": 1126.149943,
+            "splits": 48,
+            "gain_share": 0.05485
+          },
+          {
+            "feature": "revol_bal",
+            "gain": 1000.531147,
+            "splits": 109,
+            "gain_share": 0.048732
+          },
+          {
+            "feature": "credit_history_months",
+            "gain": 958.662042,
+            "splits": 88,
+            "gain_share": 0.046692
+          },
+          {
+            "feature": "revol_util",
+            "gain": 853.432776,
+            "splits": 120,
+            "gain_share": 0.041567
+          },
+          {
+            "feature": "dti",
+            "gain": 822.807604,
+            "splits": 95,
+            "gain_share": 0.040075
+          },
+          {
+            "feature": "emp_length",
+            "gain": 800.382584,
+            "splits": 59,
+            "gain_share": 0.038983
+          },
+          {
+            "feature": "mths_since_last_delinq",
+            "gain": 740.41677,
+            "splits": 87,
+            "gain_share": 0.036063
+          },
+          {
+            "feature": "loan_amnt",
+            "gain": 678.684822,
+            "splits": 87,
+            "gain_share": 0.033056
+          },
+          {
+            "feature": "fico_range_low",
+            "gain": 558.747478,
+            "splits": 68,
+            "gain_share": 0.027214
+          },
+          {
+            "feature": "total_acc",
+            "gain": 435.737018,
+            "splits": 72,
+            "gain_share": 0.021223
+          },
+          {
+            "feature": "home_ownership",
+            "gain": 338.72471,
+            "splits": 20,
+            "gain_share": 0.016498
+          },
+          {
+            "feature": "open_acc",
+            "gain": 257.564891,
+            "splits": 45,
+            "gain_share": 0.012545
+          },
+          {
+            "feature": "verification_status",
+            "gain": 105.55347,
+            "splits": 21,
+            "gain_share": 0.005141
+          },
+          {
+            "feature": "pub_rec",
+            "gain": 83.652109,
+            "splits": 20,
+            "gain_share": 0.004074
+          },
+          {
+            "feature": "term",
+            "gain": 66.727449,
+            "splits": 15,
+            "gain_share": 0.00325
+          },
+          {
+            "feature": "pub_rec_bankruptcies",
+            "gain": 37.35262,
+            "splits": 3,
+            "gain_share": 0.001819
+          },
+          {
+            "feature": "delinq_2yrs",
+            "gain": 21.799321,
+            "splits": 4,
+            "gain_share": 0.001062
+          }
+        ],
+        "notes": [
+          "the early-stopping set is 51684 rows named by the caller, not the pool's time-ordered tail",
+          "the search point was chosen by the validation AUC, not log-loss",
+          "the chosen point sits on the grid's edge: num_leaves=7",
+          "chosen over the runner-up by 1.98e-04 in AUC",
+          "the shipped model was not refitted on the validation rows"
+        ]
+      }
+    },
+    "fold4/gbm-50k/20260911": {
+      "fold": 4,
+      "model": "gbm-50k",
+      "context_seed": 20260911,
+      "fit_rows": 50000,
+      "validation_rows": 51684,
+      "fit_seconds": 2.14,
+      "summary": {
+        "policy": {
+          "num_leaves": [
+            7,
+            15,
+            31
+          ],
+          "learning_rate": [
+            0.03,
+            0.1
+          ],
+          "min_child_samples": [
+            200,
+            1000
+          ],
+          "feature_fraction": [
+            0.4,
+            0.6,
+            1.0
+          ],
+          "grid_points": 36,
+          "max_rounds": 2000,
+          "early_stopping_rounds": 50,
+          "validation_quarters_max": 4,
+          "validation_row_share": 0.2,
+          "min_validation_rows": 1000,
+          "seed": 20260904
+        },
+        "params": {
+          "objective": "binary",
+          "boosting_type": "gbdt",
+          "metric": [
+            "auc",
+            "binary_logloss"
+          ],
+          "bagging_fraction": 1.0,
+          "bagging_freq": 0,
+          "lambda_l1": 0.0,
+          "lambda_l2": 0.0,
+          "min_split_gain": 0.0,
+          "max_bin": 255,
+          "deterministic": true,
+          "force_row_wise": true,
+          "num_leaves": 7,
+          "learning_rate": 0.1,
+          "min_child_samples": 1000,
+          "feature_fraction": 0.6,
+          "first_metric_only": true,
+          "seed": 20260904,
+          "num_threads": 0
+        },
+        "rounds": 49,
+        "seed": 20260904,
+        "train_rows": 101684,
+        "fit_rows": 50000,
+        "train_default_rate": 0.023327,
+        "train_quarters": [
+          "2010Q2",
+          "2010Q3",
+          "2010Q4",
+          "2011Q1",
+          "2011Q2",
+          "2011Q3",
+          "2011Q4",
+          "2012Q1",
+          "2012Q2",
+          "2012Q3",
+          "2012Q4",
+          "2013Q1",
+          "2013Q2",
+          "2013Q3",
+          "2013Q4",
+          "2014Q1",
+          "2014Q2"
+        ],
+        "validation_quarters": [],
+        "validation_rows": 51684,
+        "validation_logloss": 0.10573618,
+        "objective": "auc",
+        "validation_auc": 0.6857988,
+        "refitted": false,
+        "n_features": 20,
+        "unseen_categories": {
+          "home_ownership": 5,
+          "purpose": 14,
+          "verification_status": 3
+        },
+        "trials": [
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 49,
+            "validation_logloss": 0.10573618,
+            "seconds": 0.898,
+            "validation_auc": 0.6857988
+          }
+        ],
+        "importances": [
+          {
+            "feature": "sub_grade",
+            "gain": 1798.162416,
+            "splits": 53,
+            "gain_share": 0.403247
+          },
+          {
+            "feature": "purpose",
+            "gain": 330.960929,
+            "splits": 28,
+            "gain_share": 0.07422
+          },
+          {
+            "feature": "credit_history_months",
+            "gain": 270.875122,
+            "splits": 15,
+            "gain_share": 0.060745
+          },
+          {
+            "feature": "dti",
+            "gain": 266.059152,
+            "splits": 24,
+            "gain_share": 0.059665
+          },
+          {
+            "feature": "emp_length",
+            "gain": 256.50393,
+            "splits": 22,
+            "gain_share": 0.057522
+          },
+          {
+            "feature": "annual_inc",
+            "gain": 253.356961,
+            "splits": 20,
+            "gain_share": 0.056817
+          },
+          {
+            "feature": "inq_last_6mths",
+            "gain": 236.20213,
+            "splits": 20,
+            "gain_share": 0.05297
+          },
+          {
+            "feature": "fico_range_low",
+            "gain": 193.820563,
+            "splits": 15,
+            "gain_share": 0.043465
+          },
+          {
+            "feature": "revol_util",
+            "gain": 171.40317,
+            "splits": 18,
+            "gain_share": 0.038438
+          },
+          {
+            "feature": "revol_bal",
+            "gain": 148.677419,
+            "splits": 17,
+            "gain_share": 0.033342
+          },
+          {
+            "feature": "mths_since_last_delinq",
+            "gain": 132.196601,
+            "splits": 14,
+            "gain_share": 0.029646
+          },
+          {
+            "feature": "loan_amnt",
+            "gain": 103.6247,
+            "splits": 15,
+            "gain_share": 0.023238
+          },
+          {
+            "feature": "home_ownership",
+            "gain": 92.60772,
+            "splits": 7,
+            "gain_share": 0.020768
+          },
+          {
+            "feature": "total_acc",
+            "gain": 90.676249,
+            "splits": 11,
+            "gain_share": 0.020335
+          },
+          {
+            "feature": "open_acc",
+            "gain": 48.186671,
+            "splits": 7,
+            "gain_share": 0.010806
+          },
+          {
+            "feature": "delinq_2yrs",
+            "gain": 43.61547,
+            "splits": 4,
+            "gain_share": 0.009781
+          },
+          {
+            "feature": "pub_rec",
+            "gain": 22.279871,
+            "splits": 4,
+            "gain_share": 0.004996
+          },
+          {
+            "feature": "pub_rec_bankruptcies",
+            "gain": 0.0,
+            "splits": 0,
+            "gain_share": 0.0
+          },
+          {
+            "feature": "term",
+            "gain": 0.0,
+            "splits": 0,
+            "gain_share": 0.0
+          },
+          {
+            "feature": "verification_status",
+            "gain": 0.0,
+            "splits": 0,
+            "gain_share": 0.0
+          }
+        ],
+        "notes": [
+          "the early-stopping set is 51684 rows named by the caller, not the pool's time-ordered tail",
+          "the search point was chosen by the validation AUC, not log-loss",
+          "every search point stopped within the early-stopping patience; the learning rates in the grid are too high for this pool",
+          "the shipped model was not refitted on the validation rows"
+        ]
+      }
+    },
+    "fold4/gbm-50k/20260912": {
+      "fold": 4,
+      "model": "gbm-50k",
+      "context_seed": 20260912,
+      "fit_rows": 50000,
+      "validation_rows": 51684,
+      "fit_seconds": 1.88,
+      "summary": {
+        "policy": {
+          "num_leaves": [
+            7,
+            15,
+            31
+          ],
+          "learning_rate": [
+            0.03,
+            0.1
+          ],
+          "min_child_samples": [
+            200,
+            1000
+          ],
+          "feature_fraction": [
+            0.4,
+            0.6,
+            1.0
+          ],
+          "grid_points": 36,
+          "max_rounds": 2000,
+          "early_stopping_rounds": 50,
+          "validation_quarters_max": 4,
+          "validation_row_share": 0.2,
+          "min_validation_rows": 1000,
+          "seed": 20260904
+        },
+        "params": {
+          "objective": "binary",
+          "boosting_type": "gbdt",
+          "metric": [
+            "auc",
+            "binary_logloss"
+          ],
+          "bagging_fraction": 1.0,
+          "bagging_freq": 0,
+          "lambda_l1": 0.0,
+          "lambda_l2": 0.0,
+          "min_split_gain": 0.0,
+          "max_bin": 255,
+          "deterministic": true,
+          "force_row_wise": true,
+          "num_leaves": 7,
+          "learning_rate": 0.1,
+          "min_child_samples": 1000,
+          "feature_fraction": 0.6,
+          "first_metric_only": true,
+          "seed": 20260904,
+          "num_threads": 0
+        },
+        "rounds": 31,
+        "seed": 20260904,
+        "train_rows": 101684,
+        "fit_rows": 50000,
+        "train_default_rate": 0.023052,
+        "train_quarters": [
+          "2010Q2",
+          "2010Q3",
+          "2010Q4",
+          "2011Q1",
+          "2011Q2",
+          "2011Q3",
+          "2011Q4",
+          "2012Q1",
+          "2012Q2",
+          "2012Q3",
+          "2012Q4",
+          "2013Q1",
+          "2013Q2",
+          "2013Q3",
+          "2013Q4",
+          "2014Q1",
+          "2014Q2"
+        ],
+        "validation_quarters": [],
+        "validation_rows": 51684,
+        "validation_logloss": 0.10583995,
+        "objective": "auc",
+        "validation_auc": 0.68833943,
+        "refitted": false,
+        "n_features": 20,
+        "unseen_categories": {
+          "home_ownership": 5,
+          "purpose": 14,
+          "verification_status": 3
+        },
+        "trials": [
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 31,
+            "validation_logloss": 0.10583995,
+            "seconds": 0.699,
+            "validation_auc": 0.68833943
+          }
+        ],
+        "importances": [
+          {
+            "feature": "sub_grade",
+            "gain": 1745.036043,
+            "splits": 40,
+            "gain_share": 0.459035
+          },
+          {
+            "feature": "inq_last_6mths",
+            "gain": 311.532422,
+            "splits": 14,
+            "gain_share": 0.081949
+          },
+          {
+            "feature": "purpose",
+            "gain": 301.989179,
+            "splits": 20,
+            "gain_share": 0.079439
+          },
+          {
+            "feature": "annual_inc",
+            "gain": 273.433321,
+            "splits": 18,
+            "gain_share": 0.071927
+          },
+          {
+            "feature": "mths_since_last_delinq",
+            "gain": 221.146051,
+            "splits": 16,
+            "gain_share": 0.058173
+          },
+          {
+            "feature": "credit_history_months",
+            "gain": 214.298789,
+            "splits": 16,
+            "gain_share": 0.056372
+          },
+          {
+            "feature": "dti",
+            "gain": 139.64209,
+            "splits": 11,
+            "gain_share": 0.036733
+          },
+          {
+            "feature": "revol_util",
+            "gain": 138.250361,
+            "splits": 12,
+            "gain_share": 0.036367
+          },
+          {
+            "feature": "emp_length",
+            "gain": 122.710051,
+            "splits": 10,
+            "gain_share": 0.032279
+          },
+          {
+            "feature": "revol_bal",
+            "gain": 98.33765,
+            "splits": 8,
+            "gain_share": 0.025868
+          },
+          {
+            "feature": "loan_amnt",
+            "gain": 71.32823,
+            "splits": 6,
+            "gain_share": 0.018763
+          },
+          {
+            "feature": "total_acc",
+            "gain": 60.26907,
+            "splits": 6,
+            "gain_share": 0.015854
+          },
+          {
+            "feature": "home_ownership",
+            "gain": 33.066099,
+            "splits": 2,
+            "gain_share": 0.008698
+          },
+          {
+            "feature": "open_acc",
+            "gain": 29.97466,
+            "splits": 4,
+            "gain_share": 0.007885
+          },
+          {
+            "feature": "fico_range_low",
+            "gain": 22.533701,
+            "splits": 1,
+            "gain_share": 0.005928
+          },
+          {
+            "feature": "verification_status",
+            "gain": 9.89021,
+            "splits": 1,
+            "gain_share": 0.002602
+          },
+          {
+            "feature": "pub_rec_bankruptcies",
+            "gain": 8.0921,
+            "splits": 1,
+            "gain_share": 0.002129
+          },
+          {
+            "feature": "delinq_2yrs",
+            "gain": 0.0,
+            "splits": 0,
+            "gain_share": 0.0
+          },
+          {
+            "feature": "pub_rec",
+            "gain": 0.0,
+            "splits": 0,
+            "gain_share": 0.0
+          },
+          {
+            "feature": "term",
+            "gain": 0.0,
+            "splits": 0,
+            "gain_share": 0.0
+          }
+        ],
+        "notes": [
+          "the early-stopping set is 51684 rows named by the caller, not the pool's time-ordered tail",
+          "the search point was chosen by the validation AUC, not log-loss",
+          "every search point stopped within the early-stopping patience; the learning rates in the grid are too high for this pool",
+          "the shipped model was not refitted on the validation rows"
+        ]
+      }
+    },
+    "fold4/gbm-50k/20260913": {
+      "fold": 4,
+      "model": "gbm-50k",
+      "context_seed": 20260913,
+      "fit_rows": 50000,
+      "validation_rows": 51684,
+      "fit_seconds": 2.09,
+      "summary": {
+        "policy": {
+          "num_leaves": [
+            7,
+            15,
+            31
+          ],
+          "learning_rate": [
+            0.03,
+            0.1
+          ],
+          "min_child_samples": [
+            200,
+            1000
+          ],
+          "feature_fraction": [
+            0.4,
+            0.6,
+            1.0
+          ],
+          "grid_points": 36,
+          "max_rounds": 2000,
+          "early_stopping_rounds": 50,
+          "validation_quarters_max": 4,
+          "validation_row_share": 0.2,
+          "min_validation_rows": 1000,
+          "seed": 20260904
+        },
+        "params": {
+          "objective": "binary",
+          "boosting_type": "gbdt",
+          "metric": [
+            "auc",
+            "binary_logloss"
+          ],
+          "bagging_fraction": 1.0,
+          "bagging_freq": 0,
+          "lambda_l1": 0.0,
+          "lambda_l2": 0.0,
+          "min_split_gain": 0.0,
+          "max_bin": 255,
+          "deterministic": true,
+          "force_row_wise": true,
+          "num_leaves": 7,
+          "learning_rate": 0.1,
+          "min_child_samples": 1000,
+          "feature_fraction": 0.6,
+          "first_metric_only": true,
+          "seed": 20260904,
+          "num_threads": 0
+        },
+        "rounds": 60,
+        "seed": 20260904,
+        "train_rows": 101684,
+        "fit_rows": 50000,
+        "train_default_rate": 0.023386,
+        "train_quarters": [
+          "2010Q2",
+          "2010Q3",
+          "2010Q4",
+          "2011Q1",
+          "2011Q2",
+          "2011Q3",
+          "2011Q4",
+          "2012Q1",
+          "2012Q2",
+          "2012Q3",
+          "2012Q4",
+          "2013Q1",
+          "2013Q2",
+          "2013Q3",
+          "2013Q4",
+          "2014Q1",
+          "2014Q2"
+        ],
+        "validation_quarters": [],
+        "validation_rows": 51684,
+        "validation_logloss": 0.10563246,
+        "objective": "auc",
+        "validation_auc": 0.68928762,
+        "refitted": false,
+        "n_features": 20,
+        "unseen_categories": {
+          "home_ownership": 5,
+          "purpose": 14,
+          "verification_status": 3
+        },
+        "trials": [
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 60,
+            "validation_logloss": 0.10563246,
+            "seconds": 0.862,
+            "validation_auc": 0.68928762
+          }
+        ],
+        "importances": [
+          {
+            "feature": "sub_grade",
+            "gain": 1948.545753,
+            "splits": 61,
+            "gain_share": 0.403408
+          },
+          {
+            "feature": "annual_inc",
+            "gain": 426.61096,
+            "splits": 41,
+            "gain_share": 0.088321
+          },
+          {
+            "feature": "purpose",
+            "gain": 376.131301,
+            "splits": 31,
+            "gain_share": 0.077871
+          },
+          {
+            "feature": "revol_bal",
+            "gain": 326.862691,
+            "splits": 30,
+            "gain_share": 0.06767
+          },
+          {
+            "feature": "inq_last_6mths",
+            "gain": 289.869052,
+            "splits": 20,
+            "gain_share": 0.060012
+          },
+          {
+            "feature": "credit_history_months",
+            "gain": 235.208701,
+            "splits": 22,
+            "gain_share": 0.048695
+          },
+          {
+            "feature": "loan_amnt",
+            "gain": 205.170909,
+            "splits": 23,
+            "gain_share": 0.042477
+          },
+          {
+            "feature": "revol_util",
+            "gain": 182.69122,
+            "splits": 25,
+            "gain_share": 0.037823
+          },
+          {
+            "feature": "emp_length",
+            "gain": 172.925951,
+            "splits": 18,
+            "gain_share": 0.035801
+          },
+          {
+            "feature": "fico_range_low",
+            "gain": 152.288792,
+            "splits": 19,
+            "gain_share": 0.031528
+          },
+          {
+            "feature": "mths_since_last_delinq",
+            "gain": 122.094499,
+            "splits": 17,
+            "gain_share": 0.025277
+          },
+          {
+            "feature": "dti",
+            "gain": 117.934461,
+            "splits": 13,
+            "gain_share": 0.024416
+          },
+          {
+            "feature": "open_acc",
+            "gain": 105.16456,
+            "splits": 13,
+            "gain_share": 0.021772
+          },
+          {
+            "feature": "total_acc",
+            "gain": 52.017751,
+            "splits": 8,
+            "gain_share": 0.010769
+          },
+          {
+            "feature": "home_ownership",
+            "gain": 31.130469,
+            "splits": 4,
+            "gain_share": 0.006445
+          },
+          {
+            "feature": "verification_status",
+            "gain": 28.06671,
+            "splits": 3,
+            "gain_share": 0.005811
+          },
+          {
+            "feature": "pub_rec_bankruptcies",
+            "gain": 23.77523,
+            "splits": 4,
+            "gain_share": 0.004922
+          },
+          {
+            "feature": "pub_rec",
+            "gain": 20.14185,
+            "splits": 5,
+            "gain_share": 0.00417
+          },
+          {
+            "feature": "delinq_2yrs",
+            "gain": 13.58389,
+            "splits": 3,
+            "gain_share": 0.002812
+          },
+          {
+            "feature": "term",
+            "gain": 0.0,
+            "splits": 0,
+            "gain_share": 0.0
+          }
+        ],
+        "notes": [
+          "the early-stopping set is 51684 rows named by the caller, not the pool's time-ordered tail",
+          "the search point was chosen by the validation AUC, not log-loss",
+          "the shipped model was not refitted on the validation rows"
+        ]
+      }
+    },
+    "fold5/scorecard": {
+      "fold": 5,
+      "model": "scorecard",
+      "context_seed": null,
+      "fit_rows": 206737,
+      "validation_rows": 51684,
+      "fit_seconds": 3.59,
+      "summary": {
+        "policy": {
+          "iv_min": 0.02,
+          "max_characteristics": 20,
+          "monotonic_trend": "auto_asc_desc",
+          "max_n_prebins": 20,
+          "min_prebin_size": 0.02,
+          "min_bin_size": 0.05,
+          "max_n_bins": 6,
+          "min_missing_count": 100,
+          "drop_wrong_sign": true,
+          "solver": "mip",
+          "mip_solver": "bop",
+          "solver_time_limit": 100,
+          "logistic_tol": 1e-08
+        },
+        "train_rows": 206737,
+        "train_default_rate": 0.023329,
+        "intercept": -3.735652,
+        "characteristics": [
+          {
+            "name": "annual_inc",
+            "dtype": "numerical",
+            "iv": 0.062698,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.545249
+          },
+          {
+            "name": "credit_history_months",
+            "dtype": "numerical",
+            "iv": 0.051533,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.349007
+          },
+          {
+            "name": "dti",
+            "dtype": "numerical",
+            "iv": 0.022341,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.819564
+          },
+          {
+            "name": "emp_length",
+            "dtype": "numerical",
+            "iv": 0.023742,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.559624
+          },
+          {
+            "name": "fico_range_low",
+            "dtype": "numerical",
+            "iv": 0.071747,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.003933
+          },
+          {
+            "name": "home_ownership",
+            "dtype": "categorical",
+            "iv": 0.043568,
+            "n_bins": 3,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.40967
+          },
+          {
+            "name": "inq_last_6mths",
+            "dtype": "numerical",
+            "iv": 0.089604,
+            "n_bins": 4,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.708586
+          },
+          {
+            "name": "purpose",
+            "dtype": "categorical",
+            "iv": 0.083776,
+            "n_bins": 4,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.567625
+          },
+          {
+            "name": "revol_bal",
+            "dtype": "numerical",
+            "iv": 0.026362,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.507474
+          },
+          {
+            "name": "sub_grade",
+            "dtype": "numerical",
+            "iv": 0.324863,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.816206
+          },
+          {
+            "name": "term",
+            "dtype": "numerical",
+            "iv": 0.027414,
+            "n_bins": 2,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.087933
+          },
+          {
+            "name": "total_acc",
+            "dtype": "numerical",
+            "iv": 0.027859,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.305915
+          }
+        ],
+        "n_characteristics": 12,
+        "constant_on_train": [],
+        "screened_out": [
+          "delinq_2yrs",
+          "loan_amnt",
+          "mths_since_last_delinq",
+          "open_acc",
+          "pub_rec",
+          "pub_rec_bankruptcies",
+          "revol_util",
+          "verification_status"
+        ],
+        "dropped_wrong_sign": [],
+        "neutral_missing": [],
+        "iv_all": [
+          {
+            "name": "sub_grade",
+            "iv": 0.324863
+          },
+          {
+            "name": "inq_last_6mths",
+            "iv": 0.089604
+          },
+          {
+            "name": "purpose",
+            "iv": 0.083776
+          },
+          {
+            "name": "fico_range_low",
+            "iv": 0.071747
+          },
+          {
+            "name": "annual_inc",
+            "iv": 0.062698
+          },
+          {
+            "name": "credit_history_months",
+            "iv": 0.051533
+          },
+          {
+            "name": "home_ownership",
+            "iv": 0.043568
+          },
+          {
+            "name": "total_acc",
+            "iv": 0.027859
+          },
+          {
+            "name": "term",
+            "iv": 0.027414
+          },
+          {
+            "name": "revol_bal",
+            "iv": 0.026362
+          },
+          {
+            "name": "emp_length",
+            "iv": 0.023742
+          },
+          {
+            "name": "dti",
+            "iv": 0.022341
+          },
+          {
+            "name": "revol_util",
+            "iv": 0.01838
+          },
+          {
+            "name": "open_acc",
+            "iv": 0.014347
+          },
+          {
+            "name": "loan_amnt",
+            "iv": 0.012152
+          },
+          {
+            "name": "verification_status",
+            "iv": 0.008188
+          },
+          {
+            "name": "mths_since_last_delinq",
+            "iv": 0.003763
+          },
+          {
+            "name": "pub_rec_bankruptcies",
+            "iv": 0.001007
+          },
+          {
+            "name": "pub_rec",
+            "iv": 0.000567
+          },
+          {
+            "name": "delinq_2yrs",
+            "iv": 0.000141
+          }
+        ],
+        "notes": []
+      }
+    },
+    "fold5/gbm": {
+      "fold": 5,
+      "model": "gbm",
+      "context_seed": null,
+      "fit_rows": 206737,
+      "validation_rows": 51684,
+      "fit_seconds": 199.23,
+      "summary": {
+        "policy": {
+          "num_leaves": [
+            7,
+            15,
+            31
+          ],
+          "learning_rate": [
+            0.03,
+            0.1
+          ],
+          "min_child_samples": [
+            200,
+            1000
+          ],
+          "feature_fraction": [
+            0.4,
+            0.6,
+            1.0
+          ],
+          "grid_points": 36,
+          "max_rounds": 2000,
+          "early_stopping_rounds": 50,
+          "validation_quarters_max": 4,
+          "validation_row_share": 0.2,
+          "min_validation_rows": 1000,
+          "seed": 20260904
+        },
+        "params": {
+          "objective": "binary",
+          "boosting_type": "gbdt",
+          "metric": [
+            "auc",
+            "binary_logloss"
+          ],
+          "bagging_fraction": 1.0,
+          "bagging_freq": 0,
+          "lambda_l1": 0.0,
+          "lambda_l2": 0.0,
+          "min_split_gain": 0.0,
+          "max_bin": 255,
+          "deterministic": true,
+          "force_row_wise": true,
+          "num_leaves": 15,
+          "learning_rate": 0.1,
+          "min_child_samples": 1000,
+          "feature_fraction": 1.0,
+          "first_metric_only": true,
+          "seed": 20260904,
+          "num_threads": 0
+        },
+        "rounds": 138,
+        "seed": 20260904,
+        "train_rows": 258421,
+        "fit_rows": 206737,
+        "train_default_rate": 0.02333,
+        "train_quarters": [
+          "2010Q2",
+          "2010Q3",
+          "2010Q4",
+          "2011Q1",
+          "2011Q2",
+          "2011Q3",
+          "2011Q4",
+          "2012Q1",
+          "2012Q2",
+          "2012Q3",
+          "2012Q4",
+          "2013Q1",
+          "2013Q2",
+          "2013Q3",
+          "2013Q4",
+          "2014Q1",
+          "2014Q2"
+        ],
+        "validation_quarters": [],
+        "validation_rows": 51684,
+        "validation_logloss": 0.10502154,
+        "objective": "auc",
+        "validation_auc": 0.69721159,
+        "refitted": false,
+        "n_features": 20,
+        "unseen_categories": {
+          "home_ownership": 5,
+          "purpose": 14,
+          "verification_status": 3
+        },
+        "trials": [
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 677,
+            "validation_logloss": 0.10521315,
+            "seconds": 8.81,
+            "validation_auc": 0.69348402
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 561,
+            "validation_logloss": 0.10521176,
+            "seconds": 8.665,
+            "validation_auc": 0.69330368
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 664,
+            "validation_logloss": 0.1052789,
+            "seconds": 9.95,
+            "validation_auc": 0.69256505
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 721,
+            "validation_logloss": 0.10507009,
+            "seconds": 9.803,
+            "validation_auc": 0.69590861
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 715,
+            "validation_logloss": 0.10503568,
+            "seconds": 11.118,
+            "validation_auc": 0.69632624
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 816,
+            "validation_logloss": 0.10512298,
+            "seconds": 12.28,
+            "validation_auc": 0.69533515
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 184,
+            "validation_logloss": 0.10527695,
+            "seconds": 2.937,
+            "validation_auc": 0.69212113
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 186,
+            "validation_logloss": 0.10516363,
+            "seconds": 3.368,
+            "validation_auc": 0.6938533
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 270,
+            "validation_logloss": 0.10527631,
+            "seconds": 4.403,
+            "validation_auc": 0.69350963
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 208,
+            "validation_logloss": 0.10515686,
+            "seconds": 3.252,
+            "validation_auc": 0.69473318
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 226,
+            "validation_logloss": 0.10506062,
+            "seconds": 4.021,
+            "validation_auc": 0.69569158
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 304,
+            "validation_logloss": 0.1051247,
+            "seconds": 4.911,
+            "validation_auc": 0.69559663
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 486,
+            "validation_logloss": 0.10520063,
+            "seconds": 7.409,
+            "validation_auc": 0.69399762
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 433,
+            "validation_logloss": 0.10511636,
+            "seconds": 7.682,
+            "validation_auc": 0.6951808
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 500,
+            "validation_logloss": 0.10512896,
+            "seconds": 8.542,
+            "validation_auc": 0.69500471
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 506,
+            "validation_logloss": 0.10507863,
+            "seconds": 7.994,
+            "validation_auc": 0.69533548
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 372,
+            "validation_logloss": 0.10504363,
+            "seconds": 7.088,
+            "validation_auc": 0.69634004
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 386,
+            "validation_logloss": 0.10501529,
+            "seconds": 7.335,
+            "validation_auc": 0.69666272
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 103,
+            "validation_logloss": 0.10529296,
+            "seconds": 2.113,
+            "validation_auc": 0.6922705
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 98,
+            "validation_logloss": 0.10528875,
+            "seconds": 2.4,
+            "validation_auc": 0.69111324
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 172,
+            "validation_logloss": 0.10521881,
+            "seconds": 3.424,
+            "validation_auc": 0.6946497
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 141,
+            "validation_logloss": 0.10515354,
+            "seconds": 2.714,
+            "validation_auc": 0.69460865
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 149,
+            "validation_logloss": 0.10519776,
+            "seconds": 3.287,
+            "validation_auc": 0.69468286
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 138,
+            "validation_logloss": 0.10502154,
+            "seconds": 3.102,
+            "validation_auc": 0.69721159
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 226,
+            "validation_logloss": 0.10522893,
+            "seconds": 4.569,
+            "validation_auc": 0.6925899
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 182,
+            "validation_logloss": 0.10525333,
+            "seconds": 4.532,
+            "validation_auc": 0.69286769
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 198,
+            "validation_logloss": 0.10514366,
+            "seconds": 4.836,
+            "validation_auc": 0.69351911
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 304,
+            "validation_logloss": 0.10512677,
+            "seconds": 6.402,
+            "validation_auc": 0.69391851
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 318,
+            "validation_logloss": 0.10509718,
+            "seconds": 7.404,
+            "validation_auc": 0.69381704
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 297,
+            "validation_logloss": 0.10500182,
+            "seconds": 7.08,
+            "validation_auc": 0.69666885
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 86,
+            "validation_logloss": 0.10557479,
+            "seconds": 2.17,
+            "validation_auc": 0.68802751
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 49,
+            "validation_logloss": 0.10541753,
+            "seconds": 1.898,
+            "validation_auc": 0.69072412
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 56,
+            "validation_logloss": 0.10541114,
+            "seconds": 1.957,
+            "validation_auc": 0.69097596
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 129,
+            "validation_logloss": 0.10528398,
+            "seconds": 3.067,
+            "validation_auc": 0.69166524
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 53,
+            "validation_logloss": 0.10517888,
+            "seconds": 2.116,
+            "validation_auc": 0.6931067
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 63,
+            "validation_logloss": 0.10504511,
+            "seconds": 2.309,
+            "validation_auc": 0.69576292
+          }
+        ],
+        "importances": [
+          {
+            "feature": "sub_grade",
+            "gain": 8572.266068,
+            "splits": 147,
+            "gain_share": 0.332836
+          },
+          {
+            "feature": "annual_inc",
+            "gain": 2079.820459,
+            "splits": 163,
+            "gain_share": 0.080753
+          },
+          {
+            "feature": "purpose",
+            "gain": 1954.58302,
+            "splits": 130,
+            "gain_share": 0.075891
+          },
+          {
+            "feature": "revol_bal",
+            "gain": 1779.16001,
+            "splits": 193,
+            "gain_share": 0.06908
+          },
+          {
+            "feature": "credit_history_months",
+            "gain": 1508.140914,
+            "splits": 176,
+            "gain_share": 0.058557
+          },
+          {
+            "feature": "dti",
+            "gain": 1494.366109,
+            "splits": 179,
+            "gain_share": 0.058022
+          },
+          {
+            "feature": "revol_util",
+            "gain": 1380.097867,
+            "splits": 182,
+            "gain_share": 0.053585
+          },
+          {
+            "feature": "inq_last_6mths",
+            "gain": 1296.741363,
+            "splits": 74,
+            "gain_share": 0.050349
+          },
+          {
+            "feature": "loan_amnt",
+            "gain": 1117.941488,
+            "splits": 137,
+            "gain_share": 0.043406
+          },
+          {
+            "feature": "emp_length",
+            "gain": 938.78135,
+            "splits": 97,
+            "gain_share": 0.03645
+          },
+          {
+            "feature": "mths_since_last_delinq",
+            "gain": 925.117121,
+            "splits": 107,
+            "gain_share": 0.03592
+          },
+          {
+            "feature": "total_acc",
+            "gain": 735.981063,
+            "splits": 104,
+            "gain_share": 0.028576
+          },
+          {
+            "feature": "fico_range_low",
+            "gain": 587.924314,
+            "splits": 87,
+            "gain_share": 0.022827
+          },
+          {
+            "feature": "home_ownership",
+            "gain": 461.379728,
+            "splits": 27,
+            "gain_share": 0.017914
+          },
+          {
+            "feature": "open_acc",
+            "gain": 399.482701,
+            "splits": 61,
+            "gain_share": 0.015511
+          },
+          {
+            "feature": "verification_status",
+            "gain": 236.663861,
+            "splits": 27,
+            "gain_share": 0.009189
+          },
+          {
+            "feature": "term",
+            "gain": 145.340319,
+            "splits": 20,
+            "gain_share": 0.005643
+          },
+          {
+            "feature": "pub_rec_bankruptcies",
+            "gain": 70.97371,
+            "splits": 11,
+            "gain_share": 0.002756
+          },
+          {
+            "feature": "pub_rec",
+            "gain": 53.05998,
+            "splits": 8,
+            "gain_share": 0.00206
+          },
+          {
+            "feature": "delinq_2yrs",
+            "gain": 17.40857,
+            "splits": 2,
+            "gain_share": 0.000676
+          }
+        ],
+        "notes": [
+          "the early-stopping set is 51684 rows named by the caller, not the pool's time-ordered tail",
+          "the search point was chosen by the validation AUC, not log-loss",
+          "the chosen point sits on the grid's edge: feature_fraction=1.0",
+          "chosen over the runner-up by 5.43e-04 in AUC",
+          "the shipped model was not refitted on the validation rows"
+        ]
+      }
+    },
+    "fold5/gbm-50k/20260911": {
+      "fold": 5,
+      "model": "gbm-50k",
+      "context_seed": 20260911,
+      "fit_rows": 50000,
+      "validation_rows": 51684,
+      "fit_seconds": 2.11,
+      "summary": {
+        "policy": {
+          "num_leaves": [
+            7,
+            15,
+            31
+          ],
+          "learning_rate": [
+            0.03,
+            0.1
+          ],
+          "min_child_samples": [
+            200,
+            1000
+          ],
+          "feature_fraction": [
+            0.4,
+            0.6,
+            1.0
+          ],
+          "grid_points": 36,
+          "max_rounds": 2000,
+          "early_stopping_rounds": 50,
+          "validation_quarters_max": 4,
+          "validation_row_share": 0.2,
+          "min_validation_rows": 1000,
+          "seed": 20260904
+        },
+        "params": {
+          "objective": "binary",
+          "boosting_type": "gbdt",
+          "metric": [
+            "auc",
+            "binary_logloss"
+          ],
+          "bagging_fraction": 1.0,
+          "bagging_freq": 0,
+          "lambda_l1": 0.0,
+          "lambda_l2": 0.0,
+          "min_split_gain": 0.0,
+          "max_bin": 255,
+          "deterministic": true,
+          "force_row_wise": true,
+          "num_leaves": 15,
+          "learning_rate": 0.1,
+          "min_child_samples": 1000,
+          "feature_fraction": 1.0,
+          "first_metric_only": true,
+          "seed": 20260904,
+          "num_threads": 0
+        },
+        "rounds": 39,
+        "seed": 20260904,
+        "train_rows": 101684,
+        "fit_rows": 50000,
+        "train_default_rate": 0.023475,
+        "train_quarters": [
+          "2010Q2",
+          "2010Q3",
+          "2010Q4",
+          "2011Q1",
+          "2011Q2",
+          "2011Q3",
+          "2011Q4",
+          "2012Q1",
+          "2012Q2",
+          "2012Q3",
+          "2012Q4",
+          "2013Q1",
+          "2013Q2",
+          "2013Q3",
+          "2013Q4",
+          "2014Q1",
+          "2014Q2"
+        ],
+        "validation_quarters": [],
+        "validation_rows": 51684,
+        "validation_logloss": 0.10606639,
+        "objective": "auc",
+        "validation_auc": 0.68134856,
+        "refitted": false,
+        "n_features": 20,
+        "unseen_categories": {
+          "home_ownership": 5,
+          "purpose": 14,
+          "verification_status": 3
+        },
+        "trials": [
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 39,
+            "validation_logloss": 0.10606639,
+            "seconds": 0.828,
+            "validation_auc": 0.68134856
+          }
+        ],
+        "importances": [
+          {
+            "feature": "sub_grade",
+            "gain": 1992.686529,
+            "splits": 66,
+            "gain_share": 0.323287
+          },
+          {
+            "feature": "annual_inc",
+            "gain": 674.67863,
+            "splits": 54,
+            "gain_share": 0.109458
+          },
+          {
+            "feature": "revol_bal",
+            "gain": 450.556637,
+            "splits": 49,
+            "gain_share": 0.073097
+          },
+          {
+            "feature": "revol_util",
+            "gain": 397.15857,
+            "splits": 50,
+            "gain_share": 0.064434
+          },
+          {
+            "feature": "dti",
+            "gain": 314.117459,
+            "splits": 44,
+            "gain_share": 0.050961
+          },
+          {
+            "feature": "purpose",
+            "gain": 304.733329,
+            "splits": 33,
+            "gain_share": 0.049439
+          },
+          {
+            "feature": "credit_history_months",
+            "gain": 302.31354,
+            "splits": 33,
+            "gain_share": 0.049046
+          },
+          {
+            "feature": "emp_length",
+            "gain": 263.854661,
+            "splits": 34,
+            "gain_share": 0.042807
+          },
+          {
+            "feature": "loan_amnt",
+            "gain": 255.86821,
+            "splits": 33,
+            "gain_share": 0.041511
+          },
+          {
+            "feature": "mths_since_last_delinq",
+            "gain": 241.470269,
+            "splits": 32,
+            "gain_share": 0.039175
+          },
+          {
+            "feature": "inq_last_6mths",
+            "gain": 221.022538,
+            "splits": 28,
+            "gain_share": 0.035858
+          },
+          {
+            "feature": "fico_range_low",
+            "gain": 177.04127,
+            "splits": 22,
+            "gain_share": 0.028723
+          },
+          {
+            "feature": "open_acc",
+            "gain": 142.106489,
+            "splits": 19,
+            "gain_share": 0.023055
+          },
+          {
+            "feature": "home_ownership",
+            "gain": 137.824962,
+            "splits": 9,
+            "gain_share": 0.02236
+          },
+          {
+            "feature": "total_acc",
+            "gain": 132.948669,
+            "splits": 19,
+            "gain_share": 0.021569
+          },
+          {
+            "feature": "verification_status",
+            "gain": 74.992251,
+            "splits": 10,
+            "gain_share": 0.012166
+          },
+          {
+            "feature": "term",
+            "gain": 32.52972,
+            "splits": 4,
+            "gain_share": 0.005278
+          },
+          {
+            "feature": "pub_rec",
+            "gain": 19.41719,
+            "splits": 3,
+            "gain_share": 0.00315
+          },
+          {
+            "feature": "pub_rec_bankruptcies",
+            "gain": 16.28938,
+            "splits": 2,
+            "gain_share": 0.002643
+          },
+          {
+            "feature": "delinq_2yrs",
+            "gain": 12.22318,
+            "splits": 2,
+            "gain_share": 0.001983
+          }
+        ],
+        "notes": [
+          "the early-stopping set is 51684 rows named by the caller, not the pool's time-ordered tail",
+          "the search point was chosen by the validation AUC, not log-loss",
+          "every search point stopped within the early-stopping patience; the learning rates in the grid are too high for this pool",
+          "the shipped model was not refitted on the validation rows"
+        ]
+      }
+    },
+    "fold5/gbm-50k/20260912": {
+      "fold": 5,
+      "model": "gbm-50k",
+      "context_seed": 20260912,
+      "fit_rows": 50000,
+      "validation_rows": 51684,
+      "fit_seconds": 2.21,
+      "summary": {
+        "policy": {
+          "num_leaves": [
+            7,
+            15,
+            31
+          ],
+          "learning_rate": [
+            0.03,
+            0.1
+          ],
+          "min_child_samples": [
+            200,
+            1000
+          ],
+          "feature_fraction": [
+            0.4,
+            0.6,
+            1.0
+          ],
+          "grid_points": 36,
+          "max_rounds": 2000,
+          "early_stopping_rounds": 50,
+          "validation_quarters_max": 4,
+          "validation_row_share": 0.2,
+          "min_validation_rows": 1000,
+          "seed": 20260904
+        },
+        "params": {
+          "objective": "binary",
+          "boosting_type": "gbdt",
+          "metric": [
+            "auc",
+            "binary_logloss"
+          ],
+          "bagging_fraction": 1.0,
+          "bagging_freq": 0,
+          "lambda_l1": 0.0,
+          "lambda_l2": 0.0,
+          "min_split_gain": 0.0,
+          "max_bin": 255,
+          "deterministic": true,
+          "force_row_wise": true,
+          "num_leaves": 15,
+          "learning_rate": 0.1,
+          "min_child_samples": 1000,
+          "feature_fraction": 1.0,
+          "first_metric_only": true,
+          "seed": 20260904,
+          "num_threads": 0
+        },
+        "rounds": 40,
+        "seed": 20260904,
+        "train_rows": 101684,
+        "fit_rows": 50000,
+        "train_default_rate": 0.023721,
+        "train_quarters": [
+          "2010Q2",
+          "2010Q3",
+          "2010Q4",
+          "2011Q1",
+          "2011Q2",
+          "2011Q3",
+          "2011Q4",
+          "2012Q1",
+          "2012Q2",
+          "2012Q3",
+          "2012Q4",
+          "2013Q1",
+          "2013Q2",
+          "2013Q3",
+          "2013Q4",
+          "2014Q1",
+          "2014Q2"
+        ],
+        "validation_quarters": [],
+        "validation_rows": 51684,
+        "validation_logloss": 0.10571241,
+        "objective": "auc",
+        "validation_auc": 0.68651205,
+        "refitted": false,
+        "n_features": 20,
+        "unseen_categories": {
+          "home_ownership": 5,
+          "purpose": 14,
+          "verification_status": 3
+        },
+        "trials": [
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 40,
+            "validation_logloss": 0.10571241,
+            "seconds": 0.842,
+            "validation_auc": 0.68651205
+          }
+        ],
+        "importances": [
+          {
+            "feature": "sub_grade",
+            "gain": 1951.085455,
+            "splits": 66,
+            "gain_share": 0.336436
+          },
+          {
+            "feature": "annual_inc",
+            "gain": 509.83456,
+            "splits": 58,
+            "gain_share": 0.087913
+          },
+          {
+            "feature": "revol_bal",
+            "gain": 428.019909,
+            "splits": 59,
+            "gain_share": 0.073806
+          },
+          {
+            "feature": "revol_util",
+            "gain": 379.959959,
+            "splits": 51,
+            "gain_share": 0.065518
+          },
+          {
+            "feature": "purpose",
+            "gain": 345.475491,
+            "splits": 36,
+            "gain_share": 0.059572
+          },
+          {
+            "feature": "dti",
+            "gain": 318.136521,
+            "splits": 46,
+            "gain_share": 0.054858
+          },
+          {
+            "feature": "mths_since_last_delinq",
+            "gain": 293.278939,
+            "splits": 35,
+            "gain_share": 0.050572
+          },
+          {
+            "feature": "credit_history_months",
+            "gain": 280.697369,
+            "splits": 40,
+            "gain_share": 0.048402
+          },
+          {
+            "feature": "total_acc",
+            "gain": 255.437468,
+            "splits": 28,
+            "gain_share": 0.044046
+          },
+          {
+            "feature": "loan_amnt",
+            "gain": 242.122871,
+            "splits": 38,
+            "gain_share": 0.04175
+          },
+          {
+            "feature": "inq_last_6mths",
+            "gain": 222.363382,
+            "splits": 26,
+            "gain_share": 0.038343
+          },
+          {
+            "feature": "emp_length",
+            "gain": 178.492501,
+            "splits": 25,
+            "gain_share": 0.030778
+          },
+          {
+            "feature": "open_acc",
+            "gain": 131.46758,
+            "splits": 19,
+            "gain_share": 0.02267
+          },
+          {
+            "feature": "home_ownership",
+            "gain": 101.39985,
+            "splits": 10,
+            "gain_share": 0.017485
+          },
+          {
+            "feature": "fico_range_low",
+            "gain": 95.391399,
+            "splits": 14,
+            "gain_share": 0.016449
+          },
+          {
+            "feature": "verification_status",
+            "gain": 51.66336,
+            "splits": 7,
+            "gain_share": 0.008909
+          },
+          {
+            "feature": "pub_rec",
+            "gain": 8.55223,
+            "splits": 1,
+            "gain_share": 0.001475
+          },
+          {
+            "feature": "term",
+            "gain": 5.9056,
+            "splits": 1,
+            "gain_share": 0.001018
+          },
+          {
+            "feature": "delinq_2yrs",
+            "gain": 0.0,
+            "splits": 0,
+            "gain_share": 0.0
+          },
+          {
+            "feature": "pub_rec_bankruptcies",
+            "gain": 0.0,
+            "splits": 0,
+            "gain_share": 0.0
+          }
+        ],
+        "notes": [
+          "the early-stopping set is 51684 rows named by the caller, not the pool's time-ordered tail",
+          "the search point was chosen by the validation AUC, not log-loss",
+          "every search point stopped within the early-stopping patience; the learning rates in the grid are too high for this pool",
+          "the shipped model was not refitted on the validation rows"
+        ]
+      }
+    },
+    "fold5/gbm-50k/20260913": {
+      "fold": 5,
+      "model": "gbm-50k",
+      "context_seed": 20260913,
+      "fit_rows": 50000,
+      "validation_rows": 51684,
+      "fit_seconds": 2.15,
+      "summary": {
+        "policy": {
+          "num_leaves": [
+            7,
+            15,
+            31
+          ],
+          "learning_rate": [
+            0.03,
+            0.1
+          ],
+          "min_child_samples": [
+            200,
+            1000
+          ],
+          "feature_fraction": [
+            0.4,
+            0.6,
+            1.0
+          ],
+          "grid_points": 36,
+          "max_rounds": 2000,
+          "early_stopping_rounds": 50,
+          "validation_quarters_max": 4,
+          "validation_row_share": 0.2,
+          "min_validation_rows": 1000,
+          "seed": 20260904
+        },
+        "params": {
+          "objective": "binary",
+          "boosting_type": "gbdt",
+          "metric": [
+            "auc",
+            "binary_logloss"
+          ],
+          "bagging_fraction": 1.0,
+          "bagging_freq": 0,
+          "lambda_l1": 0.0,
+          "lambda_l2": 0.0,
+          "min_split_gain": 0.0,
+          "max_bin": 255,
+          "deterministic": true,
+          "force_row_wise": true,
+          "num_leaves": 15,
+          "learning_rate": 0.1,
+          "min_child_samples": 1000,
+          "feature_fraction": 1.0,
+          "first_metric_only": true,
+          "seed": 20260904,
+          "num_threads": 0
+        },
+        "rounds": 52,
+        "seed": 20260904,
+        "train_rows": 101684,
+        "fit_rows": 50000,
+        "train_default_rate": 0.023396,
+        "train_quarters": [
+          "2010Q2",
+          "2010Q3",
+          "2010Q4",
+          "2011Q1",
+          "2011Q2",
+          "2011Q3",
+          "2011Q4",
+          "2012Q1",
+          "2012Q2",
+          "2012Q3",
+          "2012Q4",
+          "2013Q1",
+          "2013Q2",
+          "2013Q3",
+          "2013Q4",
+          "2014Q1",
+          "2014Q2"
+        ],
+        "validation_quarters": [],
+        "validation_rows": 51684,
+        "validation_logloss": 0.10593142,
+        "objective": "auc",
+        "validation_auc": 0.68425307,
+        "refitted": false,
+        "n_features": 20,
+        "unseen_categories": {
+          "home_ownership": 5,
+          "purpose": 14,
+          "verification_status": 3
+        },
+        "trials": [
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 52,
+            "validation_logloss": 0.10593142,
+            "seconds": 0.938,
+            "validation_auc": 0.68425307
+          }
+        ],
+        "importances": [
+          {
+            "feature": "sub_grade",
+            "gain": 2173.465687,
+            "splits": 58,
+            "gain_share": 0.301176
+          },
+          {
+            "feature": "purpose",
+            "gain": 613.273601,
+            "splits": 66,
+            "gain_share": 0.084981
+          },
+          {
+            "feature": "credit_history_months",
+            "gain": 562.798046,
+            "splits": 66,
+            "gain_share": 0.077987
+          },
+          {
+            "feature": "annual_inc",
+            "gain": 557.191453,
+            "splits": 62,
+            "gain_share": 0.07721
+          },
+          {
+            "feature": "revol_bal",
+            "gain": 459.563399,
+            "splits": 76,
+            "gain_share": 0.063681
+          },
+          {
+            "feature": "inq_last_6mths",
+            "gain": 355.168287,
+            "splits": 41,
+            "gain_share": 0.049215
+          },
+          {
+            "feature": "revol_util",
+            "gain": 331.461213,
+            "splits": 46,
+            "gain_share": 0.04593
+          },
+          {
+            "feature": "dti",
+            "gain": 317.412199,
+            "splits": 45,
+            "gain_share": 0.043984
+          },
+          {
+            "feature": "emp_length",
+            "gain": 309.971591,
+            "splits": 43,
+            "gain_share": 0.042953
+          },
+          {
+            "feature": "loan_amnt",
+            "gain": 302.79897,
+            "splits": 47,
+            "gain_share": 0.041959
+          },
+          {
+            "feature": "open_acc",
+            "gain": 286.252559,
+            "splits": 42,
+            "gain_share": 0.039666
+          },
+          {
+            "feature": "mths_since_last_delinq",
+            "gain": 266.00374,
+            "splits": 36,
+            "gain_share": 0.03686
+          },
+          {
+            "feature": "fico_range_low",
+            "gain": 252.806971,
+            "splits": 38,
+            "gain_share": 0.035031
+          },
+          {
+            "feature": "total_acc",
+            "gain": 200.755992,
+            "splits": 29,
+            "gain_share": 0.027819
+          },
+          {
+            "feature": "term",
+            "gain": 78.424091,
+            "splits": 9,
+            "gain_share": 0.010867
+          },
+          {
+            "feature": "verification_status",
+            "gain": 56.77773,
+            "splits": 9,
+            "gain_share": 0.007868
+          },
+          {
+            "feature": "home_ownership",
+            "gain": 53.373549,
+            "splits": 7,
+            "gain_share": 0.007396
+          },
+          {
+            "feature": "pub_rec",
+            "gain": 20.77296,
+            "splits": 5,
+            "gain_share": 0.002878
+          },
+          {
+            "feature": "pub_rec_bankruptcies",
+            "gain": 18.3266,
+            "splits": 3,
+            "gain_share": 0.00254
+          },
+          {
+            "feature": "delinq_2yrs",
+            "gain": 0.0,
+            "splits": 0,
+            "gain_share": 0.0
+          }
+        ],
+        "notes": [
+          "the early-stopping set is 51684 rows named by the caller, not the pool's time-ordered tail",
+          "the search point was chosen by the validation AUC, not log-loss",
+          "the shipped model was not refitted on the validation rows"
+        ]
+      }
+    }
+  },
+  "thresholds": [
+    {
+      "fold": 2,
+      "model": "scorecard",
+      "context_seed": null,
+      "threshold": 0.04467492840526099,
+      "on_validation": {
+        "threshold": 0.04467492840526099,
+        "predicted_positive_share": 0.1002631375280551,
+        "accuracy": 0.8884761241389986,
+        "balanced_accuracy": 0.581114397109898,
+        "f1": 0.09768315591734503,
+        "precision": 0.06020841373986878,
+        "recall": 0.25870646766169153,
+        "mcc": 0.08153951869025901
+      }
+    },
+    {
+      "fold": 2,
+      "model": "gbm",
+      "context_seed": null,
+      "threshold": 0.05673248482303627,
+      "on_validation": {
+        "threshold": 0.05673248482303627,
+        "predicted_positive_share": 0.055665196192245185,
+        "accuracy": 0.9294752728117018,
+        "balanced_accuracy": 0.5644677184622472,
+        "f1": 0.10727406318883174,
+        "precision": 0.07612095933263817,
+        "recall": 0.18159203980099503,
+        "mcc": 0.08489576613995267
+      }
+    },
+    {
+      "fold": 2,
+      "model": "gbm-50k",
+      "context_seed": 20260911,
+      "threshold": 0.061995771254210214,
+      "on_validation": {
+        "threshold": 0.061995771254210214,
+        "predicted_positive_share": 0.0445592446405077,
+        "accuracy": 0.938607692903026,
+        "balanced_accuracy": 0.5485039145175111,
+        "f1": 0.0957537760045597,
+        "precision": 0.0729483282674772,
+        "recall": 0.13930348258706468,
+        "mcc": 0.07097486903756792
+      }
+    },
+    {
+      "fold": 2,
+      "model": "gbm-50k",
+      "context_seed": 20260912,
+      "threshold": 0.04488665675693995,
+      "on_validation": {
+        "threshold": 0.04488665675693995,
+        "predicted_positive_share": 0.11148517916569925,
+        "accuracy": 0.8786084668369322,
+        "balanced_accuracy": 0.5902267851676283,
+        "f1": 0.09959816303099885,
+        "precision": 0.06022214508851093,
+        "recall": 0.2877280265339967,
+        "mcc": 0.08655520286617534
+      }
+    },
+    {
+      "fold": 2,
+      "model": "gbm-50k",
+      "context_seed": 20260913,
+      "threshold": 0.04488207260610397,
+      "on_validation": {
+        "threshold": 0.04488207260610397,
+        "predicted_positive_share": 0.10297190619921058,
+        "accuracy": 0.8858060521631452,
+        "balanced_accuracy": 0.5801521533739441,
+        "f1": 0.09589460784313726,
+        "precision": 0.05881247651258925,
+        "recall": 0.2595356550580431,
+        "mcc": 0.07962535790281279
+      }
+    },
+    {
+      "fold": 3,
+      "model": "scorecard",
+      "context_seed": null,
+      "threshold": 0.04819927334385712,
+      "on_validation": {
+        "threshold": 0.04819927334385712,
+        "predicted_positive_share": 0.08178546552124448,
+        "accuracy": 0.9054446250290226,
+        "balanced_accuracy": 0.5740185025189043,
+        "f1": 0.10049696300386526,
+        "precision": 0.06458481192334989,
+        "recall": 0.2263681592039801,
+        "mcc": 0.08155089834338083
+      }
+    },
+    {
+      "fold": 3,
+      "model": "gbm",
+      "context_seed": null,
+      "threshold": 0.043251598233932945,
+      "on_validation": {
+        "threshold": 0.043251598233932945,
+        "predicted_positive_share": 0.11982431700332792,
+        "accuracy": 0.8723589505456234,
+        "balanced_accuracy": 0.608880544777992,
+        "f1": 0.10839302608460603,
+        "precision": 0.06475052478604877,
+        "recall": 0.33250414593698174,
+        "mcc": 0.10122591765131105
+      }
+    },
+    {
+      "fold": 3,
+      "model": "gbm-50k",
+      "context_seed": 20260911,
+      "threshold": 0.04260905119200845,
+      "on_validation": {
+        "threshold": 0.04260905119200845,
+        "predicted_positive_share": 0.10777029641668602,
+        "accuracy": 0.8826329231483632,
+        "balanced_accuracy": 0.5955245958093364,
+        "f1": 0.10478158205430933,
+        "precision": 0.06373429084380611,
+        "recall": 0.2943615257048093,
+        "mcc": 0.09300920511094786
+      }
+    },
+    {
+      "fold": 3,
+      "model": "gbm-50k",
+      "context_seed": 20260912,
+      "threshold": 0.04176081154453348,
+      "on_validation": {
+        "threshold": 0.04176081154453348,
+        "predicted_positive_share": 0.08426205402058665,
+        "accuracy": 0.9032002167014936,
+        "balanced_accuracy": 0.5752976174636151,
+        "f1": 0.10034166516813522,
+        "precision": 0.06406429391504018,
+        "recall": 0.23134328358208955,
+        "mcc": 0.08184237239657495
+      }
+    },
+    {
+      "fold": 3,
+      "model": "gbm-50k",
+      "context_seed": 20260913,
+      "threshold": 0.05138940052455346,
+      "on_validation": {
+        "threshold": 0.05138940052455346,
+        "predicted_positive_share": 0.0608118566674406,
+        "accuracy": 0.9243286123365064,
+        "balanced_accuracy": 0.5618329072573658,
+        "f1": 0.10071280754196367,
+        "precision": 0.06967865097041044,
+        "recall": 0.18159203980099503,
+        "mcc": 0.07811741001400564
+      }
+    },
+    {
+      "fold": 4,
+      "model": "scorecard",
+      "context_seed": null,
+      "threshold": 0.047354076450718846,
+      "on_validation": {
+        "threshold": 0.047354076450718846,
+        "predicted_positive_share": 0.08962154631994428,
+        "accuracy": 0.8979568144880428,
+        "balanced_accuracy": 0.573827344911009,
+        "f1": 0.09660842754367935,
+        "precision": 0.06088082901554404,
+        "recall": 0.23383084577114427,
+        "mcc": 0.07803665577663872
+      }
+    },
+    {
+      "fold": 4,
+      "model": "gbm",
+      "context_seed": null,
+      "threshold": 0.04960357637709406,
+      "on_validation": {
+        "threshold": 0.04960357637709406,
+        "predicted_positive_share": 0.08292701803266,
+        "accuracy": 0.9049222196424426,
+        "balanced_accuracy": 0.5802260735626121,
+        "f1": 0.10524399126001456,
+        "precision": 0.0674288380774615,
+        "recall": 0.2396351575456053,
+        "mcc": 0.08783430413552164
+      }
+    },
+    {
+      "fold": 4,
+      "model": "gbm-50k",
+      "context_seed": 20260911,
+      "threshold": 0.047816412320771835,
+      "on_validation": {
+        "threshold": 0.047816412320771835,
+        "predicted_positive_share": 0.08232721925547558,
+        "accuracy": 0.9046319944276758,
+        "balanced_accuracy": 0.570769660946821,
+        "f1": 0.09741805530122688,
+        "precision": 0.06251468860164512,
+        "recall": 0.22056384742951907,
+        "mcc": 0.07773741016233117
+      }
+    },
+    {
+      "fold": 4,
+      "model": "gbm-50k",
+      "context_seed": 20260912,
+      "threshold": 0.043057997043433646,
+      "on_validation": {
+        "threshold": 0.043057997043433646,
+        "predicted_positive_share": 0.09418775636560638,
+        "accuracy": 0.8939323581766118,
+        "balanced_accuracy": 0.5774326789129751,
+        "f1": 0.09746460322686862,
+        "precision": 0.06080525883319639,
+        "recall": 0.24543946932006633,
+        "mcc": 0.08003990543941024
+      }
+    },
+    {
+      "fold": 4,
+      "model": "gbm-50k",
+      "context_seed": 20260913,
+      "threshold": 0.044912588815306034,
+      "on_validation": {
+        "threshold": 0.044912588815306034,
+        "predicted_positive_share": 0.09352991254546862,
+        "accuracy": 0.8943580218249362,
+        "balanced_accuracy": 0.5752224652718025,
+        "f1": 0.09602649006622517,
+        "precision": 0.059991725279271824,
+        "recall": 0.24046434494195687,
+        "mcc": 0.07799992068158054
+      }
+    },
+    {
+      "fold": 5,
+      "model": "scorecard",
+      "context_seed": null,
+      "threshold": 0.03990722330953789,
+      "on_validation": {
+        "threshold": 0.03990722330953789,
+        "predicted_positive_share": 0.13946288986920516,
+        "accuracy": 0.8523721074220262,
+        "balanced_accuracy": 0.595006168886145,
+        "f1": 0.09317803660565724,
+        "precision": 0.05438401775804662,
+        "recall": 0.3250414593698176,
+        "mcc": 0.08280113215549126
+      }
+    },
+    {
+      "fold": 5,
+      "model": "gbm",
+      "context_seed": null,
+      "threshold": 0.05675692801604354,
+      "on_validation": {
+        "threshold": 0.05675692801604354,
+        "predicted_positive_share": 0.06152774553053169,
+        "accuracy": 0.9240383871217398,
+        "balanced_accuracy": 0.5661358999999803,
+        "f1": 0.10487916096671226,
+        "precision": 0.07232704402515723,
+        "recall": 0.19071310116086235,
+        "mcc": 0.08309782362967542
+      }
+    },
+    {
+      "fold": 5,
+      "model": "gbm-50k",
+      "context_seed": 20260911,
+      "threshold": 0.05132464668335381,
+      "on_validation": {
+        "threshold": 0.05132464668335381,
+        "predicted_positive_share": 0.0776062224286046,
+        "accuracy": 0.9086177540438046,
+        "balanced_accuracy": 0.5651210743698205,
+        "f1": 0.09469043511596703,
+        "precision": 0.061580653203689856,
+        "recall": 0.20480928689883915,
+        "mcc": 0.07348753905166591
+      }
+    },
+    {
+      "fold": 5,
+      "model": "gbm-50k",
+      "context_seed": 20260912,
+      "threshold": 0.056726332494238856,
+      "on_validation": {
+        "threshold": 0.056726332494238856,
+        "predicted_positive_share": 0.05719371565668292,
+        "accuracy": 0.927404999613033,
+        "balanced_accuracy": 0.5577422132966059,
+        "f1": 0.09851033157135992,
+        "precision": 0.06935047361299053,
+        "recall": 0.16998341625207297,
+        "mcc": 0.07507695288015986
+      }
+    },
+    {
+      "fold": 5,
+      "model": "gbm-50k",
+      "context_seed": 20260913,
+      "threshold": 0.05408365262418846,
+      "on_validation": {
+        "threshold": 0.05408365262418846,
+        "predicted_positive_share": 0.0776062224286046,
+        "accuracy": 0.909198204473338,
+        "balanced_accuracy": 0.57148855942168,
+        "f1": 0.1004408663983132,
+        "precision": 0.06532036898529045,
+        "recall": 0.21724709784411278,
+        "mcc": 0.0806730901338249
+      }
+    }
+  ],
+  "files": {
+    "context.parquet": "3cd20a7bbe0a010609bf2c24fece42c0b47943ee645de9076fe34cc5dace7b3c",
+    "scored.parquet": "a7c83b957735480973748de998d5fe88417c866763833fec9b1f4ea234aafc1e"
+  },
+  "scored_rows": 2325780,
+  "reference_rows": 2253896,
+  "wall_seconds": 925.0
+}

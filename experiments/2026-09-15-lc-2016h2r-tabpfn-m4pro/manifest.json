@@ -1,0 +1,80 @@
+{
+  "slug": "lc-2016h2r-tabpfn-m4pro",
+  "recorded_utc": "2026-09-15T06:25:00+00:00",
+  "git_sha": "c44985a57383125054bfd0ba84f0cf424d22289a",
+  "git_dirty": false,
+  "scorer_commit": "The score_context.py that ran is byte-identical to scripts/score_context.py at commit 910aaff, at 1b13842 and at HEAD; the file has not changed across that range.",
+  "written_by_hand": "This run was made on a node that holds no copy of the repository, so record_run.py could not record it. The manifest is assembled from what the node returned; node.json is the scorer's own account of its environment and its cells, and score.log is the slice of the node's console log that belongs to this job.",
+  "host": "Apple M4 Pro laptop, 24 GB unified memory, macOS 26.6.2, Python 3.12.14; the machine of experiments/2026-09-04-m4pro-tabpfn-timing and experiments/2026-09-11-lc-grid-e-tabpfn-m4pro",
+  "gpu": "Apple Silicon GPU (arm64), Metal via torch 2.14.0 MPS, memory shared with the system",
+  "job": "tabpfn@2026-09-12-lc-2016h2r-bundle",
+  "command": "python score_context.py 2026-09-12-lc-2016h2r-bundle --out-dir 2026-09-12-lc-2016h2r-bundle-scored-tabpfn --models tabpfn, run by node_jobs.py through run-score.sh from the unpacked job archive as job 15 of 18; no --chunk, so every cell is one forward call",
+  "session": "One process, no resume: node_jobs.py walked the eighteen jobs of jobs.json in order in one call of run.sh, the first finishing 2026-09-12T18:04:23Z and the last 2026-09-15T01:26:52Z. That call started 3,479 s after an earlier call on the same node had finished scoring the 2015H1-E folds; jobs-done.json is the node's tally file, kept across calls, and holds the E grid's eighteen entries and the two folds entries before these eighteen. The runner recorded this job as finished at 2026-09-14T20:36:01+00:00 after 7,093.7 s.",
+  "grid_index": "experiments/2026-09-15-lc-grid-r-tabpfn-m4pro holds the node's whole console log for this stretch, the job list, the runner's tally and the archive-level checks; this directory is one of the eighteen it indexes.",
+  "job_archive": {
+    "path": "data/derived/node/outoftime-run-grid-r-tabpfn.tar.gz",
+    "sha256": "d52de30630554271833b0504e2447d229962723067a061ac1edba3ff0c68bbee",
+    "built_by": "scripts/pack_node_run.py over the nine bundles of arm R, as a tar for the Apple node (commit 910aaff, sidecars outoftime-run-grid-r-tabpfn.tar.gz.sha256 and .jobs.json beside it)",
+    "score_context_py_sha256": "66e8933d67fea5f8140f31f5229a305a15d3f1eb20e0fd67e15546037ff9f0dc",
+    "score_context_py_provenance": "Hash of the copy inside the archive, LF-ended; equal to scripts/score_context.py in this tree, unchanged since commit fd5eadf, and to the scorer of every node run since experiments/2026-09-06-lc-2015h1e-probe3-colab-t4, the TabICL grid and the E grid included."
+  },
+  "result_archive": {
+    "name": "outoftime-result-grid-r-tabpfn.tar.gz",
+    "sha256": "a4efe70d3822f9461dc355f18fdb906587df02a1ef0b21c72a3c1e7756bf3abe",
+    "contents": "2026-09-12-lc-2016h2r-bundle-scored-tabpfn/ (node.json, scores.parquet, reference.parquet, parts/) copied here unchanged; score.log, jobs.json and jobs-done.json of the archive are in experiments/2026-09-15-lc-grid-r-tabpfn-m4pro, and score.log here is lines 1605 to 1632 of the archive's",
+    "sha256_of_files_here": {
+      "scores.parquet": "f56106ecad9191cacbaa55232a2e7644eafad1dc2db519e0950dc88dd79ed1fb",
+      "reference.parquet": "81cb97d0cf30f1e83998d741c01ee9ef1f4ee8aaf39e5a439c5564d0956a2bfd",
+      "node.json": "80120a829af8f6bb4d3e64074af377cb0537b3ac436f3486129c48216bc02583"
+    }
+  },
+  "bundle_check": {
+    "context.parquet": "5b8c2139c274e9ff365089921acf264458433da8a88eaeacc6a3c83eeb776295",
+    "scored.parquet": "7eaa0d0594744ee5bf26474471fe91d3732ca88a42d6d290cb1230091be0a1c0",
+    "how": "The hashes the scorer recorded in node.json for the bundle it read, equal to bundle.json of experiments/2026-09-12-lc-2016h2r-bundle. The scorer refuses a bundle whose hashes differ from bundle.json, so the node scored the recorded rows."
+  },
+  "parts_check": "18 part files under parts/, one per (model, context seed, cell), equal to the 18 cell records of node.json; the parts concatenated are scores.parquet and reference.parquet row for row and probability for probability.",
+  "row_check": {
+    "scored": "100,000 rows per context seed over 5 cohorts (2017Q1 to 2018Q1); every (cohort, row) pair, its outcome and its age match the gbm rows of experiments/2026-09-12-lc-2016h2r-scores/scores.parquet, zero mismatches, no missing probability",
+    "reference": "50,000 rows per context seed; every row and its outcome match the gbm-50k reference of the same context seed in experiments/2026-09-12-lc-2016h2r-scores/reference.parquet, zero mismatches",
+    "seeds": [
+      20260911,
+      20260912,
+      20260913
+    ]
+  },
+  "console_log": "score.log is the node's console output for this job: the scorer's own per-cell summary, the repeat check per seed and the totals. It was read in full and holds no home path, no account name and no token; the checkpoint was on the machine and nothing was downloaded.",
+  "question_this_run_was_sent_to_answer": "The TabPFN side of the rolling-arm robustness grid (EXP-002, hypothesis H4: whether the four-quarter rolling training window reduces calibration drift for the TFMs by more than it does for GBM-50k) on build 2016H2-R at softmax temperature 0.9: the same three context draws the fifty-thousand-row control holds and every cohort this build scores, so that H4 is read on 5 cohorts of this build, and so that TabPFN's rows at 0.9 and at 1.0 come from one device, as on arm E.",
+  "what_it_measured": {
+    "model": "tabpfn 8.5.0, checkpoint tabpfn-v3-classifier-v3_default.ckpt (sha256 d0d865d5...3988), tabicl 2.1.1 present and not used",
+    "device": "mps",
+    "context": "50,000 rows drawn from the 421,095-row training pool per context seed (20260911, 20260912, 20260913); categorical_features_indices [6, 13, 19], ignore_pretraining_limits true, softmax_temperature 0.9 (the library default), every other parameter at its default (node.json): n_estimators auto, random_state 0, balance_probabilities false",
+    "chunk": "0: each cell is one forward call, the reference cell included; rows are scored independently and the chunking changes no probability, which the T4 runs at --chunk 20000 on 2015H1-E show against the M4 rows to within the device term named in experiments/2026-09-11-lc-grid-e-tabpfn-m4pro",
+    "cells": "5 cohort cells of 20,000 rows and one reference cell of 50,000 rows per context seed",
+    "seconds": {
+      "reference_cells": [
+        444.1,
+        443.7,
+        443.6
+      ],
+      "cohort_cell_min": 319.2,
+      "cohort_cell_median": 319.9,
+      "cohort_cell_max": 320.2,
+      "wall_seconds": 7093.2,
+      "sum_of_cell_seconds": 6128.9,
+      "wall_minus_cells_minus_fits": 962.5,
+      "note": "The three repeat cells, one per context seed, are scored and not listed under cells; no cell in the eighteen R jobs exceeds 1.054x its cohort-and-context median and no incident is flagged, but this is bookkeeping, not a performance claim (see timing_caveat)."
+    },
+    "peak_gpu_gb_max": 3.627,
+    "fit_seconds": {
+      "tabpfn/20260911": 1.09,
+      "tabpfn/20260912": 0.339,
+      "tabpfn/20260913": 0.346
+    },
+    "wall_seconds": 7093.2,
+    "repeat": "2017Q1 scored twice from a fresh fit per context seed: largest absolute disagreement 0.0, no row differs, on every seed"
+  },
+  "timing_caveat": "No timing from this run is a measurement. It is the tail of the same node process the E grid ran on, subject to the same caveat about other use of the machine; no cell here exceeds 1.054x its cohort-and-context median and no incident is flagged, but that is a bookkeeping check, not a performance claim. The quotable timing of TabPFN on this machine is experiments/2026-09-04-m4pro-tabpfn-timing, 319.5 s for 20,000 rows at a 50,000-row context on an idle machine, which the 50,000-row-context cohort cells here run close to.",
+  "tuning_budget": "Zero trials, no validation split, every parameter at the library default except those the command names; n_estimators is auto and the realised ensemble size is not recorded. The classical models these rows pair with were tuned on their own pool (build.json of the build's score run), and the asymmetry runs both ways: the foundation model gets no tuning, the 50,000-row control inherits the point chosen on the full pool.",
+  "not_in_this_run": "Softmax temperature 1.0, scored on the same machine and the same rows in experiments/2026-09-15-lc-2016h2r-tabpfn-t1-m4pro. TabICL, which is scored on the hosted notebook (experiments/2026-09-13-lc-2016h2r-tabicl-colab-t4)."
+}

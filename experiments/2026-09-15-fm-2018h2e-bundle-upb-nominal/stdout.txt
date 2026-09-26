@@ -1,0 +1,26 @@
+book rows             : 1,355,395
+prepared in           : 156s
+2018H2-E: train 856861 rows 1999-01-01..2016-07-01 (71 quarters), blind 110537 rows, test 248746 rows over 10 cohorts
+
+| cohort | rows |
+| --- | --- |
+| 2019H1 | 24752 |
+| 2019H2 | 24861 |
+| 2020H1 | 24880 |
+| 2020H2 | 24919 |
+| 2021H1 | 24909 |
+| 2021H2 | 24929 |
+| 2022H1 | 24889 |
+| 2022H2 | 24859 |
+| 2023H1 | 24882 |
+| 2023H2 | 24866 | 
+
+context 20260911: 50,000 rows
+context 20260912: 50,000 rows
+context 20260913: 50,000 rows
+checked against       : experiments\2026-09-13-fm-2018h2e-scores-upb-nominal — every row and outcome identical
+
+context rows          : 150,000
+scored rows           : 248,746 over 10 cohorts
+features              : 14, 6 categorical
+wall                  : 161s

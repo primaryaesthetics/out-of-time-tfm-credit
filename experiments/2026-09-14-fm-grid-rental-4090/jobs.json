@@ -1,0 +1,519 @@
+{
+ "name": "grid-fm",
+ "command": [
+  "python",
+  "score_context.py"
+ ],
+ "bundles": [
+  "2026-09-13-fm-2006h2e-bundle",
+  "2026-09-13-fm-2002h2e-bundle",
+  "2026-09-13-fm-2004h2e-bundle",
+  "2026-09-13-fm-2008h2e-bundle",
+  "2026-09-13-fm-2010h2e-bundle",
+  "2026-09-13-fm-2012h2e-bundle",
+  "2026-09-13-fm-2014h2e-bundle",
+  "2026-09-13-fm-2016h2e-bundle",
+  "2026-09-13-fm-2018h2e-bundle",
+  "2026-09-13-fm-2004h2r-bundle",
+  "2026-09-13-fm-2006h2r-bundle",
+  "2026-09-13-fm-2008h2r-bundle",
+  "2026-09-13-fm-2010h2r-bundle",
+  "2026-09-13-fm-2012h2r-bundle",
+  "2026-09-13-fm-2014h2r-bundle",
+  "2026-09-13-fm-2016h2r-bundle",
+  "2026-09-13-fm-2018h2r-bundle"
+ ],
+ "jobs": [
+  {
+   "name": "tabicl@2026-09-13-fm-2006h2e-bundle",
+   "bundle": "2026-09-13-fm-2006h2e-bundle",
+   "out": "2026-09-13-fm-2006h2e-bundle-scored-tabicl",
+   "args": [
+    "--models",
+    "tabicl",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn@2026-09-13-fm-2006h2e-bundle",
+   "bundle": "2026-09-13-fm-2006h2e-bundle",
+   "out": "2026-09-13-fm-2006h2e-bundle-scored-tabpfn",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn-t1@2026-09-13-fm-2006h2e-bundle",
+   "bundle": "2026-09-13-fm-2006h2e-bundle",
+   "out": "2026-09-13-fm-2006h2e-bundle-scored-tabpfn-t1",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--temperature",
+    "1.0",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabicl@2026-09-13-fm-2002h2e-bundle",
+   "bundle": "2026-09-13-fm-2002h2e-bundle",
+   "out": "2026-09-13-fm-2002h2e-bundle-scored-tabicl",
+   "args": [
+    "--models",
+    "tabicl",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn@2026-09-13-fm-2002h2e-bundle",
+   "bundle": "2026-09-13-fm-2002h2e-bundle",
+   "out": "2026-09-13-fm-2002h2e-bundle-scored-tabpfn",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn-t1@2026-09-13-fm-2002h2e-bundle",
+   "bundle": "2026-09-13-fm-2002h2e-bundle",
+   "out": "2026-09-13-fm-2002h2e-bundle-scored-tabpfn-t1",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--temperature",
+    "1.0",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabicl@2026-09-13-fm-2004h2e-bundle",
+   "bundle": "2026-09-13-fm-2004h2e-bundle",
+   "out": "2026-09-13-fm-2004h2e-bundle-scored-tabicl",
+   "args": [
+    "--models",
+    "tabicl",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn@2026-09-13-fm-2004h2e-bundle",
+   "bundle": "2026-09-13-fm-2004h2e-bundle",
+   "out": "2026-09-13-fm-2004h2e-bundle-scored-tabpfn",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn-t1@2026-09-13-fm-2004h2e-bundle",
+   "bundle": "2026-09-13-fm-2004h2e-bundle",
+   "out": "2026-09-13-fm-2004h2e-bundle-scored-tabpfn-t1",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--temperature",
+    "1.0",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabicl@2026-09-13-fm-2008h2e-bundle",
+   "bundle": "2026-09-13-fm-2008h2e-bundle",
+   "out": "2026-09-13-fm-2008h2e-bundle-scored-tabicl",
+   "args": [
+    "--models",
+    "tabicl",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn@2026-09-13-fm-2008h2e-bundle",
+   "bundle": "2026-09-13-fm-2008h2e-bundle",
+   "out": "2026-09-13-fm-2008h2e-bundle-scored-tabpfn",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn-t1@2026-09-13-fm-2008h2e-bundle",
+   "bundle": "2026-09-13-fm-2008h2e-bundle",
+   "out": "2026-09-13-fm-2008h2e-bundle-scored-tabpfn-t1",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--temperature",
+    "1.0",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabicl@2026-09-13-fm-2010h2e-bundle",
+   "bundle": "2026-09-13-fm-2010h2e-bundle",
+   "out": "2026-09-13-fm-2010h2e-bundle-scored-tabicl",
+   "args": [
+    "--models",
+    "tabicl",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn@2026-09-13-fm-2010h2e-bundle",
+   "bundle": "2026-09-13-fm-2010h2e-bundle",
+   "out": "2026-09-13-fm-2010h2e-bundle-scored-tabpfn",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn-t1@2026-09-13-fm-2010h2e-bundle",
+   "bundle": "2026-09-13-fm-2010h2e-bundle",
+   "out": "2026-09-13-fm-2010h2e-bundle-scored-tabpfn-t1",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--temperature",
+    "1.0",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabicl@2026-09-13-fm-2012h2e-bundle",
+   "bundle": "2026-09-13-fm-2012h2e-bundle",
+   "out": "2026-09-13-fm-2012h2e-bundle-scored-tabicl",
+   "args": [
+    "--models",
+    "tabicl",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn@2026-09-13-fm-2012h2e-bundle",
+   "bundle": "2026-09-13-fm-2012h2e-bundle",
+   "out": "2026-09-13-fm-2012h2e-bundle-scored-tabpfn",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn-t1@2026-09-13-fm-2012h2e-bundle",
+   "bundle": "2026-09-13-fm-2012h2e-bundle",
+   "out": "2026-09-13-fm-2012h2e-bundle-scored-tabpfn-t1",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--temperature",
+    "1.0",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabicl@2026-09-13-fm-2014h2e-bundle",
+   "bundle": "2026-09-13-fm-2014h2e-bundle",
+   "out": "2026-09-13-fm-2014h2e-bundle-scored-tabicl",
+   "args": [
+    "--models",
+    "tabicl",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn@2026-09-13-fm-2014h2e-bundle",
+   "bundle": "2026-09-13-fm-2014h2e-bundle",
+   "out": "2026-09-13-fm-2014h2e-bundle-scored-tabpfn",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn-t1@2026-09-13-fm-2014h2e-bundle",
+   "bundle": "2026-09-13-fm-2014h2e-bundle",
+   "out": "2026-09-13-fm-2014h2e-bundle-scored-tabpfn-t1",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--temperature",
+    "1.0",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabicl@2026-09-13-fm-2016h2e-bundle",
+   "bundle": "2026-09-13-fm-2016h2e-bundle",
+   "out": "2026-09-13-fm-2016h2e-bundle-scored-tabicl",
+   "args": [
+    "--models",
+    "tabicl",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn@2026-09-13-fm-2016h2e-bundle",
+   "bundle": "2026-09-13-fm-2016h2e-bundle",
+   "out": "2026-09-13-fm-2016h2e-bundle-scored-tabpfn",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn-t1@2026-09-13-fm-2016h2e-bundle",
+   "bundle": "2026-09-13-fm-2016h2e-bundle",
+   "out": "2026-09-13-fm-2016h2e-bundle-scored-tabpfn-t1",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--temperature",
+    "1.0",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabicl@2026-09-13-fm-2018h2e-bundle",
+   "bundle": "2026-09-13-fm-2018h2e-bundle",
+   "out": "2026-09-13-fm-2018h2e-bundle-scored-tabicl",
+   "args": [
+    "--models",
+    "tabicl",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn@2026-09-13-fm-2018h2e-bundle",
+   "bundle": "2026-09-13-fm-2018h2e-bundle",
+   "out": "2026-09-13-fm-2018h2e-bundle-scored-tabpfn",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn-t1@2026-09-13-fm-2018h2e-bundle",
+   "bundle": "2026-09-13-fm-2018h2e-bundle",
+   "out": "2026-09-13-fm-2018h2e-bundle-scored-tabpfn-t1",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--temperature",
+    "1.0",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabicl@2026-09-13-fm-2004h2r-bundle",
+   "bundle": "2026-09-13-fm-2004h2r-bundle",
+   "out": "2026-09-13-fm-2004h2r-bundle-scored-tabicl",
+   "args": [
+    "--models",
+    "tabicl",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn@2026-09-13-fm-2004h2r-bundle",
+   "bundle": "2026-09-13-fm-2004h2r-bundle",
+   "out": "2026-09-13-fm-2004h2r-bundle-scored-tabpfn",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabicl@2026-09-13-fm-2006h2r-bundle",
+   "bundle": "2026-09-13-fm-2006h2r-bundle",
+   "out": "2026-09-13-fm-2006h2r-bundle-scored-tabicl",
+   "args": [
+    "--models",
+    "tabicl",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn@2026-09-13-fm-2006h2r-bundle",
+   "bundle": "2026-09-13-fm-2006h2r-bundle",
+   "out": "2026-09-13-fm-2006h2r-bundle-scored-tabpfn",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabicl@2026-09-13-fm-2008h2r-bundle",
+   "bundle": "2026-09-13-fm-2008h2r-bundle",
+   "out": "2026-09-13-fm-2008h2r-bundle-scored-tabicl",
+   "args": [
+    "--models",
+    "tabicl",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn@2026-09-13-fm-2008h2r-bundle",
+   "bundle": "2026-09-13-fm-2008h2r-bundle",
+   "out": "2026-09-13-fm-2008h2r-bundle-scored-tabpfn",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabicl@2026-09-13-fm-2010h2r-bundle",
+   "bundle": "2026-09-13-fm-2010h2r-bundle",
+   "out": "2026-09-13-fm-2010h2r-bundle-scored-tabicl",
+   "args": [
+    "--models",
+    "tabicl",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn@2026-09-13-fm-2010h2r-bundle",
+   "bundle": "2026-09-13-fm-2010h2r-bundle",
+   "out": "2026-09-13-fm-2010h2r-bundle-scored-tabpfn",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabicl@2026-09-13-fm-2012h2r-bundle",
+   "bundle": "2026-09-13-fm-2012h2r-bundle",
+   "out": "2026-09-13-fm-2012h2r-bundle-scored-tabicl",
+   "args": [
+    "--models",
+    "tabicl",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn@2026-09-13-fm-2012h2r-bundle",
+   "bundle": "2026-09-13-fm-2012h2r-bundle",
+   "out": "2026-09-13-fm-2012h2r-bundle-scored-tabpfn",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabicl@2026-09-13-fm-2014h2r-bundle",
+   "bundle": "2026-09-13-fm-2014h2r-bundle",
+   "out": "2026-09-13-fm-2014h2r-bundle-scored-tabicl",
+   "args": [
+    "--models",
+    "tabicl",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn@2026-09-13-fm-2014h2r-bundle",
+   "bundle": "2026-09-13-fm-2014h2r-bundle",
+   "out": "2026-09-13-fm-2014h2r-bundle-scored-tabpfn",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabicl@2026-09-13-fm-2016h2r-bundle",
+   "bundle": "2026-09-13-fm-2016h2r-bundle",
+   "out": "2026-09-13-fm-2016h2r-bundle-scored-tabicl",
+   "args": [
+    "--models",
+    "tabicl",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn@2026-09-13-fm-2016h2r-bundle",
+   "bundle": "2026-09-13-fm-2016h2r-bundle",
+   "out": "2026-09-13-fm-2016h2r-bundle-scored-tabpfn",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabicl@2026-09-13-fm-2018h2r-bundle",
+   "bundle": "2026-09-13-fm-2018h2r-bundle",
+   "out": "2026-09-13-fm-2018h2r-bundle-scored-tabicl",
+   "args": [
+    "--models",
+    "tabicl",
+    "--chunk",
+    "20000"
+   ]
+  },
+  {
+   "name": "tabpfn@2026-09-13-fm-2018h2r-bundle",
+   "bundle": "2026-09-13-fm-2018h2r-bundle",
+   "out": "2026-09-13-fm-2018h2r-bundle-scored-tabpfn",
+   "args": [
+    "--models",
+    "tabpfn",
+    "--chunk",
+    "20000"
+   ]
+  }
+ ]
+}

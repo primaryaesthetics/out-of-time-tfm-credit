@@ -1,0 +1,46 @@
+build                 : 2004H2-E
+ablation              : dti_kept, adds ['dti'], removes nothing
+primary sources       : experiments/2026-09-13-fm-2004h2e-scores, experiments/2026-09-13-fm-2004h2e-tabpfn-rental-4090, experiments/2026-09-13-fm-2004h2e-tabpfn-t1-rental-4090, experiments/2026-09-13-fm-2004h2e-tabicl-rental-4090, experiments/2026-09-13-fm-2004h2e-tabicl-t1-rental-4090
+ablation sources      : experiments/2026-09-13-fm-2004h2e-scores-dti-kept, experiments/2026-09-13-fm-2004h2e-dti-kept-tabpfn-rental-4090, experiments/2026-09-13-fm-2004h2e-dti-kept-tabpfn-t1-rental-4090, experiments/2026-09-13-fm-2004h2e-dti-kept-tabicl-rental-4090, experiments/2026-09-13-fm-2004h2e-dti-kept-tabicl-t1-rental-4090
+cells checked         : 202 cells, 4,941,995 rows on each matrix, identical rows and outcomes
+cohorts pooled        : 3 of 38 scored: 2005H1, 2005H2, 2006H1
+context seeds pooled  : 20260911
+  gbm-50k draws [20260912, 20260913] left out of the pooling: no other seeded model holds them
+  35 cohorts left out of the pooling: not scored by every model
+bootstrap             : 200 resamples in 39s
+bootstrap seed 20260906: again in 39s
+bootstrap seed 20260907: again in 39s
+
+per model, primary and dti_kept, and dti_kept minus primary (value [lo, hi], * excludes zero, ? star changes with the bootstrap seed):
+  auc   scorecard   0.8060  0.8065  +0.0005 [-0.0013, +0.0025]   
+  auc   gbm         0.7974  0.8009  +0.0036 [+0.0012, +0.0069] * 
+  auc   gbm-50k     0.7923  0.7954  +0.0031 [+0.0003, +0.0061] *?
+  auc   tabpfn      0.8071  0.8098  +0.0027 [+0.0008, +0.0046] * 
+  auc   tabicl      0.8055  0.8071  +0.0016 [-0.0005, +0.0040]   
+  auc   tabicl@t1   0.8055  0.8071  +0.0016 [-0.0004, +0.0040]   
+  auc   tabpfn@t1   0.8071  0.8098  +0.0027 [+0.0008, +0.0046] * 
+  brier scorecard   0.0125  0.0125  -0.0000 [-0.0000, -0.0000] * 
+  brier gbm         0.0125  0.0125  -0.0000 [-0.0000, -0.0000] * 
+  brier gbm-50k     0.0126  0.0125  -0.0000 [-0.0001, -0.0000] * 
+  brier tabpfn      0.0124  0.0124  -0.0000 [-0.0000, -0.0000] * 
+  brier tabicl      0.0125  0.0124  -0.0000 [-0.0000, -0.0000] * 
+  brier tabicl@t1   0.0124  0.0124  -0.0000 [-0.0000, +0.0000]  ?
+  brier tabpfn@t1   0.0124  0.0124  -0.0000 [-0.0000, -0.0000] * 
+
+the trigger: each model's difference minus gbm-50k's, on the same resample:
+  auc   scorecard   -0.0026 [-0.0054, +0.0001]  ?
+  auc   gbm         +0.0005 [-0.0022, +0.0036]   
+  auc   tabpfn      -0.0004 [-0.0031, +0.0024]   
+  auc   tabicl      -0.0015 [-0.0041, +0.0012]   
+  auc   tabicl@t1   -0.0015 [-0.0041, +0.0012]   
+  auc   tabpfn@t1   -0.0004 [-0.0031, +0.0024]   
+  brier scorecard   +0.0000 [+0.0000, +0.0000] *?
+  brier gbm         +0.0000 [-0.0000, +0.0000]   
+  brier tabpfn      +0.0000 [-0.0000, +0.0000]   
+  brier tabicl      +0.0000 [-0.0000, +0.0000]   
+  brier tabicl@t1   +0.0000 [+0.0000, +0.0000] *?
+  brier tabpfn@t1   +0.0000 [+0.0000, +0.0000] *?
+
+bootstrap seed check over seeds 20260906, 20260907: 13 of 26 differences starred under seed 20260905, 6 change their star, largest movement of an interval bound 0.0004
+
+wall                  : 143s

@@ -1,0 +1,1616 @@
+{
+  "arm": "R",
+  "outcome": "outcome_horizon",
+  "resolution": "year",
+  "builds": {
+    "2004H2-R": [
+      "2005",
+      "2006",
+      "2007",
+      "2008",
+      "2009",
+      "2010",
+      "2011",
+      "2012",
+      "2017",
+      "2019",
+      "2022",
+      "2023"
+    ],
+    "2006H2-R": [
+      "2007",
+      "2008",
+      "2009",
+      "2010",
+      "2011",
+      "2012",
+      "2017",
+      "2019",
+      "2022",
+      "2023"
+    ],
+    "2008H2-R": [
+      "2009",
+      "2010",
+      "2011",
+      "2012",
+      "2017",
+      "2019",
+      "2022",
+      "2023"
+    ],
+    "2010H2-R": [
+      "2011",
+      "2012",
+      "2017",
+      "2019",
+      "2022",
+      "2023"
+    ],
+    "2012H2-R": [
+      "2017",
+      "2019",
+      "2022",
+      "2023"
+    ],
+    "2014H2-R": [
+      "2017",
+      "2019",
+      "2022",
+      "2023"
+    ],
+    "2016H2-R": [
+      "2017",
+      "2019",
+      "2022",
+      "2023"
+    ],
+    "2018H2-R": [
+      "2019",
+      "2022",
+      "2023"
+    ]
+  },
+  "cells": 51,
+  "unreadable": {
+    "all": [],
+    "nearest": [
+      "2012H2-R",
+      "2014H2-R",
+      "2018H2-R"
+    ]
+  },
+  "years": [
+    {
+      "year": "2005",
+      "labelled_book": 48319,
+      "defaults_book": 181,
+      "scored_rows": 48315,
+      "defaults_scored": 181,
+      "halves_above_primary": 2,
+      "admitted": true,
+      "builds_whole": [
+        "2004H2-R"
+      ],
+      "builds_one_half": []
+    },
+    {
+      "year": "2006",
+      "labelled_book": 47189,
+      "defaults_book": 236,
+      "scored_rows": 47178,
+      "defaults_scored": 236,
+      "halves_above_primary": 2,
+      "admitted": true,
+      "builds_whole": [
+        "2004H2-R"
+      ],
+      "builds_one_half": []
+    },
+    {
+      "year": "2007",
+      "labelled_book": 47549,
+      "defaults_book": 545,
+      "scored_rows": 47536,
+      "defaults_scored": 545,
+      "halves_above_primary": 2,
+      "admitted": true,
+      "builds_whole": [
+        "2004H2-R",
+        "2006H2-R"
+      ],
+      "builds_one_half": []
+    },
+    {
+      "year": "2008",
+      "labelled_book": 49415,
+      "defaults_book": 670,
+      "scored_rows": 49406,
+      "defaults_scored": 670,
+      "halves_above_primary": 2,
+      "admitted": true,
+      "builds_whole": [
+        "2004H2-R",
+        "2006H2-R"
+      ],
+      "builds_one_half": []
+    },
+    {
+      "year": "2009",
+      "labelled_book": 49616,
+      "defaults_book": 102,
+      "scored_rows": 49553,
+      "defaults_scored": 102,
+      "halves_above_primary": 2,
+      "admitted": true,
+      "builds_whole": [
+        "2004H2-R",
+        "2006H2-R",
+        "2008H2-R"
+      ],
+      "builds_one_half": []
+    },
+    {
+      "year": "2010",
+      "labelled_book": 49544,
+      "defaults_book": 104,
+      "scored_rows": 49526,
+      "defaults_scored": 104,
+      "halves_above_primary": 2,
+      "admitted": true,
+      "builds_whole": [
+        "2004H2-R",
+        "2006H2-R",
+        "2008H2-R"
+      ],
+      "builds_one_half": []
+    },
+    {
+      "year": "2011",
+      "labelled_book": 49283,
+      "defaults_book": 109,
+      "scored_rows": 49260,
+      "defaults_scored": 109,
+      "halves_above_primary": 2,
+      "admitted": true,
+      "builds_whole": [
+        "2004H2-R",
+        "2006H2-R",
+        "2008H2-R",
+        "2010H2-R"
+      ],
+      "builds_one_half": []
+    },
+    {
+      "year": "2012",
+      "labelled_book": 48852,
+      "defaults_book": 109,
+      "scored_rows": 48844,
+      "defaults_scored": 109,
+      "halves_above_primary": 2,
+      "admitted": true,
+      "builds_whole": [
+        "2004H2-R",
+        "2006H2-R",
+        "2008H2-R",
+        "2010H2-R"
+      ],
+      "builds_one_half": []
+    },
+    {
+      "year": "2013",
+      "labelled_book": 48321,
+      "defaults_book": 79,
+      "scored_rows": 48315,
+      "defaults_scored": 79,
+      "halves_above_primary": 1,
+      "admitted": false,
+      "builds_whole": [
+        "2004H2-R",
+        "2006H2-R",
+        "2008H2-R",
+        "2010H2-R",
+        "2012H2-R"
+      ],
+      "builds_one_half": []
+    },
+    {
+      "year": "2014",
+      "labelled_book": 48565,
+      "defaults_book": 76,
+      "scored_rows": 48554,
+      "defaults_scored": 76,
+      "halves_above_primary": 1,
+      "admitted": false,
+      "builds_whole": [
+        "2004H2-R",
+        "2006H2-R",
+        "2008H2-R",
+        "2010H2-R",
+        "2012H2-R"
+      ],
+      "builds_one_half": []
+    },
+    {
+      "year": "2015",
+      "labelled_book": 48321,
+      "defaults_book": 58,
+      "scored_rows": 48318,
+      "defaults_scored": 58,
+      "halves_above_primary": 1,
+      "admitted": false,
+      "builds_whole": [
+        "2004H2-R",
+        "2006H2-R",
+        "2008H2-R",
+        "2010H2-R",
+        "2012H2-R",
+        "2014H2-R"
+      ],
+      "builds_one_half": []
+    },
+    {
+      "year": "2016",
+      "labelled_book": 49402,
+      "defaults_book": 52,
+      "scored_rows": 49392,
+      "defaults_scored": 52,
+      "halves_above_primary": 2,
+      "admitted": false,
+      "builds_whole": [
+        "2004H2-R",
+        "2006H2-R",
+        "2008H2-R",
+        "2010H2-R",
+        "2012H2-R",
+        "2014H2-R"
+      ],
+      "builds_one_half": []
+    },
+    {
+      "year": "2017",
+      "labelled_book": 49230,
+      "defaults_book": 105,
+      "scored_rows": 49221,
+      "defaults_scored": 105,
+      "halves_above_primary": 2,
+      "admitted": true,
+      "builds_whole": [
+        "2004H2-R",
+        "2006H2-R",
+        "2008H2-R",
+        "2010H2-R",
+        "2012H2-R",
+        "2014H2-R",
+        "2016H2-R"
+      ],
+      "builds_one_half": []
+    },
+    {
+      "year": "2018",
+      "labelled_book": 48969,
+      "defaults_book": 98,
+      "scored_rows": 48959,
+      "defaults_scored": 98,
+      "halves_above_primary": 2,
+      "admitted": false,
+      "builds_whole": [
+        "2004H2-R",
+        "2006H2-R",
+        "2008H2-R",
+        "2010H2-R",
+        "2012H2-R",
+        "2014H2-R",
+        "2016H2-R"
+      ],
+      "builds_one_half": []
+    },
+    {
+      "year": "2019",
+      "labelled_book": 49626,
+      "defaults_book": 101,
+      "scored_rows": 49613,
+      "defaults_scored": 101,
+      "halves_above_primary": 2,
+      "admitted": true,
+      "builds_whole": [
+        "2004H2-R",
+        "2006H2-R",
+        "2008H2-R",
+        "2010H2-R",
+        "2012H2-R",
+        "2014H2-R",
+        "2016H2-R",
+        "2018H2-R"
+      ],
+      "builds_one_half": []
+    },
+    {
+      "year": "2020",
+      "labelled_book": 49816,
+      "defaults_book": 85,
+      "scored_rows": 49799,
+      "defaults_scored": 85,
+      "halves_above_primary": 1,
+      "admitted": false,
+      "builds_whole": [
+        "2004H2-R",
+        "2006H2-R",
+        "2008H2-R",
+        "2010H2-R",
+        "2012H2-R",
+        "2014H2-R",
+        "2016H2-R",
+        "2018H2-R"
+      ],
+      "builds_one_half": []
+    },
+    {
+      "year": "2021",
+      "labelled_book": 49859,
+      "defaults_book": 71,
+      "scored_rows": 49838,
+      "defaults_scored": 71,
+      "halves_above_primary": 1,
+      "admitted": false,
+      "builds_whole": [
+        "2004H2-R",
+        "2006H2-R",
+        "2008H2-R",
+        "2010H2-R",
+        "2012H2-R",
+        "2014H2-R",
+        "2016H2-R",
+        "2018H2-R"
+      ],
+      "builds_one_half": []
+    },
+    {
+      "year": "2022",
+      "labelled_book": 49783,
+      "defaults_book": 186,
+      "scored_rows": 49748,
+      "defaults_scored": 186,
+      "halves_above_primary": 2,
+      "admitted": true,
+      "builds_whole": [
+        "2004H2-R",
+        "2006H2-R",
+        "2008H2-R",
+        "2010H2-R",
+        "2012H2-R",
+        "2014H2-R",
+        "2016H2-R",
+        "2018H2-R"
+      ],
+      "builds_one_half": []
+    },
+    {
+      "year": "2023",
+      "labelled_book": 49772,
+      "defaults_book": 240,
+      "scored_rows": 49748,
+      "defaults_scored": 240,
+      "halves_above_primary": 2,
+      "admitted": true,
+      "builds_whole": [
+        "2004H2-R",
+        "2006H2-R",
+        "2008H2-R",
+        "2010H2-R",
+        "2012H2-R",
+        "2014H2-R",
+        "2016H2-R",
+        "2018H2-R"
+      ],
+      "builds_one_half": []
+    }
+  ],
+  "floors": {
+    "record": "experiments/2026-09-13-fm-vintage-builds2/cells.csv",
+    "rows": 5000,
+    "defaults": 100,
+    "rule": "a year enters when its annual cohort, both halves on the book, holds both floors under the twelve-month label, counted from the record and summed over the two halves; an admitted year whose scored rows fall under either floor stops the run"
+  },
+  "models": {
+    "scorecard": [],
+    "gbm": [],
+    "gbm-50k": [
+      20260911,
+      20260912,
+      20260913
+    ],
+    "gbm-50k@share": [
+      20260911,
+      20260912,
+      20260913
+    ],
+    "tabicl": [
+      20260911,
+      20260912,
+      20260913
+    ],
+    "tabicl@t1": [
+      20260911,
+      20260912,
+      20260913
+    ],
+    "tabpfn": [
+      20260911,
+      20260912,
+      20260913
+    ],
+    "tabpfn@t1": [
+      20260911,
+      20260912,
+      20260913
+    ]
+  },
+  "models_dropped": [],
+  "sources": [
+    "experiments/2026-09-13-fm-2004h2r-scores",
+    "experiments/2026-09-14-fm-2004h2r-tabicl-rental-4090",
+    "experiments/2026-09-15-fm-2004h2r-tabicl-t1-derived",
+    "experiments/2026-09-14-fm-2004h2r-tabpfn-rental-4090",
+    "experiments/2026-09-15-fm-2004h2r-tabpfn-t1-derived",
+    "experiments/2026-09-13-fm-2006h2r-scores",
+    "experiments/2026-09-14-fm-2006h2r-tabicl-rental-4090",
+    "experiments/2026-09-15-fm-2006h2r-tabicl-t1-derived",
+    "experiments/2026-09-14-fm-2006h2r-tabpfn-rental-4090",
+    "experiments/2026-09-15-fm-2006h2r-tabpfn-t1-derived",
+    "experiments/2026-09-13-fm-2008h2r-scores",
+    "experiments/2026-09-14-fm-2008h2r-tabicl-rental-4090",
+    "experiments/2026-09-15-fm-2008h2r-tabicl-t1-derived",
+    "experiments/2026-09-14-fm-2008h2r-tabpfn-rental-4090",
+    "experiments/2026-09-15-fm-2008h2r-tabpfn-t1-derived",
+    "experiments/2026-09-13-fm-2010h2r-scores",
+    "experiments/2026-09-14-fm-2010h2r-tabicl-rental-4090",
+    "experiments/2026-09-15-fm-2010h2r-tabicl-t1-derived",
+    "experiments/2026-09-14-fm-2010h2r-tabpfn-rental-4090",
+    "experiments/2026-09-15-fm-2010h2r-tabpfn-t1-derived",
+    "experiments/2026-09-13-fm-2012h2r-scores",
+    "experiments/2026-09-14-fm-2012h2r-tabicl-rental-4090",
+    "experiments/2026-09-15-fm-2012h2r-tabicl-t1-derived",
+    "experiments/2026-09-14-fm-2012h2r-tabpfn-rental-4090",
+    "experiments/2026-09-15-fm-2012h2r-tabpfn-t1-derived",
+    "experiments/2026-09-13-fm-2014h2r-scores",
+    "experiments/2026-09-14-fm-2014h2r-tabicl-rental-4090",
+    "experiments/2026-09-15-fm-2014h2r-tabicl-t1-derived",
+    "experiments/2026-09-14-fm-2014h2r-tabpfn-rental-4090",
+    "experiments/2026-09-15-fm-2014h2r-tabpfn-t1-derived",
+    "experiments/2026-09-13-fm-2016h2r-scores",
+    "experiments/2026-09-14-fm-2016h2r-tabicl-rental-4090",
+    "experiments/2026-09-15-fm-2016h2r-tabicl-t1-derived",
+    "experiments/2026-09-14-fm-2016h2r-tabpfn-rental-4090",
+    "experiments/2026-09-15-fm-2016h2r-tabpfn-t1-derived",
+    "experiments/2026-09-13-fm-2018h2r-scores",
+    "experiments/2026-09-14-fm-2018h2r-tabicl-rental-4090",
+    "experiments/2026-09-15-fm-2018h2r-tabicl-t1-derived",
+    "experiments/2026-09-14-fm-2018h2r-tabpfn-rental-4090",
+    "experiments/2026-09-15-fm-2018h2r-tabpfn-t1-derived",
+    "experiments/2026-09-17-fm-2004h2r-control-refit",
+    "experiments/2026-09-17-fm-2006h2r-control-refit",
+    "experiments/2026-09-17-fm-2008h2r-control-refit",
+    "experiments/2026-09-17-fm-2010h2r-control-refit",
+    "experiments/2026-09-17-fm-2012h2r-control-refit",
+    "experiments/2026-09-17-fm-2014h2r-control-refit",
+    "experiments/2026-09-17-fm-2016h2r-control-refit",
+    "experiments/2026-09-17-fm-2018h2r-control-refit"
+  ],
+  "derived_rows": {
+    "tabicl@t1": [
+      {
+        "build_id": "2004H2-R",
+        "directory": "experiments/2026-09-15-fm-2004h2r-tabicl-t1-derived",
+        "model": "tabicl@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 4,
+        "kind": "exact",
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "rows_checked": 121595,
+        "unchecked_cells": 117
+      },
+      {
+        "build_id": "2006H2-R",
+        "directory": "experiments/2026-09-15-fm-2006h2r-tabicl-t1-derived",
+        "model": "tabicl@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 4,
+        "kind": "exact",
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "rows_checked": 121595,
+        "unchecked_cells": 105
+      },
+      {
+        "build_id": "2008H2-R",
+        "directory": "experiments/2026-09-15-fm-2008h2r-tabicl-t1-derived",
+        "model": "tabicl@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 4,
+        "kind": "exact",
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "rows_checked": 121595,
+        "unchecked_cells": 93
+      },
+      {
+        "build_id": "2010H2-R",
+        "directory": "experiments/2026-09-15-fm-2010h2r-tabicl-t1-derived",
+        "model": "tabicl@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 4,
+        "kind": "exact",
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "rows_checked": 121595,
+        "unchecked_cells": 81
+      },
+      {
+        "build_id": "2012H2-R",
+        "directory": "experiments/2026-09-15-fm-2012h2r-tabicl-t1-derived",
+        "model": "tabicl@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 4,
+        "kind": "exact",
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "rows_checked": 121595,
+        "unchecked_cells": 69
+      },
+      {
+        "build_id": "2014H2-R",
+        "directory": "experiments/2026-09-15-fm-2014h2r-tabicl-t1-derived",
+        "model": "tabicl@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 4,
+        "kind": "exact",
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "rows_checked": 121595,
+        "unchecked_cells": 57
+      },
+      {
+        "build_id": "2016H2-R",
+        "directory": "experiments/2026-09-15-fm-2016h2r-tabicl-t1-derived",
+        "model": "tabicl@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 4,
+        "kind": "exact",
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "rows_checked": 121595,
+        "unchecked_cells": 45
+      },
+      {
+        "build_id": "2018H2-R",
+        "directory": "experiments/2026-09-15-fm-2018h2r-tabicl-t1-derived",
+        "model": "tabicl@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 4,
+        "kind": "exact",
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "rows_checked": 121595,
+        "unchecked_cells": 33
+      }
+    ],
+    "tabpfn@t1": [
+      {
+        "build_id": "2004H2-R",
+        "directory": "experiments/2026-09-15-fm-2004h2r-tabpfn-t1-derived",
+        "model": "tabpfn@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 117,
+        "kind": "approximate",
+        "worst_cell_error": 0.0006631944728695549,
+        "mean_cell_error": 0.00012061273346916384,
+        "cells_above_figure": 0,
+        "figure": 0.00084,
+        "cox_slope_gap": {
+          "worst": 0.0005904890927124207,
+          "mean": 0.00013539160415082898
+        },
+        "oe_gap": {
+          "worst": -0.0044790663993223845,
+          "mean": -0.0011890425664112163
+        }
+      },
+      {
+        "build_id": "2006H2-R",
+        "directory": "experiments/2026-09-15-fm-2006h2r-tabpfn-t1-derived",
+        "model": "tabpfn@t1",
+        "checked_build": [
+          "2006H2-E"
+        ],
+        "cells_checked": 105,
+        "kind": "approximate",
+        "worst_cell_error": 0.0005041850218721056,
+        "mean_cell_error": 0.00012486580948946322,
+        "cells_above_figure": 0,
+        "figure": 0.00084,
+        "cox_slope_gap": {
+          "worst": 0.0006831381390519642,
+          "mean": 7.429564165131238e-05
+        },
+        "oe_gap": {
+          "worst": -0.004704946906682217,
+          "mean": -0.0012836550926759959
+        }
+      },
+      {
+        "build_id": "2008H2-R",
+        "directory": "experiments/2026-09-15-fm-2008h2r-tabpfn-t1-derived",
+        "model": "tabpfn@t1",
+        "checked_build": [
+          "2008H2-E"
+        ],
+        "cells_checked": 93,
+        "kind": "approximate",
+        "worst_cell_error": 0.0018317637700542289,
+        "mean_cell_error": 0.00022370367592408833,
+        "cells_above_figure": 8,
+        "figure": 0.00084,
+        "cox_slope_gap": {
+          "worst": -0.0018887074518015856,
+          "mean": -0.00019732403726247438
+        },
+        "oe_gap": {
+          "worst": -0.003920049118206759,
+          "mean": -0.0010541902635037405
+        }
+      },
+      {
+        "build_id": "2010H2-R",
+        "directory": "experiments/2026-09-15-fm-2010h2r-tabpfn-t1-derived",
+        "model": "tabpfn@t1",
+        "checked_build": [
+          "2010H2-E"
+        ],
+        "cells_checked": 81,
+        "kind": "approximate",
+        "worst_cell_error": 0.0008924090550394004,
+        "mean_cell_error": 0.00011766766292934068,
+        "cells_above_figure": 1,
+        "figure": 0.00084,
+        "cox_slope_gap": {
+          "worst": 0.0007802013906346161,
+          "mean": -3.81542692484748e-05
+        },
+        "oe_gap": {
+          "worst": -0.0017819218308152696,
+          "mean": -0.0007408448508349026
+        }
+      },
+      {
+        "build_id": "2012H2-R",
+        "directory": "experiments/2026-09-15-fm-2012h2r-tabpfn-t1-derived",
+        "model": "tabpfn@t1",
+        "checked_build": [
+          "2012H2-E"
+        ],
+        "cells_checked": 69,
+        "kind": "approximate",
+        "worst_cell_error": 0.00025242934739022616,
+        "mean_cell_error": 0.00011098973704331381,
+        "cells_above_figure": 0,
+        "figure": 0.00084,
+        "cox_slope_gap": {
+          "worst": 0.00040422173461940325,
+          "mean": 4.7785103889261794e-05
+        },
+        "oe_gap": {
+          "worst": -0.0009932740073852475,
+          "mean": -0.0003877617350281918
+        }
+      },
+      {
+        "build_id": "2014H2-R",
+        "directory": "experiments/2026-09-15-fm-2014h2r-tabpfn-t1-derived",
+        "model": "tabpfn@t1",
+        "checked_build": [
+          "2014H2-E"
+        ],
+        "cells_checked": 57,
+        "kind": "approximate",
+        "worst_cell_error": 0.000326796116647321,
+        "mean_cell_error": 0.00014865304951052876,
+        "cells_above_figure": 0,
+        "figure": 0.00084,
+        "cox_slope_gap": {
+          "worst": 0.0008691336046986464,
+          "mean": 0.00018333991248017787
+        },
+        "oe_gap": {
+          "worst": -0.0013522995786769965,
+          "mean": -0.0004821000939737079
+        }
+      },
+      {
+        "build_id": "2016H2-R",
+        "directory": "experiments/2026-09-15-fm-2016h2r-tabpfn-t1-derived",
+        "model": "tabpfn@t1",
+        "checked_build": [
+          "2016H2-E"
+        ],
+        "cells_checked": 45,
+        "kind": "approximate",
+        "worst_cell_error": 0.0003846778925373773,
+        "mean_cell_error": 0.0001443070596343817,
+        "cells_above_figure": 0,
+        "figure": 0.00084,
+        "cox_slope_gap": {
+          "worst": 0.0004894972925943986,
+          "mean": 0.00019030826302959022
+        },
+        "oe_gap": {
+          "worst": -0.0013412789170061945,
+          "mean": -0.0005084203111242345
+        }
+      },
+      {
+        "build_id": "2018H2-R",
+        "directory": "experiments/2026-09-15-fm-2018h2r-tabpfn-t1-derived",
+        "model": "tabpfn@t1",
+        "checked_build": [
+          "2018H2-E"
+        ],
+        "cells_checked": 33,
+        "kind": "approximate",
+        "worst_cell_error": 0.00013316215680592158,
+        "mean_cell_error": 4.7686250217220326e-05,
+        "cells_above_figure": 0,
+        "figure": 0.00084,
+        "cox_slope_gap": {
+          "worst": 0.0007593860940688923,
+          "mean": -2.6876282320965178e-05
+        },
+        "oe_gap": {
+          "worst": -0.0021206702062284144,
+          "mean": -0.0008322646602122284
+        }
+      }
+    ]
+  },
+  "nearest": 3,
+  "nearest_cells": {
+    "2004H2-R": [
+      "2005",
+      "2006",
+      "2007"
+    ],
+    "2006H2-R": [
+      "2007",
+      "2008",
+      "2009"
+    ],
+    "2008H2-R": [
+      "2009",
+      "2010",
+      "2011"
+    ],
+    "2010H2-R": [
+      "2011",
+      "2012"
+    ],
+    "2012H2-R": [],
+    "2014H2-R": [
+      "2017"
+    ],
+    "2016H2-R": [
+      "2017",
+      "2019"
+    ],
+    "2018H2-R": [
+      "2019"
+    ]
+  },
+  "bootstrap": {
+    "resamples": 200,
+    "seed": 20260905,
+    "alpha": 0.05,
+    "blocking": "the annual cohort, one index over the union of its two half-years shared by every build that scores it",
+    "context_draw": "drawn with the resample, jointly across models and builds",
+    "poolings": [
+      "all",
+      "nearest",
+      "all, cohorts resampled"
+    ],
+    "per_draw": "the 'all' pooling repeated with each context draw held fixed, in the rows whose draw is set",
+    "draws_disagree": {
+      "auc_slope_cohort|gbm-50k - gbm": [
+        {
+          "draw": 20260911,
+          "ci_lo": -9.311882978371243e-05,
+          "ci_hi": 0.00020266340129257627
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.00041432285033642113,
+          "ci_hi": -0.00012402438924037908
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.00022949893578122865,
+          "ci_hi": 7.484119534459075e-05
+        }
+      ],
+      "auc_slope_cohort|gbm-50k@share - gbm": [
+        {
+          "draw": 20260911,
+          "ci_lo": -9.311882978371243e-05,
+          "ci_hi": 0.00020266340129257627
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.00041432285033642113,
+          "ci_hi": -0.00012402438924037908
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.00022949893578122865,
+          "ci_hi": 7.484119534459075e-05
+        }
+      ]
+    },
+    "seed_check": {
+      "seeds": [
+        20260906,
+        20260907
+      ],
+      "differences": 672,
+      "starred": 103,
+      "arm_differences": 168,
+      "arm_starred": 33,
+      "arm_star_changed": 2,
+      "star_changed": [
+        {
+          "cohorts": "all",
+          "scope": "builds",
+          "metric": "auc_slope_build",
+          "pair": "tabpfn - gbm",
+          "value": 0.0003271669130530724,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -2.278084656451148e-05,
+            "ci_hi": 0.0006700713771701278
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": 4.375334674163729e-05,
+              "ci_hi": 0.0006349321283024187
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": 7.597901655461975e-05,
+              "ci_hi": 0.0006233278857525119
+            }
+          },
+          "bound_movement": 9.875986311913123e-05
+        },
+        {
+          "cohorts": "all",
+          "scope": "builds",
+          "metric": "auc_slope_build",
+          "pair": "tabpfn@t1 - gbm",
+          "value": 0.0003271669130530724,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -2.278084656451148e-05,
+            "ci_hi": 0.0006700713771701278
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": 4.375334674163729e-05,
+              "ci_hi": 0.0006349321283024187
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": 7.597901655461975e-05,
+              "ci_hi": 0.0006233278857525119
+            }
+          },
+          "bound_movement": 9.875986311913123e-05
+        },
+        {
+          "cohorts": "all",
+          "scope": "2008H2-R",
+          "metric": "auc_slope_build",
+          "pair": "gbm-50k - scorecard",
+          "value": -0.00030850287607515355,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": -0.0006530456651725401,
+            "ci_hi": -2.5453723474247865e-05
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.000617299882578553,
+              "ci_hi": 3.096703933222678e-05
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.0006454126710791219,
+              "ci_hi": -8.875013369047537e-06
+            }
+          },
+          "bound_movement": 5.642076280647465e-05
+        },
+        {
+          "cohorts": "all",
+          "scope": "2008H2-R",
+          "metric": "auc_slope_build",
+          "pair": "gbm-50k@share - scorecard",
+          "value": -0.00030850287607515355,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": -0.0006530456651725401,
+            "ci_hi": -2.5453723474247865e-05
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.000617299882578553,
+              "ci_hi": 3.096703933222678e-05
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.0006454126710791219,
+              "ci_hi": -8.875013369047537e-06
+            }
+          },
+          "bound_movement": 5.642076280647465e-05
+        },
+        {
+          "cohorts": "all",
+          "scope": "2010H2-R",
+          "metric": "auc_slope_build",
+          "pair": "gbm-50k - scorecard",
+          "value": -0.0003032073960061341,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.0006495733368859718,
+            "ci_hi": 6.227892164235953e-05
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.0007295464287134645,
+              "ci_hi": 6.184729149349975e-05
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.0006599911776959543,
+              "ci_hi": -8.377009720901548e-06
+            }
+          },
+          "bound_movement": 7.997309182749277e-05
+        },
+        {
+          "cohorts": "all",
+          "scope": "2010H2-R",
+          "metric": "auc_slope_build",
+          "pair": "gbm-50k@share - scorecard",
+          "value": -0.0003032073960061341,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.0006495733368859718,
+            "ci_hi": 6.227892164235953e-05
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.0007295464287134645,
+              "ci_hi": 6.184729149349975e-05
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.0006599911776959543,
+              "ci_hi": -8.377009720901548e-06
+            }
+          },
+          "bound_movement": 7.997309182749277e-05
+        },
+        {
+          "cohorts": "all",
+          "scope": "2012H2-R",
+          "metric": "auc_slope_build",
+          "pair": "tabpfn - gbm-50k",
+          "value": 0.0009635947830498674,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.00012490232577852905,
+            "ci_hi": 0.0018991567761448796
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": 0.00011039149014297332,
+              "ci_hi": 0.0017566135712882938
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": 0.0001415787662527207,
+              "ci_hi": 0.0018633259189614801
+            }
+          },
+          "bound_movement": 0.00026648109203124975
+        },
+        {
+          "cohorts": "all",
+          "scope": "2012H2-R",
+          "metric": "auc_slope_build",
+          "pair": "tabpfn@t1 - gbm-50k",
+          "value": 0.0009635947830498674,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.00012490232577852905,
+            "ci_hi": 0.0018991567761448796
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": 0.00011039149014297332,
+              "ci_hi": 0.0017566135712882938
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": 0.0001415787662527207,
+              "ci_hi": 0.0018633259189614801
+            }
+          },
+          "bound_movement": 0.00026648109203124975
+        },
+        {
+          "cohorts": "all",
+          "scope": "2012H2-R",
+          "metric": "auc_slope_build",
+          "pair": "gbm-50k@share - tabpfn",
+          "value": -0.0009635947830498674,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.0018991567761448796,
+            "ci_hi": 0.00012490232577852905
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": -0.0017566135712882938,
+              "ci_hi": -0.00011039149014297325
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.00186332591896148,
+              "ci_hi": -0.00014157876625271986
+            }
+          },
+          "bound_movement": 0.0002664810920312489
+        },
+        {
+          "cohorts": "all",
+          "scope": "2012H2-R",
+          "metric": "auc_slope_build",
+          "pair": "tabpfn@t1 - gbm-50k@share",
+          "value": 0.0009635947830498674,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.00012490232577852905,
+            "ci_hi": 0.0018991567761448796
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": 0.00011039149014297332,
+              "ci_hi": 0.0017566135712882938
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": 0.0001415787662527207,
+              "ci_hi": 0.0018633259189614801
+            }
+          },
+          "bound_movement": 0.00026648109203124975
+        },
+        {
+          "cohorts": "all",
+          "scope": "2014H2-R",
+          "metric": "auc_slope_build",
+          "pair": "gbm-50k - scorecard",
+          "value": 0.001401379424734937,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": 0.00024358314737125562,
+            "ci_hi": 0.002662981569917256
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": 0.00023192334920329292,
+              "ci_hi": 0.002874839911225143
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -0.0001621936719855842,
+              "ci_hi": 0.0026927131161822897
+            }
+          },
+          "bound_movement": 0.0004057768193568398
+        },
+        {
+          "cohorts": "all",
+          "scope": "2014H2-R",
+          "metric": "auc_slope_build",
+          "pair": "gbm-50k@share - scorecard",
+          "value": 0.001401379424734937,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": 0.00024358314737125562,
+            "ci_hi": 0.002662981569917256
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": 0.00023192334920329292,
+              "ci_hi": 0.002874839911225143
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -0.0001621936719855842,
+              "ci_hi": 0.0026927131161822897
+            }
+          },
+          "bound_movement": 0.0004057768193568398
+        },
+        {
+          "cohorts": "all",
+          "scope": "2016H2-R",
+          "metric": "auc_slope_build",
+          "pair": "tabicl - gbm",
+          "value": 0.0009319394794515962,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -9.609219211878117e-06,
+            "ci_hi": 0.0017070261514104828
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": 0.00018792949242829544,
+              "ci_hi": 0.001863972649794126
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": 9.749911530910883e-05,
+              "ci_hi": 0.0017263383154163016
+            }
+          },
+          "bound_movement": 0.00019753871164017355
+        },
+        {
+          "cohorts": "all",
+          "scope": "2016H2-R",
+          "metric": "auc_slope_build",
+          "pair": "tabicl@t1 - gbm",
+          "value": 0.0009319394794515962,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -9.609219211878117e-06,
+            "ci_hi": 0.0017070261514104828
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": 0.00018792949242829544,
+              "ci_hi": 0.001863972649794126
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": 9.749911530910883e-05,
+              "ci_hi": 0.0017263383154163016
+            }
+          },
+          "bound_movement": 0.00019753871164017355
+        },
+        {
+          "cohorts": "all",
+          "scope": "2016H2-R",
+          "metric": "auc_slope_build",
+          "pair": "tabpfn - gbm-50k",
+          "value": 0.001051309028555654,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": 7.987170837019759e-05,
+            "ci_hi": 0.0023352020420916164
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -6.976182093710279e-05,
+              "ci_hi": 0.0022601868923932842
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -4.64792891874972e-05,
+              "ci_hi": 0.0021539120725538622
+            }
+          },
+          "bound_movement": 0.00018128996953775418
+        },
+        {
+          "cohorts": "all",
+          "scope": "2016H2-R",
+          "metric": "auc_slope_build",
+          "pair": "tabicl - gbm-50k",
+          "value": 0.0009959917493560868,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": 2.0722553833178394e-05,
+            "ci_hi": 0.002146486333401386
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.00020680753193757376,
+              "ci_hi": 0.0023383346321510026
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -6.115881390413818e-05,
+              "ci_hi": 0.0021104312770688447
+            }
+          },
+          "bound_movement": 0.00022753008577075214
+        },
+        {
+          "cohorts": "all",
+          "scope": "2016H2-R",
+          "metric": "auc_slope_build",
+          "pair": "tabicl@t1 - gbm-50k",
+          "value": 0.0009959917493560868,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": 2.0722553833178394e-05,
+            "ci_hi": 0.002146486333401386
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.00020680753193757376,
+              "ci_hi": 0.0023383346321510026
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -6.115881390413818e-05,
+              "ci_hi": 0.0021104312770688447
+            }
+          },
+          "bound_movement": 0.00022753008577075214
+        },
+        {
+          "cohorts": "all",
+          "scope": "2016H2-R",
+          "metric": "auc_slope_build",
+          "pair": "tabpfn@t1 - gbm-50k",
+          "value": 0.001051309028555654,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": 7.987170837019759e-05,
+            "ci_hi": 0.0023352020420916164
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -6.976182093710279e-05,
+              "ci_hi": 0.0022601868923932842
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -4.64792891874972e-05,
+              "ci_hi": 0.0021539120725538622
+            }
+          },
+          "bound_movement": 0.00018128996953775418
+        },
+        {
+          "cohorts": "all",
+          "scope": "2016H2-R",
+          "metric": "auc_slope_build",
+          "pair": "gbm-50k@share - tabpfn",
+          "value": -0.001051309028555654,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": -0.0023352020420916155,
+            "ci_hi": -7.987170837019752e-05
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.002260186892393284,
+              "ci_hi": 6.976182093710281e-05
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -0.0021539120725538622,
+              "ci_hi": 4.647928918749737e-05
+            }
+          },
+          "bound_movement": 0.0001812899695377533
+        },
+        {
+          "cohorts": "all",
+          "scope": "2016H2-R",
+          "metric": "auc_slope_build",
+          "pair": "gbm-50k@share - tabicl",
+          "value": -0.0009959917493560868,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": -0.002146486333401386,
+            "ci_hi": -2.07225538331777e-05
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.0023383346321510026,
+              "ci_hi": 0.000206807531937574
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -0.0021104312770688443,
+              "ci_hi": 6.115881390413823e-05
+            }
+          },
+          "bound_movement": 0.0002275300857707517
+        },
+        {
+          "cohorts": "all",
+          "scope": "2016H2-R",
+          "metric": "auc_slope_build",
+          "pair": "tabicl@t1 - gbm-50k@share",
+          "value": 0.0009959917493560868,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": 2.0722553833178394e-05,
+            "ci_hi": 0.002146486333401386
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.00020680753193757376,
+              "ci_hi": 0.0023383346321510026
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -6.115881390413818e-05,
+              "ci_hi": 0.0021104312770688447
+            }
+          },
+          "bound_movement": 0.00022753008577075214
+        },
+        {
+          "cohorts": "all",
+          "scope": "2016H2-R",
+          "metric": "auc_slope_build",
+          "pair": "tabpfn@t1 - gbm-50k@share",
+          "value": 0.001051309028555654,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": 7.987170837019759e-05,
+            "ci_hi": 0.0023352020420916164
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -6.976182093710279e-05,
+              "ci_hi": 0.0022601868923932842
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -4.64792891874972e-05,
+              "ci_hi": 0.0021539120725538622
+            }
+          },
+          "bound_movement": 0.00018128996953775418
+        },
+        {
+          "cohorts": "nearest",
+          "scope": "2006H2-R",
+          "metric": "auc_slope_build",
+          "pair": "gbm - scorecard",
+          "value": -0.0018736081507205044,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": -0.0033486930748777574,
+            "ci_hi": -0.00022971147415732902
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.003677285103998453,
+              "ci_hi": 3.60102611239128e-05
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -0.003591334744538331,
+              "ci_hi": 0.00011554141272117616
+            }
+          },
+          "bound_movement": 0.0003452528868785052
+        },
+        {
+          "cohorts": "nearest",
+          "scope": "2008H2-R",
+          "metric": "auc_slope_build",
+          "pair": "gbm-50k - scorecard",
+          "value": 0.003009051464446591,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.0003781097695010275,
+            "ci_hi": 0.006211884743990428
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": 4.143706356179455e-05,
+              "ci_hi": 0.006268499456234729
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -0.0006662399720563751,
+              "ci_hi": 0.006528122307051905
+            }
+          },
+          "bound_movement": 0.0004195468330628221
+        },
+        {
+          "cohorts": "nearest",
+          "scope": "2008H2-R",
+          "metric": "auc_slope_build",
+          "pair": "gbm-50k@share - scorecard",
+          "value": 0.003009051464446591,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.0003781097695010275,
+            "ci_hi": 0.006211884743990428
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": 4.143706356179455e-05,
+              "ci_hi": 0.006268499456234729
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -0.0006662399720563751,
+              "ci_hi": 0.006528122307051905
+            }
+          },
+          "bound_movement": 0.0004195468330628221
+        },
+        {
+          "cohorts": "nearest",
+          "scope": "2008H2-R",
+          "metric": "auc_slope_build",
+          "pair": "tabicl - gbm",
+          "value": 0.0026645470030735633,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": 0.0004434315500763089,
+            "ci_hi": 0.005259630571760405
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": 3.232381202039207e-05,
+              "ci_hi": 0.005024872780237918
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -0.0001368377881783441,
+              "ci_hi": 0.004784294439240101
+            }
+          },
+          "bound_movement": 0.000580269338254653
+        },
+        {
+          "cohorts": "nearest",
+          "scope": "2008H2-R",
+          "metric": "auc_slope_build",
+          "pair": "tabicl@t1 - gbm",
+          "value": 0.0026645470030735633,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": 0.0004434315500763089,
+            "ci_hi": 0.005259630571760405
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": 3.232381202039207e-05,
+              "ci_hi": 0.005024872780237918
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -0.0001368377881783441,
+              "ci_hi": 0.004784294439240101
+            }
+          },
+          "bound_movement": 0.000580269338254653
+        },
+        {
+          "cohorts": "all, cohorts resampled",
+          "scope": "arm",
+          "metric": "auc_slope_cohort",
+          "pair": "tabpfn - gbm",
+          "value": 0.00028947738861817037,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -6.453235895333603e-05,
+            "ci_hi": 0.0011272610995346833
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": 3.57887071557108e-05,
+              "ci_hi": 0.0011135865176337717
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -8.270673950056497e-05,
+              "ci_hi": 0.0013670701488890924
+            }
+          },
+          "bound_movement": 0.00023980904935440913
+        },
+        {
+          "cohorts": "all, cohorts resampled",
+          "scope": "arm",
+          "metric": "auc_slope_cohort",
+          "pair": "tabpfn@t1 - gbm",
+          "value": 0.00028947738861817037,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -6.453235895333603e-05,
+            "ci_hi": 0.0011272610995346833
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": 3.57887071557108e-05,
+              "ci_hi": 0.0011135865176337717
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -8.270673950056497e-05,
+              "ci_hi": 0.0013670701488890924
+            }
+          },
+          "bound_movement": 0.00023980904935440913
+        }
+      ],
+      "largest_bound_movement": 0.001534698675222236
+    },
+    "multiplicity": "none: every interval is reported at alpha on its own"
+  },
+  "statistics": {
+    "auc_slope_build": "least-squares slope of the cell's AUC on its age in quarters with one intercept per build, as arm_intervals.py fits it; an annual cell's age is the mean of its halves' ages",
+    "auc_slope_cohort": "the same least squares with one intercept per cohort; at the arm's scope only",
+    "unreadable": "a build with fewer than two cells in a pooling has no slope of its own; its rows and the mean over builds read NaN",
+    "difference": "later model minus earlier in the order scorecard, gbm, gbm-50k, tabpfn, tabicl, then the tagged settings",
+    "standing": "the horizon check of EXP-005: reported beside H1, no criterion"
+  },
+  "wall_seconds": 2909.0
+}

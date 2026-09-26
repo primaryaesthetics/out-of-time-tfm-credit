@@ -1,0 +1,21 @@
+{
+  "slug": "colab-t4-ceiling",
+  "recorded_by": "hand-assembled; the streamed stdout survived, the JSON did not",
+  "recorded_utc": "2026-08-30T13:35:22.419054+00:00",
+  "git_sha": "4bbd0977cc268552da85b5d64fd3534f869ddd6d",
+  "host": "Google Colab free tier",
+  "gpu": "Tesla T4, 15.64 GB",
+  "probe_source_sha256": "6e9bbac6d6d2809691c9bfca08bee538d0225b3c62efc502002849618ae3437b",
+  "outputs": {
+    "probe-ceiling.json": "163f292fc5f77aecd429c4f6ffa9401d4212c98ed482490b588a1978c23e4712",
+    "colab-runtime.log": "555ba85d5d836d1c56eabd659fe4df11bd76923fc6c36e311338a59bbecf05d6"
+  },
+  "ceiling": {
+    "highest_context_that_ran": 50000,
+    "lowest_context_that_killed_the_session": 100000,
+    "headroom_gb_at_highest": 3.197,
+    "peak_gb_per_1000_context_rows": 0.0757,
+    "extrapolated_peak_gb_at_100k": 16.23
+  },
+  "how_the_failure_was_observed": "Not by the probe. A CUDA or host out-of-memory at this size kills the kernel rather than raising, so the except clause never ran and the file was never written. The three surviving rows come from the streamed stdout and the kill from the runtime log. The probe now writes each row as it is measured, so the next climb records its own last step."
+}

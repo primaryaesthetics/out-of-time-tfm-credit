@@ -1,0 +1,430 @@
+{
+  "bundle": {
+    "path": "2026-09-05-lc-2015h1e-bundle",
+    "files": {
+      "context.parquet": "6416fe6560268bef4b0341e545c37918a1ef2aabed6689cdff5287e45a9738c6",
+      "scored.parquet": "0e7bc300b9bc16360152be39e0d9ea0c663289897dcf90ea9536a748438bc09e"
+    },
+    "build": {
+      "build_id": "2015H1-E",
+      "as_of": "2015-06-30",
+      "arm": "E",
+      "label_lag_months": 12,
+      "knowable_through": "2014-06-30",
+      "train_rows": 323026,
+      "train_first": "2010-04-01",
+      "train_last": "2014-06-01",
+      "train_quarters": [
+        "2010Q2",
+        "2010Q3",
+        "2010Q4",
+        "2011Q1",
+        "2011Q2",
+        "2011Q3",
+        "2011Q4",
+        "2012Q1",
+        "2012Q2",
+        "2012Q3",
+        "2012Q4",
+        "2013Q1",
+        "2013Q2",
+        "2013Q3",
+        "2013Q4",
+        "2014Q1",
+        "2014Q2"
+      ],
+      "blind_rows": 312972,
+      "test_cohorts": {
+        "2015Q3": 20000,
+        "2015Q4": 20000,
+        "2016Q1": 20000,
+        "2016Q2": 20000,
+        "2016Q3": 20000,
+        "2016Q4": 20000,
+        "2017Q1": 20000,
+        "2017Q2": 20000,
+        "2017Q3": 20000,
+        "2017Q4": 20000,
+        "2018Q1": 20000
+      },
+      "test_rows": 220000,
+      "notes": [
+        "312972 rows originated in (2014-06-30, 2015-06-30] carry no mature label at the as-of date and are neither trained on nor scored"
+      ]
+    },
+    "features": [
+      "annual_inc",
+      "credit_history_months",
+      "delinq_2yrs",
+      "dti",
+      "emp_length",
+      "fico_range_low",
+      "home_ownership",
+      "inq_last_6mths",
+      "loan_amnt",
+      "mths_since_last_delinq",
+      "open_acc",
+      "pub_rec",
+      "pub_rec_bankruptcies",
+      "purpose",
+      "revol_bal",
+      "revol_util",
+      "sub_grade",
+      "term",
+      "total_acc",
+      "verification_status"
+    ],
+    "categorical": [
+      "home_ownership",
+      "purpose",
+      "verification_status"
+    ]
+  },
+  "environment": {
+    "python": "3.13.15",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+    "processor": "x86_64",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "tabpfn": "8.5.0",
+      "tabicl": "2.1.1",
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.6.1"
+    },
+    "device": "cuda",
+    "device_name": "Tesla T4",
+    "cuda": "12.8",
+    "device_memory_gb": 15.64
+  },
+  "cohorts": [
+    "2015Q3",
+    "2015Q4",
+    "2016Q1"
+  ],
+  "context_seeds": [
+    20260912,
+    20260913
+  ],
+  "models": {
+    "tabicl/20260912": {
+      "context_rows": 50000,
+      "fit_seconds": 3.032,
+      "parameters": {
+        "allow_auto_download": true,
+        "average_logits": true,
+        "batch_size": 8,
+        "checkpoint_version": "tabicl-classifier-v2-20260212.ckpt",
+        "class_shuffle_method": "shift",
+        "device": null,
+        "disk_offload_dir": null,
+        "feat_shuffle_method": "latin",
+        "inference_config": null,
+        "kv_cache": false,
+        "model_path": null,
+        "n_estimators": 8,
+        "n_jobs": null,
+        "norm_methods": null,
+        "offload_mode": "auto",
+        "outlier_threshold": 4.0,
+        "random_state": 42,
+        "softmax_temperature": 0.9,
+        "support_many_classes": true,
+        "use_amp": "auto",
+        "use_fa3": "auto",
+        "verbose": false
+      }
+    },
+    "tabicl/20260913": {
+      "context_rows": 50000,
+      "fit_seconds": 1.428,
+      "parameters": {
+        "allow_auto_download": true,
+        "average_logits": true,
+        "batch_size": 8,
+        "checkpoint_version": "tabicl-classifier-v2-20260212.ckpt",
+        "class_shuffle_method": "shift",
+        "device": null,
+        "disk_offload_dir": null,
+        "feat_shuffle_method": "latin",
+        "inference_config": null,
+        "kv_cache": false,
+        "model_path": null,
+        "n_estimators": 8,
+        "n_jobs": null,
+        "norm_methods": null,
+        "offload_mode": "auto",
+        "outlier_threshold": 4.0,
+        "random_state": 42,
+        "softmax_temperature": 0.9,
+        "support_many_classes": true,
+        "use_amp": "auto",
+        "use_fa3": "auto",
+        "verbose": false
+      }
+    },
+    "tabpfn/20260912": {
+      "context_rows": 50000,
+      "fit_seconds": 2.035,
+      "parameters": {
+        "auto_scale_n_estimators": true,
+        "average_before_softmax": false,
+        "balance_probabilities": false,
+        "categorical_features_indices": [
+          6,
+          13,
+          19
+        ],
+        "device": "auto",
+        "differentiable_input": false,
+        "eval_metric": null,
+        "fit_mode": "fit_preprocessors",
+        "ignore_pretraining_limits": true,
+        "inference_config": null,
+        "inference_precision": "auto",
+        "keep_cache_on_device": true,
+        "kv_cache_precision": null,
+        "memory_saving_mode": "auto",
+        "model_path": "auto",
+        "n_estimators": "auto",
+        "n_jobs": null,
+        "n_preprocessing_jobs": 1,
+        "random_state": 0,
+        "show_progress_bar": false,
+        "softmax_temperature": 0.9,
+        "tuning_config": null
+      }
+    },
+    "tabpfn/20260913": {
+      "context_rows": 50000,
+      "fit_seconds": 1.288,
+      "parameters": {
+        "auto_scale_n_estimators": true,
+        "average_before_softmax": false,
+        "balance_probabilities": false,
+        "categorical_features_indices": [
+          6,
+          13,
+          19
+        ],
+        "device": "auto",
+        "differentiable_input": false,
+        "eval_metric": null,
+        "fit_mode": "fit_preprocessors",
+        "ignore_pretraining_limits": true,
+        "inference_config": null,
+        "inference_precision": "auto",
+        "keep_cache_on_device": true,
+        "kv_cache_precision": null,
+        "memory_saving_mode": "auto",
+        "model_path": "auto",
+        "n_estimators": "auto",
+        "n_jobs": null,
+        "n_preprocessing_jobs": 1,
+        "random_state": 0,
+        "show_progress_bar": false,
+        "softmax_temperature": 0.9,
+        "tuning_config": null
+      }
+    }
+  },
+  "cells": [
+    {
+      "model": "tabicl",
+      "context_seed": 20260912,
+      "cell": "reference",
+      "rows": 50000,
+      "seconds": 210.287,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.01582
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260912,
+      "cell": "2015Q3",
+      "rows": 20000,
+      "seconds": 73.924,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.016539
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260912,
+      "cell": "2015Q4",
+      "rows": 20000,
+      "seconds": 73.554,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.015773
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260912,
+      "cell": "2016Q1",
+      "rows": 20000,
+      "seconds": 74.438,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.015976
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260913,
+      "cell": "reference",
+      "rows": 50000,
+      "seconds": 213.547,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.01654
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260913,
+      "cell": "2015Q3",
+      "rows": 20000,
+      "seconds": 74.338,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.0178
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260913,
+      "cell": "2015Q4",
+      "rows": 20000,
+      "seconds": 74.182,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.01701
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260913,
+      "cell": "2016Q1",
+      "rows": 20000,
+      "seconds": 74.652,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.016989
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "reference",
+      "rows": 50000,
+      "seconds": 389.352,
+      "peak_gpu_gb": 1.071,
+      "mean_pd": 0.016031
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2015Q3",
+      "rows": 20000,
+      "seconds": 136.226,
+      "peak_gpu_gb": 1.071,
+      "mean_pd": 0.014725
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2015Q4",
+      "rows": 20000,
+      "seconds": 136.286,
+      "peak_gpu_gb": 1.071,
+      "mean_pd": 0.013991
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2016Q1",
+      "rows": 20000,
+      "seconds": 136.224,
+      "peak_gpu_gb": 1.071,
+      "mean_pd": 0.014158
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "reference",
+      "rows": 50000,
+      "seconds": 388.374,
+      "peak_gpu_gb": 1.071,
+      "mean_pd": 0.016264
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2015Q3",
+      "rows": 20000,
+      "seconds": 135.994,
+      "peak_gpu_gb": 1.071,
+      "mean_pd": 0.015838
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2015Q4",
+      "rows": 20000,
+      "seconds": 135.827,
+      "peak_gpu_gb": 1.071,
+      "mean_pd": 0.015049
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2016Q1",
+      "rows": 20000,
+      "seconds": 136.094,
+      "peak_gpu_gb": 1.071,
+      "mean_pd": 0.015012
+    }
+  ],
+  "repeats": [
+    {
+      "model": "tabicl",
+      "context_seed": 20260912,
+      "cell": "2015Q3",
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "rows_differing": 0
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260913,
+      "cell": "2015Q3",
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "rows_differing": 0
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2015Q3",
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "rows_differing": 0
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2015Q3",
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "rows_differing": 0
+    }
+  ],
+  "command": {
+    "models": [
+      "tabicl",
+      "tabpfn"
+    ],
+    "nearest": 3,
+    "device": "auto",
+    "chunk": 20000,
+    "repeat": true,
+    "settings": {}
+  },
+  "tuning_budget": "none: zero trials, no validation split, every parameter at the library default except those the command names; the classical models this is paired with were tuned on their own pool and the asymmetry runs both ways, since the 50,000-row control inherits the point chosen on the full pool",
+  "wall_seconds": 2904.5,
+  "checkpoints": {
+    "tabpfn-v3-classifier-v3_default.ckpt": "d0d865d54dfbc524f5703104be90620182dca7e5fb2c16de72e9959ea18f3988",
+    "tabicl-classifier-v2-20260212.ckpt": "bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0"
+  },
+  "scored_rows": 240000,
+  "reference_rows": 200000
+}

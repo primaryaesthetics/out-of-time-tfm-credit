@@ -1,0 +1,103 @@
+{
+  "model": "tabicl",
+  "derived_as": "tabicl@t1",
+  "to_temperature": 1.0,
+  "formula": "logit(pd_to) = logit(pd_from) * (from_temperature / to_temperature)",
+  "library": {
+    "tabicl": "2.1.1"
+  },
+  "checkpoints": {
+    "tabicl-classifier-v2-20260212.ckpt": "bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0"
+  },
+  "sources": [
+    {
+      "directory": "experiments/2026-09-22-lc-2015h1e-fold2-tabicl-4090",
+      "sha256": {
+        "scores.parquet": "d97990602d4cd7ca42e5ecaf367129e21a2bf282860b974b26c6c85f3bb8c458",
+        "reference.parquet": "b6073ecefc8eec86e15210a4c3dd405993a998a0cb09a4279b527c21d4f3959a",
+        "node.json": "434e09b831bf359b631b9d61ec21900c1a8ce29b5faa190520049f094c161230"
+      },
+      "context_seeds": [
+        20260911,
+        20260912,
+        20260913
+      ],
+      "from_temperature": {
+        "20260911": 0.9,
+        "20260912": 0.9,
+        "20260913": 0.9
+      },
+      "scored_rows": 120000,
+      "reference_rows": 150000
+    }
+  ],
+  "check": {
+    "directory": "experiments/2026-09-22-lc-2015h1e-fold2-tabicl-t1-check-4090",
+    "sha256": {
+      "scores.parquet": "ee20fabddf6ebed30f1c6307e356e7e497f1d95447af63bf4be807775debbedd",
+      "reference.parquet": "1c2e463b021877c1c4ee8277b7d444d2008b78c4a839ff721c70bf5b006bd9c1",
+      "node.json": "2fd4a3a1e8aade7c83f5733773eb5ce3592f324ee33dde3f29855352e9e9dd5c"
+    },
+    "tolerance_on_pd": 1e-06,
+    "cells": [
+      {
+        "build_id": "2015H1-E",
+        "context_seed": 20260911,
+        "cell": "fold2-test",
+        "rows": 20000,
+        "max_abs_pd_gap": 8.920688226998763e-08,
+        "max_abs_logit_gap": 1.0881802570139598e-06
+      },
+      {
+        "build_id": "2015H1-E",
+        "context_seed": 20260911,
+        "cell": "reference",
+        "rows": 50000,
+        "max_abs_pd_gap": 1.686262462996524e-07,
+        "max_abs_logit_gap": 1.0643650067976296e-06
+      }
+    ],
+    "rows_checked": 70000,
+    "max_abs_pd_gap": 1.686262462996524e-07,
+    "max_abs_logit_gap": 1.0881802570139598e-06,
+    "unchecked_cells": [
+      {
+        "build_id": "2015H1-E",
+        "context_seed": 20260911,
+        "cell": "fold2-validation"
+      },
+      {
+        "build_id": "2015H1-E",
+        "context_seed": 20260912,
+        "cell": "fold2-test"
+      },
+      {
+        "build_id": "2015H1-E",
+        "context_seed": 20260912,
+        "cell": "fold2-validation"
+      },
+      {
+        "build_id": "2015H1-E",
+        "context_seed": 20260912,
+        "cell": "reference"
+      },
+      {
+        "build_id": "2015H1-E",
+        "context_seed": 20260913,
+        "cell": "fold2-test"
+      },
+      {
+        "build_id": "2015H1-E",
+        "context_seed": 20260913,
+        "cell": "fold2-validation"
+      },
+      {
+        "build_id": "2015H1-E",
+        "context_seed": 20260913,
+        "cell": "reference"
+      }
+    ]
+  },
+  "scored_rows": 120000,
+  "reference_rows": 150000
+}

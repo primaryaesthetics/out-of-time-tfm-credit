@@ -1,0 +1,46 @@
+tabpfn@t1/20260911: context 50,000 rows read in 1.2s
+  reference   50,000 rows    444.4s  mean pd 0.0217
+  2015Q3      20,000 rows    319.9s  mean pd 0.0215
+  2015Q4      20,000 rows    320.2s  mean pd 0.0202
+  2016Q1      20,000 rows    320.3s  mean pd 0.0206
+  2016Q2      20,000 rows    319.9s  mean pd 0.0205
+  2016Q3      20,000 rows    320.3s  mean pd 0.0218
+  2016Q4      20,000 rows    320.5s  mean pd 0.0214
+  2017Q1      20,000 rows    320.5s  mean pd 0.0205
+  2017Q2      20,000 rows    320.1s  mean pd 0.0204
+  2017Q3      20,000 rows    324.9s  mean pd 0.0217
+  2017Q4      20,000 rows    321.0s  mean pd 0.0209
+  2018Q1      20,000 rows    320.5s  mean pd 0.0198
+  repeat 2015Q3: largest disagreement 0.00e+00, 0 rows differ
+tabpfn@t1/20260912: context 50,000 rows read in 0.4s
+  reference   50,000 rows    445.2s  mean pd 0.0223
+  2015Q3      20,000 rows    322.0s  mean pd 0.0221
+  2015Q4      20,000 rows    329.6s  mean pd 0.0207
+  2016Q1      20,000 rows    322.6s  mean pd 0.0212
+  2016Q2      20,000 rows    322.9s  mean pd 0.0209
+  2016Q3      20,000 rows    323.6s  mean pd 0.0223
+  2016Q4      20,000 rows    322.3s  mean pd 0.0216
+  2017Q1      20,000 rows    321.2s  mean pd 0.0207
+  2017Q2      20,000 rows    321.2s  mean pd 0.0207
+  2017Q3      20,000 rows    322.2s  mean pd 0.0218
+  2017Q4      20,000 rows    322.6s  mean pd 0.0205
+  2018Q1      20,000 rows    323.9s  mean pd 0.0193
+  repeat 2015Q3: largest disagreement 0.00e+00, 0 rows differ
+tabpfn@t1/20260913: context 50,000 rows read in 0.4s
+  reference   50,000 rows    447.9s  mean pd 0.0211
+  2015Q3      20,000 rows    323.3s  mean pd 0.0212
+  2015Q4      20,000 rows    323.7s  mean pd 0.0202
+  2016Q1      20,000 rows    324.0s  mean pd 0.0204
+  2016Q2      20,000 rows    324.8s  mean pd 0.0202
+  2016Q3      20,000 rows    323.1s  mean pd 0.0216
+  2016Q4      20,000 rows    323.8s  mean pd 0.0211
+  2017Q1      20,000 rows    324.3s  mean pd 0.0203
+  2017Q2      20,000 rows    324.3s  mean pd 0.0202
+  2017Q3      20,000 rows    323.9s  mean pd 0.0209
+  2017Q4      20,000 rows    324.5s  mean pd 0.0198
+  2018Q1      20,000 rows    325.0s  mean pd 0.0187
+  repeat 2015Q3: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 660,000
+reference rows        : 150,000
+wall                  : 12960s

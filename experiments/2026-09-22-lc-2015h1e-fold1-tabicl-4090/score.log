@@ -1,0 +1,25 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+INFO: You are downloading 'tabicl-classifier-v2-20260212.ckpt', the latest best-performing version, used in our TabICLv2 paper.
+
+Checkpoint 'tabicl-classifier-v2-20260212.ckpt' not cached.
+ Downloading from Hugging Face Hub (jingang/TabICL).
+
+tabicl/20260911: context 50,000 rows read in 14.7s
+  reference   50,000 rows     20.4s  mean pd 0.0160
+  fold1-test  20,000 rows      6.9s  mean pd 0.0177
+  fold1-validation  20,000 rows      6.9s  mean pd 0.0178
+  repeat fold1-test: largest disagreement 0.00e+00, 0 rows differ
+tabicl/20260912: context 50,000 rows read in 1.4s
+  reference   50,000 rows     19.9s  mean pd 0.0150
+  fold1-test  20,000 rows      6.9s  mean pd 0.0170
+  fold1-validation  20,000 rows      6.9s  mean pd 0.0171
+  repeat fold1-test: largest disagreement 0.00e+00, 0 rows differ
+tabicl/20260913: context 50,000 rows read in 1.4s
+  reference   50,000 rows     19.9s  mean pd 0.0155
+  fold1-test  20,000 rows      6.9s  mean pd 0.0165
+  fold1-validation  20,000 rows      6.9s  mean pd 0.0165
+  repeat fold1-test: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 120,000
+reference rows        : 150,000
+wall                  : 147s

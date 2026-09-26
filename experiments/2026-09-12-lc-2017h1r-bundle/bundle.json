@@ -1,0 +1,142 @@
+{
+  "build": {
+    "build_id": "2017H1-R",
+    "as_of": "2017-06-30",
+    "arm": "R",
+    "label_lag_months": 12,
+    "knowable_through": "2016-06-30",
+    "train_rows": 472734,
+    "train_first": "2015-07-01",
+    "train_last": "2016-06-01",
+    "train_quarters": [
+      "2015Q3",
+      "2015Q4",
+      "2016Q1",
+      "2016Q2"
+    ],
+    "blind_rows": 404896,
+    "test_cohorts": {
+      "2017Q3": 20000,
+      "2017Q4": 20000,
+      "2018Q1": 20000
+    },
+    "test_rows": 60000,
+    "notes": [
+      "404896 rows originated in (2016-06-30, 2017-06-30] carry no mature label at the as-of date and are neither trained on nor scored"
+    ]
+  },
+  "label": {
+    "definition": {
+      "window_months": 12,
+      "snapshot": "2019-03-01",
+      "charge_off_lag_months": 5,
+      "last_labelable_origination": "2018-03-01",
+      "bad_statuses": [
+        "Charged Off",
+        "Default",
+        "Does not meet the credit policy. Status:Charged Off"
+      ],
+      "good_statuses": [
+        "Does not meet the credit policy. Status:Fully Paid",
+        "Fully Paid"
+      ]
+    },
+    "labelled": 1873290,
+    "defaults": 54305,
+    "default_rate": 0.028989,
+    "dropped_immature": 387378,
+    "still_running_at_snapshot": 558979,
+    "unrecognised": 0,
+    "notes": [
+      "387378 loans originated after 2018-03-01 were dropped as immature, not labelled non-default",
+      "558979 loans were still running at the snapshot and are labelled non-default: this definition turns on charge-off, not on days past due, and those are the rows where the two differ",
+      "1937 bad loans had no last payment and were dated at origination plus 5 months",
+      "0 labelled loans stopped paying early enough to be in-window defaults and had not been charged off at the snapshot; they are labelled non-default and each is a default the window misses"
+    ]
+  },
+  "snapshot": "2019-03-01",
+  "features": [
+    "annual_inc",
+    "credit_history_months",
+    "delinq_2yrs",
+    "dti",
+    "emp_length",
+    "fico_range_low",
+    "home_ownership",
+    "inq_last_6mths",
+    "loan_amnt",
+    "mths_since_last_delinq",
+    "open_acc",
+    "pub_rec",
+    "pub_rec_bankruptcies",
+    "purpose",
+    "revol_bal",
+    "revol_util",
+    "sub_grade",
+    "term",
+    "total_acc",
+    "verification_status"
+  ],
+  "categorical": [
+    "home_ownership",
+    "purpose",
+    "verification_status"
+  ],
+  "context": {
+    "rows": 50000,
+    "seeds": [
+      20260911,
+      20260912,
+      20260913
+    ],
+    "sizes": {
+      "20260911": 50000,
+      "20260912": 50000,
+      "20260913": 50000
+    }
+  },
+  "cohorts": {
+    "2017Q3": 20000,
+    "2017Q4": 20000,
+    "2018Q1": 20000
+  },
+  "seeds": {
+    "test_sample": 20260902
+  },
+  "files": {
+    "context.parquet": "d2ef8780234a9ee8efd7cbf2a3ddb00834f65fd90a4d042f8916ba1f180d59b9",
+    "scored.parquet": "d274ebebcb7c78272c1ffb62eb656d7ed7eb3343b9f83a6f81e478d235170202"
+  },
+  "checks": {
+    "context": {
+      "20260911": {
+        "rows": 50000,
+        "identical": true
+      },
+      "20260912": {
+        "rows": 50000,
+        "identical": true
+      },
+      "20260913": {
+        "rows": 50000,
+        "identical": true
+      }
+    },
+    "cohorts": {
+      "2017Q3": {
+        "rows": 20000,
+        "identical": true
+      },
+      "2017Q4": {
+        "rows": 20000,
+        "identical": true
+      },
+      "2018Q1": {
+        "rows": 20000,
+        "identical": true
+      }
+    },
+    "against": "experiments/2026-09-12-lc-2017h1r-scores"
+  },
+  "wall_seconds": 115.6
+}

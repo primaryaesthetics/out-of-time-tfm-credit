@@ -1,0 +1,126 @@
+{
+  "model": "tabicl",
+  "derived_as": "tabicl@t1",
+  "to_temperature": 1.0,
+  "formula": "logit(pd_to) = logit(pd_from) * (from_temperature / to_temperature)",
+  "library": {
+    "tabicl": "2.1.1"
+  },
+  "checkpoints": {
+    "tabicl-classifier-v2-20260212.ckpt": "bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0"
+  },
+  "sources": [
+    {
+      "directory": "experiments/2026-09-06-lc-2015h1e-tabicl-colab-t4",
+      "sha256": {
+        "scores.parquet": "7f4bb976247e841d2bbb76e4ad5ca3c93b47fb35fb3dcf5f8c07b2b66502a455",
+        "reference.parquet": "d68588272d5b5e2255d4d7d951a48c5be521617103250a9dc81064362d8ca868",
+        "node.json": "86748ef94e615121a6ffac55278fc2d43ab4eddd4a4e86066dd67b4c9f11af4f"
+      },
+      "context_seeds": [
+        20260911
+      ],
+      "from_temperature": {
+        "20260911": 0.9
+      },
+      "scored_rows": 60000,
+      "reference_rows": 50000
+    },
+    {
+      "directory": "experiments/2026-09-06-lc-2015h1e-draws-colab-t4",
+      "sha256": {
+        "scores.parquet": "a77eff22af9fd0dfc5f5f15e8f4ce09da27df55fce224766c32fbcd2a30a08e7",
+        "reference.parquet": "d483ad021479d6c6a83c2b924cfc2a4f42d4c50d536e56df5b631f28044a2cdb",
+        "node.json": "fcb780ae69f37c7d46d3e76cf7fa75a2174a2187bf564efa25da371b44e4af5e"
+      },
+      "context_seeds": [
+        20260912,
+        20260913
+      ],
+      "from_temperature": {
+        "20260912": 0.9,
+        "20260913": 0.9
+      },
+      "scored_rows": 120000,
+      "reference_rows": 100000
+    }
+  ],
+  "check": {
+    "directory": "experiments/2026-09-06-lc-2015h1e-probe3-colab-t4",
+    "sha256": {
+      "scores.parquet": "336ebb820a29d580dd838ee8a0d5000c3194a9ef067ca9a1afb50f59ea57a20a",
+      "reference.parquet": "a4e3e558682d9190794349223c4e93f92bc6445da5bbcd58c9a4f209711c1908",
+      "node.json": "17d08aee72ffe7e490c414b3a63acd6cf0f9b0ce12601f148b002fb7049c759e"
+    },
+    "tolerance_on_pd": 1e-06,
+    "cells": [
+      {
+        "context_seed": 20260911,
+        "cell": "2015Q3",
+        "rows": 20000,
+        "max_abs_pd_gap": 8.952143201734764e-08,
+        "max_abs_logit_gap": 1.1491960245635369e-06
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2015Q4",
+        "rows": 20000,
+        "max_abs_pd_gap": 9.649559948310404e-08,
+        "max_abs_logit_gap": 1.0222834605499997e-06
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2016Q1",
+        "rows": 20000,
+        "max_abs_pd_gap": 9.230956189709705e-08,
+        "max_abs_logit_gap": 1.1028204709440104e-06
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "reference",
+        "rows": 50000,
+        "max_abs_pd_gap": 1.2651938066654544e-07,
+        "max_abs_logit_gap": 1.1028204709440104e-06
+      }
+    ],
+    "rows_checked": 110000,
+    "max_abs_pd_gap": 1.2651938066654544e-07,
+    "max_abs_logit_gap": 1.1491960245635369e-06,
+    "unchecked_cells": [
+      {
+        "context_seed": 20260912,
+        "cell": "2015Q3"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2015Q4"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2016Q1"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "reference"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2015Q3"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2015Q4"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2016Q1"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "reference"
+      }
+    ]
+  },
+  "scored_rows": 180000,
+  "reference_rows": 150000
+}

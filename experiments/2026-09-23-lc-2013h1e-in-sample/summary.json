@@ -1,0 +1,104 @@
+{
+  "sources": [
+    "experiments/2026-09-06-lc-2013h1e-scores",
+    "experiments/2026-09-08-lc-2013h1e-tabicl-colab-t4",
+    "experiments/2026-09-08-lc-2013h1e-tabicl-t1-derived",
+    "experiments/2026-09-11-lc-2013h1e-tabpfn-m4pro",
+    "experiments/2026-09-11-lc-2013h1e-tabpfn-t1-m4pro"
+  ],
+  "builds": [
+    "2013H1-E"
+  ],
+  "models_dropped": [],
+  "context_cells": 17,
+  "context_rows": 851218,
+  "context_check": {
+    "draws": 3,
+    "pairs_compared": 12,
+    "statement": "every seeded model of one (build, context seed) holds the same context rows with the same outcomes"
+  },
+  "known_answer": {
+    "statement": "a model fitted by likelihood reads observed over expected of one on its own training rows; its cells are read as the check",
+    "fitted_cells": 5,
+    "interval_holds_one": 5,
+    "interval_does_not_hold_one": []
+  },
+  "per_cell": {
+    "observed_over_expected": "observed defaults over the sum of the probabilities on the cell's rows",
+    "cox": "logit P(y) = intercept + slope * logit(p) on the cell's rows, Wald intervals; h5_context marks the builds H5 reads as an arm's ends",
+    "binomial": "Clopper-Pearson on the count over the expected rate, the metrics module's interval",
+    "bootstrap": "percentile interval of the ratio over resamples of the cell's rows"
+  },
+  "h5": {
+    "arms": {
+      "E": {
+        "arm": "E",
+        "builds": [
+          "2013H1-E"
+        ],
+        "reason": "one build on arm E; H5 compares two contexts"
+      }
+    },
+    "statistic": "per seeded model, observed over expected on the highest-rate context of the arm minus that on the lowest-rate context; the two builds are the highest and lowest pool rate of the build run's record; the rows whose ranking is 'draws' rank by the mean realised rate of the shared draws and are not a criterion",
+    "builds_json": null,
+    "bootstrap": {
+      "resamples": 200,
+      "seed": 20260905,
+      "alpha": 0.05,
+      "blocking": "one row index per context, applied to its outcomes and every model's probabilities",
+      "context_draw": "one seed per resample for both builds and every model",
+      "seed_check": null,
+      "seed_check_draw_ranking": null
+    },
+    "known_answer": "the rows of fitted seeded models (GBM-50k) are zero by construction"
+  },
+  "in_sample_slope": {
+    "arms": {
+      "E": {
+        "arm": "E",
+        "builds": [
+          "2013H1-E"
+        ],
+        "reason": null,
+        "models_not_read": {},
+        "models": [
+          "gbm-50k",
+          "tabpfn",
+          "tabpfn@t1",
+          "tabicl",
+          "tabicl@t1"
+        ],
+        "seeds": [
+          20260911,
+          20260912,
+          20260913
+        ]
+      }
+    },
+    "statistic": "per seeded model holding every build of the arm, the mean over the builds of the Cox slope on its context rows; a build on which some model's fit did not finish leaves the mean for every model",
+    "bootstrap": {
+      "resamples": 200,
+      "seed": 20260905,
+      "alpha": 0.05,
+      "blocking": "one row index per context, applied to its outcomes and every model's probabilities",
+      "context_draw": "one seed per resample for every build and model",
+      "check_seeds": [
+        20260906,
+        20260907
+      ],
+      "side_changed": []
+    },
+    "known_answer": {
+      "statement": "the scorecard, an unpenalised logistic model with an intercept, reads Cox slope one and intercept zero on its own pool to within 0.0001",
+      "cells": 1,
+      "within_tolerance": 1,
+      "not_within": []
+    },
+    "reading": "one-sided: a slope above one is smoothing, the pull toward a row's own label, or both; a slope below one beyond its interval is over-dispersion on the rows the model conditions on"
+  },
+  "cohort_cells": {
+    "cells": 323,
+    "without_a_default": 0
+  },
+  "wall_seconds": 137.5
+}

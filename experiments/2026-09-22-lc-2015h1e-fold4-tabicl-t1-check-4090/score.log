@@ -1,0 +1,8 @@
+tabicl@t1/20260911: context 50,000 rows read in 2.4s
+  reference   50,000 rows     20.4s  mean pd 0.0234
+  fold4-test  20,000 rows      7.0s  mean pd 0.0247
+  repeat fold4-test: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 20,000
+reference rows        : 50,000
+wall                  : 40s

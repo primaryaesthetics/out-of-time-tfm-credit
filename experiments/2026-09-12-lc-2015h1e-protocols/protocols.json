@@ -1,0 +1,32 @@
+{
+  "build": "2015H1-E",
+  "folds_run": "experiments/2026-09-12-lc-2015h1e-folds",
+  "in_time_tfm": [],
+  "out_of_time": [
+    "experiments/2026-09-05-lc-2015h1e-scores",
+    "experiments/2026-09-08-lc-2015h1e-tabicl-colab-t4",
+    "experiments/2026-09-08-lc-2015h1e-tabicl-t1-derived",
+    "experiments/2026-09-11-lc-2015h1e-tabpfn-m4pro",
+    "experiments/2026-09-11-lc-2015h1e-tabpfn-t1-m4pro"
+  ],
+  "folds": [
+    1
+  ],
+  "models": [
+    "scorecard",
+    "gbm",
+    "gbm-50k"
+  ],
+  "in_time_rows": "the fold's 20,000-row test cell, scored by every model",
+  "out_of_time_rows": "every scored cohort of the build, the mean over cohorts of the per-cell value; the threshold of each fold applied in turn",
+  "threshold": "the score maximising F1 on the fold's validation fifth, per model and seed; a foundation model's on its validation cell",
+  "psi_reference": "the rows the model was fitted on or conditioned on, in time the fold's four fifths or its context sample, out of time the build's training pool or its context draw",
+  "thresholds": {
+    "1/scorecard/None": 0.042624356034549345,
+    "1/gbm/None": 0.059005812004740435,
+    "1/gbm-50k/20260911": 0.04600414738163033,
+    "1/gbm-50k/20260912": 0.04667641037434966,
+    "1/gbm-50k/20260913": 0.04050875803571337
+  },
+  "wall_seconds": 77.1
+}

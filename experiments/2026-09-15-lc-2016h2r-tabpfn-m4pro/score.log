@@ -1,0 +1,28 @@
+tabpfn/20260911: context 50,000 rows read in 1.1s
+  reference   50,000 rows    444.1s  mean pd 0.0202
+  2017Q1      20,000 rows    319.9s  mean pd 0.0195
+  2017Q2      20,000 rows    319.6s  mean pd 0.0190
+  2017Q3      20,000 rows    320.1s  mean pd 0.0199
+  2017Q4      20,000 rows    319.6s  mean pd 0.0183
+  2018Q1      20,000 rows    319.8s  mean pd 0.0170
+  repeat 2017Q1: largest disagreement 0.00e+00, 0 rows differ
+tabpfn/20260912: context 50,000 rows read in 0.3s
+  reference   50,000 rows    443.7s  mean pd 0.0196
+  2017Q1      20,000 rows    319.9s  mean pd 0.0188
+  2017Q2      20,000 rows    319.8s  mean pd 0.0184
+  2017Q3      20,000 rows    319.9s  mean pd 0.0192
+  2017Q4      20,000 rows    320.0s  mean pd 0.0172
+  2018Q1      20,000 rows    320.2s  mean pd 0.0159
+  repeat 2017Q1: largest disagreement 0.00e+00, 0 rows differ
+tabpfn/20260913: context 50,000 rows read in 0.3s
+  reference   50,000 rows    443.6s  mean pd 0.0195
+  2017Q1      20,000 rows    319.5s  mean pd 0.0182
+  2017Q2      20,000 rows    319.8s  mean pd 0.0179
+  2017Q3      20,000 rows    320.0s  mean pd 0.0190
+  2017Q4      20,000 rows    319.2s  mean pd 0.0167
+  2018Q1      20,000 rows    320.0s  mean pd 0.0154
+  repeat 2017Q1: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 300,000
+reference rows        : 150,000
+wall                  : 7093s

@@ -1,0 +1,620 @@
+{
+  "bundle": {
+    "path": "2026-09-15-fm-2018h2e-bundle-upb-nominal",
+    "files": {
+      "context.parquet": "34ecb91af9d78bcc46dc2216259369fe6c2effc6922dc837d3200b59b88ecf92",
+      "scored.parquet": "a9f80e837ba873db0922cb10cec6665aca91670f2c19c2c98170f4900a3ae2c9"
+    },
+    "build": {
+      "build_id": "2018H2-E",
+      "as_of": "2018-12-31",
+      "arm": "E",
+      "label_lag_months": 24,
+      "knowable_through": "2016-12-31",
+      "train_rows": 856861,
+      "train_first": "1999-01-01",
+      "train_last": "2016-07-01",
+      "train_quarters": [
+        "1999Q1",
+        "1999Q2",
+        "1999Q3",
+        "1999Q4",
+        "2000Q1",
+        "2000Q2",
+        "2000Q3",
+        "2000Q4",
+        "2001Q1",
+        "2001Q2",
+        "2001Q3",
+        "2001Q4",
+        "2002Q1",
+        "2002Q2",
+        "2002Q3",
+        "2002Q4",
+        "2003Q1",
+        "2003Q2",
+        "2003Q3",
+        "2003Q4",
+        "2004Q1",
+        "2004Q2",
+        "2004Q3",
+        "2004Q4",
+        "2005Q1",
+        "2005Q2",
+        "2005Q3",
+        "2005Q4",
+        "2006Q1",
+        "2006Q2",
+        "2006Q3",
+        "2006Q4",
+        "2007Q1",
+        "2007Q2",
+        "2007Q3",
+        "2007Q4",
+        "2008Q1",
+        "2008Q2",
+        "2008Q3",
+        "2008Q4",
+        "2009Q1",
+        "2009Q2",
+        "2009Q3",
+        "2009Q4",
+        "2010Q1",
+        "2010Q2",
+        "2010Q3",
+        "2010Q4",
+        "2011Q1",
+        "2011Q2",
+        "2011Q3",
+        "2011Q4",
+        "2012Q1",
+        "2012Q2",
+        "2012Q3",
+        "2012Q4",
+        "2013Q1",
+        "2013Q2",
+        "2013Q3",
+        "2013Q4",
+        "2014Q1",
+        "2014Q2",
+        "2014Q3",
+        "2014Q4",
+        "2015Q1",
+        "2015Q2",
+        "2015Q3",
+        "2015Q4",
+        "2016Q1",
+        "2016Q2",
+        "2016Q3"
+      ],
+      "blind_rows": 110537,
+      "test_cohorts": {
+        "2019H1": 24752,
+        "2019H2": 24861,
+        "2020H1": 24880,
+        "2020H2": 24919,
+        "2021H1": 24909,
+        "2021H2": 24929,
+        "2022H1": 24889,
+        "2022H2": 24859,
+        "2023H1": 24882,
+        "2023H2": 24866
+      },
+      "test_rows": 248746,
+      "notes": [
+        "110537 rows of the quarters in (2016-09-30, 2018-12-31] are neither trained on nor scored",
+        "cohorts are HalfYear cohorts of the origination date; the pool is the whole quarters to 2016-09-30, 27 months before the build, and every training loan's 24-month window, read on its label clock, closed by 2016-12-31"
+      ],
+      "axis_gap_months": 27,
+      "axis_horizon": "2016-09-30"
+    },
+    "features": [
+      "borrowers",
+      "cltv",
+      "fico",
+      "first_time_homebuyer",
+      "ltv",
+      "mi_pct",
+      "occupancy",
+      "prepayment_penalty",
+      "property_type",
+      "purpose",
+      "state",
+      "term",
+      "units",
+      "upb"
+    ],
+    "categorical": [
+      "first_time_homebuyer",
+      "occupancy",
+      "prepayment_penalty",
+      "property_type",
+      "purpose",
+      "state"
+    ]
+  },
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-7.0.0-31-generic-x86_64-with-glibc2.43",
+    "processor": "unknown",
+    "packages": {
+      "torch": "2.14.0",
+      "tabpfn": "8.5.0",
+      "tabicl": "2.1.1",
+      "numpy": "2.5.3",
+      "pandas": "3.0.5",
+      "scikit-learn": "1.9.1"
+    },
+    "device": "cuda",
+    "device_name": "NVIDIA GeForce RTX 4090",
+    "cuda": "13.0",
+    "device_memory_gb": 25.34
+  },
+  "cohorts": [
+    "2019H1",
+    "2019H2",
+    "2020H1",
+    "2020H2",
+    "2021H1",
+    "2021H2",
+    "2022H1",
+    "2022H2",
+    "2023H1",
+    "2023H2"
+  ],
+  "context_seeds": [
+    20260911,
+    20260912,
+    20260913
+  ],
+  "models": {
+    "tabpfn/20260911": {
+      "context_rows": 50000,
+      "fit_seconds": 2.104,
+      "parameters": {
+        "auto_scale_n_estimators": true,
+        "average_before_softmax": false,
+        "balance_probabilities": false,
+        "categorical_features_indices": [
+          3,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "device": "auto",
+        "differentiable_input": false,
+        "eval_metric": null,
+        "fit_mode": "fit_preprocessors",
+        "ignore_pretraining_limits": true,
+        "inference_config": null,
+        "inference_precision": "auto",
+        "keep_cache_on_device": true,
+        "kv_cache_precision": null,
+        "memory_saving_mode": "auto",
+        "model_path": "auto",
+        "n_estimators": "auto",
+        "n_jobs": null,
+        "n_preprocessing_jobs": 1,
+        "random_state": 0,
+        "show_progress_bar": false,
+        "softmax_temperature": 0.9,
+        "tuning_config": null
+      }
+    },
+    "tabpfn/20260912": {
+      "context_rows": 50000,
+      "fit_seconds": 0.798,
+      "parameters": {
+        "auto_scale_n_estimators": true,
+        "average_before_softmax": false,
+        "balance_probabilities": false,
+        "categorical_features_indices": [
+          3,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "device": "auto",
+        "differentiable_input": false,
+        "eval_metric": null,
+        "fit_mode": "fit_preprocessors",
+        "ignore_pretraining_limits": true,
+        "inference_config": null,
+        "inference_precision": "auto",
+        "keep_cache_on_device": true,
+        "kv_cache_precision": null,
+        "memory_saving_mode": "auto",
+        "model_path": "auto",
+        "n_estimators": "auto",
+        "n_jobs": null,
+        "n_preprocessing_jobs": 1,
+        "random_state": 0,
+        "show_progress_bar": false,
+        "softmax_temperature": 0.9,
+        "tuning_config": null
+      }
+    },
+    "tabpfn/20260913": {
+      "context_rows": 50000,
+      "fit_seconds": 0.794,
+      "parameters": {
+        "auto_scale_n_estimators": true,
+        "average_before_softmax": false,
+        "balance_probabilities": false,
+        "categorical_features_indices": [
+          3,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "device": "auto",
+        "differentiable_input": false,
+        "eval_metric": null,
+        "fit_mode": "fit_preprocessors",
+        "ignore_pretraining_limits": true,
+        "inference_config": null,
+        "inference_precision": "auto",
+        "keep_cache_on_device": true,
+        "kv_cache_precision": null,
+        "memory_saving_mode": "auto",
+        "model_path": "auto",
+        "n_estimators": "auto",
+        "n_jobs": null,
+        "n_preprocessing_jobs": 1,
+        "random_state": 0,
+        "show_progress_bar": false,
+        "softmax_temperature": 0.9,
+        "tuning_config": null
+      }
+    }
+  },
+  "cells": [
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "reference",
+      "rows": 50000,
+      "seconds": 36.892,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.008113
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2019H1",
+      "rows": 24752,
+      "seconds": 22.574,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.007824
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2019H2",
+      "rows": 24861,
+      "seconds": 22.928,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.006888
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2020H1",
+      "rows": 24880,
+      "seconds": 22.687,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.005576
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2020H2",
+      "rows": 24919,
+      "seconds": 22.776,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.004701
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2021H1",
+      "rows": 24909,
+      "seconds": 22.845,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.005539
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2021H2",
+      "rows": 24929,
+      "seconds": 22.784,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.007014
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2022H1",
+      "rows": 24889,
+      "seconds": 22.642,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.008658
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2022H2",
+      "rows": 24859,
+      "seconds": 23.154,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.008432
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2023H1",
+      "rows": 24882,
+      "seconds": 22.799,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.00895
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2023H2",
+      "rows": 24866,
+      "seconds": 22.613,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.008439
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "reference",
+      "rows": 50000,
+      "seconds": 36.267,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.00855
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2019H1",
+      "rows": 24752,
+      "seconds": 22.834,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.008464
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2019H2",
+      "rows": 24861,
+      "seconds": 22.839,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.007753
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2020H1",
+      "rows": 24880,
+      "seconds": 22.842,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.006568
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2020H2",
+      "rows": 24919,
+      "seconds": 22.842,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.005666
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2021H1",
+      "rows": 24909,
+      "seconds": 22.896,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.006492
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2021H2",
+      "rows": 24929,
+      "seconds": 22.82,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.007929
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2022H1",
+      "rows": 24889,
+      "seconds": 22.877,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.009423
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2022H2",
+      "rows": 24859,
+      "seconds": 22.809,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.009201
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2023H1",
+      "rows": 24882,
+      "seconds": 22.814,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.009524
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2023H2",
+      "rows": 24866,
+      "seconds": 22.767,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.008969
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "reference",
+      "rows": 50000,
+      "seconds": 36.242,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.008785
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2019H1",
+      "rows": 24752,
+      "seconds": 22.836,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.0085
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2019H2",
+      "rows": 24861,
+      "seconds": 22.848,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.007533
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2020H1",
+      "rows": 24880,
+      "seconds": 22.817,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.006227
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2020H2",
+      "rows": 24919,
+      "seconds": 22.701,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.00528
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2021H1",
+      "rows": 24909,
+      "seconds": 23.301,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.006045
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2021H2",
+      "rows": 24929,
+      "seconds": 22.871,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.007295
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2022H1",
+      "rows": 24889,
+      "seconds": 22.857,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.008736
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2022H2",
+      "rows": 24859,
+      "seconds": 22.908,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.008856
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2023H1",
+      "rows": 24882,
+      "seconds": 22.887,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.009665
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2023H2",
+      "rows": 24866,
+      "seconds": 22.943,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.009217
+    }
+  ],
+  "repeats": [
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2019H1",
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "rows_differing": 0
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2019H1",
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "rows_differing": 0
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2019H1",
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "rows_differing": 0
+    }
+  ],
+  "command": {
+    "models": [
+      "tabpfn"
+    ],
+    "nearest": null,
+    "device": "auto",
+    "chunk": 20000,
+    "repeat": true,
+    "settings": {}
+  },
+  "tuning_budget": "none: zero trials, no validation split, every parameter at the library default except those the command names; the classical models this is paired with were tuned on their own pool and the asymmetry runs both ways, since the 50,000-row control inherits the point chosen on the full pool",
+  "wall_seconds": 875.2,
+  "checkpoints": {
+    "tabpfn-v3-classifier-v3_default.ckpt": "d0d865d54dfbc524f5703104be90620182dca7e5fb2c16de72e9959ea18f3988",
+    "tabicl-classifier-v2-20260212.ckpt": "bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0"
+  },
+  "scored_rows": 746238,
+  "reference_rows": 150000
+}

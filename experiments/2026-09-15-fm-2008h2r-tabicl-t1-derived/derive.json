@@ -1,0 +1,590 @@
+{
+  "model": "tabicl",
+  "derived_as": "tabicl@t1",
+  "to_temperature": 1.0,
+  "formula": "logit(pd_to) = logit(pd_from) * (from_temperature / to_temperature)",
+  "library": {
+    "tabicl": "2.1.1"
+  },
+  "checkpoints": {
+    "tabicl-classifier-v2-20260212.ckpt": "bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0"
+  },
+  "sources": [
+    {
+      "directory": "experiments/2026-09-14-fm-2008h2r-tabicl-rental-4090",
+      "sha256": {
+        "scores.parquet": "b9bf2bcccff56ce184ad8570128252207668e9dccc068879141ebca0d0a26178",
+        "reference.parquet": "97b311379124dd45b1e3f352508fcd145c02d11cb899c431bea9acf27679e201",
+        "node.json": "6ba544ac18d6819faa6b8c10c69f334214e0293eab030ebfdecd96b86ddba872"
+      },
+      "context_seeds": [
+        20260911,
+        20260912,
+        20260913
+      ],
+      "from_temperature": {
+        "20260911": 0.9,
+        "20260912": 0.9,
+        "20260913": 0.9
+      },
+      "scored_rows": 2216064,
+      "reference_rows": 150000
+    }
+  ],
+  "check_source": {
+    "directory": "experiments/2026-09-13-fm-2004h2e-tabicl-rental-4090",
+    "sha256": {
+      "scores.parquet": "c7d0debed364d6bf3236821c863a70b417c77482fc63084d261fb8ef8bf02e0a",
+      "reference.parquet": "a75b98f6b395fbb30c128d73b17647471155e3890f862492890781d73f0fc16f",
+      "node.json": "c1a2d0a1732253d0298a0824ab41e551d20101b00ae7b2e6639931b795a4a7a2"
+    },
+    "context_seeds": [
+      20260911
+    ],
+    "from_temperature": {
+      "20260911": 0.9
+    },
+    "scored_rows": 71595,
+    "reference_rows": 50000,
+    "build_id": [
+      "2004H2-E"
+    ],
+    "device": "NVIDIA GeForce RTX 4090"
+  },
+  "devices": {
+    "sources": {
+      "experiments/2026-09-14-fm-2008h2r-tabicl-rental-4090": "NVIDIA GeForce RTX 4090"
+    },
+    "check_source": "NVIDIA GeForce RTX 4090",
+    "check": "NVIDIA GeForce RTX 4090"
+  },
+  "derived_build": [
+    "2008H2-R"
+  ],
+  "checked_build": [
+    "2004H2-E"
+  ],
+  "check": {
+    "directory": "experiments/2026-09-13-fm-2004h2e-tabicl-t1-rental-4090",
+    "sha256": {
+      "scores.parquet": "0c1ad070e1987f0259457e1e70f119391c7abfb9380b5903b20785f0435ca1dc",
+      "reference.parquet": "c3d9ee57dcdaf44f8a2dea15add91ccb0b3b3e8e0c3a9afd3e2b9ce5e7f88699",
+      "node.json": "9ab48af5629f95d89911877f275f5a16df278e81d90b708316c8b58ce8d23bac"
+    },
+    "tolerance_on_pd": 1e-06,
+    "cells": [
+      {
+        "build_id": "2004H2-E",
+        "context_seed": 20260911,
+        "cell": "2005H1",
+        "rows": 24233,
+        "max_abs_pd_gap": 1.3556076469689593e-07,
+        "max_abs_logit_gap": 1.3049273945853201e-06
+      },
+      {
+        "build_id": "2004H2-E",
+        "context_seed": 20260911,
+        "cell": "2005H2",
+        "rows": 24082,
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "max_abs_logit_gap": 1.3567627732413712e-06
+      },
+      {
+        "build_id": "2004H2-E",
+        "context_seed": 20260911,
+        "cell": "2006H1",
+        "rows": 23280,
+        "max_abs_pd_gap": 1.1746803646461856e-07,
+        "max_abs_logit_gap": 1.347962429676386e-06
+      },
+      {
+        "build_id": "2004H2-E",
+        "context_seed": 20260911,
+        "cell": "reference",
+        "rows": 50000,
+        "max_abs_pd_gap": 1.213737086114275e-07,
+        "max_abs_logit_gap": 1.379061038697671e-06
+      }
+    ],
+    "rows_checked": 121595,
+    "max_abs_pd_gap": 1.3623170466714463e-07,
+    "max_abs_logit_gap": 1.379061038697671e-06,
+    "check_source_unchecked_cells": [],
+    "unchecked_cells": [
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2009H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2009H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2010H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2010H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2011H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2011H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2012H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2012H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2013H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2013H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2014H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2014H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2015H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2015H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2016H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2016H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2017H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2017H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2018H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2018H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2019H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2019H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2020H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2020H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2021H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2021H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2022H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2022H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2023H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "2023H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260911,
+        "cell": "reference"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2009H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2009H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2010H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2010H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2011H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2011H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2012H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2012H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2013H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2013H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2014H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2014H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2015H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2015H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2016H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2016H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2017H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2017H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2018H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2018H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2019H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2019H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2020H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2020H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2021H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2021H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2022H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2022H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2023H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "2023H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260912,
+        "cell": "reference"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2009H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2009H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2010H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2010H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2011H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2011H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2012H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2012H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2013H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2013H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2014H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2014H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2015H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2015H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2016H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2016H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2017H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2017H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2018H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2018H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2019H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2019H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2020H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2020H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2021H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2021H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2022H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2022H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2023H1"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "2023H2"
+      },
+      {
+        "build_id": "2008H2-R",
+        "context_seed": 20260913,
+        "cell": "reference"
+      }
+    ],
+    "checked_build": [
+      "2004H2-E"
+    ],
+    "derived_build": [
+      "2008H2-R"
+    ],
+    "scope": "the rows compared are the check source's, on build 2004H2-E, derived by the formula and compared with rows the library scored at 1; no derived row of build 2008H2-R is compared with a scored row. The check carries to them by the identity of the library version, the checkpoint and the source temperature, which are the same across every source, the check source and the check"
+  },
+  "scored_rows": 2216064,
+  "reference_rows": 150000
+}

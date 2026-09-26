@@ -1,0 +1,44 @@
+{
+  "slug": "lc-scorecard-builds",
+  "command": [
+    "C:/Users/node/Documents/GitHub/outoftime/.venv/Scripts/python.exe",
+    "scripts/scorecard_builds.py",
+    "data/raw/accepted_2007_to_2018Q4.csv.gz",
+    "--out-dir",
+    "experiments/2026-09-04-lc-scorecard-builds"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-09-04T09:52:18.555649+00:00",
+  "finished_utc": "2026-09-04T10:00:21.535581+00:00",
+  "wall_seconds": 482.98,
+  "git_sha": "416241b6bde30fe192757b259ed9371184cf6c92",
+  "git_dirty": false,
+  "host": "WIN-612LDG3827A",
+  "os": "Windows 11",
+  "cpu": "Intel(R) Core(TM) i7-3635QM CPU @ 2.40GHz",
+  "gpu": null,
+  "python": "3.12.1",
+  "packages": {
+    "numpy": "2.5.2",
+    "scipy": "1.18.1",
+    "pandas": "3.0.5",
+    "polars": null,
+    "pyarrow": "25.0.1",
+    "scikit-learn": "1.9.0",
+    "lightgbm": null,
+    "xgboost": null,
+    "catboost": null,
+    "torch": null,
+    "tabpfn": null,
+    "tabicl": null,
+    "optbinning": "0.21.0",
+    "statsmodels": null,
+    "matplotlib": "3.11.1",
+    "shap": null
+  },
+  "input_sha256": {
+    "C:/Users/node/Documents/GitHub/outoftime/.venv/Scripts/python.exe": "9648d84a822ffd73cc22013052c9dbc307c1bc56746239173b30eb5d7dfb56ef",
+    "scripts/scorecard_builds.py": "8e0d5fb40a6d7a6f7a1fec62618afe1033f47552bb18f93a2b3114bebf17dc4d",
+    "data/raw/accepted_2007_to_2018Q4.csv.gz": "55c16f75120f897683f02e7aabcf080d0e4a20c4832feb1d592cfa941bd62a2d"
+  }
+}

@@ -1,0 +1,35 @@
+book                  : 1,355,395 of 1,362,500 loans
+ablation              : dti_kept
+kept                  : 15: borrowers, cltv, dti, fico, first_time_homebuyer, ltv, mi_pct, occupancy, prepayment_penalty, property_type, purpose, state, term, units, upb_to_limit
+dropped postal_code                 : a priori: geography below the state
+dropped rate                        : a priori: the calendar on this book
+dropped amortization_type           : value: constant on the first cohort
+dropped channel                     : value: a level present on the first cohort and absent from the last
+dropped harp                        : value: constant on the first cohort; a level absent from the first cohort
+dropped interest_only               : value: constant on the first cohort
+dropped msa                         : value: missing share differs between the first and the last cohort
+dropped seller                      : value: a level absent from the first cohort
+dropped special_eligibility_program : coverage + value: constant on the first cohort; missing share differs between the first and the last cohort
+dropped super_conforming            : value: constant on the first cohort
+dropped valuation_method            : coverage + value: constant on the first cohort; a level absent from the first cohort; missing share differs between the first and the last cohort
+dropped vantage_score               : coverage + value: constant on the first cohort
+clip borrowers                      : 1 .. 2
+clip cltv                           : 6 .. 100
+clip fico                           : 601 .. 826
+clip ltv                            : 6 .. 100
+clip mi_pct                         : 0 .. 35
+clip term                           : 96 .. 360
+clip units                          : 1 .. 4
+clip upb_to_limit                   : 0.0583333 .. 1.92083
+clip dti                            : 2 .. 50
+calendar share rate                 : 0.931143
+calendar share borrowers            : 0.027678
+calendar share cltv                 : 0.117234
+calendar share dti                  : 0.068009
+calendar share fico                 : 0.096372
+calendar share ltv                  : 0.121872
+calendar share mi_pct               : 0.100046
+calendar share term                 : 1.0
+calendar share units                : 0.004845
+calendar share upb_to_limit         : 0.06801
+calendar share upb                  : 0.249949

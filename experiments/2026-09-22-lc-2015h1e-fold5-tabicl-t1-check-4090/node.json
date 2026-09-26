@@ -1,0 +1,185 @@
+{
+  "bundle": {
+    "path": "2026-09-12-lc-2015h1e-folds-2to5-fold5",
+    "files": {
+      "context.parquet": "92cf882a1e70d537d7a69c040ccc72be65a5442d6baf345de2b0177049c05662",
+      "scored.parquet": "3bd692fa350c11e8e5e55616aab9e1dddf61ab1e04a18bd9257fb044660687a5"
+    },
+    "build": {
+      "build_id": "2015H1-E",
+      "as_of": "2015-06-30",
+      "arm": "E",
+      "label_lag_months": 12,
+      "knowable_through": "2014-06-30",
+      "train_rows": 323026,
+      "train_first": "2010-04-01",
+      "train_last": "2014-06-01",
+      "train_quarters": [
+        "2010Q2",
+        "2010Q3",
+        "2010Q4",
+        "2011Q1",
+        "2011Q2",
+        "2011Q3",
+        "2011Q4",
+        "2012Q1",
+        "2012Q2",
+        "2012Q3",
+        "2012Q4",
+        "2013Q1",
+        "2013Q2",
+        "2013Q3",
+        "2013Q4",
+        "2014Q1",
+        "2014Q2"
+      ],
+      "blind_rows": 312972,
+      "test_cohorts": {
+        "2015Q3": 20000,
+        "2015Q4": 20000,
+        "2016Q1": 20000,
+        "2016Q2": 20000,
+        "2016Q3": 20000,
+        "2016Q4": 20000,
+        "2017Q1": 20000,
+        "2017Q2": 20000,
+        "2017Q3": 20000,
+        "2017Q4": 20000,
+        "2018Q1": 20000
+      },
+      "test_rows": 220000,
+      "notes": [
+        "312972 rows originated in (2014-06-30, 2015-06-30] carry no mature label at the as-of date and are neither trained on nor scored"
+      ]
+    },
+    "features": [
+      "annual_inc",
+      "credit_history_months",
+      "delinq_2yrs",
+      "dti",
+      "emp_length",
+      "fico_range_low",
+      "home_ownership",
+      "inq_last_6mths",
+      "loan_amnt",
+      "mths_since_last_delinq",
+      "open_acc",
+      "pub_rec",
+      "pub_rec_bankruptcies",
+      "purpose",
+      "revol_bal",
+      "revol_util",
+      "sub_grade",
+      "term",
+      "total_acc",
+      "verification_status"
+    ],
+    "categorical": [
+      "home_ownership",
+      "purpose",
+      "verification_status"
+    ]
+  },
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-7.0.0-31-generic-x86_64-with-glibc2.43",
+    "processor": "unknown",
+    "packages": {
+      "torch": "2.14.0",
+      "tabpfn": "8.5.0",
+      "tabicl": "2.1.1",
+      "numpy": "2.5.3",
+      "pandas": "3.0.6",
+      "scikit-learn": "1.9.1"
+    },
+    "device": "cuda",
+    "device_name": "NVIDIA GeForce RTX 4090",
+    "cuda": "13.0",
+    "device_memory_gb": 25.34
+  },
+  "cohorts": [
+    "fold5-test"
+  ],
+  "context_seeds": [
+    20260911
+  ],
+  "models": {
+    "tabicl@t1/20260911": {
+      "context_rows": 50000,
+      "fit_seconds": 2.312,
+      "parameters": {
+        "allow_auto_download": true,
+        "average_logits": true,
+        "batch_size": 8,
+        "checkpoint_version": "tabicl-classifier-v2-20260212.ckpt",
+        "class_shuffle_method": "shift",
+        "device": null,
+        "disk_offload_dir": null,
+        "feat_shuffle_method": "latin",
+        "inference_config": null,
+        "kv_cache": false,
+        "model_path": null,
+        "n_estimators": 8,
+        "n_jobs": null,
+        "norm_methods": null,
+        "offload_mode": "auto",
+        "outlier_threshold": 4.0,
+        "random_state": 42,
+        "softmax_temperature": 1.0,
+        "support_many_classes": true,
+        "use_amp": "auto",
+        "use_fa3": "auto",
+        "verbose": false
+      }
+    }
+  },
+  "cells": [
+    {
+      "model": "tabicl@t1",
+      "context_seed": 20260911,
+      "cell": "reference",
+      "rows": 50000,
+      "seconds": 20.374,
+      "peak_gpu_gb": 15.527,
+      "mean_pd": 0.023288
+    },
+    {
+      "model": "tabicl@t1",
+      "context_seed": 20260911,
+      "cell": "fold5-test",
+      "rows": 20000,
+      "seconds": 6.928,
+      "peak_gpu_gb": 15.527,
+      "mean_pd": 0.024693
+    }
+  ],
+  "repeats": [
+    {
+      "model": "tabicl@t1",
+      "context_seed": 20260911,
+      "cell": "fold5-test",
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "rows_differing": 0
+    }
+  ],
+  "command": {
+    "models": [
+      "tabicl"
+    ],
+    "nearest": 1,
+    "device": "auto",
+    "chunk": 20000,
+    "repeat": true,
+    "settings": {
+      "temperature": 1.0
+    }
+  },
+  "tuning_budget": "none: zero trials, no validation split, every parameter at the library default except those the command names; the classical models this is paired with were tuned on their own pool and the asymmetry runs both ways, since the 50,000-row control inherits the point chosen on the full pool",
+  "wall_seconds": 39.7,
+  "checkpoints": {
+    "tabicl-classifier-v2-20260212.ckpt": "bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0"
+  },
+  "scored_rows": 20000,
+  "reference_rows": 50000
+}

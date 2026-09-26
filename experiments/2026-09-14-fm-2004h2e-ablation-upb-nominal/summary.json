@@ -1,0 +1,394 @@
+{
+  "build_id": "2004H2-E",
+  "arm": "E",
+  "ablation": "upb_nominal",
+  "matrices": {
+    "name": "upb_nominal",
+    "primary_features": [
+      "borrowers",
+      "cltv",
+      "fico",
+      "first_time_homebuyer",
+      "ltv",
+      "mi_pct",
+      "occupancy",
+      "prepayment_penalty",
+      "property_type",
+      "purpose",
+      "state",
+      "term",
+      "units",
+      "upb_to_limit"
+    ],
+    "ablation_features": [
+      "borrowers",
+      "cltv",
+      "fico",
+      "first_time_homebuyer",
+      "ltv",
+      "mi_pct",
+      "occupancy",
+      "prepayment_penalty",
+      "property_type",
+      "purpose",
+      "state",
+      "term",
+      "units",
+      "upb"
+    ],
+    "added": [
+      "upb"
+    ],
+    "removed": [
+      "upb_to_limit"
+    ]
+  },
+  "sources": {
+    "primary": [
+      "experiments/2026-09-13-fm-2004h2e-scores",
+      "experiments/2026-09-13-fm-2004h2e-tabpfn-rental-4090",
+      "experiments/2026-09-13-fm-2004h2e-tabpfn-t1-rental-4090",
+      "experiments/2026-09-13-fm-2004h2e-tabicl-rental-4090",
+      "experiments/2026-09-13-fm-2004h2e-tabicl-t1-rental-4090"
+    ],
+    "ablation": [
+      "experiments/2026-09-13-fm-2004h2e-scores-upb-nominal",
+      "experiments/2026-09-13-fm-2004h2e-upb-nominal-tabpfn-rental-4090",
+      "experiments/2026-09-13-fm-2004h2e-upb-nominal-tabpfn-t1-rental-4090",
+      "experiments/2026-09-13-fm-2004h2e-upb-nominal-tabicl-rental-4090",
+      "experiments/2026-09-13-fm-2004h2e-upb-nominal-tabicl-t1-rental-4090"
+    ]
+  },
+  "cell_check": {
+    "cells": 202,
+    "rows": 4941995,
+    "statement": "every (model, context seed, cohort) holds exactly the same rows with the same outcomes on both matrices"
+  },
+  "models": {
+    "scorecard": [],
+    "gbm": [],
+    "gbm-50k": [
+      20260911
+    ],
+    "tabpfn": [
+      20260911
+    ],
+    "tabicl": [
+      20260911
+    ],
+    "tabicl@t1": [
+      20260911
+    ],
+    "tabpfn@t1": [
+      20260911
+    ]
+  },
+  "control": "gbm-50k",
+  "cohorts": [
+    "2005H1",
+    "2005H2",
+    "2006H1"
+  ],
+  "cohorts_pooled": 3,
+  "cohorts_scored": 38,
+  "cohorts_not_pooled": {
+    "2006H2": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2007H1": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2007H2": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2008H1": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2008H2": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2009H1": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2009H2": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2010H1": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2010H2": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2011H1": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2011H2": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2012H1": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2012H2": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2013H1": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2013H2": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2014H1": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2014H2": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2015H1": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2015H2": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2016H1": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2016H2": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2017H1": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2017H2": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2018H1": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2018H2": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2019H1": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2019H2": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2020H1": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2020H2": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2021H1": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2021H2": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2022H1": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2022H2": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2023H1": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ],
+    "2023H2": [
+      "tabicl",
+      "tabicl@t1",
+      "tabpfn",
+      "tabpfn@t1"
+    ]
+  },
+  "draws_not_pooled": {
+    "gbm-50k": [
+      20260912,
+      20260913
+    ]
+  },
+  "bootstrap": {
+    "resamples": 200,
+    "seed": 20260905,
+    "alpha": 0.05,
+    "blocking": "cohort, one row index per cohort applied to both matrices and every model",
+    "context_draw": "one draw shared by every seeded model, so every interval is conditional on it",
+    "seed_check": {
+      "seeds": [
+        20260906,
+        20260907
+      ],
+      "differences": 26,
+      "starred": 12,
+      "star_changed": [
+        {
+          "cohorts": "all",
+          "metric": "brier",
+          "pair": "gbm: upb_nominal - primary",
+          "value": -2.3860407803989042e-05,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": -4.846067250675245e-05,
+            "ci_hi": -6.162629909558132e-07
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -5.14476586111591e-05,
+              "ci_hi": 5.836553940708384e-07
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -4.7258608828946175e-05,
+              "ci_hi": 2.0043388257782295e-06
+            }
+          },
+          "bound_movement": 2.9869861044066486e-06
+        },
+        {
+          "cohorts": "all",
+          "metric": "brier",
+          "pair": "gbm-50k: upb_nominal - primary",
+          "value": -2.8645347158573475e-05,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": -5.852693613625508e-05,
+            "ci_hi": -2.163732497035626e-06
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -6.306452587678036e-05,
+              "ci_hi": 1.5335084563412346e-06
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -5.645030943591729e-05,
+              "ci_hi": 1.4429096694757083e-06
+            }
+          },
+          "bound_movement": 4.537589740525282e-06
+        }
+      ],
+      "largest_bound_movement": 0.0007135667632662997
+    },
+    "multiplicity": "none: every interval is reported at alpha on its own"
+  },
+  "statistics": {
+    "mean": "per model and matrix, the mean over the pooled cohorts of the cohort's AUC or Brier score",
+    "diff": "per model, the upb_nominal mean minus the primary mean",
+    "did": "per model other than the control, its diff minus the control's diff on the same resample: (model_upb_nominal - model_primary) - (gbm-50k_upb_nominal - gbm-50k_primary)"
+  },
+  "trigger": {
+    "statement": "a foundation model whose did interval excludes zero on the AUC or the Brier score",
+    "excludes_zero": [
+      "tabicl (brier)",
+      "tabicl@t1 (brier)",
+      "tabpfn (brier)",
+      "tabpfn@t1 (brier)"
+    ]
+  },
+  "wall_seconds": 146.0
+}

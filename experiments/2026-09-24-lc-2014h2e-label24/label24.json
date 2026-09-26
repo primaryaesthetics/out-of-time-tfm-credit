@@ -1,0 +1,237 @@
+{
+  "build_id": "2014H2-E",
+  "column": "outcome_24",
+  "cells_kept": 9,
+  "cells_dropped": 4,
+  "cohorts_kept": [
+    "2015Q1",
+    "2015Q2",
+    "2015Q3",
+    "2015Q4",
+    "2016Q1",
+    "2016Q2",
+    "2016Q3",
+    "2016Q4",
+    "2017Q1"
+  ],
+  "cohorts_dropped": [
+    "2017Q2",
+    "2017Q3",
+    "2017Q4",
+    "2018Q1"
+  ],
+  "rows_kept": 180000,
+  "rows_dropped": 80000,
+  "open_window_rows": 80000,
+  "cohorts": {
+    "2015Q1": {
+      "rows": 20000,
+      "open_window_rows": 0,
+      "enters": true,
+      "rows_dropped": 0,
+      "defaults_12": 579,
+      "defaults_24": 2137
+    },
+    "2015Q2": {
+      "rows": 20000,
+      "open_window_rows": 0,
+      "enters": true,
+      "rows_dropped": 0,
+      "defaults_12": 571,
+      "defaults_24": 2184
+    },
+    "2015Q3": {
+      "rows": 20000,
+      "open_window_rows": 0,
+      "enters": true,
+      "rows_dropped": 0,
+      "defaults_12": 541,
+      "defaults_24": 2208
+    },
+    "2015Q4": {
+      "rows": 20000,
+      "open_window_rows": 0,
+      "enters": true,
+      "rows_dropped": 0,
+      "defaults_12": 551,
+      "defaults_24": 2168
+    },
+    "2016Q1": {
+      "rows": 20000,
+      "open_window_rows": 0,
+      "enters": true,
+      "rows_dropped": 0,
+      "defaults_12": 655,
+      "defaults_24": 2266
+    },
+    "2016Q2": {
+      "rows": 20000,
+      "open_window_rows": 0,
+      "enters": true,
+      "rows_dropped": 0,
+      "defaults_12": 686,
+      "defaults_24": 2293
+    },
+    "2016Q3": {
+      "rows": 20000,
+      "open_window_rows": 0,
+      "enters": true,
+      "rows_dropped": 0,
+      "defaults_12": 650,
+      "defaults_24": 2322
+    },
+    "2016Q4": {
+      "rows": 20000,
+      "open_window_rows": 0,
+      "enters": true,
+      "rows_dropped": 0,
+      "defaults_12": 626,
+      "defaults_24": 2107
+    },
+    "2017Q1": {
+      "rows": 20000,
+      "open_window_rows": 0,
+      "enters": true,
+      "rows_dropped": 0,
+      "defaults_12": 629,
+      "defaults_24": 2030
+    },
+    "2017Q2": {
+      "rows": 20000,
+      "open_window_rows": 20000,
+      "enters": false,
+      "rows_dropped": 20000,
+      "defaults_12": 681,
+      "defaults_24": null
+    },
+    "2017Q3": {
+      "rows": 20000,
+      "open_window_rows": 20000,
+      "enters": false,
+      "rows_dropped": 20000,
+      "defaults_12": 584,
+      "defaults_24": null
+    },
+    "2017Q4": {
+      "rows": 20000,
+      "open_window_rows": 20000,
+      "enters": false,
+      "rows_dropped": 20000,
+      "defaults_12": 623,
+      "defaults_24": null
+    },
+    "2018Q1": {
+      "rows": 20000,
+      "open_window_rows": 20000,
+      "enters": false,
+      "rows_dropped": 20000,
+      "defaults_12": 638,
+      "defaults_24": null
+    }
+  },
+  "sources": [
+    "experiments/2026-09-06-lc-2014h2e-scores",
+    "experiments/2026-09-08-lc-2014h2e-tabicl-colab-t4",
+    "experiments/2026-09-08-lc-2014h2e-tabicl-t1-derived",
+    "experiments/2026-09-11-lc-2014h2e-tabpfn-m4pro",
+    "experiments/2026-09-11-lc-2014h2e-tabpfn-t1-m4pro"
+  ],
+  "copies": [
+    "experiments/2026-09-24-lc-2014h2e-label24/2026-09-06-lc-2014h2e-scores",
+    "experiments/2026-09-24-lc-2014h2e-label24/2026-09-08-lc-2014h2e-tabicl-colab-t4",
+    "experiments/2026-09-24-lc-2014h2e-label24/2026-09-08-lc-2014h2e-tabicl-t1-derived",
+    "experiments/2026-09-24-lc-2014h2e-label24/2026-09-11-lc-2014h2e-tabpfn-m4pro",
+    "experiments/2026-09-24-lc-2014h2e-label24/2026-09-11-lc-2014h2e-tabpfn-t1-m4pro"
+  ],
+  "rule": "a scored row whose window is open at the snapshot has no label and is dropped, never written as a non-default; a cohort with any such row leaves whole and every row of it is counted under rows_dropped",
+  "label": {
+    "12": {
+      "definition": {
+        "window_months": 12,
+        "snapshot": "2019-03-01",
+        "charge_off_lag_months": 5,
+        "last_labelable_origination": "2018-03-01",
+        "bad_statuses": [
+          "Charged Off",
+          "Default",
+          "Does not meet the credit policy. Status:Charged Off"
+        ],
+        "good_statuses": [
+          "Does not meet the credit policy. Status:Fully Paid",
+          "Fully Paid"
+        ]
+      },
+      "labelled": 1873290,
+      "defaults": 54305,
+      "default_rate": 0.028989,
+      "dropped_immature": 387378,
+      "still_running_at_snapshot": 558979,
+      "unrecognised": 0,
+      "notes": [
+        "387378 loans originated after 2018-03-01 were dropped as immature, not labelled non-default",
+        "558979 loans were still running at the snapshot and are labelled non-default: this definition turns on charge-off, not on days past due, and those are the rows where the two differ",
+        "1937 bad loans had no last payment and were dated at origination plus 5 months",
+        "0 labelled loans stopped paying early enough to be in-window defaults and had not been charged off at the snapshot; they are labelled non-default and each is a default the window misses"
+      ]
+    },
+    "24": {
+      "definition": {
+        "window_months": 24,
+        "snapshot": "2019-03-01",
+        "charge_off_lag_months": 5,
+        "last_labelable_origination": "2017-03-01",
+        "bad_statuses": [
+          "Charged Off",
+          "Default",
+          "Does not meet the credit policy. Status:Charged Off"
+        ],
+        "good_statuses": [
+          "Does not meet the credit policy. Status:Fully Paid",
+          "Fully Paid"
+        ]
+      },
+      "labelled": 1418626,
+      "defaults": 145759,
+      "default_rate": 0.102747,
+      "dropped_immature": 842042,
+      "still_running_at_snapshot": 249292,
+      "unrecognised": 1,
+      "notes": [
+        "842042 loans originated after 2017-03-01 were dropped as immature, not labelled non-default",
+        "249292 loans were still running at the snapshot and are labelled non-default: this definition turns on charge-off, not on days past due, and those are the rows where the two differ",
+        "1297 bad loans had no last payment and were dated at origination plus 5 months",
+        "1 labelled loans stopped paying early enough to be in-window defaults and had not been charged off at the snapshot; they are labelled non-default and each is a default the window misses"
+      ]
+    }
+  },
+  "inputs": {
+    "experiments/2026-09-06-lc-2014h2e-scores/build.json": "e9c15c76037b450696410e1d84d1feb1012ed8e63583bd0dbb94ed34ca2dc002",
+    "experiments/2026-09-06-lc-2014h2e-scores/cohorts.csv": "bfb5c74cfbf6a929bb0e363fbf4bd6ba6befb9dcc52410767c9791f9fb311c80",
+    "experiments/2026-09-06-lc-2014h2e-scores/manifest.json": "71f9eec0ca4af8cebcdc9e99372f4c8b156ba54d8e047e0d2f5c6ec071ae2bc3",
+    "experiments/2026-09-06-lc-2014h2e-scores/reference.parquet": "f890b9a6c9eddcded49becd89f72f89eed3aa5bce7b554a0d3328312e1799bde",
+    "experiments/2026-09-06-lc-2014h2e-scores/scores.parquet": "33bfb1dcdbfc7f19b980482d1150a091adddef04bdba5673c911dd7f1b8b03a9",
+    "experiments/2026-09-06-lc-2014h2e-scores/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "experiments/2026-09-06-lc-2014h2e-scores/stdout.txt": "f3db97ba406eb7d8c51aa6705e584c9c5c760a758c4c47a05916bbaf53f7f4c9",
+    "experiments/2026-09-08-lc-2014h2e-tabicl-colab-t4/manifest.json": "a00eba99690cb43cea0ffe233c1588669aa8f8583a05d77284247ca84077467e",
+    "experiments/2026-09-08-lc-2014h2e-tabicl-colab-t4/node.json": "86f51b77a5f7085d62e98a4288022a2eef1a098cb6c506312053523da034b4c3",
+    "experiments/2026-09-08-lc-2014h2e-tabicl-colab-t4/reference.parquet": "5b8a5d0d8b8ee0aa8b21ff7b432c4ad020e87afecf61825d92f08bc8b06ae3a8",
+    "experiments/2026-09-08-lc-2014h2e-tabicl-colab-t4/score.log": "56221b7b7ed7c18fd7b5f04292aa0ca54190bbf38053ea9c36b1a31bad555f41",
+    "experiments/2026-09-08-lc-2014h2e-tabicl-colab-t4/scores.parquet": "2a109ca714885d0fd2b2acac7e009f74df6961e69025b9048ccf368d89b684bf",
+    "experiments/2026-09-08-lc-2014h2e-tabicl-t1-derived/derive.json": "04ac5504dc01c826922a54b988e347fbf8ebd03653b0254f3b1a6c32e61c68d0",
+    "experiments/2026-09-08-lc-2014h2e-tabicl-t1-derived/manifest.json": "8cd0ab9579e1891b8c4f1d759abba4fa68ea4525880cb536311adeb0f183a669",
+    "experiments/2026-09-08-lc-2014h2e-tabicl-t1-derived/reference.parquet": "25658e74ee8cd802ee540da458e46372e40c7f3f5de1a30f27de4ae7e5afd5f1",
+    "experiments/2026-09-08-lc-2014h2e-tabicl-t1-derived/scores.parquet": "e0ea5163d2b2fe730165931da20841b3360c7bafad33cb1f19ad79d9faef90f2",
+    "experiments/2026-09-08-lc-2014h2e-tabicl-t1-derived/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "experiments/2026-09-08-lc-2014h2e-tabicl-t1-derived/stdout.txt": "3647663110becc343fd713b752b9cd1bb4aedb557304ac76dbfdbbdd9f79958e",
+    "experiments/2026-09-11-lc-2014h2e-tabpfn-m4pro/manifest.json": "f58d398dcbdaba260647c09aae4a7e29f6f6b5e4c4811edbed6b92f8797562a9",
+    "experiments/2026-09-11-lc-2014h2e-tabpfn-m4pro/node.json": "d4f3a8c67136bad6fa8cca1c0ffe1463765f69fe759b31383593626bfae80fd6",
+    "experiments/2026-09-11-lc-2014h2e-tabpfn-m4pro/reference.parquet": "5b366b2d3504476fab5c1071ddbfed497904b333e0424d1f1f4e578efc1b4aae",
+    "experiments/2026-09-11-lc-2014h2e-tabpfn-m4pro/score.log": "589c3b80875461000872951321979e2e6cc49b9c7c8abfbbd8ec640cb575a5d7",
+    "experiments/2026-09-11-lc-2014h2e-tabpfn-m4pro/scores.parquet": "f2583054c66e62927e929a63b84a85a251dfdb2b491f0c214817a62f63d72f45",
+    "experiments/2026-09-11-lc-2014h2e-tabpfn-t1-m4pro/manifest.json": "48185484ec23e090b007d02cc99a46871297c3ccef14d027d9853866206d3beb",
+    "experiments/2026-09-11-lc-2014h2e-tabpfn-t1-m4pro/node.json": "fe3c4bdcdb436c5f318c041ac31ceb2ce9c4900ff059b1c75a51482fedef0707",
+    "experiments/2026-09-11-lc-2014h2e-tabpfn-t1-m4pro/reference.parquet": "cb4f7472ffda1e671a2caa04618ea953f1ff044468932f64c9a658c9ddf70979",
+    "experiments/2026-09-11-lc-2014h2e-tabpfn-t1-m4pro/score.log": "b5f2081f5307259ed593b960b9afeaffa996548178f75d7ba58bb34ed462e359",
+    "experiments/2026-09-11-lc-2014h2e-tabpfn-t1-m4pro/scores.parquet": "3b1f76056ca2d952e6ba2cb23e6fa855b4714b0266cbfd2acac7f7c206b16c51"
+  }
+}

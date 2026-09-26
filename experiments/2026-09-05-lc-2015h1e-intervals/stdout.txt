@@ -1,0 +1,21 @@
+build                 : 2015H1-E
+scored rows           : 1,100,000
+reference rows        : 796,052
+cells                 : 55
+cohorts               : 11, nearest 3: 2015Q3, 2015Q4, 2016Q1
+models                : scorecard, gbm, gbm-50k (3 draws)
+bootstrap all         : 200 resamples in 33s
+bootstrap nearest     : 200 resamples in 10s
+
+paired differences, all cohorts (value [lo, hi], * excludes zero):
+  gini        gbm - scorecard        +0.0197 [+0.0139, +0.0251] *
+  gini        gbm-50k - scorecard    +0.0069 [-0.0024, +0.0156]  
+  gini        gbm-50k - gbm          -0.0128 [-0.0222, -0.0044] *
+  abs_log_oe  gbm - scorecard        -0.0453 [-0.0473, -0.0437] *
+  abs_log_oe  gbm-50k - scorecard    -0.0224 [-0.0544, -0.0056] *
+  abs_log_oe  gbm-50k - gbm          +0.0230 [-0.0092, +0.0403]  
+  psi         gbm - scorecard        -0.0154 [-0.0164, -0.0145] *
+  psi         gbm-50k - scorecard    -0.0151 [-0.0172, -0.0119] *
+  psi         gbm-50k - gbm          +0.0003 [-0.0016, +0.0034]  
+
+wall                  : 52s

@@ -1,0 +1,3184 @@
+{
+  "hypothesis": "H4: the rolling arm reduces calibration drift for the foundation models by more than for GBM-50k",
+  "build_dates": [
+    "2004H2",
+    "2006H2",
+    "2008H2",
+    "2010H2",
+    "2012H2",
+    "2014H2",
+    "2016H2",
+    "2018H2"
+  ],
+  "builds": {
+    "2004H2": {
+      "E": "2004H2-E",
+      "R": "2004H2-R"
+    },
+    "2006H2": {
+      "E": "2006H2-E",
+      "R": "2006H2-R"
+    },
+    "2008H2": {
+      "E": "2008H2-E",
+      "R": "2008H2-R"
+    },
+    "2010H2": {
+      "E": "2010H2-E",
+      "R": "2010H2-R"
+    },
+    "2012H2": {
+      "E": "2012H2-E",
+      "R": "2012H2-R"
+    },
+    "2014H2": {
+      "E": "2014H2-E",
+      "R": "2014H2-R"
+    },
+    "2016H2": {
+      "E": "2016H2-E",
+      "R": "2016H2-R"
+    },
+    "2018H2": {
+      "E": "2018H2-E",
+      "R": "2018H2-R"
+    }
+  },
+  "builds_left_out": [],
+  "cells_shared": 192,
+  "cells_criterion": 160,
+  "cohorts_under_floors": [
+    "2013H1",
+    "2014H2",
+    "2015H1",
+    "2020H2",
+    "2021H1"
+  ],
+  "outcome": "outcome_reported",
+  "matrix": {
+    "features": {
+      "build.json": [
+        "borrowers",
+        "cltv",
+        "fico",
+        "first_time_homebuyer",
+        "ltv",
+        "mi_pct",
+        "occupancy",
+        "prepayment_penalty",
+        "property_type",
+        "purpose",
+        "state",
+        "term",
+        "units",
+        "upb_to_limit"
+      ],
+      "node.json": [
+        "borrowers",
+        "cltv",
+        "fico",
+        "first_time_homebuyer",
+        "ltv",
+        "mi_pct",
+        "occupancy",
+        "prepayment_penalty",
+        "property_type",
+        "purpose",
+        "state",
+        "term",
+        "units",
+        "upb_to_limit"
+      ]
+    },
+    "ablation": null
+  },
+  "models": {
+    "scorecard": [],
+    "gbm": [],
+    "gbm-50k": [
+      20260911,
+      20260912,
+      20260913
+    ],
+    "tabicl": [
+      20260911,
+      20260912,
+      20260913
+    ],
+    "tabicl@t1": [
+      20260911,
+      20260912,
+      20260913
+    ],
+    "tabpfn": [
+      20260911,
+      20260912,
+      20260913
+    ],
+    "tabpfn@t1": [
+      20260911,
+      20260912,
+      20260913
+    ]
+  },
+  "models_dropped": [],
+  "models_not_on_every_build": {},
+  "control": "gbm-50k",
+  "sources": {
+    "E": {
+      "2004H2-E": [
+        "experiments/2026-09-13-fm-2004h2e-scores",
+        "experiments/2026-09-14-fm-2004h2e-tabicl-rental-4090",
+        "experiments/2026-09-15-fm-2004h2e-grid-tabicl-t1-derived",
+        "experiments/2026-09-14-fm-2004h2e-tabpfn-rental-4090",
+        "experiments/2026-09-14-fm-2004h2e-tabpfn-t1-rental-4090"
+      ],
+      "2006H2-E": [
+        "experiments/2026-09-13-fm-2006h2e-scores",
+        "experiments/2026-09-14-fm-2006h2e-tabicl-rental-4090",
+        "experiments/2026-09-15-fm-2006h2e-tabicl-t1-derived",
+        "experiments/2026-09-14-fm-2006h2e-tabpfn-rental-4090",
+        "experiments/2026-09-14-fm-2006h2e-tabpfn-t1-rental-4090"
+      ],
+      "2008H2-E": [
+        "experiments/2026-09-13-fm-2008h2e-scores",
+        "experiments/2026-09-14-fm-2008h2e-tabicl-rental-4090",
+        "experiments/2026-09-15-fm-2008h2e-tabicl-t1-derived",
+        "experiments/2026-09-14-fm-2008h2e-tabpfn-rental-4090",
+        "experiments/2026-09-14-fm-2008h2e-tabpfn-t1-rental-4090"
+      ],
+      "2010H2-E": [
+        "experiments/2026-09-13-fm-2010h2e-scores",
+        "experiments/2026-09-14-fm-2010h2e-tabicl-rental-4090",
+        "experiments/2026-09-15-fm-2010h2e-tabicl-t1-derived",
+        "experiments/2026-09-14-fm-2010h2e-tabpfn-rental-4090",
+        "experiments/2026-09-14-fm-2010h2e-tabpfn-t1-rental-4090"
+      ],
+      "2012H2-E": [
+        "experiments/2026-09-13-fm-2012h2e-scores",
+        "experiments/2026-09-14-fm-2012h2e-tabicl-rental-4090",
+        "experiments/2026-09-15-fm-2012h2e-tabicl-t1-derived",
+        "experiments/2026-09-14-fm-2012h2e-tabpfn-rental-4090",
+        "experiments/2026-09-14-fm-2012h2e-tabpfn-t1-rental-4090"
+      ],
+      "2014H2-E": [
+        "experiments/2026-09-13-fm-2014h2e-scores",
+        "experiments/2026-09-14-fm-2014h2e-tabicl-rental-4090",
+        "experiments/2026-09-15-fm-2014h2e-tabicl-t1-derived",
+        "experiments/2026-09-14-fm-2014h2e-tabpfn-rental-4090",
+        "experiments/2026-09-14-fm-2014h2e-tabpfn-t1-rental-4090"
+      ],
+      "2016H2-E": [
+        "experiments/2026-09-13-fm-2016h2e-scores",
+        "experiments/2026-09-14-fm-2016h2e-tabicl-rental-4090",
+        "experiments/2026-09-15-fm-2016h2e-tabicl-t1-derived",
+        "experiments/2026-09-14-fm-2016h2e-tabpfn-rental-4090",
+        "experiments/2026-09-14-fm-2016h2e-tabpfn-t1-rental-4090"
+      ],
+      "2018H2-E": [
+        "experiments/2026-09-13-fm-2018h2e-scores",
+        "experiments/2026-09-14-fm-2018h2e-tabicl-rental-4090",
+        "experiments/2026-09-15-fm-2018h2e-tabicl-t1-derived",
+        "experiments/2026-09-14-fm-2018h2e-tabpfn-rental-4090",
+        "experiments/2026-09-14-fm-2018h2e-tabpfn-t1-rental-4090"
+      ]
+    },
+    "R": {
+      "2004H2-R": [
+        "experiments/2026-09-13-fm-2004h2r-scores",
+        "experiments/2026-09-14-fm-2004h2r-tabicl-rental-4090",
+        "experiments/2026-09-15-fm-2004h2r-tabicl-t1-derived",
+        "experiments/2026-09-14-fm-2004h2r-tabpfn-rental-4090",
+        "experiments/2026-09-15-fm-2004h2r-tabpfn-t1-derived"
+      ],
+      "2006H2-R": [
+        "experiments/2026-09-13-fm-2006h2r-scores",
+        "experiments/2026-09-14-fm-2006h2r-tabicl-rental-4090",
+        "experiments/2026-09-15-fm-2006h2r-tabicl-t1-derived",
+        "experiments/2026-09-14-fm-2006h2r-tabpfn-rental-4090",
+        "experiments/2026-09-15-fm-2006h2r-tabpfn-t1-derived"
+      ],
+      "2008H2-R": [
+        "experiments/2026-09-13-fm-2008h2r-scores",
+        "experiments/2026-09-14-fm-2008h2r-tabicl-rental-4090",
+        "experiments/2026-09-15-fm-2008h2r-tabicl-t1-derived",
+        "experiments/2026-09-14-fm-2008h2r-tabpfn-rental-4090",
+        "experiments/2026-09-15-fm-2008h2r-tabpfn-t1-derived"
+      ],
+      "2010H2-R": [
+        "experiments/2026-09-13-fm-2010h2r-scores",
+        "experiments/2026-09-14-fm-2010h2r-tabicl-rental-4090",
+        "experiments/2026-09-15-fm-2010h2r-tabicl-t1-derived",
+        "experiments/2026-09-14-fm-2010h2r-tabpfn-rental-4090",
+        "experiments/2026-09-15-fm-2010h2r-tabpfn-t1-derived"
+      ],
+      "2012H2-R": [
+        "experiments/2026-09-13-fm-2012h2r-scores",
+        "experiments/2026-09-14-fm-2012h2r-tabicl-rental-4090",
+        "experiments/2026-09-15-fm-2012h2r-tabicl-t1-derived",
+        "experiments/2026-09-14-fm-2012h2r-tabpfn-rental-4090",
+        "experiments/2026-09-15-fm-2012h2r-tabpfn-t1-derived"
+      ],
+      "2014H2-R": [
+        "experiments/2026-09-13-fm-2014h2r-scores",
+        "experiments/2026-09-14-fm-2014h2r-tabicl-rental-4090",
+        "experiments/2026-09-15-fm-2014h2r-tabicl-t1-derived",
+        "experiments/2026-09-14-fm-2014h2r-tabpfn-rental-4090",
+        "experiments/2026-09-15-fm-2014h2r-tabpfn-t1-derived"
+      ],
+      "2016H2-R": [
+        "experiments/2026-09-13-fm-2016h2r-scores",
+        "experiments/2026-09-14-fm-2016h2r-tabicl-rental-4090",
+        "experiments/2026-09-15-fm-2016h2r-tabicl-t1-derived",
+        "experiments/2026-09-14-fm-2016h2r-tabpfn-rental-4090",
+        "experiments/2026-09-15-fm-2016h2r-tabpfn-t1-derived"
+      ],
+      "2018H2-R": [
+        "experiments/2026-09-13-fm-2018h2r-scores",
+        "experiments/2026-09-14-fm-2018h2r-tabicl-rental-4090",
+        "experiments/2026-09-15-fm-2018h2r-tabicl-t1-derived",
+        "experiments/2026-09-14-fm-2018h2r-tabpfn-rental-4090",
+        "experiments/2026-09-15-fm-2018h2r-tabpfn-t1-derived"
+      ]
+    }
+  },
+  "derived_rows": {
+    "tabicl@t1": [
+      {
+        "build_id": "2004H2-E",
+        "arm": "E",
+        "directory": "experiments/2026-09-15-fm-2004h2e-grid-tabicl-t1-derived",
+        "model": "tabicl@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 4,
+        "kind": "exact",
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "rows_checked": 121595,
+        "unchecked_cells": 113
+      },
+      {
+        "build_id": "2006H2-E",
+        "arm": "E",
+        "directory": "experiments/2026-09-15-fm-2006h2e-tabicl-t1-derived",
+        "model": "tabicl@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 4,
+        "kind": "exact",
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "rows_checked": 121595,
+        "unchecked_cells": 105
+      },
+      {
+        "build_id": "2008H2-E",
+        "arm": "E",
+        "directory": "experiments/2026-09-15-fm-2008h2e-tabicl-t1-derived",
+        "model": "tabicl@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 4,
+        "kind": "exact",
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "rows_checked": 121595,
+        "unchecked_cells": 93
+      },
+      {
+        "build_id": "2010H2-E",
+        "arm": "E",
+        "directory": "experiments/2026-09-15-fm-2010h2e-tabicl-t1-derived",
+        "model": "tabicl@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 4,
+        "kind": "exact",
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "rows_checked": 121595,
+        "unchecked_cells": 81
+      },
+      {
+        "build_id": "2012H2-E",
+        "arm": "E",
+        "directory": "experiments/2026-09-15-fm-2012h2e-tabicl-t1-derived",
+        "model": "tabicl@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 4,
+        "kind": "exact",
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "rows_checked": 121595,
+        "unchecked_cells": 69
+      },
+      {
+        "build_id": "2014H2-E",
+        "arm": "E",
+        "directory": "experiments/2026-09-15-fm-2014h2e-tabicl-t1-derived",
+        "model": "tabicl@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 4,
+        "kind": "exact",
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "rows_checked": 121595,
+        "unchecked_cells": 57
+      },
+      {
+        "build_id": "2016H2-E",
+        "arm": "E",
+        "directory": "experiments/2026-09-15-fm-2016h2e-tabicl-t1-derived",
+        "model": "tabicl@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 4,
+        "kind": "exact",
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "rows_checked": 121595,
+        "unchecked_cells": 45
+      },
+      {
+        "build_id": "2018H2-E",
+        "arm": "E",
+        "directory": "experiments/2026-09-15-fm-2018h2e-tabicl-t1-derived",
+        "model": "tabicl@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 4,
+        "kind": "exact",
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "rows_checked": 121595,
+        "unchecked_cells": 33
+      },
+      {
+        "build_id": "2004H2-R",
+        "arm": "R",
+        "directory": "experiments/2026-09-15-fm-2004h2r-tabicl-t1-derived",
+        "model": "tabicl@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 4,
+        "kind": "exact",
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "rows_checked": 121595,
+        "unchecked_cells": 117
+      },
+      {
+        "build_id": "2006H2-R",
+        "arm": "R",
+        "directory": "experiments/2026-09-15-fm-2006h2r-tabicl-t1-derived",
+        "model": "tabicl@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 4,
+        "kind": "exact",
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "rows_checked": 121595,
+        "unchecked_cells": 105
+      },
+      {
+        "build_id": "2008H2-R",
+        "arm": "R",
+        "directory": "experiments/2026-09-15-fm-2008h2r-tabicl-t1-derived",
+        "model": "tabicl@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 4,
+        "kind": "exact",
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "rows_checked": 121595,
+        "unchecked_cells": 93
+      },
+      {
+        "build_id": "2010H2-R",
+        "arm": "R",
+        "directory": "experiments/2026-09-15-fm-2010h2r-tabicl-t1-derived",
+        "model": "tabicl@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 4,
+        "kind": "exact",
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "rows_checked": 121595,
+        "unchecked_cells": 81
+      },
+      {
+        "build_id": "2012H2-R",
+        "arm": "R",
+        "directory": "experiments/2026-09-15-fm-2012h2r-tabicl-t1-derived",
+        "model": "tabicl@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 4,
+        "kind": "exact",
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "rows_checked": 121595,
+        "unchecked_cells": 69
+      },
+      {
+        "build_id": "2014H2-R",
+        "arm": "R",
+        "directory": "experiments/2026-09-15-fm-2014h2r-tabicl-t1-derived",
+        "model": "tabicl@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 4,
+        "kind": "exact",
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "rows_checked": 121595,
+        "unchecked_cells": 57
+      },
+      {
+        "build_id": "2016H2-R",
+        "arm": "R",
+        "directory": "experiments/2026-09-15-fm-2016h2r-tabicl-t1-derived",
+        "model": "tabicl@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 4,
+        "kind": "exact",
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "rows_checked": 121595,
+        "unchecked_cells": 45
+      },
+      {
+        "build_id": "2018H2-R",
+        "arm": "R",
+        "directory": "experiments/2026-09-15-fm-2018h2r-tabicl-t1-derived",
+        "model": "tabicl@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 4,
+        "kind": "exact",
+        "max_abs_pd_gap": 1.3623170466714463e-07,
+        "rows_checked": 121595,
+        "unchecked_cells": 33
+      }
+    ],
+    "tabpfn@t1": [
+      {
+        "build_id": "2004H2-R",
+        "arm": "R",
+        "directory": "experiments/2026-09-15-fm-2004h2r-tabpfn-t1-derived",
+        "model": "tabpfn@t1",
+        "checked_build": [
+          "2004H2-E"
+        ],
+        "cells_checked": 117,
+        "kind": "approximate",
+        "worst_cell_error": 0.0006631944728695549,
+        "mean_cell_error": 0.00012061273346916384,
+        "cells_above_figure": 0,
+        "figure": 0.00084,
+        "cox_slope_gap": {
+          "worst": 0.0005904890927124207,
+          "mean": 0.00013539160415082898
+        },
+        "oe_gap": {
+          "worst": -0.0044790663993223845,
+          "mean": -0.0011890425664112163
+        }
+      },
+      {
+        "build_id": "2006H2-R",
+        "arm": "R",
+        "directory": "experiments/2026-09-15-fm-2006h2r-tabpfn-t1-derived",
+        "model": "tabpfn@t1",
+        "checked_build": [
+          "2006H2-E"
+        ],
+        "cells_checked": 105,
+        "kind": "approximate",
+        "worst_cell_error": 0.0005041850218721056,
+        "mean_cell_error": 0.00012486580948946322,
+        "cells_above_figure": 0,
+        "figure": 0.00084,
+        "cox_slope_gap": {
+          "worst": 0.0006831381390519642,
+          "mean": 7.429564165131238e-05
+        },
+        "oe_gap": {
+          "worst": -0.004704946906682217,
+          "mean": -0.0012836550926759959
+        }
+      },
+      {
+        "build_id": "2008H2-R",
+        "arm": "R",
+        "directory": "experiments/2026-09-15-fm-2008h2r-tabpfn-t1-derived",
+        "model": "tabpfn@t1",
+        "checked_build": [
+          "2008H2-E"
+        ],
+        "cells_checked": 93,
+        "kind": "approximate",
+        "worst_cell_error": 0.0018317637700542289,
+        "mean_cell_error": 0.00022370367592408833,
+        "cells_above_figure": 8,
+        "figure": 0.00084,
+        "cox_slope_gap": {
+          "worst": -0.0018887074518015856,
+          "mean": -0.00019732403726247438
+        },
+        "oe_gap": {
+          "worst": -0.003920049118206759,
+          "mean": -0.0010541902635037405
+        }
+      },
+      {
+        "build_id": "2010H2-R",
+        "arm": "R",
+        "directory": "experiments/2026-09-15-fm-2010h2r-tabpfn-t1-derived",
+        "model": "tabpfn@t1",
+        "checked_build": [
+          "2010H2-E"
+        ],
+        "cells_checked": 81,
+        "kind": "approximate",
+        "worst_cell_error": 0.0008924090550394004,
+        "mean_cell_error": 0.00011766766292934068,
+        "cells_above_figure": 1,
+        "figure": 0.00084,
+        "cox_slope_gap": {
+          "worst": 0.0007802013906346161,
+          "mean": -3.81542692484748e-05
+        },
+        "oe_gap": {
+          "worst": -0.0017819218308152696,
+          "mean": -0.0007408448508349026
+        }
+      },
+      {
+        "build_id": "2012H2-R",
+        "arm": "R",
+        "directory": "experiments/2026-09-15-fm-2012h2r-tabpfn-t1-derived",
+        "model": "tabpfn@t1",
+        "checked_build": [
+          "2012H2-E"
+        ],
+        "cells_checked": 69,
+        "kind": "approximate",
+        "worst_cell_error": 0.00025242934739022616,
+        "mean_cell_error": 0.00011098973704331381,
+        "cells_above_figure": 0,
+        "figure": 0.00084,
+        "cox_slope_gap": {
+          "worst": 0.00040422173461940325,
+          "mean": 4.7785103889261794e-05
+        },
+        "oe_gap": {
+          "worst": -0.0009932740073852475,
+          "mean": -0.0003877617350281918
+        }
+      },
+      {
+        "build_id": "2014H2-R",
+        "arm": "R",
+        "directory": "experiments/2026-09-15-fm-2014h2r-tabpfn-t1-derived",
+        "model": "tabpfn@t1",
+        "checked_build": [
+          "2014H2-E"
+        ],
+        "cells_checked": 57,
+        "kind": "approximate",
+        "worst_cell_error": 0.000326796116647321,
+        "mean_cell_error": 0.00014865304951052876,
+        "cells_above_figure": 0,
+        "figure": 0.00084,
+        "cox_slope_gap": {
+          "worst": 0.0008691336046986464,
+          "mean": 0.00018333991248017787
+        },
+        "oe_gap": {
+          "worst": -0.0013522995786769965,
+          "mean": -0.0004821000939737079
+        }
+      },
+      {
+        "build_id": "2016H2-R",
+        "arm": "R",
+        "directory": "experiments/2026-09-15-fm-2016h2r-tabpfn-t1-derived",
+        "model": "tabpfn@t1",
+        "checked_build": [
+          "2016H2-E"
+        ],
+        "cells_checked": 45,
+        "kind": "approximate",
+        "worst_cell_error": 0.0003846778925373773,
+        "mean_cell_error": 0.0001443070596343817,
+        "cells_above_figure": 0,
+        "figure": 0.00084,
+        "cox_slope_gap": {
+          "worst": 0.0004894972925943986,
+          "mean": 0.00019030826302959022
+        },
+        "oe_gap": {
+          "worst": -0.0013412789170061945,
+          "mean": -0.0005084203111242345
+        }
+      },
+      {
+        "build_id": "2018H2-R",
+        "arm": "R",
+        "directory": "experiments/2026-09-15-fm-2018h2r-tabpfn-t1-derived",
+        "model": "tabpfn@t1",
+        "checked_build": [
+          "2018H2-E"
+        ],
+        "cells_checked": 33,
+        "kind": "approximate",
+        "worst_cell_error": 0.00013316215680592158,
+        "mean_cell_error": 4.7686250217220326e-05,
+        "cells_above_figure": 0,
+        "figure": 0.00084,
+        "cox_slope_gap": {
+          "worst": 0.0007593860940688923,
+          "mean": -2.6876282320965178e-05
+        },
+        "oe_gap": {
+          "worst": -0.0021206702062284144,
+          "mean": -0.0008322646602122284
+        }
+      }
+    ]
+  },
+  "contrast": {
+    "2004H2": {
+      "expanding_rows": 176092,
+      "rolling_rows": 96581,
+      "share_held": 0.5485,
+      "recorded_share_held": 0.5485,
+      "mean_age_gap_quarters": 3.381
+    },
+    "2006H2": {
+      "expanding_rows": 272936,
+      "rolling_rows": 96844,
+      "share_held": 0.3548,
+      "recorded_share_held": 0.3548,
+      "mean_age_gap_quarters": 7.329
+    },
+    "2008H2": {
+      "expanding_rows": 368551,
+      "rolling_rows": 95615,
+      "share_held": 0.2594,
+      "recorded_share_held": 0.2594,
+      "mean_age_gap_quarters": 11.337
+    },
+    "2010H2": {
+      "expanding_rows": 465066,
+      "rolling_rows": 96515,
+      "share_held": 0.2075,
+      "recorded_share_held": 0.2075,
+      "mean_age_gap_quarters": 15.383
+    },
+    "2012H2": {
+      "expanding_rows": 564228,
+      "rolling_rows": 99162,
+      "share_held": 0.1757,
+      "recorded_share_held": 0.1757,
+      "mean_age_gap_quarters": 19.234
+    },
+    "2014H2": {
+      "expanding_rows": 662396,
+      "rolling_rows": 98168,
+      "share_held": 0.1482,
+      "recorded_share_held": 0.1482,
+      "mean_age_gap_quarters": 23.193
+    },
+    "2016H2": {
+      "expanding_rows": 759434,
+      "rolling_rows": 97038,
+      "share_held": 0.1278,
+      "recorded_share_held": 0.1278,
+      "mean_age_gap_quarters": 27.21
+    },
+    "2018H2": {
+      "expanding_rows": 856861,
+      "rolling_rows": 97427,
+      "share_held": 0.1137,
+      "recorded_share_held": 0.1137,
+      "mean_age_gap_quarters": 31.229
+    }
+  },
+  "contrast_sources": {
+    "expanding_rows, rolling_rows, share_held": "the score runs' build.json, train_rows",
+    "recorded_share_held, mean_age_gap_quarters": "the arm-contrast record"
+  },
+  "contrast_record": "experiments/2026-09-17-fm-arm-contrast/arm-contrast.json",
+  "cells_record": "experiments/2026-09-13-fm-vintage-builds2/cells.csv",
+  "statistics": {
+    "mean": "per model and arm, the mean over the shared criterion cells of |Cox slope - 1|, the cells every model's fit finished on, on both arms",
+    "reduction": "per model, the expanding arm's mean minus the rolling arm's: positive when the rolling window brings the scores nearer a slope of one",
+    "h4": "per model other than the control, its reduction minus gbm-50k's on the same resample"
+  },
+  "scopes": "'arm' is every shared criterion cell; 'builds' is the mean over build dates of each date's own statistic, every date weighted alike; a date is that date alone; 'pre-flag' and 'flagged' are the cells of those label regimes when the build run's cells are given. Only 'arm' is reported with the cohorts resampled",
+  "criterion": {
+    "statement": "the kill fires for a foundation model at its library settings, at the shipped softmax temperature 0.9, unless its h4 interval at the scope 'arm', cohorts held fixed, lies above zero under the primary bootstrap seed and every check seed; the rows at 1.0 are on the table, and a verdict that differs between the settings is reported as differing",
+    "reading": {
+      "scorecard": {
+        "value": -0.05759763481287152,
+        "ci_lo": -0.10099068891133005,
+        "ci_hi": -0.014161392598900636,
+        "star_changes_with_seed": false,
+        "reading": "killed: the reduction is smaller than the control's, beyond the interval",
+        "criterion": false,
+        "kill_fires": true,
+        "regime_values": {
+          "pre-flag": -0.02800461838822661,
+          "flagged": -0.06405270917037044
+        },
+        "regimes_disagree_in_sign": false
+      },
+      "gbm": {
+        "value": -0.00709624949629319,
+        "ci_lo": -0.051180445361305886,
+        "ci_hi": 0.03677010169333992,
+        "star_changes_with_seed": false,
+        "reading": "killed: inside the interval",
+        "criterion": false,
+        "kill_fires": true,
+        "regime_values": {
+          "pre-flag": -0.01397535777434956,
+          "flagged": -7.701781113729027e-05
+        },
+        "regimes_disagree_in_sign": false
+      },
+      "tabpfn": {
+        "value": -0.0054646673417356835,
+        "ci_lo": -0.0324477237741717,
+        "ci_hi": 0.035495083997512555,
+        "star_changes_with_seed": false,
+        "reading": "undetermined on this book (kill criterion 4): the pre-flag and flagged scopes disagree in sign",
+        "criterion": true,
+        "kill_fires": null,
+        "regime_values": {
+          "pre-flag": 0.022734667096675487,
+          "flagged": -0.009046738606754201
+        },
+        "regimes_disagree_in_sign": true,
+        "reading_on_arm_row": "killed: inside the interval",
+        "kill_fires_on_arm_row": true
+      },
+      "tabicl": {
+        "value": 0.010746927527840483,
+        "ci_lo": -0.020868713009405217,
+        "ci_hi": 0.04805298062040542,
+        "star_changes_with_seed": false,
+        "reading": "killed: inside the interval",
+        "criterion": true,
+        "kill_fires": true,
+        "regime_values": {
+          "pre-flag": 0.04159043323207331,
+          "flagged": 0.007492043310759626
+        },
+        "regimes_disagree_in_sign": false
+      },
+      "tabicl@t1": {
+        "value": 0.0021732517599467316,
+        "ci_lo": -0.032555994457682584,
+        "ci_hi": 0.03749474836097883,
+        "star_changes_with_seed": false,
+        "reading": "killed: inside the interval",
+        "criterion": false,
+        "kill_fires": true,
+        "regime_values": {
+          "pre-flag": 0.020080880371768844,
+          "flagged": 0.0019953036927689385
+        },
+        "regimes_disagree_in_sign": false
+      },
+      "tabpfn@t1": {
+        "value": -0.014486580308819774,
+        "ci_lo": -0.04019243282547007,
+        "ci_hi": 0.023568900538321228,
+        "star_changes_with_seed": false,
+        "reading": "undetermined on this book (kill criterion 4): the pre-flag and flagged scopes disagree in sign",
+        "criterion": false,
+        "kill_fires": null,
+        "regime_values": {
+          "pre-flag": 0.007905586990480518,
+          "flagged": -0.01718893945730367
+        },
+        "regimes_disagree_in_sign": true,
+        "reading_on_arm_row": "killed: inside the interval",
+        "kill_fires_on_arm_row": true
+      }
+    }
+  },
+  "bootstrap": {
+    "resamples": 200,
+    "seed": 20260905,
+    "alpha": 0.05,
+    "blocking": "cohort, one row index per cohort shared by every build of both arms that scores it and by every model",
+    "context_draw": "drawn with the resample, jointly across models, builds and arms",
+    "poolings": [
+      "all",
+      "all, cohorts resampled"
+    ],
+    "per_draw": "the 'all' pooling repeated with each context draw held fixed, in the rows whose draw is set",
+    "draws_disagree": {
+      "arm: gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.01000316696720506,
+          "ci_hi": 0.026490555783149863
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.06480897593495671,
+          "ci_hi": -0.044187016676217813
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.029217630033996817,
+          "ci_hi": -0.012963380791105303
+        }
+      ],
+      "arm: tabpfn: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.011378586972602932,
+          "ci_hi": -0.0031461199343730314
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.03358338038478765,
+          "ci_hi": -0.024039244347547853
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.04846425788430105,
+          "ci_hi": -0.03932944815879079
+        }
+      ],
+      "arm: tabicl: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.00017328229279474,
+          "ci_hi": 0.008959811990689215
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.022837067229901108,
+          "ci_hi": -0.01244414828197596
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.02169250848724728,
+          "ci_hi": -0.013754938782131416
+        }
+      ],
+      "arm: tabicl@t1: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.01271887883760742,
+          "ci_hi": 7.761859217606368e-06
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.03138659138328795,
+          "ci_hi": -0.0194894733108139
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.0258336770082067,
+          "ci_hi": -0.015242405168136495
+        }
+      ],
+      "arm: tabpfn@t1: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.019945692000204754,
+          "ci_hi": -0.00895054181130965
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.047933814098123986,
+          "ci_hi": -0.03304486407466567
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.051431622875648765,
+          "ci_hi": -0.03954689484650773
+        }
+      ],
+      "arm: scorecard - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.10368816512615191,
+          "ci_hi": -0.0836006308432437
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.030550822706041116,
+          "ci_hi": -0.009138170669112442
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.06511643475862607,
+          "ci_hi": -0.044529726621259196
+        }
+      ],
+      "arm: gbm - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.05303827512334985,
+          "ci_hi": -0.03589345566145126
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.01861110604158197,
+          "ci_hi": 0.038824596610758905
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.013176816023890727,
+          "ci_hi": 0.0018837615156809635
+        }
+      ],
+      "arm: tabpfn - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.03476418857881914,
+          "ci_hi": -0.01578950033915208
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.011465342037954173,
+          "ci_hi": 0.041198650171826785
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.03283001632425955,
+          "ci_hi": -0.01528918348817042
+        }
+      ],
+      "arm: tabicl - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.022929431015974642,
+          "ci_hi": -0.0035668817957027065
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.022701249016974345,
+          "ci_hi": 0.051588791265145574
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.006204347995155811,
+          "ci_hi": 0.011656437577216452
+        }
+      ],
+      "arm: tabicl@t1 - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.035867927769004194,
+          "ci_hi": -0.013962625347632412
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.017172477073643007,
+          "ci_hi": 0.04193434868843176
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.00794079607599273,
+          "ci_hi": 0.008192253073484345
+        }
+      ],
+      "arm: tabpfn@t1 - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.042690937005813424,
+          "ci_hi": -0.022815980709017167
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.0008474286232623219,
+          "ci_hi": 0.027921491262112404
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.03260102230825584,
+          "ci_hi": -0.016242455125583165
+        }
+      ],
+      "2004H2: gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.06982150453615882,
+          "ci_hi": -0.04852811712811485
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.1485232529412106,
+          "ci_hi": -0.11389892856893552
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.004377198600513515,
+          "ci_hi": 0.013124798002887655
+        }
+      ],
+      "2004H2: tabpfn: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.05635828778030519,
+          "ci_hi": -0.047124689655710636
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.05657617615305565,
+          "ci_hi": -0.04752502220060634
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.02716899003821053,
+          "ci_hi": -0.01677437103346863
+        }
+      ],
+      "2004H2: tabicl: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.06297964289354285,
+          "ci_hi": -0.053448848621654166
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.03168164091236955,
+          "ci_hi": -0.023991582634062723
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.04208959796353949,
+          "ci_hi": -0.03202828589502455
+        }
+      ],
+      "2004H2: tabpfn@t1: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.05318187770643732,
+          "ci_hi": -0.03602356588859892
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.060434572312622094,
+          "ci_hi": -0.04760904464772115
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.029335740239816437,
+          "ci_hi": -0.01727842556325559
+        }
+      ],
+      "2004H2: scorecard - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.046174690866734765,
+          "ci_hi": -0.02678580315972046
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.018016403843918248,
+          "ci_hi": 0.05097179265879535
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.10875808643963478,
+          "ci_hi": -0.09174925250724714
+        }
+      ],
+      "2004H2: gbm - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.014688763662924667,
+          "ci_hi": 0.005045498450213754
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.049672597511274445,
+          "ci_hi": 0.08360806630462819
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.07772139317179934,
+          "ci_hi": -0.060525644184893146
+        }
+      ],
+      "2004H2: tabpfn - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.0023842142629389535,
+          "ci_hi": 0.017012397386811613
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.06208286340600472,
+          "ci_hi": 0.09470188625402685
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.03330005221940522,
+          "ci_hi": -0.01802954865833369
+        }
+      ],
+      "2004H2: tabicl - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.00847291625956046,
+          "ci_hi": 0.01009071706740767
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.08541480908042888,
+          "ci_hi": 0.12074303605657064
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.04833789147487166,
+          "ci_hi": -0.0332477747021064
+        }
+      ],
+      "2004H2: tabicl@t1 - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.0029198216263469526,
+          "ci_hi": 0.025590300866238643
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.08834740149955707,
+          "ci_hi": 0.11801012075552827
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.05181641287901983,
+          "ci_hi": -0.035296064683246677
+        }
+      ],
+      "2004H2: tabpfn@t1 - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.0047863593059231345,
+          "ci_hi": 0.026051652139869312
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.0639114453645123,
+          "ci_hi": 0.09358357844338651
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.03557310431362162,
+          "ci_hi": -0.019866372011652443
+        }
+      ],
+      "2006H2: gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.01787278997713242,
+          "ci_hi": 0.044197738250790486
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.20305099024126907,
+          "ci_hi": -0.16830373774840965
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.1884720297447296,
+          "ci_hi": -0.13079087494971073
+        }
+      ],
+      "2006H2: tabpfn: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.03571750313281761,
+          "ci_hi": -0.023312212907911866
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.007136352612183558,
+          "ci_hi": 0.003925327852299851
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.09329896589063646,
+          "ci_hi": -0.0788840617688255
+        }
+      ],
+      "2006H2: tabicl: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.04285453326398751,
+          "ci_hi": 0.06237265153769211
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.005089282084259513,
+          "ci_hi": 0.018913735309160223
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.014575979433273482,
+          "ci_hi": -0.0010981512644813749
+        }
+      ],
+      "2006H2: tabicl@t1: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.008431631091907633,
+          "ci_hi": 0.03830015074591349
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.005271638375925307,
+          "ci_hi": 0.011597268936513166
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.02283185800668916,
+          "ci_hi": -0.0029580536396436427
+        }
+      ],
+      "2006H2: tabpfn@t1: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.03979007768495447,
+          "ci_hi": -0.02573683686833123
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.013302931494174568,
+          "ci_hi": 0.0012855921696101685
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.09217682828528387,
+          "ci_hi": -0.06526456318712628
+        }
+      ],
+      "2006H2: scorecard - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.13621315068640075,
+          "ci_hi": -0.10750423878008938
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.07737535728205114,
+          "ci_hi": 0.11201275588572478
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.03868104977300769,
+          "ci_hi": 0.09472540178886432
+        }
+      ],
+      "2006H2: gbm - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.14398536471205947,
+          "ci_hi": -0.100665339150599
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.08506255795450285,
+          "ci_hi": 0.10795005190833326
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.0458923939058642,
+          "ci_hi": 0.09047035173956562
+        }
+      ],
+      "2006H2: tabpfn - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.07292558441167077,
+          "ci_hi": -0.04808277966924164
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.16567980376241018,
+          "ci_hi": 0.20245108098943257
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.045295382181780065,
+          "ci_hi": 0.10170165116122291
+        }
+      ],
+      "2006H2: tabicl - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.010535198819242437,
+          "ci_hi": 0.03448253734982315
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.17848391751724024,
+          "ci_hi": 0.21475218998533227
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.12098343567174367,
+          "ci_hi": 0.18071820138747124
+        }
+      ],
+      "2006H2: tabicl@t1 - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.022458969864442433,
+          "ci_hi": 0.004894551360454675
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.17035215792174596,
+          "ci_hi": 0.21205265182031918
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.11512548602648888,
+          "ci_hi": 0.17771697534627384
+        }
+      ],
+      "2006H2: tabpfn@t1 - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.07716039811946496,
+          "ci_hi": -0.050954386668836685
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.16231563843605518,
+          "ci_hi": 0.20002115356770722
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.0563631113111474,
+          "ci_hi": 0.1033449704711755
+        }
+      ],
+      "2008H2: gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.006108398235293094,
+          "ci_hi": 0.031328327422327246
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.1578857426995262,
+          "ci_hi": 0.2002535593272251
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.02603474458877516,
+          "ci_hi": 0.012183607605768266
+        }
+      ],
+      "2008H2: tabpfn: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.023002809115387976,
+          "ci_hi": 0.04305713227828369
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.07947490160332454,
+          "ci_hi": 0.11787891739511842
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.010263842874620068,
+          "ci_hi": 0.005344999671914275
+        }
+      ],
+      "2008H2: tabicl: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.03528822708835507,
+          "ci_hi": 0.05963707756977724
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.065399717724896,
+          "ci_hi": 0.10791874262452347
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.002860613774436978,
+          "ci_hi": 0.01790555775181091
+        }
+      ],
+      "2008H2: scorecard - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.019764052680825848,
+          "ci_hi": 0.019959535269726793
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.19040355620834928,
+          "ci_hi": -0.14171583645202251
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.0014424487931803652,
+          "ci_hi": 0.04069462050725643
+        }
+      ],
+      "2008H2: gbm - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.03044695267723107,
+          "ci_hi": -0.0014098521484448361
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.2074557149268694,
+          "ci_hi": -0.16190313561989816
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.018894157764675904,
+          "ci_hi": 0.025199251970583144
+        }
+      ],
+      "2008H2: tabpfn - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.0022248355673670176,
+          "ci_hi": 0.041520380267988426
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.11068697788748827,
+          "ci_hi": -0.049961688212624394
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.018896141451804835,
+          "ci_hi": 0.02764828801409951
+        }
+      ],
+      "2008H2: tabicl - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.016482974857758886,
+          "ci_hi": 0.056982338704566524
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.12198475589673266,
+          "ci_hi": -0.06154267197848027
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.004975210763544225,
+          "ci_hi": 0.03908547150377466
+        }
+      ],
+      "2008H2: tabicl@t1 - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.03010254311065524,
+          "ci_hi": 0.019440420035719295
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.19948931518272103,
+          "ci_hi": -0.13372209518674985
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.0057594372891206945,
+          "ci_hi": 0.03451363202604527
+        }
+      ],
+      "2008H2: tabpfn@t1 - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.0337629644979549,
+          "ci_hi": 0.01449339638827772
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.19625378229255488,
+          "ci_hi": -0.12226485094726225
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.018437379677119867,
+          "ci_hi": 0.028086032939709786
+        }
+      ],
+      "2010H2: gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.11632600442522348,
+          "ci_hi": -0.04022198139548135
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.17811327361135398,
+          "ci_hi": -0.10940672209733018
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.17854863484789565,
+          "ci_hi": -0.11775416960083374
+        }
+      ],
+      "2010H2: tabpfn: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.10434904410733865,
+          "ci_hi": -0.0836525292633124
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.18900059602574365,
+          "ci_hi": -0.16587158485011633
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.15362959089344017,
+          "ci_hi": -0.12717676581108947
+        }
+      ],
+      "2010H2: tabicl: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.10446070195369471,
+          "ci_hi": -0.0832380882924066
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.1786214110364822,
+          "ci_hi": -0.15584344344216652
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.10853736678675678,
+          "ci_hi": -0.08536303549730821
+        }
+      ],
+      "2010H2: tabicl@t1: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.10845594690513842,
+          "ci_hi": -0.07590516870177252
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.17134332675413627,
+          "ci_hi": -0.1329929953362277
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.10778687952468403,
+          "ci_hi": -0.07339108715382836
+        }
+      ],
+      "2010H2: tabpfn@t1: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.11314414892317178,
+          "ci_hi": -0.08669823225581355
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.18991018588563816,
+          "ci_hi": -0.15334160554336282
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.1542468144299712,
+          "ci_hi": -0.11722228988864347
+        }
+      ],
+      "2010H2: scorecard - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.052940482421947446,
+          "ci_hi": -0.0016621739200444543
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.021075726545867386,
+          "ci_hi": 0.062770737578348
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.02083692900391267,
+          "ci_hi": 0.0639316870739849
+        }
+      ],
+      "2010H2: gbm - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.012939104783960393,
+          "ci_hi": 0.060135862982968705
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.05608243220861728,
+          "ci_hi": 0.12354590669183926
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.06453348156023789,
+          "ci_hi": 0.12367304889388815
+        }
+      ],
+      "2010H2: tabicl - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.055083686764261675,
+          "ci_hi": 0.018262562871335968
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.05582150576572545,
+          "ci_hi": 0.012490267430139779
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.016656291071202336,
+          "ci_hi": 0.081894981920371
+        }
+      ],
+      "2010H2: tabicl@t1 - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.051681391500688456,
+          "ci_hi": 0.016882116292052187
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.032596228782702935,
+          "ci_hi": 0.022420529006211852
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.02883189540171893,
+          "ci_hi": 0.07994362101206581
+        }
+      ],
+      "2012H2: gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.061963707783232604,
+          "ci_hi": 0.12380228424725619
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.02303795687647796,
+          "ci_hi": 0.015259875282485952
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.03029971008361154,
+          "ci_hi": 0.016415574377147177
+        }
+      ],
+      "2012H2: tabpfn: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.0025088751394304136,
+          "ci_hi": 0.019477434285036867
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.049304412098536636,
+          "ci_hi": -0.02822631888716606
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.0811331407994594,
+          "ci_hi": -0.056698306013012886
+        }
+      ],
+      "2012H2: tabicl: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.014502454745476822,
+          "ci_hi": 0.030994163009784914
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.0266223932890143,
+          "ci_hi": -0.0023736008407379185
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.05433735083674665,
+          "ci_hi": -0.02766324004911745
+        }
+      ],
+      "2012H2: tabicl@t1: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.01378101484465258,
+          "ci_hi": 0.03426716353236895
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.02142190851285843,
+          "ci_hi": 0.01270123716174424
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.04597751306674245,
+          "ci_hi": -0.007950631172404245
+        }
+      ],
+      "2012H2: tabpfn@t1: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.0012861205201729516,
+          "ci_hi": 0.02180359376591018
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.05096540574123185,
+          "ci_hi": -0.014673608384266321
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.08118976258455222,
+          "ci_hi": -0.04612062702758388
+        }
+      ],
+      "2012H2: scorecard - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.25525219551820694,
+          "ci_hi": -0.15069538105080393
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.13760356375057933,
+          "ci_hi": -0.07955456137802802
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.13107382427803527,
+          "ci_hi": -0.07036304232635963
+        }
+      ],
+      "2012H2: gbm - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.14922478235535797,
+          "ci_hi": -0.06121912190724853
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.03640332388336328,
+          "ci_hi": 0.010585445736991493
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.027587760306073652,
+          "ci_hi": 0.01174101367888141
+        }
+      ],
+      "2012H2: tabicl - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.10002992867903102,
+          "ci_hi": -0.038587869787342896
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.03689171577006216,
+          "ci_hi": 0.01463227438786273
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.0629060079933108,
+          "ci_hi": -0.011752357032451349
+        }
+      ],
+      "2012H2: tabicl@t1 - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.09763991768993967,
+          "ci_hi": -0.03754884922906582
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.030264002942011273,
+          "ci_hi": 0.023167095915673556
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.04272723736735619,
+          "ci_hi": 0.007218407704957356
+        }
+      ],
+      "2014H2: tabpfn: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.07083111293739343,
+          "ci_hi": 0.09562624366575179
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.03714095311702291,
+          "ci_hi": -0.006989907141220596
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.0009368507519099062,
+          "ci_hi": 0.02531999327509089
+        }
+      ],
+      "2014H2: tabicl: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.00879886833648026,
+          "ci_hi": 0.019064058882292123
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.06741904299111537,
+          "ci_hi": -0.03676715074507845
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.005540213097051147,
+          "ci_hi": 0.019473230994363606
+        }
+      ],
+      "2014H2: tabicl@t1: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.0007858463431620089,
+          "ci_hi": 0.03447297139250158
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.05379998249276001,
+          "ci_hi": -0.0030148746971312623
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.004911219835387685,
+          "ci_hi": 0.02172827671909482
+        }
+      ],
+      "2014H2: tabpfn@t1: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.049602443059782085,
+          "ci_hi": 0.08812277295377512
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.03109777047415917,
+          "ci_hi": 0.006914772262460342
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.030233222168988813,
+          "ci_hi": 0.0017214475093765697
+        }
+      ],
+      "2014H2: tabpfn - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.010752189600086197,
+          "ci_hi": 0.0798087734924128
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.0970778445796156,
+          "ci_hi": -0.009607435944212863
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.04431810487251777,
+          "ci_hi": 0.015683426856140027
+        }
+      ],
+      "2016H2: gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.013758207966746858,
+          "ci_hi": 0.04104807132942221
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.0440304664209462,
+          "ci_hi": -0.0035778679222041657
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.13103587725123303,
+          "ci_hi": 0.19958965555858163
+        }
+      ],
+      "2016H2: tabpfn: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.009899100113661139,
+          "ci_hi": 0.038121179026781464
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.03382174177448725,
+          "ci_hi": 0.059844730010217666
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.013104213059398538,
+          "ci_hi": 0.01336782490234967
+        }
+      ],
+      "2016H2: tabicl: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.03185551880873724,
+          "ci_hi": 0.05924976893711911
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.06433057937698676,
+          "ci_hi": 0.0924475127921136
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.023061306957389813,
+          "ci_hi": 0.05255796429457085
+        }
+      ],
+      "2016H2: tabicl@t1: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.031075185066658673,
+          "ci_hi": 0.06319002309825626
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.05270347463907572,
+          "ci_hi": 0.0954483315629566
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.00394381684463545,
+          "ci_hi": 0.04186983564285409
+        }
+      ],
+      "2016H2: scorecard - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.017244279990420806,
+          "ci_hi": 0.04031953449310226
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.029806182747171568,
+          "ci_hi": 0.07043931551045392
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.17852292323619798,
+          "ci_hi": -0.10050815132140772
+        }
+      ],
+      "2016H2: gbm - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.05544222167836556,
+          "ci_hi": 0.15064106201249325
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.09883407815191347,
+          "ci_hi": 0.17734712450545723
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.07242001834396614,
+          "ci_hi": -0.027830243990379828
+        }
+      ],
+      "2016H2: tabpfn - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.01958896074664228,
+          "ci_hi": 0.04656938322134312
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.04523118658517445,
+          "ci_hi": 0.09119211005927484
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.19812756573184745,
+          "ci_hi": -0.12778783015226827
+        }
+      ],
+      "2016H2: tabicl - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.0020020271071698303,
+          "ci_hi": 0.062426994505360475
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.08225212732456423,
+          "ci_hi": 0.12447692394340491
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.1589392623314558,
+          "ci_hi": -0.09107043451823378
+        }
+      ],
+      "2016H2: tabicl@t1 - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.0035942736240577654,
+          "ci_hi": 0.06517403411960586
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.07429898455059762,
+          "ci_hi": 0.12743782190534086
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.1758558585708901,
+          "ci_hi": -0.10811878167250796
+        }
+      ],
+      "2016H2: tabpfn@t1 - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.019366613553049198,
+          "ci_hi": 0.0437377156172363
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.026147696127942356,
+          "ci_hi": 0.08124763854563848
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.20833084733126817,
+          "ci_hi": -0.13957987425884874
+        }
+      ],
+      "2018H2: gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.3491858690945005,
+          "ci_hi": 0.38815714605054175
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.09444515223188979,
+          "ci_hi": -0.04903249870135239
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.24370470220564439,
+          "ci_hi": 0.2857516602372939
+        }
+      ],
+      "2018H2: tabpfn: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.09154406320751429,
+          "ci_hi": 0.12391665469413837
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.14515358127070743,
+          "ci_hi": -0.11944640661105549
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.004082666570964954,
+          "ci_hi": 0.031247757668153374
+        }
+      ],
+      "2018H2: tabicl: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.09121521761043717,
+          "ci_hi": 0.12987866934519332
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.10389409518364674,
+          "ci_hi": -0.07789482239001187
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.051653593369677286,
+          "ci_hi": 0.09669448725239105
+        }
+      ],
+      "2018H2: tabicl@t1: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.01354785569952407,
+          "ci_hi": 0.08587945054698394
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.10314818388063045,
+          "ci_hi": -0.048611627139385445
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.02865931822637858,
+          "ci_hi": 0.048248402333472724
+        }
+      ],
+      "2018H2: tabpfn@t1: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.05556646268030289,
+          "ci_hi": 0.10940890354287378
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.1531759109244194,
+          "ci_hi": -0.0979712865007942
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.012219968192290587,
+          "ci_hi": 0.023945788301008922
+        }
+      ],
+      "2018H2: scorecard - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.49623174663481817,
+          "ci_hi": -0.4439657536818354
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.05261606880053296,
+          "ci_hi": -0.009612169842512407
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.3969129863290324,
+          "ci_hi": -0.34014076809843663
+        }
+      ],
+      "2018H2: gbm - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.31726961093031936,
+          "ci_hi": -0.2848641864789221
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.11430712196726432,
+          "ci_hi": 0.1555969359055372
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.21884495640873997,
+          "ci_hi": -0.18035381889167965
+        }
+      ],
+      "2018H2: tabpfn - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.2788574170411307,
+          "ci_hi": -0.24473243050690113
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.08005452809631074,
+          "ci_hi": -0.04351553463791613
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.26896347038533636,
+          "ci_hi": -0.22815414826786862
+        }
+      ],
+      "2018H2: tabicl - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.28236314052416056,
+          "ci_hi": -0.23140335320783753
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.03843447590176954,
+          "ci_hi": -0.004545330890963563
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.22560462392742311,
+          "ci_hi": -0.15809171985519263
+        }
+      ],
+      "2018H2: tabicl@t1 - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.36620304470846665,
+          "ci_hi": -0.27153055038345497
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.027182475032984356,
+          "ci_hi": 0.018236844277058878
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.30908763743095663,
+          "ci_hi": -0.20832686971337996
+        }
+      ],
+      "2018H2: tabpfn@t1 - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.31678665911133247,
+          "ci_hi": -0.24802768313966728
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.07432679691349284,
+          "ci_hi": -0.0300634598172577
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.2945891693165786,
+          "ci_hi": -0.2352173595855635
+        }
+      ],
+      "pre-flag: gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.019279461109269414,
+          "ci_hi": 0.008515456892336754
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.09422763980867603,
+          "ci_hi": -0.04196804687323898
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.08116419997055058,
+          "ci_hi": -0.04607872999016487
+        }
+      ],
+      "pre-flag: tabpfn: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.029517448554291042,
+          "ci_hi": -0.0152813495260162
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.0280870757897302,
+          "ci_hi": -0.009104449110380629
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.054944941373022145,
+          "ci_hi": -0.04204446009219682
+        }
+      ],
+      "pre-flag: tabicl: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.010177681971468086,
+          "ci_hi": 0.006268572095055629
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.01612092920884238,
+          "ci_hi": 0.004232683922415041
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.0325952299859913,
+          "ci_hi": -0.023627539012039973
+        }
+      ],
+      "pre-flag: scorecard - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.08632947140764104,
+          "ci_hi": -0.056349966391941106
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.03762727092833448,
+          "ci_hi": 0.015640623384637987
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.03544814754521384,
+          "ci_hi": 0.003676757781373969
+        }
+      ],
+      "pre-flag: gbm - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.06834993052166004,
+          "ci_hi": -0.03723277933784918
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.00974382453238184,
+          "ci_hi": 0.02847926900010328
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.015173975829136797,
+          "ci_hi": 0.019020633938908186
+        }
+      ],
+      "pre-flag: tabpfn - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.03177499521441255,
+          "ci_hi": -0.002418090083406157
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.017212788074957536,
+          "ci_hi": 0.08216316175642768
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.005985941829567581,
+          "ci_hi": 0.034737989831068794
+        }
+      ],
+      "pre-flag: tabicl - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.012935326402165367,
+          "ci_hi": 0.019986613584079486
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.02721639298890854,
+          "ci_hi": 0.09651816050116274
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.01656714524196899,
+          "ci_hi": 0.055021097578383485
+        }
+      ],
+      "pre-flag: tabicl@t1 - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.032164077013288966,
+          "ci_hi": 0.0009520630901077957
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.006326152405496705,
+          "ci_hi": 0.0692272527355107
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.017455558323092677,
+          "ci_hi": 0.05361671943240099
+        }
+      ],
+      "pre-flag: tabpfn@t1 - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.037915909589926106,
+          "ci_hi": -0.008950048956845211
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.002444284791104157,
+          "ci_hi": 0.06082150252462494
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.003631691190528995,
+          "ci_hi": 0.03377997910210884
+        }
+      ],
+      "flagged: gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.008842430983518052,
+          "ci_hi": 0.026898695221521
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.06937832217474109,
+          "ci_hi": -0.04482919423735518
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.018784140233511194,
+          "ci_hi": 0.0006829693425910958
+        }
+      ],
+      "flagged: tabpfn: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.008383756303000782,
+          "ci_hi": 0.002680908469156305
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.04165264457224539,
+          "ci_hi": -0.029783073630201634
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.04936563585634042,
+          "ci_hi": -0.03816823614560922
+        }
+      ],
+      "flagged: tabicl: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.0004839617087930321,
+          "ci_hi": 0.011656006403886272
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.028802312234387343,
+          "ci_hi": -0.015921536937996954
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.020882419992898794,
+          "ci_hi": -0.011100547967462878
+        }
+      ],
+      "flagged: tabicl@t1: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.009115843801684323,
+          "ci_hi": 0.00622257237462432
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.0325174407431993,
+          "ci_hi": -0.01724825701539885
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.02654209097462473,
+          "ci_hi": -0.011981714132281102
+        }
+      ],
+      "flagged: tabpfn@t1: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.016550534872383636,
+          "ci_hi": -0.0022109855881590713
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.05428422179571679,
+          "ci_hi": -0.036014729320142755
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.056304313374018665,
+          "ci_hi": -0.04011924623552539
+        }
+      ],
+      "flagged: scorecard - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.10910613058270088,
+          "ci_hi": -0.08273712065842564
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.030101775289079414,
+          "ci_hi": -0.009028324679883308
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.08140346728696173,
+          "ci_hi": -0.05766764102436804
+        }
+      ],
+      "flagged: gbm - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.04490749789846052,
+          "ci_hi": -0.024448561904820903
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.028485293544189945,
+          "ci_hi": 0.05375859791603838
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.015801600241422315,
+          "ci_hi": 0.0022783344565272833
+        }
+      ],
+      "flagged: tabpfn - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.031804191736317884,
+          "ci_hi": -0.009720550110819525
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.007415916015778555,
+          "ci_hi": 0.03812213968973203
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.045809246994617164,
+          "ci_hi": -0.025784053308917296
+        }
+      ],
+      "flagged: tabicl - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.02137414028819175,
+          "ci_hi": -0.0009513497260360762
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.021496488884028147,
+          "ci_hi": 0.05009631573920492
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.016400087816677823,
+          "ci_hi": 0.003945825081437789
+        }
+      ],
+      "flagged: tabicl@t1 - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.03206501469313578,
+          "ci_hi": -0.006632816783813741
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.020981030461409412,
+          "ci_hi": 0.0483900748717868
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.021039091904004114,
+          "ci_hi": -0.0001423595662647525
+        }
+      ],
+      "flagged: tabpfn@t1 - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.03929041317018112,
+          "ci_hi": -0.015404903183732853
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.0014442769259006133,
+          "ci_hi": 0.029717467447850584
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.048741799661756874,
+          "ci_hi": -0.028750218901053042
+        }
+      ],
+      "builds: gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.04402637527344355,
+          "ci_hi": 0.06284882176501073
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.05385040338956747,
+          "ci_hi": -0.03198627260332579
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.009891546420139247,
+          "ci_hi": 0.025557060528534913
+        }
+      ],
+      "builds: tabpfn: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.005304236002311813,
+          "ci_hi": 0.014939086181505004
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.04021394013369492,
+          "ci_hi": -0.030064121961042498
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.0408773285622338,
+          "ci_hi": -0.030419530032816354
+        }
+      ],
+      "builds: tabicl: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.010516519244579529,
+          "ci_hi": 0.021000630227816907
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.028280332201300027,
+          "ci_hi": -0.01629142865140742
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.012213900933389876,
+          "ci_hi": -0.0019409394249459003
+        }
+      ],
+      "builds: tabicl@t1: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.0038680882867976156,
+          "ci_hi": 0.011403702876560026
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.03305568657781644,
+          "ci_hi": -0.017809748364383635
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.022418994912272235,
+          "ci_hi": -0.006983334484638694
+        }
+      ],
+      "builds: tabpfn@t1: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.0054710161606722095,
+          "ci_hi": 0.008845322482522282
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.05146613680636496,
+          "ci_hi": -0.03666037540691883
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.04706079550221183,
+          "ci_hi": -0.03370632736179003
+        }
+      ],
+      "builds: scorecard - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.14050679972081073,
+          "ci_hi": -0.1149887252341186
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.041895809636016725,
+          "ci_hi": -0.017832579950426346
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.10458376130983489,
+          "ci_hi": -0.07979290009213094
+        }
+      ],
+      "builds: gbm - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.06848607565622611,
+          "ci_hi": -0.04745513617843444
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.027520550907983103,
+          "ci_hi": 0.05108068299447537
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.029891444091464648,
+          "ci_hi": -0.015086694738469597
+        }
+      ],
+      "builds: tabpfn - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.054360880713280345,
+          "ci_hi": -0.03262130475768083
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.005199918950259579,
+          "ci_hi": 0.022869839566820364
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.06304187319958943,
+          "ci_hi": -0.04629076235115892
+        }
+      ],
+      "builds: tabicl - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.04690502760712171,
+          "ci_hi": -0.02611262190608932
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.007880272288231146,
+          "ci_hi": 0.033939297308232926
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.03377741155898091,
+          "ci_hi": -0.015858635716070185
+        }
+      ],
+      "builds: tabicl@t1 - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.06143680312680996,
+          "ci_hi": -0.036487833273634175
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.0066551347186624525,
+          "ci_hi": 0.029981992217590996
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.04392093635482667,
+          "ci_hi": -0.022080986943407502
+        }
+      ],
+      "builds: tabpfn@t1 - gbm-50k: E - R": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.06446538673627165,
+          "ci_hi": -0.039270051260406565
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.012643265090403935,
+          "ci_hi": 0.01237547539830609
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.0671836525699897,
+          "ci_hi": -0.04875730653690656
+        }
+      ],
+      "pre-flag - flagged: gbm - gbm-50k: E - R, pre-flag - flagged": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.038092789212345705,
+          "ci_hi": -0.001515170036500718
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.055464714113861106,
+          "ci_hi": -0.007351820411068667
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.006136393832365059,
+          "ci_hi": 0.02870665557710766
+        }
+      ],
+      "pre-flag - flagged: tabpfn - gbm-50k: E - R, pre-flag - flagged": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.011750906907618036,
+          "ci_hi": 0.020963931044058887
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.0075945989926585085,
+          "ci_hi": 0.06054994911869742
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.028793843627583755,
+          "ci_hi": 0.07066900763032843
+        }
+      ],
+      "pre-flag - flagged: tabpfn@t1 - gbm-50k: E - R, pre-flag - flagged": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.01699643695268689,
+          "ci_hi": 0.020248765382645074
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.022170853219526544,
+          "ci_hi": 0.05078744404588772
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.04033948037448186,
+          "ci_hi": 0.07508564707455623
+        }
+      ]
+    },
+    "seed_check": {
+      "seeds": [
+        20260906,
+        20260907
+      ],
+      "differences": 175,
+      "starred": 58,
+      "arm_differences": 26,
+      "arm_starred": 11,
+      "arm_star_changed": 1,
+      "star_changed": [
+        {
+          "cohorts": "all",
+          "scope": "2012H2",
+          "metric": "cox_slope_deviation",
+          "pair": "gbm: E - R",
+          "value": -0.021346363025266213,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": -0.031120210765854486,
+            "ci_hi": -0.002087510230638285
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": -0.03248367076686534,
+              "ci_hi": -0.0038596035500411932
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -0.03143592900954557,
+              "ci_hi": 4.913694419175018e-05
+            }
+          },
+          "bound_movement": 0.002136647174830035
+        },
+        {
+          "cohorts": "all",
+          "scope": "2012H2",
+          "metric": "cox_slope_deviation",
+          "pair": "tabicl - gbm-50k: E - R",
+          "value": -0.047936667445023694,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.09455340633234831,
+            "ci_hi": 0.0029376540266999205
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.10632370413179493,
+              "ci_hi": 0.0008852364174167927
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.10059612773802142,
+              "ci_hi": -0.0004612342421708459
+            }
+          },
+          "bound_movement": 0.011770297799446619
+        },
+        {
+          "cohorts": "all",
+          "scope": "2014H2",
+          "metric": "cox_slope_deviation",
+          "pair": "gbm-50k: E - R",
+          "value": 0.03649247790598962,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.00231324409972937,
+            "ci_hi": 0.07229887913132167
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.0012246390370543984,
+              "ci_hi": 0.06652771700321065
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": 0.0005398388062361045,
+              "ci_hi": 0.06655841544315243
+            }
+          },
+          "bound_movement": 0.005771162128111018
+        },
+        {
+          "cohorts": "all, cohorts resampled",
+          "scope": "arm",
+          "metric": "cox_slope_deviation",
+          "pair": "scorecard - gbm-50k: E - R",
+          "value": -0.05759763481287152,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": -0.10761126007731556,
+            "ci_hi": -0.0007909685534647491
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.10948497429840093,
+              "ci_hi": 0.0012762032139483994
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.10790714490122703,
+              "ci_hi": -0.005231138717701861
+            }
+          },
+          "bound_movement": 0.004440170164237112
+        }
+      ],
+      "largest_bound_movement": 0.012625953500865206
+    },
+    "cox_left_out": {
+      "all": {
+        "cox_slope_deviation|arm": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2004H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2006H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2008H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2010H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2012H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2014H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2016H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2018H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|pre-flag": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|flagged": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|builds": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      },
+      "all, cohorts resampled": {
+        "cox_slope_deviation|arm": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      },
+      "all, draw 20260911": {
+        "cox_slope_deviation|arm": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2004H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2006H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2008H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2010H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2012H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2014H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2016H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2018H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|pre-flag": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|flagged": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|builds": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      },
+      "all, draw 20260912": {
+        "cox_slope_deviation|arm": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2004H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2006H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2008H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2010H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2012H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2014H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2016H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2018H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|pre-flag": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|flagged": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|builds": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      },
+      "all, draw 20260913": {
+        "cox_slope_deviation|arm": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2004H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2006H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2008H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2010H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2012H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2014H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2016H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2018H2": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|pre-flag": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|flagged": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|builds": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      }
+    },
+    "cox_rule": "a cell on which some model's Cox fit did not finish, on either arm, leaves the pairing for every model on both arms, in the point estimate and in every resample",
+    "multiplicity": "none: every interval is reported at alpha on its own"
+  },
+  "wall_seconds": 12940.9
+}

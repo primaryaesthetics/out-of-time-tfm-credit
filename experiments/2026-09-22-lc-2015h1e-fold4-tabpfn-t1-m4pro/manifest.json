@@ -1,0 +1,62 @@
+{
+  "slug": "lc-2015h1e-fold4-tabpfn-t1-m4pro",
+  "recorded_utc": "2026-09-22T23:25:52+00:00",
+  "git_sha": "a5e47cd4af8d4ac5d36c46ef683a5aee13887dc9",
+  "git_dirty": false,
+  "code_sha256": {
+    "scripts/score_context.py": "219b62fe4c5569b3b1a7f8f538dd36951cb36b86744b0eaacdb36ff8967fe555",
+    "scripts/node_jobs.py": "81aaa0e1f09c989f3cdadf9bf620ac2ce7445aedf309087d3007380e9276ae52",
+    "scripts/node_run.sh": "1a56f16ae9153d774486251496d5d31f9670de6c35db0d285e50fa23f6e758df"
+  },
+  "scorer_commit": "The score_context.py, node_jobs.py and run script that ran are the files at commit a36c751e366ea8dbe344c3f8c4b41d88c8ab43e2, hashed from the LF-ended copies inside the job archive; code_sha256 holds them, so the recorded-code gate checks this run like any other.",
+  "written_by_hand": "The node holds no copy of the repository, so record_run.py could not record this run. The manifest is assembled from what the archive carries: node.json is the scorer's own account of its environment and its cells, score.log is the slice of the node's console log that belongs to this job, and the row checks below were re-derived against the bundle rather than carried over.",
+  "host": "Apple M4 Pro node, macOS 26.6.2 arm64, Python 3.12.14",
+  "gpu": "Apple Silicon GPU (arm64), unified memory, device mps, peak 3.619 GB over the run's cells",
+  "job": "tabpfn-t1@2026-09-12-lc-2015h1e-folds-2to5-fold4",
+  "command": "2026-09-12-lc-2015h1e-folds-2to5-fold4 --out-dir 2026-09-12-lc-2015h1e-folds-2to5-fold4-scored-tabpfn-t1 --models tabpfn --temperature 1.0, run by node_jobs.py from the unpacked job archive as job 8 of 10",
+  "job_archive": {
+    "path": "data/derived/node/outoftime-run-folds-1to5-2015h1e-tabpfn-a36c751.tar.gz",
+    "sha256": "d5c428d727e538828a514439024e9374f662c82be0d1c327857a18fb85d86f45",
+    "built_by": "scripts/pack_node_run.py over the five fold bundles, as a tar for the node's run script; sidecars .sha256 and .jobs.json beside it."
+  },
+  "result_archive": {
+    "name": "outoftime-result-folds-1to5-2015h1e-tabpfn-a36c751.tar.gz",
+    "sha256": "5df6b903718188b483917d0eebf678748350198811652d96fded18dde0e9a763",
+    "produced": "2026-09-22 by the node's run script at the end of all ten jobs"
+  },
+  "bundle": {
+    "path": "experiments/2026-09-21-lc-2015h1e-fold-bundles/2026-09-12-lc-2015h1e-folds-2to5-fold4",
+    "context.parquet": "ccb3f6fbfe6ccd104c35a9d943b8b8f34d63ec301d41d7e3295d8f3bc132378b",
+    "scored.parquet": "ee274748522f91fc96dd8fa23418b26f418b59c3ca01c79a07ac2858dcd7e369",
+    "how": "The hashes node.json records for the bundle it read equal the files of the bundle on disk, rehashed here. The scorer refuses a bundle whose hashes differ from its bundle.json, so the node scored the recorded rows."
+  },
+  "parts_check": "9 part files under parts/, one per (model, context seed, cell), equal to the 9 cell records of node.json; the parts hold 270,000 rows, the sum of scores.parquet (120,000) and reference.parquet (150,000).",
+  "row_check": {
+    "scored": "120,000 rows, 40,000 per context seed (fold4-test, fold4-validation); every (cohort, row) pair, its outcome and its age match the bundle's scored.parquet, zero mismatches, zero duplicate keys, no missing probability and none outside [0, 1]",
+    "reference": "150,000 rows, 50,000 per context seed; every row and its outcome match the bundle's context.parquet for that context seed, zero mismatches",
+    "context_meeting_cells": "0 rows of any scored cell are in the context of the draw that scored it; the scorer at a36c751 refuses such a cell before any fit",
+    "seeds": [
+      20260911,
+      20260912,
+      20260913
+    ]
+  },
+  "repeat_check": "3 cells scored a second time, one per context seed; the largest disagreement on any of them is 0.0e+00.",
+  "console_log": "score.log is this job's slice of the node's console log, lines 134 to 152 of 190. Read in full. It holds no path, account name or token.",
+  "question_this_run_was_sent_to_answer": "EXP-004's TabPFN side on fold 4 of the published five-fold protocol beside the out-of-time one: the fold's test and validation cells, across all three context draws, at softmax temperature 1.0.",
+  "what_it_measured": {
+    "model": "tabpfn 8.5.0, checkpoint tabpfn-v3-classifier-v3_default.ckpt (sha256 d0d865d5...f3988) from the node's own cache; tabicl is installed and unused",
+    "device": "mps",
+    "context": "50,000 rows per context seed",
+    "cells": "2 cohort cells (fold4-test, fold4-validation) of 20,000 rows and one reference cell of 50,000 per context seed, over 3 draws",
+    "peak_gpu_gb_max": 3.619,
+    "softmax_temperature": 1.0,
+    "wall_seconds": 4171.3,
+    "timing": "The node is a dedicated machine held awake for the run; its per-cell seconds are comparable across the ten jobs of this archive."
+  },
+  "tuning_budget": "none: zero trials, no validation split, every parameter at the library default except those the command names; the classical models this is paired with were tuned on their own pool and the asymmetry runs both ways, since the 50,000-row control inherits the point chosen on the full pool",
+  "checkpoints": {
+    "tabpfn-v3-classifier-v3_default.ckpt": "d0d865d54dfbc524f5703104be90620182dca7e5fb2c16de72e9959ea18f3988",
+    "tabicl-classifier-v2-20260212.ckpt": "bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0"
+  }
+}

@@ -1,0 +1,669 @@
+{
+  "model": "tabpfn",
+  "derived_as": "tabpfn@t1",
+  "to_temperature": 1.0,
+  "formula": "logit(pd_to) = logit(pd_from) * (from_temperature / to_temperature)",
+  "library": {
+    "tabpfn": "8.5.0"
+  },
+  "checkpoints": {
+    "tabpfn-v3-classifier-v3_default.ckpt": "d0d865d54dfbc524f5703104be90620182dca7e5fb2c16de72e9959ea18f3988"
+  },
+  "sources": [
+    {
+      "directory": "experiments/2026-09-15-fm-2008h2e-upb-nominal-tabpfn-rental-4090",
+      "sha256": {
+        "scores.parquet": "a5a0c68595e72bb613705584d8ddbbbdf960d9b246b1644eb417e0a29a1e9bb9",
+        "reference.parquet": "63ef2629a95db5b3416a71fd3ef36046c6059170addca9996430676ca2f4175a",
+        "node.json": "41b72c6391a9bff8b448a225c00850a69dacf044b42575c1944df58f2d71c9f9"
+      },
+      "context_seeds": [
+        20260911,
+        20260912,
+        20260913
+      ],
+      "from_temperature": {
+        "20260911": 0.9,
+        "20260912": 0.9,
+        "20260913": 0.9
+      },
+      "scored_rows": 2216064,
+      "reference_rows": 150000
+    }
+  ],
+  "approximate": true,
+  "check_source": {
+    "directory": "experiments/2026-09-13-fm-2004h2e-upb-nominal-tabpfn-rental-4090",
+    "sha256": {
+      "scores.parquet": "b06dd8db09e9e6a81b2b6db43c97defac69151af9a88865fc16d711200248d61",
+      "reference.parquet": "da3818276a224f0f15e42b78a72be0e438afb43720893205f1e31076c7b01312",
+      "node.json": "bdab7325b994fae65432587a9849a569138125aa5cd2f2c940e93ef5d548f34d"
+    },
+    "context_seeds": [
+      20260911
+    ],
+    "from_temperature": {
+      "20260911": 0.9
+    },
+    "scored_rows": 71595,
+    "reference_rows": 50000,
+    "build_id": [
+      "2004H2-E"
+    ],
+    "device": "NVIDIA GeForce RTX 4090"
+  },
+  "devices": {
+    "sources": {
+      "experiments/2026-09-15-fm-2008h2e-upb-nominal-tabpfn-rental-4090": "NVIDIA GeForce RTX 4090"
+    },
+    "check_source": "NVIDIA GeForce RTX 4090",
+    "check": "NVIDIA GeForce RTX 4090"
+  },
+  "derived_build": [
+    "2008H2-E"
+  ],
+  "checked_build": [
+    "2004H2-E"
+  ],
+  "check": {
+    "directory": "experiments/2026-09-13-fm-2004h2e-upb-nominal-tabpfn-t1-rental-4090",
+    "sha256": {
+      "scores.parquet": "e2e04f9a5b45ce140ab859a2e67696eb85d8d7dd280fb7f9ec5f9064704e07f9",
+      "reference.parquet": "35a90074a73746fc2f766639c743bf0410a4a08a753c7149d1734ab279c536c8",
+      "node.json": "d0dbecd3060227c60ff67351749b058dc9a530ef053d0b045106579cea0e30b6"
+    },
+    "approximate": true,
+    "max_cell_error": 0.0084,
+    "refused_above_bound": true,
+    "cells_above_bound": [],
+    "lending_club_figure": 0.00084,
+    "cells_above_lending_club_figure": 0,
+    "cells_above_lending_club_figure_named": [],
+    "cell_error": "|b - 1| on each checked cell, b the least-squares slope of the scored logit on the derived logit over the cell's rows; a derivation that is the scale the library applies reads b = 1",
+    "cells": [
+      {
+        "build_id": "2004H2-E",
+        "context_seed": 20260911,
+        "cell": "2005H1",
+        "rows": 24233,
+        "max_abs_pd_gap": 0.0006315752896525334,
+        "mean_abs_pd_gap": 6.873303640756982e-06,
+        "max_abs_logit_gap": 0.024217814578691765,
+        "mean_abs_logit_gap": 0.0009782847533991793,
+        "logit_slope": 1.0001697862797228,
+        "logit_slope_gap": 0.00016978627972275007,
+        "mean_pd_derived": 0.010759490896155747,
+        "mean_pd_scored": 0.01075261759251499,
+        "mean_pd_gap": 6.873303640757625e-06,
+        "oe_derived": 0.9511582432568885,
+        "oe_scored": 0.9517662439934593,
+        "oe_gap": -0.0006080007365708573,
+        "cox_slope_derived": 0.855233652243045,
+        "cox_slope_scored": 0.8550880714773731,
+        "cox_slope_gap": 0.00014558076567194878,
+        "cox_fit_failed": []
+      },
+      {
+        "build_id": "2004H2-E",
+        "context_seed": 20260911,
+        "cell": "2005H2",
+        "rows": 24082,
+        "max_abs_pd_gap": 0.0005767273432343983,
+        "mean_abs_pd_gap": 7.088028956165379e-06,
+        "max_abs_logit_gap": 0.022895478734797692,
+        "mean_abs_logit_gap": 0.0010176949386198374,
+        "logit_slope": 1.0001766046043645,
+        "logit_slope_gap": 0.00017660460436452752,
+        "mean_pd_derived": 0.010696608356081308,
+        "mean_pd_scored": 0.010689520327125146,
+        "mean_pd_gap": 7.088028956162701e-06,
+        "oe_derived": 1.032625842888739,
+        "oe_scored": 1.033310558540264,
+        "oe_gap": -0.0006847156515250585,
+        "cox_slope_derived": 0.9465729420379964,
+        "cox_slope_scored": 0.946355510948675,
+        "cox_slope_gap": 0.00021743108932137378,
+        "cox_fit_failed": []
+      },
+      {
+        "build_id": "2004H2-E",
+        "context_seed": 20260911,
+        "cell": "2006H1",
+        "rows": 23280,
+        "max_abs_pd_gap": 0.0007045754245741803,
+        "mean_abs_pd_gap": 8.17134679481214e-06,
+        "max_abs_logit_gap": 0.02561618644319541,
+        "mean_abs_logit_gap": 0.0010425309422079753,
+        "logit_slope": 1.0001729543616213,
+        "logit_slope_gap": 0.00017295436162134692,
+        "mean_pd_derived": 0.011950935164511064,
+        "mean_pd_scored": 0.011942763817716251,
+        "mean_pd_gap": 8.171346794812878e-06,
+        "oe_derived": 1.4556942178178562,
+        "oe_scored": 1.4566902169402158,
+        "oe_gap": -0.000995999122359592,
+        "cox_slope_derived": 0.8566709230168811,
+        "cox_slope_scored": 0.8564609076597898,
+        "cox_slope_gap": 0.0002100153570913088,
+        "cox_fit_failed": []
+      },
+      {
+        "build_id": "2004H2-E",
+        "context_seed": 20260911,
+        "cell": "reference",
+        "rows": 50000,
+        "max_abs_pd_gap": 0.0013070423292766697,
+        "mean_abs_pd_gap": 6.6013503072390745e-06,
+        "max_abs_logit_gap": 0.036946140872557987,
+        "mean_abs_logit_gap": 0.000755430849173695,
+        "logit_slope": 1.00012558225993,
+        "logit_slope_gap": 0.0001255822599299794,
+        "mean_pd_derived": 0.012887833268345342,
+        "mean_pd_scored": 0.012881231918038102,
+        "mean_pd_gap": 6.601350307239989e-06,
+        "oe_derived": 0.9807699817971682,
+        "oe_scored": 0.9812726050137879,
+        "oe_gap": -0.0005026232166196465,
+        "cox_slope_derived": 1.1246101053586415,
+        "cox_slope_scored": 1.1242606561888664,
+        "cox_slope_gap": 0.00034944916977508456,
+        "cox_fit_failed": []
+      }
+    ],
+    "rows_checked": 121595,
+    "worst_cell_error": 0.00017660460436452752,
+    "mean_cell_error": 0.00016123187640965098,
+    "cox_slope_gap": {
+      "worst": 0.00034944916977508456,
+      "mean": 0.00023061909546492898,
+      "mean_abs": 0.00023061909546492898,
+      "cells": 4
+    },
+    "oe_gap": {
+      "worst": -0.000995999122359592,
+      "mean": -0.0006978346817687886,
+      "mean_abs": 0.0006978346817687886,
+      "cells": 4
+    },
+    "cox_fit_failed_cells": [],
+    "max_abs_pd_gap": 0.0013070423292766697,
+    "max_abs_logit_gap": 0.036946140872557987,
+    "check_source_unchecked_cells": [],
+    "unchecked_cells": [
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2009H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2009H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2010H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2010H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2011H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2011H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2012H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2012H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2013H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2013H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2014H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2014H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2015H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2015H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2016H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2016H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2017H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2017H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2018H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2018H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2019H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2019H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2020H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2020H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2021H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2021H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2022H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2022H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2023H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "2023H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260911,
+        "cell": "reference"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2009H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2009H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2010H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2010H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2011H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2011H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2012H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2012H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2013H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2013H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2014H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2014H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2015H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2015H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2016H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2016H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2017H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2017H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2018H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2018H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2019H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2019H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2020H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2020H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2021H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2021H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2022H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2022H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2023H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "2023H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260912,
+        "cell": "reference"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2009H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2009H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2010H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2010H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2011H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2011H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2012H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2012H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2013H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2013H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2014H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2014H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2015H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2015H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2016H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2016H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2017H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2017H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2018H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2018H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2019H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2019H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2020H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2020H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2021H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2021H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2022H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2022H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2023H1"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "2023H2"
+      },
+      {
+        "build_id": "2008H2-E",
+        "context_seed": 20260913,
+        "cell": "reference"
+      }
+    ],
+    "checked_build": [
+      "2004H2-E"
+    ],
+    "derived_build": [
+      "2008H2-E"
+    ],
+    "scope": "the rows compared are the check source's, on build 2004H2-E, derived by the formula and compared with rows the library scored at 1; no derived row of build 2008H2-E is compared with a scored row. The check carries to them by the identity of the library version, the checkpoint and the source temperature, which are the same across every source, the check source and the check. The derivation is approximate: what carries is the error measured on the check source's cells, under the same library, checkpoint, source temperature and device, and not a verification of the derived rows"
+  },
+  "scored_rows": 2216064,
+  "reference_rows": 150000
+}

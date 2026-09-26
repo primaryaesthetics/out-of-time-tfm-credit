@@ -1,0 +1,51 @@
+{
+  "slug": "m4pro-tabpfn-timing",
+  "recorded_utc": "2026-09-04T07:06:07+00:00",
+  "git_sha": "2e4c2036b99e39aaf5031c2c87c584067535f7f1",
+  "git_dirty": false,
+  "host": "Apple M4 Pro laptop, 24 GB unified memory (25.77 GB as reported by the driver), macOS 26.6.2",
+  "gpu": "Apple Silicon GPU (arm64), Metal via torch 2.14.0 MPS, memory shared with the system",
+  "probe_source_sha256": "db2ed73809b6a3ecd993c8a256435e75995af9af750b9c24350069a815c56ee7",
+  "probe_source_caveat": "The hash is of scripts/timing_probe.py in this tree at the recorded commit, unchanged since b76645b. The node was given a copy of that file and the copy was not re-hashed there, so provenance rests on the transfer rather than on a check.",
+  "command": "./run-probe.sh with no arguments, which the bootstrap had expanded to: --models tabpfn --context-sizes 10000,50000,100000 --test-rows 5000,20000 --out probe.json",
+  "raw_output": "probe-tabpfn-m4pro.json",
+  "console_log_withheld": "The console log is not recorded here. Every traceback in it carries the node owner's account name in a home path, which may not reach a file that goes public. The JSON was checked for that and for any token before being copied in; it holds neither.",
+  "question_this_run_was_sent_to_answer": "Whether an Apple machine can carry the study's TabPFN passes at a 50,000-row context against a 20,000-row scoring batch, so that no GPU has to be rented, and what one scored row costs there. The scoring-batch term was the half of the question the M3 run had left open.",
+  "what_it_measured": {
+    "model": "tabpfn 8.5.0, checkpoint tabpfn-v3-classifier-v3_default.ckpt",
+    "device": "mps",
+    "features": 30,
+    "repeats": 2,
+    "seconds_median": {
+      "10000 context, 5000 scored": 20.939,
+      "10000 context, 20000 scored": 39.271,
+      "50000 context, 5000 scored": 257.369,
+      "50000 context, 20000 scored": 319.537
+    },
+    "peak_gpu_gb": {
+      "10000 context, 5000 scored": 1.446,
+      "10000 context, 20000 scored": 2.495,
+      "50000 context, 5000 scored": 3.594,
+      "50000 context, 20000 scored": 3.602
+    },
+    "spread_fraction_max": 0.0051
+  },
+  "derived": {
+    "seconds_per_scored_row_at_50000_context": 0.00416,
+    "how": "(319.537 - 257.369) / 15000, the two 50,000-row rows differing only in scored rows.",
+    "fixed_cost_at_50000_context_seconds": 237,
+    "how_fixed": "257.369 - 5000 * 0.00416: what remains once the scored rows are priced out, dominated by the context.",
+    "ratio_to_t4_at_50000_context_5000_scored": 2.39,
+    "t4_reference": "experiments/2026-08-30-colab-t4-memory-law/probe-tabpfn-ceiling.json, 107.95 s at the same shape.",
+    "ratio_m3_to_m4pro_at_the_same_shape": 2.34,
+    "m3_reference": "experiments/2026-09-02-m3-tabpfn-timing/probe-tabpfn-m3.json, 603.25 s."
+  },
+  "the_100000_row_failure": "AcceleratorError: index 893 is out of bounds for dimension with size 160, raised inside a Metal kernel. Not a memory failure: the 50,000-row context peaked at 3.6 GB on a 24 GB machine. The study caps context at 50,000 rows, so this is recorded and not pursued.",
+  "how_tabpfn_ran_without_a_licence_token": "The checkpoint was sent to the node as a file with the two scripts and placed in TABPFN_MODEL_CACHE_DIR by the bootstrap. In tabpfn 8.5.0 the licence check, ensure_license_accepted, is called only from _download_model, which runs only when the checkpoint is absent from that directory. No connection to the licence server was opened.",
+  "preceding_attempts_on_the_same_machine": {
+    "packages_then": "tabicl 2.2.0 from an unpinned install with checkpoint tabicl-classifier-v2-20260212; tabpfn 8.5.0; torch 2.14.0",
+    "tabicl": "MPS backend out of memory at the smallest probed shape, 10,000 context against 5,000 scored, after a successful warm-up: MPS allocated 3.76 GiB, other allocations 25.98 GiB, max allowed 30.19 GiB, while trying to allocate 504 MiB. The sweep stopped the context climb there, as designed.",
+    "tabpfn": "TabPFNLicenseError twice: the TLS handshake to the licence verification endpoint timed out after 10 seconds. The token was never evaluated. The same failure had occurred from a second, unrelated network earlier.",
+    "caveat": "TabICL was not retried after the install was pinned to 2.1.1, the version the T4 probes recorded. The finding that TabICL does not fit a 24 GB Apple machine at a 10,000-row context therefore rests on 2.2.0 alone."
+  }
+}

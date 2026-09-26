@@ -1,0 +1,5472 @@
+{
+  "derived_dir": "data/derived/freddie-mac",
+  "inputs_sha256": {
+    "loans_1999.parquet": "2d566691471ccf3a982e4b9f84e1c90089f510579553eaa20f2ef8d41e931487",
+    "loans_2000.parquet": "9c112938fa82487e6d9dd26d7111d0b05c4cd173d86e5b73c85168905e131941",
+    "loans_2001.parquet": "a2f613d5e4f0770b06a65a355e1a04dc88486c3b4f46b8670784ab393ba608ef",
+    "loans_2002.parquet": "28e09641aa5b9089c3fac53d2232c7f32434f1a541fae2632e9f857fa17c98ba",
+    "loans_2003.parquet": "5dbd401a4ebdb39fc2c1651b6517790bd188f063eb49b12315e288b0199ba329",
+    "loans_2004.parquet": "af71902f1d3ab2b4137efdf70c2553b0394aee0335c607086db3b06e722a0b92",
+    "loans_2005.parquet": "12314ba1faa2103b0959779ceb1d3326b7fbdafc7866bb318afff73a8d78a9b6",
+    "loans_2006.parquet": "e95f27eb83b3b5c66030fb539cb5114f3ea47ec2cf830aee9bfc6d4cc0358c50",
+    "loans_2007.parquet": "d836a2c2e58c9e49cc9194e99395e6e1c833257eb7c4e0b23947924afb17d8e2",
+    "loans_2008.parquet": "2347d7b60e0577c119162cb660945e49bd178a99a72794a149a82d8efccd1d03",
+    "loans_2009.parquet": "9fb854b4be9115cf7fde6d7e36e5106fd100cf765b1a5cee6a0f9f9fec4a9727",
+    "loans_2010.parquet": "411fc87d491f8bcc81ab610a89664c14b69263f14d663807205f57abda98b861",
+    "loans_2011.parquet": "0507dfdaa232a56233774162774f64871e55f77d35ab1641b3c42a3850215caf",
+    "loans_2012.parquet": "403d4a79f1f04f3104186172b49122d934d6a9e2ce6c04d2c3e18ab0ef08160b",
+    "loans_2013.parquet": "8e18042bed0977f553be37fb343585022b7321fb0bae60caa1e70c74016987a2",
+    "loans_2014.parquet": "9dda1609ac443ac330ec4ec2ac6305daab8454567123f85c0e6e3c3b98183518",
+    "loans_2015.parquet": "6937d20909e39dd4b2fedfbcd1e5cd42ec5979ba1555c02dd28c40fc586c4559",
+    "loans_2016.parquet": "83a324cbbe5c5fe72922a93c382b447f5387c886c1a03282b72799c15e5e53d5",
+    "loans_2017.parquet": "6fb9f26dc0198229b597dbaf6162d04e956b193cb47bcb5490fa954d95ca16f6",
+    "loans_2018.parquet": "2a572756ba4c33fbfa5dc75a2b7b65b48bea051ab4792ef1804b84ee2f0876a6",
+    "loans_2019.parquet": "639fd592aedc3c986d0eec868b8f3b9dff959286c07e013ddad7dce73b5173ed",
+    "loans_2020.parquet": "79c1dfedbea766d1a1b26c1a7f43b64ede7a55f1ec847ecd3aacaf11425e73d5",
+    "loans_2021.parquet": "aa22efc3825ba4b4ec4d6e74f25b571b59fb2a62157bf0e6e3af94e07ceb6d6b",
+    "loans_2022.parquet": "78b81bbab7cb41673d2d3d2676a00f47926399b8722874eb90d8b909b6439e2a",
+    "loans_2023.parquet": "ac7653757552e13c529bc00e3aba73b1842ec0c56b52d1ceae456e52e6df22b7",
+    "loans_2024.parquet": "47dab5ecbdddb3548337d9fd1d6b8b3162b74be8e9eeaef1fabd960526f32f42",
+    "loans_2025.parquet": "3bf3a88d4b12c2b3213d80a95cf5bba649dc44b38f3c3e9942d8bf94402bbe94",
+    "loans_2026.parquet": "4d4aec94fd9c87d5161a5a9a83f6eca6f069c497715af871f58274e82bacd640"
+  },
+  "loans": 1362500,
+  "redated": {
+    "rule": "first payment 6+ months after the origination quarter opens",
+    "count": 7095,
+    "share": 0.00521,
+    "delinquent_before_age_one_among_redated": 9,
+    "delinquent_before_age_one_among_the_rest": 0,
+    "terminated_before_age_one_among_the_rest": 977
+  },
+  "origination_span": {
+    "first": "1999Q1",
+    "last": "2026Q1",
+    "quarterly_cohorts": 109
+  },
+  "performance_cutoff": "2026-03-01",
+  "floors": {
+    "min_loans": 5000,
+    "min_defaults": 100
+  },
+  "late_first_payment_months": 6,
+  "first_payment_lag": {
+    "overall_median": 3.0,
+    "overall_late_share": 0.00521,
+    "overall_negative_share": 0.0,
+    "by_cohort": {
+      "1999Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.0068,
+        "negative_share": 0.0
+      },
+      "1999Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.01368,
+        "negative_share": 0.0
+      },
+      "1999Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.02592,
+        "negative_share": 0.0
+      },
+      "1999Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.02632,
+        "negative_share": 0.0
+      },
+      "2000Q1": {
+        "median": 3.0,
+        "p95": 5.0,
+        "late_share": 0.04576,
+        "negative_share": 0.0
+      },
+      "2000Q2": {
+        "median": 3.0,
+        "p95": 5.0,
+        "late_share": 0.04544,
+        "negative_share": 0.0
+      },
+      "2000Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.0232,
+        "negative_share": 0.0
+      },
+      "2000Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.01568,
+        "negative_share": 0.0
+      },
+      "2001Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.01024,
+        "negative_share": 0.0
+      },
+      "2001Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.01072,
+        "negative_share": 0.0
+      },
+      "2001Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.0108,
+        "negative_share": 0.0
+      },
+      "2001Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00528,
+        "negative_share": 0.0
+      },
+      "2002Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00744,
+        "negative_share": 0.0
+      },
+      "2002Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.01352,
+        "negative_share": 0.0
+      },
+      "2002Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.006,
+        "negative_share": 0.0
+      },
+      "2002Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.004,
+        "negative_share": 0.0
+      },
+      "2003Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00424,
+        "negative_share": 0.0
+      },
+      "2003Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00408,
+        "negative_share": 0.0
+      },
+      "2003Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00456,
+        "negative_share": 0.0
+      },
+      "2003Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.01008,
+        "negative_share": 0.0
+      },
+      "2004Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00648,
+        "negative_share": 0.0
+      },
+      "2004Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.01072,
+        "negative_share": 0.0
+      },
+      "2004Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.01392,
+        "negative_share": 0.0
+      },
+      "2004Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00984,
+        "negative_share": 0.0
+      },
+      "2005Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00784,
+        "negative_share": 0.0
+      },
+      "2005Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.01192,
+        "negative_share": 0.0
+      },
+      "2005Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00952,
+        "negative_share": 0.0
+      },
+      "2005Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00776,
+        "negative_share": 0.0
+      },
+      "2006Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00944,
+        "negative_share": 0.0
+      },
+      "2006Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.01144,
+        "negative_share": 0.0
+      },
+      "2006Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.01088,
+        "negative_share": 0.0
+      },
+      "2006Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00656,
+        "negative_share": 0.0
+      },
+      "2007Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.0056,
+        "negative_share": 0.0
+      },
+      "2007Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.0072,
+        "negative_share": 0.0
+      },
+      "2007Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00936,
+        "negative_share": 0.0
+      },
+      "2007Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.0076,
+        "negative_share": 0.0
+      },
+      "2008Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.0044,
+        "negative_share": 0.0
+      },
+      "2008Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.0064,
+        "negative_share": 0.0
+      },
+      "2008Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00872,
+        "negative_share": 0.0
+      },
+      "2008Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00512,
+        "negative_share": 0.0
+      },
+      "2009Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00144,
+        "negative_share": 0.0
+      },
+      "2009Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.0012,
+        "negative_share": 0.0
+      },
+      "2009Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.0028,
+        "negative_share": 0.0
+      },
+      "2009Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.002,
+        "negative_share": 0.0
+      },
+      "2010Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00176,
+        "negative_share": 0.0
+      },
+      "2010Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00208,
+        "negative_share": 0.0
+      },
+      "2010Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00064,
+        "negative_share": 0.0
+      },
+      "2010Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00088,
+        "negative_share": 0.0
+      },
+      "2011Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00136,
+        "negative_share": 0.0
+      },
+      "2011Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00144,
+        "negative_share": 0.0
+      },
+      "2011Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00088,
+        "negative_share": 0.0
+      },
+      "2011Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00104,
+        "negative_share": 0.0
+      },
+      "2012Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00056,
+        "negative_share": 0.0
+      },
+      "2012Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00104,
+        "negative_share": 0.0
+      },
+      "2012Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00136,
+        "negative_share": 0.0
+      },
+      "2012Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00152,
+        "negative_share": 0.0
+      },
+      "2013Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00072,
+        "negative_share": 0.0
+      },
+      "2013Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00168,
+        "negative_share": 0.0
+      },
+      "2013Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00256,
+        "negative_share": 0.0
+      },
+      "2013Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00248,
+        "negative_share": 0.0
+      },
+      "2014Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.002,
+        "negative_share": 0.0
+      },
+      "2014Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00336,
+        "negative_share": 0.0
+      },
+      "2014Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00296,
+        "negative_share": 0.0
+      },
+      "2014Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00216,
+        "negative_share": 0.0
+      },
+      "2015Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00168,
+        "negative_share": 0.0
+      },
+      "2015Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.002,
+        "negative_share": 0.0
+      },
+      "2015Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00288,
+        "negative_share": 0.0
+      },
+      "2015Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.0028,
+        "negative_share": 0.0
+      },
+      "2016Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.0016,
+        "negative_share": 0.0
+      },
+      "2016Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00264,
+        "negative_share": 0.0
+      },
+      "2016Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00256,
+        "negative_share": 0.0
+      },
+      "2016Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.0016,
+        "negative_share": 0.0
+      },
+      "2017Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00232,
+        "negative_share": 0.0
+      },
+      "2017Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00368,
+        "negative_share": 0.0
+      },
+      "2017Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00216,
+        "negative_share": 0.0
+      },
+      "2017Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00216,
+        "negative_share": 0.0
+      },
+      "2018Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00128,
+        "negative_share": 0.0
+      },
+      "2018Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00232,
+        "negative_share": 0.0
+      },
+      "2018Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00312,
+        "negative_share": 0.0
+      },
+      "2018Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00256,
+        "negative_share": 0.0
+      },
+      "2019Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00232,
+        "negative_share": 0.0
+      },
+      "2019Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00232,
+        "negative_share": 0.0
+      },
+      "2019Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00136,
+        "negative_share": 0.0
+      },
+      "2019Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00136,
+        "negative_share": 0.0
+      },
+      "2020Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00152,
+        "negative_share": 0.0
+      },
+      "2020Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00112,
+        "negative_share": 0.0
+      },
+      "2020Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.0012,
+        "negative_share": 0.0
+      },
+      "2020Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00072,
+        "negative_share": 0.0
+      },
+      "2021Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00048,
+        "negative_share": 0.0
+      },
+      "2021Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00048,
+        "negative_share": 0.0
+      },
+      "2021Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00032,
+        "negative_share": 0.0
+      },
+      "2021Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 8e-05,
+        "negative_share": 0.0
+      },
+      "2022Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00016,
+        "negative_share": 0.0
+      },
+      "2022Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00032,
+        "negative_share": 0.0
+      },
+      "2022Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00032,
+        "negative_share": 0.0
+      },
+      "2022Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00096,
+        "negative_share": 0.0
+      },
+      "2023Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00096,
+        "negative_share": 0.0
+      },
+      "2023Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00072,
+        "negative_share": 0.0
+      },
+      "2023Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00144,
+        "negative_share": 0.0
+      },
+      "2023Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00112,
+        "negative_share": 0.0
+      },
+      "2024Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00136,
+        "negative_share": 0.0
+      },
+      "2024Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00192,
+        "negative_share": 0.0
+      },
+      "2024Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00088,
+        "negative_share": 0.0
+      },
+      "2024Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00056,
+        "negative_share": 0.0
+      },
+      "2025Q1": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00096,
+        "negative_share": 0.0
+      },
+      "2025Q2": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00064,
+        "negative_share": 0.0
+      },
+      "2025Q3": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.00024,
+        "negative_share": 0.0
+      },
+      "2025Q4": {
+        "median": 3.0,
+        "p95": 4.0,
+        "late_share": 0.0,
+        "negative_share": 0.0
+      },
+      "2026Q1": {
+        "median": 3.0,
+        "p95": 3.0,
+        "late_share": 0.0,
+        "negative_share": 0.0
+      }
+    }
+  },
+  "cohort_sizes": {
+    "1999Q1": 12500,
+    "1999Q2": 12500,
+    "1999Q3": 12500,
+    "1999Q4": 12500,
+    "2000Q1": 12500,
+    "2000Q2": 12500,
+    "2000Q3": 12500,
+    "2000Q4": 12500,
+    "2001Q1": 12500,
+    "2001Q2": 12500,
+    "2001Q3": 12500,
+    "2001Q4": 12500,
+    "2002Q1": 12500,
+    "2002Q2": 12500,
+    "2002Q3": 12500,
+    "2002Q4": 12500,
+    "2003Q1": 12500,
+    "2003Q2": 12500,
+    "2003Q3": 12500,
+    "2003Q4": 12500,
+    "2004Q1": 12500,
+    "2004Q2": 12500,
+    "2004Q3": 12500,
+    "2004Q4": 12500,
+    "2005Q1": 12500,
+    "2005Q2": 12500,
+    "2005Q3": 12500,
+    "2005Q4": 12500,
+    "2006Q1": 12500,
+    "2006Q2": 12500,
+    "2006Q3": 12500,
+    "2006Q4": 12500,
+    "2007Q1": 12500,
+    "2007Q2": 12500,
+    "2007Q3": 12500,
+    "2007Q4": 12500,
+    "2008Q1": 12500,
+    "2008Q2": 12500,
+    "2008Q3": 12500,
+    "2008Q4": 12499,
+    "2009Q1": 12501,
+    "2009Q2": 12500,
+    "2009Q3": 12500,
+    "2009Q4": 12500,
+    "2010Q1": 12500,
+    "2010Q2": 12500,
+    "2010Q3": 12500,
+    "2010Q4": 12500,
+    "2011Q1": 12500,
+    "2011Q2": 12500,
+    "2011Q3": 12500,
+    "2011Q4": 12500,
+    "2012Q1": 12500,
+    "2012Q2": 12500,
+    "2012Q3": 12500,
+    "2012Q4": 12500,
+    "2013Q1": 12500,
+    "2013Q2": 12500,
+    "2013Q3": 12500,
+    "2013Q4": 12500,
+    "2014Q1": 12500,
+    "2014Q2": 12500,
+    "2014Q3": 12500,
+    "2014Q4": 12500,
+    "2015Q1": 12500,
+    "2015Q2": 12500,
+    "2015Q3": 12500,
+    "2015Q4": 12500,
+    "2016Q1": 12500,
+    "2016Q2": 12500,
+    "2016Q3": 12500,
+    "2016Q4": 12500,
+    "2017Q1": 12500,
+    "2017Q2": 12500,
+    "2017Q3": 12500,
+    "2017Q4": 12500,
+    "2018Q1": 12500,
+    "2018Q2": 12500,
+    "2018Q3": 12500,
+    "2018Q4": 12500,
+    "2019Q1": 12500,
+    "2019Q2": 12500,
+    "2019Q3": 12500,
+    "2019Q4": 12500,
+    "2020Q1": 12500,
+    "2020Q2": 12500,
+    "2020Q3": 12500,
+    "2020Q4": 12500,
+    "2021Q1": 12500,
+    "2021Q2": 12500,
+    "2021Q3": 12500,
+    "2021Q4": 12500,
+    "2022Q1": 12500,
+    "2022Q2": 12500,
+    "2022Q3": 12500,
+    "2022Q4": 12500,
+    "2023Q1": 12500,
+    "2023Q2": 12500,
+    "2023Q3": 12500,
+    "2023Q4": 12500,
+    "2024Q1": 12500,
+    "2024Q2": 12500,
+    "2024Q3": 12500,
+    "2024Q4": 12500,
+    "2025Q1": 12500,
+    "2025Q2": 12500,
+    "2025Q3": 12500,
+    "2025Q4": 12500,
+    "2026Q1": 12500
+  },
+  "termination_codes": {
+    "1": 976223,
+    "none": 355079,
+    "9": 11885,
+    "16": 5925,
+    "3": 4590,
+    "96": 4117,
+    "2": 3390,
+    "15": 1291
+  },
+  "windows": {
+    "12": {
+      "label": {
+        "definition": {
+          "window_months": 12,
+          "performance_cutoff": "2026-03-01",
+          "delinquency_months": 3,
+          "bad_terminations": [
+            2,
+            3,
+            9
+          ],
+          "prepaid": [
+            1
+          ],
+          "censoring": [
+            15,
+            16,
+            96
+          ]
+        },
+        "labelled": 1298994,
+        "defaults": 6697,
+        "default_rate": 0.005156,
+        "dropped_immature": 54931,
+        "censored": 1470,
+        "notes": [
+          "54931 loans have a first payment within 12 months of the cutoff 2026-03-01 and were dropped as immature whatever their record says, and 0 more have fewer than 12 months of history, no termination and no default on record; none was labelled non-default",
+          "1470 loans left the dataset inside the window through a sale or a confirmed defect with no default on record, and were dropped as censored",
+          "140 loans ended in a bad termination with no ninety-day delinquency on record before it, and are dated at the termination"
+        ]
+      },
+      "excluded_redated": 7095,
+      "excluded_without_performance_record": 10,
+      "cohorts_above_floors": {
+        "quarterly": 11,
+        "semi_annual": 23,
+        "annual": 21
+      },
+      "by_quarter": {
+        "1999Q1": {
+          "loans": 12500,
+          "labelled": 12409,
+          "labelled_share": 0.9927,
+          "defaults": 17,
+          "rate": 0.00137,
+          "wilson_95": [
+            0.00086,
+            0.00219
+          ],
+          "above_floors": false
+        },
+        "1999Q2": {
+          "loans": 12500,
+          "labelled": 12327,
+          "labelled_share": 0.9862,
+          "defaults": 24,
+          "rate": 0.00195,
+          "wilson_95": [
+            0.00131,
+            0.0029
+          ],
+          "above_floors": false
+        },
+        "1999Q3": {
+          "loans": 12500,
+          "labelled": 12172,
+          "labelled_share": 0.9738,
+          "defaults": 37,
+          "rate": 0.00304,
+          "wilson_95": [
+            0.00221,
+            0.00419
+          ],
+          "above_floors": false
+        },
+        "1999Q4": {
+          "loans": 12500,
+          "labelled": 12165,
+          "labelled_share": 0.9732,
+          "defaults": 53,
+          "rate": 0.00436,
+          "wilson_95": [
+            0.00333,
+            0.00569
+          ],
+          "above_floors": false
+        },
+        "2000Q1": {
+          "loans": 12500,
+          "labelled": 11918,
+          "labelled_share": 0.9534,
+          "defaults": 67,
+          "rate": 0.00562,
+          "wilson_95": [
+            0.00443,
+            0.00713
+          ],
+          "above_floors": false
+        },
+        "2000Q2": {
+          "loans": 12500,
+          "labelled": 11926,
+          "labelled_share": 0.9541,
+          "defaults": 80,
+          "rate": 0.00671,
+          "wilson_95": [
+            0.00539,
+            0.00834
+          ],
+          "above_floors": false
+        },
+        "2000Q3": {
+          "loans": 12500,
+          "labelled": 12196,
+          "labelled_share": 0.9757,
+          "defaults": 83,
+          "rate": 0.00681,
+          "wilson_95": [
+            0.00549,
+            0.00843
+          ],
+          "above_floors": false
+        },
+        "2000Q4": {
+          "loans": 12500,
+          "labelled": 12294,
+          "labelled_share": 0.9835,
+          "defaults": 89,
+          "rate": 0.00724,
+          "wilson_95": [
+            0.00589,
+            0.0089
+          ],
+          "above_floors": false
+        },
+        "2001Q1": {
+          "loans": 12500,
+          "labelled": 12368,
+          "labelled_share": 0.9894,
+          "defaults": 73,
+          "rate": 0.0059,
+          "wilson_95": [
+            0.0047,
+            0.00741
+          ],
+          "above_floors": false
+        },
+        "2001Q2": {
+          "loans": 12500,
+          "labelled": 12363,
+          "labelled_share": 0.989,
+          "defaults": 44,
+          "rate": 0.00356,
+          "wilson_95": [
+            0.00265,
+            0.00477
+          ],
+          "above_floors": false
+        },
+        "2001Q3": {
+          "loans": 12500,
+          "labelled": 12357,
+          "labelled_share": 0.9886,
+          "defaults": 60,
+          "rate": 0.00486,
+          "wilson_95": [
+            0.00377,
+            0.00624
+          ],
+          "above_floors": false
+        },
+        "2001Q4": {
+          "loans": 12500,
+          "labelled": 12423,
+          "labelled_share": 0.9938,
+          "defaults": 37,
+          "rate": 0.00298,
+          "wilson_95": [
+            0.00216,
+            0.0041
+          ],
+          "above_floors": false
+        },
+        "2002Q1": {
+          "loans": 12500,
+          "labelled": 12403,
+          "labelled_share": 0.9922,
+          "defaults": 59,
+          "rate": 0.00476,
+          "wilson_95": [
+            0.00369,
+            0.00613
+          ],
+          "above_floors": false
+        },
+        "2002Q2": {
+          "loans": 12500,
+          "labelled": 12324,
+          "labelled_share": 0.9859,
+          "defaults": 85,
+          "rate": 0.0069,
+          "wilson_95": [
+            0.00558,
+            0.00852
+          ],
+          "above_floors": false
+        },
+        "2002Q3": {
+          "loans": 12500,
+          "labelled": 12420,
+          "labelled_share": 0.9936,
+          "defaults": 41,
+          "rate": 0.0033,
+          "wilson_95": [
+            0.00243,
+            0.00447
+          ],
+          "above_floors": false
+        },
+        "2002Q4": {
+          "loans": 12500,
+          "labelled": 12445,
+          "labelled_share": 0.9956,
+          "defaults": 20,
+          "rate": 0.00161,
+          "wilson_95": [
+            0.00104,
+            0.00248
+          ],
+          "above_floors": false
+        },
+        "2003Q1": {
+          "loans": 12500,
+          "labelled": 12442,
+          "labelled_share": 0.9954,
+          "defaults": 20,
+          "rate": 0.00161,
+          "wilson_95": [
+            0.00104,
+            0.00248
+          ],
+          "above_floors": false
+        },
+        "2003Q2": {
+          "loans": 12500,
+          "labelled": 12447,
+          "labelled_share": 0.9958,
+          "defaults": 14,
+          "rate": 0.00112,
+          "wilson_95": [
+            0.00067,
+            0.00189
+          ],
+          "above_floors": false
+        },
+        "2003Q3": {
+          "loans": 12500,
+          "labelled": 12438,
+          "labelled_share": 0.995,
+          "defaults": 16,
+          "rate": 0.00129,
+          "wilson_95": [
+            0.00079,
+            0.00209
+          ],
+          "above_floors": false
+        },
+        "2003Q4": {
+          "loans": 12500,
+          "labelled": 12368,
+          "labelled_share": 0.9894,
+          "defaults": 32,
+          "rate": 0.00259,
+          "wilson_95": [
+            0.00183,
+            0.00365
+          ],
+          "above_floors": false
+        },
+        "2004Q1": {
+          "loans": 12500,
+          "labelled": 12413,
+          "labelled_share": 0.993,
+          "defaults": 27,
+          "rate": 0.00218,
+          "wilson_95": [
+            0.0015,
+            0.00316
+          ],
+          "above_floors": false
+        },
+        "2004Q2": {
+          "loans": 12500,
+          "labelled": 12363,
+          "labelled_share": 0.989,
+          "defaults": 24,
+          "rate": 0.00194,
+          "wilson_95": [
+            0.0013,
+            0.00289
+          ],
+          "above_floors": false
+        },
+        "2004Q3": {
+          "loans": 12500,
+          "labelled": 12326,
+          "labelled_share": 0.9861,
+          "defaults": 32,
+          "rate": 0.0026,
+          "wilson_95": [
+            0.00184,
+            0.00366
+          ],
+          "above_floors": false
+        },
+        "2004Q4": {
+          "loans": 12500,
+          "labelled": 12370,
+          "labelled_share": 0.9896,
+          "defaults": 34,
+          "rate": 0.00275,
+          "wilson_95": [
+            0.00197,
+            0.00384
+          ],
+          "above_floors": false
+        },
+        "2005Q1": {
+          "loans": 12500,
+          "labelled": 12402,
+          "labelled_share": 0.9922,
+          "defaults": 55,
+          "rate": 0.00443,
+          "wilson_95": [
+            0.00341,
+            0.00577
+          ],
+          "above_floors": false
+        },
+        "2005Q2": {
+          "loans": 12500,
+          "labelled": 12344,
+          "labelled_share": 0.9875,
+          "defaults": 50,
+          "rate": 0.00405,
+          "wilson_95": [
+            0.00307,
+            0.00534
+          ],
+          "above_floors": false
+        },
+        "2005Q3": {
+          "loans": 12500,
+          "labelled": 12378,
+          "labelled_share": 0.9902,
+          "defaults": 42,
+          "rate": 0.00339,
+          "wilson_95": [
+            0.00251,
+            0.00458
+          ],
+          "above_floors": false
+        },
+        "2005Q4": {
+          "loans": 12500,
+          "labelled": 12400,
+          "labelled_share": 0.992,
+          "defaults": 37,
+          "rate": 0.00298,
+          "wilson_95": [
+            0.00217,
+            0.00411
+          ],
+          "above_floors": false
+        },
+        "2006Q1": {
+          "loans": 12500,
+          "labelled": 12376,
+          "labelled_share": 0.9901,
+          "defaults": 63,
+          "rate": 0.00509,
+          "wilson_95": [
+            0.00398,
+            0.00651
+          ],
+          "above_floors": false
+        },
+        "2006Q2": {
+          "loans": 12500,
+          "labelled": 12353,
+          "labelled_share": 0.9882,
+          "defaults": 54,
+          "rate": 0.00437,
+          "wilson_95": [
+            0.00335,
+            0.0057
+          ],
+          "above_floors": false
+        },
+        "2006Q3": {
+          "loans": 12500,
+          "labelled": 12360,
+          "labelled_share": 0.9888,
+          "defaults": 56,
+          "rate": 0.00453,
+          "wilson_95": [
+            0.00349,
+            0.00588
+          ],
+          "above_floors": false
+        },
+        "2006Q4": {
+          "loans": 12500,
+          "labelled": 12414,
+          "labelled_share": 0.9931,
+          "defaults": 67,
+          "rate": 0.0054,
+          "wilson_95": [
+            0.00425,
+            0.00685
+          ],
+          "above_floors": false
+        },
+        "2007Q1": {
+          "loans": 12500,
+          "labelled": 12425,
+          "labelled_share": 0.994,
+          "defaults": 63,
+          "rate": 0.00507,
+          "wilson_95": [
+            0.00397,
+            0.00648
+          ],
+          "above_floors": false
+        },
+        "2007Q2": {
+          "loans": 12500,
+          "labelled": 12406,
+          "labelled_share": 0.9925,
+          "defaults": 89,
+          "rate": 0.00717,
+          "wilson_95": [
+            0.00583,
+            0.00882
+          ],
+          "above_floors": false
+        },
+        "2007Q3": {
+          "loans": 12500,
+          "labelled": 12370,
+          "labelled_share": 0.9896,
+          "defaults": 162,
+          "rate": 0.0131,
+          "wilson_95": [
+            0.01124,
+            0.01526
+          ],
+          "above_floors": true
+        },
+        "2007Q4": {
+          "loans": 12500,
+          "labelled": 12398,
+          "labelled_share": 0.9918,
+          "defaults": 236,
+          "rate": 0.01904,
+          "wilson_95": [
+            0.01677,
+            0.02159
+          ],
+          "above_floors": true
+        },
+        "2008Q1": {
+          "loans": 12500,
+          "labelled": 12439,
+          "labelled_share": 0.9951,
+          "defaults": 172,
+          "rate": 0.01383,
+          "wilson_95": [
+            0.01192,
+            0.01603
+          ],
+          "above_floors": true
+        },
+        "2008Q2": {
+          "loans": 12500,
+          "labelled": 12408,
+          "labelled_share": 0.9926,
+          "defaults": 149,
+          "rate": 0.01201,
+          "wilson_95": [
+            0.01024,
+            0.01408
+          ],
+          "above_floors": true
+        },
+        "2008Q3": {
+          "loans": 12500,
+          "labelled": 12386,
+          "labelled_share": 0.9909,
+          "defaults": 218,
+          "rate": 0.0176,
+          "wilson_95": [
+            0.01543,
+            0.02007
+          ],
+          "above_floors": true
+        },
+        "2008Q4": {
+          "loans": 12499,
+          "labelled": 12426,
+          "labelled_share": 0.9942,
+          "defaults": 133,
+          "rate": 0.0107,
+          "wilson_95": [
+            0.00904,
+            0.01267
+          ],
+          "above_floors": true
+        },
+        "2009Q1": {
+          "loans": 12501,
+          "labelled": 12478,
+          "labelled_share": 0.9982,
+          "defaults": 17,
+          "rate": 0.00136,
+          "wilson_95": [
+            0.00085,
+            0.00218
+          ],
+          "above_floors": false
+        },
+        "2009Q2": {
+          "loans": 12500,
+          "labelled": 12483,
+          "labelled_share": 0.9986,
+          "defaults": 17,
+          "rate": 0.00136,
+          "wilson_95": [
+            0.00085,
+            0.00218
+          ],
+          "above_floors": false
+        },
+        "2009Q3": {
+          "loans": 12500,
+          "labelled": 12458,
+          "labelled_share": 0.9966,
+          "defaults": 36,
+          "rate": 0.00289,
+          "wilson_95": [
+            0.00209,
+            0.004
+          ],
+          "above_floors": false
+        },
+        "2009Q4": {
+          "loans": 12500,
+          "labelled": 12470,
+          "labelled_share": 0.9976,
+          "defaults": 32,
+          "rate": 0.00257,
+          "wilson_95": [
+            0.00182,
+            0.00362
+          ],
+          "above_floors": false
+        },
+        "2010Q1": {
+          "loans": 12500,
+          "labelled": 12469,
+          "labelled_share": 0.9975,
+          "defaults": 27,
+          "rate": 0.00217,
+          "wilson_95": [
+            0.00149,
+            0.00315
+          ],
+          "above_floors": false
+        },
+        "2010Q2": {
+          "loans": 12500,
+          "labelled": 12469,
+          "labelled_share": 0.9975,
+          "defaults": 35,
+          "rate": 0.00281,
+          "wilson_95": [
+            0.00202,
+            0.0039
+          ],
+          "above_floors": false
+        },
+        "2010Q3": {
+          "loans": 12500,
+          "labelled": 12484,
+          "labelled_share": 0.9987,
+          "defaults": 27,
+          "rate": 0.00216,
+          "wilson_95": [
+            0.00149,
+            0.00314
+          ],
+          "above_floors": false
+        },
+        "2010Q4": {
+          "loans": 12500,
+          "labelled": 12481,
+          "labelled_share": 0.9985,
+          "defaults": 15,
+          "rate": 0.0012,
+          "wilson_95": [
+            0.00073,
+            0.00198
+          ],
+          "above_floors": false
+        },
+        "2011Q1": {
+          "loans": 12500,
+          "labelled": 12476,
+          "labelled_share": 0.9981,
+          "defaults": 38,
+          "rate": 0.00305,
+          "wilson_95": [
+            0.00222,
+            0.00418
+          ],
+          "above_floors": false
+        },
+        "2011Q2": {
+          "loans": 12500,
+          "labelled": 12464,
+          "labelled_share": 0.9971,
+          "defaults": 33,
+          "rate": 0.00265,
+          "wilson_95": [
+            0.00189,
+            0.00372
+          ],
+          "above_floors": false
+        },
+        "2011Q3": {
+          "loans": 12500,
+          "labelled": 12476,
+          "labelled_share": 0.9981,
+          "defaults": 15,
+          "rate": 0.0012,
+          "wilson_95": [
+            0.00073,
+            0.00198
+          ],
+          "above_floors": false
+        },
+        "2011Q4": {
+          "loans": 12500,
+          "labelled": 12461,
+          "labelled_share": 0.9969,
+          "defaults": 24,
+          "rate": 0.00193,
+          "wilson_95": [
+            0.00129,
+            0.00286
+          ],
+          "above_floors": false
+        },
+        "2012Q1": {
+          "loans": 12500,
+          "labelled": 12462,
+          "labelled_share": 0.997,
+          "defaults": 25,
+          "rate": 0.00201,
+          "wilson_95": [
+            0.00136,
+            0.00296
+          ],
+          "above_floors": false
+        },
+        "2012Q2": {
+          "loans": 12500,
+          "labelled": 12463,
+          "labelled_share": 0.997,
+          "defaults": 31,
+          "rate": 0.00249,
+          "wilson_95": [
+            0.00175,
+            0.00353
+          ],
+          "above_floors": false
+        },
+        "2012Q3": {
+          "loans": 12500,
+          "labelled": 12473,
+          "labelled_share": 0.9978,
+          "defaults": 35,
+          "rate": 0.00281,
+          "wilson_95": [
+            0.00202,
+            0.0039
+          ],
+          "above_floors": false
+        },
+        "2012Q4": {
+          "loans": 12500,
+          "labelled": 12466,
+          "labelled_share": 0.9973,
+          "defaults": 18,
+          "rate": 0.00144,
+          "wilson_95": [
+            0.00091,
+            0.00228
+          ],
+          "above_floors": false
+        },
+        "2013Q1": {
+          "loans": 12500,
+          "labelled": 12481,
+          "labelled_share": 0.9985,
+          "defaults": 14,
+          "rate": 0.00112,
+          "wilson_95": [
+            0.00067,
+            0.00188
+          ],
+          "above_floors": false
+        },
+        "2013Q2": {
+          "loans": 12500,
+          "labelled": 12465,
+          "labelled_share": 0.9972,
+          "defaults": 17,
+          "rate": 0.00136,
+          "wilson_95": [
+            0.00085,
+            0.00218
+          ],
+          "above_floors": false
+        },
+        "2013Q3": {
+          "loans": 12500,
+          "labelled": 12454,
+          "labelled_share": 0.9963,
+          "defaults": 25,
+          "rate": 0.00201,
+          "wilson_95": [
+            0.00136,
+            0.00296
+          ],
+          "above_floors": false
+        },
+        "2013Q4": {
+          "loans": 12500,
+          "labelled": 12459,
+          "labelled_share": 0.9967,
+          "defaults": 27,
+          "rate": 0.00217,
+          "wilson_95": [
+            0.00149,
+            0.00315
+          ],
+          "above_floors": false
+        },
+        "2014Q1": {
+          "loans": 12500,
+          "labelled": 12461,
+          "labelled_share": 0.9969,
+          "defaults": 23,
+          "rate": 0.00185,
+          "wilson_95": [
+            0.00123,
+            0.00277
+          ],
+          "above_floors": false
+        },
+        "2014Q2": {
+          "loans": 12500,
+          "labelled": 12437,
+          "labelled_share": 0.995,
+          "defaults": 22,
+          "rate": 0.00177,
+          "wilson_95": [
+            0.00117,
+            0.00268
+          ],
+          "above_floors": false
+        },
+        "2014Q3": {
+          "loans": 12500,
+          "labelled": 12449,
+          "labelled_share": 0.9959,
+          "defaults": 17,
+          "rate": 0.00137,
+          "wilson_95": [
+            0.00085,
+            0.00219
+          ],
+          "above_floors": false
+        },
+        "2014Q4": {
+          "loans": 12500,
+          "labelled": 12462,
+          "labelled_share": 0.997,
+          "defaults": 21,
+          "rate": 0.00169,
+          "wilson_95": [
+            0.0011,
+            0.00257
+          ],
+          "above_floors": false
+        },
+        "2015Q1": {
+          "loans": 12500,
+          "labelled": 12472,
+          "labelled_share": 0.9978,
+          "defaults": 12,
+          "rate": 0.00096,
+          "wilson_95": [
+            0.00055,
+            0.00168
+          ],
+          "above_floors": false
+        },
+        "2015Q2": {
+          "loans": 12500,
+          "labelled": 12468,
+          "labelled_share": 0.9974,
+          "defaults": 11,
+          "rate": 0.00088,
+          "wilson_95": [
+            0.00049,
+            0.00158
+          ],
+          "above_floors": false
+        },
+        "2015Q3": {
+          "loans": 12500,
+          "labelled": 12457,
+          "labelled_share": 0.9966,
+          "defaults": 23,
+          "rate": 0.00185,
+          "wilson_95": [
+            0.00123,
+            0.00277
+          ],
+          "above_floors": false
+        },
+        "2015Q4": {
+          "loans": 12500,
+          "labelled": 12463,
+          "labelled_share": 0.997,
+          "defaults": 19,
+          "rate": 0.00152,
+          "wilson_95": [
+            0.00098,
+            0.00238
+          ],
+          "above_floors": false
+        },
+        "2016Q1": {
+          "loans": 12500,
+          "labelled": 12473,
+          "labelled_share": 0.9978,
+          "defaults": 12,
+          "rate": 0.00096,
+          "wilson_95": [
+            0.00055,
+            0.00168
+          ],
+          "above_floors": false
+        },
+        "2016Q2": {
+          "loans": 12500,
+          "labelled": 12454,
+          "labelled_share": 0.9963,
+          "defaults": 13,
+          "rate": 0.00104,
+          "wilson_95": [
+            0.00061,
+            0.00179
+          ],
+          "above_floors": false
+        },
+        "2016Q3": {
+          "loans": 12500,
+          "labelled": 12459,
+          "labelled_share": 0.9967,
+          "defaults": 9,
+          "rate": 0.00072,
+          "wilson_95": [
+            0.00038,
+            0.00137
+          ],
+          "above_floors": false
+        },
+        "2016Q4": {
+          "loans": 12500,
+          "labelled": 12469,
+          "labelled_share": 0.9975,
+          "defaults": 40,
+          "rate": 0.00321,
+          "wilson_95": [
+            0.00236,
+            0.00437
+          ],
+          "above_floors": false
+        },
+        "2017Q1": {
+          "loans": 12500,
+          "labelled": 12449,
+          "labelled_share": 0.9959,
+          "defaults": 55,
+          "rate": 0.00442,
+          "wilson_95": [
+            0.0034,
+            0.00575
+          ],
+          "above_floors": false
+        },
+        "2017Q2": {
+          "loans": 12500,
+          "labelled": 12437,
+          "labelled_share": 0.995,
+          "defaults": 64,
+          "rate": 0.00515,
+          "wilson_95": [
+            0.00403,
+            0.00657
+          ],
+          "above_floors": false
+        },
+        "2017Q3": {
+          "loans": 12500,
+          "labelled": 12463,
+          "labelled_share": 0.997,
+          "defaults": 49,
+          "rate": 0.00393,
+          "wilson_95": [
+            0.00298,
+            0.00519
+          ],
+          "above_floors": false
+        },
+        "2017Q4": {
+          "loans": 12500,
+          "labelled": 12460,
+          "labelled_share": 0.9968,
+          "defaults": 22,
+          "rate": 0.00177,
+          "wilson_95": [
+            0.00117,
+            0.00267
+          ],
+          "above_floors": false
+        },
+        "2018Q1": {
+          "loans": 12500,
+          "labelled": 12472,
+          "labelled_share": 0.9978,
+          "defaults": 20,
+          "rate": 0.0016,
+          "wilson_95": [
+            0.00104,
+            0.00248
+          ],
+          "above_floors": false
+        },
+        "2018Q2": {
+          "loans": 12500,
+          "labelled": 12449,
+          "labelled_share": 0.9959,
+          "defaults": 32,
+          "rate": 0.00257,
+          "wilson_95": [
+            0.00182,
+            0.00363
+          ],
+          "above_floors": false
+        },
+        "2018Q3": {
+          "loans": 12500,
+          "labelled": 12443,
+          "labelled_share": 0.9954,
+          "defaults": 24,
+          "rate": 0.00193,
+          "wilson_95": [
+            0.0013,
+            0.00287
+          ],
+          "above_floors": false
+        },
+        "2018Q4": {
+          "loans": 12500,
+          "labelled": 12444,
+          "labelled_share": 0.9955,
+          "defaults": 32,
+          "rate": 0.00257,
+          "wilson_95": [
+            0.00182,
+            0.00363
+          ],
+          "above_floors": false
+        },
+        "2019Q1": {
+          "loans": 12500,
+          "labelled": 12443,
+          "labelled_share": 0.9954,
+          "defaults": 29,
+          "rate": 0.00233,
+          "wilson_95": [
+            0.00162,
+            0.00335
+          ],
+          "above_floors": false
+        },
+        "2019Q2": {
+          "loans": 12500,
+          "labelled": 12446,
+          "labelled_share": 0.9957,
+          "defaults": 208,
+          "rate": 0.01671,
+          "wilson_95": [
+            0.0146,
+            0.01912
+          ],
+          "above_floors": true
+        },
+        "2019Q3": {
+          "loans": 12500,
+          "labelled": 12466,
+          "labelled_share": 0.9973,
+          "defaults": 453,
+          "rate": 0.03634,
+          "wilson_95": [
+            0.03319,
+            0.03977
+          ],
+          "above_floors": true
+        },
+        "2019Q4": {
+          "loans": 12500,
+          "labelled": 12467,
+          "labelled_share": 0.9974,
+          "defaults": 471,
+          "rate": 0.03778,
+          "wilson_95": [
+            0.03457,
+            0.04127
+          ],
+          "above_floors": true
+        },
+        "2020Q1": {
+          "loans": 12500,
+          "labelled": 12453,
+          "labelled_share": 0.9962,
+          "defaults": 406,
+          "rate": 0.0326,
+          "wilson_95": [
+            0.02962,
+            0.03587
+          ],
+          "above_floors": true
+        },
+        "2020Q2": {
+          "loans": 12500,
+          "labelled": 12462,
+          "labelled_share": 0.997,
+          "defaults": 104,
+          "rate": 0.00835,
+          "wilson_95": [
+            0.00689,
+            0.0101
+          ],
+          "above_floors": true
+        },
+        "2020Q3": {
+          "loans": 12500,
+          "labelled": 12470,
+          "labelled_share": 0.9976,
+          "defaults": 57,
+          "rate": 0.00457,
+          "wilson_95": [
+            0.00353,
+            0.00592
+          ],
+          "above_floors": false
+        },
+        "2020Q4": {
+          "loans": 12500,
+          "labelled": 12466,
+          "labelled_share": 0.9973,
+          "defaults": 58,
+          "rate": 0.00465,
+          "wilson_95": [
+            0.0036,
+            0.00601
+          ],
+          "above_floors": false
+        },
+        "2021Q1": {
+          "loans": 12500,
+          "labelled": 12470,
+          "labelled_share": 0.9976,
+          "defaults": 40,
+          "rate": 0.00321,
+          "wilson_95": [
+            0.00236,
+            0.00436
+          ],
+          "above_floors": false
+        },
+        "2021Q2": {
+          "loans": 12500,
+          "labelled": 12473,
+          "labelled_share": 0.9978,
+          "defaults": 39,
+          "rate": 0.00313,
+          "wilson_95": [
+            0.00229,
+            0.00427
+          ],
+          "above_floors": false
+        },
+        "2021Q3": {
+          "loans": 12500,
+          "labelled": 12488,
+          "labelled_share": 0.999,
+          "defaults": 44,
+          "rate": 0.00352,
+          "wilson_95": [
+            0.00263,
+            0.00473
+          ],
+          "above_floors": false
+        },
+        "2021Q4": {
+          "loans": 12500,
+          "labelled": 12475,
+          "labelled_share": 0.998,
+          "defaults": 62,
+          "rate": 0.00497,
+          "wilson_95": [
+            0.00388,
+            0.00637
+          ],
+          "above_floors": false
+        },
+        "2022Q1": {
+          "loans": 12500,
+          "labelled": 12469,
+          "labelled_share": 0.9975,
+          "defaults": 71,
+          "rate": 0.00569,
+          "wilson_95": [
+            0.00452,
+            0.00718
+          ],
+          "above_floors": false
+        },
+        "2022Q2": {
+          "loans": 12500,
+          "labelled": 12450,
+          "labelled_share": 0.996,
+          "defaults": 92,
+          "rate": 0.00739,
+          "wilson_95": [
+            0.00603,
+            0.00905
+          ],
+          "above_floors": false
+        },
+        "2022Q3": {
+          "loans": 12500,
+          "labelled": 12450,
+          "labelled_share": 0.996,
+          "defaults": 88,
+          "rate": 0.00707,
+          "wilson_95": [
+            0.00574,
+            0.0087
+          ],
+          "above_floors": false
+        },
+        "2022Q4": {
+          "loans": 12500,
+          "labelled": 12440,
+          "labelled_share": 0.9952,
+          "defaults": 92,
+          "rate": 0.0074,
+          "wilson_95": [
+            0.00603,
+            0.00906
+          ],
+          "above_floors": false
+        },
+        "2023Q1": {
+          "loans": 12500,
+          "labelled": 12434,
+          "labelled_share": 0.9947,
+          "defaults": 86,
+          "rate": 0.00692,
+          "wilson_95": [
+            0.0056,
+            0.00853
+          ],
+          "above_floors": false
+        },
+        "2023Q2": {
+          "loans": 12500,
+          "labelled": 12466,
+          "labelled_share": 0.9973,
+          "defaults": 73,
+          "rate": 0.00586,
+          "wilson_95": [
+            0.00466,
+            0.00736
+          ],
+          "above_floors": false
+        },
+        "2023Q3": {
+          "loans": 12500,
+          "labelled": 12451,
+          "labelled_share": 0.9961,
+          "defaults": 61,
+          "rate": 0.0049,
+          "wilson_95": [
+            0.00382,
+            0.00629
+          ],
+          "above_floors": false
+        },
+        "2023Q4": {
+          "loans": 12500,
+          "labelled": 12446,
+          "labelled_share": 0.9957,
+          "defaults": 87,
+          "rate": 0.00699,
+          "wilson_95": [
+            0.00567,
+            0.00861
+          ],
+          "above_floors": false
+        },
+        "2024Q1": {
+          "loans": 12500,
+          "labelled": 12433,
+          "labelled_share": 0.9946,
+          "defaults": 93,
+          "rate": 0.00748,
+          "wilson_95": [
+            0.00611,
+            0.00915
+          ],
+          "above_floors": false
+        },
+        "2024Q2": {
+          "loans": 12500,
+          "labelled": 12444,
+          "labelled_share": 0.9955,
+          "defaults": 79,
+          "rate": 0.00635,
+          "wilson_95": [
+            0.0051,
+            0.0079
+          ],
+          "above_floors": false
+        },
+        "2024Q3": {
+          "loans": 12500,
+          "labelled": 12459,
+          "labelled_share": 0.9967,
+          "defaults": 66,
+          "rate": 0.0053,
+          "wilson_95": [
+            0.00417,
+            0.00673
+          ],
+          "above_floors": false
+        },
+        "2024Q4": {
+          "loans": 12500,
+          "labelled": 12460,
+          "labelled_share": 0.9968,
+          "defaults": 64,
+          "rate": 0.00514,
+          "wilson_95": [
+            0.00402,
+            0.00655
+          ],
+          "above_floors": false
+        },
+        "2025Q1": {
+          "loans": 12500,
+          "labelled": 7518,
+          "labelled_share": 0.6014,
+          "defaults": 32,
+          "rate": 0.00426,
+          "wilson_95": [
+            0.00302,
+            0.006
+          ],
+          "above_floors": false
+        },
+        "2025Q2": {
+          "loans": 12500,
+          "labelled": 0,
+          "labelled_share": 0.0,
+          "defaults": 0,
+          "rate": null,
+          "wilson_95": null,
+          "above_floors": false
+        },
+        "2025Q3": {
+          "loans": 12500,
+          "labelled": 0,
+          "labelled_share": 0.0,
+          "defaults": 0,
+          "rate": null,
+          "wilson_95": null,
+          "above_floors": false
+        },
+        "2025Q4": {
+          "loans": 12500,
+          "labelled": 0,
+          "labelled_share": 0.0,
+          "defaults": 0,
+          "rate": null,
+          "wilson_95": null,
+          "above_floors": false
+        },
+        "2026Q1": {
+          "loans": 12500,
+          "labelled": 0,
+          "labelled_share": 0.0,
+          "defaults": 0,
+          "rate": null,
+          "wilson_95": null,
+          "above_floors": false
+        }
+      },
+      "by_half": {
+        "1999H1": {
+          "loans": 25000,
+          "labelled": 24736,
+          "labelled_share": 0.9894,
+          "defaults": 41,
+          "rate": 0.00166,
+          "wilson_95": [
+            0.00122,
+            0.00225
+          ],
+          "above_floors": false
+        },
+        "1999H2": {
+          "loans": 25000,
+          "labelled": 24337,
+          "labelled_share": 0.9735,
+          "defaults": 90,
+          "rate": 0.0037,
+          "wilson_95": [
+            0.00301,
+            0.00454
+          ],
+          "above_floors": false
+        },
+        "2000H1": {
+          "loans": 25000,
+          "labelled": 23844,
+          "labelled_share": 0.9538,
+          "defaults": 147,
+          "rate": 0.00617,
+          "wilson_95": [
+            0.00525,
+            0.00724
+          ],
+          "above_floors": true
+        },
+        "2000H2": {
+          "loans": 25000,
+          "labelled": 24490,
+          "labelled_share": 0.9796,
+          "defaults": 172,
+          "rate": 0.00702,
+          "wilson_95": [
+            0.00605,
+            0.00815
+          ],
+          "above_floors": true
+        },
+        "2001H1": {
+          "loans": 25000,
+          "labelled": 24731,
+          "labelled_share": 0.9892,
+          "defaults": 117,
+          "rate": 0.00473,
+          "wilson_95": [
+            0.00395,
+            0.00567
+          ],
+          "above_floors": true
+        },
+        "2001H2": {
+          "loans": 25000,
+          "labelled": 24780,
+          "labelled_share": 0.9912,
+          "defaults": 97,
+          "rate": 0.00391,
+          "wilson_95": [
+            0.00321,
+            0.00477
+          ],
+          "above_floors": false
+        },
+        "2002H1": {
+          "loans": 25000,
+          "labelled": 24727,
+          "labelled_share": 0.9891,
+          "defaults": 144,
+          "rate": 0.00582,
+          "wilson_95": [
+            0.00495,
+            0.00685
+          ],
+          "above_floors": true
+        },
+        "2002H2": {
+          "loans": 25000,
+          "labelled": 24865,
+          "labelled_share": 0.9946,
+          "defaults": 61,
+          "rate": 0.00245,
+          "wilson_95": [
+            0.00191,
+            0.00315
+          ],
+          "above_floors": false
+        },
+        "2003H1": {
+          "loans": 25000,
+          "labelled": 24889,
+          "labelled_share": 0.9956,
+          "defaults": 34,
+          "rate": 0.00137,
+          "wilson_95": [
+            0.00098,
+            0.00191
+          ],
+          "above_floors": false
+        },
+        "2003H2": {
+          "loans": 25000,
+          "labelled": 24806,
+          "labelled_share": 0.9922,
+          "defaults": 48,
+          "rate": 0.00194,
+          "wilson_95": [
+            0.00146,
+            0.00256
+          ],
+          "above_floors": false
+        },
+        "2004H1": {
+          "loans": 25000,
+          "labelled": 24776,
+          "labelled_share": 0.991,
+          "defaults": 51,
+          "rate": 0.00206,
+          "wilson_95": [
+            0.00157,
+            0.00271
+          ],
+          "above_floors": false
+        },
+        "2004H2": {
+          "loans": 25000,
+          "labelled": 24696,
+          "labelled_share": 0.9878,
+          "defaults": 66,
+          "rate": 0.00267,
+          "wilson_95": [
+            0.0021,
+            0.0034
+          ],
+          "above_floors": false
+        },
+        "2005H1": {
+          "loans": 25000,
+          "labelled": 24746,
+          "labelled_share": 0.9898,
+          "defaults": 105,
+          "rate": 0.00424,
+          "wilson_95": [
+            0.00351,
+            0.00513
+          ],
+          "above_floors": true
+        },
+        "2005H2": {
+          "loans": 25000,
+          "labelled": 24778,
+          "labelled_share": 0.9911,
+          "defaults": 79,
+          "rate": 0.00319,
+          "wilson_95": [
+            0.00256,
+            0.00397
+          ],
+          "above_floors": false
+        },
+        "2006H1": {
+          "loans": 25000,
+          "labelled": 24729,
+          "labelled_share": 0.9892,
+          "defaults": 117,
+          "rate": 0.00473,
+          "wilson_95": [
+            0.00395,
+            0.00567
+          ],
+          "above_floors": true
+        },
+        "2006H2": {
+          "loans": 25000,
+          "labelled": 24774,
+          "labelled_share": 0.991,
+          "defaults": 123,
+          "rate": 0.00496,
+          "wilson_95": [
+            0.00416,
+            0.00592
+          ],
+          "above_floors": true
+        },
+        "2007H1": {
+          "loans": 25000,
+          "labelled": 24831,
+          "labelled_share": 0.9932,
+          "defaults": 152,
+          "rate": 0.00612,
+          "wilson_95": [
+            0.00522,
+            0.00717
+          ],
+          "above_floors": true
+        },
+        "2007H2": {
+          "loans": 25000,
+          "labelled": 24768,
+          "labelled_share": 0.9907,
+          "defaults": 398,
+          "rate": 0.01607,
+          "wilson_95": [
+            0.01458,
+            0.01771
+          ],
+          "above_floors": true
+        },
+        "2008H1": {
+          "loans": 25000,
+          "labelled": 24847,
+          "labelled_share": 0.9939,
+          "defaults": 321,
+          "rate": 0.01292,
+          "wilson_95": [
+            0.01159,
+            0.0144
+          ],
+          "above_floors": true
+        },
+        "2008H2": {
+          "loans": 24999,
+          "labelled": 24812,
+          "labelled_share": 0.9925,
+          "defaults": 351,
+          "rate": 0.01415,
+          "wilson_95": [
+            0.01275,
+            0.01569
+          ],
+          "above_floors": true
+        },
+        "2009H1": {
+          "loans": 25001,
+          "labelled": 24961,
+          "labelled_share": 0.9984,
+          "defaults": 34,
+          "rate": 0.00136,
+          "wilson_95": [
+            0.00097,
+            0.0019
+          ],
+          "above_floors": false
+        },
+        "2009H2": {
+          "loans": 25000,
+          "labelled": 24928,
+          "labelled_share": 0.9971,
+          "defaults": 68,
+          "rate": 0.00273,
+          "wilson_95": [
+            0.00215,
+            0.00346
+          ],
+          "above_floors": false
+        },
+        "2010H1": {
+          "loans": 25000,
+          "labelled": 24938,
+          "labelled_share": 0.9975,
+          "defaults": 62,
+          "rate": 0.00249,
+          "wilson_95": [
+            0.00194,
+            0.00319
+          ],
+          "above_floors": false
+        },
+        "2010H2": {
+          "loans": 25000,
+          "labelled": 24965,
+          "labelled_share": 0.9986,
+          "defaults": 42,
+          "rate": 0.00168,
+          "wilson_95": [
+            0.00124,
+            0.00227
+          ],
+          "above_floors": false
+        },
+        "2011H1": {
+          "loans": 25000,
+          "labelled": 24940,
+          "labelled_share": 0.9976,
+          "defaults": 71,
+          "rate": 0.00285,
+          "wilson_95": [
+            0.00226,
+            0.00359
+          ],
+          "above_floors": false
+        },
+        "2011H2": {
+          "loans": 25000,
+          "labelled": 24937,
+          "labelled_share": 0.9975,
+          "defaults": 39,
+          "rate": 0.00156,
+          "wilson_95": [
+            0.00114,
+            0.00214
+          ],
+          "above_floors": false
+        },
+        "2012H1": {
+          "loans": 25000,
+          "labelled": 24925,
+          "labelled_share": 0.997,
+          "defaults": 56,
+          "rate": 0.00225,
+          "wilson_95": [
+            0.00173,
+            0.00292
+          ],
+          "above_floors": false
+        },
+        "2012H2": {
+          "loans": 25000,
+          "labelled": 24939,
+          "labelled_share": 0.9976,
+          "defaults": 53,
+          "rate": 0.00213,
+          "wilson_95": [
+            0.00163,
+            0.00278
+          ],
+          "above_floors": false
+        },
+        "2013H1": {
+          "loans": 25000,
+          "labelled": 24946,
+          "labelled_share": 0.9978,
+          "defaults": 31,
+          "rate": 0.00124,
+          "wilson_95": [
+            0.00088,
+            0.00176
+          ],
+          "above_floors": false
+        },
+        "2013H2": {
+          "loans": 25000,
+          "labelled": 24913,
+          "labelled_share": 0.9965,
+          "defaults": 52,
+          "rate": 0.00209,
+          "wilson_95": [
+            0.00159,
+            0.00274
+          ],
+          "above_floors": false
+        },
+        "2014H1": {
+          "loans": 25000,
+          "labelled": 24898,
+          "labelled_share": 0.9959,
+          "defaults": 45,
+          "rate": 0.00181,
+          "wilson_95": [
+            0.00135,
+            0.00242
+          ],
+          "above_floors": false
+        },
+        "2014H2": {
+          "loans": 25000,
+          "labelled": 24911,
+          "labelled_share": 0.9964,
+          "defaults": 38,
+          "rate": 0.00153,
+          "wilson_95": [
+            0.00111,
+            0.00209
+          ],
+          "above_floors": false
+        },
+        "2015H1": {
+          "loans": 25000,
+          "labelled": 24940,
+          "labelled_share": 0.9976,
+          "defaults": 23,
+          "rate": 0.00092,
+          "wilson_95": [
+            0.00061,
+            0.00138
+          ],
+          "above_floors": false
+        },
+        "2015H2": {
+          "loans": 25000,
+          "labelled": 24920,
+          "labelled_share": 0.9968,
+          "defaults": 42,
+          "rate": 0.00169,
+          "wilson_95": [
+            0.00125,
+            0.00228
+          ],
+          "above_floors": false
+        },
+        "2016H1": {
+          "loans": 25000,
+          "labelled": 24927,
+          "labelled_share": 0.9971,
+          "defaults": 25,
+          "rate": 0.001,
+          "wilson_95": [
+            0.00068,
+            0.00148
+          ],
+          "above_floors": false
+        },
+        "2016H2": {
+          "loans": 25000,
+          "labelled": 24928,
+          "labelled_share": 0.9971,
+          "defaults": 49,
+          "rate": 0.00197,
+          "wilson_95": [
+            0.00149,
+            0.0026
+          ],
+          "above_floors": false
+        },
+        "2017H1": {
+          "loans": 25000,
+          "labelled": 24886,
+          "labelled_share": 0.9954,
+          "defaults": 119,
+          "rate": 0.00478,
+          "wilson_95": [
+            0.004,
+            0.00572
+          ],
+          "above_floors": true
+        },
+        "2017H2": {
+          "loans": 25000,
+          "labelled": 24923,
+          "labelled_share": 0.9969,
+          "defaults": 71,
+          "rate": 0.00285,
+          "wilson_95": [
+            0.00226,
+            0.00359
+          ],
+          "above_floors": false
+        },
+        "2018H1": {
+          "loans": 25000,
+          "labelled": 24921,
+          "labelled_share": 0.9968,
+          "defaults": 52,
+          "rate": 0.00209,
+          "wilson_95": [
+            0.00159,
+            0.00274
+          ],
+          "above_floors": false
+        },
+        "2018H2": {
+          "loans": 25000,
+          "labelled": 24887,
+          "labelled_share": 0.9955,
+          "defaults": 56,
+          "rate": 0.00225,
+          "wilson_95": [
+            0.00173,
+            0.00292
+          ],
+          "above_floors": false
+        },
+        "2019H1": {
+          "loans": 25000,
+          "labelled": 24889,
+          "labelled_share": 0.9956,
+          "defaults": 237,
+          "rate": 0.00952,
+          "wilson_95": [
+            0.00839,
+            0.01081
+          ],
+          "above_floors": true
+        },
+        "2019H2": {
+          "loans": 25000,
+          "labelled": 24933,
+          "labelled_share": 0.9973,
+          "defaults": 924,
+          "rate": 0.03706,
+          "wilson_95": [
+            0.03478,
+            0.03948
+          ],
+          "above_floors": true
+        },
+        "2020H1": {
+          "loans": 25000,
+          "labelled": 24915,
+          "labelled_share": 0.9966,
+          "defaults": 510,
+          "rate": 0.02047,
+          "wilson_95": [
+            0.01878,
+            0.0223
+          ],
+          "above_floors": true
+        },
+        "2020H2": {
+          "loans": 25000,
+          "labelled": 24936,
+          "labelled_share": 0.9974,
+          "defaults": 115,
+          "rate": 0.00461,
+          "wilson_95": [
+            0.00384,
+            0.00553
+          ],
+          "above_floors": true
+        },
+        "2021H1": {
+          "loans": 25000,
+          "labelled": 24943,
+          "labelled_share": 0.9977,
+          "defaults": 79,
+          "rate": 0.00317,
+          "wilson_95": [
+            0.00254,
+            0.00395
+          ],
+          "above_floors": false
+        },
+        "2021H2": {
+          "loans": 25000,
+          "labelled": 24963,
+          "labelled_share": 0.9985,
+          "defaults": 106,
+          "rate": 0.00425,
+          "wilson_95": [
+            0.00351,
+            0.00513
+          ],
+          "above_floors": true
+        },
+        "2022H1": {
+          "loans": 25000,
+          "labelled": 24919,
+          "labelled_share": 0.9968,
+          "defaults": 163,
+          "rate": 0.00654,
+          "wilson_95": [
+            0.00561,
+            0.00762
+          ],
+          "above_floors": true
+        },
+        "2022H2": {
+          "loans": 25000,
+          "labelled": 24890,
+          "labelled_share": 0.9956,
+          "defaults": 180,
+          "rate": 0.00723,
+          "wilson_95": [
+            0.00625,
+            0.00836
+          ],
+          "above_floors": true
+        },
+        "2023H1": {
+          "loans": 25000,
+          "labelled": 24900,
+          "labelled_share": 0.996,
+          "defaults": 159,
+          "rate": 0.00639,
+          "wilson_95": [
+            0.00547,
+            0.00745
+          ],
+          "above_floors": true
+        },
+        "2023H2": {
+          "loans": 25000,
+          "labelled": 24897,
+          "labelled_share": 0.9959,
+          "defaults": 148,
+          "rate": 0.00594,
+          "wilson_95": [
+            0.00506,
+            0.00698
+          ],
+          "above_floors": true
+        },
+        "2024H1": {
+          "loans": 25000,
+          "labelled": 24877,
+          "labelled_share": 0.9951,
+          "defaults": 172,
+          "rate": 0.00691,
+          "wilson_95": [
+            0.00596,
+            0.00802
+          ],
+          "above_floors": true
+        },
+        "2024H2": {
+          "loans": 25000,
+          "labelled": 24919,
+          "labelled_share": 0.9968,
+          "defaults": 130,
+          "rate": 0.00522,
+          "wilson_95": [
+            0.0044,
+            0.00619
+          ],
+          "above_floors": true
+        },
+        "2025H1": {
+          "loans": 25000,
+          "labelled": 7518,
+          "labelled_share": 0.3007,
+          "defaults": 32,
+          "rate": 0.00426,
+          "wilson_95": [
+            0.00302,
+            0.006
+          ],
+          "above_floors": false
+        },
+        "2025H2": {
+          "loans": 25000,
+          "labelled": 0,
+          "labelled_share": 0.0,
+          "defaults": 0,
+          "rate": null,
+          "wilson_95": null,
+          "above_floors": false
+        },
+        "2026H1": {
+          "loans": 12500,
+          "labelled": 0,
+          "labelled_share": 0.0,
+          "defaults": 0,
+          "rate": null,
+          "wilson_95": null,
+          "above_floors": false
+        }
+      },
+      "by_year": {
+        "1999": {
+          "loans": 50000,
+          "labelled": 49073,
+          "labelled_share": 0.9815,
+          "defaults": 131,
+          "rate": 0.00267,
+          "wilson_95": [
+            0.00225,
+            0.00317
+          ],
+          "above_floors": true
+        },
+        "2000": {
+          "loans": 50000,
+          "labelled": 48334,
+          "labelled_share": 0.9667,
+          "defaults": 319,
+          "rate": 0.0066,
+          "wilson_95": [
+            0.00592,
+            0.00736
+          ],
+          "above_floors": true
+        },
+        "2001": {
+          "loans": 50000,
+          "labelled": 49511,
+          "labelled_share": 0.9902,
+          "defaults": 214,
+          "rate": 0.00432,
+          "wilson_95": [
+            0.00378,
+            0.00494
+          ],
+          "above_floors": true
+        },
+        "2002": {
+          "loans": 50000,
+          "labelled": 49592,
+          "labelled_share": 0.9918,
+          "defaults": 205,
+          "rate": 0.00413,
+          "wilson_95": [
+            0.00361,
+            0.00474
+          ],
+          "above_floors": true
+        },
+        "2003": {
+          "loans": 50000,
+          "labelled": 49695,
+          "labelled_share": 0.9939,
+          "defaults": 82,
+          "rate": 0.00165,
+          "wilson_95": [
+            0.00133,
+            0.00205
+          ],
+          "above_floors": false
+        },
+        "2004": {
+          "loans": 50000,
+          "labelled": 49472,
+          "labelled_share": 0.9894,
+          "defaults": 117,
+          "rate": 0.00236,
+          "wilson_95": [
+            0.00197,
+            0.00283
+          ],
+          "above_floors": true
+        },
+        "2005": {
+          "loans": 50000,
+          "labelled": 49524,
+          "labelled_share": 0.9905,
+          "defaults": 184,
+          "rate": 0.00372,
+          "wilson_95": [
+            0.00322,
+            0.00429
+          ],
+          "above_floors": true
+        },
+        "2006": {
+          "loans": 50000,
+          "labelled": 49503,
+          "labelled_share": 0.9901,
+          "defaults": 240,
+          "rate": 0.00485,
+          "wilson_95": [
+            0.00427,
+            0.0055
+          ],
+          "above_floors": true
+        },
+        "2007": {
+          "loans": 50000,
+          "labelled": 49599,
+          "labelled_share": 0.992,
+          "defaults": 550,
+          "rate": 0.01109,
+          "wilson_95": [
+            0.0102,
+            0.01205
+          ],
+          "above_floors": true
+        },
+        "2008": {
+          "loans": 49999,
+          "labelled": 49659,
+          "labelled_share": 0.9932,
+          "defaults": 672,
+          "rate": 0.01353,
+          "wilson_95": [
+            0.01255,
+            0.01459
+          ],
+          "above_floors": true
+        },
+        "2009": {
+          "loans": 50001,
+          "labelled": 49889,
+          "labelled_share": 0.9978,
+          "defaults": 102,
+          "rate": 0.00204,
+          "wilson_95": [
+            0.00168,
+            0.00248
+          ],
+          "above_floors": true
+        },
+        "2010": {
+          "loans": 50000,
+          "labelled": 49903,
+          "labelled_share": 0.9981,
+          "defaults": 104,
+          "rate": 0.00208,
+          "wilson_95": [
+            0.00172,
+            0.00252
+          ],
+          "above_floors": true
+        },
+        "2011": {
+          "loans": 50000,
+          "labelled": 49877,
+          "labelled_share": 0.9975,
+          "defaults": 110,
+          "rate": 0.00221,
+          "wilson_95": [
+            0.00183,
+            0.00266
+          ],
+          "above_floors": true
+        },
+        "2012": {
+          "loans": 50000,
+          "labelled": 49864,
+          "labelled_share": 0.9973,
+          "defaults": 109,
+          "rate": 0.00219,
+          "wilson_95": [
+            0.00181,
+            0.00264
+          ],
+          "above_floors": true
+        },
+        "2013": {
+          "loans": 50000,
+          "labelled": 49859,
+          "labelled_share": 0.9972,
+          "defaults": 83,
+          "rate": 0.00166,
+          "wilson_95": [
+            0.00134,
+            0.00206
+          ],
+          "above_floors": false
+        },
+        "2014": {
+          "loans": 50000,
+          "labelled": 49809,
+          "labelled_share": 0.9962,
+          "defaults": 83,
+          "rate": 0.00167,
+          "wilson_95": [
+            0.00134,
+            0.00207
+          ],
+          "above_floors": false
+        },
+        "2015": {
+          "loans": 50000,
+          "labelled": 49860,
+          "labelled_share": 0.9972,
+          "defaults": 65,
+          "rate": 0.0013,
+          "wilson_95": [
+            0.00102,
+            0.00166
+          ],
+          "above_floors": false
+        },
+        "2016": {
+          "loans": 50000,
+          "labelled": 49855,
+          "labelled_share": 0.9971,
+          "defaults": 74,
+          "rate": 0.00148,
+          "wilson_95": [
+            0.00118,
+            0.00186
+          ],
+          "above_floors": false
+        },
+        "2017": {
+          "loans": 50000,
+          "labelled": 49809,
+          "labelled_share": 0.9962,
+          "defaults": 190,
+          "rate": 0.00381,
+          "wilson_95": [
+            0.00331,
+            0.0044
+          ],
+          "above_floors": true
+        },
+        "2018": {
+          "loans": 50000,
+          "labelled": 49808,
+          "labelled_share": 0.9962,
+          "defaults": 108,
+          "rate": 0.00217,
+          "wilson_95": [
+            0.0018,
+            0.00262
+          ],
+          "above_floors": true
+        },
+        "2019": {
+          "loans": 50000,
+          "labelled": 49822,
+          "labelled_share": 0.9964,
+          "defaults": 1161,
+          "rate": 0.0233,
+          "wilson_95": [
+            0.02201,
+            0.02466
+          ],
+          "above_floors": true
+        },
+        "2020": {
+          "loans": 50000,
+          "labelled": 49851,
+          "labelled_share": 0.997,
+          "defaults": 625,
+          "rate": 0.01254,
+          "wilson_95": [
+            0.0116,
+            0.01355
+          ],
+          "above_floors": true
+        },
+        "2021": {
+          "loans": 50000,
+          "labelled": 49906,
+          "labelled_share": 0.9981,
+          "defaults": 185,
+          "rate": 0.00371,
+          "wilson_95": [
+            0.00321,
+            0.00428
+          ],
+          "above_floors": true
+        },
+        "2022": {
+          "loans": 50000,
+          "labelled": 49809,
+          "labelled_share": 0.9962,
+          "defaults": 343,
+          "rate": 0.00689,
+          "wilson_95": [
+            0.0062,
+            0.00765
+          ],
+          "above_floors": true
+        },
+        "2023": {
+          "loans": 50000,
+          "labelled": 49797,
+          "labelled_share": 0.9959,
+          "defaults": 307,
+          "rate": 0.00617,
+          "wilson_95": [
+            0.00551,
+            0.00689
+          ],
+          "above_floors": true
+        },
+        "2024": {
+          "loans": 50000,
+          "labelled": 49796,
+          "labelled_share": 0.9959,
+          "defaults": 302,
+          "rate": 0.00606,
+          "wilson_95": [
+            0.00542,
+            0.00679
+          ],
+          "above_floors": true
+        },
+        "2025": {
+          "loans": 50000,
+          "labelled": 7518,
+          "labelled_share": 0.1504,
+          "defaults": 32,
+          "rate": 0.00426,
+          "wilson_95": [
+            0.00302,
+            0.006
+          ],
+          "above_floors": false
+        },
+        "2026": {
+          "loans": 12500,
+          "labelled": 0,
+          "labelled_share": 0.0,
+          "defaults": 0,
+          "rate": null,
+          "wilson_95": null,
+          "above_floors": false
+        }
+      }
+    },
+    "24": {
+      "label": {
+        "definition": {
+          "window_months": 24,
+          "performance_cutoff": "2026-03-01",
+          "delinquency_months": 3,
+          "bad_terminations": [
+            2,
+            3,
+            9
+          ],
+          "prepaid": [
+            1
+          ],
+          "censoring": [
+            15,
+            16,
+            96
+          ]
+        },
+        "labelled": 1248788,
+        "defaults": 18165,
+        "default_rate": 0.014546,
+        "dropped_immature": 104929,
+        "censored": 1678,
+        "notes": [
+          "104929 loans have a first payment within 24 months of the cutoff 2026-03-01 and were dropped as immature whatever their record says, and 0 more have fewer than 24 months of history, no termination and no default on record; none was labelled non-default",
+          "1678 loans left the dataset inside the window through a sale or a confirmed defect with no default on record, and were dropped as censored",
+          "140 loans ended in a bad termination with no ninety-day delinquency on record before it, and are dated at the termination"
+        ]
+      },
+      "excluded_redated": 7095,
+      "excluded_without_performance_record": 10,
+      "cohorts_above_floors": {
+        "quarterly": 55,
+        "semi_annual": 48,
+        "annual": 26
+      },
+      "by_quarter": {
+        "1999Q1": {
+          "loans": 12500,
+          "labelled": 12409,
+          "labelled_share": 0.9927,
+          "defaults": 76,
+          "rate": 0.00612,
+          "wilson_95": [
+            0.0049,
+            0.00766
+          ],
+          "above_floors": false
+        },
+        "1999Q2": {
+          "loans": 12500,
+          "labelled": 12326,
+          "labelled_share": 0.9861,
+          "defaults": 85,
+          "rate": 0.0069,
+          "wilson_95": [
+            0.00558,
+            0.00852
+          ],
+          "above_floors": false
+        },
+        "1999Q3": {
+          "loans": 12500,
+          "labelled": 12169,
+          "labelled_share": 0.9735,
+          "defaults": 109,
+          "rate": 0.00896,
+          "wilson_95": [
+            0.00743,
+            0.01079
+          ],
+          "above_floors": true
+        },
+        "1999Q4": {
+          "loans": 12500,
+          "labelled": 12164,
+          "labelled_share": 0.9731,
+          "defaults": 172,
+          "rate": 0.01414,
+          "wilson_95": [
+            0.01219,
+            0.0164
+          ],
+          "above_floors": true
+        },
+        "2000Q1": {
+          "loans": 12500,
+          "labelled": 11913,
+          "labelled_share": 0.953,
+          "defaults": 185,
+          "rate": 0.01553,
+          "wilson_95": [
+            0.01346,
+            0.01791
+          ],
+          "above_floors": true
+        },
+        "2000Q2": {
+          "loans": 12500,
+          "labelled": 11925,
+          "labelled_share": 0.954,
+          "defaults": 183,
+          "rate": 0.01535,
+          "wilson_95": [
+            0.01329,
+            0.01771
+          ],
+          "above_floors": true
+        },
+        "2000Q3": {
+          "loans": 12500,
+          "labelled": 12193,
+          "labelled_share": 0.9754,
+          "defaults": 182,
+          "rate": 0.01493,
+          "wilson_95": [
+            0.01292,
+            0.01724
+          ],
+          "above_floors": true
+        },
+        "2000Q4": {
+          "loans": 12500,
+          "labelled": 12294,
+          "labelled_share": 0.9835,
+          "defaults": 195,
+          "rate": 0.01586,
+          "wilson_95": [
+            0.0138,
+            0.01823
+          ],
+          "above_floors": true
+        },
+        "2001Q1": {
+          "loans": 12500,
+          "labelled": 12365,
+          "labelled_share": 0.9892,
+          "defaults": 168,
+          "rate": 0.01359,
+          "wilson_95": [
+            0.01169,
+            0.01578
+          ],
+          "above_floors": true
+        },
+        "2001Q2": {
+          "loans": 12500,
+          "labelled": 12362,
+          "labelled_share": 0.989,
+          "defaults": 128,
+          "rate": 0.01035,
+          "wilson_95": [
+            0.00872,
+            0.0123
+          ],
+          "above_floors": true
+        },
+        "2001Q3": {
+          "loans": 12500,
+          "labelled": 12355,
+          "labelled_share": 0.9884,
+          "defaults": 154,
+          "rate": 0.01246,
+          "wilson_95": [
+            0.01065,
+            0.01458
+          ],
+          "above_floors": true
+        },
+        "2001Q4": {
+          "loans": 12500,
+          "labelled": 12423,
+          "labelled_share": 0.9938,
+          "defaults": 106,
+          "rate": 0.00853,
+          "wilson_95": [
+            0.00706,
+            0.01031
+          ],
+          "above_floors": true
+        },
+        "2002Q1": {
+          "loans": 12500,
+          "labelled": 12397,
+          "labelled_share": 0.9918,
+          "defaults": 132,
+          "rate": 0.01065,
+          "wilson_95": [
+            0.00899,
+            0.01261
+          ],
+          "above_floors": true
+        },
+        "2002Q2": {
+          "loans": 12500,
+          "labelled": 12322,
+          "labelled_share": 0.9858,
+          "defaults": 174,
+          "rate": 0.01412,
+          "wilson_95": [
+            0.01218,
+            0.01636
+          ],
+          "above_floors": true
+        },
+        "2002Q3": {
+          "loans": 12500,
+          "labelled": 12420,
+          "labelled_share": 0.9936,
+          "defaults": 86,
+          "rate": 0.00692,
+          "wilson_95": [
+            0.00561,
+            0.00854
+          ],
+          "above_floors": false
+        },
+        "2002Q4": {
+          "loans": 12500,
+          "labelled": 12445,
+          "labelled_share": 0.9956,
+          "defaults": 43,
+          "rate": 0.00346,
+          "wilson_95": [
+            0.00257,
+            0.00465
+          ],
+          "above_floors": false
+        },
+        "2003Q1": {
+          "loans": 12500,
+          "labelled": 12442,
+          "labelled_share": 0.9954,
+          "defaults": 37,
+          "rate": 0.00297,
+          "wilson_95": [
+            0.00216,
+            0.0041
+          ],
+          "above_floors": false
+        },
+        "2003Q2": {
+          "loans": 12500,
+          "labelled": 12447,
+          "labelled_share": 0.9958,
+          "defaults": 36,
+          "rate": 0.00289,
+          "wilson_95": [
+            0.00209,
+            0.004
+          ],
+          "above_floors": false
+        },
+        "2003Q3": {
+          "loans": 12500,
+          "labelled": 12438,
+          "labelled_share": 0.995,
+          "defaults": 48,
+          "rate": 0.00386,
+          "wilson_95": [
+            0.00291,
+            0.00511
+          ],
+          "above_floors": false
+        },
+        "2003Q4": {
+          "loans": 12500,
+          "labelled": 12367,
+          "labelled_share": 0.9894,
+          "defaults": 93,
+          "rate": 0.00752,
+          "wilson_95": [
+            0.00614,
+            0.0092
+          ],
+          "above_floors": false
+        },
+        "2004Q1": {
+          "loans": 12500,
+          "labelled": 12413,
+          "labelled_share": 0.993,
+          "defaults": 90,
+          "rate": 0.00725,
+          "wilson_95": [
+            0.0059,
+            0.0089
+          ],
+          "above_floors": false
+        },
+        "2004Q2": {
+          "loans": 12500,
+          "labelled": 12361,
+          "labelled_share": 0.9889,
+          "defaults": 92,
+          "rate": 0.00744,
+          "wilson_95": [
+            0.00607,
+            0.00912
+          ],
+          "above_floors": false
+        },
+        "2004Q3": {
+          "loans": 12500,
+          "labelled": 12324,
+          "labelled_share": 0.9859,
+          "defaults": 104,
+          "rate": 0.00844,
+          "wilson_95": [
+            0.00697,
+            0.01021
+          ],
+          "above_floors": true
+        },
+        "2004Q4": {
+          "loans": 12500,
+          "labelled": 12369,
+          "labelled_share": 0.9895,
+          "defaults": 101,
+          "rate": 0.00817,
+          "wilson_95": [
+            0.00673,
+            0.00991
+          ],
+          "above_floors": true
+        },
+        "2005Q1": {
+          "loans": 12500,
+          "labelled": 12402,
+          "labelled_share": 0.9922,
+          "defaults": 136,
+          "rate": 0.01097,
+          "wilson_95": [
+            0.00928,
+            0.01296
+          ],
+          "above_floors": true
+        },
+        "2005Q2": {
+          "loans": 12500,
+          "labelled": 12341,
+          "labelled_share": 0.9873,
+          "defaults": 115,
+          "rate": 0.00932,
+          "wilson_95": [
+            0.00777,
+            0.01117
+          ],
+          "above_floors": true
+        },
+        "2005Q3": {
+          "loans": 12500,
+          "labelled": 12377,
+          "labelled_share": 0.9902,
+          "defaults": 113,
+          "rate": 0.00913,
+          "wilson_95": [
+            0.0076,
+            0.01096
+          ],
+          "above_floors": true
+        },
+        "2005Q4": {
+          "loans": 12500,
+          "labelled": 12400,
+          "labelled_share": 0.992,
+          "defaults": 157,
+          "rate": 0.01266,
+          "wilson_95": [
+            0.01084,
+            0.01479
+          ],
+          "above_floors": true
+        },
+        "2006Q1": {
+          "loans": 12500,
+          "labelled": 12376,
+          "labelled_share": 0.9901,
+          "defaults": 200,
+          "rate": 0.01616,
+          "wilson_95": [
+            0.01408,
+            0.01854
+          ],
+          "above_floors": true
+        },
+        "2006Q2": {
+          "loans": 12500,
+          "labelled": 12351,
+          "labelled_share": 0.9881,
+          "defaults": 219,
+          "rate": 0.01773,
+          "wilson_95": [
+            0.01555,
+            0.02021
+          ],
+          "above_floors": true
+        },
+        "2006Q3": {
+          "loans": 12500,
+          "labelled": 12357,
+          "labelled_share": 0.9886,
+          "defaults": 216,
+          "rate": 0.01748,
+          "wilson_95": [
+            0.01531,
+            0.01995
+          ],
+          "above_floors": true
+        },
+        "2006Q4": {
+          "loans": 12500,
+          "labelled": 12404,
+          "labelled_share": 0.9923,
+          "defaults": 317,
+          "rate": 0.02556,
+          "wilson_95": [
+            0.02292,
+            0.02848
+          ],
+          "above_floors": true
+        },
+        "2007Q1": {
+          "loans": 12500,
+          "labelled": 12422,
+          "labelled_share": 0.9938,
+          "defaults": 368,
+          "rate": 0.02962,
+          "wilson_95": [
+            0.02679,
+            0.03276
+          ],
+          "above_floors": true
+        },
+        "2007Q2": {
+          "loans": 12500,
+          "labelled": 12401,
+          "labelled_share": 0.9921,
+          "defaults": 494,
+          "rate": 0.03984,
+          "wilson_95": [
+            0.03653,
+            0.04342
+          ],
+          "above_floors": true
+        },
+        "2007Q3": {
+          "loans": 12500,
+          "labelled": 12368,
+          "labelled_share": 0.9894,
+          "defaults": 696,
+          "rate": 0.05627,
+          "wilson_95": [
+            0.05235,
+            0.06048
+          ],
+          "above_floors": true
+        },
+        "2007Q4": {
+          "loans": 12500,
+          "labelled": 12391,
+          "labelled_share": 0.9913,
+          "defaults": 873,
+          "rate": 0.07045,
+          "wilson_95": [
+            0.06608,
+            0.07509
+          ],
+          "above_floors": true
+        },
+        "2008Q1": {
+          "loans": 12500,
+          "labelled": 12436,
+          "labelled_share": 0.9949,
+          "defaults": 618,
+          "rate": 0.04969,
+          "wilson_95": [
+            0.04601,
+            0.05365
+          ],
+          "above_floors": true
+        },
+        "2008Q2": {
+          "loans": 12500,
+          "labelled": 12406,
+          "labelled_share": 0.9925,
+          "defaults": 493,
+          "rate": 0.03974,
+          "wilson_95": [
+            0.03644,
+            0.04332
+          ],
+          "above_floors": true
+        },
+        "2008Q3": {
+          "loans": 12500,
+          "labelled": 12384,
+          "labelled_share": 0.9907,
+          "defaults": 540,
+          "rate": 0.0436,
+          "wilson_95": [
+            0.04015,
+            0.04735
+          ],
+          "above_floors": true
+        },
+        "2008Q4": {
+          "loans": 12499,
+          "labelled": 12424,
+          "labelled_share": 0.994,
+          "defaults": 325,
+          "rate": 0.02616,
+          "wilson_95": [
+            0.0235,
+            0.02912
+          ],
+          "above_floors": true
+        },
+        "2009Q1": {
+          "loans": 12501,
+          "labelled": 12478,
+          "labelled_share": 0.9982,
+          "defaults": 66,
+          "rate": 0.00529,
+          "wilson_95": [
+            0.00416,
+            0.00672
+          ],
+          "above_floors": false
+        },
+        "2009Q2": {
+          "loans": 12500,
+          "labelled": 12474,
+          "labelled_share": 0.9979,
+          "defaults": 53,
+          "rate": 0.00425,
+          "wilson_95": [
+            0.00325,
+            0.00555
+          ],
+          "above_floors": false
+        },
+        "2009Q3": {
+          "loans": 12500,
+          "labelled": 12417,
+          "labelled_share": 0.9934,
+          "defaults": 109,
+          "rate": 0.00878,
+          "wilson_95": [
+            0.00728,
+            0.01058
+          ],
+          "above_floors": true
+        },
+        "2009Q4": {
+          "loans": 12500,
+          "labelled": 12457,
+          "labelled_share": 0.9966,
+          "defaults": 89,
+          "rate": 0.00714,
+          "wilson_95": [
+            0.00581,
+            0.00878
+          ],
+          "above_floors": false
+        },
+        "2010Q1": {
+          "loans": 12500,
+          "labelled": 12467,
+          "labelled_share": 0.9974,
+          "defaults": 90,
+          "rate": 0.00722,
+          "wilson_95": [
+            0.00588,
+            0.00886
+          ],
+          "above_floors": false
+        },
+        "2010Q2": {
+          "loans": 12500,
+          "labelled": 12466,
+          "labelled_share": 0.9973,
+          "defaults": 101,
+          "rate": 0.0081,
+          "wilson_95": [
+            0.00667,
+            0.00983
+          ],
+          "above_floors": true
+        },
+        "2010Q3": {
+          "loans": 12500,
+          "labelled": 12478,
+          "labelled_share": 0.9982,
+          "defaults": 77,
+          "rate": 0.00617,
+          "wilson_95": [
+            0.00494,
+            0.00771
+          ],
+          "above_floors": false
+        },
+        "2010Q4": {
+          "loans": 12500,
+          "labelled": 12474,
+          "labelled_share": 0.9979,
+          "defaults": 75,
+          "rate": 0.00601,
+          "wilson_95": [
+            0.0048,
+            0.00753
+          ],
+          "above_floors": false
+        },
+        "2011Q1": {
+          "loans": 12500,
+          "labelled": 12461,
+          "labelled_share": 0.9969,
+          "defaults": 97,
+          "rate": 0.00778,
+          "wilson_95": [
+            0.00639,
+            0.00949
+          ],
+          "above_floors": false
+        },
+        "2011Q2": {
+          "loans": 12500,
+          "labelled": 12459,
+          "labelled_share": 0.9967,
+          "defaults": 99,
+          "rate": 0.00795,
+          "wilson_95": [
+            0.00653,
+            0.00966
+          ],
+          "above_floors": false
+        },
+        "2011Q3": {
+          "loans": 12500,
+          "labelled": 12474,
+          "labelled_share": 0.9979,
+          "defaults": 67,
+          "rate": 0.00537,
+          "wilson_95": [
+            0.00423,
+            0.00681
+          ],
+          "above_floors": false
+        },
+        "2011Q4": {
+          "loans": 12500,
+          "labelled": 12460,
+          "labelled_share": 0.9968,
+          "defaults": 53,
+          "rate": 0.00425,
+          "wilson_95": [
+            0.00325,
+            0.00556
+          ],
+          "above_floors": false
+        },
+        "2012Q1": {
+          "loans": 12500,
+          "labelled": 12459,
+          "labelled_share": 0.9967,
+          "defaults": 55,
+          "rate": 0.00441,
+          "wilson_95": [
+            0.00339,
+            0.00574
+          ],
+          "above_floors": false
+        },
+        "2012Q2": {
+          "loans": 12500,
+          "labelled": 12461,
+          "labelled_share": 0.9969,
+          "defaults": 95,
+          "rate": 0.00762,
+          "wilson_95": [
+            0.00624,
+            0.00931
+          ],
+          "above_floors": false
+        },
+        "2012Q3": {
+          "loans": 12500,
+          "labelled": 12472,
+          "labelled_share": 0.9978,
+          "defaults": 80,
+          "rate": 0.00641,
+          "wilson_95": [
+            0.00516,
+            0.00798
+          ],
+          "above_floors": false
+        },
+        "2012Q4": {
+          "loans": 12500,
+          "labelled": 12463,
+          "labelled_share": 0.997,
+          "defaults": 54,
+          "rate": 0.00433,
+          "wilson_95": [
+            0.00332,
+            0.00565
+          ],
+          "above_floors": false
+        },
+        "2013Q1": {
+          "loans": 12500,
+          "labelled": 12480,
+          "labelled_share": 0.9984,
+          "defaults": 37,
+          "rate": 0.00296,
+          "wilson_95": [
+            0.00215,
+            0.00408
+          ],
+          "above_floors": false
+        },
+        "2013Q2": {
+          "loans": 12500,
+          "labelled": 12461,
+          "labelled_share": 0.9969,
+          "defaults": 49,
+          "rate": 0.00393,
+          "wilson_95": [
+            0.00298,
+            0.00519
+          ],
+          "above_floors": false
+        },
+        "2013Q3": {
+          "loans": 12500,
+          "labelled": 12453,
+          "labelled_share": 0.9962,
+          "defaults": 69,
+          "rate": 0.00554,
+          "wilson_95": [
+            0.00438,
+            0.00701
+          ],
+          "above_floors": false
+        },
+        "2013Q4": {
+          "loans": 12500,
+          "labelled": 12459,
+          "labelled_share": 0.9967,
+          "defaults": 79,
+          "rate": 0.00634,
+          "wilson_95": [
+            0.00509,
+            0.00789
+          ],
+          "above_floors": false
+        },
+        "2014Q1": {
+          "loans": 12500,
+          "labelled": 12455,
+          "labelled_share": 0.9964,
+          "defaults": 65,
+          "rate": 0.00522,
+          "wilson_95": [
+            0.0041,
+            0.00665
+          ],
+          "above_floors": false
+        },
+        "2014Q2": {
+          "loans": 12500,
+          "labelled": 12435,
+          "labelled_share": 0.9948,
+          "defaults": 78,
+          "rate": 0.00627,
+          "wilson_95": [
+            0.00503,
+            0.00782
+          ],
+          "above_floors": false
+        },
+        "2014Q3": {
+          "loans": 12500,
+          "labelled": 12447,
+          "labelled_share": 0.9958,
+          "defaults": 47,
+          "rate": 0.00378,
+          "wilson_95": [
+            0.00284,
+            0.00502
+          ],
+          "above_floors": false
+        },
+        "2014Q4": {
+          "loans": 12500,
+          "labelled": 12461,
+          "labelled_share": 0.9969,
+          "defaults": 57,
+          "rate": 0.00457,
+          "wilson_95": [
+            0.00353,
+            0.00592
+          ],
+          "above_floors": false
+        },
+        "2015Q1": {
+          "loans": 12500,
+          "labelled": 12471,
+          "labelled_share": 0.9977,
+          "defaults": 46,
+          "rate": 0.00369,
+          "wilson_95": [
+            0.00277,
+            0.00492
+          ],
+          "above_floors": false
+        },
+        "2015Q2": {
+          "loans": 12500,
+          "labelled": 12466,
+          "labelled_share": 0.9973,
+          "defaults": 42,
+          "rate": 0.00337,
+          "wilson_95": [
+            0.00249,
+            0.00455
+          ],
+          "above_floors": false
+        },
+        "2015Q3": {
+          "loans": 12500,
+          "labelled": 12456,
+          "labelled_share": 0.9965,
+          "defaults": 66,
+          "rate": 0.0053,
+          "wilson_95": [
+            0.00417,
+            0.00674
+          ],
+          "above_floors": false
+        },
+        "2015Q4": {
+          "loans": 12500,
+          "labelled": 12463,
+          "labelled_share": 0.997,
+          "defaults": 99,
+          "rate": 0.00794,
+          "wilson_95": [
+            0.00653,
+            0.00966
+          ],
+          "above_floors": false
+        },
+        "2016Q1": {
+          "loans": 12500,
+          "labelled": 12473,
+          "labelled_share": 0.9978,
+          "defaults": 70,
+          "rate": 0.00561,
+          "wilson_95": [
+            0.00444,
+            0.00708
+          ],
+          "above_floors": false
+        },
+        "2016Q2": {
+          "loans": 12500,
+          "labelled": 12451,
+          "labelled_share": 0.9961,
+          "defaults": 87,
+          "rate": 0.00699,
+          "wilson_95": [
+            0.00567,
+            0.00861
+          ],
+          "above_floors": false
+        },
+        "2016Q3": {
+          "loans": 12500,
+          "labelled": 12458,
+          "labelled_share": 0.9966,
+          "defaults": 86,
+          "rate": 0.0069,
+          "wilson_95": [
+            0.00559,
+            0.00852
+          ],
+          "above_floors": false
+        },
+        "2016Q4": {
+          "loans": 12500,
+          "labelled": 12463,
+          "labelled_share": 0.997,
+          "defaults": 85,
+          "rate": 0.00682,
+          "wilson_95": [
+            0.00552,
+            0.00842
+          ],
+          "above_floors": false
+        },
+        "2017Q1": {
+          "loans": 12500,
+          "labelled": 12446,
+          "labelled_share": 0.9957,
+          "defaults": 96,
+          "rate": 0.00771,
+          "wilson_95": [
+            0.00632,
+            0.00941
+          ],
+          "above_floors": false
+        },
+        "2017Q2": {
+          "loans": 12500,
+          "labelled": 12436,
+          "labelled_share": 0.9949,
+          "defaults": 128,
+          "rate": 0.01029,
+          "wilson_95": [
+            0.00866,
+            0.01222
+          ],
+          "above_floors": true
+        },
+        "2017Q3": {
+          "loans": 12500,
+          "labelled": 12463,
+          "labelled_share": 0.997,
+          "defaults": 98,
+          "rate": 0.00786,
+          "wilson_95": [
+            0.00646,
+            0.00957
+          ],
+          "above_floors": false
+        },
+        "2017Q4": {
+          "loans": 12500,
+          "labelled": 12454,
+          "labelled_share": 0.9963,
+          "defaults": 74,
+          "rate": 0.00594,
+          "wilson_95": [
+            0.00474,
+            0.00745
+          ],
+          "above_floors": false
+        },
+        "2018Q1": {
+          "loans": 12500,
+          "labelled": 12468,
+          "labelled_share": 0.9974,
+          "defaults": 66,
+          "rate": 0.00529,
+          "wilson_95": [
+            0.00416,
+            0.00673
+          ],
+          "above_floors": false
+        },
+        "2018Q2": {
+          "loans": 12500,
+          "labelled": 12448,
+          "labelled_share": 0.9958,
+          "defaults": 274,
+          "rate": 0.02201,
+          "wilson_95": [
+            0.01958,
+            0.02474
+          ],
+          "above_floors": true
+        },
+        "2018Q3": {
+          "loans": 12500,
+          "labelled": 12440,
+          "labelled_share": 0.9952,
+          "defaults": 429,
+          "rate": 0.03449,
+          "wilson_95": [
+            0.03142,
+            0.03784
+          ],
+          "above_floors": true
+        },
+        "2018Q4": {
+          "loans": 12500,
+          "labelled": 12442,
+          "labelled_share": 0.9954,
+          "defaults": 510,
+          "rate": 0.04099,
+          "wilson_95": [
+            0.03765,
+            0.04462
+          ],
+          "above_floors": true
+        },
+        "2019Q1": {
+          "loans": 12500,
+          "labelled": 12443,
+          "labelled_share": 0.9954,
+          "defaults": 583,
+          "rate": 0.04685,
+          "wilson_95": [
+            0.04328,
+            0.05071
+          ],
+          "above_floors": true
+        },
+        "2019Q2": {
+          "loans": 12500,
+          "labelled": 12441,
+          "labelled_share": 0.9953,
+          "defaults": 558,
+          "rate": 0.04485,
+          "wilson_95": [
+            0.04135,
+            0.04863
+          ],
+          "above_floors": true
+        },
+        "2019Q3": {
+          "loans": 12500,
+          "labelled": 12463,
+          "labelled_share": 0.997,
+          "defaults": 586,
+          "rate": 0.04702,
+          "wilson_95": [
+            0.04344,
+            0.05088
+          ],
+          "above_floors": true
+        },
+        "2019Q4": {
+          "loans": 12500,
+          "labelled": 12465,
+          "labelled_share": 0.9972,
+          "defaults": 564,
+          "rate": 0.04525,
+          "wilson_95": [
+            0.04174,
+            0.04904
+          ],
+          "above_floors": true
+        },
+        "2020Q1": {
+          "loans": 12500,
+          "labelled": 12448,
+          "labelled_share": 0.9958,
+          "defaults": 475,
+          "rate": 0.03816,
+          "wilson_95": [
+            0.03493,
+            0.04167
+          ],
+          "above_floors": true
+        },
+        "2020Q2": {
+          "loans": 12500,
+          "labelled": 12457,
+          "labelled_share": 0.9966,
+          "defaults": 135,
+          "rate": 0.01084,
+          "wilson_95": [
+            0.00916,
+            0.01281
+          ],
+          "above_floors": true
+        },
+        "2020Q3": {
+          "loans": 12500,
+          "labelled": 12469,
+          "labelled_share": 0.9975,
+          "defaults": 90,
+          "rate": 0.00722,
+          "wilson_95": [
+            0.00588,
+            0.00886
+          ],
+          "above_floors": false
+        },
+        "2020Q4": {
+          "loans": 12500,
+          "labelled": 12462,
+          "labelled_share": 0.997,
+          "defaults": 107,
+          "rate": 0.00859,
+          "wilson_95": [
+            0.00711,
+            0.01036
+          ],
+          "above_floors": true
+        },
+        "2021Q1": {
+          "loans": 12500,
+          "labelled": 12466,
+          "labelled_share": 0.9973,
+          "defaults": 79,
+          "rate": 0.00634,
+          "wilson_95": [
+            0.00509,
+            0.00789
+          ],
+          "above_floors": false
+        },
+        "2021Q2": {
+          "loans": 12500,
+          "labelled": 12469,
+          "labelled_share": 0.9975,
+          "defaults": 114,
+          "rate": 0.00914,
+          "wilson_95": [
+            0.00762,
+            0.01097
+          ],
+          "above_floors": true
+        },
+        "2021Q3": {
+          "loans": 12500,
+          "labelled": 12483,
+          "labelled_share": 0.9986,
+          "defaults": 127,
+          "rate": 0.01017,
+          "wilson_95": [
+            0.00856,
+            0.01209
+          ],
+          "above_floors": true
+        },
+        "2021Q4": {
+          "loans": 12500,
+          "labelled": 12473,
+          "labelled_share": 0.9978,
+          "defaults": 136,
+          "rate": 0.0109,
+          "wilson_95": [
+            0.00923,
+            0.01288
+          ],
+          "above_floors": true
+        },
+        "2022Q1": {
+          "loans": 12500,
+          "labelled": 12463,
+          "labelled_share": 0.997,
+          "defaults": 181,
+          "rate": 0.01452,
+          "wilson_95": [
+            0.01257,
+            0.01678
+          ],
+          "above_floors": true
+        },
+        "2022Q2": {
+          "loans": 12500,
+          "labelled": 12442,
+          "labelled_share": 0.9954,
+          "defaults": 242,
+          "rate": 0.01945,
+          "wilson_95": [
+            0.01717,
+            0.02203
+          ],
+          "above_floors": true
+        },
+        "2022Q3": {
+          "loans": 12500,
+          "labelled": 12440,
+          "labelled_share": 0.9952,
+          "defaults": 235,
+          "rate": 0.01889,
+          "wilson_95": [
+            0.01664,
+            0.02144
+          ],
+          "above_floors": true
+        },
+        "2022Q4": {
+          "loans": 12500,
+          "labelled": 12431,
+          "labelled_share": 0.9945,
+          "defaults": 250,
+          "rate": 0.02011,
+          "wilson_95": [
+            0.01779,
+            0.02273
+          ],
+          "above_floors": true
+        },
+        "2023Q1": {
+          "loans": 12500,
+          "labelled": 12429,
+          "labelled_share": 0.9943,
+          "defaults": 248,
+          "rate": 0.01995,
+          "wilson_95": [
+            0.01764,
+            0.02256
+          ],
+          "above_floors": true
+        },
+        "2023Q2": {
+          "loans": 12500,
+          "labelled": 12460,
+          "labelled_share": 0.9968,
+          "defaults": 216,
+          "rate": 0.01734,
+          "wilson_95": [
+            0.01519,
+            0.01978
+          ],
+          "above_floors": true
+        },
+        "2023Q3": {
+          "loans": 12500,
+          "labelled": 12448,
+          "labelled_share": 0.9958,
+          "defaults": 206,
+          "rate": 0.01655,
+          "wilson_95": [
+            0.01445,
+            0.01894
+          ],
+          "above_floors": true
+        },
+        "2023Q4": {
+          "loans": 12500,
+          "labelled": 12439,
+          "labelled_share": 0.9951,
+          "defaults": 216,
+          "rate": 0.01736,
+          "wilson_95": [
+            0.01521,
+            0.01981
+          ],
+          "above_floors": true
+        },
+        "2024Q1": {
+          "loans": 12500,
+          "labelled": 7445,
+          "labelled_share": 0.5956,
+          "defaults": 161,
+          "rate": 0.02163,
+          "wilson_95": [
+            0.01856,
+            0.02518
+          ],
+          "above_floors": true
+        },
+        "2024Q2": {
+          "loans": 12500,
+          "labelled": 0,
+          "labelled_share": 0.0,
+          "defaults": 0,
+          "rate": null,
+          "wilson_95": null,
+          "above_floors": false
+        },
+        "2024Q3": {
+          "loans": 12500,
+          "labelled": 0,
+          "labelled_share": 0.0,
+          "defaults": 0,
+          "rate": null,
+          "wilson_95": null,
+          "above_floors": false
+        },
+        "2024Q4": {
+          "loans": 12500,
+          "labelled": 0,
+          "labelled_share": 0.0,
+          "defaults": 0,
+          "rate": null,
+          "wilson_95": null,
+          "above_floors": false
+        },
+        "2025Q1": {
+          "loans": 12500,
+          "labelled": 0,
+          "labelled_share": 0.0,
+          "defaults": 0,
+          "rate": null,
+          "wilson_95": null,
+          "above_floors": false
+        },
+        "2025Q2": {
+          "loans": 12500,
+          "labelled": 0,
+          "labelled_share": 0.0,
+          "defaults": 0,
+          "rate": null,
+          "wilson_95": null,
+          "above_floors": false
+        },
+        "2025Q3": {
+          "loans": 12500,
+          "labelled": 0,
+          "labelled_share": 0.0,
+          "defaults": 0,
+          "rate": null,
+          "wilson_95": null,
+          "above_floors": false
+        },
+        "2025Q4": {
+          "loans": 12500,
+          "labelled": 0,
+          "labelled_share": 0.0,
+          "defaults": 0,
+          "rate": null,
+          "wilson_95": null,
+          "above_floors": false
+        },
+        "2026Q1": {
+          "loans": 12500,
+          "labelled": 0,
+          "labelled_share": 0.0,
+          "defaults": 0,
+          "rate": null,
+          "wilson_95": null,
+          "above_floors": false
+        }
+      },
+      "by_half": {
+        "1999H1": {
+          "loans": 25000,
+          "labelled": 24735,
+          "labelled_share": 0.9894,
+          "defaults": 161,
+          "rate": 0.00651,
+          "wilson_95": [
+            0.00558,
+            0.00759
+          ],
+          "above_floors": true
+        },
+        "1999H2": {
+          "loans": 25000,
+          "labelled": 24333,
+          "labelled_share": 0.9733,
+          "defaults": 281,
+          "rate": 0.01155,
+          "wilson_95": [
+            0.01028,
+            0.01297
+          ],
+          "above_floors": true
+        },
+        "2000H1": {
+          "loans": 25000,
+          "labelled": 23838,
+          "labelled_share": 0.9535,
+          "defaults": 368,
+          "rate": 0.01544,
+          "wilson_95": [
+            0.01395,
+            0.01708
+          ],
+          "above_floors": true
+        },
+        "2000H2": {
+          "loans": 25000,
+          "labelled": 24487,
+          "labelled_share": 0.9795,
+          "defaults": 377,
+          "rate": 0.0154,
+          "wilson_95": [
+            0.01393,
+            0.01702
+          ],
+          "above_floors": true
+        },
+        "2001H1": {
+          "loans": 25000,
+          "labelled": 24727,
+          "labelled_share": 0.9891,
+          "defaults": 296,
+          "rate": 0.01197,
+          "wilson_95": [
+            0.01069,
+            0.0134
+          ],
+          "above_floors": true
+        },
+        "2001H2": {
+          "loans": 25000,
+          "labelled": 24778,
+          "labelled_share": 0.9911,
+          "defaults": 260,
+          "rate": 0.01049,
+          "wilson_95": [
+            0.0093,
+            0.01184
+          ],
+          "above_floors": true
+        },
+        "2002H1": {
+          "loans": 25000,
+          "labelled": 24719,
+          "labelled_share": 0.9888,
+          "defaults": 306,
+          "rate": 0.01238,
+          "wilson_95": [
+            0.01107,
+            0.01384
+          ],
+          "above_floors": true
+        },
+        "2002H2": {
+          "loans": 25000,
+          "labelled": 24865,
+          "labelled_share": 0.9946,
+          "defaults": 129,
+          "rate": 0.00519,
+          "wilson_95": [
+            0.00437,
+            0.00616
+          ],
+          "above_floors": true
+        },
+        "2003H1": {
+          "loans": 25000,
+          "labelled": 24889,
+          "labelled_share": 0.9956,
+          "defaults": 73,
+          "rate": 0.00293,
+          "wilson_95": [
+            0.00233,
+            0.00369
+          ],
+          "above_floors": false
+        },
+        "2003H2": {
+          "loans": 25000,
+          "labelled": 24805,
+          "labelled_share": 0.9922,
+          "defaults": 141,
+          "rate": 0.00568,
+          "wilson_95": [
+            0.00482,
+            0.0067
+          ],
+          "above_floors": true
+        },
+        "2004H1": {
+          "loans": 25000,
+          "labelled": 24774,
+          "labelled_share": 0.991,
+          "defaults": 182,
+          "rate": 0.00735,
+          "wilson_95": [
+            0.00636,
+            0.00849
+          ],
+          "above_floors": true
+        },
+        "2004H2": {
+          "loans": 25000,
+          "labelled": 24693,
+          "labelled_share": 0.9877,
+          "defaults": 205,
+          "rate": 0.0083,
+          "wilson_95": [
+            0.00724,
+            0.00951
+          ],
+          "above_floors": true
+        },
+        "2005H1": {
+          "loans": 25000,
+          "labelled": 24743,
+          "labelled_share": 0.9897,
+          "defaults": 251,
+          "rate": 0.01014,
+          "wilson_95": [
+            0.00897,
+            0.01147
+          ],
+          "above_floors": true
+        },
+        "2005H2": {
+          "loans": 25000,
+          "labelled": 24777,
+          "labelled_share": 0.9911,
+          "defaults": 270,
+          "rate": 0.0109,
+          "wilson_95": [
+            0.00968,
+            0.01227
+          ],
+          "above_floors": true
+        },
+        "2006H1": {
+          "loans": 25000,
+          "labelled": 24727,
+          "labelled_share": 0.9891,
+          "defaults": 419,
+          "rate": 0.01695,
+          "wilson_95": [
+            0.01541,
+            0.01863
+          ],
+          "above_floors": true
+        },
+        "2006H2": {
+          "loans": 25000,
+          "labelled": 24761,
+          "labelled_share": 0.9904,
+          "defaults": 533,
+          "rate": 0.02153,
+          "wilson_95": [
+            0.01979,
+            0.02341
+          ],
+          "above_floors": true
+        },
+        "2007H1": {
+          "loans": 25000,
+          "labelled": 24823,
+          "labelled_share": 0.9929,
+          "defaults": 862,
+          "rate": 0.03473,
+          "wilson_95": [
+            0.03252,
+            0.03708
+          ],
+          "above_floors": true
+        },
+        "2007H2": {
+          "loans": 25000,
+          "labelled": 24759,
+          "labelled_share": 0.9904,
+          "defaults": 1569,
+          "rate": 0.06337,
+          "wilson_95": [
+            0.0604,
+            0.06647
+          ],
+          "above_floors": true
+        },
+        "2008H1": {
+          "loans": 25000,
+          "labelled": 24842,
+          "labelled_share": 0.9937,
+          "defaults": 1111,
+          "rate": 0.04472,
+          "wilson_95": [
+            0.04222,
+            0.04736
+          ],
+          "above_floors": true
+        },
+        "2008H2": {
+          "loans": 24999,
+          "labelled": 24808,
+          "labelled_share": 0.9924,
+          "defaults": 865,
+          "rate": 0.03487,
+          "wilson_95": [
+            0.03266,
+            0.03722
+          ],
+          "above_floors": true
+        },
+        "2009H1": {
+          "loans": 25001,
+          "labelled": 24952,
+          "labelled_share": 0.998,
+          "defaults": 119,
+          "rate": 0.00477,
+          "wilson_95": [
+            0.00399,
+            0.0057
+          ],
+          "above_floors": true
+        },
+        "2009H2": {
+          "loans": 25000,
+          "labelled": 24874,
+          "labelled_share": 0.995,
+          "defaults": 198,
+          "rate": 0.00796,
+          "wilson_95": [
+            0.00693,
+            0.00914
+          ],
+          "above_floors": true
+        },
+        "2010H1": {
+          "loans": 25000,
+          "labelled": 24933,
+          "labelled_share": 0.9973,
+          "defaults": 191,
+          "rate": 0.00766,
+          "wilson_95": [
+            0.00665,
+            0.00882
+          ],
+          "above_floors": true
+        },
+        "2010H2": {
+          "loans": 25000,
+          "labelled": 24952,
+          "labelled_share": 0.9981,
+          "defaults": 152,
+          "rate": 0.00609,
+          "wilson_95": [
+            0.0052,
+            0.00714
+          ],
+          "above_floors": true
+        },
+        "2011H1": {
+          "loans": 25000,
+          "labelled": 24920,
+          "labelled_share": 0.9968,
+          "defaults": 196,
+          "rate": 0.00787,
+          "wilson_95": [
+            0.00684,
+            0.00904
+          ],
+          "above_floors": true
+        },
+        "2011H2": {
+          "loans": 25000,
+          "labelled": 24934,
+          "labelled_share": 0.9974,
+          "defaults": 120,
+          "rate": 0.00481,
+          "wilson_95": [
+            0.00403,
+            0.00575
+          ],
+          "above_floors": true
+        },
+        "2012H1": {
+          "loans": 25000,
+          "labelled": 24920,
+          "labelled_share": 0.9968,
+          "defaults": 150,
+          "rate": 0.00602,
+          "wilson_95": [
+            0.00513,
+            0.00706
+          ],
+          "above_floors": true
+        },
+        "2012H2": {
+          "loans": 25000,
+          "labelled": 24935,
+          "labelled_share": 0.9974,
+          "defaults": 134,
+          "rate": 0.00537,
+          "wilson_95": [
+            0.00454,
+            0.00636
+          ],
+          "above_floors": true
+        },
+        "2013H1": {
+          "loans": 25000,
+          "labelled": 24941,
+          "labelled_share": 0.9976,
+          "defaults": 86,
+          "rate": 0.00345,
+          "wilson_95": [
+            0.00279,
+            0.00426
+          ],
+          "above_floors": false
+        },
+        "2013H2": {
+          "loans": 25000,
+          "labelled": 24912,
+          "labelled_share": 0.9965,
+          "defaults": 148,
+          "rate": 0.00594,
+          "wilson_95": [
+            0.00506,
+            0.00697
+          ],
+          "above_floors": true
+        },
+        "2014H1": {
+          "loans": 25000,
+          "labelled": 24890,
+          "labelled_share": 0.9956,
+          "defaults": 143,
+          "rate": 0.00575,
+          "wilson_95": [
+            0.00488,
+            0.00676
+          ],
+          "above_floors": true
+        },
+        "2014H2": {
+          "loans": 25000,
+          "labelled": 24908,
+          "labelled_share": 0.9963,
+          "defaults": 104,
+          "rate": 0.00418,
+          "wilson_95": [
+            0.00345,
+            0.00506
+          ],
+          "above_floors": true
+        },
+        "2015H1": {
+          "loans": 25000,
+          "labelled": 24937,
+          "labelled_share": 0.9975,
+          "defaults": 88,
+          "rate": 0.00353,
+          "wilson_95": [
+            0.00287,
+            0.00435
+          ],
+          "above_floors": false
+        },
+        "2015H2": {
+          "loans": 25000,
+          "labelled": 24919,
+          "labelled_share": 0.9968,
+          "defaults": 165,
+          "rate": 0.00662,
+          "wilson_95": [
+            0.00569,
+            0.00771
+          ],
+          "above_floors": true
+        },
+        "2016H1": {
+          "loans": 25000,
+          "labelled": 24924,
+          "labelled_share": 0.997,
+          "defaults": 157,
+          "rate": 0.0063,
+          "wilson_95": [
+            0.00539,
+            0.00736
+          ],
+          "above_floors": true
+        },
+        "2016H2": {
+          "loans": 25000,
+          "labelled": 24921,
+          "labelled_share": 0.9968,
+          "defaults": 171,
+          "rate": 0.00686,
+          "wilson_95": [
+            0.00591,
+            0.00797
+          ],
+          "above_floors": true
+        },
+        "2017H1": {
+          "loans": 25000,
+          "labelled": 24882,
+          "labelled_share": 0.9953,
+          "defaults": 224,
+          "rate": 0.009,
+          "wilson_95": [
+            0.0079,
+            0.01025
+          ],
+          "above_floors": true
+        },
+        "2017H2": {
+          "loans": 25000,
+          "labelled": 24917,
+          "labelled_share": 0.9967,
+          "defaults": 172,
+          "rate": 0.0069,
+          "wilson_95": [
+            0.00595,
+            0.00801
+          ],
+          "above_floors": true
+        },
+        "2018H1": {
+          "loans": 25000,
+          "labelled": 24916,
+          "labelled_share": 0.9966,
+          "defaults": 340,
+          "rate": 0.01365,
+          "wilson_95": [
+            0.01228,
+            0.01516
+          ],
+          "above_floors": true
+        },
+        "2018H2": {
+          "loans": 25000,
+          "labelled": 24882,
+          "labelled_share": 0.9953,
+          "defaults": 939,
+          "rate": 0.03774,
+          "wilson_95": [
+            0.03544,
+            0.04018
+          ],
+          "above_floors": true
+        },
+        "2019H1": {
+          "loans": 25000,
+          "labelled": 24884,
+          "labelled_share": 0.9954,
+          "defaults": 1141,
+          "rate": 0.04585,
+          "wilson_95": [
+            0.04332,
+            0.04852
+          ],
+          "above_floors": true
+        },
+        "2019H2": {
+          "loans": 25000,
+          "labelled": 24928,
+          "labelled_share": 0.9971,
+          "defaults": 1150,
+          "rate": 0.04613,
+          "wilson_95": [
+            0.0436,
+            0.04881
+          ],
+          "above_floors": true
+        },
+        "2020H1": {
+          "loans": 25000,
+          "labelled": 24905,
+          "labelled_share": 0.9962,
+          "defaults": 610,
+          "rate": 0.02449,
+          "wilson_95": [
+            0.02265,
+            0.02649
+          ],
+          "above_floors": true
+        },
+        "2020H2": {
+          "loans": 25000,
+          "labelled": 24931,
+          "labelled_share": 0.9972,
+          "defaults": 197,
+          "rate": 0.0079,
+          "wilson_95": [
+            0.00688,
+            0.00908
+          ],
+          "above_floors": true
+        },
+        "2021H1": {
+          "loans": 25000,
+          "labelled": 24935,
+          "labelled_share": 0.9974,
+          "defaults": 193,
+          "rate": 0.00774,
+          "wilson_95": [
+            0.00673,
+            0.00891
+          ],
+          "above_floors": true
+        },
+        "2021H2": {
+          "loans": 25000,
+          "labelled": 24956,
+          "labelled_share": 0.9982,
+          "defaults": 263,
+          "rate": 0.01054,
+          "wilson_95": [
+            0.00934,
+            0.01188
+          ],
+          "above_floors": true
+        },
+        "2022H1": {
+          "loans": 25000,
+          "labelled": 24905,
+          "labelled_share": 0.9962,
+          "defaults": 423,
+          "rate": 0.01698,
+          "wilson_95": [
+            0.01545,
+            0.01867
+          ],
+          "above_floors": true
+        },
+        "2022H2": {
+          "loans": 25000,
+          "labelled": 24871,
+          "labelled_share": 0.9948,
+          "defaults": 485,
+          "rate": 0.0195,
+          "wilson_95": [
+            0.01785,
+            0.02129
+          ],
+          "above_floors": true
+        },
+        "2023H1": {
+          "loans": 25000,
+          "labelled": 24889,
+          "labelled_share": 0.9956,
+          "defaults": 464,
+          "rate": 0.01864,
+          "wilson_95": [
+            0.01704,
+            0.0204
+          ],
+          "above_floors": true
+        },
+        "2023H2": {
+          "loans": 25000,
+          "labelled": 24887,
+          "labelled_share": 0.9955,
+          "defaults": 422,
+          "rate": 0.01696,
+          "wilson_95": [
+            0.01543,
+            0.01864
+          ],
+          "above_floors": true
+        },
+        "2024H1": {
+          "loans": 25000,
+          "labelled": 7445,
+          "labelled_share": 0.2978,
+          "defaults": 161,
+          "rate": 0.02163,
+          "wilson_95": [
+            0.01856,
+            0.02518
+          ],
+          "above_floors": true
+        },
+        "2024H2": {
+          "loans": 25000,
+          "labelled": 0,
+          "labelled_share": 0.0,
+          "defaults": 0,
+          "rate": null,
+          "wilson_95": null,
+          "above_floors": false
+        },
+        "2025H1": {
+          "loans": 25000,
+          "labelled": 0,
+          "labelled_share": 0.0,
+          "defaults": 0,
+          "rate": null,
+          "wilson_95": null,
+          "above_floors": false
+        },
+        "2025H2": {
+          "loans": 25000,
+          "labelled": 0,
+          "labelled_share": 0.0,
+          "defaults": 0,
+          "rate": null,
+          "wilson_95": null,
+          "above_floors": false
+        },
+        "2026H1": {
+          "loans": 12500,
+          "labelled": 0,
+          "labelled_share": 0.0,
+          "defaults": 0,
+          "rate": null,
+          "wilson_95": null,
+          "above_floors": false
+        }
+      },
+      "by_year": {
+        "1999": {
+          "loans": 50000,
+          "labelled": 49068,
+          "labelled_share": 0.9814,
+          "defaults": 442,
+          "rate": 0.00901,
+          "wilson_95": [
+            0.00821,
+            0.00988
+          ],
+          "above_floors": true
+        },
+        "2000": {
+          "loans": 50000,
+          "labelled": 48325,
+          "labelled_share": 0.9665,
+          "defaults": 745,
+          "rate": 0.01542,
+          "wilson_95": [
+            0.01436,
+            0.01655
+          ],
+          "above_floors": true
+        },
+        "2001": {
+          "loans": 50000,
+          "labelled": 49505,
+          "labelled_share": 0.9901,
+          "defaults": 556,
+          "rate": 0.01123,
+          "wilson_95": [
+            0.01034,
+            0.0122
+          ],
+          "above_floors": true
+        },
+        "2002": {
+          "loans": 50000,
+          "labelled": 49584,
+          "labelled_share": 0.9917,
+          "defaults": 435,
+          "rate": 0.00877,
+          "wilson_95": [
+            0.00799,
+            0.00963
+          ],
+          "above_floors": true
+        },
+        "2003": {
+          "loans": 50000,
+          "labelled": 49694,
+          "labelled_share": 0.9939,
+          "defaults": 214,
+          "rate": 0.00431,
+          "wilson_95": [
+            0.00377,
+            0.00492
+          ],
+          "above_floors": true
+        },
+        "2004": {
+          "loans": 50000,
+          "labelled": 49467,
+          "labelled_share": 0.9893,
+          "defaults": 387,
+          "rate": 0.00782,
+          "wilson_95": [
+            0.00708,
+            0.00864
+          ],
+          "above_floors": true
+        },
+        "2005": {
+          "loans": 50000,
+          "labelled": 49520,
+          "labelled_share": 0.9904,
+          "defaults": 521,
+          "rate": 0.01052,
+          "wilson_95": [
+            0.00966,
+            0.01146
+          ],
+          "above_floors": true
+        },
+        "2006": {
+          "loans": 50000,
+          "labelled": 49488,
+          "labelled_share": 0.9898,
+          "defaults": 952,
+          "rate": 0.01924,
+          "wilson_95": [
+            0.01806,
+            0.02049
+          ],
+          "above_floors": true
+        },
+        "2007": {
+          "loans": 50000,
+          "labelled": 49582,
+          "labelled_share": 0.9916,
+          "defaults": 2431,
+          "rate": 0.04903,
+          "wilson_95": [
+            0.04716,
+            0.05097
+          ],
+          "above_floors": true
+        },
+        "2008": {
+          "loans": 49999,
+          "labelled": 49650,
+          "labelled_share": 0.993,
+          "defaults": 1976,
+          "rate": 0.0398,
+          "wilson_95": [
+            0.03811,
+            0.04155
+          ],
+          "above_floors": true
+        },
+        "2009": {
+          "loans": 50001,
+          "labelled": 49826,
+          "labelled_share": 0.9965,
+          "defaults": 317,
+          "rate": 0.00636,
+          "wilson_95": [
+            0.0057,
+            0.0071
+          ],
+          "above_floors": true
+        },
+        "2010": {
+          "loans": 50000,
+          "labelled": 49885,
+          "labelled_share": 0.9977,
+          "defaults": 343,
+          "rate": 0.00688,
+          "wilson_95": [
+            0.00619,
+            0.00764
+          ],
+          "above_floors": true
+        },
+        "2011": {
+          "loans": 50000,
+          "labelled": 49854,
+          "labelled_share": 0.9971,
+          "defaults": 316,
+          "rate": 0.00634,
+          "wilson_95": [
+            0.00568,
+            0.00707
+          ],
+          "above_floors": true
+        },
+        "2012": {
+          "loans": 50000,
+          "labelled": 49855,
+          "labelled_share": 0.9971,
+          "defaults": 284,
+          "rate": 0.0057,
+          "wilson_95": [
+            0.00507,
+            0.0064
+          ],
+          "above_floors": true
+        },
+        "2013": {
+          "loans": 50000,
+          "labelled": 49853,
+          "labelled_share": 0.9971,
+          "defaults": 234,
+          "rate": 0.00469,
+          "wilson_95": [
+            0.00413,
+            0.00533
+          ],
+          "above_floors": true
+        },
+        "2014": {
+          "loans": 50000,
+          "labelled": 49798,
+          "labelled_share": 0.996,
+          "defaults": 247,
+          "rate": 0.00496,
+          "wilson_95": [
+            0.00438,
+            0.00562
+          ],
+          "above_floors": true
+        },
+        "2015": {
+          "loans": 50000,
+          "labelled": 49856,
+          "labelled_share": 0.9971,
+          "defaults": 253,
+          "rate": 0.00507,
+          "wilson_95": [
+            0.00449,
+            0.00574
+          ],
+          "above_floors": true
+        },
+        "2016": {
+          "loans": 50000,
+          "labelled": 49845,
+          "labelled_share": 0.9969,
+          "defaults": 328,
+          "rate": 0.00658,
+          "wilson_95": [
+            0.00591,
+            0.00733
+          ],
+          "above_floors": true
+        },
+        "2017": {
+          "loans": 50000,
+          "labelled": 49799,
+          "labelled_share": 0.996,
+          "defaults": 396,
+          "rate": 0.00795,
+          "wilson_95": [
+            0.00721,
+            0.00877
+          ],
+          "above_floors": true
+        },
+        "2018": {
+          "loans": 50000,
+          "labelled": 49798,
+          "labelled_share": 0.996,
+          "defaults": 1279,
+          "rate": 0.02568,
+          "wilson_95": [
+            0.02433,
+            0.02711
+          ],
+          "above_floors": true
+        },
+        "2019": {
+          "loans": 50000,
+          "labelled": 49812,
+          "labelled_share": 0.9962,
+          "defaults": 2291,
+          "rate": 0.04599,
+          "wilson_95": [
+            0.04419,
+            0.04787
+          ],
+          "above_floors": true
+        },
+        "2020": {
+          "loans": 50000,
+          "labelled": 49836,
+          "labelled_share": 0.9967,
+          "defaults": 807,
+          "rate": 0.01619,
+          "wilson_95": [
+            0.01512,
+            0.01734
+          ],
+          "above_floors": true
+        },
+        "2021": {
+          "loans": 50000,
+          "labelled": 49891,
+          "labelled_share": 0.9978,
+          "defaults": 456,
+          "rate": 0.00914,
+          "wilson_95": [
+            0.00834,
+            0.01001
+          ],
+          "above_floors": true
+        },
+        "2022": {
+          "loans": 50000,
+          "labelled": 49776,
+          "labelled_share": 0.9955,
+          "defaults": 908,
+          "rate": 0.01824,
+          "wilson_95": [
+            0.0171,
+            0.01946
+          ],
+          "above_floors": true
+        },
+        "2023": {
+          "loans": 50000,
+          "labelled": 49776,
+          "labelled_share": 0.9955,
+          "defaults": 886,
+          "rate": 0.0178,
+          "wilson_95": [
+            0.01667,
+            0.019
+          ],
+          "above_floors": true
+        },
+        "2024": {
+          "loans": 50000,
+          "labelled": 7445,
+          "labelled_share": 0.1489,
+          "defaults": 161,
+          "rate": 0.02163,
+          "wilson_95": [
+            0.01856,
+            0.02518
+          ],
+          "above_floors": true
+        },
+        "2025": {
+          "loans": 50000,
+          "labelled": 0,
+          "labelled_share": 0.0,
+          "defaults": 0,
+          "rate": null,
+          "wilson_95": null,
+          "above_floors": false
+        },
+        "2026": {
+          "loans": 12500,
+          "labelled": 0,
+          "labelled_share": 0.0,
+          "defaults": 0,
+          "rate": null,
+          "wilson_95": null,
+          "above_floors": false
+        }
+      }
+    }
+  }
+}

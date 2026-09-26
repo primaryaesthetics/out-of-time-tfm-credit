@@ -1,0 +1,75 @@
+{
+  "model": "tabicl",
+  "derived_as": "tabicl@t1",
+  "to_temperature": 1.0,
+  "formula": "logit(pd_to) = logit(pd_from) * (from_temperature / to_temperature)",
+  "library": {
+    "tabicl": "2.1.1"
+  },
+  "checkpoints": {
+    "tabicl-classifier-v2-20260212.ckpt": "bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0"
+  },
+  "sources": [
+    {
+      "directory": "experiments/2026-09-13-fm-2004h2e-dti-kept-tabicl-rental-4090",
+      "sha256": {
+        "scores.parquet": "0287789a297a72781e606cc744319cbf98d7ae9b0760ba5869f41a6d92044b1f",
+        "reference.parquet": "615f2ae0e6f2cdf61a4d6d3693506e809f7d6f562d6cd9b6d5ef4b21fde7e589",
+        "node.json": "aac613f47da7cd05a7f68941bcd4768064439d9823854a36da72051c4b22e4c1"
+      },
+      "context_seeds": [
+        20260911
+      ],
+      "from_temperature": {
+        "20260911": 0.9
+      },
+      "scored_rows": 71595,
+      "reference_rows": 50000
+    }
+  ],
+  "check": {
+    "directory": "experiments/2026-09-13-fm-2004h2e-dti-kept-tabicl-t1-rental-4090",
+    "sha256": {
+      "scores.parquet": "22e63ae201e1d2f576c41fe00eaf2678224a2ae161d3c4c1c3fde2e9da6af7b4",
+      "reference.parquet": "9c27b0cc385231433192c2bc8c37680b6231856741f14e18fe399e7d40bd53a0",
+      "node.json": "7657f07f6229dae9c0607f45001524b209c194e336e12eec5f1e2278c0400e85"
+    },
+    "tolerance_on_pd": 1e-06,
+    "cells": [
+      {
+        "context_seed": 20260911,
+        "cell": "2005H1",
+        "rows": 24233,
+        "max_abs_pd_gap": 1.2879781058350304e-07,
+        "max_abs_logit_gap": 1.233037996151154e-06
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2005H2",
+        "rows": 24082,
+        "max_abs_pd_gap": 1.3923220781864032e-07,
+        "max_abs_logit_gap": 1.3567627732413712e-06
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2006H1",
+        "rows": 23280,
+        "max_abs_pd_gap": 1.1300685046067294e-07,
+        "max_abs_logit_gap": 1.3413593995537099e-06
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "reference",
+        "rows": 50000,
+        "max_abs_pd_gap": 1.6727722873532969e-07,
+        "max_abs_logit_gap": 1.3229170470197005e-06
+      }
+    ],
+    "rows_checked": 121595,
+    "max_abs_pd_gap": 1.6727722873532969e-07,
+    "max_abs_logit_gap": 1.3567627732413712e-06,
+    "unchecked_cells": []
+  },
+  "scored_rows": 71595,
+  "reference_rows": 50000
+}

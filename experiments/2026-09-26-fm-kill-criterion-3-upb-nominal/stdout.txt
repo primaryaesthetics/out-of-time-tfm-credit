@@ -1,0 +1,177 @@
+9 expanding builds; per model and draw, the DeLong width of the median criterion cell against the range of AUC over the build's criterion cells
+build_id     model  context_seed  criterion_cells  auc_range  median_width  width_at_median_auc  wider_by_median_width  wider_by_median_auc_cell
+2002H2-E       gbm           NaN               36    0.25647       0.05799              0.04050                  False                     False
+2002H2-E   gbm-50k    20260911.0               36    0.25277       0.05855              0.04899                  False                     False
+2002H2-E   gbm-50k    20260912.0               36    0.24626       0.05834              0.03257                  False                     False
+2002H2-E   gbm-50k    20260913.0               36    0.23744       0.06069              0.03509                  False                     False
+2002H2-E scorecard           NaN               36    0.22935       0.05910              0.06038                  False                     False
+2002H2-E    tabicl    20260911.0               36    0.25037       0.06006              0.05310                  False                     False
+2002H2-E    tabicl    20260912.0               36    0.24568       0.05824              0.05202                  False                     False
+2002H2-E    tabicl    20260913.0               36    0.24524       0.05883              0.05475                  False                     False
+2002H2-E tabicl@t1    20260911.0               36    0.25037       0.06006              0.05310                  False                     False
+2002H2-E tabicl@t1    20260912.0               36    0.24568       0.05824              0.05202                  False                     False
+2002H2-E tabicl@t1    20260913.0               36    0.24524       0.05883              0.05475                  False                     False
+2002H2-E    tabpfn    20260911.0               36    0.21999       0.05822              0.03249                  False                     False
+2002H2-E    tabpfn    20260912.0               36    0.22207       0.05600              0.04579                  False                     False
+2002H2-E    tabpfn    20260913.0               36    0.22286       0.05699              0.05690                  False                     False
+2002H2-E tabpfn@t1    20260911.0               36    0.21999       0.05822              0.03249                  False                     False
+2002H2-E tabpfn@t1    20260912.0               36    0.22207       0.05600              0.04579                  False                     False
+2002H2-E tabpfn@t1    20260913.0               36    0.22286       0.05699              0.05690                  False                     False
+2004H2-E       gbm           NaN               33    0.21805       0.06183              0.07047                  False                     False
+2004H2-E   gbm-50k    20260911.0               33    0.18391       0.06123              0.08570                  False                     False
+2004H2-E   gbm-50k    20260912.0               33    0.21982       0.06065              0.08668                  False                     False
+2004H2-E   gbm-50k    20260913.0               33    0.21447       0.05963              0.08349                  False                     False
+2004H2-E scorecard           NaN               33    0.22202       0.05871              0.06807                  False                     False
+2004H2-E    tabicl    20260911.0               33    0.22901       0.05695              0.05322                  False                     False
+2004H2-E    tabicl    20260912.0               33    0.23823       0.05857              0.05472                  False                     False
+2004H2-E    tabicl    20260913.0               33    0.25823       0.05674              0.02760                  False                     False
+2004H2-E tabicl@t1    20260911.0               33    0.22901       0.05695              0.05322                  False                     False
+2004H2-E tabicl@t1    20260912.0               33    0.23823       0.05857              0.05472                  False                     False
+2004H2-E tabicl@t1    20260913.0               33    0.25823       0.05674              0.02760                  False                     False
+2004H2-E    tabpfn    20260911.0               33    0.20943       0.05637              0.06696                  False                     False
+2004H2-E    tabpfn    20260912.0               33    0.21526       0.05948              0.05866                  False                     False
+2004H2-E    tabpfn    20260913.0               33    0.24001       0.05687              0.07990                  False                     False
+2004H2-E tabpfn@t1    20260911.0               33    0.20943       0.05637              0.06696                  False                     False
+2004H2-E tabpfn@t1    20260912.0               33    0.21526       0.05948              0.05866                  False                     False
+2004H2-E tabpfn@t1    20260913.0               33    0.24001       0.05687              0.07990                  False                     False
+2006H2-E       gbm           NaN               29    0.22301       0.06025              0.05986                  False                     False
+2006H2-E   gbm-50k    20260911.0               29    0.21616       0.06502              0.02852                  False                     False
+2006H2-E   gbm-50k    20260912.0               29    0.22398       0.06781              0.06894                  False                     False
+2006H2-E   gbm-50k    20260913.0               29    0.25246       0.06371              0.02950                  False                     False
+2006H2-E scorecard           NaN               29    0.22250       0.06173              0.06813                  False                     False
+2006H2-E    tabicl    20260911.0               29    0.21412       0.05744              0.02658                  False                     False
+2006H2-E    tabicl    20260912.0               29    0.24521       0.06184              0.07160                  False                     False
+2006H2-E    tabicl    20260913.0               29    0.23500       0.05815              0.04208                  False                     False
+2006H2-E tabicl@t1    20260911.0               29    0.21412       0.05744              0.02658                  False                     False
+2006H2-E tabicl@t1    20260912.0               29    0.24521       0.06184              0.07160                  False                     False
+2006H2-E tabicl@t1    20260913.0               29    0.23500       0.05815              0.04208                  False                     False
+2006H2-E    tabpfn    20260911.0               29    0.20632       0.05955              0.07474                  False                     False
+2006H2-E    tabpfn    20260912.0               29    0.23195       0.06277              0.07210                  False                     False
+2006H2-E    tabpfn    20260913.0               29    0.21719       0.05975              0.04165                  False                     False
+2006H2-E tabpfn@t1    20260911.0               29    0.20632       0.05955              0.07474                  False                     False
+2006H2-E tabpfn@t1    20260912.0               29    0.23195       0.06277              0.07210                  False                     False
+2006H2-E tabpfn@t1    20260913.0               29    0.21719       0.05975              0.04165                  False                     False
+2008H2-E       gbm           NaN               25    0.21803       0.06117              0.06117                  False                     False
+2008H2-E   gbm-50k    20260911.0               25    0.20549       0.06587              0.06491                  False                     False
+2008H2-E   gbm-50k    20260912.0               25    0.21076       0.06754              0.06882                  False                     False
+2008H2-E   gbm-50k    20260913.0               25    0.20321       0.06487              0.06732                  False                     False
+2008H2-E scorecard           NaN               25    0.21686       0.06240              0.06605                  False                     False
+2008H2-E    tabicl    20260911.0               25    0.21802       0.05943              0.06462                  False                     False
+2008H2-E    tabicl    20260912.0               25    0.23300       0.06327              0.04083                  False                     False
+2008H2-E    tabicl    20260913.0               25    0.23242       0.06218              0.04118                  False                     False
+2008H2-E tabicl@t1    20260911.0               25    0.21802       0.05943              0.06462                  False                     False
+2008H2-E tabicl@t1    20260912.0               25    0.23300       0.06327              0.04083                  False                     False
+2008H2-E tabicl@t1    20260913.0               25    0.23242       0.06218              0.04118                  False                     False
+2008H2-E    tabpfn    20260911.0               25    0.20609       0.06169              0.06620                  False                     False
+2008H2-E    tabpfn    20260912.0               25    0.22800       0.06165              0.08058                  False                     False
+2008H2-E    tabpfn    20260913.0               25    0.22709       0.06272              0.04053                  False                     False
+2008H2-E tabpfn@t1    20260911.0               25    0.20609       0.06169              0.06620                  False                     False
+2008H2-E tabpfn@t1    20260912.0               25    0.22800       0.06165              0.08058                  False                     False
+2008H2-E tabpfn@t1    20260913.0               25    0.22709       0.06272              0.04053                  False                     False
+2010H2-E       gbm           NaN               21    0.25128       0.06551              0.04197                  False                     False
+2010H2-E   gbm-50k    20260911.0               21    0.24912       0.07147              0.04671                  False                     False
+2010H2-E   gbm-50k    20260912.0               21    0.25267       0.06890              0.04506                  False                     False
+2010H2-E   gbm-50k    20260913.0               21    0.22620       0.06811              0.08243                  False                     False
+2010H2-E scorecard           NaN               21    0.21466       0.06993              0.06993                  False                     False
+2010H2-E    tabicl    20260911.0               21    0.25760       0.06797              0.04368                  False                     False
+2010H2-E    tabicl    20260912.0               21    0.26128       0.06620              0.04377                  False                     False
+2010H2-E    tabicl    20260913.0               21    0.23937       0.06613              0.04271                  False                     False
+2010H2-E tabicl@t1    20260911.0               21    0.25760       0.06797              0.04368                  False                     False
+2010H2-E tabicl@t1    20260912.0               21    0.26128       0.06620              0.04377                  False                     False
+2010H2-E tabicl@t1    20260913.0               21    0.23937       0.06613              0.04271                  False                     False
+2010H2-E    tabpfn    20260911.0               21    0.26444       0.06685              0.04378                  False                     False
+2010H2-E    tabpfn    20260912.0               21    0.26250       0.06587              0.04448                  False                     False
+2010H2-E    tabpfn    20260913.0               21    0.24010       0.06678              0.04347                  False                     False
+2010H2-E tabpfn@t1    20260911.0               21    0.26444       0.06685              0.04378                  False                     False
+2010H2-E tabpfn@t1    20260912.0               21    0.26250       0.06587              0.04448                  False                     False
+2010H2-E tabpfn@t1    20260913.0               21    0.24010       0.06678              0.04347                  False                     False
+2012H2-E       gbm           NaN               17    0.18766       0.06954              0.07783                  False                     False
+2012H2-E   gbm-50k    20260911.0               17    0.19428       0.07137              0.08007                  False                     False
+2012H2-E   gbm-50k    20260912.0               17    0.17244       0.07314              0.08079                  False                     False
+2012H2-E   gbm-50k    20260913.0               17    0.20814       0.07508              0.07508                  False                     False
+2012H2-E scorecard           NaN               17    0.15924       0.07383              0.04431                  False                     False
+2012H2-E    tabicl    20260911.0               17    0.17672       0.07004              0.07471                  False                     False
+2012H2-E    tabicl    20260912.0               17    0.16694       0.07107              0.07658                  False                     False
+2012H2-E    tabicl    20260913.0               17    0.18936       0.07297              0.07733                  False                     False
+2012H2-E tabicl@t1    20260911.0               17    0.17672       0.07004              0.07471                  False                     False
+2012H2-E tabicl@t1    20260912.0               17    0.16694       0.07107              0.07658                  False                     False
+2012H2-E tabicl@t1    20260913.0               17    0.18936       0.07297              0.07733                  False                     False
+2012H2-E    tabpfn    20260911.0               17    0.17987       0.06978              0.07722                  False                     False
+2012H2-E    tabpfn    20260912.0               17    0.17238       0.07213              0.07749                  False                     False
+2012H2-E    tabpfn    20260913.0               17    0.19110       0.07257              0.08087                  False                     False
+2012H2-E tabpfn@t1    20260911.0               17    0.17987       0.06978              0.07722                  False                     False
+2012H2-E tabpfn@t1    20260912.0               17    0.17238       0.07213              0.07749                  False                     False
+2012H2-E tabpfn@t1    20260913.0               17    0.19110       0.07257              0.08087                  False                     False
+2014H2-E       gbm           NaN               15    0.16002       0.06999              0.07679                  False                     False
+2014H2-E   gbm-50k    20260911.0               15    0.15426       0.07129              0.07937                  False                     False
+2014H2-E   gbm-50k    20260912.0               15    0.15591       0.06863              0.04600                  False                     False
+2014H2-E   gbm-50k    20260913.0               15    0.16522       0.07327              0.04708                  False                     False
+2014H2-E scorecard           NaN               15    0.15613       0.07520              0.07579                  False                     False
+2014H2-E    tabicl    20260911.0               15    0.15102       0.07243              0.07547                  False                     False
+2014H2-E    tabicl    20260912.0               15    0.16777       0.06995              0.06995                  False                     False
+2014H2-E    tabicl    20260913.0               15    0.16277       0.07084              0.04223                  False                     False
+2014H2-E tabicl@t1    20260911.0               15    0.15102       0.07243              0.07547                  False                     False
+2014H2-E tabicl@t1    20260912.0               15    0.16777       0.06995              0.06995                  False                     False
+2014H2-E tabicl@t1    20260913.0               15    0.16277       0.07084              0.04223                  False                     False
+2014H2-E    tabpfn    20260911.0               15    0.14054       0.07350              0.04411                  False                     False
+2014H2-E    tabpfn    20260912.0               15    0.15681       0.06997              0.04238                  False                     False
+2014H2-E    tabpfn    20260913.0               15    0.15152       0.07186              0.04310                  False                     False
+2014H2-E tabpfn@t1    20260911.0               15    0.14054       0.07350              0.04411                  False                     False
+2014H2-E tabpfn@t1    20260912.0               15    0.15681       0.06997              0.04238                  False                     False
+2014H2-E tabpfn@t1    20260913.0               15    0.15152       0.07186              0.04310                  False                     False
+2016H2-E       gbm           NaN               12    0.15971       0.06529              0.04636                  False                     False
+2016H2-E   gbm-50k    20260911.0               12    0.16040       0.06692              0.05933                  False                     False
+2016H2-E   gbm-50k    20260912.0               12    0.16359       0.06691              0.05019                  False                     False
+2016H2-E   gbm-50k    20260913.0               12    0.13990       0.07028              0.06164                  False                     False
+2016H2-E scorecard           NaN               12    0.15362       0.06844              0.04860                  False                     False
+2016H2-E    tabicl    20260911.0               12    0.16235       0.06672              0.05850                  False                     False
+2016H2-E    tabicl    20260912.0               12    0.14769       0.06756              0.07338                  False                     False
+2016H2-E    tabicl    20260913.0               12    0.16475       0.06636              0.07180                  False                     False
+2016H2-E tabicl@t1    20260911.0               12    0.16235       0.06672              0.05850                  False                     False
+2016H2-E tabicl@t1    20260912.0               12    0.14769       0.06756              0.07338                  False                     False
+2016H2-E tabicl@t1    20260913.0               12    0.16475       0.06636              0.07180                  False                     False
+2016H2-E    tabpfn    20260911.0               12    0.15072       0.06811              0.05883                  False                     False
+2016H2-E    tabpfn    20260912.0               12    0.15579       0.06706              0.07246                  False                     False
+2016H2-E    tabpfn    20260913.0               12    0.16426       0.06840              0.06378                  False                     False
+2016H2-E tabpfn@t1    20260911.0               12    0.15072       0.06811              0.05883                  False                     False
+2016H2-E tabpfn@t1    20260912.0               12    0.15579       0.06706              0.07246                  False                     False
+2016H2-E tabpfn@t1    20260913.0               12    0.16426       0.06840              0.06378                  False                     False
+2018H2-E       gbm           NaN                8    0.14680       0.06414              0.06414                  False                     False
+2018H2-E   gbm-50k    20260911.0                8    0.12707       0.07241              0.06856                  False                     False
+2018H2-E   gbm-50k    20260912.0                8    0.14025       0.07028              0.07028                  False                     False
+2018H2-E   gbm-50k    20260913.0                8    0.10975       0.06922              0.06474                  False                     False
+2018H2-E scorecard           NaN                8    0.15576       0.06519              0.06519                  False                     False
+2018H2-E    tabicl    20260911.0                8    0.15509       0.06601              0.06601                  False                     False
+2018H2-E    tabicl    20260912.0                8    0.15659       0.06420              0.06420                  False                     False
+2018H2-E    tabicl    20260913.0                8    0.15342       0.06470              0.06470                  False                     False
+2018H2-E tabicl@t1    20260911.0                8    0.15509       0.06601              0.06601                  False                     False
+2018H2-E tabicl@t1    20260912.0                8    0.15659       0.06420              0.06420                  False                     False
+2018H2-E tabicl@t1    20260913.0                8    0.15342       0.06470              0.06470                  False                     False
+2018H2-E    tabpfn    20260911.0                8    0.14929       0.06626              0.06626                  False                     False
+2018H2-E    tabpfn    20260912.0                8    0.15441       0.06532              0.06532                  False                     False
+2018H2-E    tabpfn    20260913.0                8    0.14596       0.06536              0.06536                  False                     False
+2018H2-E tabpfn@t1    20260911.0                8    0.14929       0.06626              0.06626                  False                     False
+2018H2-E tabpfn@t1    20260912.0                8    0.15441       0.06532              0.06532                  False                     False
+2018H2-E tabpfn@t1    20260913.0                8    0.14596       0.06536              0.06536                  False                     False
+
+median of the cells' widths: every model wider on 0 of 9 builds: does not fire
+  2002H2-E  0 of 7 models wider
+  2004H2-E  0 of 7 models wider
+  2006H2-E  0 of 7 models wider
+  2008H2-E  0 of 7 models wider
+  2010H2-E  0 of 7 models wider
+  2012H2-E  0 of 7 models wider
+  2014H2-E  0 of 7 models wider
+  2016H2-E  0 of 7 models wider
+  2018H2-E  0 of 7 models wider
+
+width of the median-AUC cell: every model wider on 0 of 9 builds: does not fire
+  2002H2-E  0 of 7 models wider
+  2004H2-E  0 of 7 models wider
+  2006H2-E  0 of 7 models wider
+  2008H2-E  0 of 7 models wider
+  2010H2-E  0 of 7 models wider
+  2012H2-E  0 of 7 models wider
+  2014H2-E  0 of 7 models wider
+  2016H2-E  0 of 7 models wider
+  2018H2-E  0 of 7 models wider

@@ -1,0 +1,53 @@
+{
+  "slug": "lc-grid-r-tabicl-colab-t4",
+  "recorded_utc": "2026-09-13T09:30:00+00:00",
+  "git_sha": "001b24bd38526af6c15eecfc49fef93c9263b782",
+  "git_dirty": false,
+  "written_by_hand": "The archive-level record of the TabICL rolling-arm grid run: the runner's whole console log, the job list it walked and its tally, copied unchanged from the result archive, and the facts that belong to the archive rather than to one job. The eighteen job directories listed under jobs hold the rows and a manifest each.",
+  "host": "Google Colab, free tier, Linux x86_64, Python 3.13.15",
+  "gpu": "NVIDIA Tesla T4, 15.64 GB, CUDA 12.8, torch 2.11.0+cu128",
+  "job_archive": {
+    "path": "data/derived/node/outoftime-run-grid-r-tabicl.zip",
+    "sha256": "508ea990cff6e48d38eb30dd9158aeab9b1f6275f47efb306cab22bea6bca78c",
+    "score_context_py_sha256": "66e8933d67fea5f8140f31f5229a305a15d3f1eb20e0fd67e15546037ff9f0dc",
+    "node_jobs_py_sha256": "5a90301234742a50e2da2ee09078fbfeb10b710a23ae621799cbf833fc2d4065",
+    "provenance": "The score_context.py and node_jobs.py that ran are byte-identical to scripts/score_context.py and scripts/node_jobs.py in this tree at commits adfdb3d, 09d8f53 and HEAD; neither file changed across that range."
+  },
+  "result_archive": {
+    "name": "outoftime-result-grid-r-tabicl.zip",
+    "sha256": "5479c0733b0dd4a6aa7e4e198490aa181d5a82e280b1cc4d6f254b64b27137a4",
+    "contents": "eighteen output directories, grid.log, jobs.json, jobs-done.json; 399 files total, kept in Downloads"
+  },
+  "session": "One job of the eighteen, tabicl@2026-09-12-lc-2015h1r-bundle, was interrupted after context seed 20260911 and part of seed 20260912 were scored, and resumed on a fresh Colab machine: the runner skipped seed 20260911 whole (every part present), kept the parts the first session had written for the rest of seed 20260912 without rescoring them, re-downloaded the checkpoint, and scored the remainder of seed 20260912 and all of seed 20260913 on the new machine. Its own repeat check compared a fresh fit's score of seed 20260912's first cohort against the part the first session had written: 0 rows differ. See that job's own manifest for the grid.log line numbers. No other job in this archive was interrupted.",
+  "runner": "node_jobs.py walked jobs.json in order, one score_context.py call per job into its own output directory, tallying each finished job in jobs-done.json.",
+  "checks_over_all_eighteen": {
+    "bundle_hashes": "node.json's bundle hashes equal bundle.json of the build's bundle directory, all eighteen",
+    "parts": "part files equal node.json cell records in number (60, 54, 48, 42, 36, 30, 24, 18, 12 for the nine tabicl jobs, from 2013H1-R to 2017H1-R; 2 for each t1-check job); concatenated parts equal scores.parquet and reference.parquet, all eighteen",
+    "rows": "every scored (cohort, row), its outcome and age match the gbm rows of the build's score run; every reference row and outcome match the gbm-50k reference of the same context seed; zero mismatches, no missing probability, all eighteen",
+    "repeats": "the first cohort of every context seed scored twice from a fresh fit: largest disagreement 0.0, no row differs, all cases including the cross-session repeat on the interrupted job",
+    "environment": "Python 3.13.15, torch 2.11.0+cu128, tabicl 2.1.1, checkpoint bdc7dbd5...4ed0, Tesla T4 15.64 GB, platform Linux-6.6.122+-x86_64-with-glibc2.39 (the 2026-09-08 E-grid run on the same library versions carried glibc2.35; a Colab base-image difference, not a library change)",
+    "log_scan": "grid.log, jobs.json, jobs-done.json and every job's node.json scanned for secrets, home paths and account names: no hits."
+  },
+  "timing": "This job ran on a hosted, shared free-tier notebook, not a dedicated node; the seconds node.json records for each cell are the scorer's own timer reading on whatever the host gave the process that second and are not a quotable performance measurement. They are kept in node.json unedited.",
+  "jobs": {
+    "tabicl@2026-09-12-lc-2013h1r-bundle": "experiments/2026-09-13-lc-2013h1r-tabicl-colab-t4",
+    "tabicl-t1-check@2026-09-12-lc-2013h1r-bundle": "experiments/2026-09-13-lc-2013h1r-tabicl-t1-check-colab-t4",
+    "tabicl@2026-09-12-lc-2013h2r-bundle": "experiments/2026-09-13-lc-2013h2r-tabicl-colab-t4",
+    "tabicl-t1-check@2026-09-12-lc-2013h2r-bundle": "experiments/2026-09-13-lc-2013h2r-tabicl-t1-check-colab-t4",
+    "tabicl@2026-09-12-lc-2014h1r-bundle": "experiments/2026-09-13-lc-2014h1r-tabicl-colab-t4",
+    "tabicl-t1-check@2026-09-12-lc-2014h1r-bundle": "experiments/2026-09-13-lc-2014h1r-tabicl-t1-check-colab-t4",
+    "tabicl@2026-09-12-lc-2014h2r-bundle": "experiments/2026-09-13-lc-2014h2r-tabicl-colab-t4",
+    "tabicl-t1-check@2026-09-12-lc-2014h2r-bundle": "experiments/2026-09-13-lc-2014h2r-tabicl-t1-check-colab-t4",
+    "tabicl@2026-09-12-lc-2015h1r-bundle": "experiments/2026-09-13-lc-2015h1r-tabicl-colab-t4",
+    "tabicl-t1-check@2026-09-12-lc-2015h1r-bundle": "experiments/2026-09-13-lc-2015h1r-tabicl-t1-check-colab-t4",
+    "tabicl@2026-09-12-lc-2015h2r-bundle": "experiments/2026-09-13-lc-2015h2r-tabicl-colab-t4",
+    "tabicl-t1-check@2026-09-12-lc-2015h2r-bundle": "experiments/2026-09-13-lc-2015h2r-tabicl-t1-check-colab-t4",
+    "tabicl@2026-09-12-lc-2016h1r-bundle": "experiments/2026-09-13-lc-2016h1r-tabicl-colab-t4",
+    "tabicl-t1-check@2026-09-12-lc-2016h1r-bundle": "experiments/2026-09-13-lc-2016h1r-tabicl-t1-check-colab-t4",
+    "tabicl@2026-09-12-lc-2016h2r-bundle": "experiments/2026-09-13-lc-2016h2r-tabicl-colab-t4",
+    "tabicl-t1-check@2026-09-12-lc-2016h2r-bundle": "experiments/2026-09-13-lc-2016h2r-tabicl-t1-check-colab-t4",
+    "tabicl@2026-09-12-lc-2017h1r-bundle": "experiments/2026-09-13-lc-2017h1r-tabicl-colab-t4",
+    "tabicl-t1-check@2026-09-12-lc-2017h1r-bundle": "experiments/2026-09-13-lc-2017h1r-tabicl-t1-check-colab-t4"
+  },
+  "not_in_this_run": "TabPFN, at either temperature: scored on a separate node."
+}

@@ -1,0 +1,40 @@
+sources               : 5 directories, 1 builds: 2016H2-E
+context cells         : 17, 2,503,982 rows
+context check         : 3 context draws, 12 model pairs with identical rows and outcomes
+per-cell bootstrap    : 200 resamples per cell in 24s
+known answer          : 5 of 5 fitted-model cells read one inside their bootstrap interval
+known answer, Cox     : 1 of 1 scorecard pool cells read slope one and intercept zero within 0.0001
+
+per cell (rows, realised rate, mean probability, O/E [binomial] [bootstrap]):
+  2016H2-E  scorecard             876,991 0.0254 0.0254 1.000 [0.987, 1.013] [0.986, 1.015]
+  2016H2-E  gbm                   876,991 0.0254 0.0254 1.000 [0.987, 1.013] [0.987, 1.015]
+  2016H2-E  gbm-50k/20260911       50,000 0.0252 0.0252 1.000 [0.946, 1.056] [0.946, 1.050]
+  2016H2-E  gbm-50k/20260912       50,000 0.0243 0.0243 1.000 [0.945, 1.057] [0.936, 1.052]
+  2016H2-E  gbm-50k/20260913       50,000 0.0254 0.0254 1.000 [0.946, 1.055] [0.944, 1.045]
+  2016H2-E  tabpfn/20260911        50,000 0.0252 0.0176 1.432 [1.355, 1.512] [1.357, 1.501]
+  2016H2-E  tabpfn/20260912        50,000 0.0243 0.0171 1.427 [1.349, 1.508] [1.341, 1.503]
+  2016H2-E  tabpfn/20260913        50,000 0.0254 0.0178 1.426 [1.350, 1.506] [1.353, 1.491]
+  2016H2-E  tabpfn@t1/20260911     50,000 0.0252 0.0251 1.005 [0.951, 1.061] [0.952, 1.054]
+  2016H2-E  tabpfn@t1/20260912     50,000 0.0243 0.0243 1.002 [0.947, 1.059] [0.940, 1.056]
+  2016H2-E  tabpfn@t1/20260913     50,000 0.0254 0.0253 1.004 [0.950, 1.060] [0.951, 1.048]
+  2016H2-E  tabicl/20260911        50,000 0.0252 0.0177 1.422 [1.346, 1.502] [1.346, 1.489]
+  2016H2-E  tabicl/20260912        50,000 0.0243 0.0169 1.438 [1.359, 1.520] [1.350, 1.515]
+  2016H2-E  tabicl/20260913        50,000 0.0254 0.0180 1.409 [1.334, 1.488] [1.333, 1.472]
+  2016H2-E  tabicl@t1/20260911     50,000 0.0252 0.0252 0.999 [0.945, 1.055] [0.945, 1.047]
+  2016H2-E  tabicl@t1/20260912     50,000 0.0243 0.0241 1.008 [0.953, 1.065] [0.946, 1.062]
+  2016H2-E  tabicl@t1/20260913     50,000 0.0254 0.0256 0.992 [0.939, 1.048] [0.938, 1.037]
+
+H5, arm E: one build on arm E; H5 compares two contexts
+
+in-sample Cox slope, arm E: the mean over 1 builds, seeds [20260911, 20260912, 20260913]; 200 resamples in 124s
+
+in-sample Cox slope, each model's mean over the arm's builds (value [lo, hi], > or < one beyond the interval, ? side changes with the bootstrap seed); above one is confounded with the pull toward a row's own label:
+  arm E gbm-50k     1.4965 [1.3974, 1.6201] > 
+  arm E tabpfn      1.7933 [1.6607, 1.9369] > 
+  arm E tabpfn@t1   1.9850 [1.8388, 2.1460] > 
+  arm E tabicl      2.1015 [1.7059, 2.5237] > 
+  arm E tabicl@t1   2.3350 [1.8955, 2.8042] > 
+
+cohort cells          : 85 read in 1s
+
+wall                  : 155s

@@ -1,0 +1,475 @@
+{
+  "build_id": "2013H1-R",
+  "models": {
+    "scorecard": [],
+    "gbm": [],
+    "gbm-50k": [
+      20260911,
+      20260912,
+      20260913
+    ],
+    "tabicl": [
+      20260911,
+      20260912,
+      20260913
+    ],
+    "tabicl@t1": [
+      20260911,
+      20260912,
+      20260913
+    ],
+    "tabpfn": [
+      20260911,
+      20260912,
+      20260913
+    ],
+    "tabpfn@t1": [
+      20260911,
+      20260912,
+      20260913
+    ]
+  },
+  "sources": [
+    "experiments/2026-09-12-lc-2013h1r-scores",
+    "experiments/2026-09-13-lc-2013h1r-tabicl-colab-t4",
+    "experiments/2026-09-14-lc-2013h1r-tabicl-t1-derived",
+    "experiments/2026-09-15-lc-2013h1r-tabpfn-m4pro",
+    "experiments/2026-09-15-lc-2013h1r-tabpfn-t1-m4pro"
+  ],
+  "derived_rows": {
+    "tabicl@t1": {
+      "directory": "experiments/2026-09-14-lc-2013h1r-tabicl-t1-derived",
+      "model": "tabicl@t1",
+      "checked_build": null,
+      "cells_checked": 2,
+      "kind": "exact",
+      "max_abs_pd_gap": 1.4803327194612415e-07,
+      "rows_checked": 51016,
+      "unchecked_cells": 58
+    }
+  },
+  "cohorts": [
+    "2013Q3",
+    "2013Q4",
+    "2014Q1",
+    "2014Q2",
+    "2014Q3",
+    "2014Q4",
+    "2015Q1",
+    "2015Q2",
+    "2015Q3",
+    "2015Q4",
+    "2016Q1",
+    "2016Q2",
+    "2016Q3",
+    "2016Q4",
+    "2017Q1",
+    "2017Q2",
+    "2017Q3",
+    "2017Q4",
+    "2018Q1"
+  ],
+  "cohorts_pooled": 19,
+  "cohorts_scored": 19,
+  "cohorts_not_pooled": {},
+  "draws_not_pooled": {},
+  "models_dropped": [],
+  "nearest": [
+    "2013Q3",
+    "2013Q4",
+    "2014Q1"
+  ],
+  "bootstrap": {
+    "resamples": 200,
+    "seed": 20260905,
+    "alpha": 0.05,
+    "blocking": "cohort",
+    "context_draw": "drawn with the resample, jointly",
+    "poolings": [
+      "all",
+      "nearest",
+      "all, cohorts resampled"
+    ],
+    "pooled_metrics": [
+      "gini",
+      "abs_log_oe",
+      "cox_slope_deviation",
+      "psi"
+    ],
+    "per_draw": "the 'all' pooling repeated with each context draw held fixed, in the rows of paired.csv whose draw is set",
+    "draws_disagree": {},
+    "seed_check": {
+      "seeds": [
+        20260906,
+        20260907
+      ],
+      "differences": 252,
+      "starred": 193,
+      "star_changed": [
+        {
+          "cohorts": "all",
+          "metric": "gini",
+          "pair": "tabicl - scorecard",
+          "value": 0.005605647099624078,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": 0.00010389118035784614,
+            "ci_hi": 0.012017096140715774
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.00029736840164089063,
+              "ci_hi": 0.011079934130058729
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": 0.00021798400747461563,
+              "ci_hi": 0.012303414827842253
+            }
+          },
+          "bound_movement": 0.0009371620106570448
+        },
+        {
+          "cohorts": "all",
+          "metric": "gini",
+          "pair": "tabicl@t1 - scorecard",
+          "value": 0.005605647099624078,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": 0.00010389118035784614,
+            "ci_hi": 0.012017096140715774
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.00029736840164089063,
+              "ci_hi": 0.011079934130058729
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": 0.00021798400747461563,
+              "ci_hi": 0.012303414827842253
+            }
+          },
+          "bound_movement": 0.0009371620106570448
+        },
+        {
+          "cohorts": "nearest",
+          "metric": "cox_slope_deviation",
+          "pair": "tabicl - tabpfn",
+          "value": 0.013815689982147855,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.0025402873163033212,
+            "ci_hi": 0.0283966608137055
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.002983839388214641,
+              "ci_hi": 0.03365995760731437
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": 0.0009798250479027605,
+              "ci_hi": 0.029276328628010332
+            }
+          },
+          "bound_movement": 0.00526329679360887
+        },
+        {
+          "cohorts": "nearest",
+          "metric": "psi",
+          "pair": "tabpfn@t1 - tabpfn",
+          "value": -8.63558133077022e-05,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": -0.0001644678863092176,
+            "ci_hi": -3.055294675978119e-06
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.00017859857085645426,
+              "ci_hi": 3.2329205454546728e-06
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -0.0001513681808397947,
+              "ci_hi": 5.087716618920268e-06
+            }
+          },
+          "bound_movement": 1.413068454723666e-05
+        },
+        {
+          "cohorts": "all, cohorts resampled",
+          "metric": "gini",
+          "pair": "tabicl - gbm",
+          "value": -0.010820098048752724,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.02103510906749459,
+            "ci_hi": 0.00017946171977577556
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": -0.019499353638895135,
+              "ci_hi": -0.0022872514825783216
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.018810171683401686,
+              "ci_hi": -0.0008925820422887931
+            }
+          },
+          "bound_movement": 0.002466713202354097
+        },
+        {
+          "cohorts": "all, cohorts resampled",
+          "metric": "gini",
+          "pair": "tabicl@t1 - gbm",
+          "value": -0.010820098048752724,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.02103510906749459,
+            "ci_hi": 0.00017946171977577556
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": -0.019499353638895135,
+              "ci_hi": -0.0022872514825783216
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.018810171683401686,
+              "ci_hi": -0.0008925820422887931
+            }
+          },
+          "bound_movement": 0.002466713202354097
+        },
+        {
+          "cohorts": "all, cohorts resampled",
+          "metric": "gini",
+          "pair": "tabicl - gbm-50k",
+          "value": -0.010820098048752724,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.02103510906749459,
+            "ci_hi": 0.00017946171977577556
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": -0.019499353638895135,
+              "ci_hi": -0.0022872514825783216
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.018810171683401686,
+              "ci_hi": -0.0008925820422887931
+            }
+          },
+          "bound_movement": 0.002466713202354097
+        },
+        {
+          "cohorts": "all, cohorts resampled",
+          "metric": "gini",
+          "pair": "tabicl@t1 - gbm-50k",
+          "value": -0.010820098048752724,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.02103510906749459,
+            "ci_hi": 0.00017946171977577556
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": -0.019499353638895135,
+              "ci_hi": -0.0022872514825783216
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.018810171683401686,
+              "ci_hi": -0.0008925820422887931
+            }
+          },
+          "bound_movement": 0.002466713202354097
+        },
+        {
+          "cohorts": "all, cohorts resampled",
+          "metric": "abs_log_oe",
+          "pair": "gbm - scorecard",
+          "value": -0.04631905590475799,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": -0.0799038203858519,
+            "ci_hi": -0.004017339014085466
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.08073546265925723,
+              "ci_hi": 0.00282957400670179
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.07506975943693225,
+              "ci_hi": -0.008709919862728493
+            }
+          },
+          "bound_movement": 0.006846913020787256
+        },
+        {
+          "cohorts": "all, cohorts resampled",
+          "metric": "abs_log_oe",
+          "pair": "gbm-50k - scorecard",
+          "value": -0.04631905590475799,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": -0.0799038203858519,
+            "ci_hi": -0.004017339014085466
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.08073546265925723,
+              "ci_hi": 0.00282957400670179
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.07506975943693225,
+              "ci_hi": -0.008709919862728493
+            }
+          },
+          "bound_movement": 0.006846913020787256
+        },
+        {
+          "cohorts": "all, cohorts resampled",
+          "metric": "abs_log_oe",
+          "pair": "tabpfn - gbm",
+          "value": 0.09455372940239608,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.0024242756498686646,
+            "ci_hi": 0.18979863258086563
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.004399498259483513,
+              "ci_hi": 0.190324524066399
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": 0.012978850731516231,
+              "ci_hi": 0.17176704431957127
+            }
+          },
+          "bound_movement": 0.018031588261294362
+        },
+        {
+          "cohorts": "all, cohorts resampled",
+          "metric": "abs_log_oe",
+          "pair": "tabpfn - gbm-50k",
+          "value": 0.09455372940239608,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.0024242756498686646,
+            "ci_hi": 0.18979863258086563
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.004399498259483513,
+              "ci_hi": 0.190324524066399
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": 0.012978850731516231,
+              "ci_hi": 0.17176704431957127
+            }
+          },
+          "bound_movement": 0.018031588261294362
+        }
+      ],
+      "largest_bound_movement": 0.021309886900478664
+    },
+    "cox_left_out": {
+      "all": {
+        "cox_slope_deviation": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      },
+      "nearest": {
+        "cox_slope_deviation": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      },
+      "all, cohorts resampled": {
+        "cox_slope_deviation": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      },
+      "all, draw 20260911": {
+        "cox_slope_deviation": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      },
+      "all, draw 20260912": {
+        "cox_slope_deviation": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      },
+      "all, draw 20260913": {
+        "cox_slope_deviation": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      }
+    },
+    "multiplicity": "none: every interval is reported at alpha on its own, and the pairs are not adjusted for one another"
+  },
+  "cox_not_estimable": {
+    "cells": [],
+    "rule": "a cell whose Cox fit did not finish carries NaN in the Cox rows of the per-cell table and leaves the pairing of every Cox statistic for every model, in the point estimate and in every resample; cox_left_out counts the cells left out"
+  },
+  "calibration": {
+    "observed_over_expected": "observed defaults over the mean predicted probability, Clopper-Pearson on the count; the level",
+    "cox": "logit P(y) = intercept + slope * logit(score), Newton on the logistic likelihood, Wald intervals; a level shift is the intercept, a stretch or compression of the scale is the slope; the pooled statistic is |slope - 1|",
+    "brier": "with the CORP decomposition of Dimitriadis, Gneiting and Jordan (2021): miscalibration - discrimination + uncertainty, recalibrated by isotonic regression",
+    "reliability": "ten quantile bins of each cell's own scores, reliability.png on the youngest and oldest pooled cohort"
+  },
+  "psi": {
+    "bins": 10,
+    "edges": "the cell's own reference deciles",
+    "critical": "Yurdakul, alpha 0.05, at the cell's sample sizes"
+  },
+  "reference_sizes": {
+    "gbm": 31016,
+    "gbm-50k/20260911": 31016,
+    "gbm-50k/20260912": 31016,
+    "gbm-50k/20260913": 31016,
+    "scorecard": 31016,
+    "tabicl/20260911": 31016,
+    "tabicl/20260912": 31016,
+    "tabicl/20260913": 31016,
+    "tabicl@t1/20260911": 31016,
+    "tabicl@t1/20260912": 31016,
+    "tabicl@t1/20260913": 31016,
+    "tabpfn/20260911": 31016,
+    "tabpfn/20260912": 31016,
+    "tabpfn/20260913": 31016,
+    "tabpfn@t1/20260911": 31016,
+    "tabpfn@t1/20260912": 31016,
+    "tabpfn@t1/20260913": 31016
+  },
+  "wall_seconds": 5210.5
+}

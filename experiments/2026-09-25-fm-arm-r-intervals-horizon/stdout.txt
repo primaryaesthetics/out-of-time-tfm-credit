@@ -1,0 +1,313 @@
+arm                   : R
+builds                : 8: 2004H2-R (38 half-years), 2006H2-R (34 half-years), 2008H2-R (30 half-years), 2010H2-R (26 half-years), 2012H2-R (22 half-years), 2014H2-R (18 half-years), 2016H2-R (14 half-years), 2018H2-R (10 half-years)
+scored rows           : 94,537,260 on 931,123 distinct
+models                : scorecard, gbm, gbm-50k (3 draws), gbm-50k@share (3 draws), tabicl (3 draws), tabicl@t1 (3 draws), tabpfn (3 draws), tabpfn@t1 (3 draws)
+outcome read          : outcome_horizon
+resolution            : year
+loaded in             : 26s
+
+annual cohorts under outcome_horizon: a year enters with at least 5,000 labelled loans and 100 defaults on the book
+  year  labelled  defaults  scored defaults  halves above the primary floor  builds scoring it whole
+  2005    48,319       181              181                               2  1
+  2006    47,189       236              236                               2  1
+  2007    47,549       545              545                               2  2
+  2008    49,415       670              670                               2  2
+  2009    49,616       102              102                               2  3
+  2010    49,544       104              104                               2  3
+  2011    49,283       109              109                               2  4
+  2012    48,852       109              109                               2  4
+  2013    48,321        79               79                               1  5   left out
+  2014    48,565        76               76                               1  5   left out
+  2015    48,321        58               58                               1  6   left out
+  2016    49,402        52               52                               2  6   left out
+  2017    49,230       105              105                               2  7
+  2018    48,969        98               98                               2  7   left out
+  2019    49,626       101              101                               2  8
+  2020    49,816        85               85                               1  8   left out
+  2021    49,859        71               71                               1  8   left out
+  2022    49,783       186              186                               2  8
+  2023    49,772       240              240                               2  8
+
+cells                 : 51 over 12 cohorts
+  2004H2-R: 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2017, 2019, 2022, 2023
+  2006H2-R: 2007, 2008, 2009, 2010, 2011, 2012, 2017, 2019, 2022, 2023
+  2008H2-R: 2009, 2010, 2011, 2012, 2017, 2019, 2022, 2023
+  2010H2-R: 2011, 2012, 2017, 2019, 2022, 2023
+  2012H2-R: 2017, 2019, 2022, 2023
+  2014H2-R: 2017, 2019, 2022, 2023
+  2016H2-R: 2017, 2019, 2022, 2023
+  2018H2-R: 2019, 2022, 2023
+unreadable (nearest): 2012H2-R, 2014H2-R, 2018H2-R, fewer than two cells; no slope of their own, and the mean over builds reads NaN with them
+bootstrap all                   : 200 resamples in 286s
+bootstrap nearest               : 200 resamples in 88s
+bootstrap all, cohorts resampled: 200 resamples in 291s
+bootstrap seed 20260906         : every pooling again in 668s
+bootstrap seed 20260907         : every pooling again in 668s
+draw 20260911 held fixed   : 200 resamples in 291s
+draw 20260912 held fixed   : 200 resamples in 292s
+draw 20260913 held fixed   : 200 resamples in 292s
+
+H1 under outcome_horizon, year cells, paired differences at the arm (value [lo, hi], * excludes zero, ! draws disagree, ? star changes with the bootstrap seed, ~ reads derived rows; none a criterion):
+  all                    arm    auc_slope_build  gbm - scorecard          -0.00009 [-0.00021, +0.00002]    
+  all                    arm    auc_slope_build  gbm-50k - scorecard      -0.00011 [-0.00028, +0.00003]    
+  all                    arm    auc_slope_build  tabpfn - scorecard       -0.00003 [-0.00020, +0.00012]    
+  all                    arm    auc_slope_build  tabicl - scorecard       -0.00004 [-0.00021, +0.00013]    
+  all                    arm    auc_slope_build  gbm-50k@share - scorecard -0.00011 [-0.00028, +0.00003]    
+  all                    arm    auc_slope_build  tabicl@t1 - scorecard    -0.00004 [-0.00021, +0.00013]    ~
+  all                    arm    auc_slope_build  tabpfn@t1 - scorecard    -0.00003 [-0.00020, +0.00012]    ~
+  all                    arm    auc_slope_build  gbm-50k - gbm            -0.00001 [-0.00012, +0.00010]    
+  all                    arm    auc_slope_build  tabpfn - gbm             +0.00007 [-0.00006, +0.00019]    
+  all                    arm    auc_slope_build  tabicl - gbm             +0.00006 [-0.00009, +0.00017]    
+  all                    arm    auc_slope_build  gbm-50k@share - gbm      -0.00001 [-0.00012, +0.00010]    
+  all                    arm    auc_slope_build  tabicl@t1 - gbm          +0.00006 [-0.00009, +0.00017]    ~
+  all                    arm    auc_slope_build  tabpfn@t1 - gbm          +0.00007 [-0.00006, +0.00019]    ~
+  all                    arm    auc_slope_build  tabpfn - gbm-50k         +0.00008 [-0.00006, +0.00018]    
+  all                    arm    auc_slope_build  tabicl - gbm-50k         +0.00007 [-0.00007, +0.00018]    
+  all                    arm    auc_slope_build  gbm-50k@share - gbm-50k  +0.00000 [+0.00000, +0.00000]    
+  all                    arm    auc_slope_build  tabicl@t1 - gbm-50k      +0.00007 [-0.00007, +0.00018]    ~
+  all                    arm    auc_slope_build  tabpfn@t1 - gbm-50k      +0.00008 [-0.00006, +0.00018]    ~
+  all                    arm    auc_slope_build  tabicl - tabpfn          -0.00001 [-0.00007, +0.00007]    
+  all                    arm    auc_slope_build  gbm-50k@share - tabpfn   -0.00008 [-0.00018, +0.00006]    
+  all                    arm    auc_slope_build  tabicl@t1 - tabpfn       -0.00001 [-0.00007, +0.00007]    ~
+  all                    arm    auc_slope_build  tabpfn@t1 - tabpfn       +0.00000 [+0.00000, +0.00000]    ~
+  all                    arm    auc_slope_build  gbm-50k@share - tabicl   -0.00007 [-0.00018, +0.00007]    
+  all                    arm    auc_slope_build  tabicl@t1 - tabicl       +0.00000 [+0.00000, +0.00000]    ~
+  all                    arm    auc_slope_build  tabpfn@t1 - tabicl       +0.00001 [-0.00007, +0.00007]    ~
+  all                    arm    auc_slope_build  tabicl@t1 - gbm-50k@share +0.00007 [-0.00007, +0.00018]    ~
+  all                    arm    auc_slope_build  tabpfn@t1 - gbm-50k@share +0.00008 [-0.00006, +0.00018]    ~
+  all                    arm    auc_slope_build  tabpfn@t1 - tabicl@t1    +0.00001 [-0.00007, +0.00007]    ~
+  all                    arm    auc_slope_cohort gbm - scorecard          -0.00021 [-0.00037, -0.00006] *  
+  all                    arm    auc_slope_cohort gbm-50k - scorecard      -0.00031 [-0.00061, -0.00004] *  
+  all                    arm    auc_slope_cohort tabpfn - scorecard       +0.00007 [-0.00014, +0.00030]    
+  all                    arm    auc_slope_cohort tabicl - scorecard       +0.00016 [-0.00003, +0.00037]    
+  all                    arm    auc_slope_cohort gbm-50k@share - scorecard -0.00031 [-0.00061, -0.00004] *  
+  all                    arm    auc_slope_cohort tabicl@t1 - scorecard    +0.00016 [-0.00003, +0.00037]    ~
+  all                    arm    auc_slope_cohort tabpfn@t1 - scorecard    +0.00007 [-0.00014, +0.00030]    ~
+  all                    arm    auc_slope_cohort gbm-50k - gbm            -0.00010 [-0.00037, +0.00014]  ! 
+  all                    arm    auc_slope_cohort tabpfn - gbm             +0.00029 [+0.00009, +0.00051] *  
+  all                    arm    auc_slope_cohort tabicl - gbm             +0.00038 [+0.00016, +0.00060] *  
+  all                    arm    auc_slope_cohort gbm-50k@share - gbm      -0.00010 [-0.00037, +0.00014]  ! 
+  all                    arm    auc_slope_cohort tabicl@t1 - gbm          +0.00038 [+0.00016, +0.00060] *  ~
+  all                    arm    auc_slope_cohort tabpfn@t1 - gbm          +0.00029 [+0.00009, +0.00051] *  ~
+  all                    arm    auc_slope_cohort tabpfn - gbm-50k         +0.00039 [+0.00011, +0.00073] *  
+  all                    arm    auc_slope_cohort tabicl - gbm-50k         +0.00048 [+0.00023, +0.00073] *  
+  all                    arm    auc_slope_cohort gbm-50k@share - gbm-50k  +0.00000 [+0.00000, +0.00000]    
+  all                    arm    auc_slope_cohort tabicl@t1 - gbm-50k      +0.00048 [+0.00023, +0.00073] *  ~
+  all                    arm    auc_slope_cohort tabpfn@t1 - gbm-50k      +0.00039 [+0.00011, +0.00073] *  ~
+  all                    arm    auc_slope_cohort tabicl - tabpfn          +0.00009 [-0.00004, +0.00021]    
+  all                    arm    auc_slope_cohort gbm-50k@share - tabpfn   -0.00039 [-0.00073, -0.00011] *  
+  all                    arm    auc_slope_cohort tabicl@t1 - tabpfn       +0.00009 [-0.00004, +0.00021]    ~
+  all                    arm    auc_slope_cohort tabpfn@t1 - tabpfn       +0.00000 [+0.00000, +0.00000]    ~
+  all                    arm    auc_slope_cohort gbm-50k@share - tabicl   -0.00048 [-0.00073, -0.00023] *  
+  all                    arm    auc_slope_cohort tabicl@t1 - tabicl       +0.00000 [+0.00000, +0.00000]    ~
+  all                    arm    auc_slope_cohort tabpfn@t1 - tabicl       -0.00009 [-0.00021, +0.00004]    ~
+  all                    arm    auc_slope_cohort tabicl@t1 - gbm-50k@share +0.00048 [+0.00023, +0.00073] *  ~
+  all                    arm    auc_slope_cohort tabpfn@t1 - gbm-50k@share +0.00039 [+0.00011, +0.00073] *  ~
+  all                    arm    auc_slope_cohort tabpfn@t1 - tabicl@t1    -0.00009 [-0.00021, +0.00004]    ~
+  all                    builds auc_slope_build  gbm - scorecard          +0.00021 [-0.00015, +0.00051]    
+  all                    builds auc_slope_build  gbm-50k - scorecard      +0.00011 [-0.00031, +0.00044]    
+  all                    builds auc_slope_build  tabpfn - scorecard       +0.00054 [+0.00005, +0.00098] *  
+  all                    builds auc_slope_build  tabicl - scorecard       +0.00049 [+0.00005, +0.00094] *  
+  all                    builds auc_slope_build  gbm-50k@share - scorecard +0.00011 [-0.00031, +0.00044]    
+  all                    builds auc_slope_build  tabicl@t1 - scorecard    +0.00049 [+0.00005, +0.00094] *  ~
+  all                    builds auc_slope_build  tabpfn@t1 - scorecard    +0.00054 [+0.00005, +0.00098] *  ~
+  all                    builds auc_slope_build  gbm-50k - gbm            -0.00010 [-0.00036, +0.00016]    
+  all                    builds auc_slope_build  tabpfn - gbm             +0.00033 [-0.00002, +0.00067]   ?
+  all                    builds auc_slope_build  tabicl - gbm             +0.00029 [+0.00002, +0.00059] *  
+  all                    builds auc_slope_build  gbm-50k@share - gbm      -0.00010 [-0.00036, +0.00016]    
+  all                    builds auc_slope_build  tabicl@t1 - gbm          +0.00029 [+0.00002, +0.00059] *  ~
+  all                    builds auc_slope_build  tabpfn@t1 - gbm          +0.00033 [-0.00002, +0.00067]   ?~
+  all                    builds auc_slope_build  tabpfn - gbm-50k         +0.00043 [+0.00002, +0.00079] *  
+  all                    builds auc_slope_build  tabicl - gbm-50k         +0.00039 [+0.00007, +0.00072] *  
+  all                    builds auc_slope_build  gbm-50k@share - gbm-50k  +0.00000 [+0.00000, +0.00000]    
+  all                    builds auc_slope_build  tabicl@t1 - gbm-50k      +0.00039 [+0.00007, +0.00072] *  ~
+  all                    builds auc_slope_build  tabpfn@t1 - gbm-50k      +0.00043 [+0.00002, +0.00079] *  ~
+  all                    builds auc_slope_build  tabicl - tabpfn          -0.00004 [-0.00022, +0.00017]    
+  all                    builds auc_slope_build  gbm-50k@share - tabpfn   -0.00043 [-0.00079, -0.00002] *  
+  all                    builds auc_slope_build  tabicl@t1 - tabpfn       -0.00004 [-0.00022, +0.00017]    ~
+  all                    builds auc_slope_build  tabpfn@t1 - tabpfn       +0.00000 [+0.00000, +0.00000]    ~
+  all                    builds auc_slope_build  gbm-50k@share - tabicl   -0.00039 [-0.00072, -0.00007] *  
+  all                    builds auc_slope_build  tabicl@t1 - tabicl       +0.00000 [+0.00000, +0.00000]    ~
+  all                    builds auc_slope_build  tabpfn@t1 - tabicl       +0.00004 [-0.00017, +0.00022]    ~
+  all                    builds auc_slope_build  tabicl@t1 - gbm-50k@share +0.00039 [+0.00007, +0.00072] *  ~
+  all                    builds auc_slope_build  tabpfn@t1 - gbm-50k@share +0.00043 [+0.00002, +0.00079] *  ~
+  all                    builds auc_slope_build  tabpfn@t1 - tabicl@t1    +0.00004 [-0.00017, +0.00022]    ~
+  nearest                arm    auc_slope_build  gbm - scorecard          +0.00035 [-0.00066, +0.00141]    
+  nearest                arm    auc_slope_build  gbm-50k - scorecard      +0.00053 [-0.00112, +0.00203]    
+  nearest                arm    auc_slope_build  tabpfn - scorecard       +0.00068 [-0.00044, +0.00201]    
+  nearest                arm    auc_slope_build  tabicl - scorecard       +0.00159 [+0.00043, +0.00288] *  
+  nearest                arm    auc_slope_build  gbm-50k@share - scorecard +0.00053 [-0.00112, +0.00203]    
+  nearest                arm    auc_slope_build  tabicl@t1 - scorecard    +0.00159 [+0.00043, +0.00288] *  ~
+  nearest                arm    auc_slope_build  tabpfn@t1 - scorecard    +0.00068 [-0.00044, +0.00201]    ~
+  nearest                arm    auc_slope_build  gbm-50k - gbm            +0.00018 [-0.00122, +0.00184]    
+  nearest                arm    auc_slope_build  tabpfn - gbm             +0.00034 [-0.00080, +0.00153]    
+  nearest                arm    auc_slope_build  tabicl - gbm             +0.00124 [+0.00018, +0.00256] *  
+  nearest                arm    auc_slope_build  gbm-50k@share - gbm      +0.00018 [-0.00122, +0.00184]    
+  nearest                arm    auc_slope_build  tabicl@t1 - gbm          +0.00124 [+0.00018, +0.00256] *  ~
+  nearest                arm    auc_slope_build  tabpfn@t1 - gbm          +0.00034 [-0.00080, +0.00153]    ~
+  nearest                arm    auc_slope_build  tabpfn - gbm-50k         +0.00016 [-0.00128, +0.00174]    
+  nearest                arm    auc_slope_build  tabicl - gbm-50k         +0.00106 [-0.00030, +0.00280]    
+  nearest                arm    auc_slope_build  gbm-50k@share - gbm-50k  +0.00000 [+0.00000, +0.00000]    
+  nearest                arm    auc_slope_build  tabicl@t1 - gbm-50k      +0.00106 [-0.00030, +0.00280]    ~
+  nearest                arm    auc_slope_build  tabpfn@t1 - gbm-50k      +0.00016 [-0.00128, +0.00174]    ~
+  nearest                arm    auc_slope_build  tabicl - tabpfn          +0.00090 [+0.00012, +0.00162] *  
+  nearest                arm    auc_slope_build  gbm-50k@share - tabpfn   -0.00016 [-0.00174, +0.00128]    
+  nearest                arm    auc_slope_build  tabicl@t1 - tabpfn       +0.00090 [+0.00012, +0.00162] *  ~
+  nearest                arm    auc_slope_build  tabpfn@t1 - tabpfn       +0.00000 [+0.00000, +0.00000]    ~
+  nearest                arm    auc_slope_build  gbm-50k@share - tabicl   -0.00106 [-0.00280, +0.00030]    
+  nearest                arm    auc_slope_build  tabicl@t1 - tabicl       +0.00000 [+0.00000, +0.00000]    ~
+  nearest                arm    auc_slope_build  tabpfn@t1 - tabicl       -0.00090 [-0.00162, -0.00012] *  ~
+  nearest                arm    auc_slope_build  tabicl@t1 - gbm-50k@share +0.00106 [-0.00030, +0.00280]    ~
+  nearest                arm    auc_slope_build  tabpfn@t1 - gbm-50k@share +0.00016 [-0.00128, +0.00174]    ~
+  nearest                arm    auc_slope_build  tabpfn@t1 - tabicl@t1    -0.00090 [-0.00162, -0.00012] *  ~
+  nearest                arm    auc_slope_cohort gbm - scorecard          -0.00078 [-0.00174, +0.00007]    
+  nearest                arm    auc_slope_cohort gbm-50k - scorecard      -0.00019 [-0.00165, +0.00163]    
+  nearest                arm    auc_slope_cohort tabpfn - scorecard       +0.00063 [-0.00069, +0.00206]    
+  nearest                arm    auc_slope_cohort tabicl - scorecard       +0.00098 [-0.00009, +0.00221]    
+  nearest                arm    auc_slope_cohort gbm-50k@share - scorecard -0.00019 [-0.00165, +0.00163]    
+  nearest                arm    auc_slope_cohort tabicl@t1 - scorecard    +0.00098 [-0.00009, +0.00221]    ~
+  nearest                arm    auc_slope_cohort tabpfn@t1 - scorecard    +0.00063 [-0.00069, +0.00206]    ~
+  nearest                arm    auc_slope_cohort gbm-50k - gbm            +0.00059 [-0.00077, +0.00211]  ! 
+  nearest                arm    auc_slope_cohort tabpfn - gbm             +0.00141 [+0.00013, +0.00278] *  
+  nearest                arm    auc_slope_cohort tabicl - gbm             +0.00176 [+0.00063, +0.00295] *  
+  nearest                arm    auc_slope_cohort gbm-50k@share - gbm      +0.00059 [-0.00077, +0.00211]  ! 
+  nearest                arm    auc_slope_cohort tabicl@t1 - gbm          +0.00176 [+0.00063, +0.00295] *  ~
+  nearest                arm    auc_slope_cohort tabpfn@t1 - gbm          +0.00141 [+0.00013, +0.00278] *  ~
+  nearest                arm    auc_slope_cohort tabpfn - gbm-50k         +0.00082 [-0.00094, +0.00261]    
+  nearest                arm    auc_slope_cohort tabicl - gbm-50k         +0.00117 [-0.00035, +0.00283]    
+  nearest                arm    auc_slope_cohort gbm-50k@share - gbm-50k  +0.00000 [+0.00000, +0.00000]    
+  nearest                arm    auc_slope_cohort tabicl@t1 - gbm-50k      +0.00117 [-0.00035, +0.00283]    ~
+  nearest                arm    auc_slope_cohort tabpfn@t1 - gbm-50k      +0.00082 [-0.00094, +0.00261]    ~
+  nearest                arm    auc_slope_cohort tabicl - tabpfn          +0.00035 [-0.00034, +0.00111]    
+  nearest                arm    auc_slope_cohort gbm-50k@share - tabpfn   -0.00082 [-0.00261, +0.00094]    
+  nearest                arm    auc_slope_cohort tabicl@t1 - tabpfn       +0.00035 [-0.00034, +0.00111]    ~
+  nearest                arm    auc_slope_cohort tabpfn@t1 - tabpfn       +0.00000 [+0.00000, +0.00000]    ~
+  nearest                arm    auc_slope_cohort gbm-50k@share - tabicl   -0.00117 [-0.00283, +0.00035]    
+  nearest                arm    auc_slope_cohort tabicl@t1 - tabicl       +0.00000 [+0.00000, +0.00000]    ~
+  nearest                arm    auc_slope_cohort tabpfn@t1 - tabicl       -0.00035 [-0.00111, +0.00034]    ~
+  nearest                arm    auc_slope_cohort tabicl@t1 - gbm-50k@share +0.00117 [-0.00035, +0.00283]    ~
+  nearest                arm    auc_slope_cohort tabpfn@t1 - gbm-50k@share +0.00082 [-0.00094, +0.00261]    ~
+  nearest                arm    auc_slope_cohort tabpfn@t1 - tabicl@t1    -0.00035 [-0.00111, +0.00034]    ~
+  nearest                builds auc_slope_build  gbm - scorecard          +nan [+nan, +nan]    
+  nearest                builds auc_slope_build  gbm-50k - scorecard      +nan [+nan, +nan]    
+  nearest                builds auc_slope_build  tabpfn - scorecard       +nan [+nan, +nan]    
+  nearest                builds auc_slope_build  tabicl - scorecard       +nan [+nan, +nan]    
+  nearest                builds auc_slope_build  gbm-50k@share - scorecard +nan [+nan, +nan]    
+  nearest                builds auc_slope_build  tabicl@t1 - scorecard    +nan [+nan, +nan]    ~
+  nearest                builds auc_slope_build  tabpfn@t1 - scorecard    +nan [+nan, +nan]    ~
+  nearest                builds auc_slope_build  gbm-50k - gbm            +nan [+nan, +nan]    
+  nearest                builds auc_slope_build  tabpfn - gbm             +nan [+nan, +nan]    
+  nearest                builds auc_slope_build  tabicl - gbm             +nan [+nan, +nan]    
+  nearest                builds auc_slope_build  gbm-50k@share - gbm      +nan [+nan, +nan]    
+  nearest                builds auc_slope_build  tabicl@t1 - gbm          +nan [+nan, +nan]    ~
+  nearest                builds auc_slope_build  tabpfn@t1 - gbm          +nan [+nan, +nan]    ~
+  nearest                builds auc_slope_build  tabpfn - gbm-50k         +nan [+nan, +nan]    
+  nearest                builds auc_slope_build  tabicl - gbm-50k         +nan [+nan, +nan]    
+  nearest                builds auc_slope_build  gbm-50k@share - gbm-50k  +nan [+nan, +nan]    
+  nearest                builds auc_slope_build  tabicl@t1 - gbm-50k      +nan [+nan, +nan]    ~
+  nearest                builds auc_slope_build  tabpfn@t1 - gbm-50k      +nan [+nan, +nan]    ~
+  nearest                builds auc_slope_build  tabicl - tabpfn          +nan [+nan, +nan]    
+  nearest                builds auc_slope_build  gbm-50k@share - tabpfn   +nan [+nan, +nan]    
+  nearest                builds auc_slope_build  tabicl@t1 - tabpfn       +nan [+nan, +nan]    ~
+  nearest                builds auc_slope_build  tabpfn@t1 - tabpfn       +nan [+nan, +nan]    ~
+  nearest                builds auc_slope_build  gbm-50k@share - tabicl   +nan [+nan, +nan]    
+  nearest                builds auc_slope_build  tabicl@t1 - tabicl       +nan [+nan, +nan]    ~
+  nearest                builds auc_slope_build  tabpfn@t1 - tabicl       +nan [+nan, +nan]    ~
+  nearest                builds auc_slope_build  tabicl@t1 - gbm-50k@share +nan [+nan, +nan]    ~
+  nearest                builds auc_slope_build  tabpfn@t1 - gbm-50k@share +nan [+nan, +nan]    ~
+  nearest                builds auc_slope_build  tabpfn@t1 - tabicl@t1    +nan [+nan, +nan]    ~
+  all, cohorts resampled arm    auc_slope_build  gbm - scorecard          -0.00009 [-0.00040, +0.00012]    
+  all, cohorts resampled arm    auc_slope_build  gbm-50k - scorecard      -0.00011 [-0.00041, +0.00016]    
+  all, cohorts resampled arm    auc_slope_build  tabpfn - scorecard       -0.00003 [-0.00036, +0.00037]    
+  all, cohorts resampled arm    auc_slope_build  tabicl - scorecard       -0.00004 [-0.00043, +0.00044]    
+  all, cohorts resampled arm    auc_slope_build  gbm-50k@share - scorecard -0.00011 [-0.00041, +0.00016]    
+  all, cohorts resampled arm    auc_slope_build  tabicl@t1 - scorecard    -0.00004 [-0.00043, +0.00044]    ~
+  all, cohorts resampled arm    auc_slope_build  tabpfn@t1 - scorecard    -0.00003 [-0.00036, +0.00037]    ~
+  all, cohorts resampled arm    auc_slope_build  gbm-50k - gbm            -0.00001 [-0.00023, +0.00017]    
+  all, cohorts resampled arm    auc_slope_build  tabpfn - gbm             +0.00007 [-0.00019, +0.00053]    
+  all, cohorts resampled arm    auc_slope_build  tabicl - gbm             +0.00006 [-0.00023, +0.00066]    
+  all, cohorts resampled arm    auc_slope_build  gbm-50k@share - gbm      -0.00001 [-0.00023, +0.00017]    
+  all, cohorts resampled arm    auc_slope_build  tabicl@t1 - gbm          +0.00006 [-0.00023, +0.00066]    ~
+  all, cohorts resampled arm    auc_slope_build  tabpfn@t1 - gbm          +0.00007 [-0.00019, +0.00053]    ~
+  all, cohorts resampled arm    auc_slope_build  tabpfn - gbm-50k         +0.00008 [-0.00020, +0.00067]    
+  all, cohorts resampled arm    auc_slope_build  tabicl - gbm-50k         +0.00007 [-0.00023, +0.00075]    
+  all, cohorts resampled arm    auc_slope_build  gbm-50k@share - gbm-50k  +0.00000 [+0.00000, +0.00000]    
+  all, cohorts resampled arm    auc_slope_build  tabicl@t1 - gbm-50k      +0.00007 [-0.00023, +0.00075]    ~
+  all, cohorts resampled arm    auc_slope_build  tabpfn@t1 - gbm-50k      +0.00008 [-0.00020, +0.00067]    ~
+  all, cohorts resampled arm    auc_slope_build  tabicl - tabpfn          -0.00001 [-0.00012, +0.00013]    
+  all, cohorts resampled arm    auc_slope_build  gbm-50k@share - tabpfn   -0.00008 [-0.00067, +0.00020]    
+  all, cohorts resampled arm    auc_slope_build  tabicl@t1 - tabpfn       -0.00001 [-0.00012, +0.00013]    ~
+  all, cohorts resampled arm    auc_slope_build  tabpfn@t1 - tabpfn       +0.00000 [+0.00000, +0.00000]    ~
+  all, cohorts resampled arm    auc_slope_build  gbm-50k@share - tabicl   -0.00007 [-0.00075, +0.00023]    
+  all, cohorts resampled arm    auc_slope_build  tabicl@t1 - tabicl       +0.00000 [+0.00000, +0.00000]    ~
+  all, cohorts resampled arm    auc_slope_build  tabpfn@t1 - tabicl       +0.00001 [-0.00013, +0.00012]    ~
+  all, cohorts resampled arm    auc_slope_build  tabicl@t1 - gbm-50k@share +0.00007 [-0.00023, +0.00075]    ~
+  all, cohorts resampled arm    auc_slope_build  tabpfn@t1 - gbm-50k@share +0.00008 [-0.00020, +0.00067]    ~
+  all, cohorts resampled arm    auc_slope_build  tabpfn@t1 - tabicl@t1    +0.00001 [-0.00013, +0.00012]    ~
+  all, cohorts resampled arm    auc_slope_cohort gbm - scorecard          -0.00021 [-0.00072, +0.00008]    
+  all, cohorts resampled arm    auc_slope_cohort gbm-50k - scorecard      -0.00031 [-0.00087, +0.00004]    
+  all, cohorts resampled arm    auc_slope_cohort tabpfn - scorecard       +0.00007 [-0.00029, +0.00057]    
+  all, cohorts resampled arm    auc_slope_cohort tabicl - scorecard       +0.00016 [-0.00016, +0.00068]    
+  all, cohorts resampled arm    auc_slope_cohort gbm-50k@share - scorecard -0.00031 [-0.00087, +0.00004]    
+  all, cohorts resampled arm    auc_slope_cohort tabicl@t1 - scorecard    +0.00016 [-0.00016, +0.00068]    ~
+  all, cohorts resampled arm    auc_slope_cohort tabpfn@t1 - scorecard    +0.00007 [-0.00029, +0.00057]    ~
+  all, cohorts resampled arm    auc_slope_cohort gbm-50k - gbm            -0.00010 [-0.00047, +0.00025]  ! 
+  all, cohorts resampled arm    auc_slope_cohort tabpfn - gbm             +0.00029 [-0.00006, +0.00113]   ?
+  all, cohorts resampled arm    auc_slope_cohort tabicl - gbm             +0.00038 [+0.00004, +0.00122] *  
+  all, cohorts resampled arm    auc_slope_cohort gbm-50k@share - gbm      -0.00010 [-0.00047, +0.00025]  ! 
+  all, cohorts resampled arm    auc_slope_cohort tabicl@t1 - gbm          +0.00038 [+0.00004, +0.00122] *  ~
+  all, cohorts resampled arm    auc_slope_cohort tabpfn@t1 - gbm          +0.00029 [-0.00006, +0.00113]   ?~
+  all, cohorts resampled arm    auc_slope_cohort tabpfn - gbm-50k         +0.00039 [-0.00004, +0.00127]    
+  all, cohorts resampled arm    auc_slope_cohort tabicl - gbm-50k         +0.00048 [+0.00005, +0.00138] *  
+  all, cohorts resampled arm    auc_slope_cohort gbm-50k@share - gbm-50k  +0.00000 [+0.00000, +0.00000]    
+  all, cohorts resampled arm    auc_slope_cohort tabicl@t1 - gbm-50k      +0.00048 [+0.00005, +0.00138] *  ~
+  all, cohorts resampled arm    auc_slope_cohort tabpfn@t1 - gbm-50k      +0.00039 [-0.00004, +0.00127]    ~
+  all, cohorts resampled arm    auc_slope_cohort tabicl - tabpfn          +0.00009 [-0.00006, +0.00023]    
+  all, cohorts resampled arm    auc_slope_cohort gbm-50k@share - tabpfn   -0.00039 [-0.00127, +0.00004]    
+  all, cohorts resampled arm    auc_slope_cohort tabicl@t1 - tabpfn       +0.00009 [-0.00006, +0.00023]    ~
+  all, cohorts resampled arm    auc_slope_cohort tabpfn@t1 - tabpfn       +0.00000 [+0.00000, +0.00000]    ~
+  all, cohorts resampled arm    auc_slope_cohort gbm-50k@share - tabicl   -0.00048 [-0.00138, -0.00005] *  
+  all, cohorts resampled arm    auc_slope_cohort tabicl@t1 - tabicl       +0.00000 [+0.00000, +0.00000]    ~
+  all, cohorts resampled arm    auc_slope_cohort tabpfn@t1 - tabicl       -0.00009 [-0.00023, +0.00006]    ~
+  all, cohorts resampled arm    auc_slope_cohort tabicl@t1 - gbm-50k@share +0.00048 [+0.00005, +0.00138] *  ~
+  all, cohorts resampled arm    auc_slope_cohort tabpfn@t1 - gbm-50k@share +0.00039 [-0.00004, +0.00127]    ~
+  all, cohorts resampled arm    auc_slope_cohort tabpfn@t1 - tabicl@t1    -0.00009 [-0.00023, +0.00006]    ~
+
+AUC slope on age per quarter, one intercept per build: the arm, the mean over builds, and each build:
+  scorecard   arm -0.00112 [-0.00145, -0.00069]  builds alike +0.00027  each -0.00091 -0.00092 -0.00170 -0.00273 +0.00022 +0.00001 +0.00068 +0.00753
+  gbm         arm -0.00122 [-0.00155, -0.00085]  builds alike +0.00048  each -0.00093 -0.00120 -0.00184 -0.00310 +0.00082 +0.00193 +0.00118 +0.00698
+  gbm-50k     arm -0.00123 [-0.00159, -0.00082]  builds alike +0.00038  each -0.00094 -0.00108 -0.00200 -0.00303 +0.00037 +0.00141 +0.00112 +0.00721
+  gbm-50k@share arm -0.00123 [-0.00159, -0.00082]  builds alike +0.00038  each -0.00094 -0.00108 -0.00200 -0.00303 +0.00037 +0.00141 +0.00112 +0.00721
+  tabicl      arm -0.00116 [-0.00150, -0.00080]  builds alike +0.00077  each -0.00084 -0.00128 -0.00190 -0.00280 +0.00110 +0.00162 +0.00211 +0.00811
+  tabicl@t1   arm -0.00116 [-0.00150, -0.00080]  builds alike +0.00077  each -0.00084 -0.00128 -0.00190 -0.00280 +0.00110 +0.00162 +0.00211 +0.00811
+  tabpfn      arm -0.00115 [-0.00151, -0.00078]  builds alike +0.00081  each -0.00087 -0.00125 -0.00186 -0.00285 +0.00134 +0.00178 +0.00217 +0.00801
+  tabpfn@t1   arm -0.00115 [-0.00151, -0.00078]  builds alike +0.00081  each -0.00087 -0.00125 -0.00186 -0.00285 +0.00134 +0.00178 +0.00217 +0.00801
+AUC slope on age per quarter, one intercept per cohort, the arm:
+  scorecard   arm -0.00027 [-0.00047, -0.00010]
+  gbm         arm -0.00049 [-0.00069, -0.00031]
+  gbm-50k     arm -0.00058 [-0.00090, -0.00029]
+  gbm-50k@share arm -0.00058 [-0.00090, -0.00029]
+  tabicl      arm -0.00011 [-0.00031, +0.00008]
+  tabicl@t1   arm -0.00011 [-0.00031, +0.00008]
+  tabpfn      arm -0.00020 [-0.00040, -0.00002]
+  tabpfn@t1   arm -0.00020 [-0.00040, -0.00002]
+
+bootstrap seed check over seeds 20260906, 20260907: 33 of 168 arm differences starred under seed 20260905, 2 change their star; 103 of 672 at every scope, 29 change
+  ~ tabicl@t1 on 2004H2-R: derived exactly, 121,595 rows checked on build 2004H2-E, largest |d pd| 1.4e-07; 117 cells unchecked by row
+  ~ tabicl@t1 on 2006H2-R: derived exactly, 121,595 rows checked on build 2004H2-E, largest |d pd| 1.4e-07; 105 cells unchecked by row
+  ~ tabicl@t1 on 2008H2-R: derived exactly, 121,595 rows checked on build 2004H2-E, largest |d pd| 1.4e-07; 93 cells unchecked by row
+  ~ tabicl@t1 on 2010H2-R: derived exactly, 121,595 rows checked on build 2004H2-E, largest |d pd| 1.4e-07; 81 cells unchecked by row
+  ~ tabicl@t1 on 2012H2-R: derived exactly, 121,595 rows checked on build 2004H2-E, largest |d pd| 1.4e-07; 69 cells unchecked by row
+  ~ tabicl@t1 on 2014H2-R: derived exactly, 121,595 rows checked on build 2004H2-E, largest |d pd| 1.4e-07; 57 cells unchecked by row
+  ~ tabicl@t1 on 2016H2-R: derived exactly, 121,595 rows checked on build 2004H2-E, largest |d pd| 1.4e-07; 45 cells unchecked by row
+  ~ tabicl@t1 on 2018H2-R: derived exactly, 121,595 rows checked on build 2004H2-E, largest |d pd| 1.4e-07; 33 cells unchecked by row
+  ~ tabpfn@t1 on 2004H2-R: derived approximately, checked on build 2004H2-E: |b - 1| worst 6.63e-04, mean 1.21e-04, 0 of 117 cells above 0.00084; Cox slope derived - scored worst +5.90e-04, mean +1.35e-04; O/E derived - scored worst -4.48e-03, mean -1.19e-03
+  ~ tabpfn@t1 on 2006H2-R: derived approximately, checked on build 2006H2-E: |b - 1| worst 5.04e-04, mean 1.25e-04, 0 of 105 cells above 0.00084; Cox slope derived - scored worst +6.83e-04, mean +7.43e-05; O/E derived - scored worst -4.70e-03, mean -1.28e-03
+  ~ tabpfn@t1 on 2008H2-R: derived approximately, checked on build 2008H2-E: |b - 1| worst 1.83e-03, mean 2.24e-04, 8 of 93 cells above 0.00084; Cox slope derived - scored worst -1.89e-03, mean -1.97e-04; O/E derived - scored worst -3.92e-03, mean -1.05e-03
+  ~ tabpfn@t1 on 2010H2-R: derived approximately, checked on build 2010H2-E: |b - 1| worst 8.92e-04, mean 1.18e-04, 1 of 81 cells above 0.00084; Cox slope derived - scored worst +7.80e-04, mean -3.82e-05; O/E derived - scored worst -1.78e-03, mean -7.41e-04
+  ~ tabpfn@t1 on 2012H2-R: derived approximately, checked on build 2012H2-E: |b - 1| worst 2.52e-04, mean 1.11e-04, 0 of 69 cells above 0.00084; Cox slope derived - scored worst +4.04e-04, mean +4.78e-05; O/E derived - scored worst -9.93e-04, mean -3.88e-04
+  ~ tabpfn@t1 on 2014H2-R: derived approximately, checked on build 2014H2-E: |b - 1| worst 3.27e-04, mean 1.49e-04, 0 of 57 cells above 0.00084; Cox slope derived - scored worst +8.69e-04, mean +1.83e-04; O/E derived - scored worst -1.35e-03, mean -4.82e-04
+  ~ tabpfn@t1 on 2016H2-R: derived approximately, checked on build 2016H2-E: |b - 1| worst 3.85e-04, mean 1.44e-04, 0 of 45 cells above 0.00084; Cox slope derived - scored worst +4.89e-04, mean +1.90e-04; O/E derived - scored worst -1.34e-03, mean -5.08e-04
+  ~ tabpfn@t1 on 2018H2-R: derived approximately, checked on build 2018H2-E: |b - 1| worst 1.33e-04, mean 4.77e-05, 0 of 33 cells above 0.00084; Cox slope derived - scored worst +7.59e-04, mean -2.69e-05; O/E derived - scored worst -2.12e-03, mean -8.32e-04
+
+wall                  : 2910s

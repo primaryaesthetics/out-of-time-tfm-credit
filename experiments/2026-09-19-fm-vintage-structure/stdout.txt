@@ -1,0 +1,22 @@
+loans                    : 1,362,500
+origination span         : 1999Q1 .. 2026Q1 (109 quarterly cohorts)
+performance cutoff       : 2026-03-01
+first payment lag        : median 3 months, 0.52% at 6+ months, 0.00% before the quarter
+no performance record    : 10, not labelled
+re-dated, excluded       : 7,095 (0.52%); delinquent before age one: 9 among them, 0 among the rest; terminated before age one among the rest: 977
+
+12-month window
+  labelled               : 1,298,994  defaults 6,697  rate 0.52%
+  immature / censored    : 54,931 / 1,470
+  cohorts above floors   : quarterly 11, semi-annual 23, annual 21
+  quarterly rate range   : 0.83% (2020Q2) .. 3.78% (2019Q4) over cohorts above the floors
+  relief months set aside: defaults 4,555  rate 0.35%; cohorts above floors quarterly 6, semi-annual 16, annual 19
+  cohorts with 25%+ of defaults under relief: 2016Q4 48%, 2017Q1 47%, 2017Q2 50%, 2017Q3 49%, 2019Q2 93%, 2019Q3 94%, 2019Q4 93%, 2020Q1 91%, 2020Q2 79%, 2020Q3 77%, 2020Q4 72%, 2021Q1 65%, 2021Q2 51%, 2021Q3 57%, 2021Q4 69%, 2022Q1 56%, 2022Q2 48%, 2022Q3 49%, 2022Q4 33%, 2023Q1 29%, 2025Q1 25%
+
+24-month window
+  labelled               : 1,248,788  defaults 18,165  rate 1.45%
+  immature / censored    : 104,929 / 1,678
+  cohorts above floors   : quarterly 55, semi-annual 48, annual 26
+  quarterly rate range   : 0.81% (2010Q2) .. 7.04% (2007Q4) over cohorts above the floors
+  relief months set aside: defaults 13,630  rate 1.09%; cohorts above floors quarterly 41, semi-annual 45, annual 26
+  cohorts with 25%+ of defaults under relief: 2015Q4 32%, 2016Q2 31%, 2016Q3 33%, 2017Q1 28%, 2017Q2 27%, 2018Q2 68%, 2018Q3 84%, 2018Q4 85%, 2019Q1 89%, 2019Q2 91%, 2019Q3 88%, 2019Q4 88%, 2020Q1 85%, 2020Q2 70%, 2020Q3 62%, 2020Q4 65%, 2021Q1 57%, 2021Q2 51%, 2021Q3 43%, 2021Q4 53%, 2022Q1 37%, 2022Q2 27%

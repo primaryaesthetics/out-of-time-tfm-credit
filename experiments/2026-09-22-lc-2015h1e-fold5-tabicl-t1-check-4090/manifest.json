@@ -1,0 +1,60 @@
+{
+  "slug": "lc-2015h1e-fold5-tabicl-t1-check-4090",
+  "recorded_utc": "2026-09-22T23:25:58+00:00",
+  "git_sha": "a5e47cd4af8d4ac5d36c46ef683a5aee13887dc9",
+  "git_dirty": false,
+  "code_sha256": {
+    "scripts/score_context.py": "219b62fe4c5569b3b1a7f8f538dd36951cb36b86744b0eaacdb36ff8967fe555",
+    "scripts/node_jobs.py": "81aaa0e1f09c989f3cdadf9bf620ac2ce7445aedf309087d3007380e9276ae52",
+    "scripts/node_run_cuda.sh": "7093bc4587da3cfcb809d5c4a5c3abf6ec42d4f80a7e0538841c61f29074462d"
+  },
+  "scorer_commit": "The score_context.py, node_jobs.py and run script that ran are the files at commit a36c751e366ea8dbe344c3f8c4b41d88c8ab43e2, hashed from the LF-ended copies inside the job archive; code_sha256 holds them, so the recorded-code gate checks this run like any other.",
+  "written_by_hand": "The node holds no copy of the repository, so record_run.py could not record this run. The manifest is assembled from what the archive carries: node.json is the scorer's own account of its environment and its cells, score.log is the slice of the node's console log that belongs to this job, and the row checks below were re-derived against the bundle rather than carried over.",
+  "host": "Rented host, Linux-7.0.0-31-generic-x86_64-with-glibc2.43, Python 3.12.14; the machine was wiped and released after the run",
+  "gpu": "NVIDIA GeForce RTX 4090, 24564 MiB as nvidia-smi reports it, driver 615.71.09, CUDA 13.0, torch 2.14.0, peak 15.527 GB over the run's cells",
+  "job": "tabicl-t1-check@2026-09-12-lc-2015h1e-folds-2to5-fold5",
+  "command": "2026-09-12-lc-2015h1e-folds-2to5-fold5 --out-dir 2026-09-12-lc-2015h1e-folds-2to5-fold5-scored-tabicl-t1-check --models tabicl --temperature 1.0 --nearest 1 --seeds 20260911 --chunk 20000, run by node_jobs.py from the unpacked job archive as job 10 of 10",
+  "job_archive": {
+    "path": "data/derived/node/outoftime-run-folds-1to5-2015h1e-tabicl-cuda-a36c751.tar.gz",
+    "sha256": "bd11e9beed44150a1e3f8e0fc55803382d205a8768d5c8d0f729b3bd023b83a2",
+    "built_by": "scripts/pack_node_run.py over the five fold bundles, as a tar for the node's run script; sidecars .sha256 and .jobs.json beside it."
+  },
+  "result_archive": {
+    "name": "outoftime-result-folds-1to5-2015h1e-tabicl-cuda-a36c751.tar.gz",
+    "sha256": "d1db80fe7750e259c0eb077fa2009640acb32622d957291eb0a9f09cd65e8c0a",
+    "produced": "2026-09-22 by the node's run script at the end of all ten jobs"
+  },
+  "bundle": {
+    "path": "experiments/2026-09-21-lc-2015h1e-fold-bundles/2026-09-12-lc-2015h1e-folds-2to5-fold5",
+    "context.parquet": "92cf882a1e70d537d7a69c040ccc72be65a5442d6baf345de2b0177049c05662",
+    "scored.parquet": "3bd692fa350c11e8e5e55616aab9e1dddf61ab1e04a18bd9257fb044660687a5",
+    "how": "The hashes node.json records for the bundle it read equal the files of the bundle on disk, rehashed here. The scorer refuses a bundle whose hashes differ from its bundle.json, so the node scored the recorded rows."
+  },
+  "parts_check": "2 part files under parts/, one per (model, context seed, cell), equal to the 2 cell records of node.json; the parts hold 70,000 rows, the sum of scores.parquet (20,000) and reference.parquet (50,000).",
+  "row_check": {
+    "scored": "20,000 rows, 20,000 per context seed (fold5-test); every (cohort, row) pair, its outcome and its age match the bundle's scored.parquet, zero mismatches, zero duplicate keys, no missing probability and none outside [0, 1]",
+    "reference": "50,000 rows, 50,000 per context seed; every row and its outcome match the bundle's context.parquet for that context seed, zero mismatches",
+    "context_meeting_cells": "0 rows of any scored cell are in the context of the draw that scored it; the scorer at a36c751 refuses such a cell before any fit",
+    "seeds": [
+      20260911
+    ]
+  },
+  "repeat_check": "1 cell scored a second time, one per context seed; the largest disagreement on any of them is 0.0e+00.",
+  "console_log": "score.log is this job's slice of the node's console log, lines 153 to 161 of 161. Read in full. The job-header line, which names the rented machine's home directory and account, is dropped (1 line); nothing else is. It holds no path, account name or token.",
+  "question_this_run_was_sent_to_answer": "EXP-004's TabICL side on fold 5 of the published five-fold protocol beside the out-of-time one: the fold's test cell and the context rows of the first draw at softmax temperature 1.0, the check on the temperature derivation.",
+  "what_it_measured": {
+    "model": "tabicl 2.1.1, checkpoint tabicl-classifier-v2-20260212.ckpt (sha256 bdc7dbd5...4ed0) downloaded from Hugging Face by the library on the first job",
+    "device": "cuda",
+    "context": "50,000 rows per context seed",
+    "cells": "1 cohort cell (fold5-test) of 20,000 rows and one reference cell of 50,000 per context seed, over 1 draw",
+    "peak_gpu_gb_max": 15.527,
+    "softmax_temperature": 1.0,
+    "wall_seconds": 39.7,
+    "timing": "A rented machine used for this archive alone; the per-cell seconds are comparable across its ten jobs. The first job's fit took longer than the others because it downloaded the checkpoint, which its log shows.",
+    "chunk": "20,000 rows per forward call (--chunk 20000), so the 50,000-row reference cell is scored in chunks of 20,000, 20,000 and 10,000"
+  },
+  "tuning_budget": "none: zero trials, no validation split, every parameter at the library default except those the command names; the classical models this is paired with were tuned on their own pool and the asymmetry runs both ways, since the 50,000-row control inherits the point chosen on the full pool",
+  "checkpoints": {
+    "tabicl-classifier-v2-20260212.ckpt": "bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0"
+  }
+}

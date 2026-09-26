@@ -1,0 +1,934 @@
+{
+  "redundancy": {
+    "cltv": {
+      "duplicates": "ltv",
+      "kept": true,
+      "exact_agreement": 0.929546,
+      "correlation": 0.968765
+    },
+    "rate": {
+      "kept": false,
+      "reason": "the calendar on this book",
+      "cells": "the first payment month and the loan term",
+      "variance_share": 0.931143,
+      "loans": 1355395
+    },
+    "calendar_share": {
+      "cells": "the first payment month and the loan term",
+      "rate": 0.931143,
+      "borrowers": 0.027678,
+      "cltv": 0.117234,
+      "dti": 0.068009,
+      "fico": 0.096372,
+      "ltv": 0.121872,
+      "mi_pct": 0.100046,
+      "term": 1.0,
+      "units": 0.004845,
+      "upb_to_limit": 0.06801,
+      "upb": 0.249949
+    }
+  },
+  "coverage": {
+    "borrowers": {
+      "onset": "1999H1",
+      "first_cohort_share": 0.999,
+      "peak_share": 1.0,
+      "lowest_share": 0.9992,
+      "lowest_cohort": "1999H1",
+      "kept": true
+    },
+    "cltv": {
+      "onset": "1999H1",
+      "first_cohort_share": 1.0,
+      "peak_share": 1.0,
+      "lowest_share": 0.9998,
+      "lowest_cohort": "2006H1",
+      "kept": true
+    },
+    "dti": {
+      "onset": "1999H1",
+      "first_cohort_share": 0.9443,
+      "peak_share": 1.0,
+      "lowest_share": 0.6278,
+      "lowest_cohort": "2012H1",
+      "kept": true
+    },
+    "fico": {
+      "onset": "1999H1",
+      "first_cohort_share": 0.9969,
+      "peak_share": 1.0,
+      "lowest_share": 0.9793,
+      "lowest_cohort": "2000H1",
+      "kept": true
+    },
+    "first_time_homebuyer": {
+      "onset": "1999H1",
+      "first_cohort_share": 0.9857,
+      "peak_share": 1.0,
+      "lowest_share": 0.9892,
+      "lowest_cohort": "1999H1",
+      "kept": true
+    },
+    "ltv": {
+      "onset": "1999H1",
+      "first_cohort_share": 1.0,
+      "peak_share": 1.0,
+      "lowest_share": 0.9998,
+      "lowest_cohort": "2006H1",
+      "kept": true
+    },
+    "mi_pct": {
+      "onset": "1999H1",
+      "first_cohort_share": 0.9999,
+      "peak_share": 1.0,
+      "lowest_share": 0.9998,
+      "lowest_cohort": "1999H1",
+      "kept": true
+    },
+    "occupancy": {
+      "onset": "1999H1",
+      "first_cohort_share": 1.0,
+      "peak_share": 1.0,
+      "lowest_share": 1.0,
+      "lowest_cohort": "1999H1",
+      "kept": true
+    },
+    "prepayment_penalty": {
+      "onset": "1999H1",
+      "first_cohort_share": 1.0,
+      "peak_share": 1.0,
+      "lowest_share": 1.0,
+      "lowest_cohort": "1999H1",
+      "kept": true
+    },
+    "property_type": {
+      "onset": "1999H1",
+      "first_cohort_share": 1.0,
+      "peak_share": 1.0,
+      "lowest_share": 0.9992,
+      "lowest_cohort": "2004H2",
+      "kept": true
+    },
+    "purpose": {
+      "onset": "1999H1",
+      "first_cohort_share": 1.0,
+      "peak_share": 1.0,
+      "lowest_share": 0.9999,
+      "lowest_cohort": "1999H1",
+      "kept": true
+    },
+    "special_eligibility_program": {
+      "onset": "2017H1",
+      "first_cohort_share": 0.0,
+      "peak_share": 0.1217,
+      "lowest_share": 0.0,
+      "lowest_cohort": "1999H1",
+      "kept": false
+    },
+    "state": {
+      "onset": "1999H1",
+      "first_cohort_share": 1.0,
+      "peak_share": 1.0,
+      "lowest_share": 1.0,
+      "lowest_cohort": "1999H1",
+      "kept": true
+    },
+    "term": {
+      "onset": "1999H1",
+      "first_cohort_share": 1.0,
+      "peak_share": 1.0,
+      "lowest_share": 1.0,
+      "lowest_cohort": "1999H1",
+      "kept": true
+    },
+    "units": {
+      "onset": "1999H1",
+      "first_cohort_share": 1.0,
+      "peak_share": 1.0,
+      "lowest_share": 0.9975,
+      "lowest_cohort": "2012H1",
+      "kept": true
+    },
+    "upb": {
+      "onset": "1999H1",
+      "first_cohort_share": 1.0,
+      "peak_share": 1.0,
+      "lowest_share": 1.0,
+      "lowest_cohort": "1999H1",
+      "kept": true
+    },
+    "valuation_method": {
+      "onset": "2020H1",
+      "first_cohort_share": 0.0,
+      "peak_share": 1.0,
+      "lowest_share": 0.0,
+      "lowest_cohort": "1999H1",
+      "kept": false
+    },
+    "vantage_score": {
+      "onset": null,
+      "first_cohort_share": 0.0,
+      "peak_share": 0.0,
+      "lowest_share": 0.0,
+      "lowest_cohort": "1999H1",
+      "kept": false
+    }
+  },
+  "values": {
+    "amortization_type": {
+      "missing_share": {
+        "first": 0.0,
+        "last": 0.0,
+        "book": 0.0
+      },
+      "distinct_first": 1,
+      "late_levels": {},
+      "departed_levels": {},
+      "clauses": [
+        "constant on the first cohort"
+      ],
+      "out": true,
+      "gates": [
+        "value"
+      ]
+    },
+    "borrowers": {
+      "missing_share": {
+        "first": 0.001,
+        "last": 0.0,
+        "book": 0.0002
+      },
+      "distinct_first": 2,
+      "first_range": [
+        1.0,
+        2.0
+      ],
+      "last_range": [
+        1.0,
+        4.0
+      ],
+      "shared_range": [
+        1.0,
+        2.0
+      ],
+      "share_clipped": {
+        "below": 0.0,
+        "above": 0.002566
+      },
+      "clauses": [],
+      "out": false,
+      "gates": []
+    },
+    "channel": {
+      "missing_share": {
+        "first": 0.0001,
+        "last": 0.0,
+        "book": 0.0
+      },
+      "distinct_first": 4,
+      "late_levels": {},
+      "departed_levels": {
+        "T": 0.190162
+      },
+      "clauses": [
+        "a level present on the first cohort and absent from the last"
+      ],
+      "out": true,
+      "gates": [
+        "value"
+      ]
+    },
+    "cltv": {
+      "missing_share": {
+        "first": 0.0,
+        "last": 0.0,
+        "book": 0.0
+      },
+      "distinct_first": 92,
+      "first_range": [
+        6.0,
+        100.0
+      ],
+      "last_range": [
+        5.0,
+        105.0
+      ],
+      "shared_range": [
+        6.0,
+        100.0
+      ],
+      "share_clipped": {
+        "below": 1.5e-05,
+        "above": 0.018806
+      },
+      "clauses": [],
+      "out": false,
+      "gates": []
+    },
+    "dti": {
+      "missing_share": {
+        "first": 0.0557,
+        "last": 0.0,
+        "book": 0.0766
+      },
+      "distinct_first": 65,
+      "first_range": [
+        1.0,
+        65.0
+      ],
+      "last_range": [
+        2.0,
+        50.0
+      ],
+      "shared_range": [
+        2.0,
+        50.0
+      ],
+      "share_clipped": {
+        "below": 0.00015,
+        "above": 0.036356
+      },
+      "clauses": [
+        "missing share differs between the first and the last cohort"
+      ],
+      "out": true,
+      "gates": [
+        "value"
+      ],
+      "ablation": "dti_kept"
+    },
+    "fico": {
+      "missing_share": {
+        "first": 0.0031,
+        "last": 0.0003,
+        "book": 0.0016
+      },
+      "distinct_first": 285,
+      "first_range": [
+        486.0,
+        826.0
+      ],
+      "last_range": [
+        601.0,
+        829.0
+      ],
+      "shared_range": [
+        601.0,
+        826.0
+      ],
+      "share_clipped": {
+        "below": 0.009501,
+        "above": 0.000324
+      },
+      "clauses": [],
+      "out": false,
+      "gates": []
+    },
+    "first_time_homebuyer": {
+      "missing_share": {
+        "first": 0.0143,
+        "last": 0.0,
+        "book": 0.0006
+      },
+      "distinct_first": 2,
+      "late_levels": {},
+      "departed_levels": {},
+      "clauses": [],
+      "out": false,
+      "gates": []
+    },
+    "harp": {
+      "missing_share": {
+        "first": 0.0,
+        "last": 0.0,
+        "book": 0.0
+      },
+      "distinct_first": 1,
+      "late_levels": {
+        "Y": 0.067155
+      },
+      "departed_levels": {},
+      "clauses": [
+        "constant on the first cohort",
+        "a level absent from the first cohort"
+      ],
+      "out": true,
+      "gates": [
+        "value"
+      ]
+    },
+    "interest_only": {
+      "missing_share": {
+        "first": 0.0,
+        "last": 0.0,
+        "book": 0.0
+      },
+      "distinct_first": 1,
+      "late_levels": {},
+      "departed_levels": {},
+      "clauses": [
+        "constant on the first cohort"
+      ],
+      "out": true,
+      "gates": [
+        "value"
+      ]
+    },
+    "ltv": {
+      "missing_share": {
+        "first": 0.0,
+        "last": 0.0,
+        "book": 0.0
+      },
+      "distinct_first": 92,
+      "first_range": [
+        6.0,
+        100.0
+      ],
+      "last_range": [
+        5.0,
+        105.0
+      ],
+      "shared_range": [
+        6.0,
+        100.0
+      ],
+      "share_clipped": {
+        "below": 1.6e-05,
+        "above": 0.013137
+      },
+      "clauses": [],
+      "out": false,
+      "gates": []
+    },
+    "mi_pct": {
+      "missing_share": {
+        "first": 0.0001,
+        "last": 0.0,
+        "book": 0.0
+      },
+      "distinct_first": 20,
+      "first_range": [
+        0.0,
+        55.0
+      ],
+      "last_range": [
+        0.0,
+        35.0
+      ],
+      "shared_range": [
+        0.0,
+        35.0
+      ],
+      "share_clipped": {
+        "below": 0.0,
+        "above": 0.000364
+      },
+      "clauses": [],
+      "out": false,
+      "gates": []
+    },
+    "msa": {
+      "missing_share": {
+        "first": 0.4983,
+        "last": 0.1113,
+        "book": 0.2178
+      },
+      "distinct_first": 369,
+      "late_levels": {
+        "47664": 0.006223,
+        "14454": 0.003817,
+        "23224": 0.002312,
+        "43524": 0.000582,
+        "23540": 0.000581,
+        "14010": 0.000545,
+        "12054": 0.000506,
+        "39150": 0.000496,
+        "19300": 0.000464,
+        "42034": 0.000405,
+        "... 92 levels": 0.012
+      },
+      "departed_levels": {
+        "16974": 0.016052,
+        "35644": 0.005932,
+        "47644": 0.004524,
+        "42044": 0.003937,
+        "20764": 0.003329,
+        "14484": 0.002399,
+        "13644": 0.002158,
+        "19380": 0.001327,
+        "37764": 0.001015,
+        "26180": 0.000817,
+        "... 22 levels": 0.002843
+      },
+      "clauses": [
+        "missing share differs between the first and the last cohort"
+      ],
+      "out": true,
+      "gates": [
+        "value"
+      ]
+    },
+    "occupancy": {
+      "missing_share": {
+        "first": 0.0,
+        "last": 0.0,
+        "book": 0.0
+      },
+      "distinct_first": 3,
+      "late_levels": {},
+      "departed_levels": {},
+      "clauses": [],
+      "out": false,
+      "gates": []
+    },
+    "prepayment_penalty": {
+      "missing_share": {
+        "first": 0.0,
+        "last": 0.0,
+        "book": 0.0
+      },
+      "distinct_first": 2,
+      "late_levels": {},
+      "departed_levels": {
+        "Y": 0.001172
+      },
+      "clauses": [],
+      "out": false,
+      "gates": []
+    },
+    "property_type": {
+      "missing_share": {
+        "first": 0.0,
+        "last": 0.0,
+        "book": 0.0001
+      },
+      "distinct_first": 5,
+      "late_levels": {},
+      "departed_levels": {},
+      "clauses": [],
+      "out": false,
+      "gates": []
+    },
+    "purpose": {
+      "missing_share": {
+        "first": 0.0,
+        "last": 0.0,
+        "book": 0.0
+      },
+      "distinct_first": 3,
+      "late_levels": {},
+      "departed_levels": {},
+      "clauses": [],
+      "out": false,
+      "gates": []
+    },
+    "seller": {
+      "missing_share": {
+        "first": 0.0,
+        "last": 0.0,
+        "book": 0.0
+      },
+      "distinct_first": 18,
+      "late_levels": {
+        "WELLS FARGO BANK, N.A.": 0.137415,
+        "WELLS FARGO HOME MORTGAGE, INC.": 0.048909,
+        "BANK OF AMERICA, N.A.": 0.045578,
+        "U.S. BANK N.A.": 0.042242,
+        "ABN AMRO MORTGAGE GROUP, INC.": 0.033015,
+        "JPMORGAN CHASE BANK, N.A.": 0.027938,
+        "CHASE HOME FINANCE LLC": 0.021851,
+        "BRANCH BANKING & TRUST COMPANY": 0.02053,
+        "QUICKEN LOANS INC.": 0.017788,
+        "CITIMORTGAGE, INC.": 0.015314,
+        "... 91 levels": 0.214781
+      },
+      "departed_levels": {
+        "COUNTRYWIDE HOME LOANS, INC.": 0.019457,
+        "FIFTH THIRD BANK": 0.013762,
+        "WASHINGTON MUTUAL BANK": 0.013674,
+        "CHASE MANHATTAN MORTGAGE CORPORATION": 0.012504,
+        "NORWEST MORTGAGE, INC.": 0.01083,
+        "PRINCIPAL RESIDENTIAL MORTGAGE, INC.": 0.010456,
+        "FLAGSTAR BANK, FSB": 0.008977,
+        "SUNTRUST MORTGAGE, INC.": 0.007797,
+        "GMAC MORTGAGE CORPORATION": 0.006445,
+        "CENDANT MORTGAGE CORPORATION, DBA PHH MORTGAGE SERVICES, INC": 0.002035,
+        "... 17 levels": 0.004625
+      },
+      "clauses": [
+        "a level absent from the first cohort"
+      ],
+      "out": true,
+      "gates": [
+        "value"
+      ]
+    },
+    "special_eligibility_program": {
+      "missing_share": {
+        "first": 1.0,
+        "last": 0.8783,
+        "book": 0.9774
+      },
+      "distinct_first": 0,
+      "late_levels": {
+        "H": 0.020458,
+        "F": 0.002143,
+        "R": 2.3e-05
+      },
+      "departed_levels": {},
+      "clauses": [
+        "constant on the first cohort",
+        "missing share differs between the first and the last cohort"
+      ],
+      "out": true,
+      "gates": [
+        "coverage",
+        "value"
+      ]
+    },
+    "state": {
+      "missing_share": {
+        "first": 0.0,
+        "last": 0.0,
+        "book": 0.0
+      },
+      "distinct_first": 53,
+      "late_levels": {
+        "VI": 4.3e-05
+      },
+      "departed_levels": {},
+      "clauses": [],
+      "out": false,
+      "gates": []
+    },
+    "super_conforming": {
+      "missing_share": {
+        "first": 0.0,
+        "last": 0.0,
+        "book": 0.0
+      },
+      "distinct_first": 1,
+      "late_levels": {
+        "Y": 0.018245
+      },
+      "departed_levels": {},
+      "clauses": [
+        "constant on the first cohort"
+      ],
+      "out": true,
+      "gates": [
+        "value"
+      ]
+    },
+    "term": {
+      "missing_share": {
+        "first": 0.0,
+        "last": 0.0,
+        "book": 0.0
+      },
+      "distinct_first": 62,
+      "first_range": [
+        72.0,
+        360.0
+      ],
+      "last_range": [
+        96.0,
+        360.0
+      ],
+      "shared_range": [
+        96.0,
+        360.0
+      ],
+      "share_clipped": {
+        "below": 6.6e-05,
+        "above": 0.000172
+      },
+      "clauses": [],
+      "out": false,
+      "gates": []
+    },
+    "units": {
+      "missing_share": {
+        "first": 0.0,
+        "last": 0.0,
+        "book": 0.0001
+      },
+      "distinct_first": 4,
+      "first_range": [
+        1.0,
+        4.0
+      ],
+      "last_range": [
+        1.0,
+        4.0
+      ],
+      "shared_range": [
+        1.0,
+        4.0
+      ],
+      "share_clipped": {
+        "below": 0.0,
+        "above": 0.0
+      },
+      "clauses": [],
+      "out": false,
+      "gates": []
+    },
+    "upb": {
+      "missing_share": {
+        "first": 0.0,
+        "last": 0.0,
+        "book": 0.0
+      },
+      "replaced_by": "upb_to_limit",
+      "distinct_first": 275,
+      "first_range": [
+        14000.0,
+        461000.0
+      ],
+      "last_range": [
+        19000.0,
+        1480000.0
+      ],
+      "shared_range": [
+        19000.0,
+        461000.0
+      ],
+      "share_clipped": {
+        "below": 0.000384,
+        "above": 0.039975
+      },
+      "clauses": [],
+      "out": false,
+      "gates": [],
+      "checked": false
+    },
+    "valuation_method": {
+      "missing_share": {
+        "first": 1.0,
+        "last": 0.0,
+        "book": 0.8333
+      },
+      "distinct_first": 0,
+      "late_levels": {
+        "2": 0.119565,
+        "1": 0.046533,
+        "4": 0.000633
+      },
+      "departed_levels": {},
+      "clauses": [
+        "constant on the first cohort",
+        "a level absent from the first cohort",
+        "missing share differs between the first and the last cohort"
+      ],
+      "out": true,
+      "gates": [
+        "coverage",
+        "value"
+      ]
+    },
+    "vantage_score": {
+      "missing_share": {
+        "first": 1.0,
+        "last": 1.0,
+        "book": 1.0
+      },
+      "distinct_first": 0,
+      "clauses": [
+        "constant on the first cohort"
+      ],
+      "out": true,
+      "gates": [
+        "coverage",
+        "value"
+      ]
+    },
+    "upb_to_limit": {
+      "missing_share": {
+        "first": 0.0,
+        "last": 0.0,
+        "book": 0.0
+      },
+      "derived_from": [
+        "upb",
+        "origination_year"
+      ],
+      "distinct_first": 275,
+      "first_range": [
+        0.058333333333333334,
+        1.9208333333333334
+      ],
+      "last_range": [
+        0.026163591297163315,
+        2.038006058936932
+      ],
+      "shared_range": [
+        0.058333333333333334,
+        1.9208333333333334
+      ],
+      "share_clipped": {
+        "below": 0.000823,
+        "above": 8.8e-05
+      },
+      "clauses": [],
+      "out": false,
+      "gates": []
+    }
+  },
+  "shifts": {
+    "columns": {
+      "borrowers": {
+        "missing_share_min": 0.0,
+        "missing_share_min_cohort": "2010H2",
+        "missing_share_max": 0.0008,
+        "missing_share_max_cohort": "1999H1",
+        "last_cohort_support": [
+          1.0,
+          2.0
+        ],
+        "share_outside_last_cohort": 0.0
+      },
+      "cltv": {
+        "missing_share_min": 0.0,
+        "missing_share_min_cohort": "2001H1",
+        "missing_share_max": 0.0002,
+        "missing_share_max_cohort": "2006H1",
+        "last_cohort_support": [
+          6.0,
+          100.0
+        ],
+        "share_outside_last_cohort": 0.0
+      },
+      "dti": {
+        "missing_share_min": 0.0,
+        "missing_share_min_cohort": "2019H2",
+        "missing_share_max": 0.3722,
+        "missing_share_max_cohort": "2012H1",
+        "missing_on_late_carrier_levels": {
+          "harp=Y": 0.8771,
+          "super_conforming=Y": 0.0023
+        },
+        "last_cohort_support": [
+          2.0,
+          50.0
+        ],
+        "share_outside_last_cohort": 0.0
+      },
+      "fico": {
+        "missing_share_min": 0.0,
+        "missing_share_min_cohort": "2009H2",
+        "missing_share_max": 0.0207,
+        "missing_share_max_cohort": "2000H1",
+        "last_cohort_support": [
+          601.0,
+          826.0
+        ],
+        "share_outside_last_cohort": 0.0
+      },
+      "first_time_homebuyer": {
+        "missing_share_min": 0.0,
+        "missing_share_min_cohort": "2002H1",
+        "missing_share_max": 0.0108,
+        "missing_share_max_cohort": "1999H1",
+        "levels_absent_from_last_cohort": {}
+      },
+      "ltv": {
+        "missing_share_min": 0.0,
+        "missing_share_min_cohort": "2001H1",
+        "missing_share_max": 0.0002,
+        "missing_share_max_cohort": "2006H1",
+        "last_cohort_support": [
+          6.0,
+          100.0
+        ],
+        "share_outside_last_cohort": 0.0
+      },
+      "mi_pct": {
+        "missing_share_min": 0.0,
+        "missing_share_min_cohort": "2002H1",
+        "missing_share_max": 0.0002,
+        "missing_share_max_cohort": "1999H1",
+        "last_cohort_support": [
+          0.0,
+          35.0
+        ],
+        "share_outside_last_cohort": 0.0
+      },
+      "occupancy": {
+        "missing_share_min": 0.0,
+        "missing_share_min_cohort": "1999H1",
+        "missing_share_max": 0.0,
+        "missing_share_max_cohort": "1999H1",
+        "levels_absent_from_last_cohort": {}
+      },
+      "prepayment_penalty": {
+        "missing_share_min": 0.0,
+        "missing_share_min_cohort": "1999H1",
+        "missing_share_max": 0.0,
+        "missing_share_max_cohort": "1999H1",
+        "levels_absent_from_last_cohort": {}
+      },
+      "property_type": {
+        "missing_share_min": 0.0,
+        "missing_share_min_cohort": "1999H1",
+        "missing_share_max": 0.0008,
+        "missing_share_max_cohort": "2004H2",
+        "levels_absent_from_last_cohort": {}
+      },
+      "purpose": {
+        "missing_share_min": 0.0,
+        "missing_share_min_cohort": "2000H1",
+        "missing_share_max": 0.0001,
+        "missing_share_max_cohort": "1999H1",
+        "levels_absent_from_last_cohort": {}
+      },
+      "state": {
+        "missing_share_min": 0.0,
+        "missing_share_min_cohort": "1999H1",
+        "missing_share_max": 0.0,
+        "missing_share_max_cohort": "1999H1",
+        "levels_absent_from_last_cohort": {}
+      },
+      "term": {
+        "missing_share_min": 0.0,
+        "missing_share_min_cohort": "1999H1",
+        "missing_share_max": 0.0,
+        "missing_share_max_cohort": "1999H1",
+        "last_cohort_support": [
+          96.0,
+          360.0
+        ],
+        "share_outside_last_cohort": 0.0
+      },
+      "units": {
+        "missing_share_min": 0.0,
+        "missing_share_min_cohort": "2000H2",
+        "missing_share_max": 0.0025,
+        "missing_share_max_cohort": "2012H1",
+        "last_cohort_support": [
+          1.0,
+          4.0
+        ],
+        "share_outside_last_cohort": 0.0
+      },
+      "upb_to_limit": {
+        "missing_share_min": 0.0,
+        "missing_share_min_cohort": "1999H1",
+        "missing_share_max": 0.0,
+        "missing_share_max_cohort": "1999H1",
+        "last_cohort_support": [
+          0.058333333333333334,
+          1.9208333333333334
+        ],
+        "share_outside_last_cohort": 0.0
+      }
+    },
+    "flagged": {
+      "dti": [
+        "its missing share moves across cohorts by more than the floor"
+      ]
+    },
+    "floor": 0.05
+  }
+}

@@ -1,0 +1,9 @@
+### tabicl-t1-check@2026-09-12-lc-2015h1e-folds: python score_context.py 2026-09-12-lc-2015h1e-folds --out-dir 2026-09-12-lc-2015h1e-folds-scored-tabicl-t1-check --models tabicl --temperature 1.0 --nearest 1 --seeds 20260911 --chunk 20000
+tabicl@t1/20260911: context 50,000 rows read in 2.6s
+  reference   50,000 rows    206.9s  mean pd 0.0231
+  fold1-test  20,000 rows     72.0s  mean pd 0.0254
+  repeat fold1-test: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 20,000
+reference rows        : 50,000
+wall                  : 358s

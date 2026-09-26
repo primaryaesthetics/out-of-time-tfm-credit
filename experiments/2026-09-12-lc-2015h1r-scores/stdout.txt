@@ -1,0 +1,32 @@
+rows                  : 2,260,668
+snapshot from data    : 2019-03-01
+loaded in             : 126s
+features              : 20
+2015H1-R: train 184199 rows 2013-07-01..2014-06-01 (4 quarters), blind 312972 rows, test 220000 rows over 11 cohorts
+
+| cohort | rows |
+| --- | --- |
+| 2015Q3 | 20000 |
+| 2015Q4 | 20000 |
+| 2016Q1 | 20000 |
+| 2016Q2 | 20000 |
+| 2016Q3 | 20000 |
+| 2016Q4 | 20000 |
+| 2017Q1 | 20000 |
+| 2017Q2 | 20000 |
+| 2017Q3 | 20000 |
+| 2017Q4 | 20000 |
+| 2018Q1 | 20000 | 
+
+scorecard            184,199 rows  fit    7.7s  gini 0.454->0.363  O/E 1.26->1.74
+gbm                  184,199 rows  fit   69.4s  gini 0.458->0.396  O/E 1.23->1.65
+gbm-50k/20260911      50,000 rows  fit    2.5s  gini 0.442->0.375  O/E 1.27->1.66
+gbm-50k/20260912      50,000 rows  fit    1.4s  gini 0.466->0.372  O/E 1.23->1.73
+gbm-50k/20260913      50,000 rows  fit    1.7s  gini 0.458->0.380  O/E 1.27->1.74
+check scorecard   : 11 cells against experiments/2026-09-04-lc-scorecard-byvalue3/cohorts.csv, largest gap 0.00e+00
+check gbm         : 11 cells against experiments/2026-09-04-lc-gbm-wide2/cohorts.csv, largest gap 0.00e+00
+check gbm-50k     : 33 cells against experiments/2026-09-04-lc-gbm-wide2/cohorts.csv, largest gap 0.00e+00
+
+scored rows           : 1,100,000
+reference rows        : 518,398
+wall                  : 238s

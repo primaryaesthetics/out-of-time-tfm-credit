@@ -1,0 +1,26 @@
+{
+  "figure": "build-rows.png",
+  "source": "experiments/2026-09-21-fm-arm-e-intervals-refit-control",
+  "panels": 16,
+  "builds": 9,
+  "build_rows": 144,
+  "arm_rows": 16,
+  "panels_drawn": [
+    "auc_slope_build | tabicl - gbm-50k",
+    "auc_slope_build | tabicl@t1 - gbm-50k",
+    "auc_slope_build | tabpfn - gbm-50k",
+    "auc_slope_build | tabpfn@t1 - gbm-50k",
+    "cox_slope_deviation | tabicl - scorecard",
+    "cox_slope_deviation | tabicl@t1 - scorecard",
+    "cox_slope_deviation | tabpfn - scorecard",
+    "cox_slope_deviation | tabpfn@t1 - scorecard",
+    "psi | tabicl - gbm-50k",
+    "psi | tabicl@t1 - gbm-50k",
+    "psi | tabpfn - gbm-50k",
+    "psi | tabpfn@t1 - gbm-50k",
+    "psi_first_cohort | tabicl - gbm-50k",
+    "psi_first_cohort | tabicl@t1 - gbm-50k",
+    "psi_first_cohort | tabpfn - gbm-50k",
+    "psi_first_cohort | tabpfn@t1 - gbm-50k"
+  ]
+}

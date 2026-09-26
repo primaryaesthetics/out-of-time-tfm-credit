@@ -1,0 +1,100 @@
+{
+  "build_id": "2015H1-E",
+  "models": {
+    "scorecard": [],
+    "gbm": [],
+    "gbm-50k": [
+      20260911
+    ],
+    "tabpfn": [
+      20260911
+    ],
+    "tabicl": [
+      20260911
+    ]
+  },
+  "sources": [
+    "experiments/2026-09-05-lc-2015h1e-scores",
+    "experiments/2026-09-06-lc-2015h1e-tabpfn-m4pro",
+    "experiments/2026-09-06-lc-2015h1e-tabicl-colab-t4"
+  ],
+  "cohorts": [
+    "2015Q3",
+    "2015Q4",
+    "2016Q1"
+  ],
+  "cohorts_not_pooled": {
+    "2016Q2": [
+      "tabicl/20260911",
+      "tabpfn/20260911"
+    ],
+    "2016Q3": [
+      "tabicl/20260911",
+      "tabpfn/20260911"
+    ],
+    "2016Q4": [
+      "tabicl/20260911",
+      "tabpfn/20260911"
+    ],
+    "2017Q1": [
+      "tabicl/20260911",
+      "tabpfn/20260911"
+    ],
+    "2017Q2": [
+      "tabicl/20260911",
+      "tabpfn/20260911"
+    ],
+    "2017Q3": [
+      "tabicl/20260911",
+      "tabpfn/20260911"
+    ],
+    "2017Q4": [
+      "tabicl/20260911",
+      "tabpfn/20260911"
+    ],
+    "2018Q1": [
+      "tabicl/20260911",
+      "tabpfn/20260911"
+    ]
+  },
+  "draws_not_pooled": {
+    "gbm-50k": [
+      20260912,
+      20260913
+    ]
+  },
+  "nearest": [
+    "2015Q3",
+    "2015Q4",
+    "2016Q1"
+  ],
+  "bootstrap": {
+    "resamples": 200,
+    "seed": 20260905,
+    "alpha": 0.05,
+    "blocking": "cohort",
+    "context_draw": "drawn with the resample, jointly",
+    "poolings": [
+      "all",
+      "all, cohorts resampled"
+    ],
+    "per_draw": "the 'all' pooling repeated with each context draw held fixed, in the rows of paired.csv whose draw is set",
+    "draws_disagree": {},
+    "multiplicity": "none: every interval is reported at alpha on its own, and the pairs are not adjusted for one another"
+  },
+  "psi": {
+    "bins": 10,
+    "edges": "the cell's own reference deciles",
+    "critical": "Yurdakul, alpha 0.05, at the cell's sample sizes"
+  },
+  "reference_sizes": {
+    "gbm": 323026,
+    "gbm-50k/20260911": 50000,
+    "gbm-50k/20260912": 50000,
+    "gbm-50k/20260913": 50000,
+    "scorecard": 323026,
+    "tabicl/20260911": 50000,
+    "tabpfn/20260911": 50000
+  },
+  "wall_seconds": 37.7
+}

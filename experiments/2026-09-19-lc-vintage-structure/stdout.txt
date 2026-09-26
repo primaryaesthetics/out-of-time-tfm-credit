@@ -1,0 +1,18 @@
+rows                     : 2,260,668
+origination span         : 2007-06-01 .. 2018-12-01
+quarterly cohorts        : 47
+resolved                 : 1,348,099 (59.6%)
+non-loan rows dropped    : 33  (release footers, no origination date)
+
+date columns reaching past the last origination date:
+  last_pymnt_d                 .. 2019-03-01   (null 0.11%)
+  next_pymnt_d                 .. 2019-05-01   (null 59.51%)
+  last_credit_pull_d           .. 2019-04-01   (null <0.01%)
+  hardship_start_date          .. 2019-03-01   (null 99.52%)
+  hardship_end_date            .. 2019-06-01   (null 99.52%)
+  payment_plan_start_date      .. 2019-04-01   (null 99.52%)
+  debt_settlement_flag_date    .. 2019-03-01   (null 98.49%)
+  settlement_date              .. 2019-03-01   (null 98.49%)
+
+  These are performance-window columns. Splitting on one sorts
+  loans by outcome, not by origination.

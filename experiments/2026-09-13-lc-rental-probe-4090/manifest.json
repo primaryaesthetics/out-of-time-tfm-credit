@@ -1,0 +1,78 @@
+{
+  "slug": "lc-rental-probe-4090",
+  "recorded_utc": "2026-09-13T09:13:34+00:00",
+  "git_sha": "001b24bd38526af6c15eecfc49fef93c9263b782",
+  "git_dirty": false,
+  "written_by_hand": "The archive-level record of the device timing probe on the rented RTX 4090: the node's whole console log, the job list the runner walked and its tally, copied unchanged from the result archive, and the facts that belong to the archive rather than to one job. The four job directories listed under jobs hold the rows and a manifest each.",
+  "host": "Rented instance, 1x NVIDIA GeForce RTX 4090 (24564 MiB), driver 595.58.03, 8 vCPU, 15 GB RAM, Ubuntu Linux x86_64, Python 3.12.3, CUDA 13.2 at the driver, torch built against CUDA 13.0",
+  "gpu": "NVIDIA GeForce RTX 4090, 24564 MiB (25.25 GB reported by torch), torch 2.14.0 on cuda",
+  "job_archive": {
+    "path": "data/derived/node/outoftime-run-rental-probe-2015h1e.tar.gz",
+    "sha256": "bb01546788b528cd1cb7c42fb4dd911351be9402c2f5efc1efb2959c58a0bcba",
+    "score_context_py_sha256": "66e8933d67fea5f8140f31f5229a305a15d3f1eb20e0fd67e15546037ff9f0dc",
+    "provenance": "Byte-identical to scripts/score_context.py at HEAD 001b24b, unchanged since commit fd5eadf. Packed by scripts/pack_node_run.py --format cuda / node_run_cuda.sh at commit e7e2978, one bundle (2026-09-05-lc-2015h1e-bundle), four named passes: tabpfn, tabpfn-t1, tabicl, tabicl-t1."
+  },
+  "result_archive": {
+    "name": "outoftime-result-rental-probe-2015h1e.tar.gz",
+    "sha256": "96af4ce75afd526648e7c16b13fda9e0352c09fdda79b1f77f83ffaa57c7af99",
+    "contents": "four output directories (2026-09-05-lc-2015h1e-bundle-scored-{tabpfn,tabpfn-t1,tabicl,tabicl-t1}, each node.json, scores.parquet, reference.parquet, parts/), score.log, jobs.json, jobs-done.json, gpu.txt; no scorer, no bundle files; kept under data/derived/node/ with a .sha256 sidecar"
+  },
+  "process": {
+    "purpose": "The one-hour device timing probe EXP-005 names before any Freddie Mac model is scored (docs/experiments/EXP-005-tfm-out-of-time-second-book.md, \"The accelerator, and the rule that sizes the grid\"): seconds per scored row including context set-up for TabPFN and TabICL, at both softmax temperatures, on a rented CUDA device, at a 50,000-row context, on the Lending Club 2015H1-E bundle that already carries recordings from the Apple M4 Pro and the Colab Tesla T4.",
+    "one_process": "node_jobs.py walked jobs.json in one call of run.sh on a freshly rented instance: tabpfn, tabpfn-t1, tabicl, tabicl-t1 in that order, finishing 2026-09-13T08:05:59Z through 2026-09-13T08:09:32Z (jobs-done.json); no job was skipped or resumed. The twelve Freddie Mac jobs of experiments/2026-09-13-fm-2004h2e-rental-4090 followed in the same run.sh call on the same instance, finishing 08:11:53Z through 08:30:40Z; jobs-done.json of this archive holds all sixteen entries, the four listed here and the twelve of the FM run.",
+    "console_log": "score.log is the file run-score.sh appends the scorer's console to on the node. Its first 53 lines are these four jobs; the Freddie Mac jobs that follow in the same file belong to experiments/2026-09-13-fm-2004h2e-rental-4090 and are not repeated here. Read in full: no home path beyond /home/node/outoftime-node, no account name, no token; the TabPFN checkpoint travelled in the job archive and was checked against sha256 d0d865d5…3988 by run.sh, the TabICL checkpoint was downloaded from Hugging Face during the tabicl job (score.log lines 27-30)."
+  },
+  "checks_over_all_four": {
+    "bundle_hashes": "node.json's bundle hashes equal bundle.json of experiments/2026-09-05-lc-2015h1e-bundle, all four",
+    "parts": "4 part files per job, equal to node.json's 4 cell records; concatenated parts equal scores.parquet and reference.parquet, all four",
+    "rows": "every scored (cohort, row), its outcome and age match the gbm rows of experiments/2026-09-05-lc-2015h1e-scores/scores.parquet; every reference row and outcome match the gbm-50k reference of the same context seed; zero mismatches, no missing probability, all four",
+    "repeats": "the first cohort (2015Q3) scored twice from a fresh fit on every job: largest disagreement 0.0, no row differs",
+    "parameters": "softmax_temperature 0.9 on tabpfn/tabicl and 1.0 on tabpfn-t1/tabicl-t1; TabPFN: balance_probabilities false, categorical_features_indices [6, 13, 19], ignore_pretraining_limits true, n_estimators auto, random_state 0; TabICL: n_estimators 8, random_state 42, average_logits true; 50,000 context rows on every model",
+    "environment": "Python 3.12.3, Linux-6.17.0-20-generic-x86_64-with-glibc2.39, torch 2.14.0 on cuda, tabpfn 8.5.0, tabicl 2.1.1, checkpoints d0d865d5...3988 (tabpfn) and bdc7dbd5...4ed0 (tabicl); peak GPU 1.071 GB on the two tabpfn jobs, 15.527 GB on the two tabicl jobs"
+  },
+  "timing_per_job": {
+    "tabpfn": {
+      "fit_seconds": 4.308,
+      "cell_seconds_sum": 76.976,
+      "wall_seconds": 97.5,
+      "tally_seconds": 99.5,
+      "wall_minus_cells_and_fit": 16.216
+    },
+    "tabpfn-t1": {
+      "fit_seconds": 2.126,
+      "cell_seconds_sum": 77.592,
+      "wall_seconds": 96.4,
+      "tally_seconds": 97.5,
+      "wall_minus_cells_and_fit": 16.682
+    },
+    "tabicl": {
+      "fit_seconds": 6.124,
+      "cell_seconds_sum": 41.272,
+      "wall_seconds": 58.5,
+      "tally_seconds": 59.4,
+      "wall_minus_cells_and_fit": 11.104
+    },
+    "tabicl-t1": {
+      "fit_seconds": 2.409,
+      "cell_seconds_sum": 41.387,
+      "wall_seconds": 55.0,
+      "tally_seconds": 56.0,
+      "wall_minus_cells_and_fit": 11.204
+    },
+    "reading": "s_P (TabPFN, seconds per scored row including context set-up) at the cohort cells: about 650-660 us/row at 0.9, 657-664 us/row at 1.0. s_I (TabICL): about 348 us/row at both temperatures. No timing flag over twice the median (timing_flags_over_twice_median: []); the instance was idle and dedicated to this run, so these are measurements, not caveated readings."
+  },
+  "cross_device": {
+    "tabpfn_vs_apple_m4_pro": "against experiments/2026-09-06-lc-2015h1e-tabpfn-m4pro (0.9) and experiments/2026-09-11-lc-2015h1e-tabpfn-m4pro (the grid's own run, identical numbers): scored rows mean|Δpd| 8.54e-05, max 1.81e-03, all 60,000 rows differ by some amount; reference rows mean|Δpd| 1.18e-04, max 2.96e-02, all 50,000 differ",
+    "tabpfn_t1_vs_apple_and_t4": "against experiments/2026-09-06-lc-2015h1e-probe3-colab-t4 (Tesla T4): scored mean|Δpd| 1.12e-04, max 2.27e-03 (59,999 of 60,000 differ); reference mean 1.39e-04, max 4.04e-02 (49,995 of 50,000 differ). Against experiments/2026-09-11-lc-2015h1e-tabpfn-t1-m4pro (Apple M4 Pro): scored mean 1.12e-04, max 1.90e-03 (59,999 differ); reference mean 1.47e-04, max 2.74e-02 (50,000 differ)",
+    "tabicl_vs_t4": "against experiments/2026-09-06-lc-2015h1e-tabicl-colab-t4 and experiments/2026-09-08-lc-2015h1e-tabicl-colab-t4 (Tesla T4, identical numbers, the grid's own run): scored mean|Δpd| 6.10e-05, max 1.27e-03 (58,320 of 60,000 differ); reference mean 5.49e-05, max 1.81e-03 (48,732 of 50,000 differ)",
+    "tabicl_t1_vs_t4": "against experiments/2026-09-06-lc-2015h1e-probe3-colab-t4: scored mean 7.86e-05, max 1.32e-03 (57,203 of 60,000 differ); reference mean 7.11e-05, max 1.87e-03 (47,649 of 50,000 differ). Against experiments/2026-09-08-lc-2015h1e-tabicl-t1-check-colab-t4 (2015Q3 only, 20,000 rows): the matched 20,000 scored rows read mean 7.94e-05, max 1.19e-03, 19,052 differ; its reference is the same full 50,000-row context and reads the same numbers as the probe3 comparison",
+    "reading": "A probability moves by about a ten-thousandth on average between the RTX 4090 and either the Apple GPU or the Tesla T4, and by up to a few hundredths on single rows, on bit-identical input rows and context. This is the device term the eighth audit named, now read a third time on a third accelerator."
+  },
+  "jobs": {
+    "tabpfn@2026-09-05-lc-2015h1e-bundle": "experiments/2026-09-13-lc-2015h1e-tabpfn-rental-4090",
+    "tabpfn-t1@2026-09-05-lc-2015h1e-bundle": "experiments/2026-09-13-lc-2015h1e-tabpfn-t1-rental-4090",
+    "tabicl@2026-09-05-lc-2015h1e-bundle": "experiments/2026-09-13-lc-2015h1e-tabicl-rental-4090",
+    "tabicl-t1@2026-09-05-lc-2015h1e-bundle": "experiments/2026-09-13-lc-2015h1e-tabicl-t1-rental-4090"
+  },
+  "not_in_this_run": "The Freddie Mac falsifying run this probe was timed ahead of, on the same rented instance immediately afterward: experiments/2026-09-13-fm-2004h2e-rental-4090. jobs-done.json of this result archive holds that run's twelve entries too, since both runs share one node directory and one tally file; this manifest and its four job directories cover only the LC probe entries."
+}

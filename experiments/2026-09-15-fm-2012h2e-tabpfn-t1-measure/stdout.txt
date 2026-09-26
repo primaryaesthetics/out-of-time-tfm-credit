@@ -1,0 +1,76 @@
+measured tabpfn@t1 at 1 from experiments/2026-09-14-fm-2012h2e-tabpfn-rental-4090
+library               : tabpfn 8.5.0
+  experiments/2026-09-14-fm-2012h2e-tabpfn-rental-4090: seeds [20260911, 20260912, 20260913], from [0.9], 1,624,515 scored + 150,000 reference rows
+check                 : experiments/2026-09-14-fm-2012h2e-tabpfn-t1-rental-4090
+  2012H2-E 20260911/2013H1        24,341 rows  max |d pd| 5.99e-04  max |d logit| 1.16e-02  |b - 1| 8.92e-05
+  2012H2-E 20260911/2013H2        23,974 rows  max |d pd| 7.11e-04  max |d logit| 1.31e-02  |b - 1| 1.33e-04
+  2012H2-E 20260911/2014H1        24,341 rows  max |d pd| 6.31e-04  max |d logit| 1.54e-02  |b - 1| 1.65e-04
+  2012H2-E 20260911/2014H2        24,213 rows  max |d pd| 5.84e-04  max |d logit| 1.42e-02  |b - 1| 1.81e-04
+  2012H2-E 20260911/2015H1        24,159 rows  max |d pd| 6.29e-04  max |d logit| 1.21e-02  |b - 1| 1.60e-04
+  2012H2-E 20260911/2015H2        24,159 rows  max |d pd| 5.76e-04  max |d logit| 1.14e-02  |b - 1| 1.86e-04
+  2012H2-E 20260911/2016H1        24,632 rows  max |d pd| 5.07e-04  max |d logit| 1.67e-02  |b - 1| 1.79e-04
+  2012H2-E 20260911/2016H2        24,760 rows  max |d pd| 3.23e-04  max |d logit| 1.36e-02  |b - 1| 1.65e-04
+  2012H2-E 20260911/2017H1        24,541 rows  max |d pd| 4.30e-04  max |d logit| 1.29e-02  |b - 1| 1.99e-04
+  2012H2-E 20260911/2017H2        24,680 rows  max |d pd| 3.35e-04  max |d logit| 1.63e-02  |b - 1| 2.12e-04
+  2012H2-E 20260911/2018H1        24,416 rows  max |d pd| 3.69e-04  max |d logit| 2.05e-02  |b - 1| 2.14e-04
+  2012H2-E 20260911/2018H2        24,543 rows  max |d pd| 3.79e-04  max |d logit| 1.21e-02  |b - 1| 2.31e-04
+  2012H2-E 20260911/2019H1        24,752 rows  max |d pd| 2.68e-04  max |d logit| 1.29e-02  |b - 1| 2.09e-04
+  2012H2-E 20260911/2019H2        24,861 rows  max |d pd| 4.98e-04  max |d logit| 1.31e-02  |b - 1| 1.74e-04
+  2012H2-E 20260911/2020H1        24,880 rows  max |d pd| 2.18e-04  max |d logit| 1.33e-02  |b - 1| 1.43e-04
+  2012H2-E 20260911/2020H2        24,919 rows  max |d pd| 2.53e-04  max |d logit| 1.33e-02  |b - 1| 1.33e-04
+  2012H2-E 20260911/2021H1        24,909 rows  max |d pd| 1.83e-04  max |d logit| 1.33e-02  |b - 1| 1.67e-04
+  2012H2-E 20260911/2021H2        24,929 rows  max |d pd| 1.94e-04  max |d logit| 1.45e-02  |b - 1| 1.98e-04
+  2012H2-E 20260911/2022H1        24,889 rows  max |d pd| 2.88e-04  max |d logit| 1.27e-02  |b - 1| 2.27e-04
+  2012H2-E 20260911/2022H2        24,859 rows  max |d pd| 2.83e-04  max |d logit| 1.47e-02  |b - 1| 2.52e-04
+  2012H2-E 20260911/2023H1        24,882 rows  max |d pd| 2.75e-04  max |d logit| 2.01e-02  |b - 1| 2.37e-04
+  2012H2-E 20260911/2023H2        24,866 rows  max |d pd| 4.78e-04  max |d logit| 1.67e-02  |b - 1| 2.26e-04
+  2012H2-E 20260911/reference     50,000 rows  max |d pd| 2.51e-03  max |d logit| 2.07e-02  |b - 1| 1.87e-04
+  2012H2-E 20260912/2013H1        24,341 rows  max |d pd| 1.99e-03  max |d logit| 2.31e-02  |b - 1| 7.85e-05
+  2012H2-E 20260912/2013H2        23,974 rows  max |d pd| 1.91e-03  max |d logit| 1.90e-02  |b - 1| 3.93e-05
+  2012H2-E 20260912/2014H1        24,341 rows  max |d pd| 1.96e-03  max |d logit| 2.23e-02  |b - 1| 3.43e-05
+  2012H2-E 20260912/2014H2        24,213 rows  max |d pd| 1.71e-03  max |d logit| 1.62e-02  |b - 1| 7.02e-05
+  2012H2-E 20260912/2015H1        24,159 rows  max |d pd| 1.57e-03  max |d logit| 1.92e-02  |b - 1| 5.40e-05
+  2012H2-E 20260912/2015H2        24,159 rows  max |d pd| 1.43e-03  max |d logit| 1.46e-02  |b - 1| 1.00e-04
+  2012H2-E 20260912/2016H1        24,632 rows  max |d pd| 1.65e-03  max |d logit| 1.63e-02  |b - 1| 8.04e-05
+  2012H2-E 20260912/2016H2        24,760 rows  max |d pd| 1.36e-03  max |d logit| 1.54e-02  |b - 1| 8.91e-05
+  2012H2-E 20260912/2017H1        24,541 rows  max |d pd| 1.49e-03  max |d logit| 1.34e-02  |b - 1| 1.05e-04
+  2012H2-E 20260912/2017H2        24,680 rows  max |d pd| 1.16e-03  max |d logit| 1.70e-02  |b - 1| 1.15e-04
+  2012H2-E 20260912/2018H1        24,416 rows  max |d pd| 1.49e-03  max |d logit| 1.80e-02  |b - 1| 1.25e-04
+  2012H2-E 20260912/2018H2        24,543 rows  max |d pd| 6.36e-04  max |d logit| 1.30e-02  |b - 1| 1.38e-04
+  2012H2-E 20260912/2019H1        24,752 rows  max |d pd| 4.08e-04  max |d logit| 1.74e-02  |b - 1| 1.08e-04
+  2012H2-E 20260912/2019H2        24,861 rows  max |d pd| 8.36e-04  max |d logit| 2.44e-02  |b - 1| 8.19e-05
+  2012H2-E 20260912/2020H1        24,880 rows  max |d pd| 5.10e-04  max |d logit| 1.62e-02  |b - 1| 6.54e-05
+  2012H2-E 20260912/2020H2        24,919 rows  max |d pd| 3.67e-04  max |d logit| 1.62e-02  |b - 1| 6.56e-05
+  2012H2-E 20260912/2021H1        24,909 rows  max |d pd| 7.29e-04  max |d logit| 1.76e-02  |b - 1| 8.37e-05
+  2012H2-E 20260912/2021H2        24,929 rows  max |d pd| 5.22e-04  max |d logit| 1.86e-02  |b - 1| 1.13e-04
+  2012H2-E 20260912/2022H1        24,889 rows  max |d pd| 7.42e-04  max |d logit| 1.74e-02  |b - 1| 1.24e-04
+  2012H2-E 20260912/2022H2        24,859 rows  max |d pd| 4.06e-04  max |d logit| 1.64e-02  |b - 1| 1.49e-04
+  2012H2-E 20260912/2023H1        24,882 rows  max |d pd| 5.21e-04  max |d logit| 1.51e-02  |b - 1| 1.28e-04
+  2012H2-E 20260912/2023H2        24,866 rows  max |d pd| 4.35e-04  max |d logit| 1.69e-02  |b - 1| 1.38e-04
+  2012H2-E 20260912/reference     50,000 rows  max |d pd| 1.65e-03  max |d logit| 1.56e-02  |b - 1| 1.05e-04
+  2012H2-E 20260913/2013H1        24,341 rows  max |d pd| 1.27e-03  max |d logit| 2.07e-02  |b - 1| 1.06e-04
+  2012H2-E 20260913/2013H2        23,974 rows  max |d pd| 1.03e-03  max |d logit| 1.73e-02  |b - 1| 5.48e-05
+  2012H2-E 20260913/2014H1        24,341 rows  max |d pd| 1.61e-03  max |d logit| 2.69e-02  |b - 1| 1.06e-06
+  2012H2-E 20260913/2014H2        24,213 rows  max |d pd| 9.20e-04  max |d logit| 2.21e-02  |b - 1| 3.96e-05
+  2012H2-E 20260913/2015H1        24,159 rows  max |d pd| 1.25e-03  max |d logit| 1.88e-02  |b - 1| 2.41e-05
+  2012H2-E 20260913/2015H2        24,159 rows  max |d pd| 8.94e-04  max |d logit| 4.23e-02  |b - 1| 6.00e-05
+  2012H2-E 20260913/2016H1        24,632 rows  max |d pd| 9.45e-04  max |d logit| 1.51e-02  |b - 1| 4.18e-05
+  2012H2-E 20260913/2016H2        24,760 rows  max |d pd| 7.94e-04  max |d logit| 1.76e-02  |b - 1| 3.53e-05
+  2012H2-E 20260913/2017H1        24,541 rows  max |d pd| 1.00e-03  max |d logit| 2.88e-02  |b - 1| 5.36e-05
+  2012H2-E 20260913/2017H2        24,680 rows  max |d pd| 7.06e-04  max |d logit| 2.00e-02  |b - 1| 6.55e-05
+  2012H2-E 20260913/2018H1        24,416 rows  max |d pd| 9.12e-04  max |d logit| 1.69e-02  |b - 1| 8.06e-05
+  2012H2-E 20260913/2018H2        24,543 rows  max |d pd| 5.40e-04  max |d logit| 1.61e-02  |b - 1| 9.28e-05
+  2012H2-E 20260913/2019H1        24,752 rows  max |d pd| 4.75e-04  max |d logit| 2.60e-02  |b - 1| 7.52e-05
+  2012H2-E 20260913/2019H2        24,861 rows  max |d pd| 7.76e-04  max |d logit| 3.25e-02  |b - 1| 5.28e-05
+  2012H2-E 20260913/2020H1        24,880 rows  max |d pd| 6.37e-04  max |d logit| 1.57e-02  |b - 1| 6.53e-06
+  2012H2-E 20260913/2020H2        24,919 rows  max |d pd| 4.56e-04  max |d logit| 2.36e-02  |b - 1| 2.16e-05
+  2012H2-E 20260913/2021H1        24,909 rows  max |d pd| 4.88e-04  max |d logit| 1.90e-02  |b - 1| 1.13e-05
+  2012H2-E 20260913/2021H2        24,929 rows  max |d pd| 3.83e-04  max |d logit| 3.51e-02  |b - 1| 4.01e-05
+  2012H2-E 20260913/2022H1        24,889 rows  max |d pd| 3.61e-04  max |d logit| 2.08e-02  |b - 1| 7.82e-05
+  2012H2-E 20260913/2022H2        24,859 rows  max |d pd| 6.04e-04  max |d logit| 1.85e-02  |b - 1| 9.64e-05
+  2012H2-E 20260913/2023H1        24,882 rows  max |d pd| 6.75e-04  max |d logit| 2.62e-02  |b - 1| 6.83e-05
+  2012H2-E 20260913/2023H2        24,866 rows  max |d pd| 6.76e-04  max |d logit| 1.68e-02  |b - 1| 4.69e-05
+  2012H2-E 20260913/reference     50,000 rows  max |d pd| 1.37e-03  max |d logit| 3.49e-02  |b - 1| 4.78e-05
+derived - scored      : Cox slope worst +4.04e-04, mean +4.78e-05; O/E worst -9.93e-04, mean -3.88e-04; 0 cells with a Cox fit that did not finish
+rows checked          : 1,774,515 of 1,774,515, worst |b - 1| 2.52e-04, mean 1.11e-04, 0 of 69 cells above the Lending Club figure 0.00084, no bound given, approximate
+written               : experiments/2026-09-15-fm-2012h2e-tabpfn-t1-measure/derive.json only; no rows

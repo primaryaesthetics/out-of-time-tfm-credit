@@ -1,0 +1,140 @@
+{
+ "slug": "fm-2016h2r-tabicl-rerun-rental-4090",
+ "recorded_utc": "2026-09-14T08:52:00+00:00",
+ "git_sha": "001b24bd38526af6c15eecfc49fef93c9263b782",
+ "git_dirty": false,
+ "scorer_commit": "Byte-identical to scripts/score_context.py at HEAD 001b24b (diffed directly against the git blob, zero bytes differ).",
+ "written_by_hand": "This is a standalone rerun, made by hand in the node directory after the grid finished, outside run.sh and node_jobs.py: same command as the grid's tabicl job on this bundle, run again in a fresh process that did not share run.sh's checkpoint cache. The manifest is assembled from node.json, the rerun archive, and a direct row-for-row comparison against the grid's first pass.",
+ "host": "Rented instance, 1x NVIDIA GeForce RTX 4090 (24564 MiB), driver 595.58.03, 8 vCPU, 15 GB RAM, Ubuntu Linux x86_64, Python 3.12.3, CUDA 13.2 at the driver, torch built against CUDA 13.0",
+ "gpu": "NVIDIA GeForce RTX 4090, 24564 MiB (25.25 GB reported by torch), torch 2.14.0 on cuda",
+ "job": "tabicl-rerun@2026-09-13-fm-2016h2r-bundle",
+ "command": "python score_context.py 2026-09-13-fm-2016h2r-bundle --out-dir 2026-09-13-fm-2016h2r-bundle-scored-tabicl-rerun --models tabicl --chunk 20000, run by hand (not through node_jobs.py/run.sh), console appended to rerun.log.",
+ "rerun_of": "experiments/2026-09-14-fm-2016h2r-tabicl-rental-4090",
+ "job_archive": {
+  "note": "This rerun used the same score_context.py already unpacked on the node from the grid's job archive (verified byte-identical to scripts/score_context.py at HEAD); it did not travel in a separate job archive of its own."
+ },
+ "result_archive": {
+  "name": "outoftime-result-grid-fm-rerun-tabicl-r.tar.gz",
+  "sha256": "a48486081c1f4d1e3d1e38c4591ab784f381060f157820dde0c6f5b93472d4d8",
+  "provenance": "A second pass of tabicl on 2016H2-R and 2018H2-R, run by hand in the node directory after the grid finished, outside run.sh: same command as the grid's tabicl jobs on those two bundles, but not through node_jobs.py and not sharing run.sh's checkpoint cache, so the TabICL checkpoint was fetched again from Hugging Face Hub for the rerun (same hash as the grid's, bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0); node.json for each rerun job accordingly lists only that one checkpoint, not the TabPFN one.",
+  "contents": "2026-09-13-fm-2016h2r-bundle-scored-tabicl-rerun/ (node.json, scores.parquet, reference.parquet, parts/) copied here unchanged; rerun.log here is lines 1-61 of the archive's own rerun.log.",
+  "sha256_of_files_here": {
+   "scores.parquet": "bce38f08e67f76332c410469ecaef78647007dc76f25fa2413cd4dde7f41ae91",
+   "reference.parquet": "ff234a23613c4d364ccc9b716fccccc8e523f4db6bb5f1dd6306528da454b592",
+   "node.json": "c8856b22408a178ac5fab5fb15fbfead7a7440e022053aff2c7d82d366f1d112"
+  }
+ },
+ "bundle_check": {
+  "build_id": "2016H2-R",
+  "as_of": "2016-12-31",
+  "arm": "R",
+  "train_rows": 97038,
+  "test_rows": 346926,
+  "cohorts_in_build": 14,
+  "files": {
+   "context.parquet": "9be4653ba727d017738932fce566ceceb12fce99f6dc8b85b7cae3b24ab1b660",
+   "scored.parquet": "c79f27e951a27002b1eb96194382df4fe915d4b1879410ea54f8bbb365f6c897"
+  },
+  "how": "Same bundle as the grid's first pass on this build; hashes equal bundle.json, equal to the first pass's."
+ },
+ "parts_check": "45 part files, equal to node.json's 45 cell records; parts concatenated equal scores.parquet and reference.parquet row for row.",
+ "row_check": {
+  "scored": "1,040,778 rows over 14 cohorts, zero mismatches against the bundle's own scored.parquet, the build's full-GBM and GBM-50k rows.",
+  "reference": "150,000 rows, zero mismatches against the GBM-50k reference and the bundle's own context.parquet.",
+  "seeds": [
+   20260911,
+   20260912,
+   20260913
+  ],
+  "totals": {
+   "not_in_gbm": 0,
+   "gbm_not_scored": 0,
+   "not_in_gbm50k_same_seed": 0,
+   "gbm50k_same_seed_not_scored": 0,
+   "not_in_bundle": 0,
+   "bundle_not_scored": 0,
+   "order_vs_bundle": 0,
+   "not_in_gbm50k_reference": 0,
+   "gbm50k_reference_not_scored": 0,
+   "order_vs_gbm50k_reference": 0,
+   "not_in_bundle_context": 0,
+   "bundle_context_not_scored": 0,
+   "order_vs_bundle_context": 0
+  },
+  "pd_range": {
+   "nonfinite": 0,
+   "below_0": 0,
+   "above_1": 0
+  }
+ },
+ "vs_first_pass": {
+  "first_pass_dir": "experiments/2026-09-14-fm-2016h2r-tabicl-rental-4090",
+  "rows_differing_non_pd": 0,
+  "rows_pd_differing": 0,
+  "max_abs_pd_difference": 0.0,
+  "how": "Concatenated parts of this rerun compared position-by-position against the concatenated parts of the grid's first tabicl pass on the same bundle (same key columns plus pd): zero rows differ, on both scores.parquet and reference.parquet.",
+  "repeats_equal_first_pass": true,
+  "wall_seconds_first_vs_rerun": [
+   590.5,
+   593.8
+  ],
+  "environment_fields_differing_from_first_pass": {
+   "checkpoints": [
+    "{\"tabpfn-v3-classifier-v3_default.ckpt\": \"d0d865d54dfbc524f5703104be90620182dca7e5fb2c16de72e9959ea18f3988\", \"tabicl-classifier-v2-20260212.ckpt\": \"bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0\"}",
+    "{\"tabicl-classifier-v2-20260212.ckpt\": \"bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0\"}"
+   ]
+  }
+ },
+ "console_log": "rerun.log here is lines 1-61 of the rerun archive's console log (105 lines total, covering both rerun jobs back to back with no job-heading markers, unlike run.sh's score.log). Read in full: no home path beyond /home/node/outoftime-node, no account name. One occurrence of the word 'token' at its line 3: the same HF Hub unauthenticated-request warning, not a token value.",
+ "what_it_measured": {
+  "model": "tabicl, checkpoint(s) present on the node for this standalone process: {\"tabicl-classifier-v2-20260212.ckpt\": \"bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0\"}",
+  "device": "cuda",
+  "context": "50,000 rows per seed drawn from the build's training pool (97,038 rows, experiments/2026-09-13-fm-2016h2r-scores/build.json train_rows), context seeds [20260911, 20260912, 20260913]",
+  "chunk": "20,000 scored rows per forward call (--chunk 20000)",
+  "cell_summary": {
+   "reference_cells": 3,
+   "reference_rows_each": 50000,
+   "reference_seconds": {
+    "min": 18.587,
+    "median": 18.594,
+    "max": 18.967
+   },
+   "cohort_cells": 42,
+   "cohort_rows_total": 1040778,
+   "cohort_seconds": {
+    "min": 11.557,
+    "median": 11.604,
+    "max": 11.642
+   },
+   "cohort_us_per_row": {
+    "min": 465.4017409442818,
+    "median": 467.2352065650268,
+    "max": 475.50786369593703
+   },
+   "peak_gpu_gb_max": 14.491,
+   "peak_gpu_gb_min": 14.49
+  },
+  "wall_seconds": 593.8,
+  "repeat": [
+   {
+    "context_seed": 20260911,
+    "cell": "2017H1",
+    "max_abs_difference": 0.00015775486826896667,
+    "rows_differing": 4316
+   },
+   {
+    "context_seed": 20260912,
+    "cell": "2017H1",
+    "max_abs_difference": 0.00017074309289455414,
+    "rows_differing": 4348
+   },
+   {
+    "context_seed": 20260913,
+    "cell": "2017H1",
+    "max_abs_difference": 0.00015548616647720337,
+    "rows_differing": 4360
+   }
+  ]
+ },
+ "not_in_this_run": "The grid's own first tabicl pass on this bundle is experiments/2026-09-14-fm-2016h2r-tabicl-rental-4090; this rerun exists only to check reproducibility across processes and does not supersede it."
+}

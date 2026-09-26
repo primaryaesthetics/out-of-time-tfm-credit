@@ -1,0 +1,1571 @@
+{
+  "arm": "R",
+  "builds": {
+    "2004H2-R": [
+      "2005H1",
+      "2005H2",
+      "2006H1",
+      "2006H2",
+      "2007H1",
+      "2007H2",
+      "2008H1",
+      "2008H2",
+      "2009H1",
+      "2009H2",
+      "2010H1",
+      "2010H2",
+      "2011H1",
+      "2011H2",
+      "2012H1",
+      "2012H2",
+      "2013H1",
+      "2013H2",
+      "2014H1",
+      "2014H2",
+      "2015H1",
+      "2015H2",
+      "2016H1",
+      "2016H2",
+      "2017H1",
+      "2017H2",
+      "2018H1",
+      "2018H2",
+      "2019H1",
+      "2019H2",
+      "2020H1",
+      "2020H2",
+      "2021H1",
+      "2021H2",
+      "2022H1",
+      "2022H2",
+      "2023H1",
+      "2023H2"
+    ],
+    "2006H2-R": [
+      "2007H1",
+      "2007H2",
+      "2008H1",
+      "2008H2",
+      "2009H1",
+      "2009H2",
+      "2010H1",
+      "2010H2",
+      "2011H1",
+      "2011H2",
+      "2012H1",
+      "2012H2",
+      "2013H1",
+      "2013H2",
+      "2014H1",
+      "2014H2",
+      "2015H1",
+      "2015H2",
+      "2016H1",
+      "2016H2",
+      "2017H1",
+      "2017H2",
+      "2018H1",
+      "2018H2",
+      "2019H1",
+      "2019H2",
+      "2020H1",
+      "2020H2",
+      "2021H1",
+      "2021H2",
+      "2022H1",
+      "2022H2",
+      "2023H1",
+      "2023H2"
+    ],
+    "2008H2-R": [
+      "2009H1",
+      "2009H2",
+      "2010H1",
+      "2010H2",
+      "2011H1",
+      "2011H2",
+      "2012H1",
+      "2012H2",
+      "2013H1",
+      "2013H2",
+      "2014H1",
+      "2014H2",
+      "2015H1",
+      "2015H2",
+      "2016H1",
+      "2016H2",
+      "2017H1",
+      "2017H2",
+      "2018H1",
+      "2018H2",
+      "2019H1",
+      "2019H2",
+      "2020H1",
+      "2020H2",
+      "2021H1",
+      "2021H2",
+      "2022H1",
+      "2022H2",
+      "2023H1",
+      "2023H2"
+    ],
+    "2010H2-R": [
+      "2011H1",
+      "2011H2",
+      "2012H1",
+      "2012H2",
+      "2013H1",
+      "2013H2",
+      "2014H1",
+      "2014H2",
+      "2015H1",
+      "2015H2",
+      "2016H1",
+      "2016H2",
+      "2017H1",
+      "2017H2",
+      "2018H1",
+      "2018H2",
+      "2019H1",
+      "2019H2",
+      "2020H1",
+      "2020H2",
+      "2021H1",
+      "2021H2",
+      "2022H1",
+      "2022H2",
+      "2023H1",
+      "2023H2"
+    ],
+    "2012H2-R": [
+      "2013H1",
+      "2013H2",
+      "2014H1",
+      "2014H2",
+      "2015H1",
+      "2015H2",
+      "2016H1",
+      "2016H2",
+      "2017H1",
+      "2017H2",
+      "2018H1",
+      "2018H2",
+      "2019H1",
+      "2019H2",
+      "2020H1",
+      "2020H2",
+      "2021H1",
+      "2021H2",
+      "2022H1",
+      "2022H2",
+      "2023H1",
+      "2023H2"
+    ],
+    "2014H2-R": [
+      "2015H1",
+      "2015H2",
+      "2016H1",
+      "2016H2",
+      "2017H1",
+      "2017H2",
+      "2018H1",
+      "2018H2",
+      "2019H1",
+      "2019H2",
+      "2020H1",
+      "2020H2",
+      "2021H1",
+      "2021H2",
+      "2022H1",
+      "2022H2",
+      "2023H1",
+      "2023H2"
+    ],
+    "2016H2-R": [
+      "2017H1",
+      "2017H2",
+      "2018H1",
+      "2018H2",
+      "2019H1",
+      "2019H2",
+      "2020H1",
+      "2020H2",
+      "2021H1",
+      "2021H2",
+      "2022H1",
+      "2022H2",
+      "2023H1",
+      "2023H2"
+    ],
+    "2018H2-R": [
+      "2019H1",
+      "2019H2",
+      "2020H1",
+      "2020H2",
+      "2021H1",
+      "2021H2",
+      "2022H1",
+      "2022H2",
+      "2023H1",
+      "2023H2"
+    ]
+  },
+  "cells": 192,
+  "floors": {
+    "record": "experiments/2026-09-13-fm-vintage-builds2/cells.csv",
+    "rows": 5000,
+    "defaults": 100,
+    "cells_above": 160,
+    "cells": 192,
+    "reading": "160 of 192 cells above the floors",
+    "under": {
+      "2013H1": [
+        "2004H2-R",
+        "2006H2-R",
+        "2008H2-R",
+        "2010H2-R",
+        "2012H2-R"
+      ],
+      "2014H2": [
+        "2004H2-R",
+        "2006H2-R",
+        "2008H2-R",
+        "2010H2-R",
+        "2012H2-R"
+      ],
+      "2015H1": [
+        "2004H2-R",
+        "2006H2-R",
+        "2008H2-R",
+        "2010H2-R",
+        "2012H2-R",
+        "2014H2-R"
+      ],
+      "2020H2": [
+        "2004H2-R",
+        "2006H2-R",
+        "2008H2-R",
+        "2010H2-R",
+        "2012H2-R",
+        "2014H2-R",
+        "2016H2-R",
+        "2018H2-R"
+      ],
+      "2021H1": [
+        "2004H2-R",
+        "2006H2-R",
+        "2008H2-R",
+        "2010H2-R",
+        "2012H2-R",
+        "2014H2-R",
+        "2016H2-R",
+        "2018H2-R"
+      ]
+    },
+    "first_cohort_under_floors": [
+      "2012H2-R",
+      "2014H2-R"
+    ],
+    "rule": "a cohort under the floors leaves every pooling and the resample; the nearest pooling is each build's youngest cohorts less those under the floors; the second PSI's reference is the first scored cohort on every build, named under psi.first_cohort, whatever that cohort's floor verdict, since the reference reads no label; first_cohort_under_floors names the builds whose reference is under the floors"
+  },
+  "outcome": "outcome",
+  "cohort_scopes": {
+    "pre-flag": [
+      "2005H1",
+      "2005H2",
+      "2006H1",
+      "2006H2",
+      "2007H1",
+      "2007H2",
+      "2008H1",
+      "2008H2",
+      "2009H1",
+      "2009H2",
+      "2010H1",
+      "2010H2",
+      "2011H1"
+    ],
+    "flagged": [
+      "2014H1",
+      "2015H2",
+      "2016H1",
+      "2016H2",
+      "2017H1",
+      "2017H2",
+      "2018H1",
+      "2018H2",
+      "2019H1",
+      "2019H2",
+      "2020H1",
+      "2021H2",
+      "2022H1",
+      "2022H2",
+      "2023H1",
+      "2023H2"
+    ],
+    "crisis cells": [
+      "2007H1",
+      "2007H2",
+      "2008H1",
+      "2008H2",
+      "2009H1",
+      "2009H2"
+    ],
+    "2022 cells": [
+      "2022H1",
+      "2022H2",
+      "2023H1",
+      "2023H2"
+    ]
+  },
+  "oe_ratio": {
+    "metric": "oe_ratio_2022",
+    "later": [
+      "2022H2",
+      "2023H1",
+      "2023H2"
+    ],
+    "earlier": [
+      "2020H1",
+      "2021H2"
+    ],
+    "reading": "per model and build, observed over expected pooled over the build's later cells divided by the same over its earlier cells; 'builds' is the mean over the builds holding both"
+  },
+  "distinct_cohorts": 38,
+  "rows_scored": 23634315,
+  "rows_distinct": 931123,
+  "models": {
+    "scorecard": [],
+    "gbm": [],
+    "gbm-50k": [
+      20260911,
+      20260912,
+      20260913
+    ]
+  },
+  "models_dropped": [],
+  "sources": [
+    "experiments/2026-09-13-fm-2004h2r-scores-dti-kept",
+    "experiments/2026-09-13-fm-2006h2r-scores-dti-kept",
+    "experiments/2026-09-13-fm-2008h2r-scores-dti-kept",
+    "experiments/2026-09-13-fm-2010h2r-scores-dti-kept",
+    "experiments/2026-09-13-fm-2012h2r-scores-dti-kept",
+    "experiments/2026-09-13-fm-2014h2r-scores-dti-kept",
+    "experiments/2026-09-13-fm-2016h2r-scores-dti-kept",
+    "experiments/2026-09-13-fm-2018h2r-scores-dti-kept"
+  ],
+  "derived_rows": {},
+  "nearest": 3,
+  "bootstrap": {
+    "resamples": 200,
+    "seed": 20260905,
+    "alpha": 0.05,
+    "blocking": "cohort, one index per cohort shared by every build that scores it",
+    "context_draw": "drawn with the resample, jointly across models and builds",
+    "poolings": [
+      "all",
+      "nearest",
+      "all, cohorts resampled"
+    ],
+    "scopes": "'arm' is the mean over every cell in the pooling; 'builds' is the mean over builds of each build's own statistic, every build weighted alike; a build's name is that build alone. The 'builds' rows and the per-build rows exist under the 'all' and 'nearest' poolings; with the cohorts resampled a build can hold fewer than two ages and only 'arm' is reported",
+    "pooled_metrics": [
+      "gini",
+      "abs_log_oe",
+      "cox_slope_deviation",
+      "cox_slope",
+      "psi",
+      "psi_first_cohort",
+      "auc_slope_build",
+      "auc_slope_cohort"
+    ],
+    "per_draw": "the 'all' pooling repeated with each context draw held fixed, in the rows whose draw is set",
+    "draws_disagree": {
+      "abs_log_oe|gbm-50k - gbm": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.0264980272525422,
+          "ci_hi": -0.009847679407852042
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.0032864234617496824,
+          "ci_hi": 0.0023650258714266056
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.0020215883282505703,
+          "ci_hi": 0.006390072169782746
+        }
+      ],
+      "abs_log_oe|gbm-50k - scorecard": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.04122475312143894,
+          "ci_hi": -0.02346417858106813
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.018381999260788786,
+          "ci_hi": -0.00959656917596688
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.014441067491615472,
+          "ci_hi": -0.0053477011747516375
+        }
+      ],
+      "auc_slope_cohort|gbm-50k - gbm": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.0003046510637132337,
+          "ci_hi": 0.0004244796208591453
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.00011203719639578788,
+          "ci_hi": 2.4218822945336463e-05
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 6.7032485100662325e-06,
+          "ci_hi": 0.0001420236579147056
+        }
+      ],
+      "auc_slope_cohort|gbm-50k - scorecard": [
+        {
+          "draw": 20260911,
+          "ci_lo": 5.7120183338123324e-05,
+          "ci_hi": 0.0002575671457444357
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.0003362168683148453,
+          "ci_hi": -0.00015262998152613423
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.00023234361137826676,
+          "ci_hi": -4.0609765485891766e-05
+        }
+      ],
+      "cox_slope|gbm-50k - gbm": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.015534400173169177,
+          "ci_hi": 0.022849642399560312
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.0072162504427201405,
+          "ci_hi": 0.013833863255955153
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.013179752406102956,
+          "ci_hi": -0.006539080380046303
+        }
+      ],
+      "cox_slope|gbm-50k - scorecard": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.09145198714731528,
+          "ci_hi": 0.10359261177305296
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.08296949184897488,
+          "ci_hi": 0.09523103619246018
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.06266723444324421,
+          "ci_hi": 0.07497478414240823
+        }
+      ],
+      "cox_slope_deviation|gbm-50k - gbm": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.030656709005113237,
+          "ci_hi": -0.015844139773893207
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.014661963879988369,
+          "ci_hi": -0.003254372753400887
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.0124271059013889,
+          "ci_hi": -0.002006111850618543
+        }
+      ],
+      "psi|gbm-50k - gbm": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.0032420321949921138,
+          "ci_hi": -0.002458789678302911
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.016705038972086896,
+          "ci_hi": -0.01593814038208425
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.011809747223387674,
+          "ci_hi": -0.01101064986175262
+        }
+      ],
+      "psi|gbm-50k - scorecard": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.005997164122786731,
+          "ci_hi": -0.004730787400114762
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.01952445856191169,
+          "ci_hi": -0.018220890678782593
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.014533397890737036,
+          "ci_hi": -0.013289722061622612
+        }
+      ],
+      "psi_first_cohort|gbm-50k - gbm": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.0026255053623868555,
+          "ci_hi": -0.001905259044878578
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.0020503183486577418,
+          "ci_hi": -0.001388827843730892
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.010863246160871105,
+          "ci_hi": -0.010190741695160481
+        }
+      ],
+      "psi_first_cohort|gbm-50k - scorecard": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.02854156079941943,
+          "ci_hi": -0.027419778856956456
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.028101560896288125,
+          "ci_hi": -0.02691713950569386
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.036802165990062315,
+          "ci_hi": -0.03582892424748667
+        }
+      ]
+    },
+    "seed_check": {
+      "seeds": [
+        20260906,
+        20260907
+      ],
+      "differences": 837,
+      "starred": 405,
+      "arm_differences": 72,
+      "arm_starred": 42,
+      "arm_star_changed": 2,
+      "star_changed": [
+        {
+          "cohorts": "all",
+          "scope": "2004H2-R",
+          "metric": "gini",
+          "pair": "gbm - scorecard",
+          "value": 0.004644344445777104,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.0005965674907566027,
+            "ci_hi": 0.009211504583097191
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": 3.221828042207548e-06,
+              "ci_hi": 0.008957880696006342
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -3.419431815362669e-05,
+              "ci_hi": 0.009083505935440979
+            }
+          },
+          "bound_movement": 0.0005997893187988103
+        },
+        {
+          "cohorts": "all",
+          "scope": "2010H2-R",
+          "metric": "gini",
+          "pair": "gbm-50k - gbm",
+          "value": -0.0064194992749671735,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.012064712118590415,
+            "ci_hi": 3.2262460852860746e-05
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": -0.01176208441762896,
+              "ci_hi": -0.0004066475592610591
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.011691577191158176,
+              "ci_hi": -0.0007845761969723053
+            }
+          },
+          "bound_movement": 0.000816838657825166
+        },
+        {
+          "cohorts": "all",
+          "scope": "2018H2-R",
+          "metric": "auc_slope_build",
+          "pair": "gbm-50k - gbm",
+          "value": -0.0006064728396963379,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.0014892448816388921,
+            "ci_hi": 0.00012924216657601503
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": -0.0014335534575332504,
+              "ci_hi": -1.6916779170634553e-05
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -0.0014229231217447456,
+              "ci_hi": 0.00016011695842028356
+            }
+          },
+          "bound_movement": 0.00014615894574664958
+        },
+        {
+          "cohorts": "all",
+          "scope": "crisis cells",
+          "metric": "gini",
+          "pair": "gbm-50k - scorecard",
+          "value": 0.011856098990789357,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.0009583597596121846,
+            "ci_hi": 0.027391821705237948
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": 6.423036892195275e-05,
+              "ci_hi": 0.028432014582287685
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": 0.00029465951300502736,
+              "ci_hi": 0.027754038413427568
+            }
+          },
+          "bound_movement": 0.001253019272617212
+        },
+        {
+          "cohorts": "all",
+          "scope": "2022 cells",
+          "metric": "abs_log_oe",
+          "pair": "gbm - scorecard",
+          "value": -0.009985099330196756,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": -0.018990543992355613,
+            "ci_hi": -0.0014657681387343605
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": -0.017650564539452636,
+              "ci_hi": -0.0007759704333625963
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -0.019489889151136468,
+              "ci_hi": 2.203914762899582e-05
+            }
+          },
+          "bound_movement": 0.0014878072863633563
+        },
+        {
+          "cohorts": "all",
+          "scope": "2022 cells",
+          "metric": "abs_log_oe",
+          "pair": "gbm-50k - scorecard",
+          "value": -0.024730503230406042,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": -0.06569108289311157,
+            "ci_hi": -0.00035218628223749563
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.0645597847614314,
+              "ci_hi": 0.0011255723712677082
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -0.0653806464660578,
+              "ci_hi": 0.003014898827925325
+            }
+          },
+          "bound_movement": 0.0033670851101628204
+        },
+        {
+          "cohorts": "all",
+          "scope": "2022 cells",
+          "metric": "cox_slope_deviation",
+          "pair": "gbm - scorecard",
+          "value": -0.026062726652123586,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.048213204920465325,
+            "ci_hi": 0.0005826273668933596
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.045786559696206215,
+              "ci_hi": 0.000509905080415868
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.050940477403622696,
+              "ci_hi": -0.0029933272832277126
+            }
+          },
+          "bound_movement": 0.003575954650121072
+        },
+        {
+          "cohorts": "all",
+          "scope": "builds, pre-flag",
+          "metric": "cox_slope_deviation",
+          "pair": "gbm-50k - scorecard",
+          "value": -0.026378153237704826,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.05725593346392039,
+            "ci_hi": 0.0013967061913456944
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": -0.05995307330956942,
+              "ci_hi": -0.0026059647619757318
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.057716794440811806,
+              "ci_hi": -0.0008775863273691124
+            }
+          },
+          "bound_movement": 0.004002670953321426
+        },
+        {
+          "cohorts": "all",
+          "scope": "builds, flagged",
+          "metric": "auc_slope_build",
+          "pair": "gbm-50k - gbm",
+          "value": -0.0001453894423843665,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.00031568708394264433,
+            "ci_hi": 1.2808200994034835e-05
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": -0.00032388474193264713,
+              "ci_hi": -1.450065767646406e-05
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -0.0002964923671822717,
+              "ci_hi": 1.0976309924902771e-05
+            }
+          },
+          "bound_movement": 2.7308858670498895e-05
+        },
+        {
+          "cohorts": "all",
+          "scope": "builds, crisis cells",
+          "metric": "cox_slope",
+          "pair": "gbm-50k - gbm",
+          "value": 0.049709918451076716,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.0011369563665148685,
+            "ci_hi": 0.10932751191826913
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": 0.001263799017974352,
+              "ci_hi": 0.11007059207898481
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -0.0007708302099786235,
+              "ci_hi": 0.10976101463030485
+            }
+          },
+          "bound_movement": 0.0024007553844892205
+        },
+        {
+          "cohorts": "all",
+          "scope": "builds, 2022 cells",
+          "metric": "abs_log_oe",
+          "pair": "gbm - scorecard",
+          "value": -0.009985099330196756,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": -0.018990543992355613,
+            "ci_hi": -0.0014657681387343605
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": -0.017650564539452636,
+              "ci_hi": -0.0007759704333625963
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -0.019489889151136468,
+              "ci_hi": 2.203914762899582e-05
+            }
+          },
+          "bound_movement": 0.0014878072863633563
+        },
+        {
+          "cohorts": "all",
+          "scope": "builds, 2022 cells",
+          "metric": "abs_log_oe",
+          "pair": "gbm-50k - scorecard",
+          "value": -0.024730503230406042,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": -0.06569108289311157,
+            "ci_hi": -0.00035218628223749563
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.0645597847614314,
+              "ci_hi": 0.0011255723712677082
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -0.0653806464660578,
+              "ci_hi": 0.003014898827925325
+            }
+          },
+          "bound_movement": 0.0033670851101628204
+        },
+        {
+          "cohorts": "all",
+          "scope": "builds, 2022 cells",
+          "metric": "cox_slope_deviation",
+          "pair": "gbm - scorecard",
+          "value": -0.026062726652123586,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.048213204920465325,
+            "ci_hi": 0.0005826273668933596
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.045786559696206215,
+              "ci_hi": 0.000509905080415868
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.050940477403622696,
+              "ci_hi": -0.0029933272832277126
+            }
+          },
+          "bound_movement": 0.003575954650121072
+        },
+        {
+          "cohorts": "nearest",
+          "scope": "arm",
+          "metric": "abs_log_oe",
+          "pair": "gbm-50k - scorecard",
+          "value": 0.023848885022512256,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.006863730012402078,
+            "ci_hi": 0.05078293408930954
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.006965929898671347,
+              "ci_hi": 0.04833196802725046
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": 9.359500558854306e-05,
+              "ci_hi": 0.05457898065547184
+            }
+          },
+          "bound_movement": 0.006957325017990621
+        },
+        {
+          "cohorts": "nearest",
+          "scope": "2008H2-R",
+          "metric": "gini",
+          "pair": "gbm-50k - gbm",
+          "value": -0.012774499520416057,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.024562193486034802,
+            "ci_hi": 0.0005483615700368124
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.027165753788382357,
+              "ci_hi": 0.003688645734334104
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.02549996434152216,
+              "ci_hi": -0.00020508790315878518
+            }
+          },
+          "bound_movement": 0.0031402841642972916
+        },
+        {
+          "cohorts": "nearest",
+          "scope": "2008H2-R",
+          "metric": "abs_log_oe",
+          "pair": "gbm-50k - scorecard",
+          "value": -0.1057758936795823,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": -0.21648573146920583,
+            "ci_hi": -0.01430133528085071
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": -0.21118420673866342,
+              "ci_hi": -0.008858646272604445
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -0.19255972658215148,
+              "ci_hi": 0.005389991435861615
+            }
+          },
+          "bound_movement": 0.023926004887054347
+        },
+        {
+          "cohorts": "nearest",
+          "scope": "2010H2-R",
+          "metric": "cox_slope_deviation",
+          "pair": "gbm-50k - gbm",
+          "value": -0.052650148037297916,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": -0.09126383891951909,
+            "ci_hi": -0.007332521676182729
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.0913839370576568,
+              "ci_hi": 0.0005164584518657693
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.09181618664624097,
+              "ci_hi": -0.010163515703096248
+            }
+          },
+          "bound_movement": 0.007848980128048499
+        },
+        {
+          "cohorts": "nearest",
+          "scope": "2018H2-R",
+          "metric": "cox_slope_deviation",
+          "pair": "gbm-50k - scorecard",
+          "value": -0.05266388546618508,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.1193136692901599,
+            "ci_hi": 0.0010730816435609413
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": -0.12000930890378109,
+              "ci_hi": -0.002018809309694258
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -0.11844169144509659,
+              "ci_hi": 0.009571048778205865
+            }
+          },
+          "bound_movement": 0.008497967134644924
+        },
+        {
+          "cohorts": "nearest",
+          "scope": "2018H2-R",
+          "metric": "cox_slope",
+          "pair": "gbm-50k - scorecard",
+          "value": 0.05266388546618509,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.0010730816435608748,
+            "ci_hi": 0.11931366929015991
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": 0.00201880930969437,
+              "ci_hi": 0.1200093089037812
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -0.009571048778205896,
+              "ci_hi": 0.11844169144509666
+            }
+          },
+          "bound_movement": 0.008497967134645021
+        },
+        {
+          "cohorts": "nearest",
+          "scope": "pre-flag",
+          "metric": "cox_slope",
+          "pair": "gbm-50k - gbm",
+          "value": 0.04294634209774495,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -3.4407394050159355e-05,
+            "ci_hi": 0.08818423747454536
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": 0.0003287598109739971,
+              "ci_hi": 0.09019791879703581
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -8.765665223720573e-05,
+              "ci_hi": 0.0886809334201433
+            }
+          },
+          "bound_movement": 0.0020136813224904543
+        },
+        {
+          "cohorts": "nearest",
+          "scope": "flagged",
+          "metric": "cox_slope",
+          "pair": "gbm-50k - gbm",
+          "value": -0.043333094178137466,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.0764990516633388,
+            "ci_hi": 0.0006380866758961746
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": -0.07557683802044787,
+              "ci_hi": -0.0006788022592644628
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.07773765080382902,
+              "ci_hi": -0.0036402069894474957
+            }
+          },
+          "bound_movement": 0.004278293665343671
+        },
+        {
+          "cohorts": "nearest",
+          "scope": "crisis cells",
+          "metric": "cox_slope_deviation",
+          "pair": "gbm - scorecard",
+          "value": -0.02600156396266526,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.07375568356563608,
+            "ci_hi": 0.001574923201886455
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": -0.06903582410548365,
+              "ci_hi": -0.0010722036826333694
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.07624165433351693,
+              "ci_hi": -0.0022504024575629466
+            }
+          },
+          "bound_movement": 0.004719859460152437
+        },
+        {
+          "cohorts": "nearest",
+          "scope": "builds, pre-flag",
+          "metric": "abs_log_oe",
+          "pair": "gbm-50k - scorecard",
+          "value": 0.046437653712643225,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": 0.0005067829171080674,
+            "ci_hi": 0.08074422699333297
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.0009182365500323778,
+              "ci_hi": 0.08074165660070033
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": 0.012699983462044529,
+              "ci_hi": 0.08511861383631263
+            }
+          },
+          "bound_movement": 0.012193200544936462
+        },
+        {
+          "cohorts": "nearest",
+          "scope": "builds, pre-flag",
+          "metric": "cox_slope_deviation",
+          "pair": "gbm-50k - gbm",
+          "value": -0.016811541288812498,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": -0.043364841263413396,
+            "ci_hi": -0.0020445891602652597
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.04568018811571428,
+              "ci_hi": 0.001268469119784068
+            },
+            "20260907": {
+              "excludes_zero": false,
+              "ci_lo": -0.04792203015783707,
+              "ci_hi": 0.000624992420261896
+            }
+          },
+          "bound_movement": 0.004557188894423671
+        },
+        {
+          "cohorts": "all, cohorts resampled",
+          "scope": "arm",
+          "metric": "psi",
+          "pair": "gbm-50k - gbm",
+          "value": -0.010195849412302246,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.017839412587042067,
+            "ci_hi": 0.00017311217842212113
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.01762752995035236,
+              "ci_hi": 0.00019390952676604049
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.017775219345626352,
+              "ci_hi": -0.000857634480732713
+            }
+          },
+          "bound_movement": 0.0010307466591548341
+        }
+      ],
+      "largest_bound_movement": 0.07819230054354324
+    },
+    "cox_left_out": {
+      "all": {
+        "cox_slope_deviation|arm": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|arm": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2004H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|2004H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2006H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|2006H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2008H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|2008H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2010H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|2010H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2012H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|2012H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2014H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|2014H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2016H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|2016H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2018H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|2018H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|builds": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|builds": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|pre-flag": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|builds, pre-flag": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|pre-flag": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|builds, pre-flag": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|flagged": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|builds, flagged": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|flagged": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|builds, flagged": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|crisis cells": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|builds, crisis cells": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|crisis cells": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|builds, crisis cells": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2022 cells": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|builds, 2022 cells": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|2022 cells": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|builds, 2022 cells": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      },
+      "nearest": {
+        "cox_slope_deviation|arm": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|arm": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2004H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|2004H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2006H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|2006H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2008H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|2008H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2010H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|2010H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2012H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|2012H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2014H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|2014H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2016H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|2016H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2018H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|2018H2-R": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|builds": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|builds": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|pre-flag": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|builds, pre-flag": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|pre-flag": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|builds, pre-flag": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|flagged": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|builds, flagged": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|flagged": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|builds, flagged": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|crisis cells": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|builds, crisis cells": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|crisis cells": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|builds, crisis cells": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|2022 cells": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope_deviation|builds, 2022 cells": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|2022 cells": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|builds, 2022 cells": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      },
+      "all, cohorts resampled": {
+        "cox_slope_deviation|arm": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|arm": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      },
+      "all, draw 20260911": {
+        "cox_slope_deviation|arm": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|arm": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      },
+      "all, draw 20260912": {
+        "cox_slope_deviation|arm": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|arm": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      },
+      "all, draw 20260913": {
+        "cox_slope_deviation|arm": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope|arm": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      }
+    },
+    "cox_rule": "a cell on which some model's Cox fit did not finish is not estimable and leaves the pairing of every Cox statistic for every model, at every scope, in the point estimate and in every resample; cox_left_out counts it per pooling and scope, as the count on the unresampled cells and the largest in any resample",
+    "multiplicity": "none: every interval is reported at alpha on its own"
+  },
+  "statistics": {
+    "gini, abs_log_oe, cox_slope_deviation, psi, psi_first_cohort": "the mean over the cells in scope, paired by cell; a build with more cohorts contributes more cells at the arm's scope",
+    "cox_slope": "the signed Cox slope, pooled as cox_slope_deviation is and over the same estimable cells; its mean rows read against one, its differences against zero",
+    "psi_first_cohort": "PSI of the cell against the same model's scores on the build's first scored cohort, ten bins fixed at that cohort's deciles; the first cohort's own cells are left out of the mean, since they would read zero by construction; the reference is that cohort whatever its floor verdict, since it reads no label",
+    "auc_slope_build": "least-squares slope of the cell's AUC on its age in quarters with one intercept per build; at the arm's scope the within-build movements are pooled with each build weighted by the spread of its ages, at a build's scope it is that build's own slope. Within a build age and calendar quarter are one axis, so this is the calendar slope net of build",
+    "auc_slope_cohort": "the same least squares with one intercept per cohort: the movement of one cohort's AUC across the builds that score it, calendar held fixed, the model's age varying with the pool it was built from; each cohort weighted by the spread of the ages it is scored at, so the youngest cohorts, scored by the most builds, weigh most. Undefined on one build",
+    "difference": "later model minus earlier in the order scorecard, gbm, gbm-50k, tabpfn, tabicl, then the tagged settings"
+  },
+  "psi": {
+    "bins": 10,
+    "edges": "the cell's own reference deciles",
+    "reference": "the build's training rows for a fitted model, the context draw for a seeded one",
+    "first_cohort": {
+      "2004H2-R": "2005H1",
+      "2006H2-R": "2007H1",
+      "2008H2-R": "2009H1",
+      "2010H2-R": "2011H1",
+      "2012H2-R": "2013H1",
+      "2014H2-R": "2015H1",
+      "2016H2-R": "2017H1",
+      "2018H2-R": "2019H1"
+    }
+  },
+  "wall_seconds": 5076.2
+}

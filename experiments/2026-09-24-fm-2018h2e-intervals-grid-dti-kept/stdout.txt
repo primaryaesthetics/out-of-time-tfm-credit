@@ -1,0 +1,56 @@
+build                 : 2018H2-E
+sources               : experiments/2026-09-13-fm-2018h2e-scores-dti-kept
+scored rows           : 1,243,730
+reference rows        : 1,863,722
+cells                 : 50
+cohorts pooled        : 8 of 10 scored, nearest 3 less those under the floors: 2019H1, 2019H2, 2020H1
+floors                : 8 of 10 cells above the floors of 5,000 rows and 100 defaults, the verdict of experiments/2026-09-13-fm-vintage-builds2/cells.csv
+  2020H2 left out of the pooling: under the floors
+  2021H1 left out of the pooling: under the floors
+models                : scorecard, gbm, gbm-50k (3 draws)
+bootstrap all                   : 200 resamples in 25s
+bootstrap nearest               : 200 resamples in 10s
+bootstrap all, cohorts resampled: 200 resamples in 26s
+bootstrap seed 20260906         : every pooling again in 62s
+bootstrap seed 20260907         : every pooling again in 62s
+
+paired differences over the 8 shared cohorts of 10 scored (value [lo, hi], * excludes zero, ! draws disagree, ? star changes with the bootstrap seed):
+  gini        gbm - scorecard        +0.0109 [+0.0001, +0.0222] * ?
+  gini        gbm-50k - scorecard    -0.0343 [-0.0535, -0.0118] *  
+  gini        gbm-50k - gbm          -0.0452 [-0.0635, -0.0232] *  
+  abs_log_oe  gbm - scorecard        +0.0078 [-0.0201, +0.0288]    
+  abs_log_oe  gbm-50k - scorecard    +0.0051 [-0.0405, +0.0495]    
+  abs_log_oe  gbm-50k - gbm          -0.0027 [-0.0294, +0.0267]  ! 
+  cox_slope_deviation gbm - scorecard        +0.0379 [+0.0026, +0.0681] *  
+  cox_slope_deviation gbm-50k - scorecard    +0.1744 [+0.0941, +0.2850] *! 
+  cox_slope_deviation gbm-50k - gbm          +0.1365 [+0.0636, +0.2384] *! 
+  cox_slope   gbm - scorecard        -0.0846 [-0.1060, -0.0627] *  
+  cox_slope   gbm-50k - scorecard    -0.2211 [-0.3287, -0.1451] *! 
+  cox_slope   gbm-50k - gbm          -0.1365 [-0.2433, -0.0636] *! 
+  psi         gbm - scorecard        -0.0387 [-0.0409, -0.0363] *  
+  psi         gbm-50k - scorecard    -0.0617 [-0.0713, -0.0542] *! 
+  psi         gbm-50k - gbm          -0.0230 [-0.0322, -0.0153] *! 
+  abs_log_oe|gbm-50k - gbm: draw intervals 20260911 [-0.0334, -0.0176]; 20260912 [+0.0179, +0.0275]; 20260913 [-0.0124, -0.0013]
+  cox_slope|gbm-50k - gbm: draw intervals 20260911 [-0.2484, -0.2036]; 20260912 [-0.1082, -0.0576]; 20260913 [-0.1277, -0.0818]
+  cox_slope|gbm-50k - scorecard: draw intervals 20260911 [-0.3401, -0.2860]; 20260912 [-0.1932, -0.1384]; 20260913 [-0.2120, -0.1613]
+  cox_slope_deviation|gbm-50k - gbm: draw intervals 20260911 [+0.2036, +0.2467]; 20260912 [+0.0572, +0.1082]; 20260913 [+0.0816, +0.1274]
+  cox_slope_deviation|gbm-50k - scorecard: draw intervals 20260911 [+0.2279, +0.2964]; 20260912 [+0.0765, +0.1508]; 20260913 [+0.1088, +0.1682]
+  psi|gbm-50k - gbm: draw intervals 20260911 [-0.0188, -0.0149]; 20260912 [-0.0325, -0.0286]; 20260913 [-0.0238, -0.0194]
+  psi|gbm-50k - scorecard: draw intervals 20260911 [-0.0580, -0.0534]; 20260912 [-0.0716, -0.0667]; 20260913 [-0.0630, -0.0576]
+  cox_slope_deviation (all): 0 cohorts not estimable left out of the point estimate, averaged over the context draws, at most 0 of any resample
+  cox_slope (all): 0 cohorts not estimable left out of the point estimate, averaged over the context draws, at most 0 of any resample
+  cox_slope_deviation (nearest): 0 cohorts not estimable left out of the point estimate, averaged over the context draws, at most 0 of any resample
+  cox_slope (nearest): 0 cohorts not estimable left out of the point estimate, averaged over the context draws, at most 0 of any resample
+  cox_slope_deviation (all, cohorts resampled): 0 cohorts not estimable left out of the point estimate, averaged over the context draws, at most 0 of any resample
+  cox_slope (all, cohorts resampled): 0 cohorts not estimable left out of the point estimate, averaged over the context draws, at most 0 of any resample
+  cox_slope_deviation (all, draw 20260911): 0 cohorts not estimable left out of the point estimate, at most 0 of any resample
+  cox_slope (all, draw 20260911): 0 cohorts not estimable left out of the point estimate, at most 0 of any resample
+  cox_slope_deviation (all, draw 20260912): 0 cohorts not estimable left out of the point estimate, at most 0 of any resample
+  cox_slope (all, draw 20260912): 0 cohorts not estimable left out of the point estimate, at most 0 of any resample
+  cox_slope_deviation (all, draw 20260913): 0 cohorts not estimable left out of the point estimate, at most 0 of any resample
+  cox_slope (all, draw 20260913): 0 cohorts not estimable left out of the point estimate, at most 0 of any resample
+
+bootstrap seed check over seeds 20260906, 20260907: 32 of 45 differences starred under seed 20260905, 1 change their star, largest movement of an interval bound 0.0209
+  gini        gbm - scorecard        (all) +0.0109 20260905 [+0.0001, +0.0222]*; 20260906 [+0.0012, +0.0218]*; 20260907 [-0.0007, +0.0222]
+
+wall                  : 265s

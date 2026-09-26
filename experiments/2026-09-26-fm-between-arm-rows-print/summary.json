@@ -1,0 +1,26 @@
+{
+  "figure": "build-rows.png",
+  "source": "experiments/2026-09-22-fm-between-arm-intervals",
+  "panels": 6,
+  "dates": 8,
+  "date_rows": 48,
+  "pooled_rows": 6,
+  "models": [
+    "scorecard",
+    "gbm",
+    "tabpfn",
+    "tabicl",
+    "tabicl@t1",
+    "tabpfn@t1"
+  ],
+  "date_labels": [
+    "2004H2\nholds 55%",
+    "2006H2\nholds 35%",
+    "2008H2\nholds 26%",
+    "2010H2\nholds 21%",
+    "2012H2\nholds 18%",
+    "2014H2\nholds 15%",
+    "2016H2\nholds 13%",
+    "2018H2\nholds 11%"
+  ]
+}

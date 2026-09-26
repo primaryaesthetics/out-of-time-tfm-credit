@@ -1,0 +1,56 @@
+name: gates
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  leakage:
+    name: leakage and determinism gates
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv venv --python 3.12
+      # The suite imports the optional dependencies at collection, so the
+      # project is installed with every extra. Tests that read a raw book skip
+      # when data/raw/ is absent.
+      - run: uv pip install -e ".[data,models,metrics,dev]"
+      - run: uv run ruff check .
+      - run: uv run pytest -q
+
+  ledger:
+    name: claim, hygiene and sweep gates
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/check_claims.py
+      - run: python scripts/check_hygiene.py
+      # Attribution is what check_hygiene greps for. This is the other half:
+      # the cadence that reads as dictation. Public prose only.
+      - run: python scripts/lint_prose.py --check README.md
+      # The premise of this repository is that a gap in the literature is open.
+      # That is a claim about the world and it goes stale. While the repository
+      # is private the gate fails the job. Once it is public, the newest sweep
+      # dates the snapshot rather than blocking it: the step still runs and
+      # reports its age, and a stale sweep no longer turns the check red.
+      - run: python scripts/check_sweep.py --max-age 30
+        continue-on-error: ${{ github.event.repository.visibility == 'public' }}
+
+  psi-inference:
+    name: psi-inference package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv venv --python 3.12
+      - run: uv pip install pytest ruff iyipada feature-engine
+      - run: uv pip install -e packages/psi-inference
+      - run: uv run ruff check packages/psi-inference
+      - run: uv run pytest packages/psi-inference -q
+      - run: uv run python scripts/lint_prose.py --check packages/psi-inference/README.md

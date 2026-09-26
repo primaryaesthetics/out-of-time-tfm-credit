@@ -1,0 +1,60 @@
+{
+  "slug": "lc-2015h1e-fold-bundles",
+  "command": [
+    "C:/Users/node/Documents/GitHub/outoftime/.venv/Scripts/python.exe",
+    "scripts/split_fold_bundle.py",
+    "experiments/2026-09-12-lc-2015h1e-folds-2to5",
+    "--out-dir",
+    "experiments/2026-09-21-lc-2015h1e-fold-bundles"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-09-20T23:06:05.358815+00:00",
+  "finished_utc": "2026-09-20T23:06:12.377485+00:00",
+  "wall_seconds": 7.019,
+  "git_sha": "25f4af7dac42c0141409ab9556cd85d8afa6100a",
+  "git_dirty": false,
+  "host": "WIN-612LDG3827A",
+  "os": "Windows 11",
+  "cpu": "Intel(R) Core(TM) i7-3635QM CPU @ 2.40GHz",
+  "gpu": null,
+  "python": "3.12.1",
+  "packages": {
+    "numpy": "2.5.2",
+    "scipy": "1.18.1",
+    "pandas": "3.0.5",
+    "polars": null,
+    "pyarrow": "25.0.1",
+    "scikit-learn": "1.9.0",
+    "lightgbm": "4.7.0",
+    "xgboost": null,
+    "catboost": null,
+    "torch": null,
+    "tabpfn": null,
+    "tabicl": null,
+    "optbinning": "0.21.0",
+    "statsmodels": "0.15.0",
+    "matplotlib": "3.11.1",
+    "shap": null
+  },
+  "input_sha256": {
+    "C:/Users/node/Documents/GitHub/outoftime/.venv/Scripts/python.exe": "9648d84a822ffd73cc22013052c9dbc307c1bc56746239173b30eb5d7dfb56ef",
+    "scripts/split_fold_bundle.py": "a8fb4c1452ecdbbd1d8ee50535e3e194c6bdac976742cc6afd978dd615d122db"
+  },
+  "library_sha256": {
+    "src/outoftime/__init__.py": "04ad822418edf328c1d6043fe34fcd7ae0a07a4d0ae1d5012db171c31843f485",
+    "src/outoftime/features.py": "7878b97766823ab7117d62d8e6219a9628f2889199248eaa74616058182d07aa",
+    "src/outoftime/fm_features.py": "0d02c4a9b123c6b1b2110f8a22741cf9597bbc02c7e3b6a7f1cab41e9a69c0b3",
+    "src/outoftime/freddie_mac.py": "3cf6a81e1620ccf9f7c089707bb956682148e28fac67b134eece14311b504fde",
+    "src/outoftime/gbm.py": "bc6f58cccaf12a44e3410c2c219c3592d6a93d305b96cc85a49cbabdc1ae590c",
+    "src/outoftime/label.py": "81dcb5b43b8c19d07da3053697b25914cdec3037b3408b85723e70421ba8f034",
+    "src/outoftime/lending_club.py": "337805a942057eb3e675dbe4ae79251d2d9ef1741590e8482c75c808bc43947b",
+    "src/outoftime/metrics.py": "9447094e9f8934d6d03cd9f348f7aa915c31f2935b32da46fc89b83191e35485",
+    "src/outoftime/performance_label.py": "7d6f918d4da5ad00fcc471d7665b8458177bc5695fbbd883b07a10476f57b38b",
+    "src/outoftime/scorecard.py": "8b9fa9dc45c65035bfbe9a1700220ede4ba017f51027c8be9c3ab0619644216c",
+    "src/outoftime/splits.py": "566424ed4878b95913a8b32b0d21e078aa817c3a1184af0646b26409b16a411f",
+    "src/outoftime/vintage.py": "903e2fce260295213a21877e4bdba85f4629a2de7d8b7b7205eca2ed0926d282"
+  },
+  "code_sha256": {
+    "scripts/split_fold_bundle.py": "a8fb4c1452ecdbbd1d8ee50535e3e194c6bdac976742cc6afd978dd615d122db"
+  }
+}

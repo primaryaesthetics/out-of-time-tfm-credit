@@ -1,0 +1,68 @@
+{
+  "slug": "lc-2015h1e-draws-colab-t4",
+  "recorded_utc": "2026-09-06T18:40:00+00:00",
+  "git_sha": "1bae2dd",
+  "git_dirty": false,
+  "written_by_hand": "This run was made on a hosted notebook that holds no copy of the repository, so record_run.py could not record it. The manifest is assembled from what the notebook returned; node.json is the scorer's own account of its environment and its cells, and score.log is its console output.",
+  "host": "Google Colab, free tier, Linux x86_64, Python 3.13.15",
+  "gpu": "NVIDIA Tesla T4, 15.64 GB, CUDA 12.8, torch 2.11.0+cu128",
+  "command": "python score_context.py 2026-09-05-lc-2015h1e-bundle --out-dir 2026-09-05-lc-2015h1e-bundle-draws --models tabicl,tabpfn --nearest 3 --seeds 20260912,20260913 --chunk 20000, from the unpacked job archive, in the notebook session that had just run the temperature probe",
+  "job_archive": {
+    "path": "data/derived/node/outoftime-colab-probe3-2026-09-05-lc-2015h1e-bundle.zip",
+    "sha256": "d01be85805f97e5cb2556b395745571661bf95a1c764083ec2c85d70e40c6728",
+    "score_context_py_sha256": "66e8933d67fea5f8140f31f5229a305a15d3f1eb20e0fd67e15546037ff9f0dc",
+    "score_context_py_provenance": "The same archive and scorer as experiments/2026-09-06-lc-2015h1e-probe3-colab-t4; here no setting was passed, so every parameter is the library default and the rows are written under the bare model names, as in the two halves of the falsifying run."
+  },
+  "result_archive": {
+    "name": "outoftime-result-draws-2026-09-05-lc-2015h1e-bundle.zip",
+    "sha256": "39be75ceaac729aa86bd43c7b1abd64304e9d2396a47b0cd0b91288bfaf89daa",
+    "contents": "2026-09-05-lc-2015h1e-bundle-draws/ (node.json, scores.parquet, reference.parquet, parts/) and draws.log, copied here unchanged; the log is renamed score.log"
+  },
+  "console_log": "score.log is the scorer's own summary. The TabPFN licence had been accepted earlier in the same session, so no prompt ran and no key appears; the log was read in full and holds no home path, no account name and no token.",
+  "bundle_check": {
+    "context.parquet": "6416fe6560268bef4b0341e545c37918a1ef2aabed6689cdff5287e45a9738c6",
+    "scored.parquet": "0e7bc300b9bc16360152be39e0d9ea0c663289897dcf90ea9536a748438bc09e",
+    "how": "The hashes the scorer recorded in node.json for the bundle it read, equal to bundle.json of experiments/2026-09-05-lc-2015h1e-bundle and to the hashes every earlier node run recorded."
+  },
+  "row_check": {
+    "scored": "60,000 rows per (model, seed) over 2015Q3, 2015Q4, 2016Q1, four cells; every (cohort, row) pair, its outcome and its age match the gbm rows of experiments/2026-09-05-lc-2015h1e-scores/scores.parquet, zero mismatches, no missing probability",
+    "reference": "50,000 rows per (model, seed); every row and its outcome match the gbm-50k reference of the same context seed in experiments/2026-09-05-lc-2015h1e-scores/reference.parquet, zero mismatches; realised rates 2.278% (20260912) and 2.340% (20260913)"
+  },
+  "question_this_run_was_sent_to_answer": "The two context draws the falsifying run did not score. The classical control gbm-50k holds three draws and the sixth cold audit found its per-draw intervals disjoint; with the foundation models on one draw, no paired statistic against the control could be read per draw and no sentence about the control was allowed. These cells give both foundation models the same three draws the control holds, at the shipped settings.",
+  "what_it_measured": {
+    "models": {
+      "tabicl": "tabicl 2.1.1, checkpoint tabicl-classifier-v2-20260212.ckpt (sha256 bdc7dbd5...4ed0), every parameter at the library default (n_estimators 8, softmax_temperature 0.9, random_state 42, average_logits true)",
+      "tabpfn": "tabpfn 8.5.0, checkpoint tabpfn-v3-classifier-v3_default.ckpt (sha256 d0d865d5...3988), every parameter at the library default (n_estimators auto, softmax_temperature 0.9, balance_probabilities false, random_state 0), categorical_features_indices from the bundle, ignore_pretraining_limits true"
+    },
+    "context_row_ratio_mean_pd_over_realised_rate": {
+      "tabicl/20260912": 0.694, "tabicl/20260913": 0.707,
+      "tabpfn/20260912": 0.704, "tabpfn/20260913": 0.695,
+      "on_draw_20260911_recorded_earlier": {"tabicl": 0.680, "tabpfn": 0.685}
+    },
+    "mean_pd": {
+      "tabicl/20260912": {"reference": 0.01582, "2015Q3": 0.016539, "2015Q4": 0.015773, "2016Q1": 0.015976},
+      "tabicl/20260913": {"reference": 0.01654, "2015Q3": 0.0178, "2015Q4": 0.01701, "2016Q1": 0.016989},
+      "tabpfn/20260912": {"reference": 0.016031, "2015Q3": 0.014725, "2015Q4": 0.013991, "2016Q1": 0.014158},
+      "tabpfn/20260913": {"reference": 0.016264, "2015Q3": 0.015838, "2015Q4": 0.015049, "2016Q1": 0.015012}
+    },
+    "observed_over_expected": {
+      "tabicl/20260912": {"2015Q3": 1.636, "2015Q4": 1.747, "2016Q1": 2.05},
+      "tabicl/20260913": {"2015Q3": 1.52, "2015Q4": 1.62, "2016Q1": 1.928},
+      "tabpfn/20260912": {"2015Q3": 1.837, "2015Q4": 1.969, "2016Q1": 2.313},
+      "tabpfn/20260913": {"2015Q3": 1.708, "2015Q4": 1.831, "2016Q1": 2.182}
+    },
+    "against_draw_20260911": "Cohort-row probabilities correlate 0.936 to 0.940 between draws for both models: the context draw moves individual probabilities, and the level and its drift across the cohorts are the same on every draw.",
+    "cells_seconds": {
+      "tabicl/20260912": {"reference": 210.287, "2015Q3": 73.924, "2015Q4": 73.554, "2016Q1": 74.438},
+      "tabicl/20260913": {"reference": 213.547, "2015Q3": 74.338, "2015Q4": 74.182, "2016Q1": 74.652},
+      "tabpfn/20260912": {"reference": 389.352, "2015Q3": 136.226, "2015Q4": 136.286, "2016Q1": 136.224},
+      "tabpfn/20260913": {"reference": 388.374, "2015Q3": 135.994, "2015Q4": 135.827, "2016Q1": 136.094}
+    },
+    "fit_seconds": {"tabicl/20260912": 3.032, "tabicl/20260913": 1.428, "tabpfn/20260912": 2.035, "tabpfn/20260913": 1.288},
+    "peak_gpu_gb": {"tabicl": 10.966, "tabpfn": 1.071},
+    "wall_seconds": 2904.5,
+    "repeat": "2015Q3 scored twice from a fresh fit for each of the four (model, seed) cells: largest absolute disagreement 0.0, no row differs"
+  },
+  "tuning_budget": "Zero trials, no validation split, every parameter at the library default. The classical models these rows pair with were tuned on their own pool (build.json of experiments/2026-09-05-lc-2015h1e-scores), and the 50,000-row control inherits the point chosen on the full pool.",
+  "not_in_this_run": "Draw 20260911, which is experiments/2026-09-06-lc-2015h1e-tabpfn-m4pro and experiments/2026-09-06-lc-2015h1e-tabicl-colab-t4; any setting off the default, which is experiments/2026-09-06-lc-2015h1e-probe3-colab-t4."
+}

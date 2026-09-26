@@ -1,0 +1,149 @@
+{
+  "slug": "lc-grid-e-tabicl-colab-t4",
+  "recorded_utc": "2026-09-08T16:30:00+00:00",
+  "git_sha": "c041f444f46d528a28e45997ff24c07c94ff1756",
+  "git_dirty": false,
+  "written_by_hand": "The archive-level record of the TabICL grid run: the runner's whole console log, the job list it walked and its tally, copied unchanged from the result archive, and the facts that belong to the archive rather than to one job. The eighteen job directories listed under jobs hold the rows and a manifest each.",
+  "host": "Google Colab, free tier, Linux x86_64, Python 3.13.15",
+  "gpu": "NVIDIA Tesla T4, 15.64 GB, CUDA 12.8, torch 2.11.0+cu128",
+  "job_archive": {
+    "path": "data/derived/node/outoftime-run-grid-e-tabicl.zip",
+    "sha256": "79b5d5683e6dbea354d9f798d27ebe7eb7e54c1141174202baf34fffbda01163",
+    "score_context_py_sha256": "66e8933d67fea5f8140f31f5229a305a15d3f1eb20e0fd67e15546037ff9f0dc",
+    "node_jobs_py_sha256": "5a90301234742a50e2da2ee09078fbfeb10b710a23ae621799cbf833fc2d4065",
+    "provenance": "Both copies equal the files in scripts/ at c041f44; score_context.py unchanged since fd5eadf, node_jobs.py since d174cf5."
+  },
+  "result_archive": {
+    "name": "outoftime-result-grid-e-tabicl.zip",
+    "sha256": "3e654f1532a746c6cd63f7a2b8eba0635b5159ab40c76ed3f7528385d69a9d9a",
+    "contents": "eighteen output directories, grid.log, jobs.json, jobs-done.json; 435 files, 139,804,078 bytes uncompressed; kept in Downloads"
+  },
+  "sessions": [
+    {
+      "which": "first",
+      "account": "the first Google account",
+      "jobs": "1 to 8 in full, and context seed 20260911 of job 9 (tabicl@2026-09-05-lc-2015h1e-bundle)",
+      "started_utc": "2026-09-06T22:51 (job 1 finished 00:16:05 after 5,076 s)",
+      "last_tally_utc": "2026-09-07T04:10:25 (job 8)",
+      "ended": "after the twelve parts of seed 20260911 of job 9 were written and its repeat check passed, while the context of seed 20260912 was being read; no part of seeds 20260912 or 20260913 existed"
+    },
+    {
+      "which": "second",
+      "account": "another Google account, a fresh virtual machine, the job directory carried over on Drive",
+      "jobs": "job 9 resumed (seed 20260911 found present and skipped, seeds 20260912 and 20260913 scored), then jobs 10 to 18",
+      "started_utc": "2026-09-07T12:05 (job 9 finished 12:42:15 after 2,240.5 s)",
+      "last_tally_utc": "2026-09-07T15:41:24 (job 18)",
+      "notes": "The checkpoint was downloaded again on the new machine, and the Hub printed its unauthenticated-request warning once; both are in grid.log at the resume."
+    }
+  ],
+  "intermediate_export": {
+    "name": "outoftime-20260907T115106Z-1-001.zip",
+    "sha256": "3460a3e09010decc8146b4881d4256310632ac1fd56dd097d90a5727b4f64602",
+    "what": "A Drive folder export taken at 2026-09-07T11:51:06Z, between the two sessions, from the first account. Its copies of scores.parquet, reference.parquet and node.json for jobs 1, 3, 5 and 7 (the four full builds finished by then) are byte-identical to the result archive's; its directory for job 9 holds the twelve parts of seed 20260911 and nothing of the other seeds, which is the state the second session resumed from. Kept in Downloads; nothing was taken from it."
+  },
+  "runner": "node_jobs.py walked jobs.json in order, one score_context.py call per job into its own output directory, tallying each finished job in jobs-done.json; on the second start it skipped nothing at the job level (job 9 was not tallied) and the scorer itself skipped the finished parts of seed 20260911.",
+  "checks_over_all_eighteen": {
+    "bundle_hashes": "node.json's bundle hashes equal bundle.json of the build's bundle directory, all eighteen",
+    "parts": "part files equal node.json cell records in number (60, 54, 48, 42, 36, 30, 24, 18, 12 for the nine tabicl jobs, 2 for each check job); concatenated parts equal scores.parquet and reference.parquet, all eighteen",
+    "rows": "every scored (cohort, row), its outcome and age match the gbm rows of the build's score run; every reference row and outcome match the gbm-50k reference of the same context seed; zero mismatches, no missing probability, all eighteen",
+    "repeats": "the first cohort of every context seed scored twice from a fresh fit: largest disagreement 0.0, no row differs, all 30 repeats",
+    "against_earlier_runs": "2015H1-E: the 330,000 rows shared with the three earlier T4 runs on that build equal to the last bit; its 1.0 cell equal to probe 3's to the last bit",
+    "environment": "Python 3.13.15, torch 2.11.0+cu128, tabicl 2.1.1, checkpoint bdc7dbd5...4ed0, Tesla T4 15.64 GB, peak 10.966 GB in every job, the same in every node.json"
+  },
+  "timing": "5,072 s for the nineteen-cohort build down to 1,551 s for the three-cohort one at the shipped setting, 366 to 373 s per check job; reference cells 202 to 212 s, cohort cells 73.4 to 74.0 s, on a T4 with 20,000 rows per call. The tally sums to 32,121 s, 8.9 h of GPU across the two sessions, and does not count the seventeen minutes of seed 20260911 of job 9 scored before the first session ended.",
+  "context_row_ratio_mean_pd_over_realised_rate": {
+    "2013h1e": {
+      "20260911": 0.691,
+      "20260912": 0.687,
+      "20260913": 0.689
+    },
+    "2013h1e-t1": {
+      "20260911": 0.978
+    },
+    "2013h2e": {
+      "20260911": 0.694,
+      "20260912": 0.694,
+      "20260913": 0.7
+    },
+    "2013h2e-t1": {
+      "20260911": 0.993
+    },
+    "2014h1e": {
+      "20260911": 0.701,
+      "20260912": 0.673,
+      "20260913": 0.703
+    },
+    "2014h1e-t1": {
+      "20260911": 1.008
+    },
+    "2014h2e": {
+      "20260911": 0.656,
+      "20260912": 0.667,
+      "20260913": 0.677
+    },
+    "2014h2e-t1": {
+      "20260911": 0.955
+    },
+    "2015h1e": {
+      "20260911": 0.68,
+      "20260912": 0.694,
+      "20260913": 0.707
+    },
+    "2015h1e-t1": {
+      "20260911": 0.991
+    },
+    "2015h2e": {
+      "20260911": 0.7,
+      "20260912": 0.701,
+      "20260913": 0.705
+    },
+    "2015h2e-t1": {
+      "20260911": 1.01
+    },
+    "2016h1e": {
+      "20260911": 0.683,
+      "20260912": 0.736,
+      "20260913": 0.707
+    },
+    "2016h1e-t1": {
+      "20260911": 0.985
+    },
+    "2016h2e": {
+      "20260911": 0.703,
+      "20260912": 0.695,
+      "20260913": 0.71
+    },
+    "2016h2e-t1": {
+      "20260911": 1.001
+    },
+    "2017h1e": {
+      "20260911": 0.727,
+      "20260912": 0.71,
+      "20260913": 0.728
+    },
+    "2017h1e-t1": {
+      "20260911": 1.024
+    }
+  },
+  "jobs": {
+    "tabicl@2026-09-06-lc-2013h1e-bundle": "experiments/2026-09-08-lc-2013h1e-tabicl-colab-t4",
+    "tabicl-t1-check@2026-09-06-lc-2013h1e-bundle": "experiments/2026-09-08-lc-2013h1e-tabicl-t1-check-colab-t4",
+    "tabicl@2026-09-06-lc-2013h2e-bundle": "experiments/2026-09-08-lc-2013h2e-tabicl-colab-t4",
+    "tabicl-t1-check@2026-09-06-lc-2013h2e-bundle": "experiments/2026-09-08-lc-2013h2e-tabicl-t1-check-colab-t4",
+    "tabicl@2026-09-06-lc-2014h1e-bundle": "experiments/2026-09-08-lc-2014h1e-tabicl-colab-t4",
+    "tabicl-t1-check@2026-09-06-lc-2014h1e-bundle": "experiments/2026-09-08-lc-2014h1e-tabicl-t1-check-colab-t4",
+    "tabicl@2026-09-06-lc-2014h2e-bundle": "experiments/2026-09-08-lc-2014h2e-tabicl-colab-t4",
+    "tabicl-t1-check@2026-09-06-lc-2014h2e-bundle": "experiments/2026-09-08-lc-2014h2e-tabicl-t1-check-colab-t4",
+    "tabicl@2026-09-05-lc-2015h1e-bundle": "experiments/2026-09-08-lc-2015h1e-tabicl-colab-t4",
+    "tabicl-t1-check@2026-09-05-lc-2015h1e-bundle": "experiments/2026-09-08-lc-2015h1e-tabicl-t1-check-colab-t4",
+    "tabicl@2026-09-06-lc-2015h2e-bundle": "experiments/2026-09-08-lc-2015h2e-tabicl-colab-t4",
+    "tabicl-t1-check@2026-09-06-lc-2015h2e-bundle": "experiments/2026-09-08-lc-2015h2e-tabicl-t1-check-colab-t4",
+    "tabicl@2026-09-06-lc-2016h1e-bundle": "experiments/2026-09-08-lc-2016h1e-tabicl-colab-t4",
+    "tabicl-t1-check@2026-09-06-lc-2016h1e-bundle": "experiments/2026-09-08-lc-2016h1e-tabicl-t1-check-colab-t4",
+    "tabicl@2026-09-06-lc-2016h2e-bundle": "experiments/2026-09-08-lc-2016h2e-tabicl-colab-t4",
+    "tabicl-t1-check@2026-09-06-lc-2016h2e-bundle": "experiments/2026-09-08-lc-2016h2e-tabicl-t1-check-colab-t4",
+    "tabicl@2026-09-06-lc-2017h1e-bundle": "experiments/2026-09-08-lc-2017h1e-tabicl-colab-t4",
+    "tabicl-t1-check@2026-09-06-lc-2017h1e-bundle": "experiments/2026-09-08-lc-2017h1e-tabicl-t1-check-colab-t4"
+  },
+  "not_in_this_run": "TabPFN, at either temperature: the Apple node's archive, running as this is recorded."
+}

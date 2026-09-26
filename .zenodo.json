@@ -1,0 +1,38 @@
+{
+  "title": "Out of Time: code, pre-registrations, claim ledger and recorded runs",
+  "upload_type": "software",
+  "description": "<p>Code, pre-registrations with their logs, claim ledger and recorded runs of an out-of-time evaluation of the tabular foundation models TabPFN-3 and TabICLv2 beside a weight-of-evidence scorecard and a tuned gradient-boosting model, on the origination vintages of Lending Club and of Freddie Mac's Single-Family Loan-Level Dataset. Discrimination is read on the scored cohorts as they age, and calibration and population stability beside it, against kill criteria fixed in the pre-registrations, by dated amendment where they changed, before any foundation-model run they judge. Every recorded run carries a manifest with the commit it ran at, the machine and sha256 hashes; README.md says which hashes each kind of run records. No row of either dataset is included. The data are provided by Freddie Mac; the results are the author's own.</p><p>Licences by path, as README.md states: the code under the MIT licence; the recorded runs on the Freddie Mac book (directories of experiments/ whose name contains -fm-, and experiments/2026-09-25-paper-tables/) under CC BY-NC 4.0; all other text, figures and outputs under CC BY 4.0. The record's licence field names the most restrictive of the three.</p>",
+  "creators": [
+    {
+      "name": "Khobotov, Nikolai",
+      "orcid": "0009-0005-3612-830X"
+    }
+  ],
+  "keywords": [
+    "tabular-foundation-models",
+    "tabpfn",
+    "tabicl",
+    "credit-risk",
+    "probability-of-default",
+    "calibration",
+    "population-stability-index",
+    "out-of-time-validation",
+    "pre-registration",
+    "reproducibility"
+  ],
+  "license": "cc-by-nc-4.0",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.22803069",
+      "relation": "references",
+      "scheme": "doi",
+      "resource_type": "publication-other"
+    },
+    {
+      "identifier": "10.5281/zenodo.22342343",
+      "relation": "requires",
+      "scheme": "doi",
+      "resource_type": "software"
+    }
+  ]
+}

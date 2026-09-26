@@ -1,0 +1,453 @@
+{
+  "build_id": "2004H2-E",
+  "models": {
+    "scorecard": [],
+    "gbm": [],
+    "gbm-50k": [
+      20260911
+    ],
+    "tabpfn": [
+      20260911
+    ],
+    "tabpfn@t1": [
+      20260911
+    ],
+    "tabicl": [
+      20260911
+    ],
+    "tabicl@t1": [
+      20260911
+    ]
+  },
+  "sources": [
+    "experiments/2026-09-13-fm-2004h2e-scores-upb-nominal",
+    "experiments/2026-09-13-fm-2004h2e-upb-nominal-tabpfn-rental-4090",
+    "experiments/2026-09-13-fm-2004h2e-upb-nominal-tabpfn-t1-rental-4090",
+    "experiments/2026-09-13-fm-2004h2e-upb-nominal-tabicl-rental-4090",
+    "experiments/2026-09-13-fm-2004h2e-upb-nominal-tabicl-t1-rental-4090"
+  ],
+  "derived_rows": {},
+  "cohorts": [
+    "2005H1",
+    "2005H2",
+    "2006H1"
+  ],
+  "cohorts_pooled": 3,
+  "cohorts_scored": 38,
+  "cohorts_not_pooled": {
+    "2006H2": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2007H1": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2007H2": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2008H1": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2008H2": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2009H1": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2009H2": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2010H1": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2010H2": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2011H1": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2011H2": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2012H1": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2012H2": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2013H1": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2013H2": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2014H1": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2014H2": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2015H1": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2015H2": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2016H1": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2016H2": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2017H1": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2017H2": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2018H1": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2018H2": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2019H1": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2019H2": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2020H1": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2020H2": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2021H1": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2021H2": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2022H1": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2022H2": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2023H1": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2023H2": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1/20260911"
+    ]
+  },
+  "draws_not_pooled": {
+    "gbm-50k": [
+      20260912,
+      20260913
+    ]
+  },
+  "models_dropped": [],
+  "nearest": [
+    "2005H1",
+    "2005H2",
+    "2006H1"
+  ],
+  "bootstrap": {
+    "resamples": 200,
+    "seed": 20260905,
+    "alpha": 0.05,
+    "blocking": "cohort",
+    "context_draw": "one draw shared by every seeded model, so the draw is fixed and every interval is conditional on it; the seed spread is not measured",
+    "poolings": [
+      "all",
+      "all, cohorts resampled"
+    ],
+    "pooled_metrics": [
+      "gini",
+      "abs_log_oe",
+      "cox_slope_deviation",
+      "psi"
+    ],
+    "per_draw": null,
+    "draws_disagree": null,
+    "seed_check": {
+      "seeds": [
+        20260906,
+        20260907
+      ],
+      "differences": 168,
+      "starred": 95,
+      "star_changed": [
+        {
+          "cohorts": "all",
+          "metric": "abs_log_oe",
+          "pair": "tabicl@t1 - scorecard",
+          "value": -0.066351477590992,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.1010566525915823,
+            "ci_hi": 0.0014138941876299855
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": -0.10215642866148573,
+              "ci_hi": -0.0025310776719141706
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.10215452676162837,
+              "ci_hi": -0.0026513632077457164
+            }
+          },
+          "bound_movement": 0.004065257395375702
+        },
+        {
+          "cohorts": "all",
+          "metric": "cox_slope_deviation",
+          "pair": "gbm-50k - gbm",
+          "value": 0.018304403614909093,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.0020617907237914816,
+            "ci_hi": 0.04203670506968536
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.0059810860209728485,
+              "ci_hi": 0.034948980727653976
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": 0.0004894252705904532,
+              "ci_hi": 0.03765841325003051
+            }
+          },
+          "bound_movement": 0.007087724342031386
+        },
+        {
+          "cohorts": "all, cohorts resampled",
+          "metric": "abs_log_oe",
+          "pair": "gbm-50k - scorecard",
+          "value": -0.04712708427640011,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.053395978309541826,
+            "ci_hi": 0.010496905132368752
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.053412737793547195,
+              "ci_hi": 0.011863735696212194
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.0550487393842341,
+              "ci_hi": -0.0003209253723384285
+            }
+          },
+          "bound_movement": 0.010817830504707181
+        },
+        {
+          "cohorts": "all, cohorts resampled",
+          "metric": "abs_log_oe",
+          "pair": "tabicl@t1 - gbm",
+          "value": -0.1216583558872083,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.15741095148436823,
+            "ci_hi": 0.0010506893734490296
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.1583585672868762,
+              "ci_hi": 0.010352769844436916
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.15639646682070574,
+              "ci_hi": -0.006347268264488448
+            }
+          },
+          "bound_movement": 0.009302080470987887
+        },
+        {
+          "cohorts": "all, cohorts resampled",
+          "metric": "abs_log_oe",
+          "pair": "tabpfn@t1 - gbm",
+          "value": -0.12697126825362842,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.16343289134024322,
+            "ci_hi": 0.004136594506911314
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.16454387893443964,
+              "ci_hi": 0.009497296411741607
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.16315141908515216,
+              "ci_hi": -0.009743349002108943
+            }
+          },
+          "bound_movement": 0.013879943509020257
+        }
+      ],
+      "largest_bound_movement": 0.03660242535902375
+    },
+    "cox_left_out": {
+      "all": {
+        "cox_slope_deviation": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      },
+      "all, cohorts resampled": {
+        "cox_slope_deviation": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      }
+    },
+    "multiplicity": "none: every interval is reported at alpha on its own, and the pairs are not adjusted for one another"
+  },
+  "cox_not_estimable": {
+    "cells": [],
+    "rule": "a cell whose Cox fit did not finish carries NaN in the Cox rows of the per-cell table and leaves the pairing of every Cox statistic for every model, in the point estimate and in every resample; cox_left_out counts the cells left out"
+  },
+  "calibration": {
+    "observed_over_expected": "observed defaults over the mean predicted probability, Clopper-Pearson on the count; the level",
+    "cox": "logit P(y) = intercept + slope * logit(score), Newton on the logistic likelihood, Wald intervals; a level shift is the intercept, a stretch or compression of the scale is the slope; the pooled statistic is |slope - 1|",
+    "brier": "with the CORP decomposition of Dimitriadis, Gneiting and Jordan (2021): miscalibration - discrimination + uncertainty, recalibrated by isotonic regression",
+    "reliability": "ten quantile bins of each cell's own scores, reliability.png on the youngest and oldest pooled cohort"
+  },
+  "psi": {
+    "bins": 10,
+    "edges": "the cell's own reference deciles",
+    "critical": "Yurdakul, alpha 0.05, at the cell's sample sizes"
+  },
+  "reference_sizes": {
+    "gbm": 176092,
+    "gbm-50k/20260911": 50000,
+    "gbm-50k/20260912": 50000,
+    "gbm-50k/20260913": 50000,
+    "scorecard": 176092,
+    "tabicl/20260911": 50000,
+    "tabicl@t1/20260911": 50000,
+    "tabpfn/20260911": 50000,
+    "tabpfn@t1/20260911": 50000
+  },
+  "wall_seconds": 589.0
+}

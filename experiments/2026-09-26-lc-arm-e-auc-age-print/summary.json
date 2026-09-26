@@ -1,0 +1,14 @@
+{
+  "figure": "auc-age.png",
+  "source": "experiments/2026-09-22-lc-arm-e-intervals",
+  "panels": 7,
+  "builds": 9,
+  "cells": 99,
+  "points": 693,
+  "slopes_printed": 7,
+  "check": {
+    "rows": "gini and auc_slope_build, scope arm, draw 20260911, every model",
+    "largest_difference": 1.1102230246251565e-16,
+    "tolerance": 1e-09
+  }
+}

@@ -1,0 +1,197 @@
+
+### tabpfn@2026-09-05-lc-2015h1e-bundle: /home/node/outoftime-node/.venv/bin/python score_context.py 2026-09-05-lc-2015h1e-bundle --out-dir 2026-09-05-lc-2015h1e-bundle-scored-tabpfn --models tabpfn --nearest 3 --seeds 20260911 --chunk 20000
+tabpfn/20260911: context 50,000 rows read in 4.3s
+  reference   50,000 rows     37.8s  mean pd 0.0154
+  2015Q3      20,000 rows     13.0s  mean pd 0.0146
+  2015Q4      20,000 rows     13.0s  mean pd 0.0140
+  2016Q1      20,000 rows     13.1s  mean pd 0.0142
+  repeat 2015Q3: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 60,000
+reference rows        : 50,000
+wall                  : 98s
+
+### tabpfn-t1@2026-09-05-lc-2015h1e-bundle: /home/node/outoftime-node/.venv/bin/python score_context.py 2026-09-05-lc-2015h1e-bundle --out-dir 2026-09-05-lc-2015h1e-bundle-scored-tabpfn-t1 --models tabpfn --temperature 1.0 --nearest 3 --seeds 20260911 --chunk 20000
+tabpfn@t1/20260911: context 50,000 rows read in 2.1s
+  reference   50,000 rows     38.0s  mean pd 0.0224
+  2015Q3      20,000 rows     13.2s  mean pd 0.0214
+  2015Q4      20,000 rows     13.1s  mean pd 0.0207
+  2016Q1      20,000 rows     13.3s  mean pd 0.0209
+  repeat 2015Q3: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 60,000
+reference rows        : 50,000
+wall                  : 96s
+
+### tabicl@2026-09-05-lc-2015h1e-bundle: /home/node/outoftime-node/.venv/bin/python score_context.py 2026-09-05-lc-2015h1e-bundle --out-dir 2026-09-05-lc-2015h1e-bundle-scored-tabicl --models tabicl --nearest 3 --seeds 20260911 --chunk 20000
+INFO: You are downloading 'tabicl-classifier-v2-20260212.ckpt', the latest best-performing version, used in our TabICLv2 paper.
+
+Checkpoint 'tabicl-classifier-v2-20260212.ckpt' not cached.
+ Downloading from Hugging Face Hub (jingang/TabICL).
+
+tabicl/20260911: context 50,000 rows read in 6.1s
+  reference   50,000 rows     20.4s  mean pd 0.0153
+  2015Q3      20,000 rows      7.0s  mean pd 0.0164
+  2015Q4      20,000 rows      7.0s  mean pd 0.0159
+  2016Q1      20,000 rows      7.0s  mean pd 0.0161
+  repeat 2015Q3: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 60,000
+reference rows        : 50,000
+wall                  : 59s
+
+### tabicl-t1@2026-09-05-lc-2015h1e-bundle: /home/node/outoftime-node/.venv/bin/python score_context.py 2026-09-05-lc-2015h1e-bundle --out-dir 2026-09-05-lc-2015h1e-bundle-scored-tabicl-t1 --models tabicl --temperature 1.0 --nearest 3 --seeds 20260911 --chunk 20000
+tabicl@t1/20260911: context 50,000 rows read in 2.4s
+  reference   50,000 rows     20.5s  mean pd 0.0223
+  2015Q3      20,000 rows      7.0s  mean pd 0.0237
+  2015Q4      20,000 rows      7.0s  mean pd 0.0230
+  2016Q1      20,000 rows      7.0s  mean pd 0.0232
+  repeat 2015Q3: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 60,000
+reference rows        : 50,000
+wall                  : 55s
+
+### tabpfn@2026-09-13-fm-2004h2e-bundle: /home/node/outoftime-node/.venv/bin/python score_context.py 2026-09-13-fm-2004h2e-bundle --out-dir 2026-09-13-fm-2004h2e-bundle-scored-tabpfn --models tabpfn --nearest 3 --seeds 20260911 --chunk 20000
+tabpfn/20260911: context 50,000 rows read in 2.3s
+  reference   50,000 rows     38.0s  mean pd 0.0089
+  2005H1      24,233 rows     23.2s  mean pd 0.0084
+  2005H2      24,082 rows     23.2s  mean pd 0.0084
+  2006H1      23,280 rows     22.8s  mean pd 0.0101
+  repeat 2005H1: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 71,595
+reference rows        : 50,000
+wall                  : 136s
+
+### tabpfn-t1@2026-09-13-fm-2004h2e-bundle: /home/node/outoftime-node/.venv/bin/python score_context.py 2026-09-13-fm-2004h2e-bundle --out-dir 2026-09-13-fm-2004h2e-bundle-scored-tabpfn-t1 --models tabpfn --temperature 1.0 --nearest 3 --seeds 20260911 --chunk 20000
+tabpfn@t1/20260911: context 50,000 rows read in 2.1s
+  reference   50,000 rows     37.4s  mean pd 0.0129
+  2005H1      24,233 rows     23.1s  mean pd 0.0123
+  2005H2      24,082 rows     22.7s  mean pd 0.0123
+  2006H1      23,280 rows     22.9s  mean pd 0.0145
+  repeat 2005H1: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 71,595
+reference rows        : 50,000
+wall                  : 135s
+
+### tabicl@2026-09-13-fm-2004h2e-bundle: /home/node/outoftime-node/.venv/bin/python score_context.py 2026-09-13-fm-2004h2e-bundle --out-dir 2026-09-13-fm-2004h2e-bundle-scored-tabicl --models tabicl --nearest 3 --seeds 20260911 --chunk 20000
+tabicl/20260911: context 50,000 rows read in 2.1s
+  reference   50,000 rows     19.2s  mean pd 0.0090
+  2005H1      24,233 rows     11.8s  mean pd 0.0086
+  2005H2      24,082 rows     11.7s  mean pd 0.0085
+  2006H1      23,280 rows     11.7s  mean pd 0.0103
+  repeat 2005H1: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 71,595
+reference rows        : 50,000
+wall                  : 72s
+
+### tabicl-t1@2026-09-13-fm-2004h2e-bundle: /home/node/outoftime-node/.venv/bin/python score_context.py 2026-09-13-fm-2004h2e-bundle --out-dir 2026-09-13-fm-2004h2e-bundle-scored-tabicl-t1 --models tabicl --temperature 1.0 --nearest 3 --seeds 20260911 --chunk 20000
+tabicl@t1/20260911: context 50,000 rows read in 2.1s
+  reference   50,000 rows     19.2s  mean pd 0.0130
+  2005H1      24,233 rows     11.8s  mean pd 0.0126
+  2005H2      24,082 rows     11.7s  mean pd 0.0125
+  2006H1      23,280 rows     11.7s  mean pd 0.0148
+  repeat 2005H1: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 71,595
+reference rows        : 50,000
+wall                  : 72s
+
+### tabpfn@2026-09-13-fm-2004h2e-bundle-dti-kept: /home/node/outoftime-node/.venv/bin/python score_context.py 2026-09-13-fm-2004h2e-bundle-dti-kept --out-dir 2026-09-13-fm-2004h2e-bundle-dti-kept-scored-tabpfn --models tabpfn --nearest 3 --seeds 20260911 --chunk 20000
+tabpfn/20260911: context 50,000 rows read in 2.0s
+  reference   50,000 rows     37.4s  mean pd 0.0089
+  2005H1      24,233 rows     23.2s  mean pd 0.0087
+  2005H2      24,082 rows     23.2s  mean pd 0.0087
+  2006H1      23,280 rows     23.4s  mean pd 0.0107
+  repeat 2005H1: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 71,595
+reference rows        : 50,000
+wall                  : 137s
+
+### tabpfn-t1@2026-09-13-fm-2004h2e-bundle-dti-kept: /home/node/outoftime-node/.venv/bin/python score_context.py 2026-09-13-fm-2004h2e-bundle-dti-kept --out-dir 2026-09-13-fm-2004h2e-bundle-dti-kept-scored-tabpfn-t1 --models tabpfn --temperature 1.0 --nearest 3 --seeds 20260911 --chunk 20000
+tabpfn@t1/20260911: context 50,000 rows read in 2.2s
+  reference   50,000 rows     37.9s  mean pd 0.0128
+  2005H1      24,233 rows     23.6s  mean pd 0.0127
+  2005H2      24,082 rows     23.3s  mean pd 0.0126
+  2006H1      23,280 rows     23.2s  mean pd 0.0153
+  repeat 2005H1: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 71,595
+reference rows        : 50,000
+wall                  : 137s
+
+### tabicl@2026-09-13-fm-2004h2e-bundle-dti-kept: /home/node/outoftime-node/.venv/bin/python score_context.py 2026-09-13-fm-2004h2e-bundle-dti-kept --out-dir 2026-09-13-fm-2004h2e-bundle-dti-kept-scored-tabicl --models tabicl --nearest 3 --seeds 20260911 --chunk 20000
+tabicl/20260911: context 50,000 rows read in 2.1s
+  reference   50,000 rows     19.4s  mean pd 0.0088
+  2005H1      24,233 rows     11.9s  mean pd 0.0088
+  2005H2      24,082 rows     11.9s  mean pd 0.0086
+  2006H1      23,280 rows     11.8s  mean pd 0.0107
+  repeat 2005H1: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 71,595
+reference rows        : 50,000
+wall                  : 73s
+
+### tabicl-t1@2026-09-13-fm-2004h2e-bundle-dti-kept: /home/node/outoftime-node/.venv/bin/python score_context.py 2026-09-13-fm-2004h2e-bundle-dti-kept --out-dir 2026-09-13-fm-2004h2e-bundle-dti-kept-scored-tabicl-t1 --models tabicl --temperature 1.0 --nearest 3 --seeds 20260911 --chunk 20000
+tabicl@t1/20260911: context 50,000 rows read in 2.3s
+  reference   50,000 rows     19.5s  mean pd 0.0127
+  2005H1      24,233 rows     11.9s  mean pd 0.0127
+  2005H2      24,082 rows     11.9s  mean pd 0.0125
+  2006H1      23,280 rows     11.9s  mean pd 0.0153
+  repeat 2005H1: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 71,595
+reference rows        : 50,000
+wall                  : 74s
+
+### tabpfn@2026-09-13-fm-2004h2e-bundle-upb-nominal: /home/node/outoftime-node/.venv/bin/python score_context.py 2026-09-13-fm-2004h2e-bundle-upb-nominal --out-dir 2026-09-13-fm-2004h2e-bundle-upb-nominal-scored-tabpfn --models tabpfn --nearest 3 --seeds 20260911 --chunk 20000
+tabpfn/20260911: context 50,000 rows read in 2.1s
+  reference   50,000 rows     37.6s  mean pd 0.0089
+  2005H1      24,233 rows     23.2s  mean pd 0.0073
+  2005H2      24,082 rows     22.8s  mean pd 0.0072
+  2006H1      23,280 rows     22.8s  mean pd 0.0081
+  repeat 2005H1: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 71,595
+reference rows        : 50,000
+wall                  : 135s
+
+### tabpfn-t1@2026-09-13-fm-2004h2e-bundle-upb-nominal: /home/node/outoftime-node/.venv/bin/python score_context.py 2026-09-13-fm-2004h2e-bundle-upb-nominal --out-dir 2026-09-13-fm-2004h2e-bundle-upb-nominal-scored-tabpfn-t1 --models tabpfn --temperature 1.0 --nearest 3 --seeds 20260911 --chunk 20000
+tabpfn@t1/20260911: context 50,000 rows read in 2.1s
+  reference   50,000 rows     37.4s  mean pd 0.0129
+  2005H1      24,233 rows     23.1s  mean pd 0.0108
+  2005H2      24,082 rows     23.1s  mean pd 0.0107
+  2006H1      23,280 rows     23.2s  mean pd 0.0119
+  repeat 2005H1: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 71,595
+reference rows        : 50,000
+wall                  : 136s
+
+### tabicl@2026-09-13-fm-2004h2e-bundle-upb-nominal: /home/node/outoftime-node/.venv/bin/python score_context.py 2026-09-13-fm-2004h2e-bundle-upb-nominal --out-dir 2026-09-13-fm-2004h2e-bundle-upb-nominal-scored-tabicl --models tabicl --nearest 3 --seeds 20260911 --chunk 20000
+tabicl/20260911: context 50,000 rows read in 2.0s
+  reference   50,000 rows     19.8s  mean pd 0.0090
+  2005H1      24,233 rows     12.2s  mean pd 0.0073
+  2005H2      24,082 rows     11.7s  mean pd 0.0071
+  2006H1      23,280 rows     11.7s  mean pd 0.0081
+  repeat 2005H1: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 71,595
+reference rows        : 50,000
+wall                  : 73s
+
+### tabicl-t1@2026-09-13-fm-2004h2e-bundle-upb-nominal: /home/node/outoftime-node/.venv/bin/python score_context.py 2026-09-13-fm-2004h2e-bundle-upb-nominal --out-dir 2026-09-13-fm-2004h2e-bundle-upb-nominal-scored-tabicl-t1 --models tabicl --temperature 1.0 --nearest 3 --seeds 20260911 --chunk 20000
+tabicl@t1/20260911: context 50,000 rows read in 2.1s
+  reference   50,000 rows     19.2s  mean pd 0.0130
+  2005H1      24,233 rows     11.7s  mean pd 0.0107
+  2005H2      24,082 rows     11.7s  mean pd 0.0106
+  2006H1      23,280 rows     11.7s  mean pd 0.0118
+  repeat 2005H1: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 71,595
+reference rows        : 50,000
+wall                  : 72s

@@ -1,0 +1,48 @@
+\begin{tabular}{lllp{3.4cm}rlp{3.4cm}rlp{3.4cm}}
+\toprule
+ & & & & \multicolumn{3}{c}{criterion's matrix} & \multicolumn{3}{c}{nominal matrix} \\
+\cmidrule(lr){5-7}\cmidrule(lr){8-10}
+Book & Hypothesis & Model & Statistic & Value & Interval & Verdict & Value & Interval & Reading \\
+\midrule
+% FIG: C-021
+Lending Club & H1 (C-021) & TabPFN & slope of AUC on age, one intercept per build, minus the control's & $+0.00041$ & $[+0.00007, +0.00075]$ & H1's kill does not fire, and its second branch does not fire either &  &  &  \\
+% FIG: C-021
+Lending Club & H1 (C-021) & TabICL & slope of AUC on age, one intercept per build, minus the control's & $+0.00055$ & $[+0.00020, +0.00088]$ & H1's kill does not fire, and its second branch does not fire either &  &  &  \\
+% FIG: C-007
+Lending Club & H2 (C-007) & TabPFN & mean absolute Cox-slope deviation minus the scorecard's & $+0.0208$ & $[-0.0043, +0.0420]$ & no kill fires for TabPFN &  &  &  \\
+% FIG: C-007
+Lending Club & H2 (C-007) & TabICL & mean absolute Cox-slope deviation minus the scorecard's & $+0.0473$ & $[+0.0116, +0.0681]$ & H2's kill fires for TabICL at 0.9 &  &  &  \\
+% FIG: C-038
+Lending Club & H3 (C-038) & TabPFN & PSI against its own training reference minus the control's & $-0.0007$ & $[-0.0033, +0.0013]$ & no kill fires for TabPFN &  &  &  \\
+% FIG: C-038
+Lending Club & H3 (C-038) & TabICL & PSI against its own training reference minus the control's & $+0.0277$ & $[+0.0244, +0.0319]$ & H3's kill fires for TabICL &  &  &  \\
+% FIG: C-034
+Lending Club & H4 (C-034) & TabPFN & expanding minus rolling Cox-slope deviation, minus the control's & $-0.0412$ & $[-0.0885, +0.0181]$ & killed inside the interval for both models at both settings &  &  &  \\
+% FIG: C-034
+Lending Club & H4 (C-034) & TabICL & expanding minus rolling Cox-slope deviation, minus the control's & $-0.0447$ & $[-0.0916, +0.0167]$ & killed inside the interval for both models at both settings &  &  &  \\
+% FIG: C-025
+Freddie Mac & H1 (C-025) & TabPFN & slope of AUC on age, one intercept per build, minus the control's & $+0.000168$ & $[+0.000091, +0.000246]$ & H1's kill does not fire, and its uninformative branch does not fire & $+0.000166$ & $[+0.000062, +0.000300]$ & neither the kill nor the uninformative branch fires \\
+% FIG: C-025
+Freddie Mac & H1 (C-025) & TabICL & slope of AUC on age, one intercept per build, minus the control's & $+0.000197$ & $[+0.000112, +0.000275]$ & H1's kill does not fire, and its uninformative branch does not fire & $+0.000071$ & $[-0.000013, +0.000154]$ & neither the kill nor the uninformative branch fires, and TabICL's row loses its star \\
+% FIG: C-027
+Freddie Mac & H2 (C-027) & TabPFN & mean absolute Cox-slope deviation minus the scorecard's & $+0.0553$ & $[+0.0297, +0.0757]$ & H2's kill fires for both at 0.9 as the criterion reads it on the ratio matrix & $+0.1004$ & $[+0.0784, +0.1101]$ & it fires at 0.9 as well \\
+% FIG: C-027
+Freddie Mac & H2 (C-027) & TabICL & mean absolute Cox-slope deviation minus the scorecard's & $+0.0511$ & $[+0.0287, +0.0722]$ & H2's kill fires for both at 0.9 as the criterion reads it on the ratio matrix & $+0.0844$ & $[+0.0691, +0.0936]$ & it fires at 0.9 as well \\
+% FIG: C-042
+Freddie Mac & H3 (C-042) & TabPFN & PSI against its own training reference minus the control's & $-0.0052$ & $[-0.0121, +0.0012]$ & H3's kill does not fire for either model as the criterion reads it on the ratio matrix & $+0.0092$ & $[+0.0083, +0.0103]$ & H3's kill fires for TabPFN on the nominal matrix \\
+% FIG: C-042
+Freddie Mac & H3 (C-042) & TabICL & PSI against its own training reference minus the control's & $-0.0170$ & $[-0.0217, -0.0132]$ & H3's kill does not fire for either model as the criterion reads it on the ratio matrix & $-0.0071$ & $[-0.0116, -0.0045]$ & for TabICL it does not fire on either matrix \\
+% FIG: C-041
+Freddie Mac & H4 (C-041) & TabPFN & expanding minus rolling Cox-slope deviation, minus the control's & $-0.0162$ & $[-0.0446, +0.0175]$ & H4 is undetermined on this book for both foundation models & $+0.0311$ & $[-0.0061, +0.0555]$ & both rows reading killed inside the interval \\
+ &  &  & \quad pre-flag scope & $+0.0227$ & $[-0.0259, +0.0741]$ &  & $+0.0422$ & -- &  \\
+ &  &  & \quad flagged scope & $-0.0238$ & $[-0.0478, +0.0099]$ &  & $+0.0258$ & -- &  \\
+% FIG: C-041
+Freddie Mac & H4 (C-041) & TabICL & expanding minus rolling Cox-slope deviation, minus the control's & $-0.0031$ & $[-0.0345, +0.0254]$ & H4 is undetermined on this book for both foundation models & $+0.0389$ & $[-0.0030, +0.0669]$ & both rows reading killed inside the interval \\
+ &  &  & \quad pre-flag scope & $+0.0416$ & $[-0.0055, +0.0866]$ &  & $+0.0525$ & -- &  \\
+ &  &  & \quad flagged scope & $-0.0117$ & $[-0.0399, +0.0177]$ &  & $+0.0333$ & -- &  \\
+% FIG: C-028
+Freddie Mac & H5 (C-028) & TabPFN & O/E on the highest-rate rolling context minus the lowest & $-0.355$ & $[-0.581, -0.175]$ & H5's kill fires on the rolling arm at 0.9 as the criterion reads it on the ratio matrix & $-0.354$ & $[-0.578, -0.177]$ & the kill fires there too and the nominal reading changes nothing \\
+% FIG: C-028
+Freddie Mac & H5 (C-028) & TabICL & O/E on the highest-rate rolling context minus the lowest & $-0.632$ & $[-0.897, -0.405]$ & H5's kill fires on the rolling arm at 0.9 as the criterion reads it on the ratio matrix & $-0.643$ & $[-0.918, -0.405]$ & the kill fires there too and the nominal reading changes nothing \\
+\bottomrule
+\end{tabular}

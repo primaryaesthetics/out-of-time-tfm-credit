@@ -1,0 +1,30 @@
+{
+ "slug": "fm-2004h2e-upb-nominal-tabpfn-draws-rental-4090",
+ "recorded_utc": "2026-09-14T20:22:53+00:00",
+ "git_sha": "0c892d5",
+ "git_dirty": false,
+ "host": "Rented instance, 1x NVIDIA GeForce RTX 4090 (24564 MiB), Ubuntu 24.04, CUDA 13.2 at the driver, torch 2.14.0 built against CUDA 13.0, Python 3.12.14",
+ "job_archive": {
+  "path": "data/derived/node/outoftime-run-upb-draws.tar.gz",
+  "sha256": "bbc31164716d3657adf05105b68bab6ac5824f78c106bedf4e0d7f73f1c06be2",
+  "built_by": "scripts/pack_node_run.py experiments/2026-09-13-fm-2004h2e-bundle-upb-nominal --name upb-draws --format cuda --checkpoint data/derived/checkpoints/tabpfn-v3-classifier-v3_default.ckpt, two jobs, from a clean tree at 0c892d5"
+ },
+ "result_archive": {
+  "name": "outoftime-result-upb-draws.tar.gz",
+  "sha256": "2809b502574bc0685e0eabd604e7754072a1a5084c5ab4dc382374dc42648ebb",
+  "note": "hash compared on the node and on this machine; row-level files (scores.parquet, reference.parquet, parts/) are ignored by git under the Freddie Mac terms"
+ },
+ "purpose": "The foundation models on the upb_nominal matrix of 2004H2-E under context draws 20260912 and 20260913, on the three cohorts nearest the build and the context rows, so the ablation's difference of gains against GBM-50k is read over the three draws; the primary matrix's cells for these draws are the grid's (experiments/2026-09-14-fm-2004h2e-{tabpfn,tabicl}-rental-4090) and draw 20260911 on this matrix is the falsifying run's.",
+ "checks": {
+  "rows": "every scored (cohort, row) and outcome equals the GBM-50k rows of experiments/2026-09-13-fm-2004h2e-scores-upb-nominal for the same draw, and every context row and outcome equals the bundle's context.parquet for the same draw; zero mismatches",
+  "probabilities": "finite, within [0, 1]",
+  "parts": "8 part files, concatenated equal to scores.parquet and reference.parquet",
+  "repeats": "the first cohort 2005H1 scored a second time from a fresh fit on each draw: largest disagreement 0.0",
+  "environment": "tabpfn 8.5.0, tabicl 2.1.1, torch 2.14.0 on the RTX 4090, checkpoints d0d865d5…3988 (TabPFN, travelled in the archive) and bdc7dbd5…4ed0 (TabICL, from Hugging Face), as on the grid; the node's Python is 3.12.14 where the grid's was 3.12.3, a patch release of the interpreter the node's package manager resolved"
+ },
+ "archive_level_files": "score.log, jobs.json, jobs-done.json and gpu.txt of the result archive are kept in experiments/2026-09-14-fm-2004h2e-upb-nominal-tabpfn-draws-rental-4090",
+ "written_by_hand": "A run on a rented instance that holds no copy of the repository, so record_run.py could not record it; node.json is the scorer's own account of its environment and cells.",
+ "job": "tabpfn@2026-09-13-fm-2004h2e-bundle-upb-nominal: --models tabpfn --nearest 3 --seeds 20260912,20260913 --chunk 20000",
+ "wall_seconds": 257,
+ "rows": "143,190 scored (2005H1, 2005H2, 2006H1 under two draws) and 100,000 context rows"
+}

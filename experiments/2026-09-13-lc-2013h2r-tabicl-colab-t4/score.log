@@ -1,0 +1,66 @@
+### tabicl@2026-09-12-lc-2013h2r-bundle: python score_context.py 2026-09-12-lc-2013h2r-bundle --out-dir 2026-09-12-lc-2013h2r-bundle-scored-tabicl --models tabicl --chunk 20000
+tabicl/20260911: context 50,000 rows read in 2.6s
+  reference   50,000 rows    206.9s  mean pd 0.0180
+  2014Q1      20,000 rows     72.0s  mean pd 0.0222
+  2014Q2      20,000 rows     71.9s  mean pd 0.0241
+  2014Q3      20,000 rows     71.9s  mean pd 0.0240
+  2014Q4      20,000 rows     71.7s  mean pd 0.0223
+  2015Q1      20,000 rows     71.9s  mean pd 0.0222
+  2015Q2      20,000 rows     72.1s  mean pd 0.0225
+  2015Q3      20,000 rows     71.9s  mean pd 0.0222
+  2015Q4      20,000 rows     71.8s  mean pd 0.0217
+  2016Q1      20,000 rows     71.9s  mean pd 0.0218
+  2016Q2      20,000 rows     71.8s  mean pd 0.0223
+  2016Q3      20,000 rows     71.9s  mean pd 0.0234
+  2016Q4      20,000 rows     72.0s  mean pd 0.0228
+  2017Q1      20,000 rows     71.9s  mean pd 0.0217
+  2017Q2      20,000 rows     71.8s  mean pd 0.0220
+  2017Q3      20,000 rows     71.7s  mean pd 0.0234
+  2017Q4      20,000 rows     72.1s  mean pd 0.0238
+  2018Q1      20,000 rows     72.0s  mean pd 0.0230
+  repeat 2014Q1: largest disagreement 0.00e+00, 0 rows differ
+tabicl/20260912: context 50,000 rows read in 2.3s
+  reference   50,000 rows    206.2s  mean pd 0.0179
+  2014Q1      20,000 rows     71.9s  mean pd 0.0216
+  2014Q2      20,000 rows     71.9s  mean pd 0.0235
+  2014Q3      20,000 rows     71.8s  mean pd 0.0233
+  2014Q4      20,000 rows     71.8s  mean pd 0.0217
+  2015Q1      20,000 rows     71.8s  mean pd 0.0216
+  2015Q2      20,000 rows     72.0s  mean pd 0.0218
+  2015Q3      20,000 rows     71.7s  mean pd 0.0215
+  2015Q4      20,000 rows     72.1s  mean pd 0.0210
+  2016Q1      20,000 rows     72.1s  mean pd 0.0211
+  2016Q2      20,000 rows     72.0s  mean pd 0.0215
+  2016Q3      20,000 rows     71.6s  mean pd 0.0226
+  2016Q4      20,000 rows     71.9s  mean pd 0.0220
+  2017Q1      20,000 rows     72.1s  mean pd 0.0210
+  2017Q2      20,000 rows     71.8s  mean pd 0.0214
+  2017Q3      20,000 rows     71.9s  mean pd 0.0227
+  2017Q4      20,000 rows     72.1s  mean pd 0.0232
+  2018Q1      20,000 rows     71.9s  mean pd 0.0225
+  repeat 2014Q1: largest disagreement 0.00e+00, 0 rows differ
+tabicl/20260913: context 50,000 rows read in 1.5s
+  reference   50,000 rows    206.0s  mean pd 0.0185
+  2014Q1      20,000 rows     71.9s  mean pd 0.0229
+  2014Q2      20,000 rows     71.7s  mean pd 0.0249
+  2014Q3      20,000 rows     71.9s  mean pd 0.0248
+  2014Q4      20,000 rows     71.7s  mean pd 0.0231
+  2015Q1      20,000 rows     71.6s  mean pd 0.0230
+  2015Q2      20,000 rows     71.8s  mean pd 0.0233
+  2015Q3      20,000 rows     71.9s  mean pd 0.0230
+  2015Q4      20,000 rows     71.6s  mean pd 0.0224
+  2016Q1      20,000 rows     71.9s  mean pd 0.0225
+  2016Q2      20,000 rows     71.8s  mean pd 0.0231
+  2016Q3      20,000 rows     72.0s  mean pd 0.0243
+  2016Q4      20,000 rows     71.8s  mean pd 0.0236
+  2017Q1      20,000 rows     71.8s  mean pd 0.0225
+  2017Q2      20,000 rows     72.0s  mean pd 0.0228
+  2017Q3      20,000 rows     72.0s  mean pd 0.0242
+  2017Q4      20,000 rows     71.9s  mean pd 0.0245
+  2018Q1      20,000 rows     72.1s  mean pd 0.0236
+  repeat 2014Q1: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 1,020,000
+reference rows        : 150,000
+wall                  : 4525s
+

@@ -1,0 +1,17 @@
+build                 : 2014H2-E
+snapshot              : 2019-03-01, last labelable origination 2017-03-01 at 24 months
+cells                 : 9 kept, 4 dropped
+rows                  : 180,000 kept, 80,000 dropped, 80,000 of them with an open window
+  2015Q1  20,000 rows  defaults    579 at 12,  2,137 at 24
+  2015Q2  20,000 rows  defaults    571 at 12,  2,184 at 24
+  2015Q3  20,000 rows  defaults    541 at 12,  2,208 at 24
+  2015Q4  20,000 rows  defaults    551 at 12,  2,168 at 24
+  2016Q1  20,000 rows  defaults    655 at 12,  2,266 at 24
+  2016Q2  20,000 rows  defaults    686 at 12,  2,293 at 24
+  2016Q3  20,000 rows  defaults    650 at 12,  2,322 at 24
+  2016Q4  20,000 rows  defaults    626 at 12,  2,107 at 24
+  2017Q1  20,000 rows  defaults    629 at 12,  2,030 at 24
+  2017Q2  20,000 rows  dropped whole, 20,000 with an open window
+  2017Q3  20,000 rows  dropped whole, 20,000 with an open window
+  2017Q4  20,000 rows  dropped whole, 20,000 with an open window
+  2018Q1  20,000 rows  dropped whole, 20,000 with an open window

@@ -1,0 +1,272 @@
+{
+  "name": "grid-r-tabicl",
+  "command": [
+    "python",
+    "score_context.py"
+  ],
+  "bundles": [
+    "2026-09-12-lc-2013h1r-bundle",
+    "2026-09-12-lc-2013h2r-bundle",
+    "2026-09-12-lc-2014h1r-bundle",
+    "2026-09-12-lc-2014h2r-bundle",
+    "2026-09-12-lc-2015h1r-bundle",
+    "2026-09-12-lc-2015h2r-bundle",
+    "2026-09-12-lc-2016h1r-bundle",
+    "2026-09-12-lc-2016h2r-bundle",
+    "2026-09-12-lc-2017h1r-bundle"
+  ],
+  "jobs": [
+    {
+      "name": "tabicl@2026-09-12-lc-2013h1r-bundle",
+      "bundle": "2026-09-12-lc-2013h1r-bundle",
+      "out": "2026-09-12-lc-2013h1r-bundle-scored-tabicl",
+      "args": [
+        "--models",
+        "tabicl",
+        "--chunk",
+        "20000"
+      ]
+    },
+    {
+      "name": "tabicl-t1-check@2026-09-12-lc-2013h1r-bundle",
+      "bundle": "2026-09-12-lc-2013h1r-bundle",
+      "out": "2026-09-12-lc-2013h1r-bundle-scored-tabicl-t1-check",
+      "args": [
+        "--models",
+        "tabicl",
+        "--temperature",
+        "1.0",
+        "--nearest",
+        "1",
+        "--seeds",
+        "20260911",
+        "--chunk",
+        "20000"
+      ]
+    },
+    {
+      "name": "tabicl@2026-09-12-lc-2013h2r-bundle",
+      "bundle": "2026-09-12-lc-2013h2r-bundle",
+      "out": "2026-09-12-lc-2013h2r-bundle-scored-tabicl",
+      "args": [
+        "--models",
+        "tabicl",
+        "--chunk",
+        "20000"
+      ]
+    },
+    {
+      "name": "tabicl-t1-check@2026-09-12-lc-2013h2r-bundle",
+      "bundle": "2026-09-12-lc-2013h2r-bundle",
+      "out": "2026-09-12-lc-2013h2r-bundle-scored-tabicl-t1-check",
+      "args": [
+        "--models",
+        "tabicl",
+        "--temperature",
+        "1.0",
+        "--nearest",
+        "1",
+        "--seeds",
+        "20260911",
+        "--chunk",
+        "20000"
+      ]
+    },
+    {
+      "name": "tabicl@2026-09-12-lc-2014h1r-bundle",
+      "bundle": "2026-09-12-lc-2014h1r-bundle",
+      "out": "2026-09-12-lc-2014h1r-bundle-scored-tabicl",
+      "args": [
+        "--models",
+        "tabicl",
+        "--chunk",
+        "20000"
+      ]
+    },
+    {
+      "name": "tabicl-t1-check@2026-09-12-lc-2014h1r-bundle",
+      "bundle": "2026-09-12-lc-2014h1r-bundle",
+      "out": "2026-09-12-lc-2014h1r-bundle-scored-tabicl-t1-check",
+      "args": [
+        "--models",
+        "tabicl",
+        "--temperature",
+        "1.0",
+        "--nearest",
+        "1",
+        "--seeds",
+        "20260911",
+        "--chunk",
+        "20000"
+      ]
+    },
+    {
+      "name": "tabicl@2026-09-12-lc-2014h2r-bundle",
+      "bundle": "2026-09-12-lc-2014h2r-bundle",
+      "out": "2026-09-12-lc-2014h2r-bundle-scored-tabicl",
+      "args": [
+        "--models",
+        "tabicl",
+        "--chunk",
+        "20000"
+      ]
+    },
+    {
+      "name": "tabicl-t1-check@2026-09-12-lc-2014h2r-bundle",
+      "bundle": "2026-09-12-lc-2014h2r-bundle",
+      "out": "2026-09-12-lc-2014h2r-bundle-scored-tabicl-t1-check",
+      "args": [
+        "--models",
+        "tabicl",
+        "--temperature",
+        "1.0",
+        "--nearest",
+        "1",
+        "--seeds",
+        "20260911",
+        "--chunk",
+        "20000"
+      ]
+    },
+    {
+      "name": "tabicl@2026-09-12-lc-2015h1r-bundle",
+      "bundle": "2026-09-12-lc-2015h1r-bundle",
+      "out": "2026-09-12-lc-2015h1r-bundle-scored-tabicl",
+      "args": [
+        "--models",
+        "tabicl",
+        "--chunk",
+        "20000"
+      ]
+    },
+    {
+      "name": "tabicl-t1-check@2026-09-12-lc-2015h1r-bundle",
+      "bundle": "2026-09-12-lc-2015h1r-bundle",
+      "out": "2026-09-12-lc-2015h1r-bundle-scored-tabicl-t1-check",
+      "args": [
+        "--models",
+        "tabicl",
+        "--temperature",
+        "1.0",
+        "--nearest",
+        "1",
+        "--seeds",
+        "20260911",
+        "--chunk",
+        "20000"
+      ]
+    },
+    {
+      "name": "tabicl@2026-09-12-lc-2015h2r-bundle",
+      "bundle": "2026-09-12-lc-2015h2r-bundle",
+      "out": "2026-09-12-lc-2015h2r-bundle-scored-tabicl",
+      "args": [
+        "--models",
+        "tabicl",
+        "--chunk",
+        "20000"
+      ]
+    },
+    {
+      "name": "tabicl-t1-check@2026-09-12-lc-2015h2r-bundle",
+      "bundle": "2026-09-12-lc-2015h2r-bundle",
+      "out": "2026-09-12-lc-2015h2r-bundle-scored-tabicl-t1-check",
+      "args": [
+        "--models",
+        "tabicl",
+        "--temperature",
+        "1.0",
+        "--nearest",
+        "1",
+        "--seeds",
+        "20260911",
+        "--chunk",
+        "20000"
+      ]
+    },
+    {
+      "name": "tabicl@2026-09-12-lc-2016h1r-bundle",
+      "bundle": "2026-09-12-lc-2016h1r-bundle",
+      "out": "2026-09-12-lc-2016h1r-bundle-scored-tabicl",
+      "args": [
+        "--models",
+        "tabicl",
+        "--chunk",
+        "20000"
+      ]
+    },
+    {
+      "name": "tabicl-t1-check@2026-09-12-lc-2016h1r-bundle",
+      "bundle": "2026-09-12-lc-2016h1r-bundle",
+      "out": "2026-09-12-lc-2016h1r-bundle-scored-tabicl-t1-check",
+      "args": [
+        "--models",
+        "tabicl",
+        "--temperature",
+        "1.0",
+        "--nearest",
+        "1",
+        "--seeds",
+        "20260911",
+        "--chunk",
+        "20000"
+      ]
+    },
+    {
+      "name": "tabicl@2026-09-12-lc-2016h2r-bundle",
+      "bundle": "2026-09-12-lc-2016h2r-bundle",
+      "out": "2026-09-12-lc-2016h2r-bundle-scored-tabicl",
+      "args": [
+        "--models",
+        "tabicl",
+        "--chunk",
+        "20000"
+      ]
+    },
+    {
+      "name": "tabicl-t1-check@2026-09-12-lc-2016h2r-bundle",
+      "bundle": "2026-09-12-lc-2016h2r-bundle",
+      "out": "2026-09-12-lc-2016h2r-bundle-scored-tabicl-t1-check",
+      "args": [
+        "--models",
+        "tabicl",
+        "--temperature",
+        "1.0",
+        "--nearest",
+        "1",
+        "--seeds",
+        "20260911",
+        "--chunk",
+        "20000"
+      ]
+    },
+    {
+      "name": "tabicl@2026-09-12-lc-2017h1r-bundle",
+      "bundle": "2026-09-12-lc-2017h1r-bundle",
+      "out": "2026-09-12-lc-2017h1r-bundle-scored-tabicl",
+      "args": [
+        "--models",
+        "tabicl",
+        "--chunk",
+        "20000"
+      ]
+    },
+    {
+      "name": "tabicl-t1-check@2026-09-12-lc-2017h1r-bundle",
+      "bundle": "2026-09-12-lc-2017h1r-bundle",
+      "out": "2026-09-12-lc-2017h1r-bundle-scored-tabicl-t1-check",
+      "args": [
+        "--models",
+        "tabicl",
+        "--temperature",
+        "1.0",
+        "--nearest",
+        "1",
+        "--seeds",
+        "20260911",
+        "--chunk",
+        "20000"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "environment": {
+    "python": "3.12.14",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "processor": "arm",
+    "packages": {
+      "torch": "2.14.0",
+      "tabpfn": "8.5.0",
+      "tabicl": "2.1.1",
+      "numpy": "2.5.2",
+      "scikit-learn": "1.9.0"
+    },
+    "device": "mps",
+    "device_name": "Apple Silicon GPU (arm64)",
+    "cuda": null,
+    "device_memory_gb": 25.77,
+    "memory_is_unified": true
+  },
+  "results": [
+    {
+      "model": "tabpfn",
+      "context_rows": 10000,
+      "test_rows": 5000,
+      "features": 30,
+      "seconds": [
+        20.992,
+        20.885
+      ],
+      "peak_gpu_gb": 1.446,
+      "status": "ok",
+      "spread_seconds": 0.107,
+      "spread_fraction": 0.0051
+    },
+    {
+      "model": "tabpfn",
+      "context_rows": 10000,
+      "test_rows": 20000,
+      "features": 30,
+      "seconds": [
+        39.238,
+        39.304
+      ],
+      "peak_gpu_gb": 2.495,
+      "status": "ok",
+      "spread_seconds": 0.066,
+      "spread_fraction": 0.0017
+    },
+    {
+      "model": "tabpfn",
+      "context_rows": 50000,
+      "test_rows": 5000,
+      "features": 30,
+      "seconds": [
+        257.479,
+        257.258
+      ],
+      "peak_gpu_gb": 3.594,
+      "status": "ok",
+      "spread_seconds": 0.221,
+      "spread_fraction": 0.0009
+    },
+    {
+      "model": "tabpfn",
+      "context_rows": 50000,
+      "test_rows": 20000,
+      "features": 30,
+      "seconds": [
+        319.132,
+        319.941
+      ],
+      "peak_gpu_gb": 3.602,
+      "status": "ok",
+      "spread_seconds": 0.809,
+      "spread_fraction": 0.0025
+    },
+    {
+      "model": "tabpfn",
+      "context_rows": 100000,
+      "test_rows": 5000,
+      "features": 30,
+      "seconds": [],
+      "peak_gpu_gb": null,
+      "status": "AcceleratorError: index 893 is out of bounds for dimension with size 160"
+    }
+  ]
+}

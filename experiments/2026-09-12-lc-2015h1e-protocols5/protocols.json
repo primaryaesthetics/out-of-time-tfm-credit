@@ -1,0 +1,59 @@
+{
+  "build": "2015H1-E",
+  "folds_runs": [
+    "experiments/2026-09-12-lc-2015h1e-folds",
+    "experiments/2026-09-12-lc-2015h1e-folds-2to5"
+  ],
+  "in_time_tfm": [],
+  "out_of_time": [
+    "experiments/2026-09-05-lc-2015h1e-scores",
+    "experiments/2026-09-08-lc-2015h1e-tabicl-colab-t4",
+    "experiments/2026-09-08-lc-2015h1e-tabicl-t1-derived",
+    "experiments/2026-09-11-lc-2015h1e-tabpfn-m4pro",
+    "experiments/2026-09-11-lc-2015h1e-tabpfn-t1-m4pro"
+  ],
+  "folds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "models": [
+    "scorecard",
+    "gbm",
+    "gbm-50k"
+  ],
+  "in_time_rows": "the fold's 20,000-row test cell, scored by every model",
+  "out_of_time_rows": "every scored cohort of the build, the mean over cohorts of the per-cell value; the threshold of each fold applied in turn",
+  "threshold": "the score maximising F1 on the fold's validation fifth, per model and seed; a foundation model's on its validation cell",
+  "psi_reference": "the rows the model was fitted on or conditioned on, in time the fold's four fifths or its context sample, out of time the build's training pool or its context draw",
+  "thresholds": {
+    "1/scorecard/None": 0.042624356034549345,
+    "1/gbm/None": 0.059005812004740435,
+    "1/gbm-50k/20260911": 0.04600414738163033,
+    "1/gbm-50k/20260912": 0.04667641037434966,
+    "1/gbm-50k/20260913": 0.04050875803571337,
+    "2/scorecard/None": 0.04467492840526099,
+    "2/gbm/None": 0.05673248482303627,
+    "2/gbm-50k/20260911": 0.061995771254210214,
+    "2/gbm-50k/20260912": 0.04488665675693995,
+    "2/gbm-50k/20260913": 0.04488207260610397,
+    "3/scorecard/None": 0.04819927334385712,
+    "3/gbm/None": 0.043251598233932945,
+    "3/gbm-50k/20260911": 0.04260905119200845,
+    "3/gbm-50k/20260912": 0.04176081154453348,
+    "3/gbm-50k/20260913": 0.05138940052455346,
+    "4/scorecard/None": 0.047354076450718846,
+    "4/gbm/None": 0.04960357637709406,
+    "4/gbm-50k/20260911": 0.047816412320771835,
+    "4/gbm-50k/20260912": 0.043057997043433646,
+    "4/gbm-50k/20260913": 0.044912588815306034,
+    "5/scorecard/None": 0.03990722330953789,
+    "5/gbm/None": 0.05675692801604354,
+    "5/gbm-50k/20260911": 0.05132464668335381,
+    "5/gbm-50k/20260912": 0.056726332494238856,
+    "5/gbm-50k/20260913": 0.05408365262418846
+  },
+  "wall_seconds": 93.7
+}

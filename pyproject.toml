@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "outoftime"
+version = "0.0.0"
+description = "Out-of-time, calibration and stability evaluation of tabular foundation models for credit risk"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Nikolai Khobotov" }]
+dependencies = []
+
+[project.optional-dependencies]
+data = ["pandas>=2.2", "pyarrow>=16", "kaggle>=2.2"]
+models = ["scikit-learn>=1.5", "lightgbm>=4.5", "optbinning>=0.19"]
+metrics = ["matplotlib>=3.9", "scores>=2.6", "statsmodels>=0.14"]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/outoftime"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint.per-file-ignores]
+# The script behind claim C-002: the claim gate requires it to hash as it ran,
+# so it is not edited for style.
+"scripts/psi_ztest_size.py" = ["RUF100", "C408"]
+# Pinned by the recorded run 2026-09-21-lc-2015h1e-fold-bundles, whose manifest
+# holds its hash; it is not edited for style.
+"scripts/split_fold_bundle.py" = ["SIM102"]

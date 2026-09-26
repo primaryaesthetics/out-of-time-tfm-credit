@@ -1,0 +1,98 @@
+build dates           : 9: 2013H1, 2013H2, 2014H1, 2014H2, 2015H1, 2015H2, 2016H1, 2016H2, 2017H1
+builds                : 2013H1-E / 2013H1-R, 2013H2-E / 2013H2-R, 2014H1-E / 2014H1-R, 2014H2-E / 2014H2-R, 2015H1-E / 2015H1-R, 2015H2-E / 2015H2-R, 2016H1-E / 2016H1-R, 2016H2-E / 2016H2-R, 2017H1-E / 2017H1-R
+shared cells          : 99 over 19 distinct cohorts; 99 enter the criterion
+outcome read          : outcome
+models                : scorecard, gbm, gbm-50k (3 draws), tabicl (3 draws), tabicl@t1 (3 draws), tabpfn (3 draws), tabpfn@t1 (3 draws)
+matrix                : primary; columns recorded by build.json, node.json, the same on both arms
+loaded in             : 14s
+bootstrap all                   : 200 resamples in 591s
+bootstrap all, cohorts resampled: 200 resamples in 592s
+bootstrap seed 20260906         : every pooling again in 1176s
+bootstrap seed 20260907         : every pooling again in 1187s
+draw 20260911 held fixed   : 200 resamples in 585s
+draw 20260912 held fixed   : 200 resamples in 587s
+draw 20260913 held fixed   : 200 resamples in 585s
+
+|Cox slope - 1| over the 99 shared criterion cells, the mean on each arm and E - R (value [lo, hi], * excludes zero, ! draws disagree, ? star changes with the bootstrap seed, ~ reads derived rows, their error below):
+  scorecard   E 0.0921  R 0.0999  E - R -0.0078 [-0.0184, +0.0011]    
+  gbm         E 0.0883  R 0.0748  E - R +0.0135 [+0.0045, +0.0187] *  
+  gbm-50k     E 0.1455  R 0.1053  E - R +0.0402 [-0.0054, +0.0786]  ! 
+  tabpfn      E 0.1129  R 0.1140  E - R -0.0011 [-0.0141, +0.0182]  ! 
+  tabicl      E 0.1394  R 0.1439  E - R -0.0045 [-0.0167, +0.0155]  ! 
+  tabicl@t1   E 0.0866  R 0.0857  E - R +0.0009 [-0.0070, +0.0106]    ~
+  tabpfn@t1   E 0.0876  R 0.0798  E - R +0.0078 [-0.0098, +0.0189]    
+
+H4, each model's E - R minus gbm-50k's, on the same resample:
+  arm       scorecard   -0.0480 [-0.0918, -0.0022] *! 
+  arm       gbm         -0.0267 [-0.0676, +0.0189]  ! 
+  arm       tabpfn      -0.0412 [-0.0885, +0.0181]  ! 
+  arm       tabicl      -0.0447 [-0.0916, +0.0167]  ! 
+  arm       tabicl@t1   -0.0393 [-0.0806, +0.0058]  ! ~
+  arm       tabpfn@t1   -0.0324 [-0.0700, -0.0006] *!?
+  builds    scorecard   -0.0260 [-0.0582, +0.0056]  ! 
+  builds    gbm         -0.0210 [-0.0515, +0.0142]  ! 
+  builds    tabpfn      -0.0516 [-0.0904, -0.0021] *! 
+  builds    tabicl      -0.0569 [-0.0996, -0.0013] *! 
+  builds    tabicl@t1   -0.0413 [-0.0686, +0.0018]  !?~
+  builds    tabpfn@t1   -0.0246 [-0.0493, +0.0014]  ! 
+  resampled scorecard   -0.0480 [-0.1028, +0.0045]  ! 
+  resampled gbm         -0.0267 [-0.0765, +0.0176]  ! 
+  resampled tabpfn      -0.0412 [-0.0948, +0.0208]  ! 
+  resampled tabicl      -0.0447 [-0.0962, +0.0184]  ! 
+  resampled tabicl@t1   -0.0393 [-0.0877, +0.0072]  ! ~
+  resampled tabpfn@t1   -0.0324 [-0.0750, +0.0011]  !?
+  arm gbm-50k: E - R: draw intervals 20260911 [+0.0227, +0.0598]; 20260912 [+0.0647, +0.0820]; 20260913 [-0.0061, +0.0104]
+  arm tabpfn: E - R: draw intervals 20260911 [-0.0127, +0.0024]; 20260912 [-0.0161, -0.0012]; 20260913 [+0.0046, +0.0192]
+  arm tabicl: E - R: draw intervals 20260911 [-0.0180, -0.0066]; 20260912 [-0.0167, -0.0048]; 20260913 [+0.0054, +0.0169]
+  arm scorecard - gbm-50k: E - R: draw intervals 20260911 [-0.0655, -0.0360]; 20260912 [-0.0953, -0.0671]; 20260913 [-0.0247, +0.0009]
+  arm gbm - gbm-50k: E - R: draw intervals 20260911 [-0.0486, -0.0134]; 20260912 [-0.0710, -0.0522]; 20260913 [-0.0011, +0.0202]
+  arm tabpfn - gbm-50k: E - R: draw intervals 20260911 [-0.0640, -0.0293]; 20260912 [-0.0927, -0.0702]; 20260913 [-0.0001, +0.0213]
+  arm tabicl - gbm-50k: E - R: draw intervals 20260911 [-0.0712, -0.0330]; 20260912 [-0.0939, -0.0739]; 20260913 [-0.0019, +0.0182]
+  arm tabicl@t1 - gbm-50k: E - R: draw intervals 20260911 [-0.0509, -0.0256]; 20260912 [-0.0836, -0.0587]; 20260913 [-0.0088, +0.0103]
+  arm tabpfn@t1 - gbm-50k: E - R: draw intervals 20260911 [-0.0444, -0.0191]; 20260912 [-0.0740, -0.0498]; 20260913 [-0.0133, +0.0019]
+  cox_slope_deviation (all, arm): 0 cells not estimable left out on both arms, averaged over the context draws, at most 0 of any resample
+  cox_slope_deviation (all, builds): 0 build dates not estimable left out on both arms, averaged over the context draws, at most 0 of any resample
+  cox_slope_deviation (all, cohorts resampled, arm): 0 cells not estimable left out on both arms, averaged over the context draws, at most 0 of any resample
+  cox_slope_deviation (all, draw 20260911, arm): 0 cells not estimable left out on both arms, at most 0 of any resample
+  cox_slope_deviation (all, draw 20260911, builds): 0 build dates not estimable left out on both arms, at most 0 of any resample
+  cox_slope_deviation (all, draw 20260912, arm): 0 cells not estimable left out on both arms, at most 0 of any resample
+  cox_slope_deviation (all, draw 20260912, builds): 0 build dates not estimable left out on both arms, at most 0 of any resample
+  cox_slope_deviation (all, draw 20260913, arm): 0 cells not estimable left out on both arms, at most 0 of any resample
+  cox_slope_deviation (all, draw 20260913, builds): 0 build dates not estimable left out on both arms, at most 0 of any resample
+  ~ tabicl@t1 on 2013H1-E: derived exactly, 70,000 rows checked on the build's own cells, largest |d pd| 1.3e-07; 58 cells unchecked by row
+  ~ tabicl@t1 on 2013H2-E: derived exactly, 70,000 rows checked on the build's own cells, largest |d pd| 1.4e-07; 52 cells unchecked by row
+  ~ tabicl@t1 on 2014H1-E: derived exactly, 70,000 rows checked on the build's own cells, largest |d pd| 1.4e-07; 46 cells unchecked by row
+  ~ tabicl@t1 on 2014H2-E: derived exactly, 70,000 rows checked on the build's own cells, largest |d pd| 1.3e-07; 40 cells unchecked by row
+  ~ tabicl@t1 on 2015H1-E: derived exactly, 70,000 rows checked on the build's own cells, largest |d pd| 1.3e-07; 34 cells unchecked by row
+  ~ tabicl@t1 on 2015H2-E: derived exactly, 70,000 rows checked on the build's own cells, largest |d pd| 1.1e-07; 28 cells unchecked by row
+  ~ tabicl@t1 on 2016H1-E: derived exactly, 70,000 rows checked on the build's own cells, largest |d pd| 1.4e-07; 22 cells unchecked by row
+  ~ tabicl@t1 on 2016H2-E: derived exactly, 70,000 rows checked on the build's own cells, largest |d pd| 1.2e-07; 16 cells unchecked by row
+  ~ tabicl@t1 on 2017H1-E: derived exactly, 70,000 rows checked on the build's own cells, largest |d pd| 1.6e-07; 10 cells unchecked by row
+  ~ tabicl@t1 on 2013H1-R: derived exactly, 51,016 rows checked on the build's own cells, largest |d pd| 1.5e-07; 58 cells unchecked by row
+  ~ tabicl@t1 on 2013H2-R: derived exactly, 70,000 rows checked on the build's own cells, largest |d pd| 1.4e-07; 52 cells unchecked by row
+  ~ tabicl@t1 on 2014H1-R: derived exactly, 70,000 rows checked on the build's own cells, largest |d pd| 1.0e-07; 46 cells unchecked by row
+  ~ tabicl@t1 on 2014H2-R: derived exactly, 70,000 rows checked on the build's own cells, largest |d pd| 1.1e-07; 40 cells unchecked by row
+  ~ tabicl@t1 on 2015H1-R: derived exactly, 70,000 rows checked on the build's own cells, largest |d pd| 1.1e-07; 34 cells unchecked by row
+  ~ tabicl@t1 on 2015H2-R: derived exactly, 70,000 rows checked on the build's own cells, largest |d pd| 1.4e-07; 28 cells unchecked by row
+  ~ tabicl@t1 on 2016H1-R: derived exactly, 70,000 rows checked on the build's own cells, largest |d pd| 1.4e-07; 22 cells unchecked by row
+  ~ tabicl@t1 on 2016H2-R: derived exactly, 70,000 rows checked on the build's own cells, largest |d pd| 1.5e-07; 16 cells unchecked by row
+  ~ tabicl@t1 on 2017H1-R: derived exactly, 70,000 rows checked on the build's own cells, largest |d pd| 2.2e-07; 10 cells unchecked by row
+
+per build date, H4 with its interval and the arm contrast:
+  2013H1   scorecard -0.0777 [-0.1432, -0.0267]*  gbm -0.0315 [-0.0998, +0.0069]  tabpfn -0.0057 [-0.0724, +0.0386]  tabicl -0.0019 [-0.0703, +0.0461]  tabicl@t1 +0.0020 [-0.0669, +0.0485]  tabpfn@t1 -0.0111 [-0.0788, +0.0348]   (score runs' build.json: rolling holds 61.3% of 50,609; contrast record: rolling holds 61.3%, mean row 1.74 quarters younger)
+  2013H2   scorecard -0.2115 [-0.5418, +0.0428]  gbm -0.0943 [-0.4332, +0.1572]  tabpfn -0.1628 [-0.5431, +0.1183]  tabicl -0.1719 [-0.5450, +0.0990]  tabicl@t1 -0.1595 [-0.4948, +0.0881]  tabpfn@t1 -0.1422 [-0.4646, +0.0867]   (score runs' build.json: rolling holds 62.5% of 85,453; contrast record: rolling holds 62.5%, mean row 2.00 quarters younger)
+  2014H1   scorecard +0.0078 [-0.0259, +0.0449]  gbm -0.0082 [-0.0399, +0.0213]  tabpfn +0.0529 [+0.0020, +0.0823]*  tabicl +0.0630 [+0.0188, +0.0996]*  tabicl@t1 -0.0073 [-0.0466, +0.0214]  tabpfn@t1 -0.0524 [-0.1045, +0.0034]   (score runs' build.json: rolling holds 63.5% of 138,827; contrast record: rolling holds 63.5%, mean row 2.10 quarters younger)
+  2014H2   scorecard -0.0396 [-0.1631, +0.0818]  gbm -0.0197 [-0.1446, +0.0980]  tabpfn -0.0144 [-0.1404, +0.1169]  tabicl -0.0121 [-0.1484, +0.1101]  tabicl@t1 -0.0090 [-0.1348, +0.1122]  tabpfn@t1 -0.0041 [-0.1080, +0.0989]   (score runs' build.json: rolling holds 61.2% of 220,267; contrast record: rolling holds 61.2%, mean row 2.29 quarters younger)
+  2015H1   scorecard +0.0065 [-0.1028, +0.1104]  gbm -0.0245 [-0.1531, +0.0544]  tabpfn -0.0540 [-0.1779, +0.0346]  tabicl -0.0598 [-0.1883, +0.0211]  tabicl@t1 -0.0242 [-0.0830, +0.0430]  tabpfn@t1 +0.0111 [-0.0298, +0.0806]   (score runs' build.json: rolling holds 57.0% of 323,026; contrast record: rolling holds 57.0%, mean row 2.57 quarters younger)
+  2015H2   scorecard +0.0586 [-0.0063, +0.0905]  gbm +0.0525 [+0.0035, +0.0921]*  tabpfn +0.0114 [-0.0368, +0.0672]  tabicl -0.0164 [-0.0674, +0.0648]  tabicl@t1 +0.0221 [-0.0343, +0.0780]  tabpfn@t1 +0.0328 [-0.0150, +0.0951]   (score runs' build.json: rolling holds 51.7% of 455,896; contrast record: rolling holds 51.7%, mean row 3.00 quarters younger)
+  2016H1   scorecard +0.0034 [-0.1072, +0.0797]  gbm -0.0154 [-0.1172, +0.0652]  tabpfn -0.0772 [-0.1985, +0.0356]  tabicl -0.0919 [-0.2008, +0.0010]  tabicl@t1 -0.0608 [-0.1482, +0.0306]  tabpfn@t1 +0.0066 [-0.0852, +0.0705]   (score runs' build.json: rolling holds 49.2% of 635,998; contrast record: rolling holds 49.2%, mean row 3.36 quarters younger)
+  2016H2   scorecard +0.0218 [-0.0592, +0.1456]  gbm -0.0035 [-0.0687, +0.1081]  tabpfn -0.0672 [-0.1703, +0.1084]  tabicl -0.0709 [-0.1602, +0.0860]  tabicl@t1 -0.0472 [-0.1054, +0.0971]  tabpfn@t1 -0.0087 [-0.0655, +0.0909]   (score runs' build.json: rolling holds 48.0% of 876,991; contrast record: rolling holds 48.0%, mean row 3.64 quarters younger)
+  2017H1   scorecard -0.0029 [-0.1380, +0.0724]  gbm -0.0443 [-0.1686, +0.0511]  tabpfn -0.1477 [-0.3211, -0.0255]*  tabicl -0.1499 [-0.2929, -0.0239]*  tabicl@t1 -0.0880 [-0.2524, +0.0238]  tabpfn@t1 -0.0536 [-0.2204, +0.0495]   (score runs' build.json: rolling holds 42.6% of 1,108,732; contrast record: rolling holds 42.6%, mean row 4.09 quarters younger)
+
+the criterion, per foundation model at its library settings, on the 99 shared criterion cells under the outcome column:
+  tabpfn      killed: inside the interval
+  tabicl      killed: inside the interval
+
+bootstrap seed check over seeds 20260906, 20260907: 4 of 26 pooled differences starred under seed 20260905, 1 change their star; 28 of 156 at every scope, 8 change; largest movement of an interval bound 0.0223
+
+wall                  : 5355s

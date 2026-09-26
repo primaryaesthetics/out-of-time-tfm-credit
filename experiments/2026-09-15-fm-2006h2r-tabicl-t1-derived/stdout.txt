@@ -1,0 +1,12 @@
+derived tabicl@t1 at 1 from experiments/2026-09-14-fm-2006h2r-tabicl-rental-4090
+library               : tabicl 2.1.1
+  experiments/2026-09-14-fm-2006h2r-tabicl-rental-4090: seeds [20260911, 20260912, 20260913], from [0.9], 2,506,890 scored + 150,000 reference rows
+check source          : experiments/2026-09-13-fm-2004h2e-tabicl-rental-4090 (build 2004H2-E, seeds [20260911], NVIDIA GeForce RTX 4090)
+check                 : experiments/2026-09-13-fm-2004h2e-tabicl-t1-rental-4090
+  2004H2-E 20260911/2005H1        24,233 rows  max |d pd| 1.36e-07  max |d logit| 1.30e-06
+  2004H2-E 20260911/2005H2        24,082 rows  max |d pd| 1.36e-07  max |d logit| 1.36e-06
+  2004H2-E 20260911/2006H1        23,280 rows  max |d pd| 1.17e-07  max |d logit| 1.35e-06
+  2004H2-E 20260911/reference     50,000 rows  max |d pd| 1.21e-07  max |d logit| 1.38e-06
+rows checked          : 121,595 of the check source's 121,595, on build 2004H2-E, worst |d pd| 1.36e-07 within 1e-06
+derived rows checked  : none by row; 105 cells of build 2006H2-R carried by the identity of tabicl 2.1.1, the checkpoint and the source temperature
+written               : experiments/2026-09-15-fm-2006h2r-tabicl-t1-derived

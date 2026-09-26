@@ -1,0 +1,8 @@
+build                 : 2017H1-E
+snapshot              : 2019-03-01, last labelable origination 2017-03-01 at 24 months
+cells                 : 0 kept, 3 dropped
+rows                  : 0 kept, 60,000 dropped, 60,000 of them with an open window
+  2017Q3  20,000 rows  dropped whole, 20,000 with an open window
+  2017Q4  20,000 rows  dropped whole, 20,000 with an open window
+  2018Q1  20,000 rows  dropped whole, 20,000 with an open window
+no cohort of this build has closed; no copy is written

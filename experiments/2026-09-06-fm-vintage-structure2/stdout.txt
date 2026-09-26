@@ -1,0 +1,18 @@
+loans                    : 1,362,500
+origination span         : 1999Q1 .. 2026Q1 (109 quarterly cohorts)
+performance cutoff       : 2026-03-01
+first payment lag        : median 3 months, 0.52% at 6+ months, 0.00% before the quarter
+no performance record    : 10, not labelled
+re-dated, excluded       : 7,095 (0.52%); delinquent before age one: 9 among them, 0 among the rest; terminated before age one among the rest: 977
+
+12-month window
+  labelled               : 1,298,994  defaults 6,697  rate 0.52%
+  immature / censored    : 54,931 / 1,470
+  cohorts above floors   : quarterly 11, semi-annual 23, annual 21
+  quarterly rate range   : 0.83% (2020Q2) .. 3.78% (2019Q4) over cohorts above the floors
+
+24-month window
+  labelled               : 1,248,788  defaults 18,165  rate 1.45%
+  immature / censored    : 104,929 / 1,678
+  cohorts above floors   : quarterly 55, semi-annual 48, annual 26
+  quarterly rate range   : 0.81% (2010Q2) .. 7.04% (2007Q4) over cohorts above the floors

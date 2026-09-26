@@ -1,0 +1,52 @@
+{
+  "slug": "lc-2015h1e-tabicl-colab-t4",
+  "recorded_utc": "2026-09-06T13:15:00+00:00",
+  "git_sha": "94976f0d74e5a67ffe78d5a7866f0056a2a19fd1",
+  "git_dirty": false,
+  "written_by_hand": "This run was made on a hosted notebook that holds no copy of the repository, so record_run.py could not record it. The manifest is assembled here from what the notebook returned; node.json is the scorer's own account of its environment and its cells, and score.log is its console output.",
+  "host": "Google Colab, free tier, Linux x86_64, Python 3.13.15",
+  "gpu": "NVIDIA Tesla T4, 15.64 GB, CUDA 12.8, torch 2.11.0+cu128",
+  "command": "python score_context.py 2026-09-05-lc-2015h1e-bundle --out-dir 2026-09-05-lc-2015h1e-bundle-scored --models tabicl --nearest 3 --seeds 20260911 --chunk 20000, from the unpacked job archive",
+  "job_archive": {
+    "path": "data/derived/node/outoftime-colab-2026-09-05-lc-2015h1e-bundle.zip",
+    "sha256": "1424abdc5cebdd299532ffb5c6e3eca0f0e5fccdaf672d7c6e483881b2d6f698",
+    "built_by": "assembled by hand from scripts/score_context.py and the bundle directory of experiments/2026-09-05-lc-2015h1e-bundle, as a zip for the notebook's upload cell",
+    "score_context_py_sha256": "1778a1674e9e85a96d7d6f7cc4f7a8ee5cfb74e3ec6ee01189e1ee869ef28f67",
+    "score_context_py_provenance": "Hash of the copy inside the archive, already LF-ended; equal to scripts/score_context.py in this tree and to the copy that ran on the M4 Pro (experiments/2026-09-06-lc-2015h1e-tabpfn-m4pro), unchanged since commit 6ff4872."
+  },
+  "result_archive": {
+    "name": "outoftime-result-tabicl-2026-09-05-lc-2015h1e-bundle.zip",
+    "sha256": "9c4e84e3d65cd491e1a5e506c0ae9e8d962cfff614c2730d23f029ba22301f98",
+    "contents": "2026-09-05-lc-2015h1e-bundle-scored/ (node.json, scores.parquet, reference.parquet, parts/) and score.log, copied here unchanged"
+  },
+  "bundle_check": {
+    "context.parquet": "6416fe6560268bef4b0341e545c37918a1ef2aabed6689cdff5287e45a9738c6",
+    "scored.parquet": "0e7bc300b9bc16360152be39e0d9ea0c663289897dcf90ea9536a748438bc09e",
+    "how": "The hashes the scorer recorded in node.json for the bundle it read, equal to the files of experiments/2026-09-05-lc-2015h1e-bundle on this machine and to the hashes the M4 Pro run recorded. The scorer refuses a bundle whose hashes differ from bundle.json, so the notebook scored the recorded rows."
+  },
+  "row_check": {
+    "scored": "60,000 rows over 2015Q3, 2015Q4, 2016Q1; every (cohort, row) pair and its outcome and age match the gbm rows of experiments/2026-09-05-lc-2015h1e-scores/scores.parquet, zero mismatches; no missing probability",
+    "reference": "50,000 rows; every row and its outcome match the gbm-50k reference of context seed 20260911 in experiments/2026-09-05-lc-2015h1e-scores/reference.parquet, zero mismatches; realised rate 2.248%"
+  },
+  "console_log": "score.log is included. It is the scorer's own summary plus the checkpoint download notice; it was read in full and holds no home path, no account name and no token.",
+  "question_this_run_was_sent_to_answer": "The TabICL side of the cheapest falsifying run of EXP-002: the same build (2015H1-E), the same context seed and the same three cohorts as experiments/2026-09-06-lc-2015h1e-tabpfn-m4pro, so that the two foundation models can be read against the classical intervals of experiments/2026-09-05-lc-2015h1e-intervals2 on identical rows.",
+  "what_it_measured": {
+    "model": "tabicl 2.1.1, checkpoint tabicl-classifier-v2-20260212.ckpt (sha256 bdc7dbd5...4ed0) downloaded from Hugging Face by the library, tabpfn not installed",
+    "device": "cuda",
+    "context": "50,000 rows of seed 20260911; every parameter at its default (node.json): n_estimators 8, softmax_temperature 0.9, random_state 42, average_logits true; categorical columns passed as object dtype and not declared, since the estimator takes no categorical index",
+    "chunk": "20,000 scored rows per forward call (--chunk 20000), so the 50,000-row reference cell ran in three calls; rows are scored independently and the chunking changes no probability",
+    "cells_seconds": {
+      "reference, 50,000 rows": 211.327,
+      "2015Q3, 20,000 rows": 75.884,
+      "2015Q4, 20,000 rows": 76.055,
+      "2016Q1, 20,000 rows": 75.871
+    },
+    "peak_gpu_gb_max": 10.966,
+    "fit_seconds": 5.912,
+    "wall_seconds": 525.9,
+    "repeat": "2015Q3 scored twice from a fresh fit: largest absolute disagreement 0.0, no row differs"
+  },
+  "tuning_budget": "Added 2026-09-06 after the seventh cold audit, which found the baseline gate's budget statement missing from the run manifests. TabICL: zero trials, no validation split, every parameter at the library default (node.json params: n_estimators 8, softmax_temperature 0.9). The classical models it is paired with were tuned on their own pool (build.json of experiments/2026-09-05-lc-2015h1e-scores), and the asymmetry runs both ways: the foundation model gets no tuning, the 50,000-row control inherits the point chosen on the 323,026-row pool.",
+  "against_the_memory_law": "experiments/2026-08-30-colab-t4-memory-law measured 11.35 GB at a 50,000-row context on the same GPU and library version; this run peaked at 10.97 GB with 20,000 rows per call.",
+  "not_in_this_run": "TabPFN. Its side of the falsifying run is experiments/2026-09-06-lc-2015h1e-tabpfn-m4pro, from the same bundle."
+}

@@ -1,0 +1,61 @@
+rows                  : 2,260,668
+snapshot from data    : 2019-03-01
+loaded in             : 81s
+dropped               : desc, free text, 124,500 distinct values
+dropped               : emp_title, free text, 512,694 distinct values
+dropped               : title, free text, 63,154 distinct values
+dropped               : zip_code, geography below the state, 956 distinct values
+redundant             : funded_amnt against loan_amnt, exact_agreement=0.9990865531780871, correlation=0.999755
+redundant             : funded_amnt_inv against loan_amnt, exact_agreement=0.9329839675706473, correlation=0.999038
+redundant             : fico_range_high against fico_range_low, distinct_offsets=2.0, offset_min=4.0, offset_max=5.0, exact_agreement=0.9998049249159983
+redundant             : grade against sub_grade, exact_agreement=1.0
+redundant             : int_rate against sub_grade and the origination month, exact_agreement=0.946623
+redundant             : installment against loan_amnt, int_rate and term, exact_agreement=0.998643, median_abs_gap=0.004988
+labelled              : 1,873,290
+model matrix          : 97 characteristics
+
+determinism, refitting 2013H1-E: same characteristics True, same bins True, largest coefficient gap 0.0
+
+ 2013H1-E    52,781 rows  13 chars  fit    2.9s  gini 0.334->0.366  O/E 0.90->1.53
+ 2013H2-E    87,625 rows  19 chars  fit    5.2s  gini 0.333->0.390  O/E 0.96->1.59
+ 2014H1-E   140,999 rows  14 chars  fit    8.0s  gini 0.346->0.378  O/E 0.92->1.61
+ 2014H2-E   222,439 rows  17 chars  fit    9.5s  gini 0.385->0.380  O/E 1.32->1.69
+ 2015H1-E   325,198 rows  15 chars  fit   13.2s  gini 0.450->0.387  O/E 1.22->1.70
+ 2015H2-E   458,068 rows  16 chars  fit   18.1s  gini 0.461->0.391  O/E 1.54->1.70
+ 2016H1-E   638,170 rows  16 chars  fit   25.8s  gini 0.373->0.373  O/E 1.33->1.56
+ 2016H2-E   879,163 rows  16 chars  fit   34.9s  gini 0.410->0.377  O/E 1.34->1.50
+ 2017H1-E 1,110,904 rows  18 chars  fit   41.6s  gini 0.440->0.360  O/E 1.01->1.25
+--- arm E: expanding done ---
+
+ 2013H1-R    31,016 rows  14 chars  fit    3.0s  gini 0.338->0.368  O/E 0.84->1.48
+ 2013H2-R    53,367 rows  16 chars  fit    6.0s  gini 0.352->0.391  O/E 1.00->1.55
+ 2014H1-R    88,218 rows  16 chars  fit    7.2s  gini 0.336->0.370  O/E 0.94->1.60
+ 2014H2-R   134,814 rows  17 chars  fit    9.6s  gini 0.402->0.375  O/E 1.25->1.66
+ 2015H1-R   184,199 rows  17 chars  fit    9.4s  gini 0.462->0.376  O/E 1.19->1.70
+ 2015H2-R   235,629 rows  18 chars  fit   10.9s  gini 0.472->0.369  O/E 1.49->1.70
+ 2016H1-R   312,972 rows  17 chars  fit   15.9s  gini 0.372->0.362  O/E 1.29->1.57
+ 2016H2-R   421,095 rows  15 chars  fit   19.5s  gini 0.426->0.375  O/E 1.26->1.44
+ 2017H1-R   472,734 rows  19 chars  fit   20.6s  gini 0.447->0.364  O/E 0.98->1.23
+--- arm R: rolling, 4 quarters done ---
+
+    build  chars  dropped  age0 gini  oldest gini  age0 O/E  oldest O/E
+ 2013H1-E     13        2      0.334        0.366      0.90        1.53
+ 2013H2-E     19        1      0.333        0.390      0.96        1.59
+ 2014H1-E     14        6      0.346        0.378      0.92        1.61
+ 2014H2-E     17        3      0.385        0.380      1.32        1.69
+ 2015H1-E     15        5      0.450        0.387      1.22        1.70
+ 2015H2-E     16        4      0.461        0.391      1.54        1.70
+ 2016H1-E     16        4      0.373        0.373      1.33        1.56
+ 2016H2-E     16        4      0.410        0.377      1.34        1.50
+ 2017H1-E     18        2      0.440        0.360      1.01        1.25
+ 2013H1-R     14        3      0.338        0.368      0.84        1.48
+ 2013H2-R     16        4      0.352        0.391      1.00        1.55
+ 2014H1-R     16        4      0.336        0.370      0.94        1.60
+ 2014H2-R     17        3      0.402        0.375      1.25        1.66
+ 2015H1-R     17        3      0.462        0.376      1.19        1.70
+ 2015H2-R     18        2      0.472        0.369      1.49        1.70
+ 2016H1-R     17        3      0.372        0.362      1.29        1.57
+ 2016H2-R     15        5      0.426        0.375      1.26        1.44
+ 2017H1-R     19        1      0.447        0.364      0.98        1.23
+
+wall: 456s

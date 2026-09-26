@@ -1,0 +1,673 @@
+{
+  "bundle": {
+    "path": "2026-09-13-fm-2016h2r-bundle",
+    "files": {
+      "context.parquet": "9be4653ba727d017738932fce566ceceb12fce99f6dc8b85b7cae3b24ab1b660",
+      "scored.parquet": "c79f27e951a27002b1eb96194382df4fe915d4b1879410ea54f8bbb365f6c897"
+    },
+    "build": {
+      "build_id": "2016H2-R",
+      "as_of": "2016-12-31",
+      "arm": "R",
+      "label_lag_months": 24,
+      "knowable_through": "2014-12-31",
+      "train_rows": 97038,
+      "train_first": "2012-10-01",
+      "train_last": "2014-07-01",
+      "train_quarters": [
+        "2012Q4",
+        "2013Q1",
+        "2013Q2",
+        "2013Q3",
+        "2013Q4",
+        "2014Q1",
+        "2014Q2",
+        "2014Q3"
+      ],
+      "blind_rows": 109784,
+      "test_cohorts": {
+        "2017H1": 24541,
+        "2017H2": 24680,
+        "2018H1": 24416,
+        "2018H2": 24543,
+        "2019H1": 24752,
+        "2019H2": 24861,
+        "2020H1": 24880,
+        "2020H2": 24919,
+        "2021H1": 24909,
+        "2021H2": 24929,
+        "2022H1": 24889,
+        "2022H2": 24859,
+        "2023H1": 24882,
+        "2023H2": 24866
+      },
+      "test_rows": 346926,
+      "notes": [
+        "109784 rows of the quarters in (2014-09-30, 2016-12-31] are neither trained on nor scored",
+        "cohorts are HalfYear cohorts of the origination date; the pool is the whole quarters to 2014-09-30, 27 months before the build, and every training loan's 24-month window, read on its label clock, closed by 2014-12-31"
+      ],
+      "axis_gap_months": 27,
+      "axis_horizon": "2014-09-30"
+    },
+    "features": [
+      "borrowers",
+      "cltv",
+      "fico",
+      "first_time_homebuyer",
+      "ltv",
+      "mi_pct",
+      "occupancy",
+      "prepayment_penalty",
+      "property_type",
+      "purpose",
+      "state",
+      "term",
+      "units",
+      "upb_to_limit"
+    ],
+    "categorical": [
+      "first_time_homebuyer",
+      "occupancy",
+      "prepayment_penalty",
+      "property_type",
+      "purpose",
+      "state"
+    ]
+  },
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-6.17.0-20-generic-x86_64-with-glibc2.39",
+    "processor": "x86_64",
+    "packages": {
+      "torch": "2.14.0",
+      "tabpfn": "8.5.0",
+      "tabicl": "2.1.1",
+      "numpy": "2.5.3",
+      "pandas": "3.0.5",
+      "scikit-learn": "1.9.1"
+    },
+    "device": "cuda",
+    "device_name": "NVIDIA GeForce RTX 4090",
+    "cuda": "13.0",
+    "device_memory_gb": 25.25
+  },
+  "cohorts": [
+    "2017H1",
+    "2017H2",
+    "2018H1",
+    "2018H2",
+    "2019H1",
+    "2019H2",
+    "2020H1",
+    "2020H2",
+    "2021H1",
+    "2021H2",
+    "2022H1",
+    "2022H2",
+    "2023H1",
+    "2023H2"
+  ],
+  "context_seeds": [
+    20260911,
+    20260912,
+    20260913
+  ],
+  "models": {
+    "tabpfn/20260911": {
+      "context_rows": 50000,
+      "fit_seconds": 1.926,
+      "parameters": {
+        "auto_scale_n_estimators": true,
+        "average_before_softmax": false,
+        "balance_probabilities": false,
+        "categorical_features_indices": [
+          3,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "device": "auto",
+        "differentiable_input": false,
+        "eval_metric": null,
+        "fit_mode": "fit_preprocessors",
+        "ignore_pretraining_limits": true,
+        "inference_config": null,
+        "inference_precision": "auto",
+        "keep_cache_on_device": true,
+        "kv_cache_precision": null,
+        "memory_saving_mode": "auto",
+        "model_path": "auto",
+        "n_estimators": "auto",
+        "n_jobs": null,
+        "n_preprocessing_jobs": 1,
+        "random_state": 0,
+        "show_progress_bar": false,
+        "softmax_temperature": 0.9,
+        "tuning_config": null
+      }
+    },
+    "tabpfn/20260912": {
+      "context_rows": 50000,
+      "fit_seconds": 0.746,
+      "parameters": {
+        "auto_scale_n_estimators": true,
+        "average_before_softmax": false,
+        "balance_probabilities": false,
+        "categorical_features_indices": [
+          3,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "device": "auto",
+        "differentiable_input": false,
+        "eval_metric": null,
+        "fit_mode": "fit_preprocessors",
+        "ignore_pretraining_limits": true,
+        "inference_config": null,
+        "inference_precision": "auto",
+        "keep_cache_on_device": true,
+        "kv_cache_precision": null,
+        "memory_saving_mode": "auto",
+        "model_path": "auto",
+        "n_estimators": "auto",
+        "n_jobs": null,
+        "n_preprocessing_jobs": 1,
+        "random_state": 0,
+        "show_progress_bar": false,
+        "softmax_temperature": 0.9,
+        "tuning_config": null
+      }
+    },
+    "tabpfn/20260913": {
+      "context_rows": 50000,
+      "fit_seconds": 0.773,
+      "parameters": {
+        "auto_scale_n_estimators": true,
+        "average_before_softmax": false,
+        "balance_probabilities": false,
+        "categorical_features_indices": [
+          3,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "device": "auto",
+        "differentiable_input": false,
+        "eval_metric": null,
+        "fit_mode": "fit_preprocessors",
+        "ignore_pretraining_limits": true,
+        "inference_config": null,
+        "inference_precision": "auto",
+        "keep_cache_on_device": true,
+        "kv_cache_precision": null,
+        "memory_saving_mode": "auto",
+        "model_path": "auto",
+        "n_estimators": "auto",
+        "n_jobs": null,
+        "n_preprocessing_jobs": 1,
+        "random_state": 0,
+        "show_progress_bar": false,
+        "softmax_temperature": 0.9,
+        "tuning_config": null
+      }
+    }
+  },
+  "cells": [
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "reference",
+      "rows": 50000,
+      "seconds": 36.799,
+      "peak_gpu_gb": 1.065,
+      "mean_pd": 0.002972
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2017H1",
+      "rows": 24541,
+      "seconds": 22.627,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.002415
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2017H2",
+      "rows": 24680,
+      "seconds": 22.676,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.002345
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2018H1",
+      "rows": 24416,
+      "seconds": 22.685,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.002265
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2018H2",
+      "rows": 24543,
+      "seconds": 22.827,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.002322
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2019H1",
+      "rows": 24752,
+      "seconds": 22.796,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.002218
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2019H2",
+      "rows": 24861,
+      "seconds": 22.727,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.001951
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2020H1",
+      "rows": 24880,
+      "seconds": 22.592,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.001679
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2020H2",
+      "rows": 24919,
+      "seconds": 22.764,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.001476
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2021H1",
+      "rows": 24909,
+      "seconds": 22.749,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.001753
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2021H2",
+      "rows": 24929,
+      "seconds": 22.608,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.00212
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2022H1",
+      "rows": 24889,
+      "seconds": 22.745,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.002448
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2022H2",
+      "rows": 24859,
+      "seconds": 22.758,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.002264
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2023H1",
+      "rows": 24882,
+      "seconds": 22.641,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.002095
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2023H2",
+      "rows": 24866,
+      "seconds": 22.77,
+      "peak_gpu_gb": 1.066,
+      "mean_pd": 0.002043
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "reference",
+      "rows": 50000,
+      "seconds": 35.993,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.002868
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2017H1",
+      "rows": 24541,
+      "seconds": 22.694,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.002384
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2017H2",
+      "rows": 24680,
+      "seconds": 22.652,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.00233
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2018H1",
+      "rows": 24416,
+      "seconds": 22.737,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.002263
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2018H2",
+      "rows": 24543,
+      "seconds": 22.85,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.002317
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2019H1",
+      "rows": 24752,
+      "seconds": 22.802,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.002207
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2019H2",
+      "rows": 24861,
+      "seconds": 22.781,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.001973
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2020H1",
+      "rows": 24880,
+      "seconds": 22.877,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.001698
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2020H2",
+      "rows": 24919,
+      "seconds": 22.862,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.001454
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2021H1",
+      "rows": 24909,
+      "seconds": 22.915,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.001732
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2021H2",
+      "rows": 24929,
+      "seconds": 22.915,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.002079
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2022H1",
+      "rows": 24889,
+      "seconds": 22.816,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.002386
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2022H2",
+      "rows": 24859,
+      "seconds": 22.948,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.002196
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2023H1",
+      "rows": 24882,
+      "seconds": 22.802,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.00206
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2023H2",
+      "rows": 24866,
+      "seconds": 22.871,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.001971
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "reference",
+      "rows": 50000,
+      "seconds": 36.257,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.00316
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2017H1",
+      "rows": 24541,
+      "seconds": 22.786,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.002549
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2017H2",
+      "rows": 24680,
+      "seconds": 22.907,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.002465
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2018H1",
+      "rows": 24416,
+      "seconds": 22.891,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.002378
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2018H2",
+      "rows": 24543,
+      "seconds": 22.822,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.002395
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2019H1",
+      "rows": 24752,
+      "seconds": 22.847,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.002313
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2019H2",
+      "rows": 24861,
+      "seconds": 22.851,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.002123
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2020H1",
+      "rows": 24880,
+      "seconds": 22.767,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.001873
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2020H2",
+      "rows": 24919,
+      "seconds": 22.782,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.001641
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2021H1",
+      "rows": 24909,
+      "seconds": 22.752,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.001897
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2021H2",
+      "rows": 24929,
+      "seconds": 22.823,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.002224
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2022H1",
+      "rows": 24889,
+      "seconds": 22.837,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.002469
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2022H2",
+      "rows": 24859,
+      "seconds": 22.787,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.002265
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2023H1",
+      "rows": 24882,
+      "seconds": 22.794,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.002104
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2023H2",
+      "rows": 24866,
+      "seconds": 22.648,
+      "peak_gpu_gb": 1.067,
+      "mean_pd": 0.002021
+    }
+  ],
+  "repeats": [
+    {
+      "model": "tabpfn",
+      "context_seed": 20260911,
+      "cell": "2017H1",
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "rows_differing": 0
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260912,
+      "cell": "2017H1",
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "rows_differing": 0
+    },
+    {
+      "model": "tabpfn",
+      "context_seed": 20260913,
+      "cell": "2017H1",
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "rows_differing": 0
+    }
+  ],
+  "command": {
+    "models": [
+      "tabpfn"
+    ],
+    "nearest": null,
+    "device": "auto",
+    "chunk": 20000,
+    "repeat": true,
+    "settings": {}
+  },
+  "tuning_budget": "none: zero trials, no validation split, every parameter at the library default except those the command names; the classical models this is paired with were tuned on their own pool and the asymmetry runs both ways, since the 50,000-row control inherits the point chosen on the full pool",
+  "wall_seconds": 1145.0,
+  "checkpoints": {
+    "tabpfn-v3-classifier-v3_default.ckpt": "d0d865d54dfbc524f5703104be90620182dca7e5fb2c16de72e9959ea18f3988",
+    "tabicl-classifier-v2-20260212.ckpt": "bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0"
+  },
+  "scored_rows": 1040778,
+  "reference_rows": 150000
+}

@@ -1,0 +1,98 @@
+{
+  "slug": "fm-2004h2e-tabicl-rental-4090",
+  "recorded_utc": "2026-09-13T09:13:34+00:00",
+  "git_sha": "001b24bd38526af6c15eecfc49fef93c9263b782",
+  "git_dirty": false,
+  "scorer_commit": "The score_context.py that ran is byte-identical to scripts/score_context.py at commit fd5eadf and at HEAD 001b24b; the file has not changed between them.",
+  "written_by_hand": "This run was made on a rented instance that holds no copy of the repository, so record_run.py could not record it. The manifest is assembled from what the node returned; node.json is the scorer's own account of its environment and its cells, and score.log is the slice of the node's console log that belongs to this job.",
+  "host": "Rented instance, 1x NVIDIA GeForce RTX 4090 (24564 MiB), driver 595.58.03, 8 vCPU, 15 GB RAM, Ubuntu Linux x86_64, Python 3.12.3, CUDA 13.2 at the driver, torch built against CUDA 13.0",
+  "gpu": "NVIDIA GeForce RTX 4090, 24564 MiB (25.25 GB reported by torch), torch 2.14.0 on cuda",
+  "job": "tabicl@2026-09-13-fm-2004h2e-bundle",
+  "command": "python score_context.py 2026-09-13-fm-2004h2e-bundle --out-dir 2026-09-13-fm-2004h2e-bundle-scored-tabicl --models tabicl --nearest 3 --seeds 20260911 --chunk 20000, run by node_jobs.py through run.sh from the unpacked job archive as job 3 of 12 (the FM job list; the same node dir's session also ran the four LC probe jobs first)",
+  "session": "One process, sixteen jobs total on one freshly rented instance: the four LC probe jobs (2026-09-13-lc-rental-probe-4090) finished 08:05:59Z-08:09:32Z, then node_jobs.py walked this FM job list of twelve in the same run.sh call, finishing 08:11:53Z-08:30:40Z (jobs-done.json), this job finishing in 73.0s by the tally.",
+  "grid_index": "experiments/2026-09-13-fm-2004h2e-rental-4090 holds the node's whole console log, the job list, the runner's tally and the archive-level checks; this directory is one of the twelve it indexes. The tally (jobs-done.json) also holds the four LC probe entries of the same node dir, indexed separately at experiments/2026-09-13-lc-rental-probe-4090.",
+  "job_archive": {
+    "path": "data/derived/node/outoftime-run-rental-fm-2004h2e.tar.gz",
+    "sha256": "e23c5ece68225e5b214aed9dee42387a5abb98957375d5a6e272da4113133427",
+    "built_by": "scripts/pack_node_run.py --format cuda over the three node bundles of the falsifying run (the primary matrix and the dti-kept and upb-nominal ablations), as a tar for node_run_cuda.sh (commit e7e2978), sidecars outoftime-run-rental-fm-2004h2e.tar.gz.sha256 and .jobs.json beside it; the three bundles were built from the repository at commit dc50bdc",
+    "score_context_py_sha256": "66e8933d67fea5f8140f31f5229a305a15d3f1eb20e0fd67e15546037ff9f0dc",
+    "score_context_py_provenance": "Hash of the copy inside the archive, LF-ended; byte-identical to scripts/score_context.py at HEAD 001b24b and unchanged since commit fd5eadf."
+  },
+  "result_archive": {
+    "name": "outoftime-result-rental-fm-2004h2e.tar.gz",
+    "sha256": "b8ac296688976ed863699f6183380b1424a602a0e252b15392d0239355405ebe",
+    "contents": "2026-09-13-fm-2004h2e-bundle-scored-tabicl/ (node.json, scores.parquet, reference.parquet, parts/) copied here unchanged; score.log, jobs.json and jobs-done.json of the archive are in experiments/2026-09-13-fm-2004h2e-rental-4090, and score.log here is lines 55 to 66 of the archive's (the LC probe occupies lines 2 to 53 of the same file)",
+    "sha256_of_files_here": {
+      "scores.parquet": "c7d0debed364d6bf3236821c863a70b417c77482fc63084d261fb8ef8bf02e0a",
+      "reference.parquet": "a75b98f6b395fbb30c128d73b17647471155e3890f862492890781d73f0fc16f",
+      "node.json": "c1a2d0a1732253d0298a0824ab41e551d20101b00ae7b2e6639931b795a4a7a2"
+    }
+  },
+  "bundle_check": {
+    "files": {
+      "context.parquet": "fabcc128ed657f5bd3cfa4ed3a4c028cddaffd974053059e81fb735d1a2103cc",
+      "scored.parquet": "3f606fa30547069475a1767ee20e4cf496381a54ddfd16266df2753b9830a7ed",
+      "bundle.json (LF, = git HEAD)": "1e41d62d212d81d94bd582548b7d11a4419806c2cce71b70e91ff2f93fb58be6"
+    },
+    "how": "The hashes the scorer recorded in node.json for the bundle it read, equal to bundle.json of experiments/2026-09-13-fm-2004h2e-bundle, which is itself equal to the run archive's copy and to the live files in the tree at HEAD. The scorer refuses a bundle whose hashes differ from bundle.json, so the node scored the recorded rows. Bundle: the primary matrix (upb_to_limit, the ratio of the balance to the year's conforming limit)."
+  },
+  "parts_check": "4 part files under parts/, one per (model, context seed, cell), equal to the 4 cell records of node.json; the parts concatenated are scores.parquet and reference.parquet row for row and probability for probability.",
+  "row_check": {
+    "scored": "71,595 rows over 3 cohorts (2005H1, 2005H2, 2006H1, the falsifying run's first three of the build's 38 half-year cohorts); every (cohort, row) pair, its outcome and its age quarters match both the full-GBM and the GBM-50k rows of experiments/2026-09-13-fm-2004h2e-scores/scores.parquet, and the bundle's own scored.parquet, zero mismatches on every comparison",
+    "reference": "50,000 rows; every row and its outcome match the GBM-50k reference of context seed 20260911 in experiments/2026-09-13-fm-2004h2e-scores/reference.parquet and the bundle's own context.parquet of the same seed, zero mismatches",
+    "seeds": [
+      20260911
+    ],
+    "identity_detail": [
+      "2005H1 vs gbm: node 24233, run 24233, only_node 0, only_run 0, outcome_mismatch=0, age_quarters_mismatch=0, same_order True",
+      "2005H2 vs gbm: node 24082, run 24082, only_node 0, only_run 0, outcome_mismatch=0, age_quarters_mismatch=0, same_order True",
+      "2006H1 vs gbm: node 23280, run 23280, only_node 0, only_run 0, outcome_mismatch=0, age_quarters_mismatch=0, same_order True",
+      "2005H1 vs gbm-50k: node 24233, run 24233, only_node 0, only_run 0, outcome_mismatch=0, age_quarters_mismatch=0, same_order True",
+      "2005H2 vs gbm-50k: node 24082, run 24082, only_node 0, only_run 0, outcome_mismatch=0, age_quarters_mismatch=0, same_order True",
+      "2006H1 vs gbm-50k: node 23280, run 23280, only_node 0, only_run 0, outcome_mismatch=0, age_quarters_mismatch=0, same_order True",
+      "2005H1 vs bundle scored.parquet: node 24233, run 24233, only_node 0, only_run 0, outcome_mismatch=0, age_quarters_mismatch=0, same_order True",
+      "2005H2 vs bundle scored.parquet: node 24082, run 24082, only_node 0, only_run 0, outcome_mismatch=0, age_quarters_mismatch=0, same_order True",
+      "2006H1 vs bundle scored.parquet: node 23280, run 23280, only_node 0, only_run 0, outcome_mismatch=0, age_quarters_mismatch=0, same_order True",
+      "reference vs gbm-50k/20260911: node 50000, run 50000, only_node 0, only_run 0, outcome_mismatch=0, same_order True",
+      "reference vs bundle context.parquet seed 20260911: node 50000, run 50000, only_node 0, only_run 0, outcome_mismatch=0, same_order True"
+    ]
+  },
+  "console_log": "score.log is the node's console output for this job: the scorer's own per-cell summary, the repeat check and the totals. It was read in full and holds no home path beyond /home/node/outoftime-node, no account name and no token; the TabPFN and TabICL checkpoints were already on the node from the LC probe earlier in the same session.",
+  "question_this_run_was_sent_to_answer": "The foundation-model side of EXP-005's Freddie Mac falsifying run on build 2004H2-E, paired with the classical side already recorded (commits dc50bdc, 3aad385, 001b24b): the scorecard, the full GBM and GBM-50k on three context seeds and all 38 half-year cohorts passed the AUC-on-2005H1 halt, so this bundle's foundation-model cells were scored on its first three cohorts, on the primary matrix (upb_to_limit, the ratio of the balance to the year's conforming limit), on context seed 20260911 only; the grid scores every cohort of the build on all three seeds.",
+  "what_it_measured": {
+    "model": "tabicl, library tabicl 2.1.1; checkpoint(s) present on the node: tabicl-classifier-v2-20260212.ckpt (sha256 bdc7dbd5...), tabpfn-v3-classifier-v3_default.ckpt (sha256 d0d865d5...)",
+    "device": "cuda",
+    "context": "50,000 rows, context seed 20260911; softmax_temperature 0.9, n_estimators 8, random_state 42, average_logits true, categorical columns passed as object dtype",
+    "chunk": "20,000 scored rows per forward call (--chunk 20000); the 50,000-row reference cell ran in three calls; the three cohort cells (24,233 / 24,082 / 23,280 rows) ran in two calls each; rows are scored independently and the chunking changes no probability",
+    "cells": {
+      "reference": {
+        "rows": 50000,
+        "seconds": 19.223,
+        "us_per_row": 384.5
+      },
+      "2005H1": {
+        "rows": 24233,
+        "seconds": 11.789,
+        "us_per_row": 486.5
+      },
+      "2005H2": {
+        "rows": 24082,
+        "seconds": 11.73,
+        "us_per_row": 487.1
+      },
+      "2006H1": {
+        "rows": 23280,
+        "seconds": 11.676,
+        "us_per_row": 501.5
+      }
+    },
+    "fit_seconds": 2.077,
+    "wall_seconds": 72.1,
+    "tally_seconds": 73.0,
+    "peak_gpu_gb_max": 14.639,
+    "repeat": "2005H1 scored twice from a fresh fit: largest absolute disagreement 0.0, no row differs; the second pass is the repeat check and its own seconds are not recorded separately in node.json, only the probability agreement."
+  },
+  "timing_caveat": "This is a measurement, not a caveated reading: the rented instance was idle and dedicated to this run (four LC probe jobs, then twelve Freddie Mac jobs, back to back, no other process). Per-cell seconds and wall_seconds in node.json stand as recorded; the cohort cells here run at a lower rows/second rate than the LC probe's own cohort cells (bigger cohorts, more forward-call chunks per cell, not a different device).",
+  "tuning_budget": "Zero trials, no validation split, every parameter at the library default except those the command names. The classical models this pairs with were tuned on their own pool (build.json of the build's score run); the asymmetry runs both ways, since the 50,000-row control inherits the point chosen on the full pool.",
+  "not_in_this_run": "The other eleven FM jobs of this run: tabpfn@2026-09-13-fm-2004h2e-bundle, tabpfn-t1@2026-09-13-fm-2004h2e-bundle, tabicl-t1@2026-09-13-fm-2004h2e-bundle, tabpfn@2026-09-13-fm-2004h2e-bundle-dti-kept, tabpfn-t1@2026-09-13-fm-2004h2e-bundle-dti-kept, tabicl@2026-09-13-fm-2004h2e-bundle-dti-kept, tabicl-t1@2026-09-13-fm-2004h2e-bundle-dti-kept, tabpfn@2026-09-13-fm-2004h2e-bundle-upb-nominal, tabpfn-t1@2026-09-13-fm-2004h2e-bundle-upb-nominal, tabicl@2026-09-13-fm-2004h2e-bundle-upb-nominal, tabicl-t1@2026-09-13-fm-2004h2e-bundle-upb-nominal. The remaining 35 of the build's 38 half-year cohorts, held by the classical side (experiments/2026-09-13-fm-2004h2e-scores) but not yet scored on this bundle by a foundation model. The LC device timing probe that ran ahead of this run is experiments/2026-09-13-lc-rental-probe-4090."
+}

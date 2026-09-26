@@ -1,0 +1,42 @@
+{
+  "name": "upb-draws",
+  "command": [
+    "python",
+    "score_context.py"
+  ],
+  "bundles": [
+    "2026-09-13-fm-2004h2e-bundle-upb-nominal"
+  ],
+  "jobs": [
+    {
+      "name": "tabpfn@2026-09-13-fm-2004h2e-bundle-upb-nominal",
+      "bundle": "2026-09-13-fm-2004h2e-bundle-upb-nominal",
+      "out": "2026-09-13-fm-2004h2e-bundle-upb-nominal-scored-tabpfn",
+      "args": [
+        "--models",
+        "tabpfn",
+        "--nearest",
+        "3",
+        "--seeds",
+        "20260912,20260913",
+        "--chunk",
+        "20000"
+      ]
+    },
+    {
+      "name": "tabicl@2026-09-13-fm-2004h2e-bundle-upb-nominal",
+      "bundle": "2026-09-13-fm-2004h2e-bundle-upb-nominal",
+      "out": "2026-09-13-fm-2004h2e-bundle-upb-nominal-scored-tabicl",
+      "args": [
+        "--models",
+        "tabicl",
+        "--nearest",
+        "3",
+        "--seeds",
+        "20260912,20260913",
+        "--chunk",
+        "20000"
+      ]
+    }
+  ]
+}

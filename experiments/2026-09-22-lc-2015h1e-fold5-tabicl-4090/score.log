@@ -1,0 +1,19 @@
+tabicl/20260911: context 50,000 rows read in 2.4s
+  reference   50,000 rows     20.4s  mean pd 0.0161
+  fold5-test  20,000 rows      6.9s  mean pd 0.0172
+  fold5-validation  20,000 rows      6.9s  mean pd 0.0174
+  repeat fold5-test: largest disagreement 0.00e+00, 0 rows differ
+tabicl/20260912: context 50,000 rows read in 1.4s
+  reference   50,000 rows     19.9s  mean pd 0.0164
+  fold5-test  20,000 rows      6.9s  mean pd 0.0176
+  fold5-validation  20,000 rows      6.9s  mean pd 0.0180
+  repeat fold5-test: largest disagreement 0.00e+00, 0 rows differ
+tabicl/20260913: context 50,000 rows read in 1.4s
+  reference   50,000 rows     19.9s  mean pd 0.0159
+  fold5-test  20,000 rows      6.9s  mean pd 0.0172
+  fold5-validation  20,000 rows      6.9s  mean pd 0.0174
+  repeat fold5-test: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 120,000
+reference rows        : 150,000
+wall                  : 134s

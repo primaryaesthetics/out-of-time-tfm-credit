@@ -1,0 +1,325 @@
+{
+  "sources": [
+    "experiments/2026-09-13-fm-2002h2e-scores",
+    "experiments/2026-09-13-fm-2004h2e-scores",
+    "experiments/2026-09-13-fm-2004h2r-scores",
+    "experiments/2026-09-13-fm-2006h2e-scores",
+    "experiments/2026-09-13-fm-2006h2r-scores",
+    "experiments/2026-09-13-fm-2008h2e-scores",
+    "experiments/2026-09-13-fm-2008h2r-scores",
+    "experiments/2026-09-13-fm-2010h2e-scores",
+    "experiments/2026-09-13-fm-2010h2r-scores",
+    "experiments/2026-09-13-fm-2012h2e-scores",
+    "experiments/2026-09-13-fm-2012h2r-scores",
+    "experiments/2026-09-13-fm-2014h2e-scores",
+    "experiments/2026-09-13-fm-2014h2r-scores",
+    "experiments/2026-09-13-fm-2016h2e-scores",
+    "experiments/2026-09-13-fm-2016h2r-scores",
+    "experiments/2026-09-13-fm-2018h2e-scores",
+    "experiments/2026-09-13-fm-2018h2r-scores",
+    "experiments/2026-09-17-fm-h5-rescaled-control/2002h2-e",
+    "experiments/2026-09-17-fm-h5-rescaled-control/2004h2-e",
+    "experiments/2026-09-17-fm-h5-rescaled-control/2004h2-r",
+    "experiments/2026-09-17-fm-h5-rescaled-control/2006h2-e",
+    "experiments/2026-09-17-fm-h5-rescaled-control/2006h2-r",
+    "experiments/2026-09-17-fm-h5-rescaled-control/2008h2-e",
+    "experiments/2026-09-17-fm-h5-rescaled-control/2008h2-r",
+    "experiments/2026-09-17-fm-h5-rescaled-control/2010h2-e",
+    "experiments/2026-09-17-fm-h5-rescaled-control/2010h2-r",
+    "experiments/2026-09-17-fm-h5-rescaled-control/2012h2-e",
+    "experiments/2026-09-17-fm-h5-rescaled-control/2012h2-r",
+    "experiments/2026-09-17-fm-h5-rescaled-control/2014h2-e",
+    "experiments/2026-09-17-fm-h5-rescaled-control/2014h2-r",
+    "experiments/2026-09-17-fm-h5-rescaled-control/2016h2-e",
+    "experiments/2026-09-17-fm-h5-rescaled-control/2016h2-r",
+    "experiments/2026-09-17-fm-h5-rescaled-control/2018h2-e",
+    "experiments/2026-09-17-fm-h5-rescaled-control/2018h2-r"
+  ],
+  "builds": [
+    "2002H2-E",
+    "2004H2-E",
+    "2004H2-R",
+    "2006H2-E",
+    "2006H2-R",
+    "2008H2-E",
+    "2008H2-R",
+    "2010H2-E",
+    "2010H2-R",
+    "2012H2-E",
+    "2012H2-R",
+    "2014H2-E",
+    "2014H2-R",
+    "2016H2-E",
+    "2016H2-R",
+    "2018H2-E",
+    "2018H2-R"
+  ],
+  "models_dropped": [],
+  "context_cells": 136,
+  "context_rows": 15064850,
+  "context_check": {
+    "2010H2-R": "ScoredCohort(outcome=array([0, 0, 0, ..., 0, 0, 0], shape=(50000,)), scores={}, seeds={'__outcome__': [array([0., 1., 0., ..., 0., 0., 0.], shape=(50000,)), array([0., 0., 0., ..., 0., 0., 0.], shape=(50000,)), array([1., 0., 0., ..., 0., 0., 0.], shape=(50000,))], 'gbm-50k': [array([0.17833046, 0.05058404, 0.00720662, ..., 0.02559586, 0.01117289,\n       0.00201538], shape=(50000,)), array([0.06632659, 0.22883479, 0.00389061, ..., 0.05004224, 0.07408602,\n       0.0020206 ], shape=(50000,)), array([0.04529101, 0.00249088, 0.03787454, ..., 0.00654133, 0.03280302,\n       0.10281524], shape=(50000,))], 'gbm-50k@t0.9': [array([0.15479934, 0.03704005, 0.00418189, ..., 0.01722915, 0.00681938,\n       0.00101245], shape=(50000,)), array([0.05028892, 0.20588812, 0.00210479, ..., 0.03659327, 0.05699158,\n       0.00101537], shape=(50000,)), array([0.03270429, 0.00128146, 0.02674509, ..., 0.00375401, 0.02275687,\n       0.08263809], shape=(50000,))]}, draw=None)",
+    "2018H2-R": "ScoredCohort(outcome=array([0, 0, 0, ..., 0, 0, 0], shape=(50000,)), scores={}, seeds={'__outcome__': [array([0., 0., 0., ..., 0., 0., 0.], shape=(50000,)), array([0., 0., 1., ..., 0., 0., 0.], shape=(50000,)), array([0., 0., 1., ..., 0., 0., 0.], shape=(50000,))], 'gbm-50k': [array([0.00188223, 0.00106098, 0.01641007, ..., 0.00057087, 0.00229186,\n       0.01893944], shape=(50000,)), array([0.00191195, 0.00083455, 0.02679634, ..., 0.00119901, 0.01216417,\n       0.00298042], shape=(50000,)), array([0.00397081, 0.00067818, 0.02328394, ..., 0.00122425, 0.02045721,\n       0.0034251 ], shape=(50000,))], 'gbm-50k@t0.9': [array([0.00093834, 0.00049605, 0.01047611, ..., 0.00024907, 0.00116809,\n       0.01229749], shape=(50000,)), array([0.00095483, 0.00037986, 0.01813739, ..., 0.0005683 , 0.00749809,\n       0.00156459], shape=(50000,)), array([0.00215313, 0.00030163, 0.01549546, ..., 0.00058162, 0.01340526,\n       0.00182646], shape=(50000,))]}, draw=None)"
+  },
+  "known_answer": {
+    "statement": "a model fitted by likelihood reads observed over expected of one on its own training rows; its cells are read as the check",
+    "fitted_cells": 136,
+    "interval_holds_one": 85,
+    "interval_does_not_hold_one": [
+      "2002H2-E gbm-50k@t0.9/20260911",
+      "2002H2-E gbm-50k@t0.9/20260912",
+      "2002H2-E gbm-50k@t0.9/20260913",
+      "2004H2-E gbm-50k@t0.9/20260911",
+      "2004H2-E gbm-50k@t0.9/20260912",
+      "2004H2-E gbm-50k@t0.9/20260913",
+      "2006H2-E gbm-50k@t0.9/20260911",
+      "2006H2-E gbm-50k@t0.9/20260912",
+      "2006H2-E gbm-50k@t0.9/20260913",
+      "2008H2-E gbm-50k@t0.9/20260911",
+      "2008H2-E gbm-50k@t0.9/20260912",
+      "2008H2-E gbm-50k@t0.9/20260913",
+      "2010H2-E gbm-50k@t0.9/20260911",
+      "2010H2-E gbm-50k@t0.9/20260912",
+      "2010H2-E gbm-50k@t0.9/20260913",
+      "2012H2-E gbm-50k@t0.9/20260911",
+      "2012H2-E gbm-50k@t0.9/20260912",
+      "2012H2-E gbm-50k@t0.9/20260913",
+      "2014H2-E gbm-50k@t0.9/20260911",
+      "2014H2-E gbm-50k@t0.9/20260912",
+      "2014H2-E gbm-50k@t0.9/20260913",
+      "2016H2-E gbm-50k@t0.9/20260911",
+      "2016H2-E gbm-50k@t0.9/20260912",
+      "2016H2-E gbm-50k@t0.9/20260913",
+      "2018H2-E gbm-50k@t0.9/20260911",
+      "2018H2-E gbm-50k@t0.9/20260912",
+      "2018H2-E gbm-50k@t0.9/20260913",
+      "2004H2-R gbm-50k@t0.9/20260911",
+      "2004H2-R gbm-50k@t0.9/20260912",
+      "2004H2-R gbm-50k@t0.9/20260913",
+      "2006H2-R gbm-50k@t0.9/20260911",
+      "2006H2-R gbm-50k@t0.9/20260912",
+      "2006H2-R gbm-50k@t0.9/20260913",
+      "2008H2-R gbm-50k@t0.9/20260911",
+      "2008H2-R gbm-50k@t0.9/20260912",
+      "2008H2-R gbm-50k@t0.9/20260913",
+      "2010H2-R gbm-50k@t0.9/20260911",
+      "2010H2-R gbm-50k@t0.9/20260912",
+      "2010H2-R gbm-50k@t0.9/20260913",
+      "2012H2-R gbm-50k@t0.9/20260911",
+      "2012H2-R gbm-50k@t0.9/20260912",
+      "2012H2-R gbm-50k@t0.9/20260913",
+      "2014H2-R gbm-50k@t0.9/20260911",
+      "2014H2-R gbm-50k@t0.9/20260912",
+      "2014H2-R gbm-50k@t0.9/20260913",
+      "2016H2-R gbm-50k@t0.9/20260911",
+      "2016H2-R gbm-50k@t0.9/20260912",
+      "2016H2-R gbm-50k@t0.9/20260913",
+      "2018H2-R gbm-50k@t0.9/20260911",
+      "2018H2-R gbm-50k@t0.9/20260912",
+      "2018H2-R gbm-50k@t0.9/20260913"
+    ]
+  },
+  "per_cell": {
+    "observed_over_expected": "observed defaults over the sum of the probabilities on the cell's rows",
+    "cox": "logit P(y) = intercept + slope * logit(p) on the cell's rows, Wald intervals; h5_context marks the builds H5 reads as an arm's ends",
+    "binomial": "Clopper-Pearson on the count over the expected rate, the metrics module's interval",
+    "bootstrap": "percentile interval of the ratio over resamples of the cell's rows"
+  },
+  "h5": {
+    "arms": {
+      "E": {
+        "arm": "E",
+        "builds": [
+          "2002H2-E",
+          "2004H2-E",
+          "2006H2-E",
+          "2008H2-E",
+          "2010H2-E",
+          "2012H2-E",
+          "2014H2-E",
+          "2016H2-E",
+          "2018H2-E"
+        ],
+        "reason": null,
+        "models_not_read": {},
+        "models": [
+          "gbm-50k",
+          "gbm-50k@t0.9"
+        ],
+        "seeds": [
+          20260911,
+          20260912,
+          20260913
+        ],
+        "pool_rates": {
+          "2002H2-E": 0.011961,
+          "2004H2-E": 0.011795,
+          "2006H2-E": 0.009574,
+          "2008H2-E": 0.010435,
+          "2010H2-E": 0.017572,
+          "2012H2-E": 0.016093,
+          "2014H2-E": 0.014638,
+          "2016H2-E": 0.013376,
+          "2018H2-E": 0.012366
+        },
+        "draw_rates": {
+          "2002H2-E": 0.012066666666666668,
+          "2004H2-E": 0.012133333333333335,
+          "2006H2-E": 0.009193333333333333,
+          "2008H2-E": 0.010746666666666667,
+          "2010H2-E": 0.017259999999999998,
+          "2012H2-E": 0.01591333333333333,
+          "2014H2-E": 0.014559999999999998,
+          "2016H2-E": 0.013566666666666666,
+          "2018H2-E": 0.012033333333333333
+        },
+        "high": "2010H2-E",
+        "low": "2006H2-E",
+        "draw_ranking": null
+      },
+      "R": {
+        "arm": "R",
+        "builds": [
+          "2004H2-R",
+          "2006H2-R",
+          "2008H2-R",
+          "2010H2-R",
+          "2012H2-R",
+          "2014H2-R",
+          "2016H2-R",
+          "2018H2-R"
+        ],
+        "reason": null,
+        "models_not_read": {},
+        "models": [
+          "gbm-50k",
+          "gbm-50k@t0.9"
+        ],
+        "seeds": [
+          20260911,
+          20260912,
+          20260913
+        ],
+        "pool_rates": {
+          "2004H2-R": 0.011659,
+          "2006H2-R": 0.005535,
+          "2008H2-R": 0.012895,
+          "2010H2-R": 0.044822,
+          "2012H2-R": 0.009157,
+          "2014H2-R": 0.006275,
+          "2016H2-R": 0.004761,
+          "2018H2-R": 0.004496
+        },
+        "draw_rates": {
+          "2004H2-R": 0.011253333333333332,
+          "2006H2-R": 0.005639999999999999,
+          "2008H2-R": 0.012753333333333332,
+          "2010H2-R": 0.04450666666666667,
+          "2012H2-R": 0.009293333333333334,
+          "2014H2-R": 0.006513333333333334,
+          "2016H2-R": 0.0048,
+          "2018H2-R": 0.004653333333333333
+        },
+        "high": "2010H2-R",
+        "low": "2018H2-R",
+        "draw_ranking": null
+      }
+    },
+    "statistic": "per seeded model, observed over expected on the highest-rate context of the arm minus that on the lowest-rate context; the two builds are the highest and lowest pool rate of the build run's record; the rows whose ranking is 'draws' rank by the mean realised rate of the shared draws and are not a criterion",
+    "builds_json": "experiments/2026-09-13-fm-vintage-builds2/builds.json",
+    "bootstrap": {
+      "resamples": 200,
+      "seed": 20260905,
+      "alpha": 0.05,
+      "blocking": "one row index per context, applied to its outcomes and every model's probabilities",
+      "context_draw": "one seed per resample for both builds and every model",
+      "seed_check": {
+        "seeds": [
+          20260906,
+          20260907
+        ],
+        "differences": 4,
+        "starred": 1,
+        "star_changed": [],
+        "largest_bound_movement": 0.05296363932475301
+      },
+      "seed_check_draw_ranking": null
+    },
+    "known_answer": "the rows of fitted seeded models (GBM-50k) are zero by construction"
+  },
+  "in_sample_slope": {
+    "arms": {
+      "E": {
+        "arm": "E",
+        "builds": [
+          "2002H2-E",
+          "2004H2-E",
+          "2006H2-E",
+          "2008H2-E",
+          "2010H2-E",
+          "2012H2-E",
+          "2014H2-E",
+          "2016H2-E",
+          "2018H2-E"
+        ],
+        "reason": null,
+        "models_not_read": {},
+        "models": [
+          "gbm-50k",
+          "gbm-50k@t0.9"
+        ],
+        "seeds": [
+          20260911,
+          20260912,
+          20260913
+        ]
+      },
+      "R": {
+        "arm": "R",
+        "builds": [
+          "2004H2-R",
+          "2006H2-R",
+          "2008H2-R",
+          "2010H2-R",
+          "2012H2-R",
+          "2014H2-R",
+          "2016H2-R",
+          "2018H2-R"
+        ],
+        "reason": null,
+        "models_not_read": {},
+        "models": [
+          "gbm-50k",
+          "gbm-50k@t0.9"
+        ],
+        "seeds": [
+          20260911,
+          20260912,
+          20260913
+        ]
+      }
+    },
+    "statistic": "per seeded model holding every build of the arm, the mean over the builds of the Cox slope on its context rows; a build on which some model's fit did not finish leaves the mean for every model",
+    "bootstrap": {
+      "resamples": 200,
+      "seed": 20260905,
+      "alpha": 0.05,
+      "blocking": "one row index per context, applied to its outcomes and every model's probabilities",
+      "context_draw": "one seed per resample for every build and model",
+      "check_seeds": [
+        20260906,
+        20260907
+      ],
+      "side_changed": []
+    },
+    "known_answer": {
+      "statement": "the scorecard, an unpenalised logistic model with an intercept, reads Cox slope one and intercept zero on its own pool to within 0.0001",
+      "cells": 17,
+      "within_tolerance": 17,
+      "not_within": []
+    },
+    "reading": "one-sided: a slope above one is smoothing, the pull toward a row's own label, or both; a slope below one beyond its interval is over-dispersion on the rows the model conditions on"
+  },
+  "cohort_cells": null,
+  "wall_seconds": 877.7
+}

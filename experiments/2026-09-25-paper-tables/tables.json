@@ -1,0 +1,5635 @@
+{
+  "t1": {
+    "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+    "derived": {
+      "tabicl@t1": [
+        "experiments/2026-09-23-lc-2015h1e-fold1-tabicl-t1-derived",
+        "experiments/2026-09-23-lc-2015h1e-fold2-tabicl-t1-derived",
+        "experiments/2026-09-23-lc-2015h1e-fold3-tabicl-t1-derived",
+        "experiments/2026-09-23-lc-2015h1e-fold4-tabicl-t1-derived",
+        "experiments/2026-09-23-lc-2015h1e-fold5-tabicl-t1-derived",
+        "experiments/2026-09-08-lc-2015h1e-tabicl-t1-derived"
+      ]
+    },
+    "cells": [
+      {
+        "metric": "auc",
+        "protocol": "in time, random fold",
+        "model": "scorecard",
+        "text": "0.6853 [0.6721, 0.6925]",
+        "mean": 0.6853359555840657,
+        "min": 0.6721010969694272,
+        "max": 0.6925435802714157,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 4,
+          "columns": [
+            "auc_mean",
+            "auc_min",
+            "auc_max"
+          ]
+        }
+      },
+      {
+        "metric": "auc",
+        "protocol": "in time, random fold",
+        "model": "gbm",
+        "text": "0.7006 [0.6941, 0.7106]",
+        "mean": 0.7006421890217694,
+        "min": 0.6940846454353115,
+        "max": 0.7106038290027044,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 2,
+          "columns": [
+            "auc_mean",
+            "auc_min",
+            "auc_max"
+          ]
+        }
+      },
+      {
+        "metric": "auc",
+        "protocol": "in time, random fold",
+        "model": "gbm-50k",
+        "text": "0.6861 [0.6711, 0.7004]",
+        "mean": 0.6861278948091297,
+        "min": 0.6710828401050243,
+        "max": 0.7004329200099962,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 3,
+          "columns": [
+            "auc_mean",
+            "auc_min",
+            "auc_max"
+          ]
+        }
+      },
+      {
+        "metric": "auc",
+        "protocol": "in time, random fold",
+        "model": "tabpfn",
+        "text": "0.6995 [0.6838, 0.7090]",
+        "mean": 0.6995207279495242,
+        "min": 0.6837831538427306,
+        "max": 0.7089959444960497,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 7,
+          "columns": [
+            "auc_mean",
+            "auc_min",
+            "auc_max"
+          ]
+        }
+      },
+      {
+        "metric": "auc",
+        "protocol": "in time, random fold",
+        "model": "tabicl",
+        "text": "0.6970 [0.6848, 0.7037]",
+        "mean": 0.6969864819016396,
+        "min": 0.684779271060478,
+        "max": 0.7036892504926316,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 5,
+          "columns": [
+            "auc_mean",
+            "auc_min",
+            "auc_max"
+          ]
+        }
+      },
+      {
+        "metric": "auc",
+        "protocol": "in time, random fold",
+        "model": "tabpfn@t1",
+        "text": "0.6995 [0.6838, 0.7090]",
+        "mean": 0.6995196514962623,
+        "min": 0.6837911085398959,
+        "max": 0.7089822275394481,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 8,
+          "columns": [
+            "auc_mean",
+            "auc_min",
+            "auc_max"
+          ]
+        }
+      },
+      {
+        "metric": "auc",
+        "protocol": "in time, random fold",
+        "model": "tabicl@t1",
+        "text": "0.6970 [0.6848, 0.7037]",
+        "mean": 0.6969864819016396,
+        "min": 0.684779271060478,
+        "max": 0.7036892504926316,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 6,
+          "columns": [
+            "auc_mean",
+            "auc_min",
+            "auc_max"
+          ]
+        }
+      },
+      {
+        "metric": "auc",
+        "protocol": "out of time, vintage cohorts",
+        "model": "scorecard",
+        "text": "0.7002",
+        "mean": 0.7002033339033952,
+        "min": 0.7002033339033952,
+        "max": 0.7002033339033952,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 11,
+          "columns": [
+            "auc_mean",
+            "auc_min",
+            "auc_max"
+          ]
+        }
+      },
+      {
+        "metric": "auc",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm",
+        "text": "0.7101",
+        "mean": 0.7100641045658009,
+        "min": 0.7100641045658009,
+        "max": 0.7100641045658009,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 9,
+          "columns": [
+            "auc_mean",
+            "auc_min",
+            "auc_max"
+          ]
+        }
+      },
+      {
+        "metric": "auc",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm-50k",
+        "text": "0.7037 [0.7010, 0.7053]",
+        "mean": 0.7036676529859666,
+        "min": 0.7010047881697768,
+        "max": 0.7052584617781286,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 10,
+          "columns": [
+            "auc_mean",
+            "auc_min",
+            "auc_max"
+          ]
+        }
+      },
+      {
+        "metric": "auc",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn",
+        "text": "0.7118 [0.7102, 0.7143]",
+        "mean": 0.7118494281794595,
+        "min": 0.710209463705376,
+        "max": 0.7143099804384011,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 14,
+          "columns": [
+            "auc_mean",
+            "auc_min",
+            "auc_max"
+          ]
+        }
+      },
+      {
+        "metric": "auc",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl",
+        "text": "0.7137 [0.7126, 0.7145]",
+        "mean": 0.7137138225034121,
+        "min": 0.7125859416894594,
+        "max": 0.7145493832892984,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 12,
+          "columns": [
+            "auc_mean",
+            "auc_min",
+            "auc_max"
+          ]
+        }
+      },
+      {
+        "metric": "auc",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn@t1",
+        "text": "0.7118 [0.7102, 0.7143]",
+        "mean": 0.7118327211301823,
+        "min": 0.7101980990150648,
+        "max": 0.7142732733424332,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 15,
+          "columns": [
+            "auc_mean",
+            "auc_min",
+            "auc_max"
+          ]
+        }
+      },
+      {
+        "metric": "auc",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl@t1",
+        "text": "0.7137 [0.7126, 0.7145]",
+        "mean": 0.7137138225034121,
+        "min": 0.7125859416894594,
+        "max": 0.7145493832892984,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 13,
+          "columns": [
+            "auc_mean",
+            "auc_min",
+            "auc_max"
+          ]
+        }
+      },
+      {
+        "metric": "gini",
+        "protocol": "in time, random fold",
+        "model": "scorecard",
+        "text": "0.3707 [0.3442, 0.3851]",
+        "mean": 0.3706719111681314,
+        "min": 0.3442021939388544,
+        "max": 0.3850871605428314,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 4,
+          "columns": [
+            "gini_mean",
+            "gini_min",
+            "gini_max"
+          ]
+        }
+      },
+      {
+        "metric": "gini",
+        "protocol": "in time, random fold",
+        "model": "gbm",
+        "text": "0.4013 [0.3882, 0.4212]",
+        "mean": 0.401284378043539,
+        "min": 0.3881692908706229,
+        "max": 0.4212076580054087,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 2,
+          "columns": [
+            "gini_mean",
+            "gini_min",
+            "gini_max"
+          ]
+        }
+      },
+      {
+        "metric": "gini",
+        "protocol": "in time, random fold",
+        "model": "gbm-50k",
+        "text": "0.3723 [0.3422, 0.4009]",
+        "mean": 0.3722557896182595,
+        "min": 0.3421656802100485,
+        "max": 0.4008658400199925,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 3,
+          "columns": [
+            "gini_mean",
+            "gini_min",
+            "gini_max"
+          ]
+        }
+      },
+      {
+        "metric": "gini",
+        "protocol": "in time, random fold",
+        "model": "tabpfn",
+        "text": "0.3990 [0.3676, 0.4180]",
+        "mean": 0.3990414558990484,
+        "min": 0.3675663076854611,
+        "max": 0.4179918889920995,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 7,
+          "columns": [
+            "gini_mean",
+            "gini_min",
+            "gini_max"
+          ]
+        }
+      },
+      {
+        "metric": "gini",
+        "protocol": "in time, random fold",
+        "model": "tabicl",
+        "text": "0.3940 [0.3696, 0.4074]",
+        "mean": 0.3939729638032791,
+        "min": 0.3695585421209559,
+        "max": 0.4073785009852633,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 5,
+          "columns": [
+            "gini_mean",
+            "gini_min",
+            "gini_max"
+          ]
+        }
+      },
+      {
+        "metric": "gini",
+        "protocol": "in time, random fold",
+        "model": "tabpfn@t1",
+        "text": "0.3990 [0.3676, 0.4180]",
+        "mean": 0.3990393029925246,
+        "min": 0.3675822170797918,
+        "max": 0.4179644550788961,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 8,
+          "columns": [
+            "gini_mean",
+            "gini_min",
+            "gini_max"
+          ]
+        }
+      },
+      {
+        "metric": "gini",
+        "protocol": "in time, random fold",
+        "model": "tabicl@t1",
+        "text": "0.3940 [0.3696, 0.4074]",
+        "mean": 0.3939729638032791,
+        "min": 0.3695585421209559,
+        "max": 0.4073785009852633,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 6,
+          "columns": [
+            "gini_mean",
+            "gini_min",
+            "gini_max"
+          ]
+        }
+      },
+      {
+        "metric": "gini",
+        "protocol": "out of time, vintage cohorts",
+        "model": "scorecard",
+        "text": "0.4004",
+        "mean": 0.4004066678067904,
+        "min": 0.4004066678067903,
+        "max": 0.4004066678067903,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 11,
+          "columns": [
+            "gini_mean",
+            "gini_min",
+            "gini_max"
+          ]
+        }
+      },
+      {
+        "metric": "gini",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm",
+        "text": "0.4201",
+        "mean": 0.4201282091316018,
+        "min": 0.4201282091316018,
+        "max": 0.4201282091316018,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 9,
+          "columns": [
+            "gini_mean",
+            "gini_min",
+            "gini_max"
+          ]
+        }
+      },
+      {
+        "metric": "gini",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm-50k",
+        "text": "0.4073 [0.4020, 0.4105]",
+        "mean": 0.4073353059719331,
+        "min": 0.4020095763395538,
+        "max": 0.4105169235562571,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 10,
+          "columns": [
+            "gini_mean",
+            "gini_min",
+            "gini_max"
+          ]
+        }
+      },
+      {
+        "metric": "gini",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn",
+        "text": "0.4237 [0.4204, 0.4286]",
+        "mean": 0.4236988563589189,
+        "min": 0.4204189274107517,
+        "max": 0.4286199608768022,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 14,
+          "columns": [
+            "gini_mean",
+            "gini_min",
+            "gini_max"
+          ]
+        }
+      },
+      {
+        "metric": "gini",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl",
+        "text": "0.4274 [0.4252, 0.4291]",
+        "mean": 0.4274276450068241,
+        "min": 0.425171883378919,
+        "max": 0.4290987665785966,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 12,
+          "columns": [
+            "gini_mean",
+            "gini_min",
+            "gini_max"
+          ]
+        }
+      },
+      {
+        "metric": "gini",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn@t1",
+        "text": "0.4237 [0.4204, 0.4285]",
+        "mean": 0.4236654422603644,
+        "min": 0.4203961980301298,
+        "max": 0.4285465466848663,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 15,
+          "columns": [
+            "gini_mean",
+            "gini_min",
+            "gini_max"
+          ]
+        }
+      },
+      {
+        "metric": "gini",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl@t1",
+        "text": "0.4274 [0.4252, 0.4291]",
+        "mean": 0.4274276450068241,
+        "min": 0.425171883378919,
+        "max": 0.4290987665785966,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 13,
+          "columns": [
+            "gini_mean",
+            "gini_min",
+            "gini_max"
+          ]
+        }
+      },
+      {
+        "metric": "ks",
+        "protocol": "in time, random fold",
+        "model": "scorecard",
+        "text": "0.2888 [0.2666, 0.3014]",
+        "mean": 0.2887918299766342,
+        "min": 0.2665546704641538,
+        "max": 0.3014287185907747,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 4,
+          "columns": [
+            "ks_mean",
+            "ks_min",
+            "ks_max"
+          ]
+        }
+      },
+      {
+        "metric": "ks",
+        "protocol": "in time, random fold",
+        "model": "gbm",
+        "text": "0.3132 [0.2996, 0.3201]",
+        "mean": 0.3131864509492517,
+        "min": 0.2995641793960567,
+        "max": 0.3201252615330671,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 2,
+          "columns": [
+            "ks_mean",
+            "ks_min",
+            "ks_max"
+          ]
+        }
+      },
+      {
+        "metric": "ks",
+        "protocol": "in time, random fold",
+        "model": "gbm-50k",
+        "text": "0.2864 [0.2633, 0.3163]",
+        "mean": 0.286382154576612,
+        "min": 0.2632518998074439,
+        "max": 0.316310952398737,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 3,
+          "columns": [
+            "ks_mean",
+            "ks_min",
+            "ks_max"
+          ]
+        }
+      },
+      {
+        "metric": "ks",
+        "protocol": "in time, random fold",
+        "model": "tabpfn",
+        "text": "0.3094 [0.2956, 0.3301]",
+        "mean": 0.3094426219200429,
+        "min": 0.2955891714277412,
+        "max": 0.3300986270358166,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 7,
+          "columns": [
+            "ks_mean",
+            "ks_min",
+            "ks_max"
+          ]
+        }
+      },
+      {
+        "metric": "ks",
+        "protocol": "in time, random fold",
+        "model": "tabicl",
+        "text": "0.3053 [0.2897, 0.3214]",
+        "mean": 0.3052522541179154,
+        "min": 0.289654534841029,
+        "max": 0.3214207261582234,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 5,
+          "columns": [
+            "ks_mean",
+            "ks_min",
+            "ks_max"
+          ]
+        }
+      },
+      {
+        "metric": "ks",
+        "protocol": "in time, random fold",
+        "model": "tabpfn@t1",
+        "text": "0.3093 [0.2954, 0.3303]",
+        "mean": 0.3093321031799869,
+        "min": 0.2953842008922557,
+        "max": 0.3302520404850623,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 8,
+          "columns": [
+            "ks_mean",
+            "ks_min",
+            "ks_max"
+          ]
+        }
+      },
+      {
+        "metric": "ks",
+        "protocol": "in time, random fold",
+        "model": "tabicl@t1",
+        "text": "0.3053 [0.2897, 0.3214]",
+        "mean": 0.3052522541179154,
+        "min": 0.289654534841029,
+        "max": 0.3214207261582234,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 6,
+          "columns": [
+            "ks_mean",
+            "ks_min",
+            "ks_max"
+          ]
+        }
+      },
+      {
+        "metric": "ks",
+        "protocol": "out of time, vintage cohorts",
+        "model": "scorecard",
+        "text": "0.3070",
+        "mean": 0.306959121546359,
+        "min": 0.306959121546359,
+        "max": 0.306959121546359,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 11,
+          "columns": [
+            "ks_mean",
+            "ks_min",
+            "ks_max"
+          ]
+        }
+      },
+      {
+        "metric": "ks",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm",
+        "text": "0.3150",
+        "mean": 0.3149833250173681,
+        "min": 0.3149833250173681,
+        "max": 0.3149833250173681,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 9,
+          "columns": [
+            "ks_mean",
+            "ks_min",
+            "ks_max"
+          ]
+        }
+      },
+      {
+        "metric": "ks",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm-50k",
+        "text": "0.3074 [0.3056, 0.3107]",
+        "mean": 0.3074491897000083,
+        "min": 0.3055526626532358,
+        "max": 0.3106713111158612,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 10,
+          "columns": [
+            "ks_mean",
+            "ks_min",
+            "ks_max"
+          ]
+        }
+      },
+      {
+        "metric": "ks",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn",
+        "text": "0.3188 [0.3143, 0.3240]",
+        "mean": 0.3187737892914133,
+        "min": 0.3143322907986128,
+        "max": 0.3240377018899133,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 14,
+          "columns": [
+            "ks_mean",
+            "ks_min",
+            "ks_max"
+          ]
+        }
+      },
+      {
+        "metric": "ks",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl",
+        "text": "0.3226 [0.3189, 0.3247]",
+        "mean": 0.3225613004916974,
+        "min": 0.3189235757571007,
+        "max": 0.3247190833866416,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 12,
+          "columns": [
+            "ks_mean",
+            "ks_min",
+            "ks_max"
+          ]
+        }
+      },
+      {
+        "metric": "ks",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn@t1",
+        "text": "0.3189 [0.3144, 0.3242]",
+        "mean": 0.3188808132392016,
+        "min": 0.3144380253685545,
+        "max": 0.3242337206578078,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 15,
+          "columns": [
+            "ks_mean",
+            "ks_min",
+            "ks_max"
+          ]
+        }
+      },
+      {
+        "metric": "ks",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl@t1",
+        "text": "0.3226 [0.3189, 0.3247]",
+        "mean": 0.3225613004916974,
+        "min": 0.3189235757571007,
+        "max": 0.3247190833866416,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 13,
+          "columns": [
+            "ks_mean",
+            "ks_min",
+            "ks_max"
+          ]
+        }
+      },
+      {
+        "metric": "average_precision",
+        "protocol": "in time, random fold",
+        "model": "scorecard",
+        "text": "0.0508 [0.0472, 0.0560]",
+        "mean": 0.0508185647920769,
+        "min": 0.0471527415701662,
+        "max": 0.0560253706344371,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 4,
+          "columns": [
+            "average_precision_mean",
+            "average_precision_min",
+            "average_precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "average_precision",
+        "protocol": "in time, random fold",
+        "model": "gbm",
+        "text": "0.0552 [0.0484, 0.0659]",
+        "mean": 0.0551994874606738,
+        "min": 0.048354875081596,
+        "max": 0.0658970789449318,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 2,
+          "columns": [
+            "average_precision_mean",
+            "average_precision_min",
+            "average_precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "average_precision",
+        "protocol": "in time, random fold",
+        "model": "gbm-50k",
+        "text": "0.0500 [0.0451, 0.0585]",
+        "mean": 0.0499898952450309,
+        "min": 0.0451465745067714,
+        "max": 0.058494806522809,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 3,
+          "columns": [
+            "average_precision_mean",
+            "average_precision_min",
+            "average_precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "average_precision",
+        "protocol": "in time, random fold",
+        "model": "tabpfn",
+        "text": "0.0547 [0.0469, 0.0676]",
+        "mean": 0.0547277588481055,
+        "min": 0.0468796873909672,
+        "max": 0.0676114818755307,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 7,
+          "columns": [
+            "average_precision_mean",
+            "average_precision_min",
+            "average_precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "average_precision",
+        "protocol": "in time, random fold",
+        "model": "tabicl",
+        "text": "0.0542 [0.0472, 0.0645]",
+        "mean": 0.0541637841905805,
+        "min": 0.0471669890280711,
+        "max": 0.0644899830742807,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 5,
+          "columns": [
+            "average_precision_mean",
+            "average_precision_min",
+            "average_precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "average_precision",
+        "protocol": "in time, random fold",
+        "model": "tabpfn@t1",
+        "text": "0.0547 [0.0469, 0.0676]",
+        "mean": 0.0547285901120252,
+        "min": 0.0468996018769217,
+        "max": 0.0676233248181021,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 8,
+          "columns": [
+            "average_precision_mean",
+            "average_precision_min",
+            "average_precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "average_precision",
+        "protocol": "in time, random fold",
+        "model": "tabicl@t1",
+        "text": "0.0542 [0.0472, 0.0645]",
+        "mean": 0.0541637841905805,
+        "min": 0.0471669890280711,
+        "max": 0.0644899830742807,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 6,
+          "columns": [
+            "average_precision_mean",
+            "average_precision_min",
+            "average_precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "average_precision",
+        "protocol": "out of time, vintage cohorts",
+        "model": "scorecard",
+        "text": "0.0682",
+        "mean": 0.0681679712679202,
+        "min": 0.0681679712679202,
+        "max": 0.0681679712679202,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 11,
+          "columns": [
+            "average_precision_mean",
+            "average_precision_min",
+            "average_precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "average_precision",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm",
+        "text": "0.0753",
+        "mean": 0.0753308912141597,
+        "min": 0.0753308912141597,
+        "max": 0.0753308912141597,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 9,
+          "columns": [
+            "average_precision_mean",
+            "average_precision_min",
+            "average_precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "average_precision",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm-50k",
+        "text": "0.0705 [0.0692, 0.0714]",
+        "mean": 0.0704616476686623,
+        "min": 0.0692208282124941,
+        "max": 0.0713665497234702,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 10,
+          "columns": [
+            "average_precision_mean",
+            "average_precision_min",
+            "average_precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "average_precision",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn",
+        "text": "0.0755 [0.0740, 0.0782]",
+        "mean": 0.0755017631731662,
+        "min": 0.0739888798592296,
+        "max": 0.078211621270232,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 14,
+          "columns": [
+            "average_precision_mean",
+            "average_precision_min",
+            "average_precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "average_precision",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl",
+        "text": "0.0755 [0.0744, 0.0771]",
+        "mean": 0.0754808413499859,
+        "min": 0.07440009168995,
+        "max": 0.0771208243126559,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 12,
+          "columns": [
+            "average_precision_mean",
+            "average_precision_min",
+            "average_precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "average_precision",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn@t1",
+        "text": "0.0755 [0.0740, 0.0782]",
+        "mean": 0.0754969857555553,
+        "min": 0.0739885687587912,
+        "max": 0.0782037919996895,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 15,
+          "columns": [
+            "average_precision_mean",
+            "average_precision_min",
+            "average_precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "average_precision",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl@t1",
+        "text": "0.0755 [0.0744, 0.0771]",
+        "mean": 0.0754808413499859,
+        "min": 0.07440009168995,
+        "max": 0.0771208243126559,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 13,
+          "columns": [
+            "average_precision_mean",
+            "average_precision_min",
+            "average_precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier",
+        "protocol": "in time, random fold",
+        "model": "scorecard",
+        "text": "0.0228 [0.0215, 0.0236]",
+        "mean": 0.022764495972975,
+        "min": 0.0215314343771756,
+        "max": 0.0236008819238688,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 4,
+          "columns": [
+            "brier_mean",
+            "brier_min",
+            "brier_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier",
+        "protocol": "in time, random fold",
+        "model": "gbm",
+        "text": "0.0227 [0.0215, 0.0235]",
+        "mean": 0.0227161174174842,
+        "min": 0.0215320287501197,
+        "max": 0.0234807570802713,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 2,
+          "columns": [
+            "brier_mean",
+            "brier_min",
+            "brier_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier",
+        "protocol": "in time, random fold",
+        "model": "gbm-50k",
+        "text": "0.0228 [0.0215, 0.0236]",
+        "mean": 0.0227731269142644,
+        "min": 0.0215361243520904,
+        "max": 0.0236048352702628,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 3,
+          "columns": [
+            "brier_mean",
+            "brier_min",
+            "brier_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier",
+        "protocol": "in time, random fold",
+        "model": "tabpfn",
+        "text": "0.0228 [0.0215, 0.0236]",
+        "mean": 0.0227864758704829,
+        "min": 0.0215401864208562,
+        "max": 0.0236053143948643,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 7,
+          "columns": [
+            "brier_mean",
+            "brier_min",
+            "brier_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier",
+        "protocol": "in time, random fold",
+        "model": "tabicl",
+        "text": "0.0228 [0.0215, 0.0236]",
+        "mean": 0.0227684547838069,
+        "min": 0.0215323868569529,
+        "max": 0.0235883368260441,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 5,
+          "columns": [
+            "brier_mean",
+            "brier_min",
+            "brier_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier",
+        "protocol": "in time, random fold",
+        "model": "tabpfn@t1",
+        "text": "0.0227 [0.0215, 0.0235]",
+        "mean": 0.0227119471200219,
+        "min": 0.0214980121791964,
+        "max": 0.0235214878683863,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 8,
+          "columns": [
+            "brier_mean",
+            "brier_min",
+            "brier_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier",
+        "protocol": "in time, random fold",
+        "model": "tabicl@t1",
+        "text": "0.0227 [0.0215, 0.0235]",
+        "mean": 0.0227248702109082,
+        "min": 0.0215187366908479,
+        "max": 0.0235361169902084,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 6,
+          "columns": [
+            "brier_mean",
+            "brier_min",
+            "brier_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier",
+        "protocol": "out of time, vintage cohorts",
+        "model": "scorecard",
+        "text": "0.0299",
+        "mean": 0.0298927931450885,
+        "min": 0.0298927931450885,
+        "max": 0.0298927931450885,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 11,
+          "columns": [
+            "brier_mean",
+            "brier_min",
+            "brier_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm",
+        "text": "0.0298",
+        "mean": 0.0297596546274753,
+        "min": 0.0297596546274753,
+        "max": 0.0297596546274753,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 9,
+          "columns": [
+            "brier_mean",
+            "brier_min",
+            "brier_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm-50k",
+        "text": "0.0299 [0.0298, 0.0299]",
+        "mean": 0.0298579844477357,
+        "min": 0.0298258727612496,
+        "max": 0.0298874370788283,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 10,
+          "columns": [
+            "brier_mean",
+            "brier_min",
+            "brier_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn",
+        "text": "0.0300 [0.0300, 0.0301]",
+        "mean": 0.0300492142742638,
+        "min": 0.0300445753966174,
+        "max": 0.0300551202076088,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 14,
+          "columns": [
+            "brier_mean",
+            "brier_min",
+            "brier_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl",
+        "text": "0.0299",
+        "mean": 0.0299281069277538,
+        "min": 0.029921447102585,
+        "max": 0.0299333758083016,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 12,
+          "columns": [
+            "brier_mean",
+            "brier_min",
+            "brier_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn@t1",
+        "text": "0.0298",
+        "mean": 0.0297925028400582,
+        "min": 0.0297842350846886,
+        "max": 0.0298013485010366,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 15,
+          "columns": [
+            "brier_mean",
+            "brier_min",
+            "brier_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl@t1",
+        "text": "0.0297",
+        "mean": 0.0297030958076667,
+        "min": 0.0296996653027742,
+        "max": 0.0297055762580734,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 13,
+          "columns": [
+            "brier_mean",
+            "brier_min",
+            "brier_max"
+          ]
+        }
+      },
+      {
+        "metric": "log_loss",
+        "protocol": "in time, random fold",
+        "model": "scorecard",
+        "text": "0.1066 [0.1016, 0.1097]",
+        "mean": 0.1065878226014085,
+        "min": 0.1016183226765721,
+        "max": 0.109691280002029,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 4,
+          "columns": [
+            "log_loss_mean",
+            "log_loss_min",
+            "log_loss_max"
+          ]
+        }
+      },
+      {
+        "metric": "log_loss",
+        "protocol": "in time, random fold",
+        "model": "gbm",
+        "text": "0.1057 [0.1015, 0.1087]",
+        "mean": 0.1056926036284892,
+        "min": 0.1014571975332025,
+        "max": 0.1087021438039969,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 2,
+          "columns": [
+            "log_loss_mean",
+            "log_loss_min",
+            "log_loss_max"
+          ]
+        }
+      },
+      {
+        "metric": "log_loss",
+        "protocol": "in time, random fold",
+        "model": "gbm-50k",
+        "text": "0.1066 [0.1018, 0.1100]",
+        "mean": 0.1066495741282692,
+        "min": 0.1017606003748206,
+        "max": 0.1099918779163883,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 3,
+          "columns": [
+            "log_loss_mean",
+            "log_loss_min",
+            "log_loss_max"
+          ]
+        }
+      },
+      {
+        "metric": "log_loss",
+        "protocol": "in time, random fold",
+        "model": "tabpfn",
+        "text": "0.1073 [0.1019, 0.1103]",
+        "mean": 0.1073263850114948,
+        "min": 0.101936008047504,
+        "max": 0.1102516161075776,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 7,
+          "columns": [
+            "log_loss_mean",
+            "log_loss_min",
+            "log_loss_max"
+          ]
+        }
+      },
+      {
+        "metric": "log_loss",
+        "protocol": "in time, random fold",
+        "model": "tabicl",
+        "text": "0.1071 [0.1018, 0.1102]",
+        "mean": 0.1070862947847944,
+        "min": 0.1017704216118081,
+        "max": 0.1101506057331306,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 5,
+          "columns": [
+            "log_loss_mean",
+            "log_loss_min",
+            "log_loss_max"
+          ]
+        }
+      },
+      {
+        "metric": "log_loss",
+        "protocol": "in time, random fold",
+        "model": "tabpfn@t1",
+        "text": "0.1057 [0.1009, 0.1085]",
+        "mean": 0.1057200561485439,
+        "min": 0.100895502467927,
+        "max": 0.1084832551588804,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 8,
+          "columns": [
+            "log_loss_mean",
+            "log_loss_min",
+            "log_loss_max"
+          ]
+        }
+      },
+      {
+        "metric": "log_loss",
+        "protocol": "in time, random fold",
+        "model": "tabicl@t1",
+        "text": "0.1059 [0.1011, 0.1088]",
+        "mean": 0.1059142424544834,
+        "min": 0.101055261645694,
+        "max": 0.108757729783487,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 6,
+          "columns": [
+            "log_loss_mean",
+            "log_loss_min",
+            "log_loss_max"
+          ]
+        }
+      },
+      {
+        "metric": "log_loss",
+        "protocol": "out of time, vintage cohorts",
+        "model": "scorecard",
+        "text": "0.1335",
+        "mean": 0.1334954669065403,
+        "min": 0.1334954669065403,
+        "max": 0.1334954669065403,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 11,
+          "columns": [
+            "log_loss_mean",
+            "log_loss_min",
+            "log_loss_max"
+          ]
+        }
+      },
+      {
+        "metric": "log_loss",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm",
+        "text": "0.1319",
+        "mean": 0.131938816669702,
+        "min": 0.131938816669702,
+        "max": 0.131938816669702,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 9,
+          "columns": [
+            "log_loss_mean",
+            "log_loss_min",
+            "log_loss_max"
+          ]
+        }
+      },
+      {
+        "metric": "log_loss",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm-50k",
+        "text": "0.1331 [0.1325, 0.1335]",
+        "mean": 0.1330638770993516,
+        "min": 0.1325306355807338,
+        "max": 0.1334934215155005,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 10,
+          "columns": [
+            "log_loss_mean",
+            "log_loss_min",
+            "log_loss_max"
+          ]
+        }
+      },
+      {
+        "metric": "log_loss",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn",
+        "text": "0.1375 [0.1370, 0.1380]",
+        "mean": 0.1374526752698056,
+        "min": 0.1370186561374448,
+        "max": 0.1380133845765651,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 14,
+          "columns": [
+            "log_loss_mean",
+            "log_loss_min",
+            "log_loss_max"
+          ]
+        }
+      },
+      {
+        "metric": "log_loss",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl",
+        "text": "0.1352 [0.1348, 0.1357]",
+        "mean": 0.1352402958575785,
+        "min": 0.134830469307698,
+        "max": 0.1356702389408675,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 12,
+          "columns": [
+            "log_loss_mean",
+            "log_loss_min",
+            "log_loss_max"
+          ]
+        }
+      },
+      {
+        "metric": "log_loss",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn@t1",
+        "text": "0.1322 [0.1320, 0.1324]",
+        "mean": 0.1321515112897127,
+        "min": 0.1319997179363238,
+        "max": 0.1324354387052785,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 15,
+          "columns": [
+            "log_loss_mean",
+            "log_loss_min",
+            "log_loss_max"
+          ]
+        }
+      },
+      {
+        "metric": "log_loss",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl@t1",
+        "text": "0.1309 [0.1308, 0.1311]",
+        "mean": 0.1309402183497393,
+        "min": 0.1308256122322637,
+        "max": 0.1310776670013993,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 13,
+          "columns": [
+            "log_loss_mean",
+            "log_loss_min",
+            "log_loss_max"
+          ]
+        }
+      },
+      {
+        "metric": "accuracy",
+        "protocol": "in time, random fold",
+        "model": "scorecard",
+        "text": "0.8839 [0.8544, 0.9059]",
+        "mean": 0.88385,
+        "min": 0.8544,
+        "max": 0.90585,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 4,
+          "columns": [
+            "accuracy_mean",
+            "accuracy_min",
+            "accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "accuracy",
+        "protocol": "in time, random fold",
+        "model": "gbm",
+        "text": "0.9134 [0.8727, 0.9380]",
+        "mean": 0.9134,
+        "min": 0.8727,
+        "max": 0.938,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 2,
+          "columns": [
+            "accuracy_mean",
+            "accuracy_min",
+            "accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "accuracy",
+        "protocol": "in time, random fold",
+        "model": "gbm-50k",
+        "text": "0.9024 [0.8762, 0.9358]",
+        "mean": 0.90245,
+        "min": 0.8762,
+        "max": 0.93585,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 3,
+          "columns": [
+            "accuracy_mean",
+            "accuracy_min",
+            "accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "accuracy",
+        "protocol": "in time, random fold",
+        "model": "tabpfn",
+        "text": "0.9099 [0.8832, 0.9484]",
+        "mean": 0.9099266666666668,
+        "min": 0.88325,
+        "max": 0.9484,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 7,
+          "columns": [
+            "accuracy_mean",
+            "accuracy_min",
+            "accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "accuracy",
+        "protocol": "in time, random fold",
+        "model": "tabicl",
+        "text": "0.9034 [0.7846, 0.9554]",
+        "mean": 0.9033733333333333,
+        "min": 0.7846,
+        "max": 0.9554,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 5,
+          "columns": [
+            "accuracy_mean",
+            "accuracy_min",
+            "accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "accuracy",
+        "protocol": "in time, random fold",
+        "model": "tabpfn@t1",
+        "text": "0.9099 [0.8833, 0.9485]",
+        "mean": 0.9098666666666666,
+        "min": 0.88335,
+        "max": 0.94845,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 8,
+          "columns": [
+            "accuracy_mean",
+            "accuracy_min",
+            "accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "accuracy",
+        "protocol": "in time, random fold",
+        "model": "tabicl@t1",
+        "text": "0.9034 [0.7846, 0.9554]",
+        "mean": 0.9033733333333333,
+        "min": 0.7846,
+        "max": 0.9554,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 6,
+          "columns": [
+            "accuracy_mean",
+            "accuracy_min",
+            "accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "accuracy",
+        "protocol": "out of time, vintage cohorts",
+        "model": "scorecard",
+        "text": "0.9065 [0.8841, 0.9217]",
+        "mean": 0.9065190909090908,
+        "min": 0.88415,
+        "max": 0.9217227272727274,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 11,
+          "columns": [
+            "accuracy_mean",
+            "accuracy_min",
+            "accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "accuracy",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm",
+        "text": "0.9174 [0.8823, 0.9348]",
+        "mean": 0.9174090909090908,
+        "min": 0.882290909090909,
+        "max": 0.9348318181818182,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 9,
+          "columns": [
+            "accuracy_mean",
+            "accuracy_min",
+            "accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "accuracy",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm-50k",
+        "text": "0.9133 [0.8781, 0.9552]",
+        "mean": 0.9132742424242424,
+        "min": 0.8780863636363635,
+        "max": 0.9551545454545454,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 10,
+          "columns": [
+            "accuracy_mean",
+            "accuracy_min",
+            "accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "accuracy",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn",
+        "text": "0.9227 [0.9048, 0.9560]",
+        "mean": 0.9227,
+        "min": 0.9048227272727274,
+        "max": 0.9559681818181818,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 14,
+          "columns": [
+            "accuracy_mean",
+            "accuracy_min",
+            "accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "accuracy",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl",
+        "text": "0.9063 [0.8096, 0.9376]",
+        "mean": 0.906328787878788,
+        "min": 0.8095863636363636,
+        "max": 0.9376454545454546,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 12,
+          "columns": [
+            "accuracy_mean",
+            "accuracy_min",
+            "accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "accuracy",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn@t1",
+        "text": "0.9227 [0.9047, 0.9560]",
+        "mean": 0.9226518181818182,
+        "min": 0.9047136363636362,
+        "max": 0.955990909090909,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 15,
+          "columns": [
+            "accuracy_mean",
+            "accuracy_min",
+            "accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "accuracy",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl@t1",
+        "text": "0.9063 [0.8096, 0.9376]",
+        "mean": 0.906328787878788,
+        "min": 0.8095863636363636,
+        "max": 0.9376454545454546,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 13,
+          "columns": [
+            "accuracy_mean",
+            "accuracy_min",
+            "accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "balanced_accuracy",
+        "protocol": "in time, random fold",
+        "model": "scorecard",
+        "text": "0.5743 [0.5624, 0.5844]",
+        "mean": 0.5743402832472098,
+        "min": 0.5624320915654205,
+        "max": 0.5843957572777958,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 4,
+          "columns": [
+            "balanced_accuracy_mean",
+            "balanced_accuracy_min",
+            "balanced_accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "balanced_accuracy",
+        "protocol": "in time, random fold",
+        "model": "gbm",
+        "text": "0.5706 [0.5480, 0.6103]",
+        "mean": 0.5705662395807242,
+        "min": 0.5479684927239553,
+        "max": 0.6103001913086791,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 2,
+          "columns": [
+            "balanced_accuracy_mean",
+            "balanced_accuracy_min",
+            "balanced_accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "balanced_accuracy",
+        "protocol": "in time, random fold",
+        "model": "gbm-50k",
+        "text": "0.5679 [0.5443, 0.5924]",
+        "mean": 0.5678576269345295,
+        "min": 0.5443378068808251,
+        "max": 0.5923513844287074,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 3,
+          "columns": [
+            "balanced_accuracy_mean",
+            "balanced_accuracy_min",
+            "balanced_accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "balanced_accuracy",
+        "protocol": "in time, random fold",
+        "model": "tabpfn",
+        "text": "0.5719 [0.5302, 0.5965]",
+        "mean": 0.5718776875747822,
+        "min": 0.5302186264332749,
+        "max": 0.59653769012452,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 7,
+          "columns": [
+            "balanced_accuracy_mean",
+            "balanced_accuracy_min",
+            "balanced_accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "balanced_accuracy",
+        "protocol": "in time, random fold",
+        "model": "tabicl",
+        "text": "0.5720 [0.5250, 0.6369]",
+        "mean": 0.5719914607717274,
+        "min": 0.5250322638066841,
+        "max": 0.6369208882938107,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 5,
+          "columns": [
+            "balanced_accuracy_mean",
+            "balanced_accuracy_min",
+            "balanced_accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "balanced_accuracy",
+        "protocol": "in time, random fold",
+        "model": "tabpfn@t1",
+        "text": "0.5718 [0.5302, 0.5965]",
+        "mean": 0.5718494453031834,
+        "min": 0.5302442477502106,
+        "max": 0.5964864658647105,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 8,
+          "columns": [
+            "balanced_accuracy_mean",
+            "balanced_accuracy_min",
+            "balanced_accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "balanced_accuracy",
+        "protocol": "in time, random fold",
+        "model": "tabicl@t1",
+        "text": "0.5720 [0.5250, 0.6369]",
+        "mean": 0.5719914607717274,
+        "min": 0.5250322638066841,
+        "max": 0.6369208882938107,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 6,
+          "columns": [
+            "balanced_accuracy_mean",
+            "balanced_accuracy_min",
+            "balanced_accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "balanced_accuracy",
+        "protocol": "out of time, vintage cohorts",
+        "model": "scorecard",
+        "text": "0.5685 [0.5575, 0.5832]",
+        "mean": 0.5684867582167533,
+        "min": 0.5574750462390553,
+        "max": 0.5832293186939108,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 11,
+          "columns": [
+            "balanced_accuracy_mean",
+            "balanced_accuracy_min",
+            "balanced_accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "balanced_accuracy",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm",
+        "text": "0.5663 [0.5521, 0.5919]",
+        "mean": 0.566319995813365,
+        "min": 0.5520597228435691,
+        "max": 0.5919283149308698,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 9,
+          "columns": [
+            "balanced_accuracy_mean",
+            "balanced_accuracy_min",
+            "balanced_accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "balanced_accuracy",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm-50k",
+        "text": "0.5649 [0.5233, 0.5944]",
+        "mean": 0.5648927885557254,
+        "min": 0.5233184689684625,
+        "max": 0.5943594952342578,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 10,
+          "columns": [
+            "balanced_accuracy_mean",
+            "balanced_accuracy_min",
+            "balanced_accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "balanced_accuracy",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn",
+        "text": "0.5640 [0.5305, 0.5771]",
+        "mean": 0.5639667314915664,
+        "min": 0.5304682496141688,
+        "max": 0.5771227596888445,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 14,
+          "columns": [
+            "balanced_accuracy_mean",
+            "balanced_accuracy_min",
+            "balanced_accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "balanced_accuracy",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl",
+        "text": "0.5752 [0.5491, 0.6307]",
+        "mean": 0.575192357222077,
+        "min": 0.5490559373872873,
+        "max": 0.6307443286871955,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 12,
+          "columns": [
+            "balanced_accuracy_mean",
+            "balanced_accuracy_min",
+            "balanced_accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "balanced_accuracy",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn@t1",
+        "text": "0.5639 [0.5305, 0.5771]",
+        "mean": 0.5639415395410219,
+        "min": 0.5304799927501722,
+        "max": 0.5770696377084951,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 15,
+          "columns": [
+            "balanced_accuracy_mean",
+            "balanced_accuracy_min",
+            "balanced_accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "balanced_accuracy",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl@t1",
+        "text": "0.5752 [0.5491, 0.6307]",
+        "mean": 0.575192357222077,
+        "min": 0.5490559373872873,
+        "max": 0.6307443286871955,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 13,
+          "columns": [
+            "balanced_accuracy_mean",
+            "balanced_accuracy_min",
+            "balanced_accuracy_max"
+          ]
+        }
+      },
+      {
+        "metric": "f1",
+        "protocol": "in time, random fold",
+        "model": "scorecard",
+        "text": "0.0928 [0.0844, 0.1039]",
+        "mean": 0.0927975574002947,
+        "min": 0.0843806104129264,
+        "max": 0.1038753495805034,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 4,
+          "columns": [
+            "f1_mean",
+            "f1_min",
+            "f1_max"
+          ]
+        }
+      },
+      {
+        "metric": "f1",
+        "protocol": "in time, random fold",
+        "model": "gbm",
+        "text": "0.1028 [0.0852, 0.1199]",
+        "mean": 0.1028101358882802,
+        "min": 0.0851851851851851,
+        "max": 0.1199494949494949,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 2,
+          "columns": [
+            "f1_mean",
+            "f1_min",
+            "f1_max"
+          ]
+        }
+      },
+      {
+        "metric": "f1",
+        "protocol": "in time, random fold",
+        "model": "gbm-50k",
+        "text": "0.0947 [0.0781, 0.1149]",
+        "mean": 0.0946966479812965,
+        "min": 0.0780572419774501,
+        "max": 0.1149425287356321,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 3,
+          "columns": [
+            "f1_mean",
+            "f1_min",
+            "f1_max"
+          ]
+        }
+      },
+      {
+        "metric": "f1",
+        "protocol": "in time, random fold",
+        "model": "tabpfn",
+        "text": "0.1013 [0.0786, 0.1256]",
+        "mean": 0.1013160126552107,
+        "min": 0.0785714285714285,
+        "max": 0.1256097560975609,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 7,
+          "columns": [
+            "f1_mean",
+            "f1_min",
+            "f1_max"
+          ]
+        }
+      },
+      {
+        "metric": "f1",
+        "protocol": "in time, random fold",
+        "model": "tabicl",
+        "text": "0.0970 [0.0708, 0.1130]",
+        "mean": 0.0969763264788415,
+        "min": 0.0708333333333333,
+        "max": 0.1129943502824858,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 5,
+          "columns": [
+            "f1_mean",
+            "f1_min",
+            "f1_max"
+          ]
+        }
+      },
+      {
+        "metric": "f1",
+        "protocol": "in time, random fold",
+        "model": "tabpfn@t1",
+        "text": "0.1013 [0.0786, 0.1257]",
+        "mean": 0.1012815362930406,
+        "min": 0.0786416443252904,
+        "max": 0.1256863941427699,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 8,
+          "columns": [
+            "f1_mean",
+            "f1_min",
+            "f1_max"
+          ]
+        }
+      },
+      {
+        "metric": "f1",
+        "protocol": "in time, random fold",
+        "model": "tabicl@t1",
+        "text": "0.0970 [0.0708, 0.1130]",
+        "mean": 0.0969763264788415,
+        "min": 0.0708333333333333,
+        "max": 0.1129943502824858,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 6,
+          "columns": [
+            "f1_mean",
+            "f1_min",
+            "f1_max"
+          ]
+        }
+      },
+      {
+        "metric": "f1",
+        "protocol": "out of time, vintage cohorts",
+        "model": "scorecard",
+        "text": "0.1210 [0.1181, 0.1233]",
+        "mean": 0.1210481522334992,
+        "min": 0.1181212601019922,
+        "max": 0.1232994887434894,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 11,
+          "columns": [
+            "f1_mean",
+            "f1_min",
+            "f1_max"
+          ]
+        }
+      },
+      {
+        "metric": "f1",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm",
+        "text": "0.1253 [0.1203, 0.1297]",
+        "mean": 0.1253031623880657,
+        "min": 0.1202521264350413,
+        "max": 0.1297343331493685,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 9,
+          "columns": [
+            "f1_mean",
+            "f1_min",
+            "f1_max"
+          ]
+        }
+      },
+      {
+        "metric": "f1",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm-50k",
+        "text": "0.1189 [0.0798, 0.1296]",
+        "mean": 0.1189338877907591,
+        "min": 0.0798310011137934,
+        "max": 0.1295588587020134,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 10,
+          "columns": [
+            "f1_mean",
+            "f1_min",
+            "f1_max"
+          ]
+        }
+      },
+      {
+        "metric": "f1",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn",
+        "text": "0.1256 [0.0974, 0.1340]",
+        "mean": 0.1255807708291309,
+        "min": 0.0974170944039619,
+        "max": 0.1340003325721936,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 14,
+          "columns": [
+            "f1_mean",
+            "f1_min",
+            "f1_max"
+          ]
+        }
+      },
+      {
+        "metric": "f1",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl",
+        "text": "0.1278 [0.1181, 0.1338]",
+        "mean": 0.1277944356947933,
+        "min": 0.1180786458492226,
+        "max": 0.1337698475618046,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 12,
+          "columns": [
+            "f1_mean",
+            "f1_min",
+            "f1_max"
+          ]
+        }
+      },
+      {
+        "metric": "f1",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn@t1",
+        "text": "0.1255 [0.0975, 0.1341]",
+        "mean": 0.1255220529315008,
+        "min": 0.0974586534460528,
+        "max": 0.1340948889603219,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 15,
+          "columns": [
+            "f1_mean",
+            "f1_min",
+            "f1_max"
+          ]
+        }
+      },
+      {
+        "metric": "f1",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl@t1",
+        "text": "0.1278 [0.1181, 0.1338]",
+        "mean": 0.1277944356947933,
+        "min": 0.1180786458492226,
+        "max": 0.1337698475618046,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 13,
+          "columns": [
+            "f1_mean",
+            "f1_min",
+            "f1_max"
+          ]
+        }
+      },
+      {
+        "metric": "precision",
+        "protocol": "in time, random fold",
+        "model": "scorecard",
+        "text": "0.0573 [0.0510, 0.0666]",
+        "mean": 0.0573319336396972,
+        "min": 0.0510159965412883,
+        "max": 0.0666255397902529,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 4,
+          "columns": [
+            "precision_mean",
+            "precision_min",
+            "precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "precision",
+        "protocol": "in time, random fold",
+        "model": "gbm",
+        "text": "0.0702 [0.0536, 0.0868]",
+        "mean": 0.0701786527794223,
+        "min": 0.0536443148688046,
+        "max": 0.0868372943327239,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 2,
+          "columns": [
+            "precision_mean",
+            "precision_min",
+            "precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "precision",
+        "protocol": "in time, random fold",
+        "model": "gbm-50k",
+        "text": "0.0616 [0.0484, 0.0792]",
+        "mean": 0.0615542735208045,
+        "min": 0.0483610961848468,
+        "max": 0.0792393026941362,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 3,
+          "columns": [
+            "precision_mean",
+            "precision_min",
+            "precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "precision",
+        "protocol": "in time, random fold",
+        "model": "tabpfn",
+        "text": "0.0682 [0.0528, 0.0896]",
+        "mean": 0.0682181279746227,
+        "min": 0.0528010302640051,
+        "max": 0.0895652173913043,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 7,
+          "columns": [
+            "precision_mean",
+            "precision_min",
+            "precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "precision",
+        "protocol": "in time, random fold",
+        "model": "tabicl",
+        "text": "0.0652 [0.0544, 0.0816]",
+        "mean": 0.0652444257844307,
+        "min": 0.0544217687074829,
+        "max": 0.0815956482320943,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 5,
+          "columns": [
+            "precision_mean",
+            "precision_min",
+            "precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "precision",
+        "protocol": "in time, random fold",
+        "model": "tabpfn@t1",
+        "text": "0.0682 [0.0529, 0.0896]",
+        "mean": 0.068194578095487,
+        "min": 0.0528691166989039,
+        "max": 0.0896431679721496,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 8,
+          "columns": [
+            "precision_mean",
+            "precision_min",
+            "precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "precision",
+        "protocol": "in time, random fold",
+        "model": "tabicl@t1",
+        "text": "0.0652 [0.0544, 0.0816]",
+        "mean": 0.0652444257844307,
+        "min": 0.0544217687074829,
+        "max": 0.0815956482320943,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 6,
+          "columns": [
+            "precision_mean",
+            "precision_min",
+            "precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "precision",
+        "protocol": "out of time, vintage cohorts",
+        "model": "scorecard",
+        "text": "0.0871 [0.0810, 0.0916]",
+        "mean": 0.0870541868791739,
+        "min": 0.0810173045559125,
+        "max": 0.0916044771897465,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 11,
+          "columns": [
+            "precision_mean",
+            "precision_min",
+            "precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "precision",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm",
+        "text": "0.0969 [0.0845, 0.1039]",
+        "mean": 0.0968758530985833,
+        "min": 0.0844860787239871,
+        "max": 0.103943095132214,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 9,
+          "columns": [
+            "precision_mean",
+            "precision_min",
+            "precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "precision",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm-50k",
+        "text": "0.0918 [0.0828, 0.1117]",
+        "mean": 0.0918496287397219,
+        "min": 0.0828246447116051,
+        "max": 0.1117207742572465,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 10,
+          "columns": [
+            "precision_mean",
+            "precision_min",
+            "precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "precision",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn",
+        "text": "0.1011 [0.0907, 0.1357]",
+        "mean": 0.1011060483349695,
+        "min": 0.0907464095909919,
+        "max": 0.1357447643894925,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 14,
+          "columns": [
+            "precision_mean",
+            "precision_min",
+            "precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "precision",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl",
+        "text": "0.0952 [0.0734, 0.1104]",
+        "mean": 0.0951518065804674,
+        "min": 0.0734472094540609,
+        "max": 0.1103701387161556,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 12,
+          "columns": [
+            "precision_mean",
+            "precision_min",
+            "precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "precision",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn@t1",
+        "text": "0.1011 [0.0906, 0.1359]",
+        "mean": 0.1010594265019933,
+        "min": 0.0906261748293421,
+        "max": 0.1359281966022279,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 15,
+          "columns": [
+            "precision_mean",
+            "precision_min",
+            "precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "precision",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl@t1",
+        "text": "0.0952 [0.0734, 0.1104]",
+        "mean": 0.0951518065804674,
+        "min": 0.0734472094540609,
+        "max": 0.1103701387161556,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 13,
+          "columns": [
+            "precision_mean",
+            "precision_min",
+            "precision_max"
+          ]
+        }
+      },
+      {
+        "metric": "recall",
+        "protocol": "in time, random fold",
+        "model": "scorecard",
+        "text": "0.2495 [0.2112, 0.2887]",
+        "mean": 0.2495330066088338,
+        "min": 0.2112359550561797,
+        "max": 0.2886597938144329,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 4,
+          "columns": [
+            "recall_mean",
+            "recall_min",
+            "recall_max"
+          ]
+        }
+      },
+      {
+        "metric": "recall",
+        "protocol": "in time, random fold",
+        "model": "gbm",
+        "text": "0.2108 [0.1391, 0.3347]",
+        "mean": 0.2107718071216994,
+        "min": 0.1391304347826087,
+        "max": 0.3347280334728033,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 2,
+          "columns": [
+            "recall_mean",
+            "recall_min",
+            "recall_max"
+          ]
+        }
+      },
+      {
+        "metric": "recall",
+        "protocol": "in time, random fold",
+        "model": "gbm-50k",
+        "text": "0.2167 [0.1327, 0.2939]",
+        "mean": 0.2167013741372885,
+        "min": 0.1326530612244898,
+        "max": 0.2938775510204082,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 3,
+          "columns": [
+            "recall_mean",
+            "recall_min",
+            "recall_max"
+          ]
+        }
+      },
+      {
+        "metric": "recall",
+        "protocol": "in time, random fold",
+        "model": "tabpfn",
+        "text": "0.2171 [0.0907, 0.2866]",
+        "mean": 0.2171075007291021,
+        "min": 0.090721649484536,
+        "max": 0.2866108786610878,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 7,
+          "columns": [
+            "recall_mean",
+            "recall_min",
+            "recall_max"
+          ]
+        }
+      },
+      {
+        "metric": "recall",
+        "protocol": "in time, random fold",
+        "model": "tabicl",
+        "text": "0.2243 [0.0739, 0.4816]",
+        "mean": 0.2242824815884435,
+        "min": 0.0739130434782608,
+        "max": 0.4816326530612245,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 5,
+          "columns": [
+            "recall_mean",
+            "recall_min",
+            "recall_max"
+          ]
+        }
+      },
+      {
+        "metric": "recall",
+        "protocol": "in time, random fold",
+        "model": "tabpfn@t1",
+        "text": "0.2171 [0.0907, 0.2866]",
+        "mean": 0.2171123859269527,
+        "min": 0.090721649484536,
+        "max": 0.2866108786610878,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 8,
+          "columns": [
+            "recall_mean",
+            "recall_min",
+            "recall_max"
+          ]
+        }
+      },
+      {
+        "metric": "recall",
+        "protocol": "in time, random fold",
+        "model": "tabicl@t1",
+        "text": "0.2243 [0.0739, 0.4816]",
+        "mean": 0.2242824815884435,
+        "min": 0.0739130434782608,
+        "max": 0.4816326530612245,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 6,
+          "columns": [
+            "recall_mean",
+            "recall_min",
+            "recall_max"
+          ]
+        }
+      },
+      {
+        "metric": "recall",
+        "protocol": "out of time, vintage cohorts",
+        "model": "scorecard",
+        "text": "0.2079 [0.1689, 0.2622]",
+        "mean": 0.2079069096360562,
+        "min": 0.168941084893623,
+        "max": 0.2622218430889705,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 11,
+          "columns": [
+            "recall_mean",
+            "recall_min",
+            "recall_max"
+          ]
+        }
+      },
+      {
+        "metric": "recall",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm",
+        "text": "0.1918 [0.1438, 0.2822]",
+        "mean": 0.191847735471447,
+        "min": 0.1438019280294749,
+        "max": 0.2822044456846583,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 9,
+          "columns": [
+            "recall_mean",
+            "recall_min",
+            "recall_max"
+          ]
+        }
+      },
+      {
+        "metric": "recall",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm-50k",
+        "text": "0.1933 [0.0627, 0.2917]",
+        "mean": 0.1932927365904608,
+        "min": 0.0627239912947784,
+        "max": 0.2917010165387522,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 10,
+          "columns": [
+            "recall_mean",
+            "recall_min",
+            "recall_max"
+          ]
+        }
+      },
+      {
+        "metric": "recall",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn",
+        "text": "0.1813 [0.0766, 0.2276]",
+        "mean": 0.1813314375373796,
+        "min": 0.0766400997133015,
+        "max": 0.2275839169495999,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 14,
+          "columns": [
+            "recall_mean",
+            "recall_min",
+            "recall_max"
+          ]
+        }
+      },
+      {
+        "metric": "recall",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl",
+        "text": "0.2220 [0.1348, 0.4399]",
+        "mean": 0.221991372528509,
+        "min": 0.1348485949204589,
+        "max": 0.4399134759479208,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 12,
+          "columns": [
+            "recall_mean",
+            "recall_min",
+            "recall_max"
+          ]
+        }
+      },
+      {
+        "metric": "recall",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn@t1",
+        "text": "0.1813 [0.0766, 0.2276]",
+        "mean": 0.1813307639294432,
+        "min": 0.0766400997133015,
+        "max": 0.2275901889141208,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 15,
+          "columns": [
+            "recall_mean",
+            "recall_min",
+            "recall_max"
+          ]
+        }
+      },
+      {
+        "metric": "recall",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl@t1",
+        "text": "0.2220 [0.1348, 0.4399]",
+        "mean": 0.221991372528509,
+        "min": 0.1348485949204589,
+        "max": 0.4399134759479208,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 13,
+          "columns": [
+            "recall_mean",
+            "recall_min",
+            "recall_max"
+          ]
+        }
+      },
+      {
+        "metric": "mcc",
+        "protocol": "in time, random fold",
+        "model": "scorecard",
+        "text": "0.0745 [0.0646, 0.0867]",
+        "mean": 0.0745342899120454,
+        "min": 0.0646297826237036,
+        "max": 0.0867313347553573,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 4,
+          "columns": [
+            "mcc_mean",
+            "mcc_min",
+            "mcc_max"
+          ]
+        }
+      },
+      {
+        "metric": "mcc",
+        "protocol": "in time, random fold",
+        "model": "gbm",
+        "text": "0.0830 [0.0652, 0.1039]",
+        "mean": 0.0829746238672898,
+        "min": 0.0651863508192766,
+        "max": 0.1039108420705145,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 2,
+          "columns": [
+            "mcc_mean",
+            "mcc_min",
+            "mcc_max"
+          ]
+        }
+      },
+      {
+        "metric": "mcc",
+        "protocol": "in time, random fold",
+        "model": "gbm-50k",
+        "text": "0.0744 [0.0567, 0.0940]",
+        "mean": 0.0744134686444151,
+        "min": 0.0567038700732154,
+        "max": 0.0940276616264645,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 3,
+          "columns": [
+            "mcc_mean",
+            "mcc_min",
+            "mcc_max"
+          ]
+        }
+      },
+      {
+        "metric": "mcc",
+        "protocol": "in time, random fold",
+        "model": "tabpfn",
+        "text": "0.0822 [0.0530, 0.1040]",
+        "mean": 0.0822034374950999,
+        "min": 0.0530229942896317,
+        "max": 0.1039550158618745,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 7,
+          "columns": [
+            "mcc_mean",
+            "mcc_min",
+            "mcc_max"
+          ]
+        }
+      },
+      {
+        "metric": "mcc",
+        "protocol": "in time, random fold",
+        "model": "tabicl",
+        "text": "0.0790 [0.0481, 0.1074]",
+        "mean": 0.0789889636596026,
+        "min": 0.0480694342096137,
+        "max": 0.1073524938169774,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 5,
+          "columns": [
+            "mcc_mean",
+            "mcc_min",
+            "mcc_max"
+          ]
+        }
+      },
+      {
+        "metric": "mcc",
+        "protocol": "in time, random fold",
+        "model": "tabpfn@t1",
+        "text": "0.0822 [0.0531, 0.1040]",
+        "mean": 0.0821623143659225,
+        "min": 0.0531084146091316,
+        "max": 0.1040315366419449,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 8,
+          "columns": [
+            "mcc_mean",
+            "mcc_min",
+            "mcc_max"
+          ]
+        }
+      },
+      {
+        "metric": "mcc",
+        "protocol": "in time, random fold",
+        "model": "tabicl@t1",
+        "text": "0.0790 [0.0481, 0.1074]",
+        "mean": 0.0789889636596026,
+        "min": 0.0480694342096137,
+        "max": 0.1073524938169774,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 6,
+          "columns": [
+            "mcc_mean",
+            "mcc_min",
+            "mcc_max"
+          ]
+        }
+      },
+      {
+        "metric": "mcc",
+        "protocol": "out of time, vintage cohorts",
+        "model": "scorecard",
+        "text": "0.0903 [0.0856, 0.0958]",
+        "mean": 0.0902508234652678,
+        "min": 0.0855727120962981,
+        "max": 0.095783636564563,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 11,
+          "columns": [
+            "mcc_mean",
+            "mcc_min",
+            "mcc_max"
+          ]
+        }
+      },
+      {
+        "metric": "mcc",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm",
+        "text": "0.0951 [0.0888, 0.1044]",
+        "mean": 0.0950729280183041,
+        "min": 0.0888264094045218,
+        "max": 0.1044096908980192,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 9,
+          "columns": [
+            "mcc_mean",
+            "mcc_min",
+            "mcc_max"
+          ]
+        }
+      },
+      {
+        "metric": "mcc",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm-50k",
+        "text": "0.0897 [0.0616, 0.1051]",
+        "mean": 0.0896987575793729,
+        "min": 0.0616111260438349,
+        "max": 0.105140414464557,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 10,
+          "columns": [
+            "mcc_mean",
+            "mcc_min",
+            "mcc_max"
+          ]
+        }
+      },
+      {
+        "metric": "mcc",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn",
+        "text": "0.0957 [0.0803, 0.1033]",
+        "mean": 0.0957125683014654,
+        "min": 0.080292750512126,
+        "max": 0.1032954998687402,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 14,
+          "columns": [
+            "mcc_mean",
+            "mcc_min",
+            "mcc_max"
+          ]
+        }
+      },
+      {
+        "metric": "mcc",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl",
+        "text": "0.0997 [0.0871, 0.1163]",
+        "mean": 0.0997207826499507,
+        "min": 0.0870760348415787,
+        "max": 0.1163240760277297,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 12,
+          "columns": [
+            "mcc_mean",
+            "mcc_min",
+            "mcc_max"
+          ]
+        }
+      },
+      {
+        "metric": "mcc",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn@t1",
+        "text": "0.0957 [0.0804, 0.1034]",
+        "mean": 0.0956541784896207,
+        "min": 0.080374847639244,
+        "max": 0.1033922706978939,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 15,
+          "columns": [
+            "mcc_mean",
+            "mcc_min",
+            "mcc_max"
+          ]
+        }
+      },
+      {
+        "metric": "mcc",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl@t1",
+        "text": "0.0997 [0.0871, 0.1163]",
+        "mean": 0.0997207826499507,
+        "min": 0.0870760348415787,
+        "max": 0.1163240760277297,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 13,
+          "columns": [
+            "mcc_mean",
+            "mcc_min",
+            "mcc_max"
+          ]
+        }
+      },
+      {
+        "metric": "observed_over_expected",
+        "protocol": "in time, random fold",
+        "model": "scorecard",
+        "text": "1.0128 [0.9556, 1.0501]",
+        "mean": 1.012818401786198,
+        "min": 0.9556093991895576,
+        "max": 1.050136938491671,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 4,
+          "columns": [
+            "observed_over_expected_mean",
+            "observed_over_expected_min",
+            "observed_over_expected_max"
+          ]
+        }
+      },
+      {
+        "metric": "observed_over_expected",
+        "protocol": "in time, random fold",
+        "model": "gbm",
+        "text": "1.0141 [0.9529, 1.0541]",
+        "mean": 1.0141368786447766,
+        "min": 0.95292286031096,
+        "max": 1.0541323847969646,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 2,
+          "columns": [
+            "observed_over_expected_mean",
+            "observed_over_expected_min",
+            "observed_over_expected_max"
+          ]
+        }
+      },
+      {
+        "metric": "observed_over_expected",
+        "protocol": "in time, random fold",
+        "model": "gbm-50k",
+        "text": "1.0138 [0.9495, 1.0645]",
+        "mean": 1.013791442240645,
+        "min": 0.9495128781907884,
+        "max": 1.064533446530411,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 3,
+          "columns": [
+            "observed_over_expected_mean",
+            "observed_over_expected_min",
+            "observed_over_expected_max"
+          ]
+        }
+      },
+      {
+        "metric": "observed_over_expected",
+        "protocol": "in time, random fold",
+        "model": "tabpfn",
+        "text": "1.4651 [1.3719, 1.5483]",
+        "mean": 1.4651098372573694,
+        "min": 1.3719255829561807,
+        "max": 1.5483478181691506,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 7,
+          "columns": [
+            "observed_over_expected_mean",
+            "observed_over_expected_min",
+            "observed_over_expected_max"
+          ]
+        }
+      },
+      {
+        "metric": "observed_over_expected",
+        "protocol": "in time, random fold",
+        "model": "tabicl",
+        "text": "1.3691 [1.2626, 1.4458]",
+        "mean": 1.3690980562055883,
+        "min": 1.2625710750473564,
+        "max": 1.4457667902119284,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 5,
+          "columns": [
+            "observed_over_expected_mean",
+            "observed_over_expected_min",
+            "observed_over_expected_max"
+          ]
+        }
+      },
+      {
+        "metric": "observed_over_expected",
+        "protocol": "in time, random fold",
+        "model": "tabpfn@t1",
+        "text": "1.0093 [0.9469, 1.0681]",
+        "mean": 1.0093221529272036,
+        "min": 0.9469386954213408,
+        "max": 1.0681467891457304,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 8,
+          "columns": [
+            "observed_over_expected_mean",
+            "observed_over_expected_min",
+            "observed_over_expected_max"
+          ]
+        }
+      },
+      {
+        "metric": "observed_over_expected",
+        "protocol": "in time, random fold",
+        "model": "tabicl@t1",
+        "text": "0.9520 [0.8808, 1.0036]",
+        "mean": 0.9519613992365517,
+        "min": 0.880797211760517,
+        "max": 1.00358934176916,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 6,
+          "columns": [
+            "observed_over_expected_mean",
+            "observed_over_expected_min",
+            "observed_over_expected_max"
+          ]
+        }
+      },
+      {
+        "metric": "observed_over_expected",
+        "protocol": "out of time, vintage cohorts",
+        "model": "scorecard",
+        "text": "1.4950",
+        "mean": 1.4949597143965014,
+        "min": 1.4949597143965014,
+        "max": 1.4949597143965014,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 11,
+          "columns": [
+            "observed_over_expected_mean",
+            "observed_over_expected_min",
+            "observed_over_expected_max"
+          ]
+        }
+      },
+      {
+        "metric": "observed_over_expected",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm",
+        "text": "1.4279",
+        "mean": 1.427856147123606,
+        "min": 1.427856147123606,
+        "max": 1.427856147123606,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 9,
+          "columns": [
+            "observed_over_expected_mean",
+            "observed_over_expected_min",
+            "observed_over_expected_max"
+          ]
+        }
+      },
+      {
+        "metric": "observed_over_expected",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm-50k",
+        "text": "1.4620 [1.4173, 1.4848]",
+        "mean": 1.461954866109217,
+        "min": 1.4173294973471111,
+        "max": 1.484792183888691,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 10,
+          "columns": [
+            "observed_over_expected_mean",
+            "observed_over_expected_min",
+            "observed_over_expected_max"
+          ]
+        }
+      },
+      {
+        "metric": "observed_over_expected",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn",
+        "text": "2.1525 [2.0874, 2.1985]",
+        "mean": 2.152509238540369,
+        "min": 2.087374302917125,
+        "max": 2.198540682119788,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 14,
+          "columns": [
+            "observed_over_expected_mean",
+            "observed_over_expected_min",
+            "observed_over_expected_max"
+          ]
+        }
+      },
+      {
+        "metric": "observed_over_expected",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl",
+        "text": "1.8848 [1.8258, 1.9263]",
+        "mean": 1.8847847221162335,
+        "min": 1.825781959617384,
+        "max": 1.9263007126386893,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 12,
+          "columns": [
+            "observed_over_expected_mean",
+            "observed_over_expected_min",
+            "observed_over_expected_max"
+          ]
+        }
+      },
+      {
+        "metric": "observed_over_expected",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn@t1",
+        "text": "1.4679 [1.4248, 1.5021]",
+        "mean": 1.4678954401924111,
+        "min": 1.42477882206123,
+        "max": 1.5020599534526236,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 15,
+          "columns": [
+            "observed_over_expected_mean",
+            "observed_over_expected_min",
+            "observed_over_expected_max"
+          ]
+        }
+      },
+      {
+        "metric": "observed_over_expected",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl@t1",
+        "text": "1.3078 [1.2691, 1.3396]",
+        "mean": 1.3077806324822134,
+        "min": 1.2690604910299668,
+        "max": 1.339579090205988,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 13,
+          "columns": [
+            "observed_over_expected_mean",
+            "observed_over_expected_min",
+            "observed_over_expected_max"
+          ]
+        }
+      },
+      {
+        "metric": "abs_log_oe",
+        "protocol": "in time, random fold",
+        "model": "scorecard",
+        "text": "0.0365 [0.0157, 0.0489]",
+        "mean": 0.0364820542507769,
+        "min": 0.0156534571674957,
+        "max": 0.0489205732769099,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 4,
+          "columns": [
+            "abs_log_oe_mean",
+            "abs_log_oe_min",
+            "abs_log_oe_max"
+          ]
+        }
+      },
+      {
+        "metric": "abs_log_oe",
+        "protocol": "in time, random fold",
+        "model": "gbm",
+        "text": "0.0379 [0.0132, 0.0527]",
+        "mean": 0.0378673090815058,
+        "min": 0.0132054223014297,
+        "max": 0.0527180445060253,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 2,
+          "columns": [
+            "abs_log_oe_mean",
+            "abs_log_oe_min",
+            "abs_log_oe_max"
+          ]
+        }
+      },
+      {
+        "metric": "abs_log_oe",
+        "protocol": "in time, random fold",
+        "model": "gbm-50k",
+        "text": "0.0331 [0.0013, 0.0625]",
+        "mean": 0.0330634994439416,
+        "min": 0.0013412218775486,
+        "max": 0.0625366248018226,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 3,
+          "columns": [
+            "abs_log_oe_mean",
+            "abs_log_oe_min",
+            "abs_log_oe_max"
+          ]
+        }
+      },
+      {
+        "metric": "abs_log_oe",
+        "protocol": "in time, random fold",
+        "model": "tabpfn",
+        "text": "0.3813 [0.3162, 0.4372]",
+        "mean": 0.381294581925297,
+        "min": 0.3162152880048042,
+        "max": 0.4371884386685623,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 7,
+          "columns": [
+            "abs_log_oe_mean",
+            "abs_log_oe_min",
+            "abs_log_oe_max"
+          ]
+        }
+      },
+      {
+        "metric": "abs_log_oe",
+        "protocol": "in time, random fold",
+        "model": "tabicl",
+        "text": "0.3134 [0.2332, 0.3686]",
+        "mean": 0.3133588241971631,
+        "min": 0.2331501776499704,
+        "max": 0.3686398314848143,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 5,
+          "columns": [
+            "abs_log_oe_mean",
+            "abs_log_oe_min",
+            "abs_log_oe_max"
+          ]
+        }
+      },
+      {
+        "metric": "abs_log_oe",
+        "protocol": "in time, random fold",
+        "model": "tabpfn@t1",
+        "text": "0.0303 [0.0002, 0.0659]",
+        "mean": 0.03034244335982,
+        "min": 0.0002079179771654,
+        "max": 0.0659251741139233,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 8,
+          "columns": [
+            "abs_log_oe_mean",
+            "abs_log_oe_min",
+            "abs_log_oe_max"
+          ]
+        }
+      },
+      {
+        "metric": "abs_log_oe",
+        "protocol": "in time, random fold",
+        "model": "tabicl@t1",
+        "text": "0.0509 [0.0032, 0.1269]",
+        "mean": 0.0508936430304166,
+        "min": 0.00323788941606,
+        "max": 0.1269278591548387,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 6,
+          "columns": [
+            "abs_log_oe_mean",
+            "abs_log_oe_min",
+            "abs_log_oe_max"
+          ]
+        }
+      },
+      {
+        "metric": "abs_log_oe",
+        "protocol": "out of time, vintage cohorts",
+        "model": "scorecard",
+        "text": "0.3980",
+        "mean": 0.3979752373841133,
+        "min": 0.3979752373841133,
+        "max": 0.3979752373841133,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 11,
+          "columns": [
+            "abs_log_oe_mean",
+            "abs_log_oe_min",
+            "abs_log_oe_max"
+          ]
+        }
+      },
+      {
+        "metric": "abs_log_oe",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm",
+        "text": "0.3526",
+        "mean": 0.3526410927718686,
+        "min": 0.3526410927718686,
+        "max": 0.3526410927718686,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 9,
+          "columns": [
+            "abs_log_oe_mean",
+            "abs_log_oe_min",
+            "abs_log_oe_max"
+          ]
+        }
+      },
+      {
+        "metric": "abs_log_oe",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm-50k",
+        "text": "0.3756 [0.3446, 0.3913]",
+        "mean": 0.3756243752217597,
+        "min": 0.3446193199871738,
+        "max": 0.3913244115644918,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 10,
+          "columns": [
+            "abs_log_oe_mean",
+            "abs_log_oe_min",
+            "abs_log_oe_max"
+          ]
+        }
+      },
+      {
+        "metric": "abs_log_oe",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn",
+        "text": "0.7625 [0.7315, 0.7840]",
+        "mean": 0.7625285730415537,
+        "min": 0.7315470655260167,
+        "max": 0.7839726996600977,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 14,
+          "columns": [
+            "abs_log_oe_mean",
+            "abs_log_oe_min",
+            "abs_log_oe_max"
+          ]
+        }
+      },
+      {
+        "metric": "abs_log_oe",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl",
+        "text": "0.6299 [0.5980, 0.6520]",
+        "mean": 0.6299402781855356,
+        "min": 0.597979169669464,
+        "max": 0.6520144138759172,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 12,
+          "columns": [
+            "abs_log_oe_mean",
+            "abs_log_oe_min",
+            "abs_log_oe_max"
+          ]
+        }
+      },
+      {
+        "metric": "abs_log_oe",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn@t1",
+        "text": "0.3799 [0.3499, 0.4031]",
+        "mean": 0.3798675196209635,
+        "min": 0.3498641192727177,
+        "max": 0.403143914629319,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 15,
+          "columns": [
+            "abs_log_oe_mean",
+            "abs_log_oe_min",
+            "abs_log_oe_max"
+          ]
+        }
+      },
+      {
+        "metric": "abs_log_oe",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl@t1",
+        "text": "0.2646 [0.2344, 0.2889]",
+        "mean": 0.2645684976538374,
+        "min": 0.2344008454856246,
+        "max": 0.2888514136463151,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 13,
+          "columns": [
+            "abs_log_oe_mean",
+            "abs_log_oe_min",
+            "abs_log_oe_max"
+          ]
+        }
+      },
+      {
+        "metric": "cox_slope",
+        "protocol": "in time, random fold",
+        "model": "scorecard",
+        "text": "0.9675 [0.8997, 1.0218]",
+        "mean": 0.9674952427369023,
+        "min": 0.8996836284286737,
+        "max": 1.021808279858515,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 4,
+          "columns": [
+            "cox_slope_mean",
+            "cox_slope_min",
+            "cox_slope_max"
+          ]
+        }
+      },
+      {
+        "metric": "cox_slope",
+        "protocol": "in time, random fold",
+        "model": "gbm",
+        "text": "0.9706 [0.8856, 1.0511]",
+        "mean": 0.970621887925808,
+        "min": 0.8856287400329569,
+        "max": 1.0511388168778797,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 2,
+          "columns": [
+            "cox_slope_mean",
+            "cox_slope_min",
+            "cox_slope_max"
+          ]
+        }
+      },
+      {
+        "metric": "cox_slope",
+        "protocol": "in time, random fold",
+        "model": "gbm-50k",
+        "text": "1.0187 [0.7864, 1.2433]",
+        "mean": 1.0187158770963485,
+        "min": 0.7863769505805577,
+        "max": 1.2432683900657815,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 3,
+          "columns": [
+            "cox_slope_mean",
+            "cox_slope_min",
+            "cox_slope_max"
+          ]
+        }
+      },
+      {
+        "metric": "cox_slope",
+        "protocol": "in time, random fold",
+        "model": "tabpfn",
+        "text": "0.9192 [0.8340, 1.0068]",
+        "mean": 0.9191991070699036,
+        "min": 0.8339603543718939,
+        "max": 1.006798785641429,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 7,
+          "columns": [
+            "cox_slope_mean",
+            "cox_slope_min",
+            "cox_slope_max"
+          ]
+        }
+      },
+      {
+        "metric": "cox_slope",
+        "protocol": "in time, random fold",
+        "model": "tabicl",
+        "text": "0.8653 [0.8038, 0.9291]",
+        "mean": 0.8653375374329165,
+        "min": 0.8038366558343012,
+        "max": 0.9290943054573468,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 5,
+          "columns": [
+            "cox_slope_mean",
+            "cox_slope_min",
+            "cox_slope_max"
+          ]
+        }
+      },
+      {
+        "metric": "cox_slope",
+        "protocol": "in time, random fold",
+        "model": "tabpfn@t1",
+        "text": "1.0213 [0.9268, 1.1187]",
+        "mean": 1.0213080371436103,
+        "min": 0.9268277159916996,
+        "max": 1.1186719980527045,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 8,
+          "columns": [
+            "cox_slope_mean",
+            "cox_slope_min",
+            "cox_slope_max"
+          ]
+        }
+      },
+      {
+        "metric": "cox_slope",
+        "protocol": "in time, random fold",
+        "model": "tabicl@t1",
+        "text": "0.9615 [0.8932, 1.0323]",
+        "mean": 0.961486152703242,
+        "min": 0.8931518398158865,
+        "max": 1.0323270060637164,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 6,
+          "columns": [
+            "cox_slope_mean",
+            "cox_slope_min",
+            "cox_slope_max"
+          ]
+        }
+      },
+      {
+        "metric": "cox_slope",
+        "protocol": "out of time, vintage cohorts",
+        "model": "scorecard",
+        "text": "1.0642",
+        "mean": 1.0641599711516228,
+        "min": 1.0641599711516228,
+        "max": 1.0641599711516228,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 11,
+          "columns": [
+            "cox_slope_mean",
+            "cox_slope_min",
+            "cox_slope_max"
+          ]
+        }
+      },
+      {
+        "metric": "cox_slope",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm",
+        "text": "1.0059",
+        "mean": 1.0059379619439963,
+        "min": 1.0059379619439963,
+        "max": 1.0059379619439963,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 9,
+          "columns": [
+            "cox_slope_mean",
+            "cox_slope_min",
+            "cox_slope_max"
+          ]
+        }
+      },
+      {
+        "metric": "cox_slope",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm-50k",
+        "text": "1.1011 [1.0103, 1.1703]",
+        "mean": 1.1010592602812024,
+        "min": 1.01026212080899,
+        "max": 1.1702657538979586,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 10,
+          "columns": [
+            "cox_slope_mean",
+            "cox_slope_min",
+            "cox_slope_max"
+          ]
+        }
+      },
+      {
+        "metric": "cox_slope",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn",
+        "text": "0.9779 [0.8996, 1.0250]",
+        "mean": 0.9779290625400432,
+        "min": 0.899643416764895,
+        "max": 1.024974584990491,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 14,
+          "columns": [
+            "cox_slope_mean",
+            "cox_slope_min",
+            "cox_slope_max"
+          ]
+        }
+      },
+      {
+        "metric": "cox_slope",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl",
+        "text": "0.9266 [0.8627, 0.9738]",
+        "mean": 0.926624428425636,
+        "min": 0.862694178930169,
+        "max": 0.9738006409590514,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 12,
+          "columns": [
+            "cox_slope_mean",
+            "cox_slope_min",
+            "cox_slope_max"
+          ]
+        }
+      },
+      {
+        "metric": "cox_slope",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn@t1",
+        "text": "1.0864 [0.9995, 1.1384]",
+        "mean": 1.0863506143760635,
+        "min": 0.9995245188861132,
+        "max": 1.138410840422906,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 15,
+          "columns": [
+            "cox_slope_mean",
+            "cox_slope_min",
+            "cox_slope_max"
+          ]
+        }
+      },
+      {
+        "metric": "cox_slope",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl@t1",
+        "text": "1.0296 [0.9585, 1.0820]",
+        "mean": 1.029582698250706,
+        "min": 0.9585490877001877,
+        "max": 1.0820007121767228,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 13,
+          "columns": [
+            "cox_slope_mean",
+            "cox_slope_min",
+            "cox_slope_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier_miscalibration",
+        "protocol": "in time, random fold",
+        "model": "scorecard",
+        "text": "0.0001 [0.0000, 0.0001]",
+        "mean": 5.9746724309134304e-05,
+        "min": 4.527010384830152e-05,
+        "max": 8.152694397631222e-05,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 4,
+          "columns": [
+            "brier_miscalibration_mean",
+            "brier_miscalibration_min",
+            "brier_miscalibration_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier_miscalibration",
+        "protocol": "in time, random fold",
+        "model": "gbm",
+        "text": "0.0001",
+        "mean": 7.968381399030278e-05,
+        "min": 5.324732402598592e-05,
+        "max": 0.0001033578449558,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 2,
+          "columns": [
+            "brier_miscalibration_mean",
+            "brier_miscalibration_min",
+            "brier_miscalibration_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier_miscalibration",
+        "protocol": "in time, random fold",
+        "model": "gbm-50k",
+        "text": "0.0001 [0.0000, 0.0001]",
+        "mean": 6.594639305906522e-05,
+        "min": 4.26104050577393e-05,
+        "max": 0.0001035853200453,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 3,
+          "columns": [
+            "brier_miscalibration_mean",
+            "brier_miscalibration_min",
+            "brier_miscalibration_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier_miscalibration",
+        "protocol": "in time, random fold",
+        "model": "tabpfn",
+        "text": "0.0001 [0.0001, 0.0002]",
+        "mean": 0.0001411674323332,
+        "min": 9.654985495322412e-05,
+        "max": 0.0002209827691222,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 7,
+          "columns": [
+            "brier_miscalibration_mean",
+            "brier_miscalibration_min",
+            "brier_miscalibration_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier_miscalibration",
+        "protocol": "in time, random fold",
+        "model": "tabicl",
+        "text": "0.0001 [0.0001, 0.0002]",
+        "mean": 0.0001148834146563,
+        "min": 8.077418340444315e-05,
+        "max": 0.0001919517953726,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 5,
+          "columns": [
+            "brier_miscalibration_mean",
+            "brier_miscalibration_min",
+            "brier_miscalibration_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier_miscalibration",
+        "protocol": "in time, random fold",
+        "model": "tabpfn@t1",
+        "text": "0.0001 [0.0000, 0.0001]",
+        "mean": 6.672012744865808e-05,
+        "min": 4.1595385511870864e-05,
+        "max": 0.0001225170403988,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 8,
+          "columns": [
+            "brier_miscalibration_mean",
+            "brier_miscalibration_min",
+            "brier_miscalibration_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier_miscalibration",
+        "protocol": "in time, random fold",
+        "model": "tabicl@t1",
+        "text": "0.0001 [0.0000, 0.0001]",
+        "mean": 7.129884175763254e-05,
+        "min": 4.518933441435835e-05,
+        "max": 0.0001255126162628,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 6,
+          "columns": [
+            "brier_miscalibration_mean",
+            "brier_miscalibration_min",
+            "brier_miscalibration_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier_miscalibration",
+        "protocol": "out of time, vintage cohorts",
+        "model": "scorecard",
+        "text": "0.0003",
+        "mean": 0.0002581559962238,
+        "min": 0.0002581559962238,
+        "max": 0.0002581559962238,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 11,
+          "columns": [
+            "brier_miscalibration_mean",
+            "brier_miscalibration_min",
+            "brier_miscalibration_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier_miscalibration",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm",
+        "text": "0.0002",
+        "mean": 0.000242564023608,
+        "min": 0.000242564023608,
+        "max": 0.000242564023608,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 9,
+          "columns": [
+            "brier_miscalibration_mean",
+            "brier_miscalibration_min",
+            "brier_miscalibration_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier_miscalibration",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm-50k",
+        "text": "0.0003",
+        "mean": 0.0002665337260605,
+        "min": 0.0002533081144206,
+        "max": 0.0002929422179863,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 10,
+          "columns": [
+            "brier_miscalibration_mean",
+            "brier_miscalibration_min",
+            "brier_miscalibration_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier_miscalibration",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn",
+        "text": "0.0005 [0.0005, 0.0006]",
+        "mean": 0.0005433670036795,
+        "min": 0.000513711908611,
+        "max": 0.0005877827031996,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 14,
+          "columns": [
+            "brier_miscalibration_mean",
+            "brier_miscalibration_min",
+            "brier_miscalibration_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier_miscalibration",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl",
+        "text": "0.0004 [0.0004, 0.0005]",
+        "mean": 0.0004260889532306,
+        "min": 0.0004059446509594,
+        "max": 0.0004553423988248,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 12,
+          "columns": [
+            "brier_miscalibration_mean",
+            "brier_miscalibration_min",
+            "brier_miscalibration_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier_miscalibration",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn@t1",
+        "text": "0.0003",
+        "mean": 0.0002866637217559,
+        "min": 0.000260808257974,
+        "max": 0.00032434784507,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 15,
+          "columns": [
+            "brier_miscalibration_mean",
+            "brier_miscalibration_min",
+            "brier_miscalibration_max"
+          ]
+        }
+      },
+      {
+        "metric": "brier_miscalibration",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl@t1",
+        "text": "0.0002",
+        "mean": 0.0002010778331435,
+        "min": 0.000188543410527,
+        "max": 0.0002216318932974,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 13,
+          "columns": [
+            "brier_miscalibration_mean",
+            "brier_miscalibration_min",
+            "brier_miscalibration_max"
+          ]
+        }
+      },
+      {
+        "metric": "psi",
+        "protocol": "in time, random fold",
+        "model": "scorecard",
+        "text": "0.0003 [0.0001, 0.0005]",
+        "mean": 0.0002786958034959,
+        "min": 0.0001496722888162,
+        "max": 0.0004818720932649,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 4,
+          "columns": [
+            "psi_mean",
+            "psi_min",
+            "psi_max"
+          ]
+        }
+      },
+      {
+        "metric": "psi",
+        "protocol": "in time, random fold",
+        "model": "gbm",
+        "text": "0.0004 [0.0002, 0.0007]",
+        "mean": 0.0004319104167605,
+        "min": 0.0002233515640914,
+        "max": 0.0006571642198467,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 2,
+          "columns": [
+            "psi_mean",
+            "psi_min",
+            "psi_max"
+          ]
+        }
+      },
+      {
+        "metric": "psi",
+        "protocol": "in time, random fold",
+        "model": "gbm-50k",
+        "text": "0.0005 [0.0001, 0.0011]",
+        "mean": 0.0005248444417402,
+        "min": 0.0001427449588285,
+        "max": 0.0010992110475117,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 3,
+          "columns": [
+            "psi_mean",
+            "psi_min",
+            "psi_max"
+          ]
+        }
+      },
+      {
+        "metric": "psi",
+        "protocol": "in time, random fold",
+        "model": "tabpfn",
+        "text": "0.0011 [0.0005, 0.0022]",
+        "mean": 0.0010624528666697,
+        "min": 0.0004813603692272,
+        "max": 0.0021625709667722,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 7,
+          "columns": [
+            "psi_mean",
+            "psi_min",
+            "psi_max"
+          ]
+        }
+      },
+      {
+        "metric": "psi",
+        "protocol": "in time, random fold",
+        "model": "tabicl",
+        "text": "0.0126 [0.0045, 0.0306]",
+        "mean": 0.0125690292676138,
+        "min": 0.0045127141519878,
+        "max": 0.0306223467311633,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 5,
+          "columns": [
+            "psi_mean",
+            "psi_min",
+            "psi_max"
+          ]
+        }
+      },
+      {
+        "metric": "psi",
+        "protocol": "in time, random fold",
+        "model": "tabpfn@t1",
+        "text": "0.0011 [0.0005, 0.0022]",
+        "mean": 0.0010647506956708,
+        "min": 0.0004945677804095,
+        "max": 0.0021649750370623,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 8,
+          "columns": [
+            "psi_mean",
+            "psi_min",
+            "psi_max"
+          ]
+        }
+      },
+      {
+        "metric": "psi",
+        "protocol": "in time, random fold",
+        "model": "tabicl@t1",
+        "text": "0.0126 [0.0045, 0.0306]",
+        "mean": 0.0125690292676138,
+        "min": 0.0045127141519878,
+        "max": 0.0306223467311633,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 6,
+          "columns": [
+            "psi_mean",
+            "psi_min",
+            "psi_max"
+          ]
+        }
+      },
+      {
+        "metric": "psi",
+        "protocol": "out of time, vintage cohorts",
+        "model": "scorecard",
+        "text": "0.0328",
+        "mean": 0.0327802806938898,
+        "min": 0.0327802806938898,
+        "max": 0.0327802806938898,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 11,
+          "columns": [
+            "psi_mean",
+            "psi_min",
+            "psi_max"
+          ]
+        }
+      },
+      {
+        "metric": "psi",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm",
+        "text": "0.0174",
+        "mean": 0.0174273632766997,
+        "min": 0.0174273632766997,
+        "max": 0.0174273632766997,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 9,
+          "columns": [
+            "psi_mean",
+            "psi_min",
+            "psi_max"
+          ]
+        }
+      },
+      {
+        "metric": "psi",
+        "protocol": "out of time, vintage cohorts",
+        "model": "gbm-50k",
+        "text": "0.0177 [0.0164, 0.0203]",
+        "mean": 0.0177158417803524,
+        "min": 0.0164193295932584,
+        "max": 0.0202865376135819,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 10,
+          "columns": [
+            "psi_mean",
+            "psi_min",
+            "psi_max"
+          ]
+        }
+      },
+      {
+        "metric": "psi",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn",
+        "text": "0.0172 [0.0127, 0.0216]",
+        "mean": 0.0171629592827941,
+        "min": 0.0127381494248254,
+        "max": 0.0216109756158544,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 14,
+          "columns": [
+            "psi_mean",
+            "psi_min",
+            "psi_max"
+          ]
+        }
+      },
+      {
+        "metric": "psi",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl",
+        "text": "0.0104 [0.0074, 0.0146]",
+        "mean": 0.010408272437616,
+        "min": 0.0073690728909684,
+        "max": 0.014585539214958,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 12,
+          "columns": [
+            "psi_mean",
+            "psi_min",
+            "psi_max"
+          ]
+        }
+      },
+      {
+        "metric": "psi",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabpfn@t1",
+        "text": "0.0172 [0.0127, 0.0216]",
+        "mean": 0.0171809718575573,
+        "min": 0.0127409431129972,
+        "max": 0.0216252036740812,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 15,
+          "columns": [
+            "psi_mean",
+            "psi_min",
+            "psi_max"
+          ]
+        }
+      },
+      {
+        "metric": "psi",
+        "protocol": "out of time, vintage cohorts",
+        "model": "tabicl@t1",
+        "text": "0.0104 [0.0074, 0.0146]",
+        "mean": 0.010408272437616,
+        "min": 0.0073690728909684,
+        "max": 0.014585539214958,
+        "source": {
+          "run": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+          "file": "table.csv",
+          "line": 13,
+          "columns": [
+            "psi_mean",
+            "psi_min",
+            "psi_max"
+          ]
+        }
+      }
+    ]
+  },
+  "t2": {
+    "ledger": "docs/ledger/CLAIMS.md",
+    "lines": [
+      {
+        "book": "Lending Club",
+        "hypothesis": "H1",
+        "claim": "C-021",
+        "model": "tabpfn",
+        "statistic": "slope of AUC on age, one intercept per build, minus the control's",
+        "verdict": "H1's kill does not fire, and its second branch does not fire either",
+        "ratio": {
+          "value": "+0.00041",
+          "interval": [
+            "+0.00007",
+            "+0.00075"
+          ],
+          "raw": [
+            0.000405412682676256,
+            6.92728912560595e-05,
+            0.000752011987021496
+          ],
+          "source": {
+            "run": "experiments/2026-09-22-lc-arm-e-intervals",
+            "file": "paired.csv",
+            "line": 188,
+            "select": {
+              "cohorts": "all",
+              "draw": "",
+              "metric": "auc_slope_build",
+              "pair": "tabpfn - gbm-50k",
+              "scope": "arm"
+            }
+          }
+        },
+        "scoped": [],
+        "ledger_check": "every figure and verdict written in C-021"
+      },
+      {
+        "book": "Lending Club",
+        "hypothesis": "H1",
+        "claim": "C-021",
+        "model": "tabicl",
+        "statistic": "slope of AUC on age, one intercept per build, minus the control's",
+        "verdict": "H1's kill does not fire, and its second branch does not fire either",
+        "ratio": {
+          "value": "+0.00055",
+          "interval": [
+            "+0.00020",
+            "+0.00088"
+          ],
+          "raw": [
+            0.0005465361679422718,
+            0.00020292456545930812,
+            0.0008807773799300937
+          ],
+          "source": {
+            "run": "experiments/2026-09-22-lc-arm-e-intervals",
+            "file": "paired.csv",
+            "line": 189,
+            "select": {
+              "cohorts": "all",
+              "draw": "",
+              "metric": "auc_slope_build",
+              "pair": "tabicl - gbm-50k",
+              "scope": "arm"
+            }
+          }
+        },
+        "scoped": [],
+        "ledger_check": "every figure and verdict written in C-021"
+      },
+      {
+        "book": "Lending Club",
+        "hypothesis": "H2",
+        "claim": "C-007",
+        "model": "tabpfn",
+        "statistic": "mean absolute Cox-slope deviation minus the scorecard's",
+        "verdict": "no kill fires for TabPFN",
+        "ratio": {
+          "value": "+0.0208",
+          "interval": [
+            "−0.0043",
+            "+0.0420"
+          ],
+          "raw": [
+            0.020842160256578066,
+            -0.004335435378120496,
+            0.04200992111978235
+          ],
+          "source": {
+            "run": "experiments/2026-09-22-lc-arm-e-intervals",
+            "file": "paired.csv",
+            "line": 67,
+            "select": {
+              "cohorts": "all",
+              "draw": "",
+              "metric": "cox_slope_deviation",
+              "pair": "tabpfn - scorecard",
+              "scope": "arm"
+            }
+          }
+        },
+        "scoped": [],
+        "ledger_check": "every figure and verdict written in C-007"
+      },
+      {
+        "book": "Lending Club",
+        "hypothesis": "H2",
+        "claim": "C-007",
+        "model": "tabicl",
+        "statistic": "mean absolute Cox-slope deviation minus the scorecard's",
+        "verdict": "H2's kill fires for TabICL at 0.9",
+        "ratio": {
+          "value": "+0.0473",
+          "interval": [
+            "+0.0116",
+            "+0.0681"
+          ],
+          "raw": [
+            0.04727598175072947,
+            0.0115562563946761,
+            0.06810412417751872
+          ],
+          "source": {
+            "run": "experiments/2026-09-22-lc-arm-e-intervals",
+            "file": "paired.csv",
+            "line": 68,
+            "select": {
+              "cohorts": "all",
+              "draw": "",
+              "metric": "cox_slope_deviation",
+              "pair": "tabicl - scorecard",
+              "scope": "arm"
+            }
+          }
+        },
+        "scoped": [],
+        "ledger_check": "every figure and verdict written in C-007"
+      },
+      {
+        "book": "Lending Club",
+        "hypothesis": "H3",
+        "claim": "C-038",
+        "model": "tabpfn",
+        "statistic": "PSI against its own training reference minus the control's",
+        "verdict": "no kill fires for TabPFN",
+        "ratio": {
+          "value": "−0.0007",
+          "interval": [
+            "−0.0033",
+            "+0.0013"
+          ],
+          "raw": [
+            -0.0007455859851898417,
+            -0.003323640799752206,
+            0.0012711548255697133
+          ],
+          "source": {
+            "run": "experiments/2026-09-22-lc-arm-e-intervals",
+            "file": "paired.csv",
+            "line": 132,
+            "select": {
+              "cohorts": "all",
+              "draw": "",
+              "metric": "psi",
+              "pair": "tabpfn - gbm-50k",
+              "scope": "arm"
+            }
+          }
+        },
+        "scoped": [],
+        "ledger_check": "every figure and verdict written in C-038"
+      },
+      {
+        "book": "Lending Club",
+        "hypothesis": "H3",
+        "claim": "C-038",
+        "model": "tabicl",
+        "statistic": "PSI against its own training reference minus the control's",
+        "verdict": "H3's kill fires for TabICL",
+        "ratio": {
+          "value": "+0.0277",
+          "interval": [
+            "+0.0244",
+            "+0.0319"
+          ],
+          "raw": [
+            0.027714102288693726,
+            0.02436042528552738,
+            0.031927988913596786
+          ],
+          "source": {
+            "run": "experiments/2026-09-22-lc-arm-e-intervals",
+            "file": "paired.csv",
+            "line": 133,
+            "select": {
+              "cohorts": "all",
+              "draw": "",
+              "metric": "psi",
+              "pair": "tabicl - gbm-50k",
+              "scope": "arm"
+            }
+          }
+        },
+        "scoped": [],
+        "ledger_check": "every figure and verdict written in C-038"
+      },
+      {
+        "book": "Lending Club",
+        "hypothesis": "H4",
+        "claim": "C-034",
+        "model": "tabpfn",
+        "statistic": "expanding minus rolling Cox-slope deviation, minus the control's",
+        "verdict": "killed inside the interval for both models at both settings",
+        "ratio": {
+          "value": "−0.0412",
+          "interval": [
+            "−0.0885",
+            "+0.0181"
+          ],
+          "raw": [
+            -0.04122546044205674,
+            -0.08850928943135844,
+            0.018129312473475337
+          ],
+          "source": {
+            "run": "experiments/2026-09-24-lc-between-arm-intervals",
+            "file": "paired.csv",
+            "line": 25,
+            "select": {
+              "cohorts": "all",
+              "draw": "",
+              "kind": "h4",
+              "metric": "cox_slope_deviation",
+              "model": "tabpfn",
+              "scope": "arm"
+            }
+          }
+        },
+        "scoped": [],
+        "ledger_check": "every figure and verdict written in C-034"
+      },
+      {
+        "book": "Lending Club",
+        "hypothesis": "H4",
+        "claim": "C-034",
+        "model": "tabicl",
+        "statistic": "expanding minus rolling Cox-slope deviation, minus the control's",
+        "verdict": "killed inside the interval for both models at both settings",
+        "ratio": {
+          "value": "−0.0447",
+          "interval": [
+            "−0.0916",
+            "+0.0167"
+          ],
+          "raw": [
+            -0.04469687011925114,
+            -0.0915500617388685,
+            0.016744729491857412
+          ],
+          "source": {
+            "run": "experiments/2026-09-24-lc-between-arm-intervals",
+            "file": "paired.csv",
+            "line": 26,
+            "select": {
+              "cohorts": "all",
+              "draw": "",
+              "kind": "h4",
+              "metric": "cox_slope_deviation",
+              "model": "tabicl",
+              "scope": "arm"
+            }
+          }
+        },
+        "scoped": [],
+        "ledger_check": "every figure and verdict written in C-034"
+      },
+      {
+        "book": "Freddie Mac",
+        "hypothesis": "H1",
+        "claim": "C-025",
+        "model": "tabpfn",
+        "statistic": "slope of AUC on age, one intercept per build, minus the control's",
+        "verdict": "H1's kill does not fire, and its uninformative branch does not fire",
+        "ratio": {
+          "value": "+0.000168",
+          "interval": [
+            "+0.000091",
+            "+0.000246"
+          ],
+          "raw": [
+            0.0001677739304123252,
+            9.115853595130186e-05,
+            0.00024625940423932417
+          ],
+          "source": {
+            "run": "experiments/2026-09-21-fm-arm-e-intervals-refit-control",
+            "file": "paired.csv",
+            "line": 239,
+            "select": {
+              "cohorts": "all",
+              "draw": "",
+              "metric": "auc_slope_build",
+              "pair": "tabpfn - gbm-50k",
+              "scope": "arm"
+            }
+          }
+        },
+        "nominal": {
+          "value": "+0.000166",
+          "interval": [
+            "+0.000062",
+            "+0.000300"
+          ],
+          "raw": [
+            0.00016637662426730008,
+            6.150375644431116e-05,
+            0.0002997339319400982
+          ],
+          "source": {
+            "run": "experiments/2026-09-23-fm-arm-e-intervals-upb-nominal",
+            "file": "paired.csv",
+            "line": 188,
+            "select": {
+              "cohorts": "all",
+              "draw": "",
+              "metric": "auc_slope_build",
+              "pair": "tabpfn - gbm-50k",
+              "scope": "arm"
+            }
+          }
+        },
+        "scoped": [],
+        "nominal_verdict": "neither the kill nor the uninformative branch fires",
+        "ledger_check": "every figure and verdict written in C-025"
+      },
+      {
+        "book": "Freddie Mac",
+        "hypothesis": "H1",
+        "claim": "C-025",
+        "model": "tabicl",
+        "statistic": "slope of AUC on age, one intercept per build, minus the control's",
+        "verdict": "H1's kill does not fire, and its uninformative branch does not fire",
+        "ratio": {
+          "value": "+0.000197",
+          "interval": [
+            "+0.000112",
+            "+0.000275"
+          ],
+          "raw": [
+            0.0001972484096249512,
+            0.00011186533954051501,
+            0.0002748745827086828
+          ],
+          "source": {
+            "run": "experiments/2026-09-21-fm-arm-e-intervals-refit-control",
+            "file": "paired.csv",
+            "line": 240,
+            "select": {
+              "cohorts": "all",
+              "draw": "",
+              "metric": "auc_slope_build",
+              "pair": "tabicl - gbm-50k",
+              "scope": "arm"
+            }
+          }
+        },
+        "nominal": {
+          "value": "+0.000071",
+          "interval": [
+            "−0.000013",
+            "+0.000154"
+          ],
+          "raw": [
+            7.088810194033905e-05,
+            -1.2974358071749272e-05,
+            0.00015402162039617143
+          ],
+          "source": {
+            "run": "experiments/2026-09-23-fm-arm-e-intervals-upb-nominal",
+            "file": "paired.csv",
+            "line": 189,
+            "select": {
+              "cohorts": "all",
+              "draw": "",
+              "metric": "auc_slope_build",
+              "pair": "tabicl - gbm-50k",
+              "scope": "arm"
+            }
+          }
+        },
+        "scoped": [],
+        "nominal_verdict": "neither the kill nor the uninformative branch fires, and TabICL's row loses its star",
+        "ledger_check": "every figure and verdict written in C-025"
+      },
+      {
+        "book": "Freddie Mac",
+        "hypothesis": "H2",
+        "claim": "C-027",
+        "model": "tabpfn",
+        "statistic": "mean absolute Cox-slope deviation minus the scorecard's",
+        "verdict": "H2's kill fires for both at 0.9 as the criterion reads it on the ratio matrix",
+        "ratio": {
+          "value": "+0.0553",
+          "interval": [
+            "+0.0297",
+            "+0.0757"
+          ],
+          "raw": [
+            0.05531404485005009,
+            0.02970890273884473,
+            0.07568356161486495
+          ],
+          "source": {
+            "run": "experiments/2026-09-21-fm-arm-e-intervals",
+            "file": "paired.csv",
+            "line": 67,
+            "select": {
+              "cohorts": "all",
+              "draw": "",
+              "metric": "cox_slope_deviation",
+              "pair": "tabpfn - scorecard",
+              "scope": "arm"
+            }
+          }
+        },
+        "nominal": {
+          "value": "+0.1004",
+          "interval": [
+            "+0.0784",
+            "+0.1101"
+          ],
+          "raw": [
+            0.1003723499173071,
+            0.07842280524250753,
+            0.11005057539227572
+          ],
+          "source": {
+            "run": "experiments/2026-09-23-fm-arm-e-intervals-upb-nominal",
+            "file": "paired.csv",
+            "line": 67,
+            "select": {
+              "cohorts": "all",
+              "draw": "",
+              "metric": "cox_slope_deviation",
+              "pair": "tabpfn - scorecard",
+              "scope": "arm"
+            }
+          }
+        },
+        "scoped": [],
+        "nominal_verdict": "it fires at 0.9 as well",
+        "ledger_check": "every figure and verdict written in C-027"
+      },
+      {
+        "book": "Freddie Mac",
+        "hypothesis": "H2",
+        "claim": "C-027",
+        "model": "tabicl",
+        "statistic": "mean absolute Cox-slope deviation minus the scorecard's",
+        "verdict": "H2's kill fires for both at 0.9 as the criterion reads it on the ratio matrix",
+        "ratio": {
+          "value": "+0.0511",
+          "interval": [
+            "+0.0287",
+            "+0.0722"
+          ],
+          "raw": [
+            0.0510724325640362,
+            0.028719602280718418,
+            0.07218173540747441
+          ],
+          "source": {
+            "run": "experiments/2026-09-21-fm-arm-e-intervals",
+            "file": "paired.csv",
+            "line": 68,
+            "select": {
+              "cohorts": "all",
+              "draw": "",
+              "metric": "cox_slope_deviation",
+              "pair": "tabicl - scorecard",
+              "scope": "arm"
+            }
+          }
+        },
+        "nominal": {
+          "value": "+0.0844",
+          "interval": [
+            "+0.0691",
+            "+0.0936"
+          ],
+          "raw": [
+            0.08440652691886581,
+            0.06906594477444891,
+            0.09359331875250902
+          ],
+          "source": {
+            "run": "experiments/2026-09-23-fm-arm-e-intervals-upb-nominal",
+            "file": "paired.csv",
+            "line": 68,
+            "select": {
+              "cohorts": "all",
+              "draw": "",
+              "metric": "cox_slope_deviation",
+              "pair": "tabicl - scorecard",
+              "scope": "arm"
+            }
+          }
+        },
+        "scoped": [],
+        "nominal_verdict": "it fires at 0.9 as well",
+        "ledger_check": "every figure and verdict written in C-027"
+      },
+      {
+        "book": "Freddie Mac",
+        "hypothesis": "H3",
+        "claim": "C-042",
+        "model": "tabpfn",
+        "statistic": "PSI against its own training reference minus the control's",
+        "verdict": "H3's kill does not fire for either model as the criterion reads it on the ratio matrix",
+        "ratio": {
+          "value": "−0.0052",
+          "interval": [
+            "−0.0121",
+            "+0.0012"
+          ],
+          "raw": [
+            -0.005180678988838293,
+            -0.012099080390252146,
+            0.0012103407306151893
+          ],
+          "source": {
+            "run": "experiments/2026-09-21-fm-arm-e-intervals-refit-control",
+            "file": "paired.csv",
+            "line": 167,
+            "select": {
+              "cohorts": "all",
+              "draw": "",
+              "metric": "psi",
+              "pair": "tabpfn - gbm-50k",
+              "scope": "arm"
+            }
+          }
+        },
+        "nominal": {
+          "value": "+0.0092",
+          "interval": [
+            "+0.0083",
+            "+0.0103"
+          ],
+          "raw": [
+            0.009177619252523292,
+            0.008319185246452854,
+            0.010281398933924516
+          ],
+          "source": {
+            "run": "experiments/2026-09-23-fm-arm-e-intervals-upb-nominal",
+            "file": "paired.csv",
+            "line": 132,
+            "select": {
+              "cohorts": "all",
+              "draw": "",
+              "metric": "psi",
+              "pair": "tabpfn - gbm-50k",
+              "scope": "arm"
+            }
+          }
+        },
+        "scoped": [],
+        "nominal_verdict": "H3's kill fires for TabPFN on the nominal matrix",
+        "ledger_check": "every figure and verdict written in C-042"
+      },
+      {
+        "book": "Freddie Mac",
+        "hypothesis": "H3",
+        "claim": "C-042",
+        "model": "tabicl",
+        "statistic": "PSI against its own training reference minus the control's",
+        "verdict": "H3's kill does not fire for either model as the criterion reads it on the ratio matrix",
+        "ratio": {
+          "value": "−0.0170",
+          "interval": [
+            "−0.0217",
+            "−0.0132"
+          ],
+          "raw": [
+            -0.01703650195501681,
+            -0.021749719699429345,
+            -0.01318829524336004
+          ],
+          "source": {
+            "run": "experiments/2026-09-21-fm-arm-e-intervals-refit-control",
+            "file": "paired.csv",
+            "line": 168,
+            "select": {
+              "cohorts": "all",
+              "draw": "",
+              "metric": "psi",
+              "pair": "tabicl - gbm-50k",
+              "scope": "arm"
+            }
+          }
+        },
+        "nominal": {
+          "value": "−0.0071",
+          "interval": [
+            "−0.0116",
+            "−0.0045"
+          ],
+          "raw": [
+            -0.007119865629402126,
+            -0.011610506402885915,
+            -0.004509399804326244
+          ],
+          "source": {
+            "run": "experiments/2026-09-23-fm-arm-e-intervals-upb-nominal",
+            "file": "paired.csv",
+            "line": 133,
+            "select": {
+              "cohorts": "all",
+              "draw": "",
+              "metric": "psi",
+              "pair": "tabicl - gbm-50k",
+              "scope": "arm"
+            }
+          }
+        },
+        "scoped": [],
+        "nominal_verdict": "for TabICL it does not fire on either matrix",
+        "ledger_check": "every figure and verdict written in C-042"
+      },
+      {
+        "book": "Freddie Mac",
+        "hypothesis": "H4",
+        "claim": "C-041",
+        "model": "tabpfn",
+        "statistic": "expanding minus rolling Cox-slope deviation, minus the control's",
+        "verdict": "H4 is undetermined on this book for both foundation models",
+        "ratio": {
+          "value": "−0.0162",
+          "interval": [
+            "−0.0446",
+            "+0.0175"
+          ],
+          "raw": [
+            -0.016164804726512105,
+            -0.044610570479598724,
+            0.017525586327135082
+          ],
+          "source": {
+            "run": "experiments/2026-09-22-fm-between-arm-intervals",
+            "file": "paired.csv",
+            "line": 25,
+            "select": {
+              "cohorts": "all",
+              "draw": "",
+              "kind": "h4",
+              "metric": "cox_slope_deviation",
+              "model": "tabpfn",
+              "scope": "arm"
+            }
+          }
+        },
+        "nominal": {
+          "value": "+0.0311",
+          "interval": [
+            "−0.0061",
+            "+0.0555"
+          ],
+          "raw": [
+            0.031084951367125153,
+            -0.006099615921549918,
+            0.05550035824676802
+          ],
+          "source": {
+            "run": "experiments/2026-09-23-fm-between-arm-intervals-upb-nominal",
+            "file": "paired.csv",
+            "line": 25,
+            "select": {
+              "cohorts": "all",
+              "draw": "",
+              "kind": "h4",
+              "metric": "cox_slope_deviation",
+              "model": "tabpfn",
+              "scope": "arm"
+            }
+          }
+        },
+        "scoped": [
+          {
+            "scope": "pre-flag",
+            "ratio": {
+              "value": "+0.0227",
+              "interval": [
+                "−0.0259",
+                "+0.0741"
+              ],
+              "raw": [
+                0.022734667096675487,
+                -0.025858621245960833,
+                0.07405019118329725
+              ],
+              "source": {
+                "run": "experiments/2026-09-22-fm-between-arm-intervals",
+                "file": "paired.csv",
+                "line": 268,
+                "select": {
+                  "cohorts": "all",
+                  "draw": "",
+                  "kind": "h4",
+                  "metric": "cox_slope_deviation",
+                  "model": "tabpfn",
+                  "scope": "pre-flag"
+                }
+              }
+            },
+            "nominal": {
+              "value": "+0.0422",
+              "interval": null,
+              "raw": [
+                0.0421684996846954
+              ],
+              "source": {
+                "run": "experiments/2026-09-23-fm-between-arm-intervals-upb-nominal",
+                "file": "paired.csv",
+                "line": 268,
+                "select": {
+                  "cohorts": "all",
+                  "draw": "",
+                  "kind": "h4",
+                  "metric": "cox_slope_deviation",
+                  "model": "tabpfn",
+                  "scope": "pre-flag"
+                }
+              }
+            }
+          },
+          {
+            "scope": "flagged",
+            "ratio": {
+              "value": "−0.0238",
+              "interval": [
+                "−0.0478",
+                "+0.0099"
+              ],
+              "raw": [
+                -0.02378022064446782,
+                -0.047791763322250026,
+                0.009859417422439199
+              ],
+              "source": {
+                "run": "experiments/2026-09-22-fm-between-arm-intervals",
+                "file": "paired.csv",
+                "line": 295,
+                "select": {
+                  "cohorts": "all",
+                  "draw": "",
+                  "kind": "h4",
+                  "metric": "cox_slope_deviation",
+                  "model": "tabpfn",
+                  "scope": "flagged"
+                }
+              }
+            },
+            "nominal": {
+              "value": "+0.0258",
+              "interval": null,
+              "raw": [
+                0.02583117327607114
+              ],
+              "source": {
+                "run": "experiments/2026-09-23-fm-between-arm-intervals-upb-nominal",
+                "file": "paired.csv",
+                "line": 295,
+                "select": {
+                  "cohorts": "all",
+                  "draw": "",
+                  "kind": "h4",
+                  "metric": "cox_slope_deviation",
+                  "model": "tabpfn",
+                  "scope": "flagged"
+                }
+              }
+            }
+          }
+        ],
+        "nominal_verdict": "both rows reading killed inside the interval",
+        "ledger_check": "every figure and verdict written in C-041"
+      },
+      {
+        "book": "Freddie Mac",
+        "hypothesis": "H4",
+        "claim": "C-041",
+        "model": "tabicl",
+        "statistic": "expanding minus rolling Cox-slope deviation, minus the control's",
+        "verdict": "H4 is undetermined on this book for both foundation models",
+        "ratio": {
+          "value": "−0.0031",
+          "interval": [
+            "−0.0345",
+            "+0.0254"
+          ],
+          "raw": [
+            -0.003126669879848748,
+            -0.034485645726922295,
+            0.025430091030898223
+          ],
+          "source": {
+            "run": "experiments/2026-09-22-fm-between-arm-intervals",
+            "file": "paired.csv",
+            "line": 26,
+            "select": {
+              "cohorts": "all",
+              "draw": "",
+              "kind": "h4",
+              "metric": "cox_slope_deviation",
+              "model": "tabicl",
+              "scope": "arm"
+            }
+          }
+        },
+        "nominal": {
+          "value": "+0.0389",
+          "interval": [
+            "−0.0030",
+            "+0.0669"
+          ],
+          "raw": [
+            0.03888211666208455,
+            -0.003039426092292557,
+            0.0669160210723983
+          ],
+          "source": {
+            "run": "experiments/2026-09-23-fm-between-arm-intervals-upb-nominal",
+            "file": "paired.csv",
+            "line": 26,
+            "select": {
+              "cohorts": "all",
+              "draw": "",
+              "kind": "h4",
+              "metric": "cox_slope_deviation",
+              "model": "tabicl",
+              "scope": "arm"
+            }
+          }
+        },
+        "scoped": [
+          {
+            "scope": "pre-flag",
+            "ratio": {
+              "value": "+0.0416",
+              "interval": [
+                "−0.0055",
+                "+0.0866"
+              ],
+              "raw": [
+                0.04159043323207331,
+                -0.00546848214028318,
+                0.08663147936134712
+              ],
+              "source": {
+                "run": "experiments/2026-09-22-fm-between-arm-intervals",
+                "file": "paired.csv",
+                "line": 269,
+                "select": {
+                  "cohorts": "all",
+                  "draw": "",
+                  "kind": "h4",
+                  "metric": "cox_slope_deviation",
+                  "model": "tabicl",
+                  "scope": "pre-flag"
+                }
+              }
+            },
+            "nominal": {
+              "value": "+0.0525",
+              "interval": null,
+              "raw": [
+                0.052538135260721895
+              ],
+              "source": {
+                "run": "experiments/2026-09-23-fm-between-arm-intervals-upb-nominal",
+                "file": "paired.csv",
+                "line": 269,
+                "select": {
+                  "cohorts": "all",
+                  "draw": "",
+                  "kind": "h4",
+                  "metric": "cox_slope_deviation",
+                  "model": "tabicl",
+                  "scope": "pre-flag"
+                }
+              }
+            }
+          },
+          {
+            "scope": "flagged",
+            "ratio": {
+              "value": "−0.0117",
+              "interval": [
+                "−0.0399",
+                "+0.0177"
+              ],
+              "raw": [
+                -0.011719455954998024,
+                -0.039897055180168756,
+                0.017694359272596924
+              ],
+              "source": {
+                "run": "experiments/2026-09-22-fm-between-arm-intervals",
+                "file": "paired.csv",
+                "line": 296,
+                "select": {
+                  "cohorts": "all",
+                  "draw": "",
+                  "kind": "h4",
+                  "metric": "cox_slope_deviation",
+                  "model": "tabicl",
+                  "scope": "flagged"
+                }
+              }
+            },
+            "nominal": {
+              "value": "+0.0333",
+              "interval": null,
+              "raw": [
+                0.03332133230067492
+              ],
+              "source": {
+                "run": "experiments/2026-09-23-fm-between-arm-intervals-upb-nominal",
+                "file": "paired.csv",
+                "line": 296,
+                "select": {
+                  "cohorts": "all",
+                  "draw": "",
+                  "kind": "h4",
+                  "metric": "cox_slope_deviation",
+                  "model": "tabicl",
+                  "scope": "flagged"
+                }
+              }
+            }
+          }
+        ],
+        "nominal_verdict": "both rows reading killed inside the interval",
+        "ledger_check": "every figure and verdict written in C-041"
+      },
+      {
+        "book": "Freddie Mac",
+        "hypothesis": "H5",
+        "claim": "C-028",
+        "model": "tabpfn",
+        "statistic": "O/E on the highest-rate rolling context minus the lowest",
+        "verdict": "H5's kill fires on the rolling arm at 0.9 as the criterion reads it on the ratio matrix",
+        "ratio": {
+          "value": "−0.355",
+          "interval": [
+            "−0.581",
+            "−0.175"
+          ],
+          "raw": [
+            -0.35456091698755626,
+            -0.5805882950717445,
+            -0.17526698656204337
+          ],
+          "source": {
+            "run": "experiments/2026-09-22-fm-grid-in-sample",
+            "file": "h5.csv",
+            "line": 22,
+            "select": {
+              "arm": "R",
+              "criterion": "True",
+              "metric": "h5",
+              "model": "tabpfn",
+              "ranking": "pool"
+            }
+          }
+        },
+        "nominal": {
+          "value": "−0.354",
+          "interval": [
+            "−0.578",
+            "−0.177"
+          ],
+          "raw": [
+            -0.35380841712540523,
+            -0.578307725217991,
+            -0.1774668599237525
+          ],
+          "source": {
+            "run": "experiments/2026-09-23-fm-grid-in-sample-upb-nominal",
+            "file": "h5.csv",
+            "line": 22,
+            "select": {
+              "arm": "R",
+              "criterion": "True",
+              "metric": "h5",
+              "model": "tabpfn",
+              "ranking": "pool"
+            }
+          }
+        },
+        "scoped": [],
+        "nominal_verdict": "the kill fires there too and the nominal reading changes nothing",
+        "ledger_check": "every figure and verdict written in C-028"
+      },
+      {
+        "book": "Freddie Mac",
+        "hypothesis": "H5",
+        "claim": "C-028",
+        "model": "tabicl",
+        "statistic": "O/E on the highest-rate rolling context minus the lowest",
+        "verdict": "H5's kill fires on the rolling arm at 0.9 as the criterion reads it on the ratio matrix",
+        "ratio": {
+          "value": "−0.632",
+          "interval": [
+            "−0.897",
+            "−0.405"
+          ],
+          "raw": [
+            -0.6323434699155205,
+            -0.8971112747199816,
+            -0.40502281693041137
+          ],
+          "source": {
+            "run": "experiments/2026-09-22-fm-grid-in-sample",
+            "file": "h5.csv",
+            "line": 28,
+            "select": {
+              "arm": "R",
+              "criterion": "True",
+              "metric": "h5",
+              "model": "tabicl",
+              "ranking": "pool"
+            }
+          }
+        },
+        "nominal": {
+          "value": "−0.643",
+          "interval": [
+            "−0.918",
+            "−0.405"
+          ],
+          "raw": [
+            -0.6426254072839727,
+            -0.9184563363338206,
+            -0.4054794503302328
+          ],
+          "source": {
+            "run": "experiments/2026-09-23-fm-grid-in-sample-upb-nominal",
+            "file": "h5.csv",
+            "line": 28,
+            "select": {
+              "arm": "R",
+              "criterion": "True",
+              "metric": "h5",
+              "model": "tabicl",
+              "ranking": "pool"
+            }
+          }
+        },
+        "scoped": [],
+        "nominal_verdict": "the kill fires there too and the nominal reading changes nothing",
+        "ledger_check": "every figure and verdict written in C-028"
+      }
+    ]
+  },
+  "recorded_code": {
+    "runs": [
+      "experiments/2026-09-21-fm-arm-e-intervals",
+      "experiments/2026-09-21-fm-arm-e-intervals-refit-control",
+      "experiments/2026-09-22-fm-between-arm-intervals",
+      "experiments/2026-09-22-fm-grid-in-sample",
+      "experiments/2026-09-22-lc-arm-e-intervals",
+      "experiments/2026-09-23-fm-arm-e-intervals-upb-nominal",
+      "experiments/2026-09-23-fm-between-arm-intervals-upb-nominal",
+      "experiments/2026-09-23-fm-grid-in-sample-upb-nominal",
+      "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+      "experiments/2026-09-24-lc-between-arm-intervals"
+    ],
+    "not_identical": {}
+  },
+  "inputs": {
+    "experiments/2026-09-23-lc-2015h1e-protocols5-tfm/table.csv": "48af834c84612af9b17591dd13f27ff16f5c8da1dc2d9d51a39a9c44804ebb81",
+    "experiments/2026-09-23-lc-2015h1e-protocols5-tfm/protocols.json": "08c31484a1488b145307f56e80808e97076addc477a6e86d54c9f6fc192cc85f",
+    "docs/ledger/CLAIMS.md": "2eeedac8892226ddf08761c1252fc6934a580f8a64f2699dbd6212e67c21abae",
+    "experiments/2026-09-21-fm-arm-e-intervals/paired.csv": "f55119910f7156a88d9676c2566fcc6eb14be574d161fa75fd4a553ba400ee3c",
+    "experiments/2026-09-21-fm-arm-e-intervals-refit-control/paired.csv": "df9f0177f6c81b97910d359ad3b86e7d6378bb9cf14bee6b9b018f658d8a940c",
+    "experiments/2026-09-22-fm-between-arm-intervals/paired.csv": "5dbdcd516dfdda7969fa0a232f12bcf4796d344d8479fe6657903a326b5f7ab6",
+    "experiments/2026-09-22-fm-grid-in-sample/h5.csv": "0ef03668f42eefcb6ba4e7f12df0ebfd0d68b6af2ebd1e0d287f1d10825a490d",
+    "experiments/2026-09-22-lc-arm-e-intervals/paired.csv": "1b30988d2e707729705c0c80acaa42f3dda6f5445a55b24803cb2ede7470d76c",
+    "experiments/2026-09-23-fm-arm-e-intervals-upb-nominal/paired.csv": "4553d7ce48453e641787b99143f1618961726ceb18ef64d10a5b9781fdca04c9",
+    "experiments/2026-09-23-fm-between-arm-intervals-upb-nominal/paired.csv": "70c5ffbf1a9f57a88b008c1fc8f0feae2847053292ccf9830be5015c62626c6e",
+    "experiments/2026-09-23-fm-grid-in-sample-upb-nominal/h5.csv": "b6de3f4e2b204b9ee2bb1d9a43bc35e3be93556527999a83ab82b07464a375cb",
+    "experiments/2026-09-24-lc-between-arm-intervals/paired.csv": "9b212447049c606f69b0cd3acd36135a5a5d58d975e5f37d4dbe2202226c6e13"
+  }
+}

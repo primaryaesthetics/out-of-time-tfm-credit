@@ -1,0 +1,306 @@
+{
+  "build_id": "2012H2-R",
+  "models": {
+    "scorecard": [],
+    "gbm": [],
+    "gbm-50k": [
+      20260911,
+      20260912,
+      20260913
+    ]
+  },
+  "sources": [
+    "experiments/2026-09-13-fm-2012h2r-scores-dti-kept"
+  ],
+  "derived_rows": {},
+  "cohorts": [
+    "2013H2",
+    "2014H1",
+    "2015H2",
+    "2016H1",
+    "2016H2",
+    "2017H1",
+    "2017H2",
+    "2018H1",
+    "2018H2",
+    "2019H1",
+    "2019H2",
+    "2020H1",
+    "2021H2",
+    "2022H1",
+    "2022H2",
+    "2023H1",
+    "2023H2"
+  ],
+  "cohorts_pooled": 17,
+  "cohorts_scored": 22,
+  "cohorts_not_pooled": {},
+  "floors": {
+    "record": "experiments/2026-09-13-fm-vintage-builds2/cells.csv",
+    "rows": 5000,
+    "defaults": 100,
+    "cells_above": 17,
+    "cells": 22,
+    "reading": "17 of 22 cells above the floors",
+    "under": [
+      "2013H1",
+      "2014H2",
+      "2015H1",
+      "2020H2",
+      "2021H1"
+    ],
+    "rule": "a cell under the floors is in metrics.csv with its interval and floor False, and enters no pooling; the nearest pooling is the youngest cohorts less those under the floors"
+  },
+  "draws_not_pooled": {},
+  "models_dropped": [],
+  "nearest": [
+    "2013H2",
+    "2014H1"
+  ],
+  "bootstrap": {
+    "resamples": 200,
+    "seed": 20260905,
+    "alpha": 0.05,
+    "blocking": "cohort",
+    "context_draw": "drawn with the resample, jointly",
+    "poolings": [
+      "all",
+      "nearest",
+      "all, cohorts resampled"
+    ],
+    "pooled_metrics": [
+      "gini",
+      "abs_log_oe",
+      "cox_slope_deviation",
+      "cox_slope",
+      "psi"
+    ],
+    "per_draw": "the 'all' pooling repeated with each context draw held fixed, in the rows of paired.csv whose draw is set",
+    "draws_disagree": {
+      "abs_log_oe|gbm-50k - gbm": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.01965964779354338,
+          "ci_hi": 0.02326320889953713
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.051724949776873815,
+          "ci_hi": -0.042696790347726464
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.0038470001491277966,
+          "ci_hi": 0.00815259639784132
+        }
+      ],
+      "abs_log_oe|gbm-50k - scorecard": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.07544812357069029,
+          "ci_hi": -0.04052481447760566
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.14550959726178478,
+          "ci_hi": -0.10621666858504708
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.09178020986081067,
+          "ci_hi": -0.05460429234063539
+        }
+      ],
+      "cox_slope|gbm-50k - gbm": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.04151167944813763,
+          "ci_hi": -0.020971199150488083
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.07213605890439118,
+          "ci_hi": 0.0964399851192665
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.07179554861198098,
+          "ci_hi": -0.05195882821612878
+        }
+      ],
+      "cox_slope|gbm-50k - scorecard": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.10855962472881968,
+          "ci_hi": 0.14136328119181252
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.21807742206680084,
+          "ci_hi": 0.2567008339919783
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.07765264172664324,
+          "ci_hi": 0.10972979442889087
+        }
+      ],
+      "psi|gbm-50k - gbm": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.01052223714014516,
+          "ci_hi": -0.008882884509119645
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.025669083044679828,
+          "ci_hi": -0.02384964687013138
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.029964399678598493,
+          "ci_hi": -0.027944185782339752
+        }
+      ],
+      "psi|gbm-50k - scorecard": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.008877369513131523,
+          "ci_hi": -0.006134443420243032
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.024040502463830667,
+          "ci_hi": -0.02117029717746109
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.028262624638799833,
+          "ci_hi": -0.025447663751858324
+        }
+      ]
+    },
+    "seed_check": {
+      "seeds": [
+        20260906,
+        20260907
+      ],
+      "differences": 45,
+      "starred": 28,
+      "star_changed": [
+        {
+          "cohorts": "nearest",
+          "metric": "gini",
+          "pair": "gbm - scorecard",
+          "value": 0.02289257531680955,
+          "primary": {
+            "excludes_zero": true,
+            "ci_lo": 0.003336374999902775,
+            "ci_hi": 0.04501274146559085
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": false,
+              "ci_lo": -0.001343093063472713,
+              "ci_hi": 0.04438988207395453
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": 0.0011175196209240485,
+              "ci_hi": 0.04289197634909606
+            }
+          },
+          "bound_movement": 0.004679468063375488
+        }
+      ],
+      "largest_bound_movement": 0.0234180541728738
+    },
+    "cox_left_out": {
+      "all": {
+        "cox_slope_deviation": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      },
+      "nearest": {
+        "cox_slope_deviation": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      },
+      "all, cohorts resampled": {
+        "cox_slope_deviation": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      },
+      "all, draw 20260911": {
+        "cox_slope_deviation": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      },
+      "all, draw 20260912": {
+        "cox_slope_deviation": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      },
+      "all, draw 20260913": {
+        "cox_slope_deviation": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        },
+        "cox_slope": {
+          "point": 0.0,
+          "largest_in_a_resample": 0.0
+        }
+      }
+    },
+    "multiplicity": "none: every interval is reported at alpha on its own, and the pairs are not adjusted for one another"
+  },
+  "cox_not_estimable": {
+    "cells": [],
+    "rule": "a cell whose Cox fit did not finish carries NaN in the Cox rows of the per-cell table and leaves the pairing of every Cox statistic for every model, in the point estimate and in every resample; cox_left_out counts the cells left out"
+  },
+  "calibration": {
+    "observed_over_expected": "observed defaults over the mean predicted probability, Clopper-Pearson on the count; the level",
+    "cox": "logit P(y) = intercept + slope * logit(score), Newton on the logistic likelihood, Wald intervals; a level shift is the intercept, a stretch or compression of the scale is the slope; the pooled statistic is |slope - 1|",
+    "cox_signed": "the signed slope pooled beside |slope - 1| over the same estimable cells: its mean rows read against one, its differences against zero",
+    "brier": "with the CORP decomposition of Dimitriadis, Gneiting and Jordan (2021): miscalibration - discrimination + uncertainty, recalibrated by isotonic regression",
+    "reliability": "ten quantile bins of each cell's own scores, reliability.png on the youngest and oldest pooled cohort"
+  },
+  "psi": {
+    "bins": 10,
+    "edges": "the cell's own reference deciles",
+    "critical": "Yurdakul, alpha 0.05, at the cell's sample sizes"
+  },
+  "reference_sizes": {
+    "gbm": 99162,
+    "gbm-50k/20260911": 50000,
+    "gbm-50k/20260912": 50000,
+    "gbm-50k/20260913": 50000,
+    "scorecard": 99162
+  },
+  "wall_seconds": 506.3
+}

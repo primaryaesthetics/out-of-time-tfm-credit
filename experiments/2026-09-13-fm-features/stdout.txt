@@ -1,0 +1,24 @@
+book                  : 1,355,395 of 1,362,500 loans
+ablation              : none
+kept                  : 14: borrowers, cltv, fico, first_time_homebuyer, ltv, mi_pct, occupancy, prepayment_penalty, property_type, purpose, state, term, units, upb
+dropped postal_code                 : a priori: geography below the state
+dropped rate                        : a priori: the calendar on this book
+dropped amortization_type           : value: constant on the first cohort
+dropped channel                     : value: a level present on the first cohort and absent from the last
+dropped dti                         : value: missing share differs between the first and the last cohort
+dropped harp                        : value: constant on the first cohort; a level absent from the first cohort
+dropped interest_only               : value: constant on the first cohort
+dropped msa                         : value: missing share differs between the first and the last cohort
+dropped seller                      : value: a level absent from the first cohort
+dropped special_eligibility_program : coverage + value: constant on the first cohort; missing share differs between the first and the last cohort
+dropped super_conforming            : value: constant on the first cohort
+dropped valuation_method            : coverage + value: constant on the first cohort; a level absent from the first cohort; missing share differs between the first and the last cohort
+dropped vantage_score               : coverage + value: constant on the first cohort
+clip borrowers                      : 1 .. 2
+clip cltv                           : 6 .. 100
+clip fico                           : 601 .. 826
+clip ltv                            : 6 .. 100
+clip mi_pct                         : 0 .. 35
+clip term                           : 96 .. 360
+clip units                          : 1 .. 4
+clip upb                            : 19000 .. 461000

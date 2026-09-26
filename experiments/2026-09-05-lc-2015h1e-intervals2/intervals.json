@@ -1,0 +1,132 @@
+{
+  "build_id": "2015H1-E",
+  "models": {
+    "scorecard": [],
+    "gbm": [],
+    "gbm-50k": [
+      20260911,
+      20260912,
+      20260913
+    ]
+  },
+  "sources": [
+    "experiments/2026-09-05-lc-2015h1e-scores"
+  ],
+  "cohorts": [
+    "2015Q3",
+    "2015Q4",
+    "2016Q1",
+    "2016Q2",
+    "2016Q3",
+    "2016Q4",
+    "2017Q1",
+    "2017Q2",
+    "2017Q3",
+    "2017Q4",
+    "2018Q1"
+  ],
+  "cohorts_not_pooled": {},
+  "draws_not_pooled": {},
+  "nearest": [
+    "2015Q3",
+    "2015Q4",
+    "2016Q1"
+  ],
+  "bootstrap": {
+    "resamples": 200,
+    "seed": 20260905,
+    "alpha": 0.05,
+    "blocking": "cohort",
+    "context_draw": "drawn with the resample, jointly",
+    "poolings": [
+      "all",
+      "nearest",
+      "all, cohorts resampled"
+    ],
+    "per_draw": "the 'all' pooling repeated with each context draw held fixed, in the rows of paired.csv whose draw is set",
+    "draws_disagree": {
+      "abs_log_oe|gbm-50k - gbm": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.03662938036376651,
+          "ci_hi": 0.04023247390823867
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.03690418890819628,
+          "ci_hi": 0.04032956464989352
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.009923293646812225,
+          "ci_hi": -0.006150919122154123
+        }
+      ],
+      "abs_log_oe|gbm-50k - scorecard": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.00831446596835154,
+          "ci_hi": -0.005937925937847341
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.00829310448774903,
+          "ci_hi": -0.005153759651337362
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.05499465561663931,
+          "ci_hi": -0.051811217137962495
+        }
+      ],
+      "psi|gbm-50k - gbm": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.0020623368756131602,
+          "ci_hi": 0.003806443061767919
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.001783117022005702,
+          "ci_hi": -0.00044610659650561036
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.001771009059499966,
+          "ci_hi": -0.00026969129308081056
+        }
+      ],
+      "psi|gbm-50k - scorecard": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.013400936715598503,
+          "ci_hi": -0.011475296424522267
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.01732606723436512,
+          "ci_hi": -0.015311562636838761
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.017376855233663963,
+          "ci_hi": -0.01533482423566028
+        }
+      ]
+    },
+    "multiplicity": "none: every interval is reported at alpha on its own, and the pairs are not adjusted for one another"
+  },
+  "psi": {
+    "bins": 10,
+    "edges": "the cell's own reference deciles",
+    "critical": "Yurdakul, alpha 0.05, at the cell's sample sizes"
+  },
+  "reference_sizes": {
+    "gbm": 323026,
+    "gbm-50k/20260911": 50000,
+    "gbm-50k/20260912": 50000,
+    "gbm-50k/20260913": 50000,
+    "scorecard": 323026
+  },
+  "wall_seconds": 194.0
+}

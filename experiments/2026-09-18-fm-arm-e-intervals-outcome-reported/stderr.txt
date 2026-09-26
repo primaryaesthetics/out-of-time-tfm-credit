@@ -1,0 +1,6 @@
+/Users/node/outoftime-pool/outoftime/scripts/arm_intervals.py:542: RuntimeWarning: Mean of empty slice
+  "psi_first_cohort": float(np.nanmean(
+/Users/node/outoftime-pool/.venv/lib/python3.12/site-packages/numpy/_core/fromnumeric.py:3862: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/Users/node/outoftime-pool/.venv/lib/python3.12/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)

@@ -1,0 +1,10 @@
+# Every consumer of this repository reads these files on a POSIX system: the
+# CI runner, the hosted notebook, and the compute nodes, which receive shell
+# scripts copied straight out of a working tree. A CRLF line ending reaches
+# bash as part of the last word on the line, so `set -euo pipefail` becomes a
+# request for an option named "pipefail\r" and the script dies on its first
+# statement. Line endings are LF in the repository and in every working tree.
+* text=auto eol=lf
+
+*.png binary
+*.parquet binary

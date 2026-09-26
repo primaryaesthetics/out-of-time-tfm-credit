@@ -1,0 +1,121 @@
+# 2015H1-E: the published protocol beside this one
+
+In time: the 20,000-row test cell of each of 1 fold(s); out of time: the mean over the build's scored cohorts. Each entry is the mean over folds and context seeds, with the spread across them in brackets where it exceeds the fourth decimal.
+
+| auc | scorecard | gbm | gbm-50k |
+|---|---|---|---|
+| in time, random fold | 0.6721 | 0.6945 | 0.6747 [0.6711, 0.6806] |
+| out of time, vintage cohorts | 0.7002 | 0.7101 | 0.7037 [0.7010, 0.7053] |
+
+| gini | scorecard | gbm | gbm-50k |
+|---|---|---|---|
+| in time, random fold | 0.3442 | 0.3890 | 0.3493 [0.3422, 0.3613] |
+| out of time, vintage cohorts | 0.4004 | 0.4201 | 0.4073 [0.4020, 0.4105] |
+
+| ks | scorecard | gbm | gbm-50k |
+|---|---|---|---|
+| in time, random fold | 0.2666 | 0.3164 | 0.2814 [0.2727, 0.2904] |
+| out of time, vintage cohorts | 0.3070 | 0.3150 | 0.3074 [0.3056, 0.3107] |
+
+| average_precision | scorecard | gbm | gbm-50k |
+|---|---|---|---|
+| in time, random fold | 0.0477 | 0.0508 | 0.0458 [0.0452, 0.0466] |
+| out of time, vintage cohorts | 0.0682 | 0.0753 | 0.0705 [0.0692, 0.0714] |
+
+| brier | scorecard | gbm | gbm-50k |
+|---|---|---|---|
+| in time, random fold | 0.0223 | 0.0222 | 0.0223 |
+| out of time, vintage cohorts | 0.0299 | 0.0298 | 0.0299 [0.0298, 0.0299] |
+
+| log_loss | scorecard | gbm | gbm-50k |
+|---|---|---|---|
+| in time, random fold | 0.1053 | 0.1042 | 0.1052 [0.1049, 0.1054] |
+| out of time, vintage cohorts | 0.1335 | 0.1319 | 0.1331 [0.1325, 0.1335] |
+
+| accuracy | scorecard | gbm | gbm-50k |
+|---|---|---|---|
+| in time, random fold | 0.8731 | 0.9380 | 0.8999 [0.8914, 0.9153] |
+| out of time, vintage cohorts | 0.8992 | 0.9348 | 0.9024 [0.8781, 0.9228] |
+
+| balanced_accuracy | scorecard | gbm | gbm-50k |
+|---|---|---|---|
+| in time, random fold | 0.5721 | 0.5480 | 0.5723 [0.5554, 0.5875] |
+| out of time, vintage cohorts | 0.5742 | 0.5521 | 0.5742 [0.5572, 0.5944] |
+
+| f1 | scorecard | gbm | gbm-50k |
+|---|---|---|---|
+| in time, random fold | 0.0851 | 0.0936 | 0.0947 [0.0882, 0.1031] |
+| out of time, vintage cohorts | 0.1231 | 0.1203 | 0.1241 [0.1185, 0.1296] |
+
+| precision | scorecard | gbm | gbm-50k |
+|---|---|---|---|
+| in time, random fold | 0.0510 | 0.0705 | 0.0600 [0.0574, 0.0638] |
+| out of time, vintage cohorts | 0.0849 | 0.1039 | 0.0881 [0.0837, 0.0926] |
+
+| recall | scorecard | gbm | gbm-50k |
+|---|---|---|---|
+| in time, random fold | 0.2565 | 0.1391 | 0.2290 [0.1783, 0.2674] |
+| out of time, vintage cohorts | 0.2274 | 0.1438 | 0.2240 [0.1671, 0.2917] |
+
+| mcc | scorecard | gbm | gbm-50k |
+|---|---|---|---|
+| in time, random fold | 0.0676 | 0.0691 | 0.0764 [0.0652, 0.0889] |
+| out of time, vintage cohorts | 0.0930 | 0.0888 | 0.0948 [0.0860, 0.1051] |
+
+| observed_over_expected | scorecard | gbm | gbm-50k |
+|---|---|---|---|
+| in time, random fold | 0.9845 | 0.9869 | 0.9982 [0.9692, 1.0204] |
+| out of time, vintage cohorts | 1.4950 | 1.4279 | 1.4620 [1.4173, 1.4848] |
+
+| abs_log_oe | scorecard | gbm | gbm-50k |
+|---|---|---|---|
+| in time, random fold | 0.0157 | 0.0132 | 0.0189 [0.0051, 0.0313] |
+| out of time, vintage cohorts | 0.3980 | 0.3526 | 0.3756 [0.3446, 0.3913] |
+
+| cox_slope | scorecard | gbm | gbm-50k |
+|---|---|---|---|
+| in time, random fold | 0.8997 | 0.9568 | 1.0067 [0.9824, 1.0248] |
+| out of time, vintage cohorts | 1.0642 | 1.0059 | 1.1011 [1.0103, 1.1703] |
+
+| brier_miscalibration | scorecard | gbm | gbm-50k |
+|---|---|---|---|
+| in time, random fold | 0.0001 | 0.0001 | 0.0001 |
+| out of time, vintage cohorts | 0.0003 | 0.0002 | 0.0003 |
+
+| psi | scorecard | gbm | gbm-50k |
+|---|---|---|---|
+| in time, random fold | 0.0005 | 0.0007 | 0.0007 [0.0005, 0.0009] |
+| out of time, vintage cohorts | 0.0328 | 0.0174 | 0.0177 [0.0164, 0.0203] |
+
+| predicted_positive_share | scorecard | gbm | gbm-50k |
+|---|---|---|---|
+| in time, random fold | 0.1157 | 0.0454 | 0.0877 [0.0699, 0.0966] |
+| out of time, vintage cohorts | 0.0837 | 0.0429 | 0.0803 [0.0563, 0.1088] |
+
+| threshold | scorecard | gbm | gbm-50k |
+|---|---|---|---|
+| in time, random fold | 0.0426 | 0.0590 | 0.0444 [0.0405, 0.0467] |
+| out of time, vintage cohorts | 0.0426 | 0.0590 | 0.0444 [0.0405, 0.0467] |
+
+Ranking on auc (high is better):
+- in time, random fold: gbm (0.6945) > gbm-50k (0.6747) > scorecard (0.6721)
+- out of time, vintage cohorts: gbm (0.7101) > gbm-50k (0.7037) > scorecard (0.7002)
+
+Ranking on brier (low is better):
+- in time, random fold: gbm (0.0222) > scorecard (0.0223) > gbm-50k (0.0223)
+- out of time, vintage cohorts: gbm (0.0298) > gbm-50k (0.0299) > scorecard (0.0299)
+
+Ranking on log_loss (low is better):
+- in time, random fold: gbm (0.1042) > gbm-50k (0.1052) > scorecard (0.1053)
+- out of time, vintage cohorts: gbm (0.1319) > gbm-50k (0.1331) > scorecard (0.1335)
+
+Ranking on abs_log_oe (low is better):
+- in time, random fold: gbm (0.0132) > scorecard (0.0157) > gbm-50k (0.0189)
+- out of time, vintage cohorts: gbm (0.3526) > gbm-50k (0.3756) > scorecard (0.3980)
+
+Ranking on f1 (high is better):
+- in time, random fold: gbm-50k (0.0947) > gbm (0.0936) > scorecard (0.0851)
+- out of time, vintage cohorts: gbm-50k (0.1241) > scorecard (0.1231) > gbm (0.1203)
+
+
+wall                  : 77s

@@ -1,0 +1,39 @@
+loans loaded          : 1,362,500
+re-dated, excluded    : 7,095
+no servicing record   : 10
+first observed late   : 25,159
+record with a gap     : 49
+performance cutoff    : 2026-03-01
+prepared in           : 171s
+features              : 14
+shifts flagged        : none
+2014H2-E: train 662396 rows 1999-01-01..2012-07-01 (55 quarters), blind 109112 rows, test 444636 rows over 18 cohorts
+
+| cohort | rows |
+| --- | --- |
+| 2015H1 | 24159 |
+| 2015H2 | 24159 |
+| 2016H1 | 24632 |
+| 2016H2 | 24760 |
+| 2017H1 | 24541 |
+| 2017H2 | 24680 |
+| 2018H1 | 24416 |
+| 2018H2 | 24543 |
+| 2019H1 | 24752 |
+| 2019H2 | 24861 |
+| 2020H1 | 24880 |
+| 2020H2 | 24919 |
+| 2021H1 | 24909 |
+| 2021H2 | 24929 |
+| 2022H1 | 24889 |
+| 2022H2 | 24859 |
+| 2023H1 | 24882 |
+| 2023H2 | 24866 | 
+
+gbm-50k@share/20260911    50,000 rows  fit    4.1s
+gbm-50k@share/20260912    50,000 rows  fit    1.6s
+gbm-50k@share/20260913    50,000 rows  fit    1.8s
+
+scored rows           : 1,333,908
+reference rows        : 150,000
+wall                  : 197s

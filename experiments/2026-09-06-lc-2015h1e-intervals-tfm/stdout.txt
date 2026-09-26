@@ -1,0 +1,53 @@
+build                 : 2015H1-E
+sources               : experiments/2026-09-05-lc-2015h1e-scores, experiments/2026-09-06-lc-2015h1e-tabpfn-m4pro, experiments/2026-09-06-lc-2015h1e-tabicl-colab-t4
+scored rows           : 1,220,000
+reference rows        : 896,052
+cells                 : 61
+cohorts pooled        : 3, nearest 3: 2015Q3, 2015Q4, 2016Q1
+  2016Q2 left out of the pooling: not scored by tabicl/20260911, tabpfn/20260911
+  2016Q3 left out of the pooling: not scored by tabicl/20260911, tabpfn/20260911
+  2016Q4 left out of the pooling: not scored by tabicl/20260911, tabpfn/20260911
+  2017Q1 left out of the pooling: not scored by tabicl/20260911, tabpfn/20260911
+  2017Q2 left out of the pooling: not scored by tabicl/20260911, tabpfn/20260911
+  2017Q3 left out of the pooling: not scored by tabicl/20260911, tabpfn/20260911
+  2017Q4 left out of the pooling: not scored by tabicl/20260911, tabpfn/20260911
+  2018Q1 left out of the pooling: not scored by tabicl/20260911, tabpfn/20260911
+  gbm-50k draws [20260912, 20260913] left out of the pooling: no other seeded model holds them
+models                : scorecard, gbm, gbm-50k (1 draw), tabpfn (1 draw), tabicl (1 draw)
+nearest 3 is every pooled cohort; that pooling is not repeated
+bootstrap all                   : 200 resamples in 14s
+bootstrap all, cohorts resampled: 200 resamples in 14s
+
+paired differences, all cohorts (value [lo, hi], * excludes zero, ! draws disagree):
+  gini        gbm - scorecard        +0.0164 [+0.0081, +0.0274] * 
+  gini        gbm-50k - scorecard    +0.0049 [-0.0033, +0.0148]   
+  gini        tabpfn - scorecard     +0.0216 [+0.0126, +0.0323] * 
+  gini        tabicl - scorecard     +0.0234 [+0.0139, +0.0340] * 
+  gini        gbm-50k - gbm          -0.0115 [-0.0216, -0.0024] * 
+  gini        tabpfn - gbm           +0.0052 [-0.0051, +0.0147]   
+  gini        tabicl - gbm           +0.0070 [-0.0025, +0.0155]   
+  gini        tabpfn - gbm-50k       +0.0167 [+0.0085, +0.0261] * 
+  gini        tabicl - gbm-50k       +0.0185 [+0.0105, +0.0272] * 
+  gini        tabicl - tabpfn        +0.0017 [-0.0034, +0.0059]   
+  abs_log_oe  gbm - scorecard        -0.0314 [-0.0347, -0.0282] * 
+  abs_log_oe  gbm-50k - scorecard    -0.0042 [-0.0069, -0.0016] * 
+  abs_log_oe  tabpfn - scorecard     +0.3910 [+0.3879, +0.3938] * 
+  abs_log_oe  tabicl - scorecard     +0.2709 [+0.2678, +0.2740] * 
+  abs_log_oe  gbm-50k - gbm          +0.0272 [+0.0239, +0.0307] * 
+  abs_log_oe  tabpfn - gbm           +0.4223 [+0.4197, +0.4252] * 
+  abs_log_oe  tabicl - gbm           +0.3022 [+0.2994, +0.3054] * 
+  abs_log_oe  tabpfn - gbm-50k       +0.3951 [+0.3920, +0.3987] * 
+  abs_log_oe  tabicl - gbm-50k       +0.2750 [+0.2719, +0.2782] * 
+  abs_log_oe  tabicl - tabpfn        -0.1201 [-0.1214, -0.1186] * 
+  psi         gbm - scorecard        -0.0099 [-0.0115, -0.0086] * 
+  psi         gbm-50k - scorecard    -0.0108 [-0.0126, -0.0091] * 
+  psi         tabpfn - scorecard     -0.0136 [-0.0152, -0.0122] * 
+  psi         tabicl - scorecard     -0.0227 [-0.0268, -0.0197] * 
+  psi         gbm-50k - gbm          -0.0009 [-0.0023, +0.0008]   
+  psi         tabpfn - gbm           -0.0037 [-0.0049, -0.0024] * 
+  psi         tabicl - gbm           -0.0128 [-0.0161, -0.0100] * 
+  psi         tabpfn - gbm-50k       -0.0028 [-0.0042, -0.0015] * 
+  psi         tabicl - gbm-50k       -0.0119 [-0.0153, -0.0093] * 
+  psi         tabicl - tabpfn        -0.0091 [-0.0122, -0.0065] * 
+
+wall                  : 38s

@@ -1,0 +1,123 @@
+arm                   : E
+builds                : 9: 2002H2-E (42), 2004H2-E (38), 2006H2-E (34), 2008H2-E (30), 2010H2-E (26), 2012H2-E (22), 2014H2-E (18), 2016H2-E (14), 2018H2-E (10)
+cells                 : 234 over 42 distinct cohorts
+scored rows           : 28,773,880 on 1,027,913 distinct
+reference rows        : 9,760,150
+models                : scorecard, gbm, gbm-50k (3 draws)
+loaded in             : 6s
+floors                : 196 of 234 cells above the floors of 5,000 rows and 100 defaults, the verdict of experiments/2026-09-13-fm-vintage-builds2/cells.csv
+  2003H1 left out of the pooling: under the floors, on 2002H2-E
+  2013H1 left out of the pooling: under the floors, on 2002H2-E, 2004H2-E, 2006H2-E, 2008H2-E, 2010H2-E, 2012H2-E
+  2014H2 left out of the pooling: under the floors, on 2002H2-E, 2004H2-E, 2006H2-E, 2008H2-E, 2010H2-E, 2012H2-E
+  2015H1 left out of the pooling: under the floors, on 2002H2-E, 2004H2-E, 2006H2-E, 2008H2-E, 2010H2-E, 2012H2-E, 2014H2-E
+  2020H2 left out of the pooling: under the floors, on 2002H2-E, 2004H2-E, 2006H2-E, 2008H2-E, 2010H2-E, 2012H2-E, 2014H2-E, 2016H2-E, 2018H2-E
+  2021H1 left out of the pooling: under the floors, on 2002H2-E, 2004H2-E, 2006H2-E, 2008H2-E, 2010H2-E, 2012H2-E, 2014H2-E, 2016H2-E, 2018H2-E
+  2002H2-E: the second stability reference is 2003H1, under the floors; its cells are in no pooling
+  2012H2-E: the second stability reference is 2013H1, under the floors; its cells are in no pooling
+  2014H2-E: the second stability reference is 2015H1, under the floors; its cells are in no pooling
+scope pre-flag        : 16 cohorts, 44 cells
+scope flagged         : 16 cohorts, 131 cells
+scope crisis cells    : 6 cohorts, 20 cells
+scope 2022 cells      : 4 cohorts, 36 cells
+outcome read          : outcome
+bootstrap all                   : 200 resamples in 649s
+bootstrap nearest               : 200 resamples in 83s
+bootstrap all, cohorts resampled: 200 resamples in 644s
+bootstrap seed 20260906         : every pooling again in 1377s
+bootstrap seed 20260907         : every pooling again in 1379s
+draw 20260911 held fixed   : 200 resamples in 638s
+draw 20260912 held fixed   : 200 resamples in 621s
+draw 20260913 held fixed   : 200 resamples in 601s
+
+paired differences over the 196 cells of arm E (value [lo, hi], * excludes zero, ! draws disagree, ? star changes with the bootstrap seed):
+  gini                gbm - scorecard        +0.0122 [+0.0088, +0.0161] *  
+  gini                gbm-50k - scorecard    -0.0125 [-0.0164, -0.0076] *  
+  gini                gbm-50k - gbm          -0.0247 [-0.0276, -0.0207] *  
+  abs_log_oe          gbm - scorecard        -0.0025 [-0.0119, +0.0075]    
+  abs_log_oe          gbm-50k - scorecard    +0.0072 [-0.0085, +0.0225]    
+  abs_log_oe          gbm-50k - gbm          +0.0097 [-0.0029, +0.0196]  ! 
+  cox_slope_deviation gbm - scorecard        +0.0092 [-0.0033, +0.0174]    
+  cox_slope_deviation gbm-50k - scorecard    +0.0197 [+0.0016, +0.0444] *  
+  cox_slope_deviation gbm-50k - gbm          +0.0105 [-0.0011, +0.0310]    
+  cox_slope           gbm - scorecard        +0.0207 [+0.0118, +0.0279] *  
+  cox_slope           gbm-50k - scorecard    +0.0967 [+0.0653, +0.1291] *! 
+  cox_slope           gbm-50k - gbm          +0.0761 [+0.0452, +0.1079] *! 
+  psi                 gbm - scorecard        -0.0240 [-0.0247, -0.0234] *  
+  psi                 gbm-50k - scorecard    -0.0163 [-0.0202, -0.0097] *! 
+  psi                 gbm-50k - gbm          +0.0078 [+0.0038, +0.0144] *! 
+  psi_first_cohort    gbm - scorecard        -0.0115 [-0.0122, -0.0109] *  
+  psi_first_cohort    gbm-50k - scorecard    -0.0104 [-0.0237, -0.0008] *! 
+  psi_first_cohort    gbm-50k - gbm          +0.0011 [-0.0121, +0.0107]  ! 
+  auc_slope_build     gbm - scorecard        -0.00015 [-0.00023, -0.00007] *  
+  auc_slope_build     gbm-50k - scorecard    -0.00028 [-0.00037, -0.00020] *  
+  auc_slope_build     gbm-50k - gbm          -0.00013 [-0.00019, -0.00008] *  
+  auc_slope_cohort    gbm - scorecard        -0.00002 [-0.00008, +0.00006]    
+  auc_slope_cohort    gbm-50k - scorecard    +0.00010 [-0.00002, +0.00026]    
+  auc_slope_cohort    gbm-50k - gbm          +0.00012 [+0.00000, +0.00028] *! 
+  abs_log_oe|gbm-50k - gbm: draw intervals 20260911 [+0.0119, +0.0214]; 20260912 [-0.0033, +0.0046]; 20260913 [+0.0078, +0.0151]
+  auc_slope_cohort|gbm-50k - gbm: draw intervals 20260911 [-0.0000, +0.0001]; 20260912 [+0.0002, +0.0003]; 20260913 [+0.0000, +0.0002]
+  cox_slope|gbm-50k - gbm: draw intervals 20260911 [+0.0713, +0.0830]; 20260912 [+0.0971, +0.1086]; 20260913 [+0.0439, +0.0545]
+  cox_slope|gbm-50k - scorecard: draw intervals 20260911 [+0.0902, +0.1045]; 20260912 [+0.1158, +0.1308]; 20260913 [+0.0632, +0.0767]
+  psi|gbm-50k - gbm: draw intervals 20260911 [+0.0047, +0.0056]; 20260912 [+0.0135, +0.0144]; 20260913 [+0.0038, +0.0047]
+  psi|gbm-50k - scorecard: draw intervals 20260911 [-0.0196, -0.0183]; 20260912 [-0.0108, -0.0094]; 20260913 [-0.0205, -0.0193]
+  psi_first_cohort|gbm-50k - gbm: draw intervals 20260911 [+0.0043, +0.0053]; 20260912 [+0.0099, +0.0108]; 20260913 [-0.0123, -0.0113]
+  psi_first_cohort|gbm-50k - scorecard: draw intervals 20260911 [-0.0074, -0.0061]; 20260912 [-0.0018, -0.0004]; 20260913 [-0.0239, -0.0227]
+  cox_slope_deviation (all): 0 cells not estimable left out of the arm's point estimate, averaged over the context draws, at most 0 of any resample
+  cox_slope (all): 0 cells not estimable left out of the arm's point estimate, averaged over the context draws, at most 0 of any resample
+  cox_slope_deviation (all): 0 builds with no estimable cell left out of the mean over builds, averaged over the context draws, at most 0 of any resample
+  cox_slope (all): 0 builds with no estimable cell left out of the mean over builds, averaged over the context draws, at most 0 of any resample
+  cox_slope_deviation (nearest): 0 cells not estimable left out of the arm's point estimate, averaged over the context draws, at most 0 of any resample
+  cox_slope (nearest): 0 cells not estimable left out of the arm's point estimate, averaged over the context draws, at most 0 of any resample
+  cox_slope_deviation (nearest): 0 builds with no estimable cell left out of the mean over builds, averaged over the context draws, at most 0 of any resample
+  cox_slope (nearest): 0 builds with no estimable cell left out of the mean over builds, averaged over the context draws, at most 0 of any resample
+  cox_slope_deviation (all, cohorts resampled): 0 cells not estimable left out of the arm's point estimate, averaged over the context draws, at most 0 of any resample
+  cox_slope (all, cohorts resampled): 0 cells not estimable left out of the arm's point estimate, averaged over the context draws, at most 0 of any resample
+  cox_slope_deviation (all, draw 20260911): 0 cells not estimable left out of the arm's point estimate, at most 0 of any resample
+  cox_slope (all, draw 20260911): 0 cells not estimable left out of the arm's point estimate, at most 0 of any resample
+  cox_slope_deviation (all, draw 20260912): 0 cells not estimable left out of the arm's point estimate, at most 0 of any resample
+  cox_slope (all, draw 20260912): 0 cells not estimable left out of the arm's point estimate, at most 0 of any resample
+  cox_slope_deviation (all, draw 20260913): 0 cells not estimable left out of the arm's point estimate, at most 0 of any resample
+  cox_slope (all, draw 20260913): 0 cells not estimable left out of the arm's point estimate, at most 0 of any resample
+
+AUC slope on age per quarter, one intercept per build: the arm, the mean over builds, and each build (value [lo, hi]):
+  scorecard   arm -0.00098 [-0.00117, -0.00075]  builds alike -0.00010 [-0.00053, +0.00028]  each -0.00086 -0.00076 -0.00096 -0.00152 -0.00203 -0.00124 -0.00101 +0.00054 +0.00698
+  gbm         arm -0.00113 [-0.00131, -0.00089]  builds alike -0.00022 [-0.00062, +0.00015]  each -0.00100 -0.00077 -0.00112 -0.00186 -0.00247 -0.00142 -0.00080 +0.00065 +0.00678
+  gbm-50k     arm -0.00126 [-0.00145, -0.00102]  builds alike -0.00044 [-0.00085, -0.00001]  each -0.00108 -0.00081 -0.00141 -0.00207 -0.00257 -0.00159 -0.00091 +0.00031 +0.00621
+
+AUC slope on age per quarter, one intercept per cohort, the arm (value [lo, hi]):
+  scorecard   arm -0.00022 [-0.00031, -0.00013]
+  gbm         arm -0.00024 [-0.00032, -0.00015]
+  gbm-50k     arm -0.00012 [-0.00026, +0.00005]
+
+signed Cox slope, each model's mean over the estimable cells, the arm and the mean over builds (value [lo, hi], > or < one beyond the interval):
+  scorecard   arm 0.8754 [0.8533, 0.9026]<  builds alike 0.8791 [0.8539, 0.9108]<
+  gbm         arm 0.8961 [0.8761, 0.9232]<  builds alike 0.8709 [0.8495, 0.8982]<
+  gbm-50k     arm 0.9721 [0.9311, 1.0201]  builds alike 0.9314 [0.9056, 0.9659]<
+
+the criterion pairs under the further scopes, outcome outcome (value [lo, hi], * excludes zero; none a criterion):
+
+oe_ratio_2022: O/E on 2022H2, 2023H1, 2023H2 over O/E on 2020H1, 2021H2, per model, each build and the mean over builds:
+  scorecard   2002H2-E 2.147 [1.876, 2.483]  2004H2-E 1.963 [1.714, 2.262]  2006H2-E 1.964 [1.709, 2.262]  2008H2-E 2.051 [1.791, 2.366]  2010H2-E 2.115 [1.845, 2.443]  2012H2-E 2.059 [1.796, 2.375]  2014H2-E 2.038 [1.778, 2.355]  2016H2-E 2.046 [1.784, 2.362]  2018H2-E 2.053 [1.788, 2.366]  builds 2.048 [1.786, 2.366]
+  gbm         2002H2-E 2.336 [2.032, 2.712]  2004H2-E 2.061 [1.788, 2.383]  2006H2-E 1.922 [1.672, 2.222]  2008H2-E 2.133 [1.853, 2.473]  2010H2-E 2.305 [2.005, 2.654]  2012H2-E 2.256 [1.960, 2.599]  2014H2-E 2.223 [1.931, 2.561]  2016H2-E 2.198 [1.906, 2.530]  2018H2-E 2.208 [1.917, 2.538]  builds 2.182 [1.896, 2.521]
+  gbm-50k     2002H2-E 2.373 [2.068, 2.735]  2004H2-E 2.096 [1.826, 2.392]  2006H2-E 2.057 [1.807, 2.370]  2008H2-E 2.093 [1.800, 2.403]  2010H2-E 2.197 [1.886, 2.609]  2012H2-E 2.179 [1.895, 2.522]  2014H2-E 2.176 [1.865, 2.533]  2016H2-E 2.161 [1.877, 2.470]  2018H2-E 2.169 [1.843, 2.539]  builds 2.167 [1.888, 2.496]
+
+bootstrap seed check over seeds 20260906, 20260907: 44 of 72 arm differences starred under seed 20260905, 2 change their star; 420 of 882 at every scope, 17 change; largest movement of an interval bound 0.0326
+  cox_slope_deviation gbm - scorecard        (all, builds) +0.0150 20260905 [-0.0004, +0.0240]; 20260906 [+0.0010, +0.0243]*; 20260907 [+0.0003, +0.0247]*
+  gini                gbm-50k - gbm          (all, 2002H2-E) -0.0153 20260905 [-0.0286, +0.0001]; 20260906 [-0.0286, -0.0006]*; 20260907 [-0.0292, -0.0001]*
+  cox_slope_deviation gbm-50k - gbm          (all, 2010H2-E) -0.0907 20260905 [-0.1247, -0.0093]*; 20260906 [-0.1216, +0.0049]; 20260907 [-0.1228, +0.0045]
+  auc_slope_build     gbm-50k - scorecard    (all, 2012H2-E) -0.0003 20260905 [-0.0007, +0.0000]; 20260906 [-0.0007, -0.0000]*; 20260907 [-0.0007, +0.0000]
+  gini                gbm - scorecard        (all, 2018H2-E) +0.0109 20260905 [-0.0003, +0.0200]; 20260906 [+0.0007, +0.0201]*; 20260907 [+0.0020, +0.0208]*
+  gini                gbm - scorecard        (all, flagged) +0.0053 20260905 [-0.0002, +0.0109]; 20260906 [+0.0006, +0.0100]*; 20260907 [-0.0003, +0.0109]
+  auc_slope_cohort    gbm-50k - gbm          (all, flagged) +0.0001 20260905 [-0.0000, +0.0002]; 20260906 [-0.0000, +0.0002]; 20260907 [+0.0000, +0.0002]*
+  cox_slope_deviation gbm-50k - gbm          (nearest, arm) +0.0250 20260905 [+0.0029, +0.0601]*; 20260906 [-0.0032, +0.0616]; 20260907 [-0.0016, +0.0563]
+  psi_first_cohort    gbm-50k - gbm          (nearest, arm) -0.0028 20260905 [-0.0050, -0.0000]*; 20260906 [-0.0048, -0.0001]*; 20260907 [-0.0050, +0.0001]
+  cox_slope_deviation gbm-50k - gbm          (nearest, builds) +0.0305 20260905 [+0.0044, +0.0685]*; 20260906 [-0.0018, +0.0712]; 20260907 [-0.0002, +0.0655]
+  psi_first_cohort    gbm-50k - gbm          (nearest, builds) -0.0028 20260905 [-0.0050, -0.0000]*; 20260906 [-0.0048, -0.0001]*; 20260907 [-0.0050, +0.0001]
+  gini                gbm-50k - gbm          (nearest, 2014H2-E) -0.0234 20260905 [-0.0499, -0.0007]*; 20260906 [-0.0496, +0.0012]; 20260907 [-0.0439, +0.0015]
+  cox_slope_deviation gbm - scorecard        (nearest, pre-flag) +0.0332 20260905 [-0.0039, +0.0536]; 20260906 [-0.0043, +0.0618]; 20260907 [+0.0013, +0.0581]*
+  auc_slope_build     gbm-50k - scorecard    (nearest, pre-flag) +0.0030 20260905 [-0.0001, +0.0067]; 20260906 [+0.0003, +0.0070]*; 20260907 [+0.0000, +0.0067]*
+  cox_slope           gbm - scorecard        (nearest, builds, pre-flag) +0.0150 20260905 [-0.0049, +0.0297]; 20260906 [+0.0014, +0.0289]*; 20260907 [-0.0011, +0.0293]
+  gini                gbm-50k - scorecard    (nearest, builds, flagged) -0.0149 20260905 [-0.0326, -0.0010]*; 20260906 [-0.0299, +0.0020]; 20260907 [-0.0310, +0.0003]
+  psi_first_cohort    gbm-50k - gbm          (nearest, builds, crisis cells) -0.0052 20260905 [-0.0125, +0.0005]; 20260906 [-0.0124, -0.0001]*; 20260907 [-0.0125, -0.0000]*
+
+wall                  : 6001s

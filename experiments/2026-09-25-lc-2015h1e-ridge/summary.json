@@ -1,0 +1,17 @@
+{
+  "figure": "ridge.png",
+  "build": "2015H1-E",
+  "cohorts": 11,
+  "rows_per_cohort": [
+    20000
+  ],
+  "under_floors": [],
+  "training_rows": 323026,
+  "draw_rows": 50000,
+  "rows": 11,
+  "columns": 7,
+  "x_range_log10": [
+    -2.8,
+    -0.9
+  ]
+}

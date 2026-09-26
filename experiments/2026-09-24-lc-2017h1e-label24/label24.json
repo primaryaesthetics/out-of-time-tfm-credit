@@ -1,0 +1,140 @@
+{
+  "build_id": "2017H1-E",
+  "column": "outcome_24",
+  "cells_kept": 0,
+  "cells_dropped": 3,
+  "cohorts_kept": [],
+  "cohorts_dropped": [
+    "2017Q3",
+    "2017Q4",
+    "2018Q1"
+  ],
+  "rows_kept": 0,
+  "rows_dropped": 60000,
+  "open_window_rows": 60000,
+  "cohorts": {
+    "2017Q3": {
+      "rows": 20000,
+      "open_window_rows": 20000,
+      "enters": false,
+      "rows_dropped": 20000,
+      "defaults_12": 584,
+      "defaults_24": null
+    },
+    "2017Q4": {
+      "rows": 20000,
+      "open_window_rows": 20000,
+      "enters": false,
+      "rows_dropped": 20000,
+      "defaults_12": 623,
+      "defaults_24": null
+    },
+    "2018Q1": {
+      "rows": 20000,
+      "open_window_rows": 20000,
+      "enters": false,
+      "rows_dropped": 20000,
+      "defaults_12": 638,
+      "defaults_24": null
+    }
+  },
+  "sources": [
+    "experiments/2026-09-06-lc-2017h1e-scores",
+    "experiments/2026-09-08-lc-2017h1e-tabicl-colab-t4",
+    "experiments/2026-09-08-lc-2017h1e-tabicl-t1-derived",
+    "experiments/2026-09-11-lc-2017h1e-tabpfn-m4pro",
+    "experiments/2026-09-11-lc-2017h1e-tabpfn-t1-m4pro"
+  ],
+  "copies": [],
+  "rule": "a scored row whose window is open at the snapshot has no label and is dropped, never written as a non-default; a cohort with any such row leaves whole and every row of it is counted under rows_dropped",
+  "label": {
+    "12": {
+      "definition": {
+        "window_months": 12,
+        "snapshot": "2019-03-01",
+        "charge_off_lag_months": 5,
+        "last_labelable_origination": "2018-03-01",
+        "bad_statuses": [
+          "Charged Off",
+          "Default",
+          "Does not meet the credit policy. Status:Charged Off"
+        ],
+        "good_statuses": [
+          "Does not meet the credit policy. Status:Fully Paid",
+          "Fully Paid"
+        ]
+      },
+      "labelled": 1873290,
+      "defaults": 54305,
+      "default_rate": 0.028989,
+      "dropped_immature": 387378,
+      "still_running_at_snapshot": 558979,
+      "unrecognised": 0,
+      "notes": [
+        "387378 loans originated after 2018-03-01 were dropped as immature, not labelled non-default",
+        "558979 loans were still running at the snapshot and are labelled non-default: this definition turns on charge-off, not on days past due, and those are the rows where the two differ",
+        "1937 bad loans had no last payment and were dated at origination plus 5 months",
+        "0 labelled loans stopped paying early enough to be in-window defaults and had not been charged off at the snapshot; they are labelled non-default and each is a default the window misses"
+      ]
+    },
+    "24": {
+      "definition": {
+        "window_months": 24,
+        "snapshot": "2019-03-01",
+        "charge_off_lag_months": 5,
+        "last_labelable_origination": "2017-03-01",
+        "bad_statuses": [
+          "Charged Off",
+          "Default",
+          "Does not meet the credit policy. Status:Charged Off"
+        ],
+        "good_statuses": [
+          "Does not meet the credit policy. Status:Fully Paid",
+          "Fully Paid"
+        ]
+      },
+      "labelled": 1418626,
+      "defaults": 145759,
+      "default_rate": 0.102747,
+      "dropped_immature": 842042,
+      "still_running_at_snapshot": 249292,
+      "unrecognised": 1,
+      "notes": [
+        "842042 loans originated after 2017-03-01 were dropped as immature, not labelled non-default",
+        "249292 loans were still running at the snapshot and are labelled non-default: this definition turns on charge-off, not on days past due, and those are the rows where the two differ",
+        "1297 bad loans had no last payment and were dated at origination plus 5 months",
+        "1 labelled loans stopped paying early enough to be in-window defaults and had not been charged off at the snapshot; they are labelled non-default and each is a default the window misses"
+      ]
+    }
+  },
+  "inputs": {
+    "experiments/2026-09-06-lc-2017h1e-scores/build.json": "e27be501ce6a52b6b3d1c8cbc040c9af7e1327b5fc074d7f986416f2c19584de",
+    "experiments/2026-09-06-lc-2017h1e-scores/cohorts.csv": "b4384a0b5ecfca5a4a67ecb505396477deffa2b7e9d6090e09c537719f8c4ddc",
+    "experiments/2026-09-06-lc-2017h1e-scores/manifest.json": "0c9aee130dc4caf00ff1ef58fc7acb58f67dcf2b1f2912075c9851e8dd2cb64b",
+    "experiments/2026-09-06-lc-2017h1e-scores/reference.parquet": "37fcfbaef51bfb9411d27408e84d525f47faa4b415576d954a1ed0d81886318d",
+    "experiments/2026-09-06-lc-2017h1e-scores/scores.parquet": "041623343f9b1da18f63652452f5cae973854af3fd89dd97b8173472b910b3bf",
+    "experiments/2026-09-06-lc-2017h1e-scores/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "experiments/2026-09-06-lc-2017h1e-scores/stdout.txt": "46841e9391e625a3d8e171a88a03b3ac6f5476d18a7681efc033b916e2eacc2e",
+    "experiments/2026-09-08-lc-2017h1e-tabicl-colab-t4/manifest.json": "67ff5ad19727228102d8422752ae78bb14fa61bc251a7d33fb37a5d2f5c48966",
+    "experiments/2026-09-08-lc-2017h1e-tabicl-colab-t4/node.json": "a1e4049b55613ea24c5cc57bc6a7db34e0fa9728b6479cd99c768ed40c0e3012",
+    "experiments/2026-09-08-lc-2017h1e-tabicl-colab-t4/reference.parquet": "35af8029ac1d2c55071780e546b876a4b3e7df9698d86336c7a888464ba21684",
+    "experiments/2026-09-08-lc-2017h1e-tabicl-colab-t4/score.log": "0185694b5af384d6162031fb85bd9ed361e9e834cfa39039ffa48dc2b08cb4fc",
+    "experiments/2026-09-08-lc-2017h1e-tabicl-colab-t4/scores.parquet": "cf5a617a3492a1002d8b22374b81b1a1ab7ddfde5bfc6ec73e7193cd36e5224d",
+    "experiments/2026-09-08-lc-2017h1e-tabicl-t1-derived/derive.json": "4d8f2cf2a418f4eeb6600d8651716253435bafec6eea85b1ea2791395ff8b2a8",
+    "experiments/2026-09-08-lc-2017h1e-tabicl-t1-derived/manifest.json": "2ac6fd0a1b6399a6e28ad4e204456dba39afb5858787916e8523802260478cde",
+    "experiments/2026-09-08-lc-2017h1e-tabicl-t1-derived/reference.parquet": "d935c42ca1c1b196f82f59d57bdea899ed236407f82c79ae9ba7711bc99f482a",
+    "experiments/2026-09-08-lc-2017h1e-tabicl-t1-derived/scores.parquet": "b0d2680b33329155e72eec29c437646a5585b33549b3a8ce9fbfa46be8ff557a",
+    "experiments/2026-09-08-lc-2017h1e-tabicl-t1-derived/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "experiments/2026-09-08-lc-2017h1e-tabicl-t1-derived/stdout.txt": "cfac546063f342ce56cdbb2a3f3e7379753f763cb8070654408ca7008a9253d2",
+    "experiments/2026-09-11-lc-2017h1e-tabpfn-m4pro/manifest.json": "463f6bc7952c14a2dce2dd60bfa75ded3e9a4257c9bbe9e612e9dc1efecd7d76",
+    "experiments/2026-09-11-lc-2017h1e-tabpfn-m4pro/node.json": "1fcf3f904445b9d1fb7921e3527c1192beea0b6aa75ce91c8f539a149fdabf57",
+    "experiments/2026-09-11-lc-2017h1e-tabpfn-m4pro/reference.parquet": "50b77b2249ad55b4e9914c2747200abe9dfc1f9185687db35a1e309177cb6f6b",
+    "experiments/2026-09-11-lc-2017h1e-tabpfn-m4pro/score.log": "21df629d86f66e6d6d24ed7169ed1ca401ad053f36d664bc25beb1d690d3140f",
+    "experiments/2026-09-11-lc-2017h1e-tabpfn-m4pro/scores.parquet": "7da08bdc32a40fb23fc4c74e52402095f70d3904070e1ac11aa4261d462daa80",
+    "experiments/2026-09-11-lc-2017h1e-tabpfn-t1-m4pro/manifest.json": "d0dad844cfff23f34ce1fc3d2d7ce1356213caa5f7249096268d5eb7f88582f4",
+    "experiments/2026-09-11-lc-2017h1e-tabpfn-t1-m4pro/node.json": "cdd576cd687579361e5042c25e9ea03c9bc86d718efce7f481b4de2ee16ab682",
+    "experiments/2026-09-11-lc-2017h1e-tabpfn-t1-m4pro/reference.parquet": "84b1fa4128c04f4d36603dfaefc7f670911c826bf6c59e7a72349948a80a75b9",
+    "experiments/2026-09-11-lc-2017h1e-tabpfn-t1-m4pro/score.log": "d68d176fec6defbcdf451592eedfbcfee8a13c17dada19551530cc620b1d69b6",
+    "experiments/2026-09-11-lc-2017h1e-tabpfn-t1-m4pro/scores.parquet": "e343478fc35c2ba7a0bce58378a2b37a86fc1fd7e170766a5768e65fcedd8015"
+  }
+}

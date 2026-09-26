@@ -1,0 +1,35 @@
+rows                  : 2,260,668
+loaded in             : 115s
+2013H1-E: train 50609 rows 2010-04-01..2012-06-01 (9 quarters), blind 88218 rows, test 380000 rows over 19 cohorts
+
+| cohort | rows |
+| --- | --- |
+| 2013Q3 | 20000 |
+| 2013Q4 | 20000 |
+| 2014Q1 | 20000 |
+| 2014Q2 | 20000 |
+| 2014Q3 | 20000 |
+| 2014Q4 | 20000 |
+| 2015Q1 | 20000 |
+| 2015Q2 | 20000 |
+| 2015Q3 | 20000 |
+| 2015Q4 | 20000 |
+| 2016Q1 | 20000 |
+| 2016Q2 | 20000 |
+| 2016Q3 | 20000 |
+| 2016Q4 | 20000 |
+| 2017Q1 | 20000 |
+| 2017Q2 | 20000 |
+| 2017Q3 | 20000 |
+| 2017Q4 | 20000 |
+| 2018Q1 | 20000 | 
+
+context 20260911: 50,000 rows
+context 20260912: 50,000 rows
+context 20260913: 50,000 rows
+checked against       : experiments\2026-09-06-lc-2013h1e-scores — every row and outcome identical
+
+context rows          : 150,000
+scored rows           : 380,000 over 19 cohorts
+features              : 20, 3 categorical
+wall                  : 135s

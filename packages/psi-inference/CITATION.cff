@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "psi-inference: critical values and p-values for population stability testing"
+authors:
+  - family-names: Khobotov
+    given-names: Nikolai
+    orcid: "https://orcid.org/0009-0005-3612-830X"
+    email: nicholaask@gmail.com
+version: 0.1.0
+doi: 10.5281/zenodo.22342344
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22342343
+    description: "Concept DOI for all versions; resolves to the latest."
+date-released: 2026-09-05
+url: "https://github.com/primaryaesthetics/psi-inference"
+repository-code: "https://github.com/primaryaesthetics/psi-inference"
+license: MIT
+keywords:
+  - population stability index
+  - PSI
+  - population resemblance statistic
+  - PRS
+  - credit risk
+  - model monitoring
+  - model validation
+abstract: >-
+  Critical values and p-values for population stability testing in credit
+  risk monitoring, in pure numpy and scipy. Implements the Yurdakul-Naranjo
+  null distribution of the population stability index, the Population
+  Resemblance Statistic of Potgieter, Van Zyl, Schutte and Lombard, and the
+  effect-size and overlapping tests of Du Pisanie, Allison, Budde and
+  Visagie. Every formula is pinned by a test to a worked example in its
+  source paper, and a Monte Carlo gate checks the analytic critical values
+  against the simulated null.

@@ -1,0 +1,288 @@
+{
+  "slug": "lc-grid-e-tabpfn-m4pro",
+  "recorded_utc": "2026-09-11T13:39:33+00:00",
+  "git_sha": "3e0f6e7e81e1059aa10bd5e6c458ff3664f31a80",
+  "git_dirty": false,
+  "written_by_hand": "The archive-level record of the TabPFN grid run on the Apple node: the node's whole console log, the job list the runner walked and its tally, copied unchanged from the result archive, and the facts that belong to the archive rather than to one job. The eighteen job directories listed under jobs hold the rows and a manifest each.",
+  "host": "Apple M4 Pro laptop, 24 GB unified memory, macOS 26.6.2, Python 3.12.14; the machine of experiments/2026-09-04-m4pro-tabpfn-timing and experiments/2026-09-06-lc-2015h1e-tabpfn-m4pro",
+  "gpu": "Apple Silicon GPU (arm64), Metal via torch 2.14.0 MPS, memory shared with the system",
+  "job_archive": {
+    "path": "data/derived/node/outoftime-run-grid-e-tabpfn.tar.gz",
+    "sha256": "2063d24f877fb36ef964cb2cef6c9d0c332b9753d1998dfe8289918097578218",
+    "score_context_py_sha256": "66e8933d67fea5f8140f31f5229a305a15d3f1eb20e0fd67e15546037ff9f0dc",
+    "node_jobs_py_sha256": "5a90301234742a50e2da2ee09078fbfeb10b710a23ae621799cbf833fc2d4065",
+    "provenance": "Both copies equal the files in scripts/ at 3e0f6e7; score_context.py unchanged since fd5eadf, node_jobs.py since d174cf5; both equal the copies in the TabICL grid's job archive."
+  },
+  "result_archive": {
+    "name": "outoftime-result-grid-e-tabpfn.tar.gz",
+    "sha256": "7757fcbe330945f7524f405e75a76862a1c5cf1309075a7b7c1f528246f32295",
+    "contents": "eighteen output directories, score.log, jobs.json, jobs-done.json; 705 files, 369,698,619 bytes uncompressed; kept in Downloads and under data/derived/node/ with a .sha256 sidecar"
+  },
+  "process": {
+    "one_process": "node_jobs.py walked jobs.json in order in one call of run.sh, one score_context.py call per job into its own output directory, tallying each finished job in jobs-done.json; the tally's eighteen finish times are in the order of the job list, the first at 2026-09-07T03:52:56Z and the last at 2026-09-09T23:06:33Z, and no job was skipped or resumed.",
+    "console_log": "score.log is the file run-score.sh appends the scorer's console to on the node. Its first ten lines (through the line 'wall : 1744s') are the falsifying run of 2026-09-06 on the same machine, experiments/2026-09-06-lc-2015h1e-tabpfn-m4pro, which wrote to the same file; the eighteen blocks that follow are the grid's jobs in order and are the slices copied into the job directories. The runner's own lines (job headers, the tally) go to the terminal and not to this file. Read in full: no home path, no account name, no token; the checkpoint was on the machine and nothing was downloaded.",
+    "incidents": [
+      "Job 5 (tabpfn@2026-09-06-lc-2014h1e-bundle): the machine ran with its lid closed on an external display for part of the job; 23 cohort cells and one reference cell, from 2015Q4 of seed 20260912 through 2017Q3 of seed 20260913, took 459 to 1,321 s against 314 to 322 s undisturbed, and the wall exceeds the cells by 6,248 s. The repeat checks of the job read 0.0 on every seed, and its rows at 0.9 pair with the rows at 1.0 of job 6, which ran undisturbed cell by cell.",
+      "Job 6 (tabpfn-t1@2026-09-06-lc-2014h1e-bundle): the machine slept during the job; every cell is at the undisturbed rate (longest 371 s, 2018Q1 of seed 20260911) and the wall exceeds the cells by 8,654 s, of which the three repeat cells explain about 950 s.",
+      "Job 14 (tabpfn-t1@2026-09-06-lc-2016h1e-bundle): the machine slept during the job as it had in job 6, its charger having been taken again; one cohort cell of 435 s (2016Q4 of seed 20260912) and a wall 3,824 s above the cells, about 2,900 s beyond the repeats, between 12:57 and 16:19 UTC on 2026-09-09 by the tally. The process did not restart: the tally has one entry per job and the log is continuous.",
+      "Two commands typed into the busy terminal during the run were queued by the shell and ran after run.sh exited: a second 'bash run.sh', which would re-walk the list, skip all eighteen finished jobs and pack the same directories again, and a line that is not a command. The result archive holds the eighteen directories, the tally and the log, and which of the two packings produced the file downloaded is not knowable from its contents and does not matter to them; score.log ends at the eighteenth job's totals, so no scorer ran after it."
+    ],
+    "timing": "The tally sums to 262,198 s, 72.8 h of wall over three days, and none of it is a measurement: the machine was in other use, and the three jobs above carry the lid and the sleep. Undisturbed, the reference cell of 50,000 rows took 432 to 461 s and a cohort cell of 20,000 rows 309 to 342 s, which is the rate experiments/2026-09-04-m4pro-tabpfn-timing measured on an idle machine (319.5 s per 20,000 rows); the 1.0 pass runs at the same rate as the 0.9 pass."
+  },
+  "checks_over_all_eighteen": {
+    "bundle_hashes": "node.json's bundle hashes equal bundle.json of the build's bundle directory, all eighteen",
+    "parts": "part files equal node.json cell records in number (60, 54, 48, 42, 36, 30, 24, 18, 12 for each of the two passes on the nine builds); concatenated parts equal scores.parquet and reference.parquet, all eighteen",
+    "rows": "every scored (cohort, row), its outcome and age match the gbm rows of the build's score run; every reference row and outcome match the gbm-50k reference of the same context seed; zero mismatches, no missing probability; the cohorts scored are the build's test cohorts; all eighteen",
+    "parameters": "softmax_temperature 0.9 on the nine tabpfn jobs and 1.0 on the nine tabpfn-t1 jobs, balance_probabilities false, categorical_features_indices [6, 13, 19], ignore_pretraining_limits true, n_estimators auto, random_state 0, 50,000 context rows, on every model of every node.json",
+    "repeats": "the first cohort of every context seed scored twice from a fresh fit: largest disagreement 0.0, no row differs, all 54 repeats",
+    "against_earlier_runs": {
+      "same_device": "2015H1-E at 0.9, seed 20260911, the three cohorts and the reference of experiments/2026-09-06-lc-2015h1e-tabpfn-m4pro, scored on this machine on 2026-09-06 as one job: 60,000 scored and 50,000 reference rows equal to the last bit, no row differs. TabPFN on the Apple GPU is deterministic across runs and days.",
+      "other_device_at_0.9": "2015H1-E at 0.9, seeds 20260912 and 20260913, against experiments/2026-09-06-lc-2015h1e-draws-colab-t4 (Tesla T4, torch 2.11.0+cu128, --chunk 20000): every one of 120,000 scored rows differs, mean absolute gap on the probability 1.08e-04, largest 2.38e-03; on the 100,000 reference rows mean 1.43e-04, largest 0.053.",
+      "other_device_at_1.0": "2015H1-E at 1.0, seed 20260911, against experiments/2026-09-06-lc-2015h1e-probe3-colab-t4 (Tesla T4): 59,999 of 60,000 scored rows differ, mean absolute gap 1.57e-04, largest 2.98e-03; reference rows mean 2.06e-04, largest 0.037.",
+      "reading": "The device term the eighth audit named is now measured on identical rows: a probability moves by about a ten-thousandth on average between the Apple GPU and the T4, and by up to a few hundredths on single rows. Both temperatures of TabPFN in the grid come from the one device, so no paired difference between them in the per-build poolings carries it.",
+      "temperature_relation": "On 2015H1-E, logit(pd at 1.0) against 0.9 x logit(pd at 0.9) over 660,000 scored rows: mean absolute gap 7.68e-04 logit, largest 0.060. The rescale is approximate for TabPFN, as the probe found; the same-device gap here is a tenth of the cross-device figure of the probe, and TabPFN's 1.0 rows in the grid are scored, not derived."
+    },
+    "environment": "Python 3.12.14, macOS 26.6.2 arm64, torch 2.14.0 on mps, tabpfn 8.5.0, checkpoint d0d865d5...3988, tabicl 2.1.1 present and unused, peak 3.62 to 3.63 GB of unified memory in every job, the same in every node.json"
+  },
+  "timing_per_job": {
+    "2013h1e": {
+      "wall_seconds": 20180.0,
+      "cohort_cell_median": 314.5,
+      "cohort_cell_max": 315.5,
+      "cohort_cells_over_400_s": 0,
+      "wall_minus_cells_minus_fits": 951.0
+    },
+    "2013h1e-t1": {
+      "wall_seconds": 20675.1,
+      "cohort_cell_median": 322.1,
+      "cohort_cell_max": 330.0,
+      "cohort_cells_over_400_s": 0,
+      "wall_minus_cells_minus_fits": 976.6
+    },
+    "2013h2e": {
+      "wall_seconds": 18896.0,
+      "cohort_cell_median": 323.8,
+      "cohort_cell_max": 341.5,
+      "cohort_cells_over_400_s": 0,
+      "wall_minus_cells_minus_fits": 966.3
+    },
+    "2013h2e-t1": {
+      "wall_seconds": 18579.7,
+      "cohort_cell_median": 320.2,
+      "cohort_cell_max": 323.2,
+      "cohort_cells_over_400_s": 0,
+      "wall_minus_cells_minus_fits": 955.5
+    },
+    "2014h1e": {
+      "wall_seconds": 36248.1,
+      "cohort_cell_median": 458.8,
+      "cohort_cell_max": 1019.0,
+      "cohort_cells_over_400_s": 23,
+      "wall_minus_cells_minus_fits": 6248.4
+    },
+    "2014h1e-t1": {
+      "wall_seconds": 24231.5,
+      "cohort_cell_median": 315.9,
+      "cohort_cell_max": 371.1,
+      "cohort_cells_over_400_s": 0,
+      "wall_minus_cells_minus_fits": 8654.0
+    },
+    "2014h2e": {
+      "wall_seconds": 14590.7,
+      "cohort_cell_median": 315.6,
+      "cohort_cell_max": 318.9,
+      "cohort_cells_over_400_s": 0,
+      "wall_minus_cells_minus_fits": 951.8
+    },
+    "2014h2e-t1": {
+      "wall_seconds": 14716.5,
+      "cohort_cell_median": 318.6,
+      "cohort_cell_max": 325.9,
+      "cohort_cells_over_400_s": 0,
+      "wall_minus_cells_minus_fits": 957.7
+    },
+    "2015h1e": {
+      "wall_seconds": 12914.1,
+      "cohort_cell_median": 323.2,
+      "cohort_cell_max": 327.2,
+      "cohort_cells_over_400_s": 0,
+      "wall_minus_cells_minus_fits": 972.0
+    },
+    "2015h1e-t1": {
+      "wall_seconds": 12923.9,
+      "cohort_cell_median": 323.1,
+      "cohort_cell_max": 327.2,
+      "cohort_cells_over_400_s": 0,
+      "wall_minus_cells_minus_fits": 963.7
+    },
+    "2015h2e": {
+      "wall_seconds": 11079.6,
+      "cohort_cell_median": 325.0,
+      "cohort_cell_max": 335.0,
+      "cohort_cells_over_400_s": 0,
+      "wall_minus_cells_minus_fits": 980.6
+    },
+    "2015h2e-t1": {
+      "wall_seconds": 11300.6,
+      "cohort_cell_median": 331.4,
+      "cohort_cell_max": 334.2,
+      "cohort_cells_over_400_s": 0,
+      "wall_minus_cells_minus_fits": 997.8
+    },
+    "2016h1e": {
+      "wall_seconds": 9293.9,
+      "cohort_cell_median": 329.8,
+      "cohort_cell_max": 332.5,
+      "cohort_cells_over_400_s": 0,
+      "wall_minus_cells_minus_fits": 993.8
+    },
+    "2016h1e-t1": {
+      "wall_seconds": 12108.2,
+      "cohort_cell_median": 324.5,
+      "cohort_cell_max": 434.8,
+      "cohort_cells_over_400_s": 1,
+      "wall_minus_cells_minus_fits": 3824.0
+    },
+    "2016h2e": {
+      "wall_seconds": 7086.3,
+      "cohort_cell_median": 318.3,
+      "cohort_cell_max": 323.7,
+      "cohort_cells_over_400_s": 0,
+      "wall_minus_cells_minus_fits": 971.0
+    },
+    "2016h2e-t1": {
+      "wall_seconds": 7069.9,
+      "cohort_cell_median": 318.5,
+      "cohort_cell_max": 321.9,
+      "cohort_cells_over_400_s": 0,
+      "wall_minus_cells_minus_fits": 952.7
+    },
+    "2017h1e": {
+      "wall_seconds": 5145.4,
+      "cohort_cell_median": 318.1,
+      "cohort_cell_max": 318.4,
+      "cohort_cells_over_400_s": 0,
+      "wall_minus_cells_minus_fits": 958.0
+    },
+    "2017h1e-t1": {
+      "wall_seconds": 5149.6,
+      "cohort_cell_median": 318.3,
+      "cohort_cell_max": 318.7,
+      "cohort_cells_over_400_s": 0,
+      "wall_minus_cells_minus_fits": 957.9
+    }
+  },
+  "context_row_ratio_mean_pd_over_realised_rate": {
+    "2013h1e": {
+      "20260911": 0.698,
+      "20260912": 0.699,
+      "20260913": 0.699
+    },
+    "2013h1e-t1": {
+      "20260911": 0.986,
+      "20260912": 0.988,
+      "20260913": 0.987
+    },
+    "2013h2e": {
+      "20260911": 0.688,
+      "20260912": 0.684,
+      "20260913": 0.696
+    },
+    "2013h2e-t1": {
+      "20260911": 0.986,
+      "20260912": 0.981,
+      "20260913": 0.994
+    },
+    "2014h1e": {
+      "20260911": 0.685,
+      "20260912": 0.689,
+      "20260913": 0.692
+    },
+    "2014h1e-t1": {
+      "20260911": 0.988,
+      "20260912": 0.987,
+      "20260913": 0.991
+    },
+    "2014h2e": {
+      "20260911": 0.681,
+      "20260912": 0.689,
+      "20260913": 0.687
+    },
+    "2014h2e-t1": {
+      "20260911": 0.988,
+      "20260912": 0.995,
+      "20260913": 0.993
+    },
+    "2015h1e": {
+      "20260911": 0.685,
+      "20260912": 0.702,
+      "20260913": 0.695
+    },
+    "2015h1e-t1": {
+      "20260911": 0.997,
+      "20260912": 1.012,
+      "20260913": 1.009
+    },
+    "2015h2e": {
+      "20260911": 0.696,
+      "20260912": 0.702,
+      "20260913": 0.708
+    },
+    "2015h2e-t1": {
+      "20260911": 1.005,
+      "20260912": 1.013,
+      "20260913": 1.013
+    },
+    "2016h1e": {
+      "20260911": 0.687,
+      "20260912": 0.704,
+      "20260913": 0.7
+    },
+    "2016h1e-t1": {
+      "20260911": 0.992,
+      "20260912": 1.004,
+      "20260913": 1.006
+    },
+    "2016h2e": {
+      "20260911": 0.698,
+      "20260912": 0.701,
+      "20260913": 0.701
+    },
+    "2016h2e-t1": {
+      "20260911": 0.995,
+      "20260912": 0.998,
+      "20260913": 0.996
+    },
+    "2017h1e": {
+      "20260911": 0.706,
+      "20260912": 0.7,
+      "20260913": 0.712
+    },
+    "2017h1e-t1": {
+      "20260911": 1.002,
+      "20260912": 0.998,
+      "20260913": 1.003
+    }
+  },
+  "jobs": {
+    "tabpfn@2026-09-06-lc-2013h1e-bundle": "experiments/2026-09-11-lc-2013h1e-tabpfn-m4pro",
+    "tabpfn-t1@2026-09-06-lc-2013h1e-bundle": "experiments/2026-09-11-lc-2013h1e-tabpfn-t1-m4pro",
+    "tabpfn@2026-09-06-lc-2013h2e-bundle": "experiments/2026-09-11-lc-2013h2e-tabpfn-m4pro",
+    "tabpfn-t1@2026-09-06-lc-2013h2e-bundle": "experiments/2026-09-11-lc-2013h2e-tabpfn-t1-m4pro",
+    "tabpfn@2026-09-06-lc-2014h1e-bundle": "experiments/2026-09-11-lc-2014h1e-tabpfn-m4pro",
+    "tabpfn-t1@2026-09-06-lc-2014h1e-bundle": "experiments/2026-09-11-lc-2014h1e-tabpfn-t1-m4pro",
+    "tabpfn@2026-09-06-lc-2014h2e-bundle": "experiments/2026-09-11-lc-2014h2e-tabpfn-m4pro",
+    "tabpfn-t1@2026-09-06-lc-2014h2e-bundle": "experiments/2026-09-11-lc-2014h2e-tabpfn-t1-m4pro",
+    "tabpfn@2026-09-05-lc-2015h1e-bundle": "experiments/2026-09-11-lc-2015h1e-tabpfn-m4pro",
+    "tabpfn-t1@2026-09-05-lc-2015h1e-bundle": "experiments/2026-09-11-lc-2015h1e-tabpfn-t1-m4pro",
+    "tabpfn@2026-09-06-lc-2015h2e-bundle": "experiments/2026-09-11-lc-2015h2e-tabpfn-m4pro",
+    "tabpfn-t1@2026-09-06-lc-2015h2e-bundle": "experiments/2026-09-11-lc-2015h2e-tabpfn-t1-m4pro",
+    "tabpfn@2026-09-06-lc-2016h1e-bundle": "experiments/2026-09-11-lc-2016h1e-tabpfn-m4pro",
+    "tabpfn-t1@2026-09-06-lc-2016h1e-bundle": "experiments/2026-09-11-lc-2016h1e-tabpfn-t1-m4pro",
+    "tabpfn@2026-09-06-lc-2016h2e-bundle": "experiments/2026-09-11-lc-2016h2e-tabpfn-m4pro",
+    "tabpfn-t1@2026-09-06-lc-2016h2e-bundle": "experiments/2026-09-11-lc-2016h2e-tabpfn-t1-m4pro",
+    "tabpfn@2026-09-06-lc-2017h1e-bundle": "experiments/2026-09-11-lc-2017h1e-tabpfn-m4pro",
+    "tabpfn-t1@2026-09-06-lc-2017h1e-bundle": "experiments/2026-09-11-lc-2017h1e-tabpfn-t1-m4pro"
+  },
+  "not_in_this_run": "TabICL, scored on the hosted notebook (experiments/2026-09-08-lc-grid-e-tabicl-colab-t4 and the eighteen directories it indexes). The per-build poolings with these directories added, and the arm-level pooling H1 to H3 are written against."
+}

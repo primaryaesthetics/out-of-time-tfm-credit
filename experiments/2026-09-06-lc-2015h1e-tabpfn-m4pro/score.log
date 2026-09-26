@@ -1,0 +1,10 @@
+tabpfn/20260911: context 50,000 rows read in 32.9s
+  reference   50,000 rows    434.0s  mean pd 0.0154
+  2015Q3      20,000 rows    313.6s  mean pd 0.0146
+  2015Q4      20,000 rows    318.0s  mean pd 0.0140
+  2016Q1      20,000 rows    320.3s  mean pd 0.0142
+  repeat 2015Q3: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 60,000
+reference rows        : 50,000
+wall                  : 1744s

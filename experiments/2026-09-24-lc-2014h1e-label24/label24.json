@@ -1,0 +1,255 @@
+{
+  "build_id": "2014H1-E",
+  "column": "outcome_24",
+  "cells_kept": 11,
+  "cells_dropped": 4,
+  "cohorts_kept": [
+    "2014Q3",
+    "2014Q4",
+    "2015Q1",
+    "2015Q2",
+    "2015Q3",
+    "2015Q4",
+    "2016Q1",
+    "2016Q2",
+    "2016Q3",
+    "2016Q4",
+    "2017Q1"
+  ],
+  "cohorts_dropped": [
+    "2017Q2",
+    "2017Q3",
+    "2017Q4",
+    "2018Q1"
+  ],
+  "rows_kept": 220000,
+  "rows_dropped": 80000,
+  "open_window_rows": 80000,
+  "cohorts": {
+    "2014Q3": {
+      "rows": 20000,
+      "open_window_rows": 0,
+      "enters": true,
+      "rows_dropped": 0,
+      "defaults_12": 453,
+      "defaults_24": 1830
+    },
+    "2014Q4": {
+      "rows": 20000,
+      "open_window_rows": 0,
+      "enters": true,
+      "rows_dropped": 0,
+      "defaults_12": 472,
+      "defaults_24": 1932
+    },
+    "2015Q1": {
+      "rows": 20000,
+      "open_window_rows": 0,
+      "enters": true,
+      "rows_dropped": 0,
+      "defaults_12": 579,
+      "defaults_24": 2137
+    },
+    "2015Q2": {
+      "rows": 20000,
+      "open_window_rows": 0,
+      "enters": true,
+      "rows_dropped": 0,
+      "defaults_12": 571,
+      "defaults_24": 2184
+    },
+    "2015Q3": {
+      "rows": 20000,
+      "open_window_rows": 0,
+      "enters": true,
+      "rows_dropped": 0,
+      "defaults_12": 541,
+      "defaults_24": 2208
+    },
+    "2015Q4": {
+      "rows": 20000,
+      "open_window_rows": 0,
+      "enters": true,
+      "rows_dropped": 0,
+      "defaults_12": 551,
+      "defaults_24": 2168
+    },
+    "2016Q1": {
+      "rows": 20000,
+      "open_window_rows": 0,
+      "enters": true,
+      "rows_dropped": 0,
+      "defaults_12": 655,
+      "defaults_24": 2266
+    },
+    "2016Q2": {
+      "rows": 20000,
+      "open_window_rows": 0,
+      "enters": true,
+      "rows_dropped": 0,
+      "defaults_12": 686,
+      "defaults_24": 2293
+    },
+    "2016Q3": {
+      "rows": 20000,
+      "open_window_rows": 0,
+      "enters": true,
+      "rows_dropped": 0,
+      "defaults_12": 650,
+      "defaults_24": 2322
+    },
+    "2016Q4": {
+      "rows": 20000,
+      "open_window_rows": 0,
+      "enters": true,
+      "rows_dropped": 0,
+      "defaults_12": 626,
+      "defaults_24": 2107
+    },
+    "2017Q1": {
+      "rows": 20000,
+      "open_window_rows": 0,
+      "enters": true,
+      "rows_dropped": 0,
+      "defaults_12": 629,
+      "defaults_24": 2030
+    },
+    "2017Q2": {
+      "rows": 20000,
+      "open_window_rows": 20000,
+      "enters": false,
+      "rows_dropped": 20000,
+      "defaults_12": 681,
+      "defaults_24": null
+    },
+    "2017Q3": {
+      "rows": 20000,
+      "open_window_rows": 20000,
+      "enters": false,
+      "rows_dropped": 20000,
+      "defaults_12": 584,
+      "defaults_24": null
+    },
+    "2017Q4": {
+      "rows": 20000,
+      "open_window_rows": 20000,
+      "enters": false,
+      "rows_dropped": 20000,
+      "defaults_12": 623,
+      "defaults_24": null
+    },
+    "2018Q1": {
+      "rows": 20000,
+      "open_window_rows": 20000,
+      "enters": false,
+      "rows_dropped": 20000,
+      "defaults_12": 638,
+      "defaults_24": null
+    }
+  },
+  "sources": [
+    "experiments/2026-09-06-lc-2014h1e-scores",
+    "experiments/2026-09-08-lc-2014h1e-tabicl-colab-t4",
+    "experiments/2026-09-08-lc-2014h1e-tabicl-t1-derived",
+    "experiments/2026-09-11-lc-2014h1e-tabpfn-m4pro",
+    "experiments/2026-09-11-lc-2014h1e-tabpfn-t1-m4pro"
+  ],
+  "copies": [
+    "experiments/2026-09-24-lc-2014h1e-label24/2026-09-06-lc-2014h1e-scores",
+    "experiments/2026-09-24-lc-2014h1e-label24/2026-09-08-lc-2014h1e-tabicl-colab-t4",
+    "experiments/2026-09-24-lc-2014h1e-label24/2026-09-08-lc-2014h1e-tabicl-t1-derived",
+    "experiments/2026-09-24-lc-2014h1e-label24/2026-09-11-lc-2014h1e-tabpfn-m4pro",
+    "experiments/2026-09-24-lc-2014h1e-label24/2026-09-11-lc-2014h1e-tabpfn-t1-m4pro"
+  ],
+  "rule": "a scored row whose window is open at the snapshot has no label and is dropped, never written as a non-default; a cohort with any such row leaves whole and every row of it is counted under rows_dropped",
+  "label": {
+    "12": {
+      "definition": {
+        "window_months": 12,
+        "snapshot": "2019-03-01",
+        "charge_off_lag_months": 5,
+        "last_labelable_origination": "2018-03-01",
+        "bad_statuses": [
+          "Charged Off",
+          "Default",
+          "Does not meet the credit policy. Status:Charged Off"
+        ],
+        "good_statuses": [
+          "Does not meet the credit policy. Status:Fully Paid",
+          "Fully Paid"
+        ]
+      },
+      "labelled": 1873290,
+      "defaults": 54305,
+      "default_rate": 0.028989,
+      "dropped_immature": 387378,
+      "still_running_at_snapshot": 558979,
+      "unrecognised": 0,
+      "notes": [
+        "387378 loans originated after 2018-03-01 were dropped as immature, not labelled non-default",
+        "558979 loans were still running at the snapshot and are labelled non-default: this definition turns on charge-off, not on days past due, and those are the rows where the two differ",
+        "1937 bad loans had no last payment and were dated at origination plus 5 months",
+        "0 labelled loans stopped paying early enough to be in-window defaults and had not been charged off at the snapshot; they are labelled non-default and each is a default the window misses"
+      ]
+    },
+    "24": {
+      "definition": {
+        "window_months": 24,
+        "snapshot": "2019-03-01",
+        "charge_off_lag_months": 5,
+        "last_labelable_origination": "2017-03-01",
+        "bad_statuses": [
+          "Charged Off",
+          "Default",
+          "Does not meet the credit policy. Status:Charged Off"
+        ],
+        "good_statuses": [
+          "Does not meet the credit policy. Status:Fully Paid",
+          "Fully Paid"
+        ]
+      },
+      "labelled": 1418626,
+      "defaults": 145759,
+      "default_rate": 0.102747,
+      "dropped_immature": 842042,
+      "still_running_at_snapshot": 249292,
+      "unrecognised": 1,
+      "notes": [
+        "842042 loans originated after 2017-03-01 were dropped as immature, not labelled non-default",
+        "249292 loans were still running at the snapshot and are labelled non-default: this definition turns on charge-off, not on days past due, and those are the rows where the two differ",
+        "1297 bad loans had no last payment and were dated at origination plus 5 months",
+        "1 labelled loans stopped paying early enough to be in-window defaults and had not been charged off at the snapshot; they are labelled non-default and each is a default the window misses"
+      ]
+    }
+  },
+  "inputs": {
+    "experiments/2026-09-06-lc-2014h1e-scores/build.json": "b35376519f5fa5d882595aa5f2a975709033e5d85cb6245c95e25b49d292c011",
+    "experiments/2026-09-06-lc-2014h1e-scores/cohorts.csv": "a1e18b33870852c70f2fa41142333f73bc79148dd7ddcb3ce4cc0cc878387a2a",
+    "experiments/2026-09-06-lc-2014h1e-scores/manifest.json": "b205e75c586d608d3c866d1f757d397d9c558ac67d35077b11c54b1005e085d5",
+    "experiments/2026-09-06-lc-2014h1e-scores/reference.parquet": "040c294a3dff7a7ca2e53442471706389f772c4c53713a5f01e3f2d85af3c573",
+    "experiments/2026-09-06-lc-2014h1e-scores/scores.parquet": "dbfc8268b4f9f4e9e6b6549c625d548a03c66fc8bdb2f261a9a62c3c9bfcd726",
+    "experiments/2026-09-06-lc-2014h1e-scores/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "experiments/2026-09-06-lc-2014h1e-scores/stdout.txt": "0c6bef2b78eed708327033b5d5c84b0d583f3ff6667cd9cd643f088d56519717",
+    "experiments/2026-09-08-lc-2014h1e-tabicl-colab-t4/manifest.json": "da2bbf2fc8a57e8c12fc15cc9bbb2f68a674e7c6df47e928d469c06cc048d7f4",
+    "experiments/2026-09-08-lc-2014h1e-tabicl-colab-t4/node.json": "23e369711de338aa8c0a577afb533f7550dd1037460fa9f1680be94beea7dd79",
+    "experiments/2026-09-08-lc-2014h1e-tabicl-colab-t4/reference.parquet": "6e0c495528e5e7dffc661b53bb8c8ded882b9bebe088e78f232505b58b57f06a",
+    "experiments/2026-09-08-lc-2014h1e-tabicl-colab-t4/score.log": "8766ab0d7d8258d79858036655a73ff5953e72d546362e00319889fce790f31e",
+    "experiments/2026-09-08-lc-2014h1e-tabicl-colab-t4/scores.parquet": "c912e7426cdecdfcb00d41a7547d29d6894dc962c49aa94ac93f2a5c4604c28c",
+    "experiments/2026-09-08-lc-2014h1e-tabicl-t1-derived/derive.json": "bdb56429760e95f3b6ff17977229ca84809c2ab2b57c40ece24bf77699e09203",
+    "experiments/2026-09-08-lc-2014h1e-tabicl-t1-derived/manifest.json": "02cfc7290c078c32c962f86013f8f16b5ac778b1731b1fe59b62eeaf4c1af9c4",
+    "experiments/2026-09-08-lc-2014h1e-tabicl-t1-derived/reference.parquet": "400796e7bed50d186331555232d0b2aa7c7a93724ce499d0742aa6e88e2bdeea",
+    "experiments/2026-09-08-lc-2014h1e-tabicl-t1-derived/scores.parquet": "f95cda0fe8e667ba06230dba26e298df1fde98455f60a27e13028bf9cc06e74e",
+    "experiments/2026-09-08-lc-2014h1e-tabicl-t1-derived/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "experiments/2026-09-08-lc-2014h1e-tabicl-t1-derived/stdout.txt": "894d3b681dee54caf92c7a457e1a8cae39cfae9b61a3ddbea5310a2d2c3cc69f",
+    "experiments/2026-09-11-lc-2014h1e-tabpfn-m4pro/manifest.json": "dfc5526be3335c226fc8c60b7cb3d75dc42404b00a51e2b3ee88a4ef518f0266",
+    "experiments/2026-09-11-lc-2014h1e-tabpfn-m4pro/node.json": "dbadef4d0c5e0c0d1e668ab6ac3247b0916eb9c98b198dcafa43e59bf8d6af80",
+    "experiments/2026-09-11-lc-2014h1e-tabpfn-m4pro/reference.parquet": "20e5f63028703855f8c603645cd42d13b72cfd267bd25aacc9a0ea137dc0e232",
+    "experiments/2026-09-11-lc-2014h1e-tabpfn-m4pro/score.log": "c4097fc654646f8c62824c764d02929f3a639ba1daa6c98aa80643f09cda2ade",
+    "experiments/2026-09-11-lc-2014h1e-tabpfn-m4pro/scores.parquet": "699fbfe48fd8e807ecbdc01e333658c62e0de17c312c9d4aa4d5286424cf59f4",
+    "experiments/2026-09-11-lc-2014h1e-tabpfn-t1-m4pro/manifest.json": "61d75cd5c8b37df5598ae3ada67e54463ce395cba89f097402823d08f6f02f77",
+    "experiments/2026-09-11-lc-2014h1e-tabpfn-t1-m4pro/node.json": "fbc61b13fc8793306c7524fc1915b49ce92e51166c6a756b15fedf8dffaefb6b",
+    "experiments/2026-09-11-lc-2014h1e-tabpfn-t1-m4pro/reference.parquet": "aa399cb9c773e5d18e587c50d6bc3a18d79d03362af7f2bd8eb1d10906403607",
+    "experiments/2026-09-11-lc-2014h1e-tabpfn-t1-m4pro/score.log": "7a7417ce28328ccfe19eca5c5687d2b924310664cca5f4f5d4db87ca97b69ebe",
+    "experiments/2026-09-11-lc-2014h1e-tabpfn-t1-m4pro/scores.parquet": "9dc66a0afd93e7c790dcfaac919d8ea1899a599fa2afb4cbfc6bc0062bed6d52"
+  }
+}

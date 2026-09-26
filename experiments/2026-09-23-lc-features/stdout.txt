@@ -1,0 +1,24 @@
+rows                  : 2,260,668 (1,862,841 in 2010Q2..2018Q1)
+knowable columns      : 107
+kept                  : 20: annual_inc, credit_history_months, delinq_2yrs, dti, emp_length, fico_range_low, home_ownership, inq_last_6mths, loan_amnt, mths_since_last_delinq, open_acc, pub_rec, pub_rec_bankruptcies, purpose, revol_bal, revol_util, sub_grade, term, total_acc, verification_status
+dropped, a priori     : 4
+dropped, redundancy   : 6
+dropped, coverage     : 68
+dropped, values       : 9
+coverage onset 2012Q2 : 10
+coverage onset 2012Q3 : 2
+coverage onset 2012Q4 : 25
+coverage onset 2013Q2 : 1
+coverage onset 2016Q1 : 14
+coverage onset 2017Q3 : 16
+value acc_now_delinq              : onset 2012Q4, share 0.004712: zero on every loan before 2012Q4
+value addr_state                  : onset 2010Q4, share 0.082512: states entered after the first cohort hold 8% of the book
+value application_type            : onset 2015Q4, share 0.036533: one level before the joint applications of 2015Q4
+value chargeoff_within_12_mths    : onset 2012Q4, share 0.007933: zero on every loan before 2012Q4
+value collections_12_mths_ex_med  : onset 2012Q4, share 0.016673: zero on every loan before 2012Q4
+value delinq_amnt                 : onset 2012Q4, share 0.003806: zero on every loan before 2012Q4
+value disbursement_method         : onset 2016Q1, share 0.007523: one level before 2016Q1
+value initial_list_status         : onset 2012Q4, share 0.642525: one level before the whole-loan programme of 2012Q4
+value tax_liens                   : onset 2012Q4, share 0.034304: zero on every loan before 2012Q4
+cap dti                           : 0 .. 24.99, pins 0.232135
+cap loan_amnt                     : 1000 .. 25000, pins 0.130934

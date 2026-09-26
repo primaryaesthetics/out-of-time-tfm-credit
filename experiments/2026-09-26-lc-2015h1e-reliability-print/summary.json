@@ -1,0 +1,25 @@
+{
+  "figure": "reliability-protocols.png",
+  "source": "experiments/2026-09-23-lc-2015h1e-protocols5-tfm",
+  "panels": 7,
+  "curves": 21,
+  "youngest": "2015Q3",
+  "oldest": "2018Q1",
+  "fold": 1,
+  "bins_drawn": 210,
+  "models": [
+    "scorecard",
+    "gbm",
+    "gbm-50k",
+    "tabpfn",
+    "tabicl",
+    "tabicl@t1",
+    "tabpfn@t1"
+  ],
+  "check": {
+    "rows": "auc, brier, observed_over_expected in time on the test cell of fold 1 and their means over the cohorts out of time, first context draw, every model",
+    "values_checked": 42,
+    "largest_difference": 2.220446049250313e-16,
+    "tolerance": 1e-09
+  }
+}

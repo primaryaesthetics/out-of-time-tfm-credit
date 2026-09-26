@@ -1,0 +1,36 @@
+build                 : 2004H2-E
+ablation              : upb_nominal, adds ['upb'], removes ['upb_to_limit']
+primary sources       : experiments/2026-09-13-fm-2004h2e-scores, experiments/2026-09-14-fm-2004h2e-tabpfn-rental-4090, experiments/2026-09-14-fm-2004h2e-tabicl-rental-4090
+ablation sources      : experiments/2026-09-13-fm-2004h2e-scores-upb-nominal, experiments/2026-09-13-fm-2004h2e-upb-nominal-tabpfn-rental-4090, experiments/2026-09-13-fm-2004h2e-upb-nominal-tabicl-rental-4090, experiments/2026-09-14-fm-2004h2e-upb-nominal-tabpfn-draws-rental-4090, experiments/2026-09-14-fm-2004h2e-upb-nominal-tabicl-draws-rental-4090
+cells checked         : 33 cells, 787,545 rows on each matrix, identical rows and outcomes
+cohorts pooled        : 3 of 3 scored: 2005H1, 2005H2, 2006H1
+context seeds pooled  : 20260911, 20260912, 20260913
+bootstrap             : 200 resamples in 25s
+bootstrap seed 20260906: again in 25s
+bootstrap seed 20260907: again in 27s
+
+per model, primary and upb_nominal, and upb_nominal minus primary (value [lo, hi], * excludes zero, ? star changes with the bootstrap seed):
+  auc   scorecard   0.8060  0.8074  +0.0014 [+0.0001, +0.0026] * 
+  auc   gbm         0.7974  0.8036  +0.0062 [+0.0021, +0.0108] * 
+  auc   gbm-50k     0.7947  0.7982  +0.0035 [-0.0049, +0.0098]   
+  auc   tabpfn      0.8074  0.8076  +0.0002 [-0.0009, +0.0014]   
+  auc   tabicl      0.8045  0.8060  +0.0015 [-0.0002, +0.0038]   
+  brier scorecard   0.0125  0.0125  -0.0000 [-0.0000, +0.0000]   
+  brier gbm         0.0125  0.0125  -0.0000 [-0.0000, -0.0000] *?
+  brier gbm-50k     0.0125  0.0125  -0.0000 [-0.0001, +0.0000]   
+  brier tabpfn      0.0125  0.0125  +0.0000 [+0.0000, +0.0000] * 
+  brier tabicl      0.0125  0.0125  +0.0000 [+0.0000, +0.0000] * 
+
+the trigger: each model's difference minus gbm-50k's, on the same resample:
+  auc   scorecard   -0.0022 [-0.0086, +0.0065]   
+  auc   gbm         +0.0027 [-0.0039, +0.0107]   
+  auc   tabpfn      -0.0033 [-0.0098, +0.0048]   
+  auc   tabicl      -0.0020 [-0.0077, +0.0051]   
+  brier scorecard   +0.0000 [-0.0000, +0.0001]   
+  brier gbm         +0.0000 [-0.0000, +0.0001]   
+  brier tabpfn      +0.0001 [+0.0000, +0.0001] * 
+  brier tabicl      +0.0001 [+0.0000, +0.0001] * 
+
+bootstrap seed check over seeds 20260906, 20260907: 7 of 18 differences starred under seed 20260905, 1 change their star, largest movement of an interval bound 0.0007
+
+wall                  : 133s

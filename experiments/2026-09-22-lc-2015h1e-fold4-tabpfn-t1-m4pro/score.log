@@ -1,0 +1,19 @@
+tabpfn@t1/20260911: context 50,000 rows read in 1.1s
+  reference   50,000 rows    438.5s  mean pd 0.0234
+  fold4-test  20,000 rows    316.5s  mean pd 0.0232
+  fold4-validation  20,000 rows    316.9s  mean pd 0.0231
+  repeat fold4-test: largest disagreement 0.00e+00, 0 rows differ
+tabpfn@t1/20260912: context 50,000 rows read in 0.3s
+  reference   50,000 rows    439.2s  mean pd 0.0225
+  fold4-test  20,000 rows    317.0s  mean pd 0.0228
+  fold4-validation  20,000 rows    316.5s  mean pd 0.0227
+  repeat fold4-test: largest disagreement 0.00e+00, 0 rows differ
+tabpfn@t1/20260913: context 50,000 rows read in 0.3s
+  reference   50,000 rows    439.3s  mean pd 0.0234
+  fold4-test  20,000 rows    316.8s  mean pd 0.0235
+  fold4-validation  20,000 rows    316.9s  mean pd 0.0234
+  repeat fold4-test: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 120,000
+reference rows        : 150,000
+wall                  : 4171s

@@ -1,0 +1,154 @@
+build                 : 2004H2-E
+sources               : experiments/2026-09-13-fm-2004h2e-scores, experiments/2026-09-13-fm-2004h2e-tabpfn-rental-4090, experiments/2026-09-13-fm-2004h2e-tabpfn-t1-rental-4090, experiments/2026-09-13-fm-2004h2e-tabicl-rental-4090, experiments/2026-09-13-fm-2004h2e-tabicl-t1-rental-4090
+scored rows           : 4,941,995
+reference rows        : 702,184
+cells                 : 202
+cohorts pooled        : 3 of 38 scored, nearest 3: 2005H1, 2005H2, 2006H1
+  2006H2 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2007H1 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2007H2 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2008H1 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2008H2 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2009H1 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2009H2 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2010H1 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2010H2 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2011H1 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2011H2 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2012H1 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2012H2 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2013H1 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2013H2 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2014H1 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2014H2 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2015H1 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2015H2 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2016H1 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2016H2 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2017H1 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2017H2 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2018H1 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2018H2 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2019H1 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2019H2 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2020H1 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2020H2 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2021H1 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2021H2 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2022H1 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2022H2 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2023H1 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  2023H2 left out of the pooling: not scored by tabicl/20260911, tabicl@t1/20260911, tabpfn/20260911, tabpfn@t1/20260911
+  gbm-50k draws [20260912, 20260913] left out of the pooling: no other seeded model holds them
+models                : scorecard, gbm, gbm-50k (1 draw), tabpfn (1 draw), tabpfn@t1 (1 draw), tabicl (1 draw), tabicl@t1 (1 draw)
+nearest 3 is every pooled cohort; that pooling is not repeated
+bootstrap all                   : 200 resamples in 91s
+bootstrap all, cohorts resampled: 200 resamples in 92s
+bootstrap seed 20260906         : every pooling again in 183s
+bootstrap seed 20260907         : every pooling again in 186s
+
+paired differences over the 3 shared cohorts of 38 scored (value [lo, hi], * excludes zero, ! draws disagree, ? star changes with the bootstrap seed):
+  gini        gbm - scorecard        -0.0173 [-0.0300, -0.0038] *  
+  gini        gbm-50k - scorecard    -0.0273 [-0.0385, -0.0147] *  
+  gini        tabpfn - scorecard     +0.0022 [-0.0077, +0.0108]    
+  gini        tabicl - scorecard     -0.0011 [-0.0108, +0.0088]    
+  gini        tabicl@t1 - scorecard  -0.0011 [-0.0108, +0.0088]    
+  gini        tabpfn@t1 - scorecard  +0.0022 [-0.0077, +0.0108]    
+  gini        gbm-50k - gbm          -0.0100 [-0.0214, +0.0009]    
+  gini        tabpfn - gbm           +0.0195 [+0.0078, +0.0302] *  
+  gini        tabicl - gbm           +0.0162 [+0.0039, +0.0268] *  
+  gini        tabicl@t1 - gbm        +0.0162 [+0.0039, +0.0268] *  
+  gini        tabpfn@t1 - gbm        +0.0195 [+0.0078, +0.0302] *  
+  gini        tabpfn - gbm-50k       +0.0295 [+0.0177, +0.0416] *  
+  gini        tabicl - gbm-50k       +0.0262 [+0.0155, +0.0377] *  
+  gini        tabicl@t1 - gbm-50k    +0.0262 [+0.0155, +0.0377] *  
+  gini        tabpfn@t1 - gbm-50k    +0.0295 [+0.0177, +0.0416] *  
+  gini        tabicl - tabpfn        -0.0033 [-0.0065, +0.0006]    
+  gini        tabicl@t1 - tabpfn     -0.0033 [-0.0065, +0.0006]    
+  gini        tabpfn@t1 - tabpfn     +0.0000 [-0.0000, +0.0000]    
+  gini        tabicl@t1 - tabicl     +0.0000 [-0.0000, +0.0000]    
+  gini        tabpfn@t1 - tabicl     +0.0033 [-0.0006, +0.0065]    
+  gini        tabpfn@t1 - tabicl@t1  +0.0033 [-0.0006, +0.0065]    
+  abs_log_oe  gbm - scorecard        +0.0028 [-0.0188, +0.0351]    
+  abs_log_oe  gbm-50k - scorecard    -0.0015 [-0.0500, +0.0284]    
+  abs_log_oe  tabpfn - scorecard     +0.2007 [+0.1075, +0.2330] *  
+  abs_log_oe  tabicl - scorecard     +0.1795 [+0.0861, +0.2122] *  
+  abs_log_oe  tabicl@t1 - scorecard  +0.0250 [-0.0449, +0.0528]    
+  abs_log_oe  tabpfn@t1 - scorecard  +0.0210 [-0.0499, +0.0491]    
+  abs_log_oe  gbm-50k - gbm          -0.0043 [-0.0791, +0.0424]    
+  abs_log_oe  tabpfn - gbm           +0.1979 [+0.1106, +0.2045] *  
+  abs_log_oe  tabicl - gbm           +0.1767 [+0.0892, +0.1832] *  
+  abs_log_oe  tabicl@t1 - gbm        +0.0223 [-0.0641, +0.0699]    
+  abs_log_oe  tabpfn@t1 - gbm        +0.0183 [-0.0660, +0.0659]    
+  abs_log_oe  tabpfn - gbm-50k       +0.2022 [+0.0902, +0.2831] *  
+  abs_log_oe  tabicl - gbm-50k       +0.1810 [+0.0700, +0.2614] *  
+  abs_log_oe  tabicl@t1 - gbm-50k    +0.0266 [-0.0034, +0.0323]    
+  abs_log_oe  tabpfn@t1 - gbm-50k    +0.0226 [-0.0086, +0.0284]    
+  abs_log_oe  tabicl - tabpfn        -0.0212 [-0.0232, -0.0193] *  
+  abs_log_oe  tabicl@t1 - tabpfn     -0.1757 [-0.2635, -0.0630] *  
+  abs_log_oe  tabpfn@t1 - tabpfn     -0.1797 [-0.2692, -0.0688] *  
+  abs_log_oe  tabicl@t1 - tabicl     -0.1544 [-0.2413, -0.0428] *  
+  abs_log_oe  tabpfn@t1 - tabicl     -0.1584 [-0.2473, -0.0467] *  
+  abs_log_oe  tabpfn@t1 - tabicl@t1  -0.0040 [-0.0059, -0.0020] * ?
+  cox_slope_deviation gbm - scorecard        +0.0432 [+0.0213, +0.0654] *  
+  cox_slope_deviation gbm-50k - scorecard    +0.0286 [+0.0058, +0.0525] *  
+  cox_slope_deviation tabpfn - scorecard     +0.0140 [-0.0035, +0.0333]    
+  cox_slope_deviation tabicl - scorecard     +0.0228 [+0.0021, +0.0416] *  
+  cox_slope_deviation tabicl@t1 - scorecard  -0.0681 [-0.0857, -0.0333] *  
+  cox_slope_deviation tabpfn@t1 - scorecard  -0.0777 [-0.0931, -0.0254] *  
+  cox_slope_deviation gbm-50k - gbm          -0.0146 [-0.0354, +0.0068]    
+  cox_slope_deviation tabpfn - gbm           -0.0291 [-0.0509, -0.0065] *  
+  cox_slope_deviation tabicl - gbm           -0.0204 [-0.0431, +0.0008]    
+  cox_slope_deviation tabicl@t1 - gbm        -0.1113 [-0.1342, -0.0725] *  
+  cox_slope_deviation tabpfn@t1 - gbm        -0.1209 [-0.1396, -0.0685] *  
+  cox_slope_deviation tabpfn - gbm-50k       -0.0145 [-0.0422, +0.0114]    
+  cox_slope_deviation tabicl - gbm-50k       -0.0058 [-0.0307, +0.0177]    
+  cox_slope_deviation tabicl@t1 - gbm-50k    -0.0967 [-0.1234, -0.0592] *  
+  cox_slope_deviation tabpfn@t1 - gbm-50k    -0.1063 [-0.1292, -0.0515] *  
+  cox_slope_deviation tabicl - tabpfn        +0.0087 [+0.0014, +0.0159] * ?
+  cox_slope_deviation tabicl@t1 - tabpfn     -0.0822 [-0.0893, -0.0449] *  
+  cox_slope_deviation tabpfn@t1 - tabpfn     -0.0917 [-0.0948, -0.0382] *  
+  cox_slope_deviation tabicl@t1 - tabicl     -0.0909 [-0.0944, -0.0546] *  
+  cox_slope_deviation tabpfn@t1 - tabicl     -0.1005 [-0.1087, -0.0490] *  
+  cox_slope_deviation tabpfn@t1 - tabicl@t1  -0.0096 [-0.0163, +0.0092]    
+  psi         gbm - scorecard        -0.0003 [-0.0013, +0.0009]    
+  psi         gbm-50k - scorecard    +0.0028 [+0.0018, +0.0040] *  
+  psi         tabpfn - scorecard     +0.0039 [+0.0027, +0.0050] *  
+  psi         tabicl - scorecard     +0.0081 [+0.0067, +0.0094] *  
+  psi         tabicl@t1 - scorecard  +0.0081 [+0.0067, +0.0094] *  
+  psi         tabpfn@t1 - scorecard  +0.0039 [+0.0027, +0.0050] *  
+  psi         gbm-50k - gbm          +0.0031 [+0.0019, +0.0043] *  
+  psi         tabpfn - gbm           +0.0042 [+0.0028, +0.0055] *  
+  psi         tabicl - gbm           +0.0084 [+0.0068, +0.0099] *  
+  psi         tabicl@t1 - gbm        +0.0084 [+0.0069, +0.0099] *  
+  psi         tabpfn@t1 - gbm        +0.0042 [+0.0028, +0.0054] *  
+  psi         tabpfn - gbm-50k       +0.0011 [+0.0001, +0.0021] * ?
+  psi         tabicl - gbm-50k       +0.0052 [+0.0040, +0.0065] *  
+  psi         tabicl@t1 - gbm-50k    +0.0052 [+0.0040, +0.0065] *  
+  psi         tabpfn@t1 - gbm-50k    +0.0011 [+0.0001, +0.0020] * ?
+  psi         tabicl - tabpfn        +0.0041 [+0.0034, +0.0052] *  
+  psi         tabicl@t1 - tabpfn     +0.0041 [+0.0033, +0.0051] *  
+  psi         tabpfn@t1 - tabpfn     -0.0000 [-0.0001, -0.0000] *  
+  psi         tabicl@t1 - tabicl     -0.0000 [-0.0000, +0.0000]    
+  psi         tabpfn@t1 - tabicl     -0.0042 [-0.0052, -0.0034] *  
+  psi         tabpfn@t1 - tabicl@t1  -0.0042 [-0.0052, -0.0034] *  
+  cox_slope_deviation (all): 0 cohorts not estimable left out of the point estimate, averaged over the context draws, at most 0 of any resample
+  cox_slope_deviation (all, cohorts resampled): 0 cohorts not estimable left out of the point estimate, averaged over the context draws, at most 0 of any resample
+
+bootstrap seed check over seeds 20260906, 20260907: 92 of 168 differences starred under seed 20260905, 13 change their star, largest movement of an interval bound 0.0440
+  abs_log_oe  tabpfn@t1 - tabicl@t1  (all) -0.0040 20260905 [-0.0059, -0.0020]*; 20260906 [-0.0058, -0.0018]*; 20260907 [-0.0054, +0.0041]
+  cox_slope_deviation tabicl - tabpfn        (all) +0.0087 20260905 [+0.0014, +0.0159]*; 20260906 [+0.0011, +0.0162]*; 20260907 [-0.0012, +0.0185]
+  psi         tabpfn - gbm-50k       (all) +0.0011 20260905 [+0.0001, +0.0021]*; 20260906 [+0.0001, +0.0023]*; 20260907 [-0.0001, +0.0020]
+  psi         tabpfn@t1 - gbm-50k    (all) +0.0011 20260905 [+0.0001, +0.0020]*; 20260906 [+0.0001, +0.0022]*; 20260907 [-0.0001, +0.0020]
+  gini        tabicl - gbm           (all, cohorts resampled) +0.0162 20260905 [-0.0017, +0.0305]; 20260906 [+0.0012, +0.0307]*; 20260907 [+0.0000, +0.0313]*
+  gini        tabicl@t1 - gbm        (all, cohorts resampled) +0.0162 20260905 [-0.0017, +0.0305]; 20260906 [+0.0012, +0.0307]*; 20260907 [+0.0000, +0.0313]*
+  gini        tabicl - tabpfn        (all, cohorts resampled) -0.0033 20260905 [-0.0070, -0.0000]*; 20260906 [-0.0072, +0.0009]; 20260907 [-0.0069, +0.0003]
+  gini        tabicl@t1 - tabpfn     (all, cohorts resampled) -0.0033 20260905 [-0.0070, -0.0000]*; 20260906 [-0.0072, +0.0009]; 20260907 [-0.0069, +0.0003]
+  gini        tabpfn@t1 - tabicl     (all, cohorts resampled) +0.0033 20260905 [+0.0000, +0.0070]*; 20260906 [-0.0009, +0.0072]; 20260907 [-0.0003, +0.0069]
+  gini        tabpfn@t1 - tabicl@t1  (all, cohorts resampled) +0.0033 20260905 [+0.0000, +0.0070]*; 20260906 [-0.0009, +0.0072]; 20260907 [-0.0003, +0.0069]
+  abs_log_oe  tabpfn - gbm-50k       (all, cohorts resampled) +0.2022 20260905 [+0.0191, +0.3209]*; 20260906 [-0.0005, +0.3174]; 20260907 [+0.0105, +0.3218]*
+  abs_log_oe  tabicl - gbm-50k       (all, cohorts resampled) +0.1810 20260905 [-0.0046, +0.2971]; 20260906 [-0.0158, +0.2942]; 20260907 [+0.0021, +0.2976]*
+  psi         tabicl - gbm-50k       (all, cohorts resampled) +0.0052 20260905 [-0.0002, +0.0155]; 20260906 [+0.0000, +0.0117]*; 20260907 [-0.0005, +0.0143]
+  one context draw shared (20260911): no per-draw rows, and every interval above is a single-draw interval
+
+wall                  : 587s

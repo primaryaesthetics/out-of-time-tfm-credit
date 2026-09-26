@@ -1,0 +1,53 @@
+{
+  "book": "lc",
+  "builds": [
+    "2013H1-E",
+    "2013H2-E",
+    "2014H1-E",
+    "2014H2-E",
+    "2015H1-E",
+    "2015H2-E",
+    "2016H1-E",
+    "2016H2-E",
+    "2017H1-E"
+  ],
+  "sources": [
+    "experiments/2026-09-11-lc-2013h1e-intervals-grid",
+    "experiments/2026-09-11-lc-2013h2e-intervals-grid",
+    "experiments/2026-09-11-lc-2014h1e-intervals-grid",
+    "experiments/2026-09-11-lc-2014h2e-intervals-grid",
+    "experiments/2026-09-11-lc-2015h1e-intervals-grid",
+    "experiments/2026-09-11-lc-2015h2e-intervals-grid",
+    "experiments/2026-09-11-lc-2016h1e-intervals-grid",
+    "experiments/2026-09-11-lc-2016h2e-intervals-grid",
+    "experiments/2026-09-11-lc-2017h1e-intervals-grid"
+  ],
+  "models": {
+    "gbm-50k": {
+      "builds_where_draws_move_more": 1,
+      "builds": 9,
+      "fires": false
+    },
+    "tabicl": {
+      "builds_where_draws_move_more": 0,
+      "builds": 9,
+      "fires": false
+    },
+    "tabicl@t1": {
+      "builds_where_draws_move_more": 0,
+      "builds": 9,
+      "fires": false
+    },
+    "tabpfn": {
+      "builds_where_draws_move_more": 1,
+      "builds": 9,
+      "fires": false
+    },
+    "tabpfn@t1": {
+      "builds_where_draws_move_more": 1,
+      "builds": 9,
+      "fires": false
+    }
+  },
+  "fires_for_any_model": false
+}

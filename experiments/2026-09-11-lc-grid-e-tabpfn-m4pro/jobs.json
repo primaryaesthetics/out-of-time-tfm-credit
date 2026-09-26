@@ -1,0 +1,199 @@
+{
+  "name": "grid-e-tabpfn",
+  "command": [
+    "./run-score.sh"
+  ],
+  "bundles": [
+    "2026-09-06-lc-2013h1e-bundle",
+    "2026-09-06-lc-2013h2e-bundle",
+    "2026-09-06-lc-2014h1e-bundle",
+    "2026-09-06-lc-2014h2e-bundle",
+    "2026-09-05-lc-2015h1e-bundle",
+    "2026-09-06-lc-2015h2e-bundle",
+    "2026-09-06-lc-2016h1e-bundle",
+    "2026-09-06-lc-2016h2e-bundle",
+    "2026-09-06-lc-2017h1e-bundle"
+  ],
+  "jobs": [
+    {
+      "name": "tabpfn@2026-09-06-lc-2013h1e-bundle",
+      "bundle": "2026-09-06-lc-2013h1e-bundle",
+      "out": "2026-09-06-lc-2013h1e-bundle-scored-tabpfn",
+      "args": [
+        "--models",
+        "tabpfn"
+      ]
+    },
+    {
+      "name": "tabpfn-t1@2026-09-06-lc-2013h1e-bundle",
+      "bundle": "2026-09-06-lc-2013h1e-bundle",
+      "out": "2026-09-06-lc-2013h1e-bundle-scored-tabpfn-t1",
+      "args": [
+        "--models",
+        "tabpfn",
+        "--temperature",
+        "1.0"
+      ]
+    },
+    {
+      "name": "tabpfn@2026-09-06-lc-2013h2e-bundle",
+      "bundle": "2026-09-06-lc-2013h2e-bundle",
+      "out": "2026-09-06-lc-2013h2e-bundle-scored-tabpfn",
+      "args": [
+        "--models",
+        "tabpfn"
+      ]
+    },
+    {
+      "name": "tabpfn-t1@2026-09-06-lc-2013h2e-bundle",
+      "bundle": "2026-09-06-lc-2013h2e-bundle",
+      "out": "2026-09-06-lc-2013h2e-bundle-scored-tabpfn-t1",
+      "args": [
+        "--models",
+        "tabpfn",
+        "--temperature",
+        "1.0"
+      ]
+    },
+    {
+      "name": "tabpfn@2026-09-06-lc-2014h1e-bundle",
+      "bundle": "2026-09-06-lc-2014h1e-bundle",
+      "out": "2026-09-06-lc-2014h1e-bundle-scored-tabpfn",
+      "args": [
+        "--models",
+        "tabpfn"
+      ]
+    },
+    {
+      "name": "tabpfn-t1@2026-09-06-lc-2014h1e-bundle",
+      "bundle": "2026-09-06-lc-2014h1e-bundle",
+      "out": "2026-09-06-lc-2014h1e-bundle-scored-tabpfn-t1",
+      "args": [
+        "--models",
+        "tabpfn",
+        "--temperature",
+        "1.0"
+      ]
+    },
+    {
+      "name": "tabpfn@2026-09-06-lc-2014h2e-bundle",
+      "bundle": "2026-09-06-lc-2014h2e-bundle",
+      "out": "2026-09-06-lc-2014h2e-bundle-scored-tabpfn",
+      "args": [
+        "--models",
+        "tabpfn"
+      ]
+    },
+    {
+      "name": "tabpfn-t1@2026-09-06-lc-2014h2e-bundle",
+      "bundle": "2026-09-06-lc-2014h2e-bundle",
+      "out": "2026-09-06-lc-2014h2e-bundle-scored-tabpfn-t1",
+      "args": [
+        "--models",
+        "tabpfn",
+        "--temperature",
+        "1.0"
+      ]
+    },
+    {
+      "name": "tabpfn@2026-09-05-lc-2015h1e-bundle",
+      "bundle": "2026-09-05-lc-2015h1e-bundle",
+      "out": "2026-09-05-lc-2015h1e-bundle-scored-tabpfn",
+      "args": [
+        "--models",
+        "tabpfn"
+      ]
+    },
+    {
+      "name": "tabpfn-t1@2026-09-05-lc-2015h1e-bundle",
+      "bundle": "2026-09-05-lc-2015h1e-bundle",
+      "out": "2026-09-05-lc-2015h1e-bundle-scored-tabpfn-t1",
+      "args": [
+        "--models",
+        "tabpfn",
+        "--temperature",
+        "1.0"
+      ]
+    },
+    {
+      "name": "tabpfn@2026-09-06-lc-2015h2e-bundle",
+      "bundle": "2026-09-06-lc-2015h2e-bundle",
+      "out": "2026-09-06-lc-2015h2e-bundle-scored-tabpfn",
+      "args": [
+        "--models",
+        "tabpfn"
+      ]
+    },
+    {
+      "name": "tabpfn-t1@2026-09-06-lc-2015h2e-bundle",
+      "bundle": "2026-09-06-lc-2015h2e-bundle",
+      "out": "2026-09-06-lc-2015h2e-bundle-scored-tabpfn-t1",
+      "args": [
+        "--models",
+        "tabpfn",
+        "--temperature",
+        "1.0"
+      ]
+    },
+    {
+      "name": "tabpfn@2026-09-06-lc-2016h1e-bundle",
+      "bundle": "2026-09-06-lc-2016h1e-bundle",
+      "out": "2026-09-06-lc-2016h1e-bundle-scored-tabpfn",
+      "args": [
+        "--models",
+        "tabpfn"
+      ]
+    },
+    {
+      "name": "tabpfn-t1@2026-09-06-lc-2016h1e-bundle",
+      "bundle": "2026-09-06-lc-2016h1e-bundle",
+      "out": "2026-09-06-lc-2016h1e-bundle-scored-tabpfn-t1",
+      "args": [
+        "--models",
+        "tabpfn",
+        "--temperature",
+        "1.0"
+      ]
+    },
+    {
+      "name": "tabpfn@2026-09-06-lc-2016h2e-bundle",
+      "bundle": "2026-09-06-lc-2016h2e-bundle",
+      "out": "2026-09-06-lc-2016h2e-bundle-scored-tabpfn",
+      "args": [
+        "--models",
+        "tabpfn"
+      ]
+    },
+    {
+      "name": "tabpfn-t1@2026-09-06-lc-2016h2e-bundle",
+      "bundle": "2026-09-06-lc-2016h2e-bundle",
+      "out": "2026-09-06-lc-2016h2e-bundle-scored-tabpfn-t1",
+      "args": [
+        "--models",
+        "tabpfn",
+        "--temperature",
+        "1.0"
+      ]
+    },
+    {
+      "name": "tabpfn@2026-09-06-lc-2017h1e-bundle",
+      "bundle": "2026-09-06-lc-2017h1e-bundle",
+      "out": "2026-09-06-lc-2017h1e-bundle-scored-tabpfn",
+      "args": [
+        "--models",
+        "tabpfn"
+      ]
+    },
+    {
+      "name": "tabpfn-t1@2026-09-06-lc-2017h1e-bundle",
+      "bundle": "2026-09-06-lc-2017h1e-bundle",
+      "out": "2026-09-06-lc-2017h1e-bundle-scored-tabpfn-t1",
+      "args": [
+        "--models",
+        "tabpfn",
+        "--temperature",
+        "1.0"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "slug": "fm-2004h2e-rental-4090",
+  "recorded_utc": "2026-09-13T09:13:34+00:00",
+  "git_sha": "001b24bd38526af6c15eecfc49fef93c9263b782",
+  "git_dirty": false,
+  "written_by_hand": "The archive-level record of the Freddie Mac falsifying run's foundation-model side on the rented RTX 4090: the node's whole console log, the job list the runner walked and its tally, copied unchanged from the result archive, and the facts that belong to the archive rather than to one job. The twelve job directories listed under jobs hold the rows and a manifest each.",
+  "host": "Rented instance, 1x NVIDIA GeForce RTX 4090 (24564 MiB), driver 595.58.03, 8 vCPU, 15 GB RAM, Ubuntu Linux x86_64, Python 3.12.3, CUDA 13.2 at the driver, torch built against CUDA 13.0",
+  "gpu": "NVIDIA GeForce RTX 4090, 24564 MiB (25.25 GB reported by torch), torch 2.14.0 on cuda",
+  "job_archive": {
+    "path": "data/derived/node/outoftime-run-rental-fm-2004h2e.tar.gz",
+    "sha256": "e23c5ece68225e5b214aed9dee42387a5abb98957375d5a6e272da4113133427",
+    "score_context_py_sha256": "66e8933d67fea5f8140f31f5229a305a15d3f1eb20e0fd67e15546037ff9f0dc",
+    "provenance": "Byte-identical to scripts/score_context.py at HEAD 001b24b, unchanged since commit fd5eadf. Packed by scripts/pack_node_run.py --format cuda / node_run_cuda.sh at commit e7e2978, three node bundles (the primary matrix and the dti-kept and upb-nominal ablations of build 2004H2-E, built from the repository at commit dc50bdc), four named passes each: tabpfn, tabpfn-t1, tabicl, tabicl-t1."
+  },
+  "result_archive": {
+    "name": "outoftime-result-rental-fm-2004h2e.tar.gz",
+    "sha256": "b8ac296688976ed863699f6183380b1424a602a0e252b15392d0239355405ebe",
+    "contents": "twelve output directories (three bundles times tabpfn, tabpfn-t1, tabicl, tabicl-t1, each node.json, scores.parquet, reference.parquet, parts/), score.log, jobs.json, jobs-done.json, gpu.txt; no scorer, no bundle files; owner ubuntu/ubuntu; kept under data/derived/node/ with a .sha256 sidecar",
+    "row_level_data_note": "scores.parquet, reference.parquet and parts/ under every -fm- experiment directory are covered by experiments/*-fm-*/**/*.parquet and experiments/*-fm-*/**/parts/ in .gitignore (the Freddie Mac dataset's terms forbid distributing the data or any derived product); only manifest.json, node.json, score.log and this index's jobs.json/jobs-done.json/gpu.txt are trackable. Verified below."
+  },
+  "process": {
+    "purpose": "The foundation-model side of EXP-005's Freddie Mac falsifying run on build 2004H2-E (docs/experiments/EXP-005-tfm-out-of-time-second-book.md), paired with the classical side already recorded at commits dc50bdc, 3aad385 and 001b24b: the scorecard, the full GBM and GBM-50k on three context seeds and all 38 half-year cohorts of the build passed the AUC-on-2005H1 halt (0.81 against a 0.70 floor) on the primary matrix and on both named ablations, so the grid is not halted. This run scores TabPFN and TabICL, at both softmax temperatures, on context seed 20260911 only, on the three cohorts nearest the build (2005H1, 2005H2, 2006H1) and the context's own rows, in each of the three bundles; the grid scores every cohort of the build on all three seeds.",
+    "one_process": "The four LC device timing probe jobs of experiments/2026-09-13-lc-rental-probe-4090 ran first on this same rented instance, finishing 2026-09-13T08:05:59Z through 08:09:32Z; node_jobs.py then walked this FM job list of twelve in the same run.sh call without restarting, finishing 08:11:53Z through 08:30:40Z (jobs-done.json). jobs-done.json of this result archive holds all sixteen entries; the four LC probe entries are listed and indexed separately at experiments/2026-09-13-lc-rental-probe-4090 and are not repeated under jobs below.",
+    "console_log": "score.log is the file run-score.sh appends the scorer's console to on the node. Its first 53 lines (through the fourth job's 'wall : 55s') are the LC probe, indexed at experiments/2026-09-13-lc-rental-probe-4090; the twelve blocks from line 55 to the end of the file are this run's jobs in order and are the slices copied into the twelve job directories. Read in full: no home path beyond /home/node/outoftime-node, no account name, no token; the TabPFN and TabICL checkpoints were already on the node from the LC probe."
+  },
+  "checks_over_all_twelve": {
+    "bundle_hashes": "node.json's bundle hashes equal bundle.json of the relevant bundle directory, all twelve, and bundle.json is itself equal to the run archive's copy and to the live files in the tree at HEAD",
+    "parts": "4 part files per job, equal to node.json's 4 cell records; concatenated parts equal scores.parquet and reference.parquet, all twelve",
+    "rows": "every scored (cohort, row), its outcome and age quarters match both the full-GBM and the GBM-50k rows of the bundle's own score run, and the bundle's own scored.parquet; every reference row and outcome match the GBM-50k reference of the same context seed and the bundle's own context.parquet; zero mismatches, no missing probability, no probability outside [0, 1], all twelve",
+    "repeats": "the first cohort (2005H1) scored twice from a fresh fit on every job: largest disagreement 0.0, no row differs",
+    "parameters": "softmax_temperature 0.9 on tabpfn/tabicl and 1.0 on tabpfn-t1/tabicl-t1 on every bundle; TabPFN's categorical_features_indices shifts by one bundle (dti-kept adds a column ahead of the categoricals: [4,7,8,9,10,11] against [3,6,7,8,9,10] on the primary and upb-nominal matrices), correctly, per parameter_sets_distinct_per_model = 2 for tabpfn/tabpfn-t1 and 1 for tabicl/tabicl-t1; every other parameter at the library default; 50,000 context rows on every model",
+    "environment": "identical to the LC probe's on every field but the TabICL checkpoint entry (see environment_vs_lc_probe below): Python 3.12.3, Linux-6.17.0-20-generic-x86_64-with-glibc2.39, torch 2.14.0 on cuda, tabpfn 8.5.0, tabicl 2.1.1; peak GPU about 1.07 GB on tabpfn/tabpfn-t1 and 14.6-14.8 GB on tabicl/tabicl-t1 depending on the bundle",
+    "environment_vs_lc_probe": "Every environment field the two runs share (python, platform, device, device_name, device_memory_gb, cuda, torch, tabpfn, tabicl, numpy, pandas, scikit-learn) reads identical between the twelve FM jobs and the four LC probe jobs; the one difference is the checkpoints field, because two of the four LC probe jobs (the tabpfn ones, run before the tabicl job downloaded its checkpoint) record only the TabPFN checkpoint, while every FM job records both. Same node, same session, same environment throughout.",
+    "secrets_scan": "score.log, gpu.txt, jobs.json, jobs-done.json and the twelve node.json files hold no token, key, e-mail address or account/host name beyond /home/node/outoftime-node, on every line matched (16 hits, all that path)."
+  },
+  "timing_per_job": {
+    "tabpfn@bundle": {"fit_seconds": 2.332, "cell_seconds_sum": 107.166, "wall_seconds": 136.3, "tally_seconds": 137.3, "us_per_row_cohorts": 966.4},
+    "tabpfn-t1@bundle": {"fit_seconds": 2.069, "cell_seconds_sum": 106.058, "wall_seconds": 135.3, "tally_seconds": 136.3, "us_per_row_cohorts": 959.3},
+    "tabicl@bundle": {"fit_seconds": 2.077, "cell_seconds_sum": 54.418, "wall_seconds": 72.1, "tally_seconds": 73.0, "us_per_row_cohorts": 491.6},
+    "tabicl-t1@bundle": {"fit_seconds": 2.054, "cell_seconds_sum": 54.402, "wall_seconds": 72.0, "tally_seconds": 72.9, "us_per_row_cohorts": 491.3},
+    "tabpfn@bundle-dti-kept": {"fit_seconds": 2.032, "cell_seconds_sum": 107.165, "wall_seconds": 136.6, "tally_seconds": 137.6, "us_per_row_cohorts": 974.1},
+    "tabpfn-t1@bundle-dti-kept": {"fit_seconds": 2.214, "cell_seconds_sum": 108.001, "wall_seconds": 137.2, "tally_seconds": 138.1, "us_per_row_cohorts": 979.0},
+    "tabicl@bundle-dti-kept": {"fit_seconds": 2.144, "cell_seconds_sum": 55.073, "wall_seconds": 73.1, "tally_seconds": 74.1, "us_per_row_cohorts": 497.8},
+    "tabicl-t1@bundle-dti-kept": {"fit_seconds": 2.304, "cell_seconds_sum": 55.187, "wall_seconds": 73.7, "tally_seconds": 75.0, "us_per_row_cohorts": 498.4},
+    "tabpfn@bundle-upb-nominal": {"fit_seconds": 2.146, "cell_seconds_sum": 106.316, "wall_seconds": 135.4, "tally_seconds": 136.4, "us_per_row_cohorts": 960.2},
+    "tabpfn-t1@bundle-upb-nominal": {"fit_seconds": 2.065, "cell_seconds_sum": 106.914, "wall_seconds": 136.2, "tally_seconds": 137.2, "us_per_row_cohorts": 970.3},
+    "tabicl@bundle-upb-nominal": {"fit_seconds": 1.987, "cell_seconds_sum": 55.457, "wall_seconds": 73.0, "tally_seconds": 73.9, "us_per_row_cohorts": 497.6},
+    "tabicl-t1@bundle-upb-nominal": {"fit_seconds": 2.116, "cell_seconds_sum": 54.371, "wall_seconds": 72.0, "tally_seconds": 73.0, "us_per_row_cohorts": 491.0},
+    "reading": "No timing flag over twice the family median (timing_flags_over_twice_median: []); the instance was idle and dedicated across all sixteen jobs of this run, so these are measurements. The cohort-cell rate here (about 960-980 us/row for TabPFN, about 490-500 us/row for TabICL) is slower per row than the LC probe's own cohort cells (about 650-660 and 348 us/row respectively) on the same device; the FM cohorts are larger (23,280 to 24,367 rows against 20,000) and this book's feature set differs, not the accelerator."
+  },
+  "timing_per_model_pooled_over_three_bundles": {
+    "tabpfn": {"seconds_sum": 320.647, "rows_sum": 364785, "us_per_row": 879.0, "us_per_row_reference": 753.1, "us_per_row_cohorts": 966.9},
+    "tabpfn@t1": {"seconds_sum": 320.973, "rows_sum": 364785, "us_per_row": 879.9, "us_per_row_reference": 751.5, "us_per_row_cohorts": 969.6},
+    "tabicl": {"seconds_sum": 164.948, "rows_sum": 364785, "us_per_row": 452.2, "us_per_row_reference": 389.9, "us_per_row_cohorts": 495.6},
+    "tabicl@t1": {"seconds_sum": 163.96, "rows_sum": 364785, "us_per_row": 449.5, "us_per_row_reference": 386.4, "us_per_row_cohorts": 493.5}
+  },
+  "jobs": {
+    "tabpfn@2026-09-13-fm-2004h2e-bundle": "experiments/2026-09-13-fm-2004h2e-tabpfn-rental-4090",
+    "tabpfn-t1@2026-09-13-fm-2004h2e-bundle": "experiments/2026-09-13-fm-2004h2e-tabpfn-t1-rental-4090",
+    "tabicl@2026-09-13-fm-2004h2e-bundle": "experiments/2026-09-13-fm-2004h2e-tabicl-rental-4090",
+    "tabicl-t1@2026-09-13-fm-2004h2e-bundle": "experiments/2026-09-13-fm-2004h2e-tabicl-t1-rental-4090",
+    "tabpfn@2026-09-13-fm-2004h2e-bundle-dti-kept": "experiments/2026-09-13-fm-2004h2e-dti-kept-tabpfn-rental-4090",
+    "tabpfn-t1@2026-09-13-fm-2004h2e-bundle-dti-kept": "experiments/2026-09-13-fm-2004h2e-dti-kept-tabpfn-t1-rental-4090",
+    "tabicl@2026-09-13-fm-2004h2e-bundle-dti-kept": "experiments/2026-09-13-fm-2004h2e-dti-kept-tabicl-rental-4090",
+    "tabicl-t1@2026-09-13-fm-2004h2e-bundle-dti-kept": "experiments/2026-09-13-fm-2004h2e-dti-kept-tabicl-t1-rental-4090",
+    "tabpfn@2026-09-13-fm-2004h2e-bundle-upb-nominal": "experiments/2026-09-13-fm-2004h2e-upb-nominal-tabpfn-rental-4090",
+    "tabpfn-t1@2026-09-13-fm-2004h2e-bundle-upb-nominal": "experiments/2026-09-13-fm-2004h2e-upb-nominal-tabpfn-t1-rental-4090",
+    "tabicl@2026-09-13-fm-2004h2e-bundle-upb-nominal": "experiments/2026-09-13-fm-2004h2e-upb-nominal-tabicl-rental-4090",
+    "tabicl-t1@2026-09-13-fm-2004h2e-bundle-upb-nominal": "experiments/2026-09-13-fm-2004h2e-upb-nominal-tabicl-t1-rental-4090"
+  },
+  "not_in_this_run": "The remaining 35 of each bundle's 38 half-year cohorts (2006H2 to 2023H2), scored by the classical side (experiments/2026-09-13-fm-2004h2e-scores and its two ablation siblings) but not yet by a foundation model. The LC device timing probe that ran ahead of this run, on the same instance and in the same result archive, is experiments/2026-09-13-lc-rental-probe-4090; its four job entries are also present in this archive's jobs-done.json but are indexed there, not here."
+}

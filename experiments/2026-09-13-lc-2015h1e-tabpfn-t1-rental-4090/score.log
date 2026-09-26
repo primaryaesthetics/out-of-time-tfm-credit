@@ -1,0 +1,11 @@
+### tabpfn-t1@2026-09-05-lc-2015h1e-bundle: /home/node/outoftime-node/.venv/bin/python score_context.py 2026-09-05-lc-2015h1e-bundle --out-dir 2026-09-05-lc-2015h1e-bundle-scored-tabpfn-t1 --models tabpfn --temperature 1.0 --nearest 3 --seeds 20260911 --chunk 20000
+tabpfn@t1/20260911: context 50,000 rows read in 2.1s
+  reference   50,000 rows     38.0s  mean pd 0.0224
+  2015Q3      20,000 rows     13.2s  mean pd 0.0214
+  2015Q4      20,000 rows     13.1s  mean pd 0.0207
+  2016Q1      20,000 rows     13.3s  mean pd 0.0209
+  repeat 2015Q3: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 60,000
+reference rows        : 50,000
+wall                  : 96s

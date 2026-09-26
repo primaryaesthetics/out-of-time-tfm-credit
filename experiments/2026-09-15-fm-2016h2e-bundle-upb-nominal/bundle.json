@@ -1,0 +1,301 @@
+{
+  "build": {
+    "build_id": "2016H2-E",
+    "as_of": "2016-12-31",
+    "arm": "E",
+    "label_lag_months": 24,
+    "knowable_through": "2014-12-31",
+    "train_rows": 759434,
+    "train_first": "1999-01-01",
+    "train_last": "2014-07-01",
+    "train_quarters": [
+      "1999Q1",
+      "1999Q2",
+      "1999Q3",
+      "1999Q4",
+      "2000Q1",
+      "2000Q2",
+      "2000Q3",
+      "2000Q4",
+      "2001Q1",
+      "2001Q2",
+      "2001Q3",
+      "2001Q4",
+      "2002Q1",
+      "2002Q2",
+      "2002Q3",
+      "2002Q4",
+      "2003Q1",
+      "2003Q2",
+      "2003Q3",
+      "2003Q4",
+      "2004Q1",
+      "2004Q2",
+      "2004Q3",
+      "2004Q4",
+      "2005Q1",
+      "2005Q2",
+      "2005Q3",
+      "2005Q4",
+      "2006Q1",
+      "2006Q2",
+      "2006Q3",
+      "2006Q4",
+      "2007Q1",
+      "2007Q2",
+      "2007Q3",
+      "2007Q4",
+      "2008Q1",
+      "2008Q2",
+      "2008Q3",
+      "2008Q4",
+      "2009Q1",
+      "2009Q2",
+      "2009Q3",
+      "2009Q4",
+      "2010Q1",
+      "2010Q2",
+      "2010Q3",
+      "2010Q4",
+      "2011Q1",
+      "2011Q2",
+      "2011Q3",
+      "2011Q4",
+      "2012Q1",
+      "2012Q2",
+      "2012Q3",
+      "2012Q4",
+      "2013Q1",
+      "2013Q2",
+      "2013Q3",
+      "2013Q4",
+      "2014Q1",
+      "2014Q2",
+      "2014Q3"
+    ],
+    "blind_rows": 109784,
+    "test_cohorts": {
+      "2017H1": 24541,
+      "2017H2": 24680,
+      "2018H1": 24416,
+      "2018H2": 24543,
+      "2019H1": 24752,
+      "2019H2": 24861,
+      "2020H1": 24880,
+      "2020H2": 24919,
+      "2021H1": 24909,
+      "2021H2": 24929,
+      "2022H1": 24889,
+      "2022H2": 24859,
+      "2023H1": 24882,
+      "2023H2": 24866
+    },
+    "test_rows": 346926,
+    "notes": [
+      "109784 rows of the quarters in (2014-09-30, 2016-12-31] are neither trained on nor scored",
+      "cohorts are HalfYear cohorts of the origination date; the pool is the whole quarters to 2014-09-30, 27 months before the build, and every training loan's 24-month window, read on its label clock, closed by 2014-12-31"
+    ],
+    "axis_gap_months": 27,
+    "axis_horizon": "2014-09-30"
+  },
+  "grid": {
+    "book": {
+      "name": "freddie-mac",
+      "label_lag_months": 24,
+      "axis_gap_months": 27,
+      "max_clock_lag_months": 5,
+      "first_cohort": "1999H1",
+      "last_test_cohort": "2023H2",
+      "resolution": "HalfYear",
+      "rows_per_cohort": null,
+      "rolling_quarters": 8,
+      "cohort_axis": "the origination quarter in the loan identifier, by half-year",
+      "label_clock": "first_payment_date"
+    },
+    "arm": "E",
+    "context_rows": 50000,
+    "horizon_window": 12,
+    "max_first_observed_age": 3,
+    "exclude_record_gaps": true,
+    "ablation": "upb_nominal",
+    "gate_span": {
+      "first_cohort": "1999Q1",
+      "last_cohort": "2023H2"
+    }
+  },
+  "ablation": "upb_nominal",
+  "label": {
+    "definition": {
+      "window_months": 24,
+      "performance_cutoff": "2026-03-01",
+      "delinquency_months": 3,
+      "relief_months_count": false,
+      "bad_terminations": [
+        2,
+        3,
+        9
+      ],
+      "prepaid": [
+        1
+      ],
+      "censoring": [
+        15,
+        16,
+        96
+      ],
+      "max_first_observed_age": 3,
+      "exclude_record_gaps": true
+    },
+    "labelled": 1223587,
+    "defaults": 13455,
+    "default_rate": 0.010996,
+    "dropped_immature": 104929,
+    "censored": 1671,
+    "notes": [
+      "104929 loans have a first payment within 24 months of the cutoff 2026-03-01 and were dropped as immature whatever their record says, and 0 more have fewer than 24 months of history, no termination and no default on record; none was labelled non-default",
+      "1671 loans left the dataset inside the window through a sale or a confirmed defect with no default on record, and were dropped as censored",
+      "25159 loans were first observed after age 3 and were dropped as left-truncated: the months before their first record are inside the window and not on file",
+      "49 loans with a month missing from their record inside the window were dropped: a default in the missing month would not be on file",
+      "145 loans ended in a bad termination with no ninety-day delinquency on record before it, and are dated at the termination"
+    ],
+    "left_truncated": 25159,
+    "record_gaps": 49
+  },
+  "performance_cutoff": "2026-03-01",
+  "features": [
+    "borrowers",
+    "cltv",
+    "fico",
+    "first_time_homebuyer",
+    "ltv",
+    "mi_pct",
+    "occupancy",
+    "prepayment_penalty",
+    "property_type",
+    "purpose",
+    "state",
+    "term",
+    "units",
+    "upb"
+  ],
+  "categorical": [
+    "first_time_homebuyer",
+    "occupancy",
+    "prepayment_penalty",
+    "property_type",
+    "purpose",
+    "state"
+  ],
+  "context": {
+    "rows": 50000,
+    "seeds": [
+      20260911,
+      20260912,
+      20260913
+    ],
+    "sizes": {
+      "20260911": 50000,
+      "20260912": 50000,
+      "20260913": 50000
+    }
+  },
+  "cohorts": {
+    "2017H1": 24541,
+    "2017H2": 24680,
+    "2018H1": 24416,
+    "2018H2": 24543,
+    "2019H1": 24752,
+    "2019H2": 24861,
+    "2020H1": 24880,
+    "2020H2": 24919,
+    "2021H1": 24909,
+    "2021H2": 24929,
+    "2022H1": 24889,
+    "2022H2": 24859,
+    "2023H1": 24882,
+    "2023H2": 24866
+  },
+  "seeds": {
+    "test_sample": null
+  },
+  "files": {
+    "context.parquet": "2881552da4a4f6c5ecd4120212b9a110db97fb308fd8278789382e3b09fcc5db",
+    "scored.parquet": "3ae3827145a74e507927a989003a23825a0a16ca57e4485ac957a92753a42b3f"
+  },
+  "checks": {
+    "context": {
+      "20260911": {
+        "rows": 50000,
+        "identical": true
+      },
+      "20260912": {
+        "rows": 50000,
+        "identical": true
+      },
+      "20260913": {
+        "rows": 50000,
+        "identical": true
+      }
+    },
+    "cohorts": {
+      "2017H1": {
+        "rows": 24541,
+        "identical": true
+      },
+      "2017H2": {
+        "rows": 24680,
+        "identical": true
+      },
+      "2018H1": {
+        "rows": 24416,
+        "identical": true
+      },
+      "2018H2": {
+        "rows": 24543,
+        "identical": true
+      },
+      "2019H1": {
+        "rows": 24752,
+        "identical": true
+      },
+      "2019H2": {
+        "rows": 24861,
+        "identical": true
+      },
+      "2020H1": {
+        "rows": 24880,
+        "identical": true
+      },
+      "2020H2": {
+        "rows": 24919,
+        "identical": true
+      },
+      "2021H1": {
+        "rows": 24909,
+        "identical": true
+      },
+      "2021H2": {
+        "rows": 24929,
+        "identical": true
+      },
+      "2022H1": {
+        "rows": 24889,
+        "identical": true
+      },
+      "2022H2": {
+        "rows": 24859,
+        "identical": true
+      },
+      "2023H1": {
+        "rows": 24882,
+        "identical": true
+      },
+      "2023H2": {
+        "rows": 24866,
+        "identical": true
+      }
+    },
+    "against": "experiments/2026-09-13-fm-2016h2e-scores-upb-nominal"
+  },
+  "wall_seconds": 163.0
+}

@@ -1,0 +1,19 @@
+rows                  : 2,260,668
+loaded in             : 100s
+2017H1-R: train 472734 rows 2015-07-01..2016-06-01 (4 quarters), blind 404896 rows, test 60000 rows over 3 cohorts
+
+| cohort | rows |
+| --- | --- |
+| 2017Q3 | 20000 |
+| 2017Q4 | 20000 |
+| 2018Q1 | 20000 | 
+
+context 20260911: 50,000 rows
+context 20260912: 50,000 rows
+context 20260913: 50,000 rows
+checked against       : experiments\2026-09-12-lc-2017h1r-scores — every row and outcome identical
+
+context rows          : 150,000
+scored rows           : 60,000 over 3 cohorts
+features              : 20, 3 categorical
+wall                  : 116s

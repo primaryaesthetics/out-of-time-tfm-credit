@@ -1,0 +1,25 @@
+recorded code: 10 runs, every code file identical to what ran
+T1: 238 entries from experiments/2026-09-23-lc-2015h1e-protocols5-tfm/table.csv; derived: ['tabicl@t1']
+T2: 18 lines; 104 figures, each written with its sign in its ledger row; every verdict a quotation of it
+  Lending Club H1 C-021 tabpfn +0.00041 [+0.00007, +0.00075]
+  Lending Club H1 C-021 tabicl +0.00055 [+0.00020, +0.00088]
+  Lending Club H2 C-007 tabpfn +0.0208 [âˆ’0.0043, +0.0420]
+  Lending Club H2 C-007 tabicl +0.0473 [+0.0116, +0.0681]
+  Lending Club H3 C-038 tabpfn âˆ’0.0007 [âˆ’0.0033, +0.0013]
+  Lending Club H3 C-038 tabicl +0.0277 [+0.0244, +0.0319]
+  Lending Club H4 C-034 tabpfn âˆ’0.0412 [âˆ’0.0885, +0.0181]
+  Lending Club H4 C-034 tabicl âˆ’0.0447 [âˆ’0.0916, +0.0167]
+  Freddie Mac  H1 C-025 tabpfn +0.000168 [+0.000091, +0.000246]  nominal +0.000166 [+0.000062, +0.000300]
+  Freddie Mac  H1 C-025 tabicl +0.000197 [+0.000112, +0.000275]  nominal +0.000071 [âˆ’0.000013, +0.000154]
+  Freddie Mac  H2 C-027 tabpfn +0.0553 [+0.0297, +0.0757]  nominal +0.1004 [+0.0784, +0.1101]
+  Freddie Mac  H2 C-027 tabicl +0.0511 [+0.0287, +0.0722]  nominal +0.0844 [+0.0691, +0.0936]
+  Freddie Mac  H3 C-042 tabpfn âˆ’0.0052 [âˆ’0.0121, +0.0012]  nominal +0.0092 [+0.0083, +0.0103]
+  Freddie Mac  H3 C-042 tabicl âˆ’0.0170 [âˆ’0.0217, âˆ’0.0132]  nominal âˆ’0.0071 [âˆ’0.0116, âˆ’0.0045]
+  Freddie Mac  H4 C-041 tabpfn âˆ’0.0162 [âˆ’0.0446, +0.0175]  nominal +0.0311 [âˆ’0.0061, +0.0555]
+    pre-flag +0.0227 [âˆ’0.0259, +0.0741]  nominal +0.0422
+    flagged  âˆ’0.0238 [âˆ’0.0478, +0.0099]  nominal +0.0258
+  Freddie Mac  H4 C-041 tabicl âˆ’0.0031 [âˆ’0.0345, +0.0254]  nominal +0.0389 [âˆ’0.0030, +0.0669]
+    pre-flag +0.0416 [âˆ’0.0055, +0.0866]  nominal +0.0525
+    flagged  âˆ’0.0117 [âˆ’0.0399, +0.0177]  nominal +0.0333
+  Freddie Mac  H5 C-028 tabpfn âˆ’0.355 [âˆ’0.581, âˆ’0.175]  nominal âˆ’0.354 [âˆ’0.578, âˆ’0.177]
+  Freddie Mac  H5 C-028 tabicl âˆ’0.632 [âˆ’0.897, âˆ’0.405]  nominal âˆ’0.643 [âˆ’0.918, âˆ’0.405]

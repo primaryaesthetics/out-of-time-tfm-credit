@@ -1,0 +1,9 @@
+derived tabicl@t1 at 1 from experiments/2026-09-08-lc-2017h1e-tabicl-colab-t4
+library               : tabicl 2.1.1
+  experiments/2026-09-08-lc-2017h1e-tabicl-colab-t4: seeds [20260911, 20260912, 20260913], from [0.9], 180,000 scored + 150,000 reference rows
+check                 : experiments/2026-09-08-lc-2017h1e-tabicl-t1-check-colab-t4
+  20260911/2017Q3     20,000 rows  max |d pd| 1.63e-07  max |d logit| 1.15e-06
+  20260911/reference  50,000 rows  max |d pd| 1.49e-07  max |d logit| 1.10e-06
+rows checked          : 70,000 of 330,000, worst |d pd| 1.63e-07 within 1e-06
+unchecked cells       : 20260911/2017Q4, 20260911/2018Q1, 20260912/2017Q3, 20260912/2017Q4, 20260912/2018Q1, 20260912/reference, 20260913/2017Q3, 20260913/2017Q4, 20260913/2018Q1, 20260913/reference (derived under the same library and checkpoint)
+written               : experiments/2026-09-08-lc-2017h1e-tabicl-t1-derived

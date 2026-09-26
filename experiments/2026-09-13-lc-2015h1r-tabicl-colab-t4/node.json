@@ -1,0 +1,560 @@
+{
+  "bundle": {
+    "path": "2026-09-12-lc-2015h1r-bundle",
+    "files": {
+      "context.parquet": "36cb4d77ff3114b91c9d6d2d65ee927111f12764cb2360d0dacc07958f3bf03a",
+      "scored.parquet": "2d1ff6e0fe02227d4d59b1b177586e9217cea5631081f83c63bec3cfc6a32a50"
+    },
+    "build": {
+      "build_id": "2015H1-R",
+      "as_of": "2015-06-30",
+      "arm": "R",
+      "label_lag_months": 12,
+      "knowable_through": "2014-06-30",
+      "train_rows": 184199,
+      "train_first": "2013-07-01",
+      "train_last": "2014-06-01",
+      "train_quarters": [
+        "2013Q3",
+        "2013Q4",
+        "2014Q1",
+        "2014Q2"
+      ],
+      "blind_rows": 312972,
+      "test_cohorts": {
+        "2015Q3": 20000,
+        "2015Q4": 20000,
+        "2016Q1": 20000,
+        "2016Q2": 20000,
+        "2016Q3": 20000,
+        "2016Q4": 20000,
+        "2017Q1": 20000,
+        "2017Q2": 20000,
+        "2017Q3": 20000,
+        "2017Q4": 20000,
+        "2018Q1": 20000
+      },
+      "test_rows": 220000,
+      "notes": [
+        "312972 rows originated in (2014-06-30, 2015-06-30] carry no mature label at the as-of date and are neither trained on nor scored"
+      ]
+    },
+    "features": [
+      "annual_inc",
+      "credit_history_months",
+      "delinq_2yrs",
+      "dti",
+      "emp_length",
+      "fico_range_low",
+      "home_ownership",
+      "inq_last_6mths",
+      "loan_amnt",
+      "mths_since_last_delinq",
+      "open_acc",
+      "pub_rec",
+      "pub_rec_bankruptcies",
+      "purpose",
+      "revol_bal",
+      "revol_util",
+      "sub_grade",
+      "term",
+      "total_acc",
+      "verification_status"
+    ],
+    "categorical": [
+      "home_ownership",
+      "purpose",
+      "verification_status"
+    ]
+  },
+  "environment": {
+    "python": "3.13.15",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+    "processor": "x86_64",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "tabpfn": null,
+      "tabicl": "2.1.1",
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.6.1"
+    },
+    "device": "cuda",
+    "device_name": "Tesla T4",
+    "cuda": "12.8",
+    "device_memory_gb": 15.64
+  },
+  "cohorts": [
+    "2015Q3",
+    "2015Q4",
+    "2016Q1",
+    "2016Q2",
+    "2016Q3",
+    "2016Q4",
+    "2017Q1",
+    "2017Q2",
+    "2017Q3",
+    "2017Q4",
+    "2018Q1"
+  ],
+  "context_seeds": [
+    20260911,
+    20260912,
+    20260913
+  ],
+  "models": {
+    "tabicl/20260911": {
+      "context_rows": 50000,
+      "fit_seconds": 2.57,
+      "parameters": {
+        "allow_auto_download": true,
+        "average_logits": true,
+        "batch_size": 8,
+        "checkpoint_version": "tabicl-classifier-v2-20260212.ckpt",
+        "class_shuffle_method": "shift",
+        "device": null,
+        "disk_offload_dir": null,
+        "feat_shuffle_method": "latin",
+        "inference_config": null,
+        "kv_cache": false,
+        "model_path": null,
+        "n_estimators": 8,
+        "n_jobs": null,
+        "norm_methods": null,
+        "offload_mode": "auto",
+        "outlier_threshold": 4.0,
+        "random_state": 42,
+        "softmax_temperature": 0.9,
+        "support_many_classes": true,
+        "use_amp": "auto",
+        "use_fa3": "auto",
+        "verbose": false
+      }
+    },
+    "tabicl/20260912": {
+      "context_rows": 50000,
+      "fit_seconds": 6.509,
+      "parameters": {
+        "allow_auto_download": true,
+        "average_logits": true,
+        "batch_size": 8,
+        "checkpoint_version": "tabicl-classifier-v2-20260212.ckpt",
+        "class_shuffle_method": "shift",
+        "device": null,
+        "disk_offload_dir": null,
+        "feat_shuffle_method": "latin",
+        "inference_config": null,
+        "kv_cache": false,
+        "model_path": null,
+        "n_estimators": 8,
+        "n_jobs": null,
+        "norm_methods": null,
+        "offload_mode": "auto",
+        "outlier_threshold": 4.0,
+        "random_state": 42,
+        "softmax_temperature": 0.9,
+        "support_many_classes": true,
+        "use_amp": "auto",
+        "use_fa3": "auto",
+        "verbose": false
+      }
+    },
+    "tabicl/20260913": {
+      "context_rows": 50000,
+      "fit_seconds": 1.422,
+      "parameters": {
+        "allow_auto_download": true,
+        "average_logits": true,
+        "batch_size": 8,
+        "checkpoint_version": "tabicl-classifier-v2-20260212.ckpt",
+        "class_shuffle_method": "shift",
+        "device": null,
+        "disk_offload_dir": null,
+        "feat_shuffle_method": "latin",
+        "inference_config": null,
+        "kv_cache": false,
+        "model_path": null,
+        "n_estimators": 8,
+        "n_jobs": null,
+        "norm_methods": null,
+        "offload_mode": "auto",
+        "outlier_threshold": 4.0,
+        "random_state": 42,
+        "softmax_temperature": 0.9,
+        "support_many_classes": true,
+        "use_amp": "auto",
+        "use_fa3": "auto",
+        "verbose": false
+      }
+    }
+  },
+  "cells": [
+    {
+      "model": "tabicl",
+      "context_seed": 20260911,
+      "cell": "reference",
+      "rows": 50000,
+      "seconds": 206.349,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.015047
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260911,
+      "cell": "2015Q3",
+      "rows": 20000,
+      "seconds": 71.875,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.016272
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260911,
+      "cell": "2015Q4",
+      "rows": 20000,
+      "seconds": 72.066,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.015273
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260911,
+      "cell": "2016Q1",
+      "rows": 20000,
+      "seconds": 71.763,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.015554
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260911,
+      "cell": "2016Q2",
+      "rows": 20000,
+      "seconds": 71.82,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.015413
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260911,
+      "cell": "2016Q3",
+      "rows": 20000,
+      "seconds": 71.693,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.016323
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260911,
+      "cell": "2016Q4",
+      "rows": 20000,
+      "seconds": 71.864,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.015959
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260911,
+      "cell": "2017Q1",
+      "rows": 20000,
+      "seconds": 71.863,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.015263
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260911,
+      "cell": "2017Q2",
+      "rows": 20000,
+      "seconds": 71.876,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.015361
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260911,
+      "cell": "2017Q3",
+      "rows": 20000,
+      "seconds": 71.688,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.01655
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260911,
+      "cell": "2017Q4",
+      "rows": 20000,
+      "seconds": 71.677,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.016031
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260911,
+      "cell": "2018Q1",
+      "rows": 20000,
+      "seconds": 72.067,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.015185
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260912,
+      "cell": "reference",
+      "rows": 50000,
+      "seconds": 206.083,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.01585
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260912,
+      "cell": "2015Q3",
+      "rows": 20000,
+      "seconds": 71.722,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.017119
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260912,
+      "cell": "2015Q4",
+      "rows": 20000,
+      "seconds": 71.936,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.015944
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260912,
+      "cell": "2016Q1",
+      "rows": 20000,
+      "seconds": 71.83,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.016366
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260912,
+      "cell": "2016Q2",
+      "rows": 20000,
+      "seconds": 66.71,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.0161
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260912,
+      "cell": "2016Q3",
+      "rows": 20000,
+      "seconds": 72.417,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.017092
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260912,
+      "cell": "2016Q4",
+      "rows": 20000,
+      "seconds": 72.368,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.016506
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260912,
+      "cell": "2017Q1",
+      "rows": 20000,
+      "seconds": 72.159,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.015719
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260912,
+      "cell": "2017Q2",
+      "rows": 20000,
+      "seconds": 72.354,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.015849
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260912,
+      "cell": "2017Q3",
+      "rows": 20000,
+      "seconds": 72.368,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.017021
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260912,
+      "cell": "2017Q4",
+      "rows": 20000,
+      "seconds": 72.666,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.015938
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260912,
+      "cell": "2018Q1",
+      "rows": 20000,
+      "seconds": 72.173,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.014931
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260913,
+      "cell": "reference",
+      "rows": 50000,
+      "seconds": 205.562,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.014667
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260913,
+      "cell": "2015Q3",
+      "rows": 20000,
+      "seconds": 71.345,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.016047
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260913,
+      "cell": "2015Q4",
+      "rows": 20000,
+      "seconds": 71.579,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.015254
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260913,
+      "cell": "2016Q1",
+      "rows": 20000,
+      "seconds": 70.979,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.015396
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260913,
+      "cell": "2016Q2",
+      "rows": 20000,
+      "seconds": 71.565,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.015123
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260913,
+      "cell": "2016Q3",
+      "rows": 20000,
+      "seconds": 71.644,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.016114
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260913,
+      "cell": "2016Q4",
+      "rows": 20000,
+      "seconds": 71.168,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.015678
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260913,
+      "cell": "2017Q1",
+      "rows": 20000,
+      "seconds": 71.777,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.015051
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260913,
+      "cell": "2017Q2",
+      "rows": 20000,
+      "seconds": 71.483,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.015064
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260913,
+      "cell": "2017Q3",
+      "rows": 20000,
+      "seconds": 71.613,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.015868
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260913,
+      "cell": "2017Q4",
+      "rows": 20000,
+      "seconds": 72.21,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.014937
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260913,
+      "cell": "2018Q1",
+      "rows": 20000,
+      "seconds": 71.646,
+      "peak_gpu_gb": 10.966,
+      "mean_pd": 0.014118
+    }
+  ],
+  "repeats": [
+    {
+      "model": "tabicl",
+      "context_seed": 20260911,
+      "cell": "2015Q3",
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "rows_differing": 0
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260912,
+      "cell": "2015Q3",
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "rows_differing": 0
+    },
+    {
+      "model": "tabicl",
+      "context_seed": 20260913,
+      "cell": "2015Q3",
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "rows_differing": 0
+    }
+  ],
+  "command": {
+    "models": [
+      "tabicl"
+    ],
+    "nearest": null,
+    "device": "auto",
+    "chunk": 20000,
+    "repeat": true,
+    "settings": {}
+  },
+  "tuning_budget": "none: zero trials, no validation split, every parameter at the library default except those the command names; the classical models this is paired with were tuned on their own pool and the asymmetry runs both ways, since the 50,000-row control inherits the point chosen on the full pool",
+  "wall_seconds": 1756.3,
+  "checkpoints": {
+    "tabicl-classifier-v2-20260212.ckpt": "bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0"
+  },
+  "scored_rows": 660000,
+  "reference_rows": 150000
+}

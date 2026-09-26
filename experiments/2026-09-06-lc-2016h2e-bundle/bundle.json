@@ -1,0 +1,173 @@
+{
+  "build": {
+    "build_id": "2016H2-E",
+    "as_of": "2016-12-31",
+    "arm": "E",
+    "label_lag_months": 12,
+    "knowable_through": "2015-12-31",
+    "train_rows": 876991,
+    "train_first": "2010-04-01",
+    "train_last": "2015-12-01",
+    "train_quarters": [
+      "2010Q2",
+      "2010Q3",
+      "2010Q4",
+      "2011Q1",
+      "2011Q2",
+      "2011Q3",
+      "2011Q4",
+      "2012Q1",
+      "2012Q2",
+      "2012Q3",
+      "2012Q4",
+      "2013Q1",
+      "2013Q2",
+      "2013Q3",
+      "2013Q4",
+      "2014Q1",
+      "2014Q2",
+      "2014Q3",
+      "2014Q4",
+      "2015Q1",
+      "2015Q2",
+      "2015Q3",
+      "2015Q4"
+    ],
+    "blind_rows": 434407,
+    "test_cohorts": {
+      "2017Q1": 20000,
+      "2017Q2": 20000,
+      "2017Q3": 20000,
+      "2017Q4": 20000,
+      "2018Q1": 20000
+    },
+    "test_rows": 100000,
+    "notes": [
+      "434407 rows originated in (2015-12-31, 2016-12-31] carry no mature label at the as-of date and are neither trained on nor scored"
+    ]
+  },
+  "label": {
+    "definition": {
+      "window_months": 12,
+      "snapshot": "2019-03-01",
+      "charge_off_lag_months": 5,
+      "last_labelable_origination": "2018-03-01",
+      "bad_statuses": [
+        "Charged Off",
+        "Default",
+        "Does not meet the credit policy. Status:Charged Off"
+      ],
+      "good_statuses": [
+        "Does not meet the credit policy. Status:Fully Paid",
+        "Fully Paid"
+      ]
+    },
+    "labelled": 1873290,
+    "defaults": 54305,
+    "default_rate": 0.028989,
+    "dropped_immature": 387378,
+    "still_running_at_snapshot": 558979,
+    "unrecognised": 0,
+    "notes": [
+      "387378 loans originated after 2018-03-01 were dropped as immature, not labelled non-default",
+      "558979 loans were still running at the snapshot and are labelled non-default: this definition turns on charge-off, not on days past due, and those are the rows where the two differ",
+      "1937 bad loans had no last payment and were dated at origination plus 5 months",
+      "0 labelled loans stopped paying early enough to be in-window defaults and had not been charged off at the snapshot; they are labelled non-default and each is a default the window misses"
+    ]
+  },
+  "snapshot": "2019-03-01",
+  "features": [
+    "annual_inc",
+    "credit_history_months",
+    "delinq_2yrs",
+    "dti",
+    "emp_length",
+    "fico_range_low",
+    "home_ownership",
+    "inq_last_6mths",
+    "loan_amnt",
+    "mths_since_last_delinq",
+    "open_acc",
+    "pub_rec",
+    "pub_rec_bankruptcies",
+    "purpose",
+    "revol_bal",
+    "revol_util",
+    "sub_grade",
+    "term",
+    "total_acc",
+    "verification_status"
+  ],
+  "categorical": [
+    "home_ownership",
+    "purpose",
+    "verification_status"
+  ],
+  "context": {
+    "rows": 50000,
+    "seeds": [
+      20260911,
+      20260912,
+      20260913
+    ],
+    "sizes": {
+      "20260911": 50000,
+      "20260912": 50000,
+      "20260913": 50000
+    }
+  },
+  "cohorts": {
+    "2017Q1": 20000,
+    "2017Q2": 20000,
+    "2017Q3": 20000,
+    "2017Q4": 20000,
+    "2018Q1": 20000
+  },
+  "seeds": {
+    "test_sample": 20260902
+  },
+  "files": {
+    "context.parquet": "f9dbda307d30100b864d9036ce67f6787e3af9640ae3ce29252c6ab7359017e4",
+    "scored.parquet": "69b932044f48bf36ab28092bf9bfd11e20fff8302c2a7d6aeccd89c677f22941"
+  },
+  "checks": {
+    "context": {
+      "20260911": {
+        "rows": 50000,
+        "identical": true
+      },
+      "20260912": {
+        "rows": 50000,
+        "identical": true
+      },
+      "20260913": {
+        "rows": 50000,
+        "identical": true
+      }
+    },
+    "cohorts": {
+      "2017Q1": {
+        "rows": 20000,
+        "identical": true
+      },
+      "2017Q2": {
+        "rows": 20000,
+        "identical": true
+      },
+      "2017Q3": {
+        "rows": 20000,
+        "identical": true
+      },
+      "2017Q4": {
+        "rows": 20000,
+        "identical": true
+      },
+      "2018Q1": {
+        "rows": 20000,
+        "identical": true
+      }
+    },
+    "against": "experiments/2026-09-06-lc-2016h2e-scores"
+  },
+  "wall_seconds": 126.4
+}

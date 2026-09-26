@@ -1,0 +1,28 @@
+loans loaded          : 1,362,500
+book                  : 1,355,395
+first observed late   : 25,159
+record with a gap     : 190
+
+--- arm E: 9 builds, 234 cells, 196 above the floors ---
+    build  quarters       pool     blind   closed  cells  links
+ 2002H2-E         7     79,501   108,711    3,982     42      6
+ 2004H2-E        15    176,074   108,908    4,699     38     50
+ 2006H2-E        23    272,901   107,517    3,800     34    309
+ 2008H2-E        31    368,463   108,860    4,100     30    918
+ 2010H2-E        39    464,938   111,459    4,292     26   1313
+ 2012H2-E        47    564,090   110,409    4,161     22    691
+ 2014H2-E        55    662,256   109,112    4,272     18    189
+ 2016H2-E        63    759,294   109,784    4,027     14     36
+ 2018H2-E        71    856,721   110,536    4,210     10      0
+
+--- arm R: 8 builds, 192 cells, 160 above the floors ---
+    build  quarters       pool     blind   closed  cells  links
+ 2004H2-R         8     96,573   108,908    4,699     38     44
+ 2006H2-R         8     96,827   107,517    3,800     34    259
+ 2008H2-R         8     95,562   108,860    4,100     30    609
+ 2010H2-R         8     96,475   111,459    4,292     26    602
+ 2012H2-R         8     99,152   110,409    4,161     22     74
+ 2014H2-R         8     98,166   109,112    4,272     18      0
+ 2016H2-R         8     97,038   109,784    4,027     14      0
+ 2018H2-R         8     97,427   110,536    4,210     10      0
+skipped 2002-12-31 arm R: a 8-quarter window ending 2000Q3 reaches before the first cohort

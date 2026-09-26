@@ -1,0 +1,54 @@
+derived tabpfn@t1 at 1 from experiments/2026-09-14-fm-2016h2r-tabpfn-rental-4090
+library               : tabpfn 8.5.0
+  experiments/2026-09-14-fm-2016h2r-tabpfn-rental-4090: seeds [20260911, 20260912, 20260913], from [0.9], 1,040,778 scored + 150,000 reference rows
+check source          : experiments/2026-09-14-fm-2016h2e-tabpfn-rental-4090 (build 2016H2-E, seeds [20260911, 20260912, 20260913], NVIDIA GeForce RTX 4090)
+check                 : experiments/2026-09-14-fm-2016h2e-tabpfn-t1-rental-4090
+  2016H2-E 20260911/2017H1        24,541 rows  max |d pd| 4.23e-04  max |d logit| 2.38e-02  |b - 1| 3.26e-04
+  2016H2-E 20260911/2017H2        24,680 rows  max |d pd| 2.26e-04  max |d logit| 1.43e-02  |b - 1| 3.00e-04
+  2016H2-E 20260911/2018H1        24,416 rows  max |d pd| 2.19e-04  max |d logit| 1.28e-02  |b - 1| 3.02e-04
+  2016H2-E 20260911/2018H2        24,543 rows  max |d pd| 2.23e-04  max |d logit| 1.57e-02  |b - 1| 2.90e-04
+  2016H2-E 20260911/2019H1        24,752 rows  max |d pd| 3.37e-04  max |d logit| 1.56e-02  |b - 1| 2.89e-04
+  2016H2-E 20260911/2019H2        24,861 rows  max |d pd| 2.38e-04  max |d logit| 1.62e-02  |b - 1| 2.96e-04
+  2016H2-E 20260911/2020H1        24,880 rows  max |d pd| 1.86e-04  max |d logit| 1.60e-02  |b - 1| 3.04e-04
+  2016H2-E 20260911/2020H2        24,919 rows  max |d pd| 1.96e-04  max |d logit| 1.98e-02  |b - 1| 2.76e-04
+  2016H2-E 20260911/2021H1        24,909 rows  max |d pd| 1.70e-04  max |d logit| 2.53e-02  |b - 1| 3.46e-04
+  2016H2-E 20260911/2021H2        24,929 rows  max |d pd| 2.13e-04  max |d logit| 1.38e-02  |b - 1| 3.66e-04
+  2016H2-E 20260911/2022H1        24,889 rows  max |d pd| 2.52e-04  max |d logit| 1.64e-02  |b - 1| 3.85e-04
+  2016H2-E 20260911/2022H2        24,859 rows  max |d pd| 1.69e-04  max |d logit| 1.40e-02  |b - 1| 2.66e-04
+  2016H2-E 20260911/2023H1        24,882 rows  max |d pd| 2.39e-04  max |d logit| 1.51e-02  |b - 1| 2.66e-04
+  2016H2-E 20260911/2023H2        24,866 rows  max |d pd| 2.36e-04  max |d logit| 1.40e-02  |b - 1| 2.50e-04
+  2016H2-E 20260911/reference     50,000 rows  max |d pd| 6.87e-04  max |d logit| 2.64e-02  |b - 1| 3.75e-04
+  2016H2-E 20260912/2017H1        24,541 rows  max |d pd| 6.77e-04  max |d logit| 2.39e-02  |b - 1| 9.26e-05
+  2016H2-E 20260912/2017H2        24,680 rows  max |d pd| 5.08e-04  max |d logit| 2.49e-02  |b - 1| 1.05e-04
+  2016H2-E 20260912/2018H1        24,416 rows  max |d pd| 8.48e-04  max |d logit| 2.27e-02  |b - 1| 9.89e-05
+  2016H2-E 20260912/2018H2        24,543 rows  max |d pd| 5.82e-04  max |d logit| 3.21e-02  |b - 1| 1.08e-04
+  2016H2-E 20260912/2019H1        24,752 rows  max |d pd| 5.98e-04  max |d logit| 2.01e-02  |b - 1| 9.86e-05
+  2016H2-E 20260912/2019H2        24,861 rows  max |d pd| 6.42e-04  max |d logit| 3.58e-02  |b - 1| 5.54e-05
+  2016H2-E 20260912/2020H1        24,880 rows  max |d pd| 7.72e-04  max |d logit| 3.76e-02  |b - 1| 2.32e-05
+  2016H2-E 20260912/2020H2        24,919 rows  max |d pd| 7.81e-04  max |d logit| 2.43e-02  |b - 1| 3.68e-06
+  2016H2-E 20260912/2021H1        24,909 rows  max |d pd| 7.52e-04  max |d logit| 2.63e-02  |b - 1| 3.63e-05
+  2016H2-E 20260912/2021H2        24,929 rows  max |d pd| 6.50e-04  max |d logit| 3.01e-02  |b - 1| 8.61e-05
+  2016H2-E 20260912/2022H1        24,889 rows  max |d pd| 3.86e-04  max |d logit| 2.37e-02  |b - 1| 1.41e-04
+  2016H2-E 20260912/2022H2        24,859 rows  max |d pd| 4.53e-04  max |d logit| 1.94e-02  |b - 1| 1.33e-04
+  2016H2-E 20260912/2023H1        24,882 rows  max |d pd| 7.07e-04  max |d logit| 2.95e-02  |b - 1| 9.70e-05
+  2016H2-E 20260912/2023H2        24,866 rows  max |d pd| 5.25e-04  max |d logit| 3.50e-02  |b - 1| 7.63e-05
+  2016H2-E 20260912/reference     50,000 rows  max |d pd| 1.92e-03  max |d logit| 2.57e-02  |b - 1| 7.30e-05
+  2016H2-E 20260913/2017H1        24,541 rows  max |d pd| 5.13e-04  max |d logit| 1.71e-02  |b - 1| 6.46e-05
+  2016H2-E 20260913/2017H2        24,680 rows  max |d pd| 5.83e-04  max |d logit| 1.51e-02  |b - 1| 4.69e-05
+  2016H2-E 20260913/2018H1        24,416 rows  max |d pd| 4.91e-04  max |d logit| 2.38e-02  |b - 1| 3.50e-05
+  2016H2-E 20260913/2018H2        24,543 rows  max |d pd| 5.17e-04  max |d logit| 2.23e-02  |b - 1| 2.06e-05
+  2016H2-E 20260913/2019H1        24,752 rows  max |d pd| 1.24e-03  max |d logit| 1.80e-02  |b - 1| 1.44e-05
+  2016H2-E 20260913/2019H2        24,861 rows  max |d pd| 4.80e-04  max |d logit| 1.33e-02  |b - 1| 1.07e-05
+  2016H2-E 20260913/2020H1        24,880 rows  max |d pd| 3.89e-04  max |d logit| 1.45e-02  |b - 1| 2.01e-05
+  2016H2-E 20260913/2020H2        24,919 rows  max |d pd| 5.62e-04  max |d logit| 1.37e-02  |b - 1| 1.33e-05
+  2016H2-E 20260913/2021H1        24,909 rows  max |d pd| 4.10e-04  max |d logit| 1.42e-02  |b - 1| 6.31e-05
+  2016H2-E 20260913/2021H2        24,929 rows  max |d pd| 5.74e-04  max |d logit| 1.77e-02  |b - 1| 8.79e-05
+  2016H2-E 20260913/2022H1        24,889 rows  max |d pd| 5.13e-04  max |d logit| 2.11e-02  |b - 1| 1.14e-04
+  2016H2-E 20260913/2022H2        24,859 rows  max |d pd| 4.07e-04  max |d logit| 2.13e-02  |b - 1| 5.90e-05
+  2016H2-E 20260913/2023H1        24,882 rows  max |d pd| 1.04e-03  max |d logit| 1.49e-02  |b - 1| 1.61e-06
+  2016H2-E 20260913/2023H2        24,866 rows  max |d pd| 5.11e-04  max |d logit| 1.68e-02  |b - 1| 1.80e-05
+  2016H2-E 20260913/reference     50,000 rows  max |d pd| 1.37e-03  max |d logit| 1.98e-02  |b - 1| 5.99e-05
+derived - scored      : Cox slope worst +4.89e-04, mean +1.90e-04; O/E worst -1.34e-03, mean -5.08e-04; 0 cells with a Cox fit that did not finish
+rows checked          : 1,190,778 of the check source's 1,190,778, on build 2016H2-E, worst |b - 1| 3.85e-04, mean 1.44e-04, 0 of 45 cells above the Lending Club figure 0.00084, within 0.0084, approximate
+derived rows checked  : none by row; 45 cells of build 2016H2-R carried by the error measured on the check source under tabpfn 8.5.0, the checkpoint and the source temperature
+written               : experiments/2026-09-15-fm-2016h2r-tabpfn-t1-derived

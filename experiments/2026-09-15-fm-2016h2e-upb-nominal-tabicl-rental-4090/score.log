@@ -1,0 +1,57 @@
+### tabicl@2026-09-15-fm-2016h2e-bundle-upb-nominal: /home/node/outoftime-node/.venv/bin/python score_context.py 2026-09-15-fm-2016h2e-bundle-upb-nominal --out-dir 2026-09-15-fm-2016h2e-bundle-upb-nominal-scored-tabicl --models tabicl --chunk 20000
+tabicl/20260911: context 50,000 rows read in 2.1s
+  reference   50,000 rows     19.5s  mean pd 0.0093
+  2017H1      24,541 rows     11.8s  mean pd 0.0099
+  2017H2      24,680 rows     11.8s  mean pd 0.0099
+  2018H1      24,416 rows     11.8s  mean pd 0.0099
+  2018H2      24,543 rows     12.1s  mean pd 0.0101
+  2019H1      24,752 rows     11.8s  mean pd 0.0101
+  2019H2      24,861 rows     11.8s  mean pd 0.0095
+  2020H1      24,880 rows     11.8s  mean pd 0.0080
+  2020H2      24,919 rows     11.8s  mean pd 0.0069
+  2021H1      24,909 rows     11.8s  mean pd 0.0079
+  2021H2      24,929 rows     11.8s  mean pd 0.0095
+  2022H1      24,889 rows     11.8s  mean pd 0.0111
+  2022H2      24,859 rows     11.8s  mean pd 0.0109
+  2023H1      24,882 rows     11.8s  mean pd 0.0114
+  2023H2      24,866 rows     11.8s  mean pd 0.0103
+  repeat 2017H1: largest disagreement 0.00e+00, 0 rows differ
+tabicl/20260912: context 50,000 rows read in 1.0s
+  reference   50,000 rows     18.8s  mean pd 0.0094
+  2017H1      24,541 rows     11.9s  mean pd 0.0111
+  2017H2      24,680 rows     11.9s  mean pd 0.0114
+  2018H1      24,416 rows     11.8s  mean pd 0.0115
+  2018H2      24,543 rows     11.8s  mean pd 0.0119
+  2019H1      24,752 rows     11.8s  mean pd 0.0118
+  2019H2      24,861 rows     11.8s  mean pd 0.0108
+  2020H1      24,880 rows     11.8s  mean pd 0.0088
+  2020H2      24,919 rows     11.8s  mean pd 0.0076
+  2021H1      24,909 rows     11.8s  mean pd 0.0086
+  2021H2      24,929 rows     11.8s  mean pd 0.0106
+  2022H1      24,889 rows     11.8s  mean pd 0.0127
+  2022H2      24,859 rows     11.8s  mean pd 0.0131
+  2023H1      24,882 rows     11.8s  mean pd 0.0139
+  2023H2      24,866 rows     11.8s  mean pd 0.0125
+  repeat 2017H1: largest disagreement 0.00e+00, 0 rows differ
+tabicl/20260913: context 50,000 rows read in 1.0s
+  reference   50,000 rows     18.8s  mean pd 0.0095
+  2017H1      24,541 rows     11.8s  mean pd 0.0092
+  2017H2      24,680 rows     11.8s  mean pd 0.0093
+  2018H1      24,416 rows     11.8s  mean pd 0.0093
+  2018H2      24,543 rows     11.8s  mean pd 0.0095
+  2019H1      24,752 rows     11.8s  mean pd 0.0094
+  2019H2      24,861 rows     11.8s  mean pd 0.0085
+  2020H1      24,880 rows     11.8s  mean pd 0.0070
+  2020H2      24,919 rows     11.8s  mean pd 0.0061
+  2021H1      24,909 rows     11.8s  mean pd 0.0071
+  2021H2      24,929 rows     11.8s  mean pd 0.0089
+  2022H1      24,889 rows     11.8s  mean pd 0.0106
+  2022H2      24,859 rows     11.8s  mean pd 0.0104
+  2023H1      24,882 rows     11.9s  mean pd 0.0105
+  2023H2      24,866 rows     12.0s  mean pd 0.0098
+  repeat 2017H1: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 1,040,778
+reference rows        : 150,000
+wall                  : 603s
+

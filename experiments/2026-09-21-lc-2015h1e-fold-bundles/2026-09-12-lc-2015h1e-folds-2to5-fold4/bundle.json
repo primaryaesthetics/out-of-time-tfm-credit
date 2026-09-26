@@ -1,0 +1,152 @@
+{
+  "build": {
+    "build_id": "2015H1-E",
+    "as_of": "2015-06-30",
+    "arm": "E",
+    "label_lag_months": 12,
+    "knowable_through": "2014-06-30",
+    "train_rows": 323026,
+    "train_first": "2010-04-01",
+    "train_last": "2014-06-01",
+    "train_quarters": [
+      "2010Q2",
+      "2010Q3",
+      "2010Q4",
+      "2011Q1",
+      "2011Q2",
+      "2011Q3",
+      "2011Q4",
+      "2012Q1",
+      "2012Q2",
+      "2012Q3",
+      "2012Q4",
+      "2013Q1",
+      "2013Q2",
+      "2013Q3",
+      "2013Q4",
+      "2014Q1",
+      "2014Q2"
+    ],
+    "blind_rows": 312972,
+    "test_cohorts": {
+      "2015Q3": 20000,
+      "2015Q4": 20000,
+      "2016Q1": 20000,
+      "2016Q2": 20000,
+      "2016Q3": 20000,
+      "2016Q4": 20000,
+      "2017Q1": 20000,
+      "2017Q2": 20000,
+      "2017Q3": 20000,
+      "2017Q4": 20000,
+      "2018Q1": 20000
+    },
+    "test_rows": 220000,
+    "notes": [
+      "312972 rows originated in (2014-06-30, 2015-06-30] carry no mature label at the as-of date and are neither trained on nor scored"
+    ]
+  },
+  "label": {
+    "definition": {
+      "window_months": 12,
+      "snapshot": "2019-03-01",
+      "charge_off_lag_months": 5,
+      "last_labelable_origination": "2018-03-01",
+      "bad_statuses": [
+        "Charged Off",
+        "Default",
+        "Does not meet the credit policy. Status:Charged Off"
+      ],
+      "good_statuses": [
+        "Does not meet the credit policy. Status:Fully Paid",
+        "Fully Paid"
+      ]
+    },
+    "labelled": 1873290,
+    "defaults": 54305,
+    "default_rate": 0.028989,
+    "dropped_immature": 387378,
+    "still_running_at_snapshot": 558979,
+    "unrecognised": 0,
+    "notes": [
+      "387378 loans originated after 2018-03-01 were dropped as immature, not labelled non-default",
+      "558979 loans were still running at the snapshot and are labelled non-default: this definition turns on charge-off, not on days past due, and those are the rows where the two differ",
+      "1937 bad loans had no last payment and were dated at origination plus 5 months",
+      "0 labelled loans stopped paying early enough to be in-window defaults and had not been charged off at the snapshot; they are labelled non-default and each is a default the window misses"
+    ]
+  },
+  "snapshot": "2019-03-01",
+  "features": [
+    "annual_inc",
+    "credit_history_months",
+    "delinq_2yrs",
+    "dti",
+    "emp_length",
+    "fico_range_low",
+    "home_ownership",
+    "inq_last_6mths",
+    "loan_amnt",
+    "mths_since_last_delinq",
+    "open_acc",
+    "pub_rec",
+    "pub_rec_bankruptcies",
+    "purpose",
+    "revol_bal",
+    "revol_util",
+    "sub_grade",
+    "term",
+    "total_acc",
+    "verification_status"
+  ],
+  "categorical": [
+    "home_ownership",
+    "purpose",
+    "verification_status"
+  ],
+  "context": {
+    "rows": 50000,
+    "seeds": [
+      20260911,
+      20260912,
+      20260913
+    ],
+    "sizes": {
+      "20260911": 50000,
+      "20260912": 50000,
+      "20260913": 50000
+    }
+  },
+  "cohorts": {
+    "fold4-validation": 20000,
+    "fold4-test": 20000
+  },
+  "seeds": {
+    "fold": 20260912,
+    "context": [
+      20260911,
+      20260912,
+      20260913
+    ],
+    "booster": 20260904
+  },
+  "files": {
+    "context.parquet": "ccb3f6fbfe6ccd104c35a9d943b8b8f34d63ec301d41d7e3295d8f3bc132378b",
+    "scored.parquet": "ee274748522f91fc96dd8fa23418b26f418b59c3ca01c79a07ac2858dcd7e369"
+  },
+  "checks": null,
+  "in_time": {
+    "folds": [
+      4
+    ],
+    "note": "cells are samples of a random fold's validation fifth and test part, not vintage cohorts; age is zero"
+  },
+  "wall_seconds": 925.0,
+  "split_from": {
+    "bundle": "2026-09-12-lc-2015h1e-folds-2to5",
+    "fold": 4,
+    "files": {
+      "context.parquet": "3cd20a7bbe0a010609bf2c24fece42c0b47943ee645de9076fe34cc5dace7b3c",
+      "scored.parquet": "a7c83b957735480973748de998d5fe88417c866763833fec9b1f4ea234aafc1e"
+    }
+  }
+}

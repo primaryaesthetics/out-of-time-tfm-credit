@@ -1,0 +1,59 @@
+{
+  "sources": [
+    "experiments/2026-09-13-fm-2004h2e-scores",
+    "experiments/2026-09-13-fm-2004h2e-tabpfn-rental-4090",
+    "experiments/2026-09-13-fm-2004h2e-tabpfn-t1-rental-4090",
+    "experiments/2026-09-13-fm-2004h2e-tabicl-rental-4090",
+    "experiments/2026-09-13-fm-2004h2e-tabicl-t1-rental-4090"
+  ],
+  "builds": [
+    "2004H2-E"
+  ],
+  "models_dropped": [],
+  "context_cells": 9,
+  "context_rows": 702184,
+  "context_check": {
+    "draws": 3,
+    "pairs_compared": 4,
+    "statement": "every seeded model of one (build, context seed) holds the same context rows with the same outcomes"
+  },
+  "known_answer": {
+    "statement": "a model fitted by likelihood reads observed over expected of one on its own training rows; its cells are read as the check",
+    "fitted_cells": 5,
+    "interval_holds_one": 5,
+    "interval_does_not_hold_one": []
+  },
+  "per_cell": {
+    "observed_over_expected": "observed defaults over the sum of the probabilities on the cell's rows",
+    "binomial": "Clopper-Pearson on the count over the expected rate, the metrics module's interval",
+    "bootstrap": "percentile interval of the ratio over resamples of the cell's rows"
+  },
+  "h5": {
+    "arms": {
+      "E": {
+        "arm": "E",
+        "builds": [
+          "2004H2-E"
+        ],
+        "reason": "one build on arm E; H5 compares two contexts"
+      }
+    },
+    "statistic": "per seeded model, observed over expected on the highest-rate context of the arm minus that on the lowest-rate context; the two builds are the highest and lowest pool rate of the build run's record; the rows whose ranking is 'draws' rank by the mean realised rate of the shared draws and are not a criterion",
+    "builds_json": null,
+    "bootstrap": {
+      "resamples": 200,
+      "seed": 20260905,
+      "alpha": 0.05,
+      "blocking": "one row index per context, applied to its outcomes and every model's probabilities",
+      "context_draw": "one seed per resample for both builds and every model",
+      "seed_check": null,
+      "seed_check_draw_ranking": null
+    },
+    "known_answer": "the rows of fitted seeded models (GBM-50k) are zero by construction"
+  },
+  "cohort_cells": {
+    "cells": 202,
+    "without_a_default": 0
+  },
+  "wall_seconds": 10.5
+}

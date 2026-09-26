@@ -1,0 +1,8 @@
+python 3.12.1
+numpy 2.5.2
+scipy 1.18.1
+psi_inference 0.1.0
+seed 20260914
+reps_null 50000
+reps_power 20000
+ref_quantile check: brute mean 0.018089, Dirichlet mean 0.018070, KS p 0.914

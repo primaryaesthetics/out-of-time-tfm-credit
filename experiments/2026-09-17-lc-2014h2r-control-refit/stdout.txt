@@ -1,0 +1,29 @@
+rows                  : 2,260,668
+snapshot from data    : 2019-03-01
+loaded in             : 139s
+features              : 20
+2014H2-R: train 134814 rows 2013-01-01..2013-12-01 (4 quarters), blind 235629 rows, test 260000 rows over 13 cohorts
+
+| cohort | rows |
+| --- | --- |
+| 2015Q1 | 20000 |
+| 2015Q2 | 20000 |
+| 2015Q3 | 20000 |
+| 2015Q4 | 20000 |
+| 2016Q1 | 20000 |
+| 2016Q2 | 20000 |
+| 2016Q3 | 20000 |
+| 2016Q4 | 20000 |
+| 2017Q1 | 20000 |
+| 2017Q2 | 20000 |
+| 2017Q3 | 20000 |
+| 2017Q4 | 20000 |
+| 2018Q1 | 20000 | 
+
+gbm-50k@share/20260911    50,000 rows  fit    3.8s  gini 0.409->0.382  O/E 1.32->1.63
+gbm-50k@share/20260912    50,000 rows  fit    1.2s  gini 0.406->0.362  O/E 1.33->1.68
+gbm-50k@share/20260913    50,000 rows  fit    1.1s  gini 0.420->0.370  O/E 1.35->1.70
+
+scored rows           : 780,000
+reference rows        : 150,000
+wall                  : 168s

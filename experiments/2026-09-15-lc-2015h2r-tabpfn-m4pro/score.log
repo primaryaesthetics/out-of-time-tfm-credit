@@ -1,0 +1,40 @@
+tabpfn/20260911: context 50,000 rows read in 1.1s
+  reference   50,000 rows    450.4s  mean pd 0.0168
+  2016Q1      20,000 rows    324.8s  mean pd 0.0154
+  2016Q2      20,000 rows    325.0s  mean pd 0.0152
+  2016Q3      20,000 rows    325.2s  mean pd 0.0162
+  2016Q4      20,000 rows    325.0s  mean pd 0.0156
+  2017Q1      20,000 rows    325.2s  mean pd 0.0149
+  2017Q2      20,000 rows    325.5s  mean pd 0.0149
+  2017Q3      20,000 rows    325.3s  mean pd 0.0158
+  2017Q4      20,000 rows    326.5s  mean pd 0.0145
+  2018Q1      20,000 rows    327.8s  mean pd 0.0135
+  repeat 2016Q1: largest disagreement 0.00e+00, 0 rows differ
+tabpfn/20260912: context 50,000 rows read in 0.3s
+  reference   50,000 rows    456.4s  mean pd 0.0168
+  2016Q1      20,000 rows    328.4s  mean pd 0.0158
+  2016Q2      20,000 rows    328.0s  mean pd 0.0155
+  2016Q3      20,000 rows    327.2s  mean pd 0.0166
+  2016Q4      20,000 rows    326.9s  mean pd 0.0161
+  2017Q1      20,000 rows    324.4s  mean pd 0.0155
+  2017Q2      20,000 rows    326.5s  mean pd 0.0154
+  2017Q3      20,000 rows    324.6s  mean pd 0.0162
+  2017Q4      20,000 rows    323.1s  mean pd 0.0149
+  2018Q1      20,000 rows    324.7s  mean pd 0.0139
+  repeat 2016Q1: largest disagreement 0.00e+00, 0 rows differ
+tabpfn/20260913: context 50,000 rows read in 0.3s
+  reference   50,000 rows    457.8s  mean pd 0.0160
+  2016Q1      20,000 rows    323.8s  mean pd 0.0145
+  2016Q2      20,000 rows    323.3s  mean pd 0.0143
+  2016Q3      20,000 rows    324.3s  mean pd 0.0154
+  2016Q4      20,000 rows    324.0s  mean pd 0.0148
+  2017Q1      20,000 rows    323.7s  mean pd 0.0142
+  2017Q2      20,000 rows    323.4s  mean pd 0.0142
+  2017Q3      20,000 rows    322.7s  mean pd 0.0148
+  2017Q4      20,000 rows    322.8s  mean pd 0.0135
+  2018Q1      20,000 rows    322.9s  mean pd 0.0124
+  repeat 2016Q1: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 540,000
+reference rows        : 150,000
+wall                  : 11124s

@@ -1,0 +1,30 @@
+rows                  : 2,260,668
+loaded in             : 111s
+2015H1-E: train 323026 rows 2010-04-01..2014-06-01 (17 quarters), blind 312972 rows, test 220000 rows over 11 cohorts
+
+| cohort | rows |
+| --- | --- |
+| 2015Q3 | 20000 |
+| 2015Q4 | 20000 |
+| 2016Q1 | 20000 |
+| 2016Q2 | 20000 |
+| 2016Q3 | 20000 |
+| 2016Q4 | 20000 |
+| 2017Q1 | 20000 |
+| 2017Q2 | 20000 |
+| 2017Q3 | 20000 |
+| 2017Q4 | 20000 |
+| 2018Q1 | 20000 | 
+
+fold 1: fit 206,736  validation 51,684  test 64,606  defaults 0.0233 / 0.0233 / 0.0233
+  fold1/scorecard               206,736 rows  fit    9.8s  auc 0.6888  O/E 1.004  threshold 0.0426 (F1 0.099, 11.743% positive)
+  fold1/gbm                     206,736 rows  fit  176.3s  auc 0.7055  O/E 1.003  threshold 0.0590 (F1 0.109, 4.671% positive)
+  fold1/gbm-50k/20260911         50,000 rows  fit    3.1s  auc 0.6939  O/E 0.986  threshold 0.0460 (F1 0.098, 9.957% positive)
+  fold1/gbm-50k/20260912         50,000 rows  fit    3.5s  auc 0.6920  O/E 1.021  threshold 0.0467 (F1 0.107, 7.263% positive)
+  fold1/gbm-50k/20260913         50,000 rows  fit    3.1s  auc 0.6884  O/E 1.034  threshold 0.0405 (F1 0.100, 10.005% positive)
+fold 1 in 206s
+
+scored rows           : 581,450
+reference rows        : 563,472
+context rows          : 150,000; cells 40,000 rows over 2 cells
+wall                  : 333s

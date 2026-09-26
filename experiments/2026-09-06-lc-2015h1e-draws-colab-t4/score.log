@@ -1,0 +1,28 @@
+tabicl/20260912: context 50,000 rows read in 3.0s
+  reference   50,000 rows    210.3s  mean pd 0.0158
+  2015Q3      20,000 rows     73.9s  mean pd 0.0165
+  2015Q4      20,000 rows     73.6s  mean pd 0.0158
+  2016Q1      20,000 rows     74.4s  mean pd 0.0160
+  repeat 2015Q3: largest disagreement 0.00e+00, 0 rows differ
+tabicl/20260913: context 50,000 rows read in 1.4s
+  reference   50,000 rows    213.5s  mean pd 0.0165
+  2015Q3      20,000 rows     74.3s  mean pd 0.0178
+  2015Q4      20,000 rows     74.2s  mean pd 0.0170
+  2016Q1      20,000 rows     74.7s  mean pd 0.0170
+  repeat 2015Q3: largest disagreement 0.00e+00, 0 rows differ
+tabpfn/20260912: context 50,000 rows read in 2.0s
+  reference   50,000 rows    389.4s  mean pd 0.0160
+  2015Q3      20,000 rows    136.2s  mean pd 0.0147
+  2015Q4      20,000 rows    136.3s  mean pd 0.0140
+  2016Q1      20,000 rows    136.2s  mean pd 0.0142
+  repeat 2015Q3: largest disagreement 0.00e+00, 0 rows differ
+tabpfn/20260913: context 50,000 rows read in 1.3s
+  reference   50,000 rows    388.4s  mean pd 0.0163
+  2015Q3      20,000 rows    136.0s  mean pd 0.0158
+  2015Q4      20,000 rows    135.8s  mean pd 0.0150
+  2016Q1      20,000 rows    136.1s  mean pd 0.0150
+  repeat 2015Q3: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 240,000
+reference rows        : 200,000
+wall                  : 2904s

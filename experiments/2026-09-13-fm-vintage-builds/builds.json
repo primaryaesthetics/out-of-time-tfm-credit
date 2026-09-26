@@ -1,0 +1,2784 @@
+{
+  "parameters": {
+    "as_of": [
+      "2002-12-31",
+      "2004-12-31",
+      "2006-12-31",
+      "2008-12-31",
+      "2010-12-31",
+      "2012-12-31",
+      "2014-12-31",
+      "2016-12-31",
+      "2018-12-31"
+    ],
+    "arms": [
+      "E",
+      "R"
+    ],
+    "rolling_quarters": 8,
+    "window": 24,
+    "axis_gap_months": 27,
+    "max_clock_lag_months": 5,
+    "horizon_window": 12,
+    "first_cohort": "1999H1",
+    "last_cohort": "2023H2",
+    "flag_start": "2014-01",
+    "floors": {
+      "min_loans": 5000,
+      "min_defaults": 100
+    },
+    "max_first_observed_age": 3,
+    "exclude_record_gaps": true,
+    "context_rows": 50000
+  },
+  "performance_cutoff": "2026-03-01",
+  "inputs_sha256": {
+    "loans_1999.parquet": "73b358157489bf4ba307ddaceafe8b30973157f1c0a3825ce484f02d4cf194a0",
+    "loans_2000.parquet": "229706511ceb541be0ad1784ff710dfd8d0c4c382a42e532666350fef439f61f",
+    "loans_2001.parquet": "02d7f7b55a6a29e52664426cf1fa7de609dfdf81510a43a77a4ce011756d29d0",
+    "loans_2002.parquet": "f23c20e92999473d596de35a35fe44dda10aa1f542ca7c4cdbbe01e815dd7420",
+    "loans_2003.parquet": "54b1ba86e17a1b0a5487b13d8d6a01e63f20f45ed9d13a142da77db073efb337",
+    "loans_2004.parquet": "a46faebaa4dca0eb8a177e6d0e3a61905e641c76f7bcb4c10b5cb9031c4eb527",
+    "loans_2005.parquet": "4f44259fbba8982eff4172a947aa9c8e258d461af22897d9aafb40a4e12ad28b",
+    "loans_2006.parquet": "b61816a2fbef6d3bf07aa66661fb1ab965a2b86f5a1f767a4a334033482ab161",
+    "loans_2007.parquet": "93fce25667a3739e6757bc23f0d22c4ce3799f7d521f5c8af0f233d784032372",
+    "loans_2008.parquet": "b5bc95b3555025422db9d5d8520b43f05a2701a816783ec929424a8e687d9bb2",
+    "loans_2009.parquet": "e49d74d80b6713822e28566f24aa29bd52d248afce8cf09ef3da0c39efd993c5",
+    "loans_2010.parquet": "0ae288ad437ac9ecc496355c074ea4a1c49b7435c37120fec9e4a2f612cd7cf0",
+    "loans_2011.parquet": "a681ea8140087be5b524a98c5b4fde6865ccdf7ea5408905baf6ff552c387ca2",
+    "loans_2012.parquet": "7fc982854089efa47074e4c3f016f9069763dec834f3395a3ff405171ae09df1",
+    "loans_2013.parquet": "1202353208f7a5d4d9946debd7d0c04fd31b18f08ad9528288277a455cbd0ccc",
+    "loans_2014.parquet": "f305e1ec8871ee80d63d03f50cbc996251343afdf8df22f0640004cd4fcb5b05",
+    "loans_2015.parquet": "5cd965bcbf449b4f9057aaceb4d604c84104dd732225d8b5a790aa9af3bee9d4",
+    "loans_2016.parquet": "63b5e74cf0833b1db856e32dc4b88950da1b1f2bafc094257b462113be9e3b6c",
+    "loans_2017.parquet": "7a6789b10f90884fa829a28482b38daa947e0d7f70bd3d238a53fa37c5df1112",
+    "loans_2018.parquet": "c9cbeefa46b8a425cad546e1c76934ddcd11562f7977b2ff3641d79850a20713",
+    "loans_2019.parquet": "adeabe35d0bfdb6d48a2a91b7c9cb7d19f07b7876a35b25984a55c235b7167f2",
+    "loans_2020.parquet": "e42176844979c66c6c8dc60277579c05433d20448030ff47696cf5e5ea219bf3",
+    "loans_2021.parquet": "a9164fc2f52a486b5d3d555af8d9f91ac15f11178015ba1790f1daf1b11aa6f7",
+    "loans_2022.parquet": "3b2a4d9eeccb8d0b5eb7f94284f057420cfcbf37ac3e1a66401169e686940231",
+    "loans_2023.parquet": "465c71450a02319093cc0119b1408e8c8262aefec81cb08f53b5d578e934cead",
+    "loans_2024.parquet": "489692672072a288d45fac3eb7f55c4f976aaff23b102b1f33fa8c0e8a4ed281",
+    "loans_2025.parquet": "ddfc0c44d39f666bdf6a13a273fa42f208d8839886dfa476c67cab4396121cc1",
+    "loans_2026.parquet": "93731a6674d78041feb1588555a08e79af858d4812ec5e181d6f64014c456285"
+  },
+  "exclusions": {
+    "loaded": 1362500,
+    "redated": 7095,
+    "redated_rule": "first payment 6+ months after the origination quarter opens",
+    "without_performance_record": 10,
+    "book": 1355395,
+    "first_observed_age": {
+      "<=1": 1298145,
+      "2-3": 32028,
+      "4-6": 6324,
+      "7-12": 5661,
+      "13-24": 5430,
+      ">=25": 7807
+    },
+    "record_gaps": 194,
+    "excluded_first_observed_late": 25159,
+    "excluded_record_gap": 190
+  },
+  "labels": {
+    "primary": {
+      "definition": {
+        "window_months": 24,
+        "performance_cutoff": "2026-03-01",
+        "delinquency_months": 3,
+        "relief_months_count": false,
+        "bad_terminations": [
+          2,
+          3,
+          9
+        ],
+        "prepaid": [
+          1
+        ],
+        "censoring": [
+          15,
+          16,
+          96
+        ],
+        "max_first_observed_age": 3,
+        "exclude_record_gaps": true
+      },
+      "labelled": 1223446,
+      "defaults": 13416,
+      "default_rate": 0.010966,
+      "dropped_immature": 104929,
+      "censored": 1671,
+      "notes": [
+        "104929 loans have a first payment within 24 months of the cutoff 2026-03-01 and were dropped as immature whatever their record says, and 0 more have fewer than 24 months of history, no termination and no default on record; none was labelled non-default",
+        "1671 loans left the dataset inside the window through a sale or a confirmed defect with no default on record, and were dropped as censored",
+        "25159 loans were first observed after age 3 and were dropped as left-truncated: the months before their first record are inside the window and not on file",
+        "190 loans with a month missing from their record were dropped: a default in the missing month would not be on file",
+        "145 loans ended in a bad termination with no ninety-day delinquency on record before it, and are dated at the termination"
+      ],
+      "left_truncated": 25159,
+      "record_gaps": 190
+    },
+    "reported": {
+      "definition": {
+        "window_months": 24,
+        "performance_cutoff": "2026-03-01",
+        "delinquency_months": 3,
+        "relief_months_count": true,
+        "bad_terminations": [
+          2,
+          3,
+          9
+        ],
+        "prepaid": [
+          1
+        ],
+        "censoring": [
+          15,
+          16,
+          96
+        ],
+        "max_first_observed_age": 3,
+        "exclude_record_gaps": true
+      },
+      "labelled": 1223477,
+      "defaults": 17932,
+      "default_rate": 0.014657,
+      "dropped_immature": 104929,
+      "censored": 1640,
+      "notes": [
+        "104929 loans have a first payment within 24 months of the cutoff 2026-03-01 and were dropped as immature whatever their record says, and 0 more have fewer than 24 months of history, no termination and no default on record; none was labelled non-default",
+        "1640 loans left the dataset inside the window through a sale or a confirmed defect with no default on record, and were dropped as censored",
+        "25159 loans were first observed after age 3 and were dropped as left-truncated: the months before their first record are inside the window and not on file",
+        "190 loans with a month missing from their record were dropped: a default in the missing month would not be on file",
+        "137 loans ended in a bad termination with no ninety-day delinquency on record before it, and are dated at the termination"
+      ],
+      "left_truncated": 25159,
+      "record_gaps": 190
+    },
+    "horizon": {
+      "definition": {
+        "window_months": 12,
+        "performance_cutoff": "2026-03-01",
+        "delinquency_months": 3,
+        "relief_months_count": false,
+        "bad_terminations": [
+          2,
+          3,
+          9
+        ],
+        "prepaid": [
+          1
+        ],
+        "censoring": [
+          15,
+          16,
+          96
+        ],
+        "max_first_observed_age": 3,
+        "exclude_record_gaps": true
+      },
+      "labelled": 1273623,
+      "defaults": 4509,
+      "default_rate": 0.00354,
+      "dropped_immature": 54931,
+      "censored": 1464,
+      "notes": [
+        "54931 loans have a first payment within 12 months of the cutoff 2026-03-01 and were dropped as immature whatever their record says, and 0 more have fewer than 12 months of history, no termination and no default on record; none was labelled non-default",
+        "1464 loans left the dataset inside the window through a sale or a confirmed defect with no default on record, and were dropped as censored",
+        "25187 loans were first observed after age 3 and were dropped as left-truncated: the months before their first record are inside the window and not on file",
+        "190 loans with a month missing from their record were dropped: a default in the missing month would not be on file",
+        "145 loans ended in a bad termination with no ninety-day delinquency on record before it, and are dated at the termination"
+      ],
+      "left_truncated": 25187,
+      "record_gaps": 190
+    }
+  },
+  "regimes": {
+    "pre-flag": [
+      "1999H1",
+      "1999H2",
+      "2000H1",
+      "2000H2",
+      "2001H1",
+      "2001H2",
+      "2002H1",
+      "2002H2",
+      "2003H1",
+      "2003H2",
+      "2004H1",
+      "2004H2",
+      "2005H1",
+      "2005H2",
+      "2006H1",
+      "2006H2",
+      "2007H1",
+      "2007H2",
+      "2008H1",
+      "2008H2",
+      "2009H1",
+      "2009H2",
+      "2010H1",
+      "2010H2",
+      "2011H1"
+    ],
+    "straddling": [
+      "2011H2",
+      "2012H1",
+      "2012H2",
+      "2013H1",
+      "2013H2"
+    ],
+    "flagged": [
+      "2014H1",
+      "2014H2",
+      "2015H1",
+      "2015H2",
+      "2016H1",
+      "2016H2",
+      "2017H1",
+      "2017H2",
+      "2018H1",
+      "2018H2",
+      "2019H1",
+      "2019H2",
+      "2020H1",
+      "2020H2",
+      "2021H1",
+      "2021H2",
+      "2022H1",
+      "2022H2",
+      "2023H1",
+      "2023H2"
+    ]
+  },
+  "cohorts": {
+    "1999H1": {
+      "loans": 25000,
+      "book": 24744,
+      "labelled": 22339,
+      "defaults": 158,
+      "rate": 0.007073,
+      "reported": {
+        "labelled": 22339,
+        "defaults": 158,
+        "rate": 0.007073
+      },
+      "horizon": {
+        "labelled": 22340,
+        "defaults": 41,
+        "rate": 0.001835
+      },
+      "floor": true,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.89356,
+      "excluded_first_observed_late": 2394,
+      "excluded_record_gap": 2
+    },
+    "1999H2": {
+      "loans": 25000,
+      "book": 24347,
+      "labelled": 22855,
+      "defaults": 267,
+      "rate": 0.011682,
+      "reported": {
+        "labelled": 22855,
+        "defaults": 267,
+        "rate": 0.011682
+      },
+      "horizon": {
+        "labelled": 22856,
+        "defaults": 85,
+        "rate": 0.003719
+      },
+      "floor": true,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.9142,
+      "excluded_first_observed_late": 1480,
+      "excluded_record_gap": 4
+    },
+    "2000H1": {
+      "loans": 25000,
+      "book": 23860,
+      "labelled": 22506,
+      "defaults": 342,
+      "rate": 0.015196,
+      "reported": {
+        "labelled": 22506,
+        "defaults": 342,
+        "rate": 0.015196
+      },
+      "horizon": {
+        "labelled": 22509,
+        "defaults": 141,
+        "rate": 0.006264
+      },
+      "floor": true,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.90024,
+      "excluded_first_observed_late": 1308,
+      "excluded_record_gap": 32
+    },
+    "2000H2": {
+      "loans": 25000,
+      "book": 24514,
+      "labelled": 23743,
+      "defaults": 368,
+      "rate": 0.015499,
+      "reported": {
+        "labelled": 23743,
+        "defaults": 368,
+        "rate": 0.015499
+      },
+      "horizon": {
+        "labelled": 23746,
+        "defaults": 170,
+        "rate": 0.007159
+      },
+      "floor": true,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.94972,
+      "excluded_first_observed_late": 742,
+      "excluded_record_gap": 5
+    },
+    "2001H1": {
+      "loans": 25000,
+      "book": 24738,
+      "labelled": 23997,
+      "defaults": 292,
+      "rate": 0.012168,
+      "reported": {
+        "labelled": 23997,
+        "defaults": 292,
+        "rate": 0.012168
+      },
+      "horizon": {
+        "labelled": 24001,
+        "defaults": 116,
+        "rate": 0.004833
+      },
+      "floor": true,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.95988,
+      "excluded_first_observed_late": 727,
+      "excluded_record_gap": 3
+    },
+    "2001H2": {
+      "loans": 25000,
+      "book": 24799,
+      "labelled": 24285,
+      "defaults": 254,
+      "rate": 0.010459,
+      "reported": {
+        "labelled": 24285,
+        "defaults": 254,
+        "rate": 0.010459
+      },
+      "horizon": {
+        "labelled": 24286,
+        "defaults": 95,
+        "rate": 0.003912
+      },
+      "floor": true,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.9714,
+      "excluded_first_observed_late": 488,
+      "excluded_record_gap": 7
+    },
+    "2002H1": {
+      "loans": 25000,
+      "book": 24738,
+      "labelled": 24139,
+      "defaults": 304,
+      "rate": 0.012594,
+      "reported": {
+        "labelled": 24139,
+        "defaults": 304,
+        "rate": 0.012594
+      },
+      "horizon": {
+        "labelled": 24147,
+        "defaults": 144,
+        "rate": 0.005963
+      },
+      "floor": true,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.96556,
+      "excluded_first_observed_late": 579,
+      "excluded_record_gap": 1
+    },
+    "2002H2": {
+      "loans": 25000,
+      "book": 24875,
+      "labelled": 24348,
+      "defaults": 126,
+      "rate": 0.005175,
+      "reported": {
+        "labelled": 24348,
+        "defaults": 126,
+        "rate": 0.005175
+      },
+      "horizon": {
+        "labelled": 24348,
+        "defaults": 61,
+        "rate": 0.002505
+      },
+      "floor": true,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.97392,
+      "excluded_first_observed_late": 514,
+      "excluded_record_gap": 3
+    },
+    "2003H1": {
+      "loans": 25000,
+      "book": 24896,
+      "labelled": 24274,
+      "defaults": 72,
+      "rate": 0.002966,
+      "reported": {
+        "labelled": 24274,
+        "defaults": 72,
+        "rate": 0.002966
+      },
+      "horizon": {
+        "labelled": 24274,
+        "defaults": 34,
+        "rate": 0.001401
+      },
+      "floor": false,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.97096,
+      "excluded_first_observed_late": 613,
+      "excluded_record_gap": 2
+    },
+    "2003H2": {
+      "loans": 25000,
+      "book": 24817,
+      "labelled": 24200,
+      "defaults": 139,
+      "rate": 0.005744,
+      "reported": {
+        "labelled": 24200,
+        "defaults": 139,
+        "rate": 0.005744
+      },
+      "horizon": {
+        "labelled": 24201,
+        "defaults": 48,
+        "rate": 0.001983
+      },
+      "floor": true,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.968,
+      "excluded_first_observed_late": 600,
+      "excluded_record_gap": 5
+    },
+    "2004H1": {
+      "loans": 25000,
+      "book": 24785,
+      "labelled": 24213,
+      "defaults": 179,
+      "rate": 0.007393,
+      "reported": {
+        "labelled": 24213,
+        "defaults": 179,
+        "rate": 0.007393
+      },
+      "horizon": {
+        "labelled": 24215,
+        "defaults": 49,
+        "rate": 0.002024
+      },
+      "floor": true,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.96852,
+      "excluded_first_observed_late": 555,
+      "excluded_record_gap": 6
+    },
+    "2004H2": {
+      "loans": 25000,
+      "book": 24703,
+      "labelled": 24083,
+      "defaults": 201,
+      "rate": 0.008346,
+      "reported": {
+        "labelled": 24083,
+        "defaults": 201,
+        "rate": 0.008346
+      },
+      "horizon": {
+        "labelled": 24086,
+        "defaults": 66,
+        "rate": 0.00274
+      },
+      "floor": true,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.96332,
+      "excluded_first_observed_late": 605,
+      "excluded_record_gap": 7
+    },
+    "2005H1": {
+      "loans": 25000,
+      "book": 24753,
+      "labelled": 24225,
+      "defaults": 247,
+      "rate": 0.010196,
+      "reported": {
+        "labelled": 24225,
+        "defaults": 247,
+        "rate": 0.010196
+      },
+      "horizon": {
+        "labelled": 24228,
+        "defaults": 102,
+        "rate": 0.00421
+      },
+      "floor": true,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.969,
+      "excluded_first_observed_late": 510,
+      "excluded_record_gap": 8
+    },
+    "2005H2": {
+      "loans": 25000,
+      "book": 24784,
+      "labelled": 24061,
+      "defaults": 260,
+      "rate": 0.010806,
+      "reported": {
+        "labelled": 24061,
+        "defaults": 260,
+        "rate": 0.010806
+      },
+      "horizon": {
+        "labelled": 24062,
+        "defaults": 77,
+        "rate": 0.0032
+      },
+      "floor": true,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.96244,
+      "excluded_first_observed_late": 695,
+      "excluded_record_gap": 21
+    },
+    "2006H1": {
+      "loans": 25000,
+      "book": 24739,
+      "labelled": 23264,
+      "defaults": 404,
+      "rate": 0.017366,
+      "reported": {
+        "labelled": 23264,
+        "defaults": 404,
+        "rate": 0.017366
+      },
+      "horizon": {
+        "labelled": 23266,
+        "defaults": 113,
+        "rate": 0.004857
+      },
+      "floor": true,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.93056,
+      "excluded_first_observed_late": 1446,
+      "excluded_record_gap": 17
+    },
+    "2006H2": {
+      "loans": 25000,
+      "book": 24782,
+      "labelled": 23886,
+      "defaults": 524,
+      "rate": 0.021938,
+      "reported": {
+        "labelled": 23886,
+        "defaults": 524,
+        "rate": 0.021938
+      },
+      "horizon": {
+        "labelled": 23895,
+        "defaults": 121,
+        "rate": 0.005064
+      },
+      "floor": true,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.95544,
+      "excluded_first_observed_late": 866,
+      "excluded_record_gap": 13
+    },
+    "2007H1": {
+      "loans": 25000,
+      "book": 24840,
+      "labelled": 23156,
+      "defaults": 803,
+      "rate": 0.034678,
+      "reported": {
+        "labelled": 23156,
+        "defaults": 803,
+        "rate": 0.034678
+      },
+      "horizon": {
+        "labelled": 23160,
+        "defaults": 148,
+        "rate": 0.00639
+      },
+      "floor": true,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.92624,
+      "excluded_first_observed_late": 1656,
+      "excluded_record_gap": 16
+    },
+    "2007H2": {
+      "loans": 25000,
+      "book": 24788,
+      "labelled": 24356,
+      "defaults": 1555,
+      "rate": 0.063845,
+      "reported": {
+        "labelled": 24356,
+        "defaults": 1555,
+        "rate": 0.063845
+      },
+      "horizon": {
+        "labelled": 24365,
+        "defaults": 397,
+        "rate": 0.016294
+      },
+      "floor": true,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.97424,
+      "excluded_first_observed_late": 391,
+      "excluded_record_gap": 12
+    },
+    "2008H1": {
+      "loans": 25000,
+      "book": 24865,
+      "labelled": 24656,
+      "defaults": 1108,
+      "rate": 0.044938,
+      "reported": {
+        "labelled": 24656,
+        "defaults": 1108,
+        "rate": 0.044938
+      },
+      "horizon": {
+        "labelled": 24661,
+        "defaults": 320,
+        "rate": 0.012976
+      },
+      "floor": true,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.98624,
+      "excluded_first_observed_late": 183,
+      "excluded_record_gap": 4
+    },
+    "2008H2": {
+      "loans": 24999,
+      "book": 24826,
+      "labelled": 24737,
+      "defaults": 857,
+      "rate": 0.034644,
+      "reported": {
+        "labelled": 24737,
+        "defaults": 857,
+        "rate": 0.034644
+      },
+      "horizon": {
+        "labelled": 24741,
+        "defaults": 347,
+        "rate": 0.014025
+      },
+      "floor": true,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.98952,
+      "excluded_first_observed_late": 61,
+      "excluded_record_gap": 10
+    },
+    "2009H1": {
+      "loans": 25001,
+      "book": 24968,
+      "labelled": 24841,
+      "defaults": 118,
+      "rate": 0.00475,
+      "reported": {
+        "labelled": 24841,
+        "defaults": 118,
+        "rate": 0.00475
+      },
+      "horizon": {
+        "labelled": 24850,
+        "defaults": 34,
+        "rate": 0.001368
+      },
+      "floor": true,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.9936,
+      "excluded_first_observed_late": 108,
+      "excluded_record_gap": 3
+    },
+    "2009H2": {
+      "loans": 25000,
+      "book": 24940,
+      "labelled": 24708,
+      "defaults": 196,
+      "rate": 0.007933,
+      "reported": {
+        "labelled": 24708,
+        "defaults": 196,
+        "rate": 0.007933
+      },
+      "horizon": {
+        "labelled": 24762,
+        "defaults": 68,
+        "rate": 0.002746
+      },
+      "floor": true,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.98832,
+      "excluded_first_observed_late": 165,
+      "excluded_record_gap": 1
+    },
+    "2010H1": {
+      "loans": 25000,
+      "book": 24952,
+      "labelled": 24842,
+      "defaults": 191,
+      "rate": 0.007689,
+      "reported": {
+        "labelled": 24842,
+        "defaults": 191,
+        "rate": 0.007689
+      },
+      "horizon": {
+        "labelled": 24847,
+        "defaults": 62,
+        "rate": 0.002495
+      },
+      "floor": true,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.99368,
+      "excluded_first_observed_late": 90,
+      "excluded_record_gap": 1
+    },
+    "2010H2": {
+      "loans": 25000,
+      "book": 24981,
+      "labelled": 24683,
+      "defaults": 152,
+      "rate": 0.006158,
+      "reported": {
+        "labelled": 24683,
+        "defaults": 152,
+        "rate": 0.006158
+      },
+      "horizon": {
+        "labelled": 24696,
+        "defaults": 42,
+        "rate": 0.001701
+      },
+      "floor": true,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.98732,
+      "excluded_first_observed_late": 269,
+      "excluded_record_gap": 0
+    },
+    "2011H1": {
+      "loans": 25000,
+      "book": 24965,
+      "labelled": 24612,
+      "defaults": 195,
+      "rate": 0.007923,
+      "reported": {
+        "labelled": 24612,
+        "defaults": 195,
+        "rate": 0.007923
+      },
+      "horizon": {
+        "labelled": 24632,
+        "defaults": 70,
+        "rate": 0.002842
+      },
+      "floor": true,
+      "regime": "pre-flag",
+      "maturity_share": 1.0,
+      "labelled_share": 0.98448,
+      "excluded_first_observed_late": 305,
+      "excluded_record_gap": 3
+    },
+    "2011H2": {
+      "loans": 25000,
+      "book": 24976,
+      "labelled": 24646,
+      "defaults": 119,
+      "rate": 0.004828,
+      "reported": {
+        "labelled": 24646,
+        "defaults": 119,
+        "rate": 0.004828
+      },
+      "horizon": {
+        "labelled": 24649,
+        "defaults": 39,
+        "rate": 0.001582
+      },
+      "floor": true,
+      "regime": "straddling",
+      "maturity_share": 1.0,
+      "labelled_share": 0.98584,
+      "excluded_first_observed_late": 287,
+      "excluded_record_gap": 1
+    },
+    "2012H1": {
+      "loans": 25000,
+      "book": 24980,
+      "labelled": 24306,
+      "defaults": 148,
+      "rate": 0.006089,
+      "reported": {
+        "labelled": 24306,
+        "defaults": 149,
+        "rate": 0.00613
+      },
+      "horizon": {
+        "labelled": 24311,
+        "defaults": 56,
+        "rate": 0.002303
+      },
+      "floor": true,
+      "regime": "straddling",
+      "maturity_share": 1.0,
+      "labelled_share": 0.97224,
+      "excluded_first_observed_late": 615,
+      "excluded_record_gap": 0
+    },
+    "2012H2": {
+      "loans": 25000,
+      "book": 24964,
+      "labelled": 24538,
+      "defaults": 131,
+      "rate": 0.005339,
+      "reported": {
+        "labelled": 24538,
+        "defaults": 133,
+        "rate": 0.00542
+      },
+      "horizon": {
+        "labelled": 24541,
+        "defaults": 53,
+        "rate": 0.00216
+      },
+      "floor": true,
+      "regime": "straddling",
+      "maturity_share": 1.0,
+      "labelled_share": 0.98152,
+      "excluded_first_observed_late": 398,
+      "excluded_record_gap": 0
+    },
+    "2013H1": {
+      "loans": 25000,
+      "book": 24970,
+      "labelled": 24341,
+      "defaults": 85,
+      "rate": 0.003492,
+      "reported": {
+        "labelled": 24341,
+        "defaults": 86,
+        "rate": 0.003533
+      },
+      "horizon": {
+        "labelled": 24346,
+        "defaults": 30,
+        "rate": 0.001232
+      },
+      "floor": false,
+      "regime": "straddling",
+      "maturity_share": 1.0,
+      "labelled_share": 0.97364,
+      "excluded_first_observed_late": 600,
+      "excluded_record_gap": 0
+    },
+    "2013H2": {
+      "loans": 25000,
+      "book": 24937,
+      "labelled": 23974,
+      "defaults": 142,
+      "rate": 0.005923,
+      "reported": {
+        "labelled": 23974,
+        "defaults": 148,
+        "rate": 0.006173
+      },
+      "horizon": {
+        "labelled": 23975,
+        "defaults": 49,
+        "rate": 0.002044
+      },
+      "floor": true,
+      "regime": "straddling",
+      "maturity_share": 1.0,
+      "labelled_share": 0.95896,
+      "excluded_first_observed_late": 938,
+      "excluded_record_gap": 0
+    },
+    "2014H1": {
+      "loans": 25000,
+      "book": 24933,
+      "labelled": 24341,
+      "defaults": 137,
+      "rate": 0.005628,
+      "reported": {
+        "labelled": 24341,
+        "defaults": 143,
+        "rate": 0.005875
+      },
+      "horizon": {
+        "labelled": 24349,
+        "defaults": 42,
+        "rate": 0.001725
+      },
+      "floor": true,
+      "regime": "flagged",
+      "maturity_share": 1.0,
+      "labelled_share": 0.97364,
+      "excluded_first_observed_late": 549,
+      "excluded_record_gap": 0
+    },
+    "2014H2": {
+      "loans": 25000,
+      "book": 24936,
+      "labelled": 24213,
+      "defaults": 99,
+      "rate": 0.004089,
+      "reported": {
+        "labelled": 24213,
+        "defaults": 104,
+        "rate": 0.004295
+      },
+      "horizon": {
+        "labelled": 24216,
+        "defaults": 34,
+        "rate": 0.001404
+      },
+      "floor": false,
+      "regime": "flagged",
+      "maturity_share": 1.0,
+      "labelled_share": 0.96852,
+      "excluded_first_observed_late": 695,
+      "excluded_record_gap": 0
+    },
+    "2015H1": {
+      "loans": 25000,
+      "book": 24954,
+      "labelled": 24159,
+      "defaults": 83,
+      "rate": 0.003436,
+      "reported": {
+        "labelled": 24159,
+        "defaults": 88,
+        "rate": 0.003643
+      },
+      "horizon": {
+        "labelled": 24161,
+        "defaults": 21,
+        "rate": 0.000869
+      },
+      "floor": false,
+      "regime": "flagged",
+      "maturity_share": 1.0,
+      "labelled_share": 0.96636,
+      "excluded_first_observed_late": 779,
+      "excluded_record_gap": 0
+    },
+    "2015H2": {
+      "loans": 25000,
+      "book": 24929,
+      "labelled": 24159,
+      "defaults": 130,
+      "rate": 0.005381,
+      "reported": {
+        "labelled": 24159,
+        "defaults": 164,
+        "rate": 0.006788
+      },
+      "horizon": {
+        "labelled": 24160,
+        "defaults": 37,
+        "rate": 0.001531
+      },
+      "floor": true,
+      "regime": "flagged",
+      "maturity_share": 1.0,
+      "labelled_share": 0.96636,
+      "excluded_first_observed_late": 758,
+      "excluded_record_gap": 2
+    },
+    "2016H1": {
+      "loans": 25000,
+      "book": 24947,
+      "labelled": 24632,
+      "defaults": 115,
+      "rate": 0.004669,
+      "reported": {
+        "labelled": 24632,
+        "defaults": 157,
+        "rate": 0.006374
+      },
+      "horizon": {
+        "labelled": 24635,
+        "defaults": 23,
+        "rate": 0.000934
+      },
+      "floor": true,
+      "regime": "flagged",
+      "maturity_share": 1.0,
+      "labelled_share": 0.98528,
+      "excluded_first_observed_late": 292,
+      "excluded_record_gap": 0
+    },
+    "2016H2": {
+      "loans": 25000,
+      "book": 24948,
+      "labelled": 24760,
+      "defaults": 121,
+      "rate": 0.004887,
+      "reported": {
+        "labelled": 24760,
+        "defaults": 170,
+        "rate": 0.006866
+      },
+      "horizon": {
+        "labelled": 24767,
+        "defaults": 29,
+        "rate": 0.001171
+      },
+      "floor": true,
+      "regime": "flagged",
+      "maturity_share": 1.0,
+      "labelled_share": 0.9904,
+      "excluded_first_observed_late": 161,
+      "excluded_record_gap": 0
+    },
+    "2017H1": {
+      "loans": 25000,
+      "book": 24925,
+      "labelled": 24541,
+      "defaults": 162,
+      "rate": 0.006601,
+      "reported": {
+        "labelled": 24541,
+        "defaults": 224,
+        "rate": 0.009128
+      },
+      "horizon": {
+        "labelled": 24544,
+        "defaults": 61,
+        "rate": 0.002485
+      },
+      "floor": true,
+      "regime": "flagged",
+      "maturity_share": 1.0,
+      "labelled_share": 0.98164,
+      "excluded_first_observed_late": 342,
+      "excluded_record_gap": 0
+    },
+    "2017H2": {
+      "loans": 25000,
+      "book": 24946,
+      "labelled": 24679,
+      "defaults": 142,
+      "rate": 0.005754,
+      "reported": {
+        "labelled": 24679,
+        "defaults": 171,
+        "rate": 0.006929
+      },
+      "horizon": {
+        "labelled": 24685,
+        "defaults": 43,
+        "rate": 0.001742
+      },
+      "floor": true,
+      "regime": "flagged",
+      "maturity_share": 1.0,
+      "labelled_share": 0.98716,
+      "excluded_first_observed_late": 237,
+      "excluded_record_gap": 1
+    },
+    "2018H1": {
+      "loans": 25000,
+      "book": 24955,
+      "labelled": 24416,
+      "defaults": 148,
+      "rate": 0.006062,
+      "reported": {
+        "labelled": 24416,
+        "defaults": 337,
+        "rate": 0.013802
+      },
+      "horizon": {
+        "labelled": 24421,
+        "defaults": 48,
+        "rate": 0.001966
+      },
+      "floor": true,
+      "regime": "flagged",
+      "maturity_share": 1.0,
+      "labelled_share": 0.97664,
+      "excluded_first_observed_late": 501,
+      "excluded_record_gap": 0
+    },
+    "2018H2": {
+      "loans": 25000,
+      "book": 24929,
+      "labelled": 24543,
+      "defaults": 146,
+      "rate": 0.005949,
+      "reported": {
+        "labelled": 24543,
+        "defaults": 929,
+        "rate": 0.037852
+      },
+      "horizon": {
+        "labelled": 24548,
+        "defaults": 50,
+        "rate": 0.002037
+      },
+      "floor": true,
+      "regime": "flagged",
+      "maturity_share": 1.0,
+      "labelled_share": 0.98172,
+      "excluded_first_observed_late": 340,
+      "excluded_record_gap": 0
+    },
+    "2019H1": {
+      "loans": 25000,
+      "book": 24942,
+      "labelled": 24752,
+      "defaults": 110,
+      "rate": 0.004444,
+      "reported": {
+        "labelled": 24753,
+        "defaults": 1135,
+        "rate": 0.045853
+      },
+      "horizon": {
+        "labelled": 24758,
+        "defaults": 42,
+        "rate": 0.001696
+      },
+      "floor": true,
+      "regime": "flagged",
+      "maturity_share": 1.0,
+      "labelled_share": 0.99008,
+      "excluded_first_observed_late": 131,
+      "excluded_record_gap": 0
+    },
+    "2019H2": {
+      "loans": 25000,
+      "book": 24966,
+      "labelled": 24861,
+      "defaults": 136,
+      "rate": 0.00547,
+      "reported": {
+        "labelled": 24864,
+        "defaults": 1148,
+        "rate": 0.046171
+      },
+      "horizon": {
+        "labelled": 24868,
+        "defaults": 59,
+        "rate": 0.002373
+      },
+      "floor": true,
+      "regime": "flagged",
+      "maturity_share": 1.0,
+      "labelled_share": 0.99444,
+      "excluded_first_observed_late": 64,
+      "excluded_record_gap": 0
+    },
+    "2020H1": {
+      "loans": 25000,
+      "book": 24967,
+      "labelled": 24880,
+      "defaults": 111,
+      "rate": 0.004461,
+      "reported": {
+        "labelled": 24894,
+        "defaults": 609,
+        "rate": 0.024464
+      },
+      "horizon": {
+        "labelled": 24892,
+        "defaults": 56,
+        "rate": 0.00225
+      },
+      "floor": true,
+      "regime": "flagged",
+      "maturity_share": 1.0,
+      "labelled_share": 0.9952,
+      "excluded_first_observed_late": 11,
+      "excluded_record_gap": 0
+    },
+    "2020H2": {
+      "loans": 25000,
+      "book": 24976,
+      "labelled": 24919,
+      "defaults": 71,
+      "rate": 0.002849,
+      "reported": {
+        "labelled": 24919,
+        "defaults": 197,
+        "rate": 0.007906
+      },
+      "horizon": {
+        "labelled": 24924,
+        "defaults": 29,
+        "rate": 0.001164
+      },
+      "floor": false,
+      "regime": "flagged",
+      "maturity_share": 1.0,
+      "labelled_share": 0.99676,
+      "excluded_first_observed_late": 12,
+      "excluded_record_gap": 0
+    },
+    "2021H1": {
+      "loans": 25000,
+      "book": 24988,
+      "labelled": 24909,
+      "defaults": 90,
+      "rate": 0.003613,
+      "reported": {
+        "labelled": 24912,
+        "defaults": 193,
+        "rate": 0.007747
+      },
+      "horizon": {
+        "labelled": 24920,
+        "defaults": 33,
+        "rate": 0.001324
+      },
+      "floor": false,
+      "regime": "flagged",
+      "maturity_share": 1.0,
+      "labelled_share": 0.99636,
+      "excluded_first_observed_late": 23,
+      "excluded_record_gap": 0
+    },
+    "2021H2": {
+      "loans": 25000,
+      "book": 24995,
+      "labelled": 24929,
+      "defaults": 136,
+      "rate": 0.005455,
+      "reported": {
+        "labelled": 24932,
+        "defaults": 263,
+        "rate": 0.010549
+      },
+      "horizon": {
+        "labelled": 24939,
+        "defaults": 38,
+        "rate": 0.001524
+      },
+      "floor": true,
+      "regime": "flagged",
+      "maturity_share": 1.0,
+      "labelled_share": 0.99716,
+      "excluded_first_observed_late": 24,
+      "excluded_record_gap": 0
+    },
+    "2022H1": {
+      "loans": 25000,
+      "book": 24994,
+      "labelled": 24889,
+      "defaults": 291,
+      "rate": 0.011692,
+      "reported": {
+        "labelled": 24891,
+        "defaults": 423,
+        "rate": 0.016994
+      },
+      "horizon": {
+        "labelled": 24904,
+        "defaults": 79,
+        "rate": 0.003172
+      },
+      "floor": true,
+      "regime": "flagged",
+      "maturity_share": 1.0,
+      "labelled_share": 0.99556,
+      "excluded_first_observed_late": 14,
+      "excluded_record_gap": 0
+    },
+    "2022H2": {
+      "loans": 25000,
+      "book": 24984,
+      "labelled": 24859,
+      "defaults": 373,
+      "rate": 0.015005,
+      "reported": {
+        "labelled": 24860,
+        "defaults": 485,
+        "rate": 0.019509
+      },
+      "horizon": {
+        "labelled": 24879,
+        "defaults": 107,
+        "rate": 0.004301
+      },
+      "floor": true,
+      "regime": "flagged",
+      "maturity_share": 1.0,
+      "labelled_share": 0.99436,
+      "excluded_first_observed_late": 11,
+      "excluded_record_gap": 0
+    },
+    "2023H1": {
+      "loans": 25000,
+      "book": 24979,
+      "labelled": 24882,
+      "defaults": 381,
+      "rate": 0.015312,
+      "reported": {
+        "labelled": 24884,
+        "defaults": 464,
+        "rate": 0.018647
+      },
+      "horizon": {
+        "labelled": 24895,
+        "defaults": 120,
+        "rate": 0.00482
+      },
+      "floor": true,
+      "regime": "flagged",
+      "maturity_share": 1.0,
+      "labelled_share": 0.99528,
+      "excluded_first_observed_late": 5,
+      "excluded_record_gap": 0
+    },
+    "2023H2": {
+      "loans": 25000,
+      "book": 24968,
+      "labelled": 24866,
+      "defaults": 363,
+      "rate": 0.014598,
+      "reported": {
+        "labelled": 24867,
+        "defaults": 420,
+        "rate": 0.01689
+      },
+      "horizon": {
+        "labelled": 24877,
+        "defaults": 120,
+        "rate": 0.004824
+      },
+      "floor": true,
+      "regime": "flagged",
+      "maturity_share": 1.0,
+      "labelled_share": 0.99464,
+      "excluded_first_observed_late": 21,
+      "excluded_record_gap": 0
+    }
+  },
+  "arms": {
+    "E": [
+      {
+        "build_id": "2002H2-E",
+        "arm": "E",
+        "as_of": "2002-12-31",
+        "train_quarters": [
+          "1999Q1",
+          "1999Q2",
+          "1999Q3",
+          "1999Q4",
+          "2000Q1",
+          "2000Q2",
+          "2000Q3"
+        ],
+        "pool": {
+          "labelled": 79501,
+          "defaults": 945,
+          "rate": 0.011887
+        },
+        "pool_reported": {
+          "labelled": 79501,
+          "defaults": 945,
+          "rate": 0.011887
+        },
+        "pool_horizon": {
+          "labelled": 79501,
+          "defaults": 349,
+          "rate": 0.00439
+        },
+        "context_rows": 50000,
+        "blind_rows": 108711,
+        "blind_loans_with_closed_windows": 3982,
+        "training_windows_open_at_as_of": 0,
+        "cells": [
+          "2003H1",
+          "2003H2",
+          "2004H1",
+          "2004H2",
+          "2005H1",
+          "2005H2",
+          "2006H1",
+          "2006H2",
+          "2007H1",
+          "2007H2",
+          "2008H1",
+          "2008H2",
+          "2009H1",
+          "2009H2",
+          "2010H1",
+          "2010H2",
+          "2011H1",
+          "2011H2",
+          "2012H1",
+          "2012H2",
+          "2013H1",
+          "2013H2",
+          "2014H1",
+          "2014H2",
+          "2015H1",
+          "2015H2",
+          "2016H1",
+          "2016H2",
+          "2017H1",
+          "2017H2",
+          "2018H1",
+          "2018H2",
+          "2019H1",
+          "2019H2",
+          "2020H1",
+          "2020H2",
+          "2021H1",
+          "2021H2",
+          "2022H1",
+          "2022H2",
+          "2023H1",
+          "2023H2"
+        ],
+        "criterion_cells": 36,
+        "scored_linked_to_training_by_pre_harp_id": 6
+      },
+      {
+        "build_id": "2004H2-E",
+        "arm": "E",
+        "as_of": "2004-12-31",
+        "train_quarters": [
+          "1999Q1",
+          "1999Q2",
+          "1999Q3",
+          "1999Q4",
+          "2000Q1",
+          "2000Q2",
+          "2000Q3",
+          "2000Q4",
+          "2001Q1",
+          "2001Q2",
+          "2001Q3",
+          "2001Q4",
+          "2002Q1",
+          "2002Q2",
+          "2002Q3"
+        ],
+        "pool": {
+          "labelled": 176074,
+          "defaults": 2069,
+          "rate": 0.011751
+        },
+        "pool_reported": {
+          "labelled": 176074,
+          "defaults": 2069,
+          "rate": 0.011751
+        },
+        "pool_horizon": {
+          "labelled": 176074,
+          "defaults": 833,
+          "rate": 0.004731
+        },
+        "context_rows": 50000,
+        "blind_rows": 108908,
+        "blind_loans_with_closed_windows": 4699,
+        "training_windows_open_at_as_of": 0,
+        "cells": [
+          "2005H1",
+          "2005H2",
+          "2006H1",
+          "2006H2",
+          "2007H1",
+          "2007H2",
+          "2008H1",
+          "2008H2",
+          "2009H1",
+          "2009H2",
+          "2010H1",
+          "2010H2",
+          "2011H1",
+          "2011H2",
+          "2012H1",
+          "2012H2",
+          "2013H1",
+          "2013H2",
+          "2014H1",
+          "2014H2",
+          "2015H1",
+          "2015H2",
+          "2016H1",
+          "2016H2",
+          "2017H1",
+          "2017H2",
+          "2018H1",
+          "2018H2",
+          "2019H1",
+          "2019H2",
+          "2020H1",
+          "2020H2",
+          "2021H1",
+          "2021H2",
+          "2022H1",
+          "2022H2",
+          "2023H1",
+          "2023H2"
+        ],
+        "criterion_cells": 33,
+        "scored_linked_to_training_by_pre_harp_id": 50
+      },
+      {
+        "build_id": "2006H2-E",
+        "arm": "E",
+        "as_of": "2006-12-31",
+        "train_quarters": [
+          "1999Q1",
+          "1999Q2",
+          "1999Q3",
+          "1999Q4",
+          "2000Q1",
+          "2000Q2",
+          "2000Q3",
+          "2000Q4",
+          "2001Q1",
+          "2001Q2",
+          "2001Q3",
+          "2001Q4",
+          "2002Q1",
+          "2002Q2",
+          "2002Q3",
+          "2002Q4",
+          "2003Q1",
+          "2003Q2",
+          "2003Q3",
+          "2003Q4",
+          "2004Q1",
+          "2004Q2",
+          "2004Q3"
+        ],
+        "pool": {
+          "labelled": 272901,
+          "defaults": 2603,
+          "rate": 0.009538
+        },
+        "pool_reported": {
+          "labelled": 272901,
+          "defaults": 2603,
+          "rate": 0.009538
+        },
+        "pool_horizon": {
+          "labelled": 272901,
+          "defaults": 1016,
+          "rate": 0.003723
+        },
+        "context_rows": 50000,
+        "blind_rows": 107517,
+        "blind_loans_with_closed_windows": 3800,
+        "training_windows_open_at_as_of": 0,
+        "cells": [
+          "2007H1",
+          "2007H2",
+          "2008H1",
+          "2008H2",
+          "2009H1",
+          "2009H2",
+          "2010H1",
+          "2010H2",
+          "2011H1",
+          "2011H2",
+          "2012H1",
+          "2012H2",
+          "2013H1",
+          "2013H2",
+          "2014H1",
+          "2014H2",
+          "2015H1",
+          "2015H2",
+          "2016H1",
+          "2016H2",
+          "2017H1",
+          "2017H2",
+          "2018H1",
+          "2018H2",
+          "2019H1",
+          "2019H2",
+          "2020H1",
+          "2020H2",
+          "2021H1",
+          "2021H2",
+          "2022H1",
+          "2022H2",
+          "2023H1",
+          "2023H2"
+        ],
+        "criterion_cells": 29,
+        "scored_linked_to_training_by_pre_harp_id": 309
+      },
+      {
+        "build_id": "2008H2-E",
+        "arm": "E",
+        "as_of": "2008-12-31",
+        "train_quarters": [
+          "1999Q1",
+          "1999Q2",
+          "1999Q3",
+          "1999Q4",
+          "2000Q1",
+          "2000Q2",
+          "2000Q3",
+          "2000Q4",
+          "2001Q1",
+          "2001Q2",
+          "2001Q3",
+          "2001Q4",
+          "2002Q1",
+          "2002Q2",
+          "2002Q3",
+          "2002Q4",
+          "2003Q1",
+          "2003Q2",
+          "2003Q3",
+          "2003Q4",
+          "2004Q1",
+          "2004Q2",
+          "2004Q3",
+          "2004Q4",
+          "2005Q1",
+          "2005Q2",
+          "2005Q3",
+          "2005Q4",
+          "2006Q1",
+          "2006Q2",
+          "2006Q3"
+        ],
+        "pool": {
+          "labelled": 368463,
+          "defaults": 3826,
+          "rate": 0.010384
+        },
+        "pool_reported": {
+          "labelled": 368463,
+          "defaults": 3826,
+          "rate": 0.010384
+        },
+        "pool_horizon": {
+          "labelled": 368463,
+          "defaults": 1397,
+          "rate": 0.003791
+        },
+        "context_rows": 50000,
+        "blind_rows": 108860,
+        "blind_loans_with_closed_windows": 4100,
+        "training_windows_open_at_as_of": 0,
+        "cells": [
+          "2009H1",
+          "2009H2",
+          "2010H1",
+          "2010H2",
+          "2011H1",
+          "2011H2",
+          "2012H1",
+          "2012H2",
+          "2013H1",
+          "2013H2",
+          "2014H1",
+          "2014H2",
+          "2015H1",
+          "2015H2",
+          "2016H1",
+          "2016H2",
+          "2017H1",
+          "2017H2",
+          "2018H1",
+          "2018H2",
+          "2019H1",
+          "2019H2",
+          "2020H1",
+          "2020H2",
+          "2021H1",
+          "2021H2",
+          "2022H1",
+          "2022H2",
+          "2023H1",
+          "2023H2"
+        ],
+        "criterion_cells": 25,
+        "scored_linked_to_training_by_pre_harp_id": 918
+      },
+      {
+        "build_id": "2010H2-E",
+        "arm": "E",
+        "as_of": "2010-12-31",
+        "train_quarters": [
+          "1999Q1",
+          "1999Q2",
+          "1999Q3",
+          "1999Q4",
+          "2000Q1",
+          "2000Q2",
+          "2000Q3",
+          "2000Q4",
+          "2001Q1",
+          "2001Q2",
+          "2001Q3",
+          "2001Q4",
+          "2002Q1",
+          "2002Q2",
+          "2002Q3",
+          "2002Q4",
+          "2003Q1",
+          "2003Q2",
+          "2003Q3",
+          "2003Q4",
+          "2004Q1",
+          "2004Q2",
+          "2004Q3",
+          "2004Q4",
+          "2005Q1",
+          "2005Q2",
+          "2005Q3",
+          "2005Q4",
+          "2006Q1",
+          "2006Q2",
+          "2006Q3",
+          "2006Q4",
+          "2007Q1",
+          "2007Q2",
+          "2007Q3",
+          "2007Q4",
+          "2008Q1",
+          "2008Q2",
+          "2008Q3"
+        ],
+        "pool": {
+          "labelled": 464938,
+          "defaults": 8138,
+          "rate": 0.017503
+        },
+        "pool_reported": {
+          "labelled": 464938,
+          "defaults": 8138,
+          "rate": 0.017503
+        },
+        "pool_horizon": {
+          "labelled": 464938,
+          "defaults": 2544,
+          "rate": 0.005472
+        },
+        "context_rows": 50000,
+        "blind_rows": 111459,
+        "blind_loans_with_closed_windows": 4292,
+        "training_windows_open_at_as_of": 0,
+        "cells": [
+          "2011H1",
+          "2011H2",
+          "2012H1",
+          "2012H2",
+          "2013H1",
+          "2013H2",
+          "2014H1",
+          "2014H2",
+          "2015H1",
+          "2015H2",
+          "2016H1",
+          "2016H2",
+          "2017H1",
+          "2017H2",
+          "2018H1",
+          "2018H2",
+          "2019H1",
+          "2019H2",
+          "2020H1",
+          "2020H2",
+          "2021H1",
+          "2021H2",
+          "2022H1",
+          "2022H2",
+          "2023H1",
+          "2023H2"
+        ],
+        "criterion_cells": 21,
+        "scored_linked_to_training_by_pre_harp_id": 1313
+      },
+      {
+        "build_id": "2012H2-E",
+        "arm": "E",
+        "as_of": "2012-12-31",
+        "train_quarters": [
+          "1999Q1",
+          "1999Q2",
+          "1999Q3",
+          "1999Q4",
+          "2000Q1",
+          "2000Q2",
+          "2000Q3",
+          "2000Q4",
+          "2001Q1",
+          "2001Q2",
+          "2001Q3",
+          "2001Q4",
+          "2002Q1",
+          "2002Q2",
+          "2002Q3",
+          "2002Q4",
+          "2003Q1",
+          "2003Q2",
+          "2003Q3",
+          "2003Q4",
+          "2004Q1",
+          "2004Q2",
+          "2004Q3",
+          "2004Q4",
+          "2005Q1",
+          "2005Q2",
+          "2005Q3",
+          "2005Q4",
+          "2006Q1",
+          "2006Q2",
+          "2006Q3",
+          "2006Q4",
+          "2007Q1",
+          "2007Q2",
+          "2007Q3",
+          "2007Q4",
+          "2008Q1",
+          "2008Q2",
+          "2008Q3",
+          "2008Q4",
+          "2009Q1",
+          "2009Q2",
+          "2009Q3",
+          "2009Q4",
+          "2010Q1",
+          "2010Q2",
+          "2010Q3"
+        ],
+        "pool": {
+          "labelled": 564090,
+          "defaults": 9042,
+          "rate": 0.016029
+        },
+        "pool_reported": {
+          "labelled": 564090,
+          "defaults": 9042,
+          "rate": 0.016029
+        },
+        "pool_horizon": {
+          "labelled": 564090,
+          "defaults": 2866,
+          "rate": 0.005081
+        },
+        "context_rows": 50000,
+        "blind_rows": 110409,
+        "blind_loans_with_closed_windows": 4161,
+        "training_windows_open_at_as_of": 0,
+        "cells": [
+          "2013H1",
+          "2013H2",
+          "2014H1",
+          "2014H2",
+          "2015H1",
+          "2015H2",
+          "2016H1",
+          "2016H2",
+          "2017H1",
+          "2017H2",
+          "2018H1",
+          "2018H2",
+          "2019H1",
+          "2019H2",
+          "2020H1",
+          "2020H2",
+          "2021H1",
+          "2021H2",
+          "2022H1",
+          "2022H2",
+          "2023H1",
+          "2023H2"
+        ],
+        "criterion_cells": 17,
+        "scored_linked_to_training_by_pre_harp_id": 691
+      },
+      {
+        "build_id": "2014H2-E",
+        "arm": "E",
+        "as_of": "2014-12-31",
+        "train_quarters": [
+          "1999Q1",
+          "1999Q2",
+          "1999Q3",
+          "1999Q4",
+          "2000Q1",
+          "2000Q2",
+          "2000Q3",
+          "2000Q4",
+          "2001Q1",
+          "2001Q2",
+          "2001Q3",
+          "2001Q4",
+          "2002Q1",
+          "2002Q2",
+          "2002Q3",
+          "2002Q4",
+          "2003Q1",
+          "2003Q2",
+          "2003Q3",
+          "2003Q4",
+          "2004Q1",
+          "2004Q2",
+          "2004Q3",
+          "2004Q4",
+          "2005Q1",
+          "2005Q2",
+          "2005Q3",
+          "2005Q4",
+          "2006Q1",
+          "2006Q2",
+          "2006Q3",
+          "2006Q4",
+          "2007Q1",
+          "2007Q2",
+          "2007Q3",
+          "2007Q4",
+          "2008Q1",
+          "2008Q2",
+          "2008Q3",
+          "2008Q4",
+          "2009Q1",
+          "2009Q2",
+          "2009Q3",
+          "2009Q4",
+          "2010Q1",
+          "2010Q2",
+          "2010Q3",
+          "2010Q4",
+          "2011Q1",
+          "2011Q2",
+          "2011Q3",
+          "2011Q4",
+          "2012Q1",
+          "2012Q2",
+          "2012Q3"
+        ],
+        "pool": {
+          "labelled": 662256,
+          "defaults": 9658,
+          "rate": 0.014583
+        },
+        "pool_reported": {
+          "labelled": 662256,
+          "defaults": 9659,
+          "rate": 0.014585
+        },
+        "pool_horizon": {
+          "labelled": 662256,
+          "defaults": 3081,
+          "rate": 0.004652
+        },
+        "context_rows": 50000,
+        "blind_rows": 109112,
+        "blind_loans_with_closed_windows": 4272,
+        "training_windows_open_at_as_of": 0,
+        "cells": [
+          "2015H1",
+          "2015H2",
+          "2016H1",
+          "2016H2",
+          "2017H1",
+          "2017H2",
+          "2018H1",
+          "2018H2",
+          "2019H1",
+          "2019H2",
+          "2020H1",
+          "2020H2",
+          "2021H1",
+          "2021H2",
+          "2022H1",
+          "2022H2",
+          "2023H1",
+          "2023H2"
+        ],
+        "criterion_cells": 15,
+        "scored_linked_to_training_by_pre_harp_id": 189
+      },
+      {
+        "build_id": "2016H2-E",
+        "arm": "E",
+        "as_of": "2016-12-31",
+        "train_quarters": [
+          "1999Q1",
+          "1999Q2",
+          "1999Q3",
+          "1999Q4",
+          "2000Q1",
+          "2000Q2",
+          "2000Q3",
+          "2000Q4",
+          "2001Q1",
+          "2001Q2",
+          "2001Q3",
+          "2001Q4",
+          "2002Q1",
+          "2002Q2",
+          "2002Q3",
+          "2002Q4",
+          "2003Q1",
+          "2003Q2",
+          "2003Q3",
+          "2003Q4",
+          "2004Q1",
+          "2004Q2",
+          "2004Q3",
+          "2004Q4",
+          "2005Q1",
+          "2005Q2",
+          "2005Q3",
+          "2005Q4",
+          "2006Q1",
+          "2006Q2",
+          "2006Q3",
+          "2006Q4",
+          "2007Q1",
+          "2007Q2",
+          "2007Q3",
+          "2007Q4",
+          "2008Q1",
+          "2008Q2",
+          "2008Q3",
+          "2008Q4",
+          "2009Q1",
+          "2009Q2",
+          "2009Q3",
+          "2009Q4",
+          "2010Q1",
+          "2010Q2",
+          "2010Q3",
+          "2010Q4",
+          "2011Q1",
+          "2011Q2",
+          "2011Q3",
+          "2011Q4",
+          "2012Q1",
+          "2012Q2",
+          "2012Q3",
+          "2012Q4",
+          "2013Q1",
+          "2013Q2",
+          "2013Q3",
+          "2013Q4",
+          "2014Q1",
+          "2014Q2",
+          "2014Q3"
+        ],
+        "pool": {
+          "labelled": 759294,
+          "defaults": 10120,
+          "rate": 0.013328
+        },
+        "pool_reported": {
+          "labelled": 759294,
+          "defaults": 10137,
+          "rate": 0.013351
+        },
+        "pool_horizon": {
+          "labelled": 759294,
+          "defaults": 3236,
+          "rate": 0.004262
+        },
+        "context_rows": 50000,
+        "blind_rows": 109784,
+        "blind_loans_with_closed_windows": 4027,
+        "training_windows_open_at_as_of": 0,
+        "cells": [
+          "2017H1",
+          "2017H2",
+          "2018H1",
+          "2018H2",
+          "2019H1",
+          "2019H2",
+          "2020H1",
+          "2020H2",
+          "2021H1",
+          "2021H2",
+          "2022H1",
+          "2022H2",
+          "2023H1",
+          "2023H2"
+        ],
+        "criterion_cells": 12,
+        "scored_linked_to_training_by_pre_harp_id": 36
+      },
+      {
+        "build_id": "2018H2-E",
+        "arm": "E",
+        "as_of": "2018-12-31",
+        "train_quarters": [
+          "1999Q1",
+          "1999Q2",
+          "1999Q3",
+          "1999Q4",
+          "2000Q1",
+          "2000Q2",
+          "2000Q3",
+          "2000Q4",
+          "2001Q1",
+          "2001Q2",
+          "2001Q3",
+          "2001Q4",
+          "2002Q1",
+          "2002Q2",
+          "2002Q3",
+          "2002Q4",
+          "2003Q1",
+          "2003Q2",
+          "2003Q3",
+          "2003Q4",
+          "2004Q1",
+          "2004Q2",
+          "2004Q3",
+          "2004Q4",
+          "2005Q1",
+          "2005Q2",
+          "2005Q3",
+          "2005Q4",
+          "2006Q1",
+          "2006Q2",
+          "2006Q3",
+          "2006Q4",
+          "2007Q1",
+          "2007Q2",
+          "2007Q3",
+          "2007Q4",
+          "2008Q1",
+          "2008Q2",
+          "2008Q3",
+          "2008Q4",
+          "2009Q1",
+          "2009Q2",
+          "2009Q3",
+          "2009Q4",
+          "2010Q1",
+          "2010Q2",
+          "2010Q3",
+          "2010Q4",
+          "2011Q1",
+          "2011Q2",
+          "2011Q3",
+          "2011Q4",
+          "2012Q1",
+          "2012Q2",
+          "2012Q3",
+          "2012Q4",
+          "2013Q1",
+          "2013Q2",
+          "2013Q3",
+          "2013Q4",
+          "2014Q1",
+          "2014Q2",
+          "2014Q3",
+          "2014Q4",
+          "2015Q1",
+          "2015Q2",
+          "2015Q3",
+          "2015Q4",
+          "2016Q1",
+          "2016Q2",
+          "2016Q3"
+        ],
+        "pool": {
+          "labelled": 856721,
+          "defaults": 10558,
+          "rate": 0.012324
+        },
+        "pool_reported": {
+          "labelled": 856721,
+          "defaults": 10688,
+          "rate": 0.012475
+        },
+        "pool_horizon": {
+          "labelled": 856721,
+          "defaults": 3343,
+          "rate": 0.003902
+        },
+        "context_rows": 50000,
+        "blind_rows": 110536,
+        "blind_loans_with_closed_windows": 4210,
+        "training_windows_open_at_as_of": 0,
+        "cells": [
+          "2019H1",
+          "2019H2",
+          "2020H1",
+          "2020H2",
+          "2021H1",
+          "2021H2",
+          "2022H1",
+          "2022H2",
+          "2023H1",
+          "2023H2"
+        ],
+        "criterion_cells": 8,
+        "scored_linked_to_training_by_pre_harp_id": 0
+      }
+    ],
+    "R": [
+      {
+        "build_id": "2004H2-R",
+        "arm": "R",
+        "as_of": "2004-12-31",
+        "train_quarters": [
+          "2000Q4",
+          "2001Q1",
+          "2001Q2",
+          "2001Q3",
+          "2001Q4",
+          "2002Q1",
+          "2002Q2",
+          "2002Q3"
+        ],
+        "pool": {
+          "labelled": 96573,
+          "defaults": 1124,
+          "rate": 0.011639
+        },
+        "pool_reported": {
+          "labelled": 96573,
+          "defaults": 1124,
+          "rate": 0.011639
+        },
+        "pool_horizon": {
+          "labelled": 96573,
+          "defaults": 484,
+          "rate": 0.005012
+        },
+        "context_rows": 50000,
+        "blind_rows": 108908,
+        "blind_loans_with_closed_windows": 4699,
+        "training_windows_open_at_as_of": 0,
+        "cells": [
+          "2005H1",
+          "2005H2",
+          "2006H1",
+          "2006H2",
+          "2007H1",
+          "2007H2",
+          "2008H1",
+          "2008H2",
+          "2009H1",
+          "2009H2",
+          "2010H1",
+          "2010H2",
+          "2011H1",
+          "2011H2",
+          "2012H1",
+          "2012H2",
+          "2013H1",
+          "2013H2",
+          "2014H1",
+          "2014H2",
+          "2015H1",
+          "2015H2",
+          "2016H1",
+          "2016H2",
+          "2017H1",
+          "2017H2",
+          "2018H1",
+          "2018H2",
+          "2019H1",
+          "2019H2",
+          "2020H1",
+          "2020H2",
+          "2021H1",
+          "2021H2",
+          "2022H1",
+          "2022H2",
+          "2023H1",
+          "2023H2"
+        ],
+        "criterion_cells": 33,
+        "scored_linked_to_training_by_pre_harp_id": 44
+      },
+      {
+        "build_id": "2006H2-R",
+        "arm": "R",
+        "as_of": "2006-12-31",
+        "train_quarters": [
+          "2002Q4",
+          "2003Q1",
+          "2003Q2",
+          "2003Q3",
+          "2003Q4",
+          "2004Q1",
+          "2004Q2",
+          "2004Q3"
+        ],
+        "pool": {
+          "labelled": 96827,
+          "defaults": 534,
+          "rate": 0.005515
+        },
+        "pool_reported": {
+          "labelled": 96827,
+          "defaults": 534,
+          "rate": 0.005515
+        },
+        "pool_horizon": {
+          "labelled": 96827,
+          "defaults": 183,
+          "rate": 0.00189
+        },
+        "context_rows": 50000,
+        "blind_rows": 107517,
+        "blind_loans_with_closed_windows": 3800,
+        "training_windows_open_at_as_of": 0,
+        "cells": [
+          "2007H1",
+          "2007H2",
+          "2008H1",
+          "2008H2",
+          "2009H1",
+          "2009H2",
+          "2010H1",
+          "2010H2",
+          "2011H1",
+          "2011H2",
+          "2012H1",
+          "2012H2",
+          "2013H1",
+          "2013H2",
+          "2014H1",
+          "2014H2",
+          "2015H1",
+          "2015H2",
+          "2016H1",
+          "2016H2",
+          "2017H1",
+          "2017H2",
+          "2018H1",
+          "2018H2",
+          "2019H1",
+          "2019H2",
+          "2020H1",
+          "2020H2",
+          "2021H1",
+          "2021H2",
+          "2022H1",
+          "2022H2",
+          "2023H1",
+          "2023H2"
+        ],
+        "criterion_cells": 29,
+        "scored_linked_to_training_by_pre_harp_id": 259
+      },
+      {
+        "build_id": "2008H2-R",
+        "arm": "R",
+        "as_of": "2008-12-31",
+        "train_quarters": [
+          "2004Q4",
+          "2005Q1",
+          "2005Q2",
+          "2005Q3",
+          "2005Q4",
+          "2006Q1",
+          "2006Q2",
+          "2006Q3"
+        ],
+        "pool": {
+          "labelled": 95562,
+          "defaults": 1223,
+          "rate": 0.012798
+        },
+        "pool_reported": {
+          "labelled": 95562,
+          "defaults": 1223,
+          "rate": 0.012798
+        },
+        "pool_horizon": {
+          "labelled": 95562,
+          "defaults": 381,
+          "rate": 0.003987
+        },
+        "context_rows": 50000,
+        "blind_rows": 108860,
+        "blind_loans_with_closed_windows": 4100,
+        "training_windows_open_at_as_of": 0,
+        "cells": [
+          "2009H1",
+          "2009H2",
+          "2010H1",
+          "2010H2",
+          "2011H1",
+          "2011H2",
+          "2012H1",
+          "2012H2",
+          "2013H1",
+          "2013H2",
+          "2014H1",
+          "2014H2",
+          "2015H1",
+          "2015H2",
+          "2016H1",
+          "2016H2",
+          "2017H1",
+          "2017H2",
+          "2018H1",
+          "2018H2",
+          "2019H1",
+          "2019H2",
+          "2020H1",
+          "2020H2",
+          "2021H1",
+          "2021H2",
+          "2022H1",
+          "2022H2",
+          "2023H1",
+          "2023H2"
+        ],
+        "criterion_cells": 25,
+        "scored_linked_to_training_by_pre_harp_id": 609
+      },
+      {
+        "build_id": "2010H2-R",
+        "arm": "R",
+        "as_of": "2010-12-31",
+        "train_quarters": [
+          "2006Q4",
+          "2007Q1",
+          "2007Q2",
+          "2007Q3",
+          "2007Q4",
+          "2008Q1",
+          "2008Q2",
+          "2008Q3"
+        ],
+        "pool": {
+          "labelled": 96475,
+          "defaults": 4312,
+          "rate": 0.044696
+        },
+        "pool_reported": {
+          "labelled": 96475,
+          "defaults": 4312,
+          "rate": 0.044696
+        },
+        "pool_horizon": {
+          "labelled": 96475,
+          "defaults": 1147,
+          "rate": 0.011889
+        },
+        "context_rows": 50000,
+        "blind_rows": 111459,
+        "blind_loans_with_closed_windows": 4292,
+        "training_windows_open_at_as_of": 0,
+        "cells": [
+          "2011H1",
+          "2011H2",
+          "2012H1",
+          "2012H2",
+          "2013H1",
+          "2013H2",
+          "2014H1",
+          "2014H2",
+          "2015H1",
+          "2015H2",
+          "2016H1",
+          "2016H2",
+          "2017H1",
+          "2017H2",
+          "2018H1",
+          "2018H2",
+          "2019H1",
+          "2019H2",
+          "2020H1",
+          "2020H2",
+          "2021H1",
+          "2021H2",
+          "2022H1",
+          "2022H2",
+          "2023H1",
+          "2023H2"
+        ],
+        "criterion_cells": 21,
+        "scored_linked_to_training_by_pre_harp_id": 602
+      },
+      {
+        "build_id": "2012H2-R",
+        "arm": "R",
+        "as_of": "2012-12-31",
+        "train_quarters": [
+          "2008Q4",
+          "2009Q1",
+          "2009Q2",
+          "2009Q3",
+          "2009Q4",
+          "2010Q1",
+          "2010Q2",
+          "2010Q3"
+        ],
+        "pool": {
+          "labelled": 99152,
+          "defaults": 904,
+          "rate": 0.009117
+        },
+        "pool_reported": {
+          "labelled": 99152,
+          "defaults": 904,
+          "rate": 0.009117
+        },
+        "pool_horizon": {
+          "labelled": 99152,
+          "defaults": 322,
+          "rate": 0.003248
+        },
+        "context_rows": 50000,
+        "blind_rows": 110409,
+        "blind_loans_with_closed_windows": 4161,
+        "training_windows_open_at_as_of": 0,
+        "cells": [
+          "2013H1",
+          "2013H2",
+          "2014H1",
+          "2014H2",
+          "2015H1",
+          "2015H2",
+          "2016H1",
+          "2016H2",
+          "2017H1",
+          "2017H2",
+          "2018H1",
+          "2018H2",
+          "2019H1",
+          "2019H2",
+          "2020H1",
+          "2020H2",
+          "2021H1",
+          "2021H2",
+          "2022H1",
+          "2022H2",
+          "2023H1",
+          "2023H2"
+        ],
+        "criterion_cells": 17,
+        "scored_linked_to_training_by_pre_harp_id": 74
+      },
+      {
+        "build_id": "2014H2-R",
+        "arm": "R",
+        "as_of": "2014-12-31",
+        "train_quarters": [
+          "2010Q4",
+          "2011Q1",
+          "2011Q2",
+          "2011Q3",
+          "2011Q4",
+          "2012Q1",
+          "2012Q2",
+          "2012Q3"
+        ],
+        "pool": {
+          "labelled": 98166,
+          "defaults": 616,
+          "rate": 0.006275
+        },
+        "pool_reported": {
+          "labelled": 98166,
+          "defaults": 617,
+          "rate": 0.006285
+        },
+        "pool_horizon": {
+          "labelled": 98166,
+          "defaults": 215,
+          "rate": 0.00219
+        },
+        "context_rows": 50000,
+        "blind_rows": 109112,
+        "blind_loans_with_closed_windows": 4272,
+        "training_windows_open_at_as_of": 0,
+        "cells": [
+          "2015H1",
+          "2015H2",
+          "2016H1",
+          "2016H2",
+          "2017H1",
+          "2017H2",
+          "2018H1",
+          "2018H2",
+          "2019H1",
+          "2019H2",
+          "2020H1",
+          "2020H2",
+          "2021H1",
+          "2021H2",
+          "2022H1",
+          "2022H2",
+          "2023H1",
+          "2023H2"
+        ],
+        "criterion_cells": 15,
+        "scored_linked_to_training_by_pre_harp_id": 0
+      },
+      {
+        "build_id": "2016H2-R",
+        "arm": "R",
+        "as_of": "2016-12-31",
+        "train_quarters": [
+          "2012Q4",
+          "2013Q1",
+          "2013Q2",
+          "2013Q3",
+          "2013Q4",
+          "2014Q1",
+          "2014Q2",
+          "2014Q3"
+        ],
+        "pool": {
+          "labelled": 97038,
+          "defaults": 462,
+          "rate": 0.004761
+        },
+        "pool_reported": {
+          "labelled": 97038,
+          "defaults": 478,
+          "rate": 0.004926
+        },
+        "pool_horizon": {
+          "labelled": 97038,
+          "defaults": 155,
+          "rate": 0.001597
+        },
+        "context_rows": 50000,
+        "blind_rows": 109784,
+        "blind_loans_with_closed_windows": 4027,
+        "training_windows_open_at_as_of": 0,
+        "cells": [
+          "2017H1",
+          "2017H2",
+          "2018H1",
+          "2018H2",
+          "2019H1",
+          "2019H2",
+          "2020H1",
+          "2020H2",
+          "2021H1",
+          "2021H2",
+          "2022H1",
+          "2022H2",
+          "2023H1",
+          "2023H2"
+        ],
+        "criterion_cells": 12,
+        "scored_linked_to_training_by_pre_harp_id": 0
+      },
+      {
+        "build_id": "2018H2-R",
+        "arm": "R",
+        "as_of": "2018-12-31",
+        "train_quarters": [
+          "2014Q4",
+          "2015Q1",
+          "2015Q2",
+          "2015Q3",
+          "2015Q4",
+          "2016Q1",
+          "2016Q2",
+          "2016Q3"
+        ],
+        "pool": {
+          "labelled": 97427,
+          "defaults": 438,
+          "rate": 0.004496
+        },
+        "pool_reported": {
+          "labelled": 97427,
+          "defaults": 551,
+          "rate": 0.005656
+        },
+        "pool_horizon": {
+          "labelled": 97427,
+          "defaults": 107,
+          "rate": 0.001098
+        },
+        "context_rows": 50000,
+        "blind_rows": 110536,
+        "blind_loans_with_closed_windows": 4210,
+        "training_windows_open_at_as_of": 0,
+        "cells": [
+          "2019H1",
+          "2019H2",
+          "2020H1",
+          "2020H2",
+          "2021H1",
+          "2021H2",
+          "2022H1",
+          "2022H2",
+          "2023H1",
+          "2023H2"
+        ],
+        "criterion_cells": 8,
+        "scored_linked_to_training_by_pre_harp_id": 0
+      }
+    ]
+  },
+  "skipped": [
+    {
+      "as_of": "2002-12-31",
+      "arm": "R",
+      "reason": "a 8-quarter window ending 2000Q3 reaches before the first cohort"
+    }
+  ],
+  "cell_counts": {
+    "E": {
+      "builds": 9,
+      "cells": 234,
+      "criterion": 196,
+      "below_floors": 38
+    },
+    "R": {
+      "builds": 8,
+      "cells": 192,
+      "criterion": 160,
+      "below_floors": 32
+    }
+  }
+}

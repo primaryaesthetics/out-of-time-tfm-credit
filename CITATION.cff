@@ -1,0 +1,54 @@
+cff-version: 1.2.0
+message: "If you use this repository or its results, please cite the paper as below."
+type: software
+title: "Out of Time: code, pre-registrations, claim ledger and recorded runs"
+authors:
+  - family-names: Khobotov
+    given-names: Nikolai
+    orcid: "https://orcid.org/0009-0005-3612-830X"
+url: "https://github.com/primaryaesthetics/out-of-time-tfm-credit"
+repository-code: "https://github.com/primaryaesthetics/out-of-time-tfm-credit"
+keywords:
+  - tabular foundation models
+  - TabPFN
+  - TabICL
+  - credit risk
+  - probability of default
+  - calibration
+  - population stability index
+  - out-of-time validation
+  - pre-registration
+  - reproducibility
+abstract: >-
+  Code, pre-registrations with their logs, claim ledger and recorded runs of
+  an out-of-time evaluation of TabPFN-3 and TabICLv2 beside a
+  weight-of-evidence scorecard and a tuned gradient-boosting model, on the
+  origination vintages of Lending Club and of Freddie Mac's Single-Family
+  Loan-Level Dataset, reading discrimination as cohorts age, calibration and
+  population stability against pre-registered kill criteria.
+preferred-citation:
+  type: article
+  title: "Out of Time: A Pre-Registered Vintage, Calibration and Stability Evaluation of Tabular Foundation Models for Credit Default"
+  authors:
+    - family-names: Khobotov
+      given-names: Nikolai
+      orcid: "https://orcid.org/0009-0005-3612-830X"
+  year: 2026
+references:
+  - type: generic
+    title: "Protocol, with dated amendments, for an out-of-time, calibration and stability evaluation of tabular foundation models on credit probability of default"
+    authors:
+      - family-names: Khobotov
+        given-names: Nikolai
+        orcid: "https://orcid.org/0009-0005-3612-830X"
+    year: 2026
+    doi: 10.5281/zenodo.22803069
+  - type: software
+    title: "psi-inference: critical values and p-values for population stability testing"
+    authors:
+      - family-names: Khobotov
+        given-names: Nikolai
+        orcid: "https://orcid.org/0009-0005-3612-830X"
+    version: 0.1.0
+    doi: 10.5281/zenodo.22342344
+    url: "https://github.com/primaryaesthetics/psi-inference"

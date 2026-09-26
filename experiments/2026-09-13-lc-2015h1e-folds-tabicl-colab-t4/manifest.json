@@ -1,0 +1,57 @@
+{
+  "slug": "lc-2015h1e-folds-tabicl-colab-t4",
+  "recorded_utc": "2026-09-13T09:30:00+00:00",
+  "git_sha": "001b24bd38526af6c15eecfc49fef93c9263b782",
+  "git_dirty": false,
+  "scorer_commit": "The score_context.py and node_jobs.py that ran are byte-identical to scripts/score_context.py and scripts/node_jobs.py in this tree at commits adfdb3d, 09d8f53 and HEAD; neither file changed across that range.",
+  "written_by_hand": "This run was made on a hosted notebook that holds no copy of the repository, so record_run.py could not record it. The manifest is assembled from what the notebook returned; node.json is the scorer's own account of its environment and its cells, and score.log is the slice of the runner's console log that belongs to this job.",
+  "host": "Google Colab, free tier, Linux x86_64, Python 3.13.15",
+  "gpu": "NVIDIA Tesla T4, 15.64 GB, CUDA 12.8, torch 2.11.0+cu128",
+  "job": "tabicl@2026-09-12-lc-2015h1e-folds",
+  "command": "python score_context.py 2026-09-12-lc-2015h1e-folds --out-dir 2026-09-12-lc-2015h1e-folds-scored-tabicl --models tabicl --chunk 20000, run by node_jobs.py from the unpacked job archive as job 1 of 2",
+  "sibling_job": "tabicl-t1-check@2026-09-12-lc-2015h1e-folds, recorded at experiments/2026-09-13-lc-2015h1e-folds-tabicl-t1-check-colab-t4; no separate index directory was made for this two-job archive.",
+  "job_archive": {
+    "path": "data/derived/node/outoftime-run-folds-2015h1e-tabicl.zip",
+    "sha256": "55c79d64caf45caa4c1d920eddd15fba5105da007951c999f953d141f1ec153c",
+    "built_by": "scripts/pack_node_run.py over experiments/2026-09-12-lc-2015h1e-folds, as a zip for the notebook's upload cell; sidecars outoftime-run-folds-2015h1e-tabicl.zip.sha256 and .jobs.json beside it.",
+    "score_context_py_sha256": "66e8933d67fea5f8140f31f5229a305a15d3f1eb20e0fd67e15546037ff9f0dc",
+    "score_context_py_provenance": "Hash of the copy inside the archive, LF-ended; equal to scripts/score_context.py in this tree at commits adfdb3d, 09d8f53 and HEAD."
+  },
+  "result_archive": {
+    "name": "outoftime-result-folds-2015h1e-tabicl.zip",
+    "sha256": "3e0929e397557eab2e13ac7353f84ff17d6c9e0241ba0422cf2f21274070f38f",
+    "contents": "2026-09-12-lc-2015h1e-folds-scored-tabicl/ (node.json, scores.parquet, reference.parquet, parts/) and folds.log, jobs.json, jobs-done.json; 20 files total"
+  },
+  "bundle_check": {
+    "context.parquet": "12e19504a364334c908f821e3bf83dcc5183cfaf2714e6d3608fb4729895914e",
+    "scored.parquet": "73f6351c08561cc5733b3299b4e6e158ed23a4a2230169f39c15bd021b717a19",
+    "how": "The hashes the scorer recorded in node.json for the bundle it read equal bundle.json of experiments/2026-09-12-lc-2015h1e-folds. The scorer refuses a bundle whose hashes differ from bundle.json, so the notebook scored the recorded rows."
+  },
+  "parts_check": "9 part files under parts/, one per (model, context seed, cell), equal to the 9 cell records of node.json; the parts concatenated are scores.parquet and reference.parquet row for row and probability for probability.",
+  "row_check": {
+    "scored": "40,000 rows per context seed (fold1-test, fold1-validation); every (cohort, row) pair, its outcome and its age match the gbm rows of experiments/2026-09-12-lc-2015h1e-folds/scored.parquet, zero mismatches, no missing probability",
+    "reference": "50,000 rows per context seed; every row and its outcome match the gbm-50k reference of the same context seed in experiments/2026-09-12-lc-2015h1e-folds/reference.parquet, zero mismatches",
+    "seeds": [
+      20260911,
+      20260912,
+      20260913
+    ]
+  },
+  "console_log": "score.log is the runner's console output for this job, sliced from folds.log. Read in full. folds.log line 3 (inside this job's slice) is the HF Hub's own unauthenticated-request warning, which names the environment variable HF_TOKEN and no value; it holds no home path, account name or actual token, and is the only hit the archive's log scan returned.",
+  "question_this_run_was_sent_to_answer": "EXP-004's TabICL side on fold 1 of the published five-fold protocol beside the out-of-time one: the same fold's test and validation cells, at the shipped settings, across all three context draws.",
+  "what_it_measured": {
+    "model": "tabicl 2.1.1, checkpoint tabicl-classifier-v2-20260212.ckpt (sha256 bdc7dbd5...4ed0) downloaded from Hugging Face by the library, tabpfn not installed",
+    "device": "cuda",
+    "context": "50,000 rows per context seed",
+    "chunk": "20,000 scored rows per forward call (--chunk 20000); rows are scored independently and the chunking changes no probability",
+    "cells": "2 cohort cells (fold1-test, fold1-validation) of 20,000 rows and one reference cell per context seed",
+    "peak_gpu_gb_max": 10.966,
+    "softmax_temperature": 0.9,
+    "timing": "This job ran on a hosted, shared free-tier notebook, not a dedicated node; the seconds node.json records for each cell are the scorer's own timer reading on whatever the host gave the process that second and are not a quotable performance measurement. They are kept in node.json unedited."
+  },
+  "tuning_budget": "Zero trials, no validation split, every parameter at the library default except those the command names. The classical models this is paired with (fold 1 of experiments/2026-09-12-lc-2015h1e-folds/folds.json) were tuned on their own pool, and the asymmetry runs both ways.",
+  "not_in_this_run": "Folds 2 through 5: this bundle carries fold 1 only. TabPFN, scored on a separate node.",
+  "checkpoints": {
+    "tabicl-classifier-v2-20260212.ckpt": "bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0"
+  }
+}

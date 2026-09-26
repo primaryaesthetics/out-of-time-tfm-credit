@@ -1,0 +1,374 @@
+{
+  "snapshot": "2019-03-01",
+  "label_lag_months": 12,
+  "study_rolling_quarters": 4,
+  "widths": [
+    2,
+    4,
+    6,
+    8,
+    12
+  ],
+  "builds": [
+    {
+      "build_id": "2013H1",
+      "as_of": "2013-06-30",
+      "newest_training_quarter": "2012Q2",
+      "expanding_rows": 50609,
+      "expanding_quarters": 9,
+      "expanding_mean_age_quarters": 2.998,
+      "rolling": {
+        "2": {
+          "quarters": 2,
+          "rows": 18523,
+          "share_of_expanding": 0.366,
+          "mean_age_quarters": 0.436
+        },
+        "4": {
+          "quarters": 4,
+          "rows": 31016,
+          "share_of_expanding": 0.6129,
+          "mean_age_quarters": 1.255
+        },
+        "6": {
+          "quarters": 6,
+          "rows": 40244,
+          "share_of_expanding": 0.7952,
+          "mean_age_quarters": 1.987
+        },
+        "8": {
+          "quarters": 8,
+          "rows": 47603,
+          "share_of_expanding": 0.9406,
+          "mean_age_quarters": 2.683
+        },
+        "12": {
+          "quarters": 9,
+          "rows": 50609,
+          "share_of_expanding": 1.0,
+          "mean_age_quarters": 2.998
+        }
+      }
+    },
+    {
+      "build_id": "2013H2",
+      "as_of": "2013-12-31",
+      "newest_training_quarter": "2012Q4",
+      "expanding_rows": 85453,
+      "expanding_quarters": 11,
+      "expanding_mean_age_quarters": 3.149,
+      "rolling": {
+        "2": {
+          "quarters": 2,
+          "rows": 34844,
+          "share_of_expanding": 0.4078,
+          "mean_age_quarters": 0.463
+        },
+        "4": {
+          "quarters": 4,
+          "rows": 53367,
+          "share_of_expanding": 0.6245,
+          "mean_age_quarters": 1.148
+        },
+        "6": {
+          "quarters": 6,
+          "rows": 65860,
+          "share_of_expanding": 0.7707,
+          "mean_age_quarters": 1.778
+        },
+        "8": {
+          "quarters": 8,
+          "rows": 75088,
+          "share_of_expanding": 0.8787,
+          "mean_age_quarters": 2.352
+        },
+        "12": {
+          "quarters": 11,
+          "rows": 85453,
+          "share_of_expanding": 1.0,
+          "mean_age_quarters": 3.149
+        }
+      }
+    },
+    {
+      "build_id": "2014H1",
+      "as_of": "2014-06-30",
+      "newest_training_quarter": "2013Q2",
+      "expanding_rows": 138827,
+      "expanding_quarters": 13,
+      "expanding_mean_age_quarters": 3.333,
+      "rolling": {
+        "2": {
+          "quarters": 2,
+          "rows": 53374,
+          "share_of_expanding": 0.3845,
+          "mean_age_quarters": 0.425
+        },
+        "4": {
+          "quarters": 4,
+          "rows": 88218,
+          "share_of_expanding": 0.6355,
+          "mean_age_quarters": 1.23
+        },
+        "6": {
+          "quarters": 6,
+          "rows": 106741,
+          "share_of_expanding": 0.7689,
+          "mean_age_quarters": 1.787
+        },
+        "8": {
+          "quarters": 8,
+          "rows": 119234,
+          "share_of_expanding": 0.8589,
+          "mean_age_quarters": 2.277
+        },
+        "12": {
+          "quarters": 12,
+          "rows": 135821,
+          "share_of_expanding": 0.9783,
+          "mean_age_quarters": 3.141
+        }
+      }
+    },
+    {
+      "build_id": "2014H2",
+      "as_of": "2014-12-31",
+      "newest_training_quarter": "2013Q4",
+      "expanding_rows": 220267,
+      "expanding_quarters": 15,
+      "expanding_mean_age_quarters": 3.532,
+      "rolling": {
+        "2": {
+          "quarters": 2,
+          "rows": 81440,
+          "share_of_expanding": 0.3697,
+          "mean_age_quarters": 0.461
+        },
+        "4": {
+          "quarters": 4,
+          "rows": 134814,
+          "share_of_expanding": 0.612,
+          "mean_age_quarters": 1.239
+        },
+        "6": {
+          "quarters": 6,
+          "rows": 169658,
+          "share_of_expanding": 0.7702,
+          "mean_age_quarters": 1.901
+        },
+        "8": {
+          "quarters": 8,
+          "rows": 188181,
+          "share_of_expanding": 0.8543,
+          "mean_age_quarters": 2.347
+        },
+        "12": {
+          "quarters": 12,
+          "rows": 209902,
+          "share_of_expanding": 0.9529,
+          "mean_age_quarters": 3.068
+        }
+      }
+    },
+    {
+      "build_id": "2015H1",
+      "as_of": "2015-06-30",
+      "newest_training_quarter": "2014Q2",
+      "expanding_rows": 323026,
+      "expanding_quarters": 17,
+      "expanding_mean_age_quarters": 3.919,
+      "rolling": {
+        "2": {
+          "quarters": 2,
+          "rows": 102759,
+          "share_of_expanding": 0.3181,
+          "mean_age_quarters": 0.461
+        },
+        "4": {
+          "quarters": 4,
+          "rows": 184199,
+          "share_of_expanding": 0.5702,
+          "mean_age_quarters": 1.346
+        },
+        "6": {
+          "quarters": 6,
+          "rows": 237573,
+          "share_of_expanding": 0.7355,
+          "mean_age_quarters": 2.038
+        },
+        "8": {
+          "quarters": 8,
+          "rows": 272417,
+          "share_of_expanding": 0.8433,
+          "mean_age_quarters": 2.604
+        },
+        "12": {
+          "quarters": 12,
+          "rows": 303433,
+          "share_of_expanding": 0.9393,
+          "mean_age_quarters": 3.284
+        }
+      }
+    },
+    {
+      "build_id": "2015H2",
+      "as_of": "2015-12-31",
+      "newest_training_quarter": "2014Q4",
+      "expanding_rows": 455896,
+      "expanding_quarters": 19,
+      "expanding_mean_age_quarters": 4.323,
+      "rolling": {
+        "2": {
+          "quarters": 2,
+          "rows": 132870,
+          "share_of_expanding": 0.2914,
+          "mean_age_quarters": 0.442
+        },
+        "4": {
+          "quarters": 4,
+          "rows": 235629,
+          "share_of_expanding": 0.5168,
+          "mean_age_quarters": 1.323
+        },
+        "6": {
+          "quarters": 6,
+          "rows": 317069,
+          "share_of_expanding": 0.6955,
+          "mean_age_quarters": 2.129
+        },
+        "8": {
+          "quarters": 8,
+          "rows": 370443,
+          "share_of_expanding": 0.8126,
+          "mean_age_quarters": 2.748
+        },
+        "12": {
+          "quarters": 12,
+          "rows": 423810,
+          "share_of_expanding": 0.9296,
+          "mean_age_quarters": 3.554
+        }
+      }
+    },
+    {
+      "build_id": "2016H1",
+      "as_of": "2016-06-30",
+      "newest_training_quarter": "2015Q2",
+      "expanding_rows": 635998,
+      "expanding_quarters": 21,
+      "expanding_mean_age_quarters": 4.665,
+      "rolling": {
+        "2": {
+          "quarters": 2,
+          "rows": 180102,
+          "share_of_expanding": 0.2832,
+          "mean_age_quarters": 0.468
+        },
+        "4": {
+          "quarters": 4,
+          "rows": 312972,
+          "share_of_expanding": 0.4921,
+          "mean_age_quarters": 1.306
+        },
+        "6": {
+          "quarters": 6,
+          "rows": 415731,
+          "share_of_expanding": 0.6537,
+          "mean_age_quarters": 2.086
+        },
+        "8": {
+          "quarters": 8,
+          "rows": 497171,
+          "share_of_expanding": 0.7817,
+          "mean_age_quarters": 2.803
+        },
+        "12": {
+          "quarters": 12,
+          "rows": 585389,
+          "share_of_expanding": 0.9204,
+          "mean_age_quarters": 3.771
+        }
+      }
+    },
+    {
+      "build_id": "2016H2",
+      "as_of": "2016-12-31",
+      "newest_training_quarter": "2015Q4",
+      "expanding_rows": 876991,
+      "expanding_quarters": 23,
+      "expanding_mean_age_quarters": 4.959,
+      "rolling": {
+        "2": {
+          "quarters": 2,
+          "rows": 240993,
+          "share_of_expanding": 0.2748,
+          "mean_age_quarters": 0.458
+        },
+        "4": {
+          "quarters": 4,
+          "rows": 421095,
+          "share_of_expanding": 0.4802,
+          "mean_age_quarters": 1.318
+        },
+        "6": {
+          "quarters": 6,
+          "rows": 553965,
+          "share_of_expanding": 0.6317,
+          "mean_age_quarters": 2.067
+        },
+        "8": {
+          "quarters": 8,
+          "rows": 656724,
+          "share_of_expanding": 0.7488,
+          "mean_age_quarters": 2.755
+        },
+        "12": {
+          "quarters": 12,
+          "rows": 791538,
+          "share_of_expanding": 0.9026,
+          "mean_age_quarters": 3.859
+        }
+      }
+    },
+    {
+      "build_id": "2017H1",
+      "as_of": "2017-06-30",
+      "newest_training_quarter": "2016Q2",
+      "expanding_rows": 1108732,
+      "expanding_quarters": 25,
+      "expanding_mean_age_quarters": 5.625,
+      "rolling": {
+        "2": {
+          "quarters": 2,
+          "rows": 231741,
+          "share_of_expanding": 0.209,
+          "mean_age_quarters": 0.578
+        },
+        "4": {
+          "quarters": 4,
+          "rows": 472734,
+          "share_of_expanding": 0.4264,
+          "mean_age_quarters": 1.537
+        },
+        "6": {
+          "quarters": 6,
+          "rows": 652836,
+          "share_of_expanding": 0.5888,
+          "mean_age_quarters": 2.345
+        },
+        "8": {
+          "quarters": 8,
+          "rows": 785706,
+          "share_of_expanding": 0.7087,
+          "mean_age_quarters": 3.038
+        },
+        "12": {
+          "quarters": 12,
+          "rows": 969905,
+          "share_of_expanding": 0.8748,
+          "mean_age_quarters": 4.236
+        }
+      }
+    }
+  ]
+}

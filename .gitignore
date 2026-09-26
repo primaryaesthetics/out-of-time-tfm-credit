@@ -1,0 +1,28 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+data/raw/
+data/derived/
+
+# Row-level Freddie Mac outputs. The dataset's terms allow research results
+# and related derived products to be made public for noncommercial purposes,
+# provided they neither include nor can be used to derive or recreate any
+# part of the dataset, or identify an individual. Score files, bundles and node parts carry each
+# loan's position and outcome, so they stay on the machine that holds the
+# data. Manifests, json, aggregate csv and png under the same directories
+# are tracked.
+experiments/*-fm-*/**/*.parquet
+experiments/*-fm-*/**/parts/
+
+# Row-level Lending Club outputs. The platform's terms of use require prior
+# written permission to republish its content, and every score file, context
+# sample, bundle and node part carries each loan's position and outcome, so
+# they stay on the machine that holds the data as the Freddie Mac ones do.
+# Cohort-level metrics and fold assignments, which carry no field of the
+# dataset, are tracked.
+experiments/*-lc-*/**/*.parquet
+experiments/*-lc-*/**/parts/
+!experiments/*-lc-*/**/metrics.parquet
+!experiments/*-lc-*/**/folds.parquet

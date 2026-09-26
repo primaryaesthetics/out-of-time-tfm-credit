@@ -1,0 +1,134 @@
+smoothing reading, dry run on synthetic cells
+Cox fit and bootstrap: outoftime.metrics; pooling helper: build_intervals.paired_mean
+minimum effect on the paired signed-slope difference: 0.05
+  construction check, 400,000 rows, scorecard: intercept +0.0164, slope 0.9983 +- 0.0168; AUC 0.711
+  construction check, 400,000 rows, tfm@t1: intercept -0.0636, slope 0.9787 +- 0.0168; AUC 0.706
+  the same model at 0.9: slope 0.8808 (0.9 x the slope at 1.0)
+
+[floor cell] calibrated: 5,000 rows, 94 defaults
+  slope scorecard  0.864 Wald [0.597, 1.132], se 0.137
+  slope tfm@t1     1.222 Wald [0.947, 1.498], se 0.140
+  tfm@t1 - scorecard +0.358 [-0.073, +0.771]  bootstrap over the cell's rows; reading: no reading: the interval holds zero
+
+[floor cell] smooth-0.85: 5,000 rows, 94 defaults
+  slope scorecard  0.864 Wald [0.597, 1.132], se 0.137
+  slope tfm@t1     1.438 Wald [1.114, 1.762], se 0.165
+  tfm@t1 - scorecard +0.574 [+0.109, +1.014]  bootstrap over the cell's rows; reading: SUPPORTS: under-dispersed beyond the scorecard, at or above the minimum effect
+
+[floor cell] smooth-0.95: 5,000 rows, 94 defaults
+  slope scorecard  0.864 Wald [0.597, 1.132], se 0.137
+  slope tfm@t1     1.287 Wald [0.997, 1.577], se 0.148
+  tfm@t1 - scorecard +0.422 [-0.019, +0.844]  bootstrap over the cell's rows; reading: no reading: the interval holds zero
+
+[36 cells] calibrated: 36 cells x 12,000 rows, defaults 211-279 per cell, 200 resamples, seeds [20260905], 243s
+  slope scorecard  +1.003 [+0.973, +1.037]
+  slope tfm@t1     +1.009 [+0.978, +1.040]
+  tfm@t1 - scorecard +0.006 [-0.037, +0.051]  star by seed .
+  the same model at the shipped 0.9: slope 0.909, difference -0.095
+  reading at 1.0: no reading: the interval holds zero
+  left out of the pairing: 0 cells
+
+[36 cells] level: 36 cells x 12,000 rows, defaults 211-279 per cell, 200 resamples, seeds [20260905], 283s
+  slope scorecard  +1.003 [+0.973, +1.037]
+  slope tfm@t1     +1.009 [+0.978, +1.040]
+  tfm@t1 - scorecard +0.006 [-0.037, +0.051]  star by seed .
+  the same model at the shipped 0.9: slope 0.909, difference -0.095
+  reading at 1.0: no reading: the interval holds zero
+  left out of the pairing: 0 cells
+
+[36 cells] drift: 36 cells x 12,000 rows, defaults 332-404 per cell, 200 resamples, seeds [20260905], 290s
+  slope scorecard  +1.120 [+1.098, +1.143]
+  slope tfm@t1     +1.137 [+1.114, +1.165]
+  tfm@t1 - scorecard +0.017 [-0.015, +0.054]  star by seed .
+  the same model at the shipped 0.9: slope 1.023, difference -0.097
+  reading at 1.0: no reading: the interval holds zero
+  left out of the pairing: 0 cells
+
+[36 cells] smooth-0.85: 36 cells x 12,000 rows, defaults 211-279 per cell, 200 resamples, seeds [20260905], 268s
+  slope scorecard  +1.003 [+0.973, +1.037]
+  slope tfm@t1     +1.188 [+1.151, +1.224]
+  tfm@t1 - scorecard +0.184 [+0.137, +0.236]  star by seed *
+  the same model at the shipped 0.9: slope 1.069, difference +0.066
+  reading at 1.0: SUPPORTS: under-dispersed beyond the scorecard, at or above the minimum effect
+  left out of the pairing: 0 cells
+
+[36 cells] over-1.15: 36 cells x 12,000 rows, defaults 211-279 per cell, 200 resamples, seeds [20260905], 240s
+  slope scorecard  +1.003 [+0.973, +1.037]
+  slope tfm@t1     +0.878 [+0.851, +0.905]
+  tfm@t1 - scorecard -0.125 [-0.166, -0.086]  star by seed *
+  the same model at the shipped 0.9: slope 0.790, difference -0.213
+  reading at 1.0: CONTRADICTS: over-dispersed relative to the scorecard, or below one
+  left out of the pairing: 0 cells
+
+[36 cells] smooth-0.95: 36 cells x 12,000 rows, defaults 211-279 per cell, 200 resamples, seeds [20260905, 20260906, 20260907], 644s
+  slope scorecard  +1.003 [+0.973, +1.037]
+  slope tfm@t1     +1.063 [+1.030, +1.095]
+  tfm@t1 - scorecard +0.059 [+0.015, +0.106]  star by seed ***
+  the same model at the shipped 0.9: slope 0.956, difference -0.047
+  reading at 1.0: SUPPORTS: under-dispersed beyond the scorecard, at or above the minimum effect
+  left out of the pairing: 0 cells
+
+[196 cells] calibrated: 196 cells x 12,000 rows, defaults 202-288 per cell, 200 resamples, seeds [20260905], 950s
+  slope scorecard  +0.999 [+0.988, +1.011]
+  slope tfm@t1     +1.006 [+0.995, +1.017]
+  tfm@t1 - scorecard +0.007 [-0.009, +0.024]  star by seed .
+  the same model at the shipped 0.9: slope 0.906, difference -0.093
+  reading at 1.0: no reading: the interval holds zero
+  left out of the pairing: 0 cells
+
+[196 cells] smooth-0.95: 196 cells x 12,000 rows, defaults 202-288 per cell, 200 resamples, seeds [20260905], 951s
+  slope scorecard  +0.999 [+0.988, +1.011]
+  slope tfm@t1     +1.059 [+1.047, +1.070]
+  tfm@t1 - scorecard +0.060 [+0.044, +0.077]  star by seed *
+  the same model at the shipped 0.9: slope 0.953, difference -0.045
+  reading at 1.0: SUPPORTS: under-dispersed beyond the scorecard, at or above the minimum effect
+  left out of the pairing: 0 cells
+
+[in-sample, 9 contexts] calibrated: 9 cells x 50,000 rows, defaults 530-770 per cell, 200 resamples, seeds [20260905], 216s
+  slope scorecard  +0.997 [+0.969, +1.028]
+  slope tfm@t1     +1.002 [+0.973, +1.035]
+  tfm@t1 - scorecard +0.005 [-0.040, +0.053]  star by seed .
+  the same model at the shipped 0.9: slope 0.902, difference -0.096
+  reading at 1.0: no reading: the interval holds zero
+  left out of the pairing: 0 cells
+
+[in-sample, 9 contexts] memorised: 9 cells x 50,000 rows, defaults 530-770 per cell, 200 resamples, seeds [20260905], 252s
+  slope scorecard  +0.997 [+0.969, +1.028]
+  slope tfm@t1     +1.837 [+1.802, +1.870]
+  tfm@t1 - scorecard +0.839 [+0.789, +0.890]  star by seed *
+  the same model at the shipped 0.9: slope 1.653, difference +0.655
+  reading at 1.0: SUPPORTS: under-dispersed beyond the scorecard, at or above the minimum effect
+  left out of the pairing: 0 cells
+
+[in-sample, 9 contexts] smooth-0.85: 9 cells x 50,000 rows, defaults 530-770 per cell, 200 resamples, seeds [20260905], 228s
+  slope scorecard  +0.997 [+0.969, +1.028]
+  slope tfm@t1     +1.179 [+1.145, +1.218]
+  tfm@t1 - scorecard +0.181 [+0.129, +0.234]  star by seed *
+  the same model at the shipped 0.9: slope 1.061, difference +0.064
+  reading at 1.0: SUPPORTS: under-dispersed beyond the scorecard, at or above the minimum effect
+  left out of the pairing: 0 cells
+
+[in-sample, 9 contexts] smooth+mem: 9 cells x 50,000 rows, defaults 530-770 per cell, 200 resamples, seeds [20260905], 235s
+  slope scorecard  +0.997 [+0.969, +1.028]
+  slope tfm@t1     +2.335 [+2.293, +2.377]
+  tfm@t1 - scorecard +1.338 [+1.285, +1.396]  star by seed *
+  the same model at the shipped 0.9: slope 2.102, difference +1.104
+  reading at 1.0: SUPPORTS: under-dispersed beyond the scorecard, at or above the minimum effect
+  left out of the pairing: 0 cells
+
+summary (reading at 1.0; the slope at 0.9 is 0.9 x the slope at 1.0):
+  case                   cells            tfm - scorecard           tfm slope at 1.0  verdict
+  calibrated                36    +0.006 [-0.037, +0.051]    +1.009 [+0.978, +1.040]  no reading: the interval holds zero
+  level                     36    +0.006 [-0.037, +0.051]    +1.009 [+0.978, +1.040]  no reading: the interval holds zero
+  drift                     36    +0.017 [-0.015, +0.054]    +1.137 [+1.114, +1.165]  no reading: the interval holds zero
+  smooth-0.85               36    +0.184 [+0.137, +0.236]    +1.188 [+1.151, +1.224]  SUPPORTS: under-dispersed beyond the scorecard, at or above the minimum effect
+  over-1.15                 36    -0.125 [-0.166, -0.086]    +0.878 [+0.851, +0.905]  CONTRADICTS: over-dispersed relative to the scorecard, or below one
+  smooth-0.95               36    +0.059 [+0.015, +0.106]    +1.063 [+1.030, +1.095]  SUPPORTS: under-dispersed beyond the scorecard, at or above the minimum effect
+  calibrated               196    +0.007 [-0.009, +0.024]    +1.006 [+0.995, +1.017]  no reading: the interval holds zero
+  smooth-0.95              196    +0.060 [+0.044, +0.077]    +1.059 [+1.047, +1.070]  SUPPORTS: under-dispersed beyond the scorecard, at or above the minimum effect
+  calibrated                 9    +0.005 [-0.040, +0.053]    +1.002 [+0.973, +1.035]  no reading: the interval holds zero
+  memorised                  9    +0.839 [+0.789, +0.890]    +1.837 [+1.802, +1.870]  SUPPORTS: under-dispersed beyond the scorecard, at or above the minimum effect
+  smooth-0.85                9    +0.181 [+0.129, +0.234]    +1.179 [+1.145, +1.218]  SUPPORTS: under-dispersed beyond the scorecard, at or above the minimum effect
+  smooth+mem                 9    +1.338 [+1.285, +1.396]    +2.335 [+2.293, +2.377]  SUPPORTS: under-dispersed beyond the scorecard, at or above the minimum effect
+
+wall 982s

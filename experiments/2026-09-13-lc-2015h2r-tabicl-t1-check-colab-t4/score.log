@@ -1,0 +1,10 @@
+### tabicl-t1-check@2026-09-12-lc-2015h2r-bundle: python score_context.py 2026-09-12-lc-2015h2r-bundle --out-dir 2026-09-12-lc-2015h2r-bundle-scored-tabicl-t1-check --models tabicl --temperature 1.0 --nearest 1 --seeds 20260911 --chunk 20000
+tabicl@t1/20260911: context 50,000 rows read in 2.5s
+  reference   50,000 rows    206.1s  mean pd 0.0245
+  2016Q1      20,000 rows     71.9s  mean pd 0.0242
+  repeat 2016Q1: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 20,000
+reference rows        : 50,000
+wall                  : 357s
+

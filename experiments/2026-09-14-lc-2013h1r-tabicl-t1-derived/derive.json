@@ -1,0 +1,298 @@
+{
+  "model": "tabicl",
+  "derived_as": "tabicl@t1",
+  "to_temperature": 1.0,
+  "formula": "logit(pd_to) = logit(pd_from) * (from_temperature / to_temperature)",
+  "library": {
+    "tabicl": "2.1.1"
+  },
+  "checkpoints": {
+    "tabicl-classifier-v2-20260212.ckpt": "bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0"
+  },
+  "sources": [
+    {
+      "directory": "experiments/2026-09-13-lc-2013h1r-tabicl-colab-t4",
+      "sha256": {
+        "scores.parquet": "2952ecf1316ff41d9b7904cf0d08c78e8cab6347b7e1220bf08303820e73b04b",
+        "reference.parquet": "570a4e421d301222eb5e4f8346dfaa659faec874ecee139727e437a3e840e2de",
+        "node.json": "18a0b84da51d6863148bbd58e309ef0b8394cb9097dcda663ca0ba455d57e19c"
+      },
+      "context_seeds": [
+        20260911,
+        20260912,
+        20260913
+      ],
+      "from_temperature": {
+        "20260911": 0.9,
+        "20260912": 0.9,
+        "20260913": 0.9
+      },
+      "scored_rows": 1140000,
+      "reference_rows": 93048
+    }
+  ],
+  "check": {
+    "directory": "experiments/2026-09-13-lc-2013h1r-tabicl-t1-check-colab-t4",
+    "sha256": {
+      "scores.parquet": "b30ae4d90ac3e7ca5c99936ae26986f4ecbde789a9b58fb7a676d3f17ee45a55",
+      "reference.parquet": "a88cf5ace67af5a54637f6c02f1525cfa442b4c623e06fc1cccc0f889243eabb",
+      "node.json": "eac5d084f55f4bd5a1842b2ea3f4d60651274716ce812d18fda2c524736a32cc"
+    },
+    "tolerance_on_pd": 1e-06,
+    "cells": [
+      {
+        "context_seed": 20260911,
+        "cell": "2013Q3",
+        "rows": 20000,
+        "max_abs_pd_gap": 1.285399085226846e-07,
+        "max_abs_logit_gap": 1.1491960245635369e-06
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "reference",
+        "rows": 31016,
+        "max_abs_pd_gap": 1.4803327194612415e-07,
+        "max_abs_logit_gap": 1.1491960245635369e-06
+      }
+    ],
+    "rows_checked": 51016,
+    "max_abs_pd_gap": 1.4803327194612415e-07,
+    "max_abs_logit_gap": 1.1491960245635369e-06,
+    "unchecked_cells": [
+      {
+        "context_seed": 20260911,
+        "cell": "2013Q4"
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2014Q1"
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2014Q2"
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2014Q3"
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2014Q4"
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2015Q1"
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2015Q2"
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2015Q3"
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2015Q4"
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2016Q1"
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2016Q2"
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2016Q3"
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2016Q4"
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2017Q1"
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2017Q2"
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2017Q3"
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2017Q4"
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2018Q1"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2013Q3"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2013Q4"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2014Q1"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2014Q2"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2014Q3"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2014Q4"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2015Q1"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2015Q2"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2015Q3"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2015Q4"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2016Q1"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2016Q2"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2016Q3"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2016Q4"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2017Q1"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2017Q2"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2017Q3"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2017Q4"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2018Q1"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "reference"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2013Q3"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2013Q4"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2014Q1"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2014Q2"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2014Q3"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2014Q4"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2015Q1"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2015Q2"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2015Q3"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2015Q4"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2016Q1"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2016Q2"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2016Q3"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2016Q4"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2017Q1"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2017Q2"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2017Q3"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2017Q4"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2018Q1"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "reference"
+      }
+    ]
+  },
+  "scored_rows": 1140000,
+  "reference_rows": 93048
+}

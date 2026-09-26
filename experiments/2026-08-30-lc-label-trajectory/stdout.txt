@@ -1,0 +1,20 @@
+rows                  : 2,260,668
+last origination      : 2018-12-01
+snapshot from data    : 2019-03-01
+
+--- 12-month window ---
+  labelled          : 1,873,290
+  dropped immature  : 387,378
+  overall rate      : 2.90%
+  cohorts           : 44  (2007Q2 .. 2018Q1)
+  lowest  cohort    : 2007Q2 at 0.00%
+  highest cohort    : 2007Q4 at 4.88%
+
+--- 24-month window ---
+  labelled          : 1,418,626
+  dropped immature  : 842,042
+  overall rate      : 10.27%
+  cohorts           : 40  (2007Q2 .. 2017Q1)
+  lowest  cohort    : 2011Q1 at 6.93%
+  highest cohort    : 2007Q4 at 21.34%
+

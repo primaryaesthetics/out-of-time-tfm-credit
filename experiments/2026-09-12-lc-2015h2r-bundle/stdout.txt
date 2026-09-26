@@ -1,0 +1,25 @@
+rows                  : 2,260,668
+loaded in             : 100s
+2015H2-R: train 235629 rows 2014-01-01..2014-12-01 (4 quarters), blind 421095 rows, test 180000 rows over 9 cohorts
+
+| cohort | rows |
+| --- | --- |
+| 2016Q1 | 20000 |
+| 2016Q2 | 20000 |
+| 2016Q3 | 20000 |
+| 2016Q4 | 20000 |
+| 2017Q1 | 20000 |
+| 2017Q2 | 20000 |
+| 2017Q3 | 20000 |
+| 2017Q4 | 20000 |
+| 2018Q1 | 20000 | 
+
+context 20260911: 50,000 rows
+context 20260912: 50,000 rows
+context 20260913: 50,000 rows
+checked against       : experiments\2026-09-12-lc-2015h2r-scores — every row and outcome identical
+
+context rows          : 150,000
+scored rows           : 180,000 over 9 cohorts
+features              : 20, 3 categorical
+wall                  : 116s

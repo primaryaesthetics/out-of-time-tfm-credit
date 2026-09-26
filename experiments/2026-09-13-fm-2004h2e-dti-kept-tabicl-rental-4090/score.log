@@ -1,0 +1,12 @@
+### tabicl@2026-09-13-fm-2004h2e-bundle-dti-kept: /home/node/outoftime-node/.venv/bin/python score_context.py 2026-09-13-fm-2004h2e-bundle-dti-kept --out-dir 2026-09-13-fm-2004h2e-bundle-dti-kept-scored-tabicl --models tabicl --nearest 3 --seeds 20260911 --chunk 20000
+tabicl/20260911: context 50,000 rows read in 2.1s
+  reference   50,000 rows     19.4s  mean pd 0.0088
+  2005H1      24,233 rows     11.9s  mean pd 0.0088
+  2005H2      24,082 rows     11.9s  mean pd 0.0086
+  2006H1      23,280 rows     11.8s  mean pd 0.0107
+  repeat 2005H1: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 71,595
+reference rows        : 50,000
+wall                  : 73s
+

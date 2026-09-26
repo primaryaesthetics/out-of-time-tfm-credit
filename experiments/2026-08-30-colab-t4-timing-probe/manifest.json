@@ -1,0 +1,16 @@
+{
+  "slug": "colab-t4-timing-probe",
+  "recorded_by": "hand-assembled from the probe's own environment block",
+  "why_not_record_run": "The probe runs on Colab, which record_run.py cannot wrap. ADR-0004 requires the script to carry its own environment block for exactly this case, and the manifest is assembled here from what it returned.",
+  "recorded_utc": "2026-08-30T08:21:31.209579+00:00",
+  "git_sha": "64942026981e3fc1ee189477c36d74c37d908d00",
+  "git_dirty": true,
+  "host": "Google Colab free tier",
+  "gpu": "Tesla T4, 15.64 GB",
+  "probe_source_sha256": "c46ba7af55b844848550e2c34536e0620819dee77ef3008bd6328d60d6fdf6f0",
+  "outputs": {
+    "probe-tabpfn.json": "bf367d8bc7f1079eb346733822d713f6a8c8022ae6b8045925af5904a9eb2770",
+    "probe-tabicl.json": "462694c3b0018eba43f19b8707d8d0a1044c5b3f3b8858820fbd3e77b010685e"
+  },
+  "known_defect": "The probe takes no warm-up pass, so the first configuration of each model absorbs model download and CUDA kernel autotuning. In this run that is context 1000, whose 19.75% spread and 13.744 GB peak are warm-up artefacts and are not comparable with the rows below them."
+}

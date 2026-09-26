@@ -1,0 +1,68 @@
+{
+  "source": "2026-09-12-lc-2015h1e-folds-2to5",
+  "source_files": {
+    "context.parquet": "3cd20a7bbe0a010609bf2c24fece42c0b47943ee645de9076fe34cc5dace7b3c",
+    "scored.parquet": "a7c83b957735480973748de998d5fe88417c866763833fec9b1f4ea234aafc1e"
+  },
+  "folds": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "prefix": "fold",
+  "bundles": {
+    "2026-09-12-lc-2015h1e-folds-2to5-fold2": {
+      "fold": 2,
+      "context_rows": 150000,
+      "cells": {
+        "fold2-validation": 20000,
+        "fold2-test": 20000
+      },
+      "files": {
+        "context.parquet": "aa363ca12f0535599b4f73d8aa2d2eb63274be51c9b640fb5fd3524815bccc51",
+        "scored.parquet": "53c0355ea108800dec5ea011545062c847b5a156977287242d975210db5c97e7"
+      }
+    },
+    "2026-09-12-lc-2015h1e-folds-2to5-fold3": {
+      "fold": 3,
+      "context_rows": 150000,
+      "cells": {
+        "fold3-validation": 20000,
+        "fold3-test": 20000
+      },
+      "files": {
+        "context.parquet": "3dd8ca54f479e136a9f4d3d7b62a35871034262f06e84f59d742c105dc15e66a",
+        "scored.parquet": "71a9977f7e02be9989351c01922a7a13d2debf684fce07ae4f528b6b0edd6340"
+      }
+    },
+    "2026-09-12-lc-2015h1e-folds-2to5-fold4": {
+      "fold": 4,
+      "context_rows": 150000,
+      "cells": {
+        "fold4-validation": 20000,
+        "fold4-test": 20000
+      },
+      "files": {
+        "context.parquet": "ccb3f6fbfe6ccd104c35a9d943b8b8f34d63ec301d41d7e3295d8f3bc132378b",
+        "scored.parquet": "ee274748522f91fc96dd8fa23418b26f418b59c3ca01c79a07ac2858dcd7e369"
+      }
+    },
+    "2026-09-12-lc-2015h1e-folds-2to5-fold5": {
+      "fold": 5,
+      "context_rows": 150000,
+      "cells": {
+        "fold5-validation": 20000,
+        "fold5-test": 20000
+      },
+      "files": {
+        "context.parquet": "92cf882a1e70d537d7a69c040ccc72be65a5442d6baf345de2b0177049c05662",
+        "scored.parquet": "3bd692fa350c11e8e5e55616aab9e1dddf61ab1e04a18bd9257fb044660687a5"
+      }
+    }
+  },
+  "source_rows": {
+    "context": 600000,
+    "scored": 160000
+  }
+}

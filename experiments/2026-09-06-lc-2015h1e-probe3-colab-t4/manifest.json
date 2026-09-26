@@ -1,0 +1,71 @@
+{
+  "slug": "lc-2015h1e-probe3-colab-t4",
+  "recorded_utc": "2026-09-06T17:30:00+00:00",
+  "git_sha": "fd5eadf",
+  "git_dirty": false,
+  "written_by_hand": "This run was made on a hosted notebook that holds no copy of the repository, so record_run.py could not record it. The manifest is assembled from what the notebook returned; node.json is the scorer's own account of its environment, its settings and its cells, and score.log is its console output.",
+  "host": "Google Colab, free tier, Linux x86_64, Python 3.13.15",
+  "gpu": "NVIDIA Tesla T4, 15.64 GB, CUDA 12.8, torch 2.11.0+cu128",
+  "commands": [
+    "python score_context.py 2026-09-05-lc-2015h1e-bundle --out-dir 2026-09-05-lc-2015h1e-bundle-probe3 --models tabicl --temperature 1.0 --nearest 3 --seeds 20260911 --chunk 20000",
+    "python score_context.py 2026-09-05-lc-2015h1e-bundle --out-dir 2026-09-05-lc-2015h1e-bundle-probe3 --models tabpfn --temperature 1.0 --nearest 3 --seeds 20260911 --chunk 20000",
+    "python score_context.py 2026-09-05-lc-2015h1e-bundle --out-dir 2026-09-05-lc-2015h1e-bundle-probe3 --models tabpfn --temperature 1.0 --balance --nearest 3 --seeds 20260911 --chunk 20000"
+  ],
+  "commands_note": "Three commands into one output directory, in this order, in one notebook session; node.json keeps the command block of the last one and the cells of all three. Every part is named by the tagged model, so no command overwrote another's cells.",
+  "job_archive": {
+    "path": "data/derived/node/outoftime-colab-probe3-2026-09-05-lc-2015h1e-bundle.zip",
+    "sha256": "d01be85805f97e5cb2556b395745571661bf95a1c764083ec2c85d70e40c6728",
+    "built_by": "scripts/score_context.py at fd5eadf (LF-ended) and the bundle directory of experiments/2026-09-05-lc-2015h1e-bundle, zipped for the notebook's upload cell",
+    "score_context_py_sha256": "66e8933d67fea5f8140f31f5229a305a15d3f1eb20e0fd67e15546037ff9f0dc",
+    "score_context_py_provenance": "The copy in the archive equals scripts/score_context.py at fd5eadf after line-ending normalisation, the commit that added --temperature and --balance; the scorer that ran the two halves of the falsifying run differs from it only by those two settings and the tagged model name."
+  },
+  "result_archive": {
+    "name": "outoftime-result-probe3-2026-09-05-lc-2015h1e-bundle.zip",
+    "sha256": "6ab09073bb2f9673c773a302eeeeb3c1f860302ea1f7c41d7332d3b6b8d15629",
+    "contents": "2026-09-05-lc-2015h1e-bundle-probe3/ (node.json, scores.parquet, reference.parquet, parts/) copied here unchanged, and probe3.log, copied here as score.log with the one edit stated below"
+  },
+  "console_log": "score.log is the notebook's console output. The TabPFN licence prompt ran inside the cell because the notebook held no TABPFN_TOKEN secret, and the API key pasted at the prompt was echoed into the log; that one line is replaced by a bracketed note in this copy and the archive in Downloads keeps the original. Nothing else was changed; the log holds no home path and no account name.",
+  "bundle_check": {
+    "context.parquet": "6416fe6560268bef4b0341e545c37918a1ef2aabed6689cdff5287e45a9738c6",
+    "scored.parquet": "0e7bc300b9bc16360152be39e0d9ea0c663289897dcf90ea9536a748438bc09e",
+    "how": "The hashes the scorer recorded in node.json for the bundle it read, equal to bundle.json of experiments/2026-09-05-lc-2015h1e-bundle and to the hashes both halves of the falsifying run recorded."
+  },
+  "row_check": {
+    "scored": "60,000 rows per model over 2015Q3, 2015Q4, 2016Q1, three models; every (cohort, row) pair, its outcome and its age match the gbm rows of experiments/2026-09-05-lc-2015h1e-scores/scores.parquet, zero mismatches, no missing probability",
+    "reference": "50,000 rows per model; every row and its outcome match the gbm-50k reference of context seed 20260911 in experiments/2026-09-05-lc-2015h1e-scores/reference.parquet, zero mismatches; realised rate 2.248%"
+  },
+  "question_this_run_was_sent_to_answer": "Probe 3 of the plan, written before the run: both foundation models ship softmax_temperature 0.9 and both returned about two thirds of the realised default rate on their own context rows in the falsifying run. The same bundle, the same context draw and the same three cohorts at temperature 1.0 decide whether that shortfall is the model's or the softmax's. Kill criterion, written before the run: a context-row ratio of mean pd to realised rate inside 1.00 +/- 0.05 says the shortfall is a default setting.",
+  "what_it_measured": {
+    "models": {
+      "tabicl@t1": "tabicl 2.1.1, checkpoint tabicl-classifier-v2-20260212.ckpt (sha256 bdc7dbd5...4ed0), softmax_temperature 1.0, every other parameter at the library default (n_estimators 8, random_state 42, average_logits true)",
+      "tabpfn@t1": "tabpfn 8.5.0, checkpoint tabpfn-v3-classifier-v3_default.ckpt (sha256 d0d865d5...3988), softmax_temperature 1.0, balance_probabilities false, every other parameter at the library default (n_estimators auto, random_state 0, categorical_features_indices from the bundle, ignore_pretraining_limits true)",
+      "tabpfn@t1+bal": "as tabpfn@t1 with balance_probabilities true"
+    },
+    "context_row_ratio_mean_pd_over_realised_rate": {
+      "tabicl@t1": 0.991,
+      "tabpfn@t1": 0.998,
+      "tabpfn@t1+bal": 19.77,
+      "at_temperature_0.9_on_the_same_rows": {"tabicl": 0.680, "tabpfn": 0.685}
+    },
+    "mean_pd": {
+      "tabicl@t1": {"reference": 0.022268, "2015Q3": 0.023729, "2015Q4": 0.023028, "2016Q1": 0.023228},
+      "tabpfn@t1": {"reference": 0.022437, "2015Q3": 0.021421, "2015Q4": 0.020656, "2016Q1": 0.020827},
+      "tabpfn@t1+bal": {"reference": 0.444329, "2015Q3": 0.433318, "2015Q4": 0.426044, "2016Q1": 0.423527}
+    },
+    "realised_rate": {"reference": 0.02248, "2015Q3": 0.02705, "2015Q4": 0.02755, "2016Q1": 0.03275},
+    "against_the_default_temperature_on_the_same_rows": "Row probabilities at 1.0 correlate 0.9948 (TabPFN) and 0.9976 (TabICL) with the recorded probabilities at 0.9 on the reference rows, 0.9985 on the cohort rows; the ratio of mean pd at 1.0 to mean pd at 0.9 is 1.46 on the reference rows and 1.45 to 1.47 on the cohorts, for both models.",
+    "cells_seconds": {
+      "tabicl@t1": {"reference": 204.707, "2015Q3": 73.658, "2015Q4": 73.605, "2016Q1": 73.517},
+      "tabpfn@t1": {"reference": 387.834, "2015Q3": 135.13, "2015Q4": 135.246, "2016Q1": 135.462},
+      "tabpfn@t1+bal": {"reference": 388.081, "2015Q3": 135.366, "2015Q4": 135.87, "2016Q1": 135.977}
+    },
+    "fit_seconds": {"tabicl@t1": 6.492, "tabpfn@t1": 139.073, "tabpfn@t1+bal": 2.938},
+    "fit_seconds_note": "TabPFN's first fit includes the licence prompt and the weight download; its second fit read the cached checkpoint.",
+    "peak_gpu_gb": {"tabicl@t1": 10.966, "tabpfn@t1": 1.071, "tabpfn@t1+bal": 1.071},
+    "wall_seconds": {"tabicl@t1": 510, "tabpfn@t1": 1075, "tabpfn@t1+bal": 939},
+    "repeat": "2015Q3 scored twice from a fresh fit for each of the three models: largest absolute disagreement 0.0, no row differs"
+  },
+  "tuning_budget": "Zero trials, no validation split. One setting moved off the library default for the stated question and recorded in node.json (softmax_temperature 1.0; balance_probabilities true on one of the three models); nothing chosen on any outcome. The classical models these rows pair with were tuned on their own pool (build.json of experiments/2026-09-05-lc-2015h1e-scores).",
+  "tabpfn_on_the_t4": "First TabPFN run on the free T4 in this study: 387.8 s against the M4 Pro's 434.0 s on the reference cell and 135 s against 314 to 320 s on a cohort, peak 1.07 GB.",
+  "not_in_this_run": "The context seeds 20260912 and 20260913 (per-draw rows), and any setting other than the two named."
+}

@@ -1,0 +1,85 @@
+rows                  : 2,260,668
+snapshot from data    : 2019-03-01
+loaded in             : 204s
+features              : 20
+labelled              : 1,873,290
+search points per fit : 16
+variants              : gbm, gbm-50k
+
+ 2013H1-E gbm                 50,609 rows   184 rounds  fit   20.0s  gini 0.369->0.353  O/E 0.87->1.33
+ 2013H1-E gbm-50k/20260911    50,000 rows   150 rounds  fit   13.7s  gini 0.376->0.355  O/E 0.87->1.32
+ 2013H1-E gbm-50k/20260912    50,000 rows   147 rounds  fit   15.0s  gini 0.362->0.350  O/E 0.87->1.31
+ 2013H1-E gbm-50k/20260913    50,000 rows    63 rounds  fit   13.8s  gini 0.353->0.337  O/E 0.88->1.21
+ 2013H2-E gbm                 85,453 rows   112 rounds  fit   17.0s  gini 0.345->0.367  O/E 0.86->1.35
+ 2013H2-E gbm-50k/20260911    50,000 rows   140 rounds  fit   11.8s  gini 0.331->0.366  O/E 0.83->1.34
+ 2013H2-E gbm-50k/20260912    50,000 rows    40 rounds  fit    9.2s  gini 0.347->0.355  O/E 0.84->1.28
+ 2013H2-E gbm-50k/20260913    50,000 rows    25 rounds  fit    9.7s  gini 0.329->0.370  O/E 0.86->1.31
+ 2014H1-E gbm                138,827 rows   174 rounds  fit   31.0s  gini 0.378->0.391  O/E 0.89->1.45
+ 2014H1-E gbm-50k/20260911    50,000 rows    87 rounds  fit   13.2s  gini 0.353->0.378  O/E 0.89->1.45
+ 2014H1-E gbm-50k/20260912    50,000 rows   132 rounds  fit   13.0s  gini 0.372->0.355  O/E 0.86->1.44
+ 2014H1-E gbm-50k/20260913    50,000 rows   103 rounds  fit   12.8s  gini 0.372->0.386  O/E 0.86->1.34
+ 2014H2-E gbm                220,267 rows   240 rounds  fit   49.9s  gini 0.426->0.401  O/E 1.28->1.51
+ 2014H2-E gbm-50k/20260911    50,000 rows   120 rounds  fit   15.6s  gini 0.414->0.380  O/E 1.25->1.43
+ 2014H2-E gbm-50k/20260912    50,000 rows   202 rounds  fit   19.2s  gini 0.380->0.354  O/E 1.34->1.52
+ 2014H2-E gbm-50k/20260913    50,000 rows   127 rounds  fit   17.0s  gini 0.397->0.355  O/E 1.23->1.48
+ 2015H1-E gbm                323,026 rows   368 rounds  fit  101.4s  gini 0.456->0.406  O/E 1.21->1.49
+ 2015H1-E gbm-50k/20260911    50,000 rows   213 rounds  fit   13.1s  gini 0.413->0.370  O/E 1.26->1.58
+ 2015H1-E gbm-50k/20260912    50,000 rows   185 rounds  fit   14.0s  gini 0.433->0.348  O/E 1.23->1.59
+ 2015H1-E gbm-50k/20260913    50,000 rows   169 rounds  fit   13.0s  gini 0.436->0.386  O/E 1.17->1.48
+ 2015H2-E gbm                455,896 rows   337 rounds  fit  111.3s  gini 0.482->0.411  O/E 1.51->1.55
+ 2015H2-E gbm-50k/20260911    50,000 rows    32 rounds  fit   15.2s  gini 0.439->0.369  O/E 1.45->1.43
+ 2015H2-E gbm-50k/20260912    50,000 rows   122 rounds  fit   19.3s  gini 0.458->0.378  O/E 1.51->1.54
+ 2015H2-E gbm-50k/20260913    50,000 rows   116 rounds  fit   19.0s  gini 0.465->0.389  O/E 1.44->1.52
+ 2016H1-E gbm                635,998 rows   468 rounds  fit  252.1s  gini 0.392->0.409  O/E 1.33->1.49
+ 2016H1-E gbm-50k/20260911    50,000 rows    22 rounds  fit   12.8s  gini 0.362->0.359  O/E 1.39->1.54
+ 2016H1-E gbm-50k/20260912    50,000 rows   123 rounds  fit   14.4s  gini 0.374->0.363  O/E 1.36->1.57
+ 2016H1-E gbm-50k/20260913    50,000 rows    29 rounds  fit   14.2s  gini 0.350->0.375  O/E 1.39->1.54
+ 2016H2-E gbm                876,991 rows   700 rounds  fit  330.7s  gini 0.427->0.420  O/E 1.31->1.43
+ 2016H2-E gbm-50k/20260911    50,000 rows   175 rounds  fit   12.3s  gini 0.417->0.389  O/E 1.31->1.44
+ 2016H2-E gbm-50k/20260912    50,000 rows   102 rounds  fit   11.9s  gini 0.403->0.374  O/E 1.37->1.49
+ 2016H2-E gbm-50k/20260913    50,000 rows    40 rounds  fit   10.7s  gini 0.401->0.394  O/E 1.27->1.37
+ 2017H1-E gbm              1,108,732 rows   374 rounds  fit  394.4s  gini 0.460->0.425  O/E 1.08->1.33
+ 2017H1-E gbm-50k/20260911    50,000 rows   104 rounds  fit   10.5s  gini 0.424->0.370  O/E 1.12->1.40
+ 2017H1-E gbm-50k/20260912    50,000 rows    94 rounds  fit   10.2s  gini 0.406->0.366  O/E 1.13->1.36
+ 2017H1-E gbm-50k/20260913    50,000 rows   187 rounds  fit   12.8s  gini 0.424->0.386  O/E 1.11->1.37
+--- arm E: expanding done ---
+
+ 2013H1-R gbm                 31,016 rows    97 rounds  fit    7.4s  gini 0.363->0.365  O/E 0.80->1.20
+ 2013H1-R gbm-50k/20260911    31,016 rows    97 rounds  fit    7.7s  gini 0.363->0.365  O/E 0.80->1.20
+ 2013H1-R gbm-50k/20260912    31,016 rows    97 rounds  fit    7.7s  gini 0.363->0.365  O/E 0.80->1.20
+ 2013H1-R gbm-50k/20260913    31,016 rows    97 rounds  fit    7.6s  gini 0.363->0.365  O/E 0.80->1.20
+ 2013H2-R gbm                 53,367 rows   106 rounds  fit    9.8s  gini 0.370->0.385  O/E 0.82->1.21
+ 2013H2-R gbm-50k/20260911    50,000 rows   156 rounds  fit   10.2s  gini 0.363->0.374  O/E 0.82->1.20
+ 2013H2-R gbm-50k/20260912    50,000 rows   101 rounds  fit    9.3s  gini 0.367->0.389  O/E 0.83->1.19
+ 2013H2-R gbm-50k/20260913    50,000 rows   146 rounds  fit    9.5s  gini 0.364->0.388  O/E 0.79->1.17
+ 2014H1-R gbm                 88,218 rows   118 rounds  fit   15.1s  gini 0.378->0.382  O/E 0.88->1.45
+ 2014H1-R gbm-50k/20260911    50,000 rows   107 rounds  fit    8.9s  gini 0.367->0.361  O/E 0.92->1.40
+ 2014H1-R gbm-50k/20260912    50,000 rows    53 rounds  fit    8.5s  gini 0.378->0.352  O/E 0.86->1.35
+ 2014H1-R gbm-50k/20260913    50,000 rows   113 rounds  fit    9.9s  gini 0.374->0.374  O/E 0.91->1.48
+ 2014H2-R gbm                134,814 rows   169 rounds  fit   24.5s  gini 0.430->0.382  O/E 1.32->1.66
+ 2014H2-R gbm-50k/20260911    50,000 rows   148 rounds  fit   10.5s  gini 0.410->0.381  O/E 1.31->1.62
+ 2014H2-R gbm-50k/20260912    50,000 rows    54 rounds  fit   10.4s  gini 0.413->0.348  O/E 1.28->1.63
+ 2014H2-R gbm-50k/20260913    50,000 rows    98 rounds  fit    9.3s  gini 0.409->0.359  O/E 1.39->1.69
+ 2015H1-R gbm                184,199 rows   183 rounds  fit   33.5s  gini 0.456->0.389  O/E 1.22->1.63
+ 2015H1-R gbm-50k/20260911    50,000 rows   232 rounds  fit   11.3s  gini 0.434->0.358  O/E 1.28->1.63
+ 2015H1-R gbm-50k/20260912    50,000 rows    91 rounds  fit    9.0s  gini 0.459->0.358  O/E 1.22->1.69
+ 2015H1-R gbm-50k/20260913    50,000 rows   126 rounds  fit   10.4s  gini 0.449->0.384  O/E 1.26->1.72
+ 2015H2-R gbm                235,629 rows   152 rounds  fit   38.4s  gini 0.475->0.389  O/E 1.51->1.66
+ 2015H2-R gbm-50k/20260911    50,000 rows   125 rounds  fit   10.2s  gini 0.466->0.377  O/E 1.45->1.56
+ 2015H2-R gbm-50k/20260912    50,000 rows   130 rounds  fit   10.3s  gini 0.469->0.388  O/E 1.46->1.59
+ 2015H2-R gbm-50k/20260913    50,000 rows    28 rounds  fit    9.7s  gini 0.462->0.366  O/E 1.54->1.69
+ 2016H1-R gbm                312,972 rows   307 rounds  fit   67.5s  gini 0.393->0.390  O/E 1.27->1.53
+ 2016H1-R gbm-50k/20260911    50,000 rows   122 rounds  fit   10.6s  gini 0.373->0.365  O/E 1.32->1.54
+ 2016H1-R gbm-50k/20260912    50,000 rows   114 rounds  fit   10.0s  gini 0.358->0.359  O/E 1.25->1.45
+ 2016H1-R gbm-50k/20260913    50,000 rows   156 rounds  fit   10.7s  gini 0.383->0.388  O/E 1.26->1.47
+ 2016H2-R gbm                421,095 rows    84 rounds  fit   79.6s  gini 0.433->0.396  O/E 1.22->1.39
+ 2016H2-R gbm-50k/20260911    50,000 rows   112 rounds  fit   12.5s  gini 0.413->0.372  O/E 1.17->1.33
+ 2016H2-R gbm-50k/20260912    50,000 rows    77 rounds  fit    9.6s  gini 0.419->0.365  O/E 1.21->1.37
+ 2016H2-R gbm-50k/20260913    50,000 rows   153 rounds  fit   11.0s  gini 0.414->0.371  O/E 1.24->1.43
+ 2017H1-R gbm                472,734 rows   413 rounds  fit  116.8s  gini 0.465->0.404  O/E 0.97->1.23
+ 2017H1-R gbm-50k/20260911    50,000 rows   126 rounds  fit   12.0s  gini 0.437->0.376  O/E 0.94->1.21
+ 2017H1-R gbm-50k/20260912    50,000 rows   104 rounds  fit   12.0s  gini 0.441->0.384  O/E 1.00->1.24
+ 2017H1-R gbm-50k/20260913    50,000 rows    43 rounds  fit   12.2s  gini 0.431->0.385  O/E 0.98->1.24
+--- arm R: rolling, 4 quarters done ---
+
+determinism check     : {'build_id': '2013H1-E', 'same_params': True, 'same_rounds': True, 'max_prediction_gap': 0.0}

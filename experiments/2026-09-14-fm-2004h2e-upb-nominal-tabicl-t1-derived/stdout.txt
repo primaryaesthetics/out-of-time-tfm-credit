@@ -1,0 +1,10 @@
+derived tabicl@t1 at 1 from experiments/2026-09-13-fm-2004h2e-upb-nominal-tabicl-rental-4090
+library               : tabicl 2.1.1
+  experiments/2026-09-13-fm-2004h2e-upb-nominal-tabicl-rental-4090: seeds [20260911], from [0.9], 71,595 scored + 50,000 reference rows
+check                 : experiments/2026-09-13-fm-2004h2e-upb-nominal-tabicl-t1-rental-4090
+  20260911/2005H1     24,233 rows  max |d pd| 9.09e-08  max |d logit| 1.35e-06
+  20260911/2005H2     24,082 rows  max |d pd| 8.42e-08  max |d logit| 1.28e-06
+  20260911/2006H1     23,280 rows  max |d pd| 1.19e-07  max |d logit| 1.25e-06
+  20260911/reference  50,000 rows  max |d pd| 1.30e-07  max |d logit| 1.33e-06
+rows checked          : 121,595 of 121,595, worst |d pd| 1.30e-07 within 1e-06
+written               : experiments/2026-09-14-fm-2004h2e-upb-nominal-tabicl-t1-derived

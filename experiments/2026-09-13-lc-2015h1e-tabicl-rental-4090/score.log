@@ -1,0 +1,16 @@
+### tabicl@2026-09-05-lc-2015h1e-bundle: /home/node/outoftime-node/.venv/bin/python score_context.py 2026-09-05-lc-2015h1e-bundle --out-dir 2026-09-05-lc-2015h1e-bundle-scored-tabicl --models tabicl --nearest 3 --seeds 20260911 --chunk 20000
+INFO: You are downloading 'tabicl-classifier-v2-20260212.ckpt', the latest best-performing version, used in our TabICLv2 paper.
+
+Checkpoint 'tabicl-classifier-v2-20260212.ckpt' not cached.
+ Downloading from Hugging Face Hub (jingang/TabICL).
+
+tabicl/20260911: context 50,000 rows read in 6.1s
+  reference   50,000 rows     20.4s  mean pd 0.0153
+  2015Q3      20,000 rows      7.0s  mean pd 0.0164
+  2015Q4      20,000 rows      7.0s  mean pd 0.0159
+  2016Q1      20,000 rows      7.0s  mean pd 0.0161
+  repeat 2015Q3: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 60,000
+reference rows        : 50,000
+wall                  : 59s

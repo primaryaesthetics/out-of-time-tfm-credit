@@ -1,0 +1,94 @@
+{
+  "model": "tabicl",
+  "derived_as": "tabicl@t1",
+  "to_temperature": 1.0,
+  "formula": "logit(pd_to) = logit(pd_from) * (from_temperature / to_temperature)",
+  "library": {
+    "tabicl": "2.1.1"
+  },
+  "checkpoints": {
+    "tabicl-classifier-v2-20260212.ckpt": "bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0"
+  },
+  "sources": [
+    {
+      "directory": "experiments/2026-09-13-lc-2015h1e-folds-tabicl-colab-t4",
+      "sha256": {
+        "scores.parquet": "6b8dd73555ac40d0f93815733a28f0f96addc7ec69709df5ba643a5b39534085",
+        "reference.parquet": "ab5e541e9fd803af4c7947041c958779df208cf75df886070476d3b5bed54823",
+        "node.json": "cd5846e659e8da6b5dfd6f4a26dcebe1bc1f638df02310dd5e8e7df7a8ded3f6"
+      },
+      "context_seeds": [
+        20260911,
+        20260912,
+        20260913
+      ],
+      "from_temperature": {
+        "20260911": 0.9,
+        "20260912": 0.9,
+        "20260913": 0.9
+      },
+      "scored_rows": 120000,
+      "reference_rows": 150000
+    }
+  ],
+  "check": {
+    "directory": "experiments/2026-09-13-lc-2015h1e-folds-tabicl-t1-check-colab-t4",
+    "sha256": {
+      "scores.parquet": "822324c74cb484d3b391e7fbd310e3f7b14616247ec30af52c8706ba254527f7",
+      "reference.parquet": "d2227223f31538404b40c84f05e807ba6670f1d45934ab411bfaefe5c99e3b54",
+      "node.json": "84a511e164dc2617e4e58b4c440246296e55cfd1b1a8e82f9771a9b554e902bb"
+    },
+    "tolerance_on_pd": 1e-06,
+    "cells": [
+      {
+        "context_seed": 20260911,
+        "cell": "fold1-test",
+        "rows": 20000,
+        "max_abs_pd_gap": 1.1058084603554619e-07,
+        "max_abs_logit_gap": 1.1491960245635369e-06
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "reference",
+        "rows": 50000,
+        "max_abs_pd_gap": 1.0298066471792211e-07,
+        "max_abs_logit_gap": 1.0643650067976296e-06
+      }
+    ],
+    "rows_checked": 70000,
+    "max_abs_pd_gap": 1.1058084603554619e-07,
+    "max_abs_logit_gap": 1.1491960245635369e-06,
+    "unchecked_cells": [
+      {
+        "context_seed": 20260911,
+        "cell": "fold1-validation"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "fold1-test"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "fold1-validation"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "reference"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "fold1-test"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "fold1-validation"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "reference"
+      }
+    ]
+  },
+  "scored_rows": 120000,
+  "reference_rows": 150000
+}

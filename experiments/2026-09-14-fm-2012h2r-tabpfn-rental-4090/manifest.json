@@ -1,0 +1,141 @@
+{
+ "slug": "fm-2012h2r-tabpfn-rental-4090",
+ "recorded_utc": "2026-09-14T08:51:59+00:00",
+ "git_sha": "001b24bd38526af6c15eecfc49fef93c9263b782",
+ "git_dirty": false,
+ "scorer_commit": "Byte-identical to scripts/score_context.py at HEAD 001b24b (diffed directly against the git blob, zero bytes differ).",
+ "written_by_hand": "This run was made on a rented instance that holds no copy of the repository, so record_run.py could not record it. The manifest is assembled from what the node returned (node.json), from the job archive and result archive it travelled in, and from the arrival checks already run against them; node.json is the scorer's own account of its environment and its cells, and score.log is the slice of the node's console log that belongs to this job.",
+ "host": "Rented instance, 1x NVIDIA GeForce RTX 4090 (24564 MiB), driver 595.58.03, 8 vCPU, 15 GB RAM, Ubuntu Linux x86_64, Python 3.12.3, CUDA 13.2 at the driver, torch built against CUDA 13.0",
+ "gpu": "NVIDIA GeForce RTX 4090, 24564 MiB (25.25 GB reported by torch), torch 2.14.0 on cuda",
+ "job": "tabpfn@2026-09-13-fm-2012h2r-bundle",
+ "command": "python score_context.py 2026-09-13-fm-2012h2r-bundle --out-dir 2026-09-13-fm-2012h2r-bundle-scored-tabpfn --models tabpfn --chunk 20000, run by node_jobs.py through run.sh from the unpacked job archive, one of 43 jobs of the grid session (job list order matches jobs.json).",
+ "session": "One process, 43 jobs, one continuous run.sh call over the 17-bundle grid job list (outoftime-run-grid-fm.tar.gz.jobs.json): finished 2026-09-14T05:09:18+00:00 after 1686.7s by the runner's own tally (jobs-done.json); node.json's own wall_seconds for this job is 1685.7. The whole session ran 67,011.6s of scoring (tally total over all 43 jobs), started 2026-09-13T11:58Z and finished 2026-09-14T06:38Z; the instance was dedicated and otherwise idle throughout.",
+ "grid_index": "experiments/2026-09-14-fm-grid-rental-4090 holds the node's whole console log, the 43-job list, the runner's tally and the archive-level checks; this directory is one of the 43 it indexes.",
+ "job_archive": {
+  "path": "data/derived/node/outoftime-run-grid-fm.tar.gz",
+  "sha256": "9203534536c9e362e8eb17b5270fbe3b2d85259a143cdcf3974b027b9c9ce74b",
+  "built_by": "scripts/pack_node_run.py --format cuda over the 17 bundles of the grid (nine E builds 2002H2-E to 2018H2-E and eight R builds 2004H2-R to 2018H2-R, the primary matrix only), as a tar for node_run_cuda.sh, sidecars outoftime-run-grid-fm.tar.gz.sha256 and .jobs.json beside it",
+  "score_context_py_sha256": "66e8933d67fea5f8140f31f5229a305a15d3f1eb20e0fd67e15546037ff9f0dc",
+  "score_context_py_provenance": "Byte-identical to scripts/score_context.py at HEAD 001b24b (diffed directly against the git blob, zero bytes differ).",
+  "checkpoint": {
+   "name": "tabpfn-v3-classifier-v3_default.ckpt",
+   "sha256": "d0d865d54dfbc524f5703104be90620182dca7e5fb2c16de72e9959ea18f3988",
+   "provenance": "Travelled inside the job archive; hash checked directly against the pinned value, matches."
+  }
+ },
+ "result_archive": {
+  "name": "outoftime-result-grid-fm.tar.gz",
+  "sha256": "21d6a40a805f6953bd82d93fcd623edfcf1add18a069805cd0f25da847da09b9",
+  "contents": "2026-09-13-fm-2012h2r-bundle-scored-tabpfn/ (node.json, scores.parquet, reference.parquet, parts/) copied here unchanged; score.log, jobs.json, jobs-done.json and gpu.txt of the archive are in experiments/2026-09-14-fm-grid-rental-4090, and score.log here is lines 3488-3568 of the archive's own.",
+  "sha256_of_files_here": {
+   "scores.parquet": "4efd0144baabfaf44d49c6a9f026f8a7b36dc04cadd6902fabbdbc5fececc641",
+   "reference.parquet": "fbf3c577f508715fd30503d60ca75e05c0db20e0bcf52ea5de2113b972dc272a",
+   "node.json": "84f327cb0eac4b2a7db581ed9d202061e93652c282ac229ad3498cb1568513e1"
+  }
+ },
+ "bundle_check": {
+  "build_id": "2012H2-R",
+  "as_of": "2012-12-31",
+  "arm": "R",
+  "train_rows": 99162,
+  "test_rows": 541505,
+  "cohorts_in_build": 22,
+  "files": {
+   "context.parquet": "061d4f5c631358b7feaa3c549dd9f58da84354549824b91609524ffde7ad6fb5",
+   "scored.parquet": "3621b63a27a795d4ca6fff82ab89a48b94da8f1838af3acb9e87f90e1642c1c4"
+  },
+  "how": "The hashes node.json recorded for the bundle it read equal bundle.json of experiments/2026-09-13-fm-2012h2r-bundle, and that bundle.json's parsed build block equals node.json's own bundle.build block exactly (checked field for field). The scorer refuses a bundle whose hashes differ from bundle.json, so the node scored the recorded rows. bundle.json here is not yet a tracked file (git status shows the bundle directory untracked), so there is no git-HEAD comparison to make for it; byte-for-byte the working-tree copy and the archive's copy differ only in line endings (CRLF on the local Windows checkout against LF from the Linux node), which is why a raw diff shows no textual difference once normalised."
+ },
+ "parts_check": "Part files under parts/, one per (model, context seed, cell): 69 expected, equal to node.json's 69 cell records; the parts concatenated are scores.parquet and reference.parquet row for row and probability for probability (checked directly, zero rows differing on either concatenation).",
+ "row_check": {
+  "scored": "1,624,515 rows over 22 cohorts (2013H1 to 2023H2) and 3 context seeds; every (cohort, row) pair, its outcome and its age quarters match the bundle's own scored.parquet, the full-GBM rows and the GBM-50k rows of the build's own score run (experiments/2026-09-13-fm-2012h2r-scores), zero mismatches on every comparison, summed over all 66 scored cells.",
+  "reference": "150,000 rows (3 seeds x 50,000); every row and its outcome match the GBM-50k reference of the same context seed and the bundle's own context.parquet of the same seed, zero mismatches.",
+  "seeds": [
+   20260911,
+   20260912,
+   20260913
+  ],
+  "method": "Totals below are summed over every part of this job and every comparison against the bundle's own scored.parquet/context.parquet and the build's own score run (full GBM, GBM-50k, same key columns as the falsifying run's check); not broken out cohort by cohort here because this job scores every cohort of the build.",
+  "totals": {
+   "not_in_gbm": 0,
+   "gbm_not_scored": 0,
+   "not_in_gbm50k_same_seed": 0,
+   "gbm50k_same_seed_not_scored": 0,
+   "not_in_bundle": 0,
+   "bundle_not_scored": 0,
+   "order_vs_bundle": 0,
+   "not_in_gbm50k_reference": 0,
+   "gbm50k_reference_not_scored": 0,
+   "order_vs_gbm50k_reference": 0,
+   "not_in_bundle_context": 0,
+   "bundle_context_not_scored": 0,
+   "order_vs_bundle_context": 0
+  },
+  "pd_range": {
+   "nonfinite": 0,
+   "below_0": 0,
+   "above_1": 0
+  }
+ },
+ "console_log": "score.log here is lines 3488-3568 of the archive's full console log (data/derived/node's result archive score.log, 3,909 lines for the whole session); this is the slice belonging to job tabpfn@2026-09-13-fm-2012h2r-bundle. Read in full: no home path beyond /home/node/outoftime-node, no account name. No occurrence of the word 'token' in this slice.",
+ "question_this_run_was_sent_to_answer": "The grid follows EXP-005's rule 1 (docs/experiments/EXP-005-tfm-out-of-time-second-book.md), as recorded in experiments/2026-09-13-fm-grid-budget: this job scores tabpfn on build 2012H2-R, every cohort of the build (22 cohorts) and its own context, on all 3 context seeds, on the primary matrix bundle only.",
+ "what_it_measured": {
+  "model": "tabpfn, checkpoint(s) present on the node: {\"tabpfn-v3-classifier-v3_default.ckpt\": \"d0d865d54dfbc524f5703104be90620182dca7e5fb2c16de72e9959ea18f3988\", \"tabicl-classifier-v2-20260212.ckpt\": \"bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0\"}",
+  "device": "cuda",
+  "context": "50,000 rows per seed drawn from the build's training pool (99,162 rows, experiments/2026-09-13-fm-2012h2r-scores/build.json train_rows), context seeds [20260911, 20260912, 20260913]",
+  "chunk": "20,000 scored rows per forward call (--chunk 20000); rows are scored independently and the chunking changes no probability",
+  "cell_summary": {
+   "reference_cells": 3,
+   "reference_rows_each": 50000,
+   "reference_seconds": {
+    "min": 35.961,
+    "median": 36.095,
+    "max": 37.03
+   },
+   "cohort_cells": 66,
+   "cohort_rows_total": 1624515,
+   "cohort_seconds": {
+    "min": 22.259,
+    "median": 22.67,
+    "max": 22.862
+   },
+   "cohort_us_per_row": {
+    "min": 904.0876088090176,
+    "median": 918.8006482982171,
+    "max": 941.305517612484
+   },
+   "peak_gpu_gb_max": 1.067,
+   "peak_gpu_gb_min": 1.066
+  },
+  "fit_seconds_per_seed": {
+   "tabpfn/20260911": 2.316,
+   "tabpfn/20260912": 0.756,
+   "tabpfn/20260913": 0.734
+  },
+  "wall_seconds": 1685.7,
+  "tally_seconds": 1686.7,
+  "repeat": [
+   {
+    "context_seed": 20260911,
+    "cell": "2013H1",
+    "max_abs_difference": 0.0,
+    "rows_differing": 0
+   },
+   {
+    "context_seed": 20260912,
+    "cell": "2013H1",
+    "max_abs_difference": 0.0,
+    "rows_differing": 0
+   },
+   {
+    "context_seed": 20260913,
+    "cell": "2013H1",
+    "max_abs_difference": 0.0,
+    "rows_differing": 0
+   }
+  ]
+ },
+ "timing_caveat": "This is a measurement, not a caveated reading: the rented instance was idle and dedicated to this run across all 43 jobs, back to back, no other process. Grid-wide cell-second medians and the gap over cells are recorded at the index (experiments/2026-09-14-fm-grid-rental-4090); no cell in the whole grid ran over twice its same-label-and-kind median.",
+ "tuning_budget": "Zero trials, no validation split, every parameter at the library default except those the command names. The classical models this pairs with were tuned on their own pool (build.json of the build's score run); the asymmetry runs both ways, since the 50,000-row control inherits the point chosen on the full pool.",
+ "not_in_this_run": "The other 1 job(s) of this bundle in the same session: tabicl@2026-09-13-fm-2012h2r-bundle. The dti-kept and upb-nominal ablations of this build, scored by neither this job nor the grid (the grid covers the primary matrix only)."
+}

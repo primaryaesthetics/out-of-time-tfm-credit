@@ -1,0 +1,2690 @@
+{
+  "build": {
+    "build_id": "2015H1-E",
+    "as_of": "2015-06-30",
+    "arm": "E",
+    "label_lag_months": 12,
+    "knowable_through": "2014-06-30",
+    "train_rows": 323026,
+    "train_first": "2010-04-01",
+    "train_last": "2014-06-01",
+    "train_quarters": [
+      "2010Q2",
+      "2010Q3",
+      "2010Q4",
+      "2011Q1",
+      "2011Q2",
+      "2011Q3",
+      "2011Q4",
+      "2012Q1",
+      "2012Q2",
+      "2012Q3",
+      "2012Q4",
+      "2013Q1",
+      "2013Q2",
+      "2013Q3",
+      "2013Q4",
+      "2014Q1",
+      "2014Q2"
+    ],
+    "blind_rows": 312972,
+    "test_cohorts": {
+      "2015Q3": 20000,
+      "2015Q4": 20000,
+      "2016Q1": 20000,
+      "2016Q2": 20000,
+      "2016Q3": 20000,
+      "2016Q4": 20000,
+      "2017Q1": 20000,
+      "2017Q2": 20000,
+      "2017Q3": 20000,
+      "2017Q4": 20000,
+      "2018Q1": 20000
+    },
+    "test_rows": 220000,
+    "notes": [
+      "312972 rows originated in (2014-06-30, 2015-06-30] carry no mature label at the as-of date and are neither trained on nor scored"
+    ]
+  },
+  "label": {
+    "window_months": 12,
+    "snapshot": "2019-03-01",
+    "charge_off_lag_months": 5,
+    "last_labelable_origination": "2018-03-01",
+    "bad_statuses": [
+      "Charged Off",
+      "Default",
+      "Does not meet the credit policy. Status:Charged Off"
+    ],
+    "good_statuses": [
+      "Does not meet the credit policy. Status:Fully Paid",
+      "Fully Paid"
+    ]
+  },
+  "snapshot": "2019-03-01",
+  "features": [
+    "annual_inc",
+    "credit_history_months",
+    "delinq_2yrs",
+    "dti",
+    "emp_length",
+    "fico_range_low",
+    "home_ownership",
+    "inq_last_6mths",
+    "loan_amnt",
+    "mths_since_last_delinq",
+    "open_acc",
+    "pub_rec",
+    "pub_rec_bankruptcies",
+    "purpose",
+    "revol_bal",
+    "revol_util",
+    "sub_grade",
+    "term",
+    "total_acc",
+    "verification_status"
+  ],
+  "gates": {
+    "redundancy": {
+      "funded_amnt": {
+        "duplicates": "loan_amnt",
+        "exact_agreement": 0.9990865531780871,
+        "correlation": 0.999755
+      },
+      "funded_amnt_inv": {
+        "duplicates": "loan_amnt",
+        "exact_agreement": 0.9329839675706473,
+        "correlation": 0.999038
+      },
+      "fico_range_high": {
+        "duplicates": "fico_range_low",
+        "distinct_offsets": 2.0,
+        "offset_min": 4.0,
+        "offset_max": 5.0,
+        "exact_agreement": 0.9998049249159983
+      },
+      "grade": {
+        "duplicates": "sub_grade",
+        "exact_agreement": 1.0
+      },
+      "int_rate": {
+        "duplicates": "sub_grade and the origination month",
+        "exact_agreement": 0.946623
+      },
+      "installment": {
+        "duplicates": "loan_amnt, int_rate and term",
+        "exact_agreement": 0.998643,
+        "median_abs_gap": 0.004988
+      }
+    },
+    "coverage": {
+      "acc_open_past_24mths": {
+        "onset": "2012Q2",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "all_util": {
+        "onset": "2016Q1",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "annual_inc": {
+        "onset": "2010Q2",
+        "first_quarter_share": 1.0,
+        "peak_share": 1.0,
+        "kept": true
+      },
+      "annual_inc_joint": {
+        "onset": "2017Q3",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.1514,
+        "kept": false
+      },
+      "avg_cur_bal": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "bc_open_to_buy": {
+        "onset": "2012Q2",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.9941,
+        "kept": false
+      },
+      "bc_util": {
+        "onset": "2012Q2",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.9936,
+        "kept": false
+      },
+      "delinq_2yrs": {
+        "onset": "2010Q2",
+        "first_quarter_share": 1.0,
+        "peak_share": 1.0,
+        "kept": true
+      },
+      "dti": {
+        "onset": "2010Q2",
+        "first_quarter_share": 1.0,
+        "peak_share": 1.0,
+        "kept": true
+      },
+      "dti_joint": {
+        "onset": "2017Q3",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.1514,
+        "kept": false
+      },
+      "earliest_cr_line": {
+        "onset": "2010Q2",
+        "first_quarter_share": 1.0,
+        "peak_share": 1.0,
+        "kept": true
+      },
+      "emp_length": {
+        "onset": "2010Q2",
+        "first_quarter_share": 0.9721,
+        "peak_share": 0.9753,
+        "kept": true
+      },
+      "fico_range_low": {
+        "onset": "2010Q2",
+        "first_quarter_share": 1.0,
+        "peak_share": 1.0,
+        "kept": true
+      },
+      "home_ownership": {
+        "onset": "2010Q2",
+        "first_quarter_share": 1.0,
+        "peak_share": 1.0,
+        "kept": true
+      },
+      "il_util": {
+        "onset": "2016Q1",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.8797,
+        "kept": false
+      },
+      "inq_fi": {
+        "onset": "2016Q1",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "inq_last_12m": {
+        "onset": "2016Q1",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "inq_last_6mths": {
+        "onset": "2010Q2",
+        "first_quarter_share": 1.0,
+        "peak_share": 1.0,
+        "kept": true
+      },
+      "loan_amnt": {
+        "onset": "2010Q2",
+        "first_quarter_share": 1.0,
+        "peak_share": 1.0,
+        "kept": true
+      },
+      "max_bal_bc": {
+        "onset": "2016Q1",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "mo_sin_old_il_acct": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.9749,
+        "kept": false
+      },
+      "mo_sin_old_rev_tl_op": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "mo_sin_rcnt_rev_tl_op": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "mo_sin_rcnt_tl": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "mort_acc": {
+        "onset": "2012Q2",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "mths_since_last_delinq": {
+        "onset": "2010Q2",
+        "first_quarter_share": 0.3599,
+        "peak_share": 0.5386,
+        "kept": true
+      },
+      "mths_since_last_major_derog": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.2963,
+        "kept": false
+      },
+      "mths_since_last_record": {
+        "onset": "2013Q2",
+        "first_quarter_share": 0.0672,
+        "peak_share": 0.2036,
+        "kept": false
+      },
+      "mths_since_rcnt_il": {
+        "onset": "2016Q1",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.9749,
+        "kept": false
+      },
+      "mths_since_recent_bc": {
+        "onset": "2012Q2",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.9949,
+        "kept": false
+      },
+      "mths_since_recent_bc_dlq": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.2866,
+        "kept": false
+      },
+      "mths_since_recent_inq": {
+        "onset": "2012Q2",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.9163,
+        "kept": false
+      },
+      "mths_since_recent_revol_delinq": {
+        "onset": "2012Q2",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.3787,
+        "kept": false
+      },
+      "num_accts_ever_120_pd": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "num_actv_bc_tl": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "num_actv_rev_tl": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "num_bc_sats": {
+        "onset": "2012Q3",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "num_bc_tl": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "num_il_tl": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "num_op_rev_tl": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "num_rev_accts": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "num_rev_tl_bal_gt_0": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "num_sats": {
+        "onset": "2012Q3",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "num_tl_120dpd_2m": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "num_tl_30dpd": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "num_tl_90g_dpd_24m": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "num_tl_op_past_12m": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "open_acc": {
+        "onset": "2010Q2",
+        "first_quarter_share": 1.0,
+        "peak_share": 1.0,
+        "kept": true
+      },
+      "open_acc_6m": {
+        "onset": "2016Q1",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "open_act_il": {
+        "onset": "2016Q1",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "open_il_12m": {
+        "onset": "2016Q1",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "open_il_24m": {
+        "onset": "2016Q1",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "open_rv_12m": {
+        "onset": "2016Q1",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "open_rv_24m": {
+        "onset": "2016Q1",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "pct_tl_nvr_dlq": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "percent_bc_gt_75": {
+        "onset": "2012Q2",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.9941,
+        "kept": false
+      },
+      "pub_rec": {
+        "onset": "2010Q2",
+        "first_quarter_share": 1.0,
+        "peak_share": 1.0,
+        "kept": true
+      },
+      "pub_rec_bankruptcies": {
+        "onset": "2010Q2",
+        "first_quarter_share": 1.0,
+        "peak_share": 1.0,
+        "kept": true
+      },
+      "purpose": {
+        "onset": "2010Q2",
+        "first_quarter_share": 1.0,
+        "peak_share": 1.0,
+        "kept": true
+      },
+      "revol_bal": {
+        "onset": "2010Q2",
+        "first_quarter_share": 1.0,
+        "peak_share": 1.0,
+        "kept": true
+      },
+      "revol_bal_joint": {
+        "onset": "2017Q3",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.1514,
+        "kept": false
+      },
+      "revol_util": {
+        "onset": "2010Q2",
+        "first_quarter_share": 0.998,
+        "peak_share": 0.9998,
+        "kept": true
+      },
+      "sec_app_chargeoff_within_12_mths": {
+        "onset": "2017Q3",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.1514,
+        "kept": false
+      },
+      "sec_app_collections_12_mths_ex_med": {
+        "onset": "2017Q3",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.1514,
+        "kept": false
+      },
+      "sec_app_earliest_cr_line": {
+        "onset": "2017Q3",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.1514,
+        "kept": false
+      },
+      "sec_app_fico_range_high": {
+        "onset": "2017Q3",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.1514,
+        "kept": false
+      },
+      "sec_app_fico_range_low": {
+        "onset": "2017Q3",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.1514,
+        "kept": false
+      },
+      "sec_app_inq_last_6mths": {
+        "onset": "2017Q3",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.1514,
+        "kept": false
+      },
+      "sec_app_mort_acc": {
+        "onset": "2017Q3",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.1514,
+        "kept": false
+      },
+      "sec_app_mths_since_last_major_derog": {
+        "onset": "2017Q3",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.0508,
+        "kept": false
+      },
+      "sec_app_num_rev_accts": {
+        "onset": "2017Q3",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.1514,
+        "kept": false
+      },
+      "sec_app_open_acc": {
+        "onset": "2017Q3",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.1514,
+        "kept": false
+      },
+      "sec_app_open_act_il": {
+        "onset": "2017Q3",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.1514,
+        "kept": false
+      },
+      "sec_app_revol_util": {
+        "onset": "2017Q3",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.1485,
+        "kept": false
+      },
+      "sub_grade": {
+        "onset": "2010Q2",
+        "first_quarter_share": 1.0,
+        "peak_share": 1.0,
+        "kept": true
+      },
+      "term": {
+        "onset": "2010Q2",
+        "first_quarter_share": 1.0,
+        "peak_share": 1.0,
+        "kept": true
+      },
+      "tot_coll_amt": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "tot_cur_bal": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "tot_hi_cred_lim": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "total_acc": {
+        "onset": "2010Q2",
+        "first_quarter_share": 1.0,
+        "peak_share": 1.0,
+        "kept": true
+      },
+      "total_bal_ex_mort": {
+        "onset": "2012Q2",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "total_bal_il": {
+        "onset": "2016Q1",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "total_bc_limit": {
+        "onset": "2012Q2",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "total_cu_tl": {
+        "onset": "2016Q1",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "total_il_high_credit_limit": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "total_rev_hi_lim": {
+        "onset": "2012Q4",
+        "first_quarter_share": 0.0,
+        "peak_share": 1.0,
+        "kept": false
+      },
+      "verification_status": {
+        "onset": "2010Q2",
+        "first_quarter_share": 1.0,
+        "peak_share": 1.0,
+        "kept": true
+      },
+      "verification_status_joint": {
+        "onset": "2017Q3",
+        "first_quarter_share": 0.0,
+        "peak_share": 0.1485,
+        "kept": false
+      }
+    },
+    "values": {
+      "annual_inc": {
+        "distinct_in_first_cohort": 885,
+        "share_outside_first_cohort": 0.000648,
+        "onset": "2012Q4",
+        "first_cohort_support": [
+          4080.0,
+          6000000.0
+        ],
+        "kept": true
+      },
+      "credit_history_months": {
+        "distinct_in_first_cohort": 365,
+        "share_outside_first_cohort": 0.00214,
+        "onset": "2010Q3",
+        "first_cohort_support": [
+          36.0,
+          569.0
+        ],
+        "kept": true
+      },
+      "delinq_2yrs": {
+        "distinct_in_first_cohort": 6,
+        "share_outside_first_cohort": 0.004551,
+        "onset": "2010Q3",
+        "first_cohort_support": [
+          0.0,
+          5.0
+        ],
+        "kept": true
+      },
+      "dti": {
+        "distinct_in_first_cohort": 1696,
+        "share_outside_first_cohort": 0.0,
+        "onset": null,
+        "first_cohort_support": [
+          0.0,
+          24.99
+        ],
+        "kept": true,
+        "clip": {
+          "declared": [
+            0.0,
+            24.99
+          ],
+          "first_cohort": [
+            0.0,
+            24.99
+          ],
+          "share_pinned": 0.232135,
+          "share_pinned_by_quarter": {
+            "2010Q2": 0.0,
+            "2010Q3": 0.0,
+            "2010Q4": 0.0,
+            "2011Q1": 0.026903,
+            "2011Q2": 0.03332,
+            "2011Q3": 0.033356,
+            "2011Q4": 0.030376,
+            "2012Q1": 0.030832,
+            "2012Q2": 0.069398,
+            "2012Q3": 0.189611,
+            "2012Q4": 0.197905,
+            "2013Q1": 0.194398,
+            "2013Q2": 0.172623,
+            "2013Q3": 0.163211,
+            "2013Q4": 0.177141,
+            "2014Q1": 0.183274,
+            "2014Q2": 0.180979,
+            "2014Q3": 0.213159,
+            "2014Q4": 0.244902,
+            "2015Q1": 0.258054,
+            "2015Q2": 0.253639,
+            "2015Q3": 0.261718,
+            "2015Q4": 0.266892,
+            "2016Q1": 0.273579,
+            "2016Q2": 0.250419,
+            "2016Q3": 0.213578,
+            "2016Q4": 0.236867,
+            "2017Q1": 0.228599,
+            "2017Q2": 0.235832,
+            "2017Q3": 0.25039,
+            "2017Q4": 0.249937,
+            "2018Q1": 0.250655
+          }
+        }
+      },
+      "emp_length": {
+        "distinct_in_first_cohort": 11,
+        "share_outside_first_cohort": 0.0,
+        "onset": null,
+        "first_cohort_support": [
+          0.0,
+          10.0
+        ],
+        "kept": true
+      },
+      "fico_range_low": {
+        "distinct_in_first_cohort": 33,
+        "share_outside_first_cohort": 0.002169,
+        "onset": "2011Q3",
+        "first_cohort_support": [
+          660.0,
+          820.0
+        ],
+        "kept": true
+      },
+      "home_ownership": {
+        "distinct_in_first_cohort": 3,
+        "share_outside_first_cohort": 0.000325,
+        "onset": "2011Q2",
+        "first_cohort_support": [
+          "MORTGAGE",
+          "OWN",
+          "RENT"
+        ],
+        "kept": true
+      },
+      "inq_last_6mths": {
+        "distinct_in_first_cohort": 10,
+        "share_outside_first_cohort": 0.0,
+        "onset": null,
+        "first_cohort_support": [
+          0.0,
+          9.0
+        ],
+        "kept": true
+      },
+      "loan_amnt": {
+        "distinct_in_first_cohort": 208,
+        "share_outside_first_cohort": 0.0,
+        "onset": null,
+        "first_cohort_support": [
+          1000.0,
+          25000.0
+        ],
+        "kept": true,
+        "clip": {
+          "declared": [
+            1000.0,
+            25000.0
+          ],
+          "first_cohort": [
+            1000.0,
+            25000.0
+          ],
+          "share_pinned": 0.130934,
+          "share_pinned_by_quarter": {
+            "2010Q2": 0.0,
+            "2010Q3": 0.0,
+            "2010Q4": 0.0,
+            "2011Q1": 0.035385,
+            "2011Q2": 0.070953,
+            "2011Q3": 0.081178,
+            "2011Q4": 0.096721,
+            "2012Q1": 0.09522,
+            "2012Q2": 0.089116,
+            "2012Q3": 0.074506,
+            "2012Q4": 0.100369,
+            "2013Q1": 0.119836,
+            "2013Q2": 0.097757,
+            "2013Q3": 0.096191,
+            "2013Q4": 0.108915,
+            "2014Q1": 0.122126,
+            "2014Q2": 0.123146,
+            "2014Q3": 0.123063,
+            "2014Q4": 0.121992,
+            "2015Q1": 0.125432,
+            "2015Q2": 0.125395,
+            "2015Q3": 0.134167,
+            "2015Q4": 0.129245,
+            "2016Q1": 0.142695,
+            "2016Q2": 0.126208,
+            "2016Q3": 0.11589,
+            "2016Q4": 0.129112,
+            "2017Q1": 0.144649,
+            "2017Q2": 0.141146,
+            "2017Q3": 0.138923,
+            "2017Q4": 0.157449,
+            "2018Q1": 0.179087
+          }
+        }
+      },
+      "mths_since_last_delinq": {
+        "distinct_in_first_cohort": 83,
+        "share_outside_first_cohort": 0.002814,
+        "onset": "2010Q3",
+        "first_cohort_support": [
+          1.0,
+          97.0
+        ],
+        "kept": true
+      },
+      "open_acc": {
+        "distinct_in_first_cohort": 30,
+        "share_outside_first_cohort": 0.003986,
+        "onset": "2010Q3",
+        "first_cohort_support": [
+          2.0,
+          34.0
+        ],
+        "kept": true
+      },
+      "pub_rec": {
+        "distinct_in_first_cohort": 5,
+        "share_outside_first_cohort": 0.002073,
+        "onset": "2012Q4",
+        "first_cohort_support": [
+          0.0,
+          4.0
+        ],
+        "kept": true
+      },
+      "pub_rec_bankruptcies": {
+        "distinct_in_first_cohort": 2,
+        "share_outside_first_cohort": 0.006933,
+        "onset": "2010Q4",
+        "first_cohort_support": [
+          0.0,
+          1.0
+        ],
+        "kept": true
+      },
+      "purpose": {
+        "distinct_in_first_cohort": 14,
+        "share_outside_first_cohort": 0.0,
+        "onset": null,
+        "first_cohort_support": [
+          "car",
+          "credit_card",
+          "debt_consolidation",
+          "educational",
+          "home_improvement",
+          "house",
+          "major_purchase",
+          "medical",
+          "moving",
+          "other",
+          "renewable_energy",
+          "small_business",
+          "vacation",
+          "wedding"
+        ],
+        "kept": true
+      },
+      "revol_bal": {
+        "distinct_in_first_cohort": 2768,
+        "share_outside_first_cohort": 0.000182,
+        "onset": "2012Q4",
+        "first_cohort_support": [
+          0.0,
+          465731.0
+        ],
+        "kept": true
+      },
+      "revol_util": {
+        "distinct_in_first_cohort": 947,
+        "share_outside_first_cohort": 0.003978,
+        "onset": "2012Q4",
+        "first_cohort_support": [
+          0.0,
+          99.9
+        ],
+        "kept": true
+      },
+      "sub_grade": {
+        "distinct_in_first_cohort": 34,
+        "share_outside_first_cohort": 0.000799,
+        "onset": "2010Q3",
+        "first_cohort_support": [
+          1.0,
+          34.0
+        ],
+        "kept": true
+      },
+      "term": {
+        "distinct_in_first_cohort": 2,
+        "share_outside_first_cohort": 0.0,
+        "onset": null,
+        "first_cohort_support": [
+          36.0,
+          60.0
+        ],
+        "kept": true
+      },
+      "total_acc": {
+        "distinct_in_first_cohort": 67,
+        "share_outside_first_cohort": 0.000709,
+        "onset": "2012Q3",
+        "first_cohort_support": [
+          3.0,
+          90.0
+        ],
+        "kept": true
+      },
+      "verification_status": {
+        "distinct_in_first_cohort": 3,
+        "share_outside_first_cohort": 0.0,
+        "onset": null,
+        "first_cohort_support": [
+          "Not Verified",
+          "Source Verified",
+          "Verified"
+        ],
+        "kept": true
+      },
+      "acc_now_delinq": {
+        "distinct_in_first_cohort": 1,
+        "share_outside_first_cohort": 0.004712,
+        "onset": "2012Q4",
+        "first_cohort_support": [
+          0.0
+        ],
+        "kept": false,
+        "reason": "zero on every loan before 2012Q4"
+      },
+      "chargeoff_within_12_mths": {
+        "distinct_in_first_cohort": 1,
+        "share_outside_first_cohort": 0.007933,
+        "onset": "2012Q4",
+        "first_cohort_support": [
+          0.0
+        ],
+        "kept": false,
+        "reason": "zero on every loan before 2012Q4"
+      },
+      "collections_12_mths_ex_med": {
+        "distinct_in_first_cohort": 1,
+        "share_outside_first_cohort": 0.016673,
+        "onset": "2012Q4",
+        "first_cohort_support": [
+          0.0
+        ],
+        "kept": false,
+        "reason": "zero on every loan before 2012Q4"
+      },
+      "delinq_amnt": {
+        "distinct_in_first_cohort": 1,
+        "share_outside_first_cohort": 0.003806,
+        "onset": "2012Q4",
+        "first_cohort_support": [
+          0.0
+        ],
+        "kept": false,
+        "reason": "zero on every loan before 2012Q4"
+      },
+      "tax_liens": {
+        "distinct_in_first_cohort": 1,
+        "share_outside_first_cohort": 0.034304,
+        "onset": "2012Q4",
+        "first_cohort_support": [
+          0.0
+        ],
+        "kept": false,
+        "reason": "zero on every loan before 2012Q4"
+      },
+      "initial_list_status": {
+        "distinct_in_first_cohort": 1,
+        "share_outside_first_cohort": 0.642525,
+        "onset": "2012Q4",
+        "first_cohort_support": [
+          "f"
+        ],
+        "kept": false,
+        "reason": "one level before the whole-loan programme of 2012Q4"
+      },
+      "application_type": {
+        "distinct_in_first_cohort": 1,
+        "share_outside_first_cohort": 0.036533,
+        "onset": "2015Q4",
+        "first_cohort_support": [
+          "Individual"
+        ],
+        "kept": false,
+        "reason": "one level before the joint applications of 2015Q4"
+      },
+      "disbursement_method": {
+        "distinct_in_first_cohort": 1,
+        "share_outside_first_cohort": 0.007523,
+        "onset": "2016Q1",
+        "first_cohort_support": [
+          "Cash"
+        ],
+        "kept": false,
+        "reason": "one level before 2016Q1"
+      },
+      "addr_state": {
+        "distinct_in_first_cohort": 42,
+        "share_outside_first_cohort": 0.082512,
+        "onset": "2010Q4",
+        "first_cohort_support": [
+          "AK",
+          "AL",
+          "AR",
+          "AZ",
+          "CA",
+          "CO",
+          "CT",
+          "DC",
+          "DE",
+          "FL",
+          "GA",
+          "HI",
+          "IA",
+          "IL",
+          "KY",
+          "LA",
+          "MA",
+          "MD",
+          "MI",
+          "MN",
+          "MO",
+          "MT",
+          "NH",
+          "NJ",
+          "NM",
+          "NV",
+          "NY",
+          "OH",
+          "OK",
+          "OR",
+          "PA",
+          "RI",
+          "SC",
+          "SD",
+          "TX",
+          "UT",
+          "VA",
+          "VT",
+          "WA",
+          "WI",
+          "WV",
+          "WY"
+        ],
+        "kept": false,
+        "reason": "states entered after the first cohort hold 8% of the book"
+      }
+    }
+  },
+  "seeds": {
+    "test_sample": 20260902,
+    "context": [
+      20260911,
+      20260912,
+      20260913
+    ],
+    "booster": 20260904
+  },
+  "policy": {
+    "scorecard": {
+      "iv_min": 0.02,
+      "max_characteristics": 20,
+      "monotonic_trend": "auto_asc_desc",
+      "max_n_prebins": 20,
+      "min_prebin_size": 0.02,
+      "min_bin_size": 0.05,
+      "max_n_bins": 6,
+      "min_missing_count": 100,
+      "drop_wrong_sign": true,
+      "solver": "mip",
+      "mip_solver": "bop",
+      "solver_time_limit": 100,
+      "logistic_tol": 1e-08
+    },
+    "gbm": {
+      "num_leaves": [
+        7,
+        15,
+        31
+      ],
+      "learning_rate": [
+        0.03,
+        0.1
+      ],
+      "min_child_samples": [
+        200,
+        1000
+      ],
+      "feature_fraction": [
+        0.4,
+        0.6,
+        1.0
+      ],
+      "grid_points": 36,
+      "max_rounds": 2000,
+      "early_stopping_rounds": 50,
+      "validation_quarters_max": 4,
+      "validation_row_share": 0.2,
+      "min_validation_rows": 1000,
+      "seed": 20260904
+    }
+  },
+  "units": {
+    "scorecard": {
+      "model": "scorecard",
+      "context_seed": null,
+      "train_rows": 323026,
+      "pool_rows": 323026,
+      "context_is_whole_pool": false,
+      "fit_seconds": 10.68,
+      "summary": {
+        "policy": {
+          "iv_min": 0.02,
+          "max_characteristics": 20,
+          "monotonic_trend": "auto_asc_desc",
+          "max_n_prebins": 20,
+          "min_prebin_size": 0.02,
+          "min_bin_size": 0.05,
+          "max_n_bins": 6,
+          "min_missing_count": 100,
+          "drop_wrong_sign": true,
+          "solver": "mip",
+          "mip_solver": "bop",
+          "solver_time_limit": 100,
+          "logistic_tol": 1e-08
+        },
+        "train_rows": 323026,
+        "train_default_rate": 0.023329,
+        "intercept": -3.735253,
+        "characteristics": [
+          {
+            "name": "annual_inc",
+            "dtype": "numerical",
+            "iv": 0.065006,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.747302
+          },
+          {
+            "name": "credit_history_months",
+            "dtype": "numerical",
+            "iv": 0.044505,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.331422
+          },
+          {
+            "name": "emp_length",
+            "dtype": "numerical",
+            "iv": 0.020549,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.529231
+          },
+          {
+            "name": "home_ownership",
+            "dtype": "categorical",
+            "iv": 0.03792,
+            "n_bins": 3,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.392514
+          },
+          {
+            "name": "inq_last_6mths",
+            "dtype": "numerical",
+            "iv": 0.084968,
+            "n_bins": 4,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.70057
+          },
+          {
+            "name": "purpose",
+            "dtype": "categorical",
+            "iv": 0.07703,
+            "n_bins": 4,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.556459
+          },
+          {
+            "name": "revol_bal",
+            "dtype": "numerical",
+            "iv": 0.022469,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.269082
+          },
+          {
+            "name": "sub_grade",
+            "dtype": "numerical",
+            "iv": 0.324242,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.843445
+          },
+          {
+            "name": "term",
+            "dtype": "numerical",
+            "iv": 0.026537,
+            "n_bins": 2,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.092003
+          },
+          {
+            "name": "total_acc",
+            "dtype": "numerical",
+            "iv": 0.024729,
+            "n_bins": 6,
+            "solver_status": "OPTIMAL",
+            "coefficient": -0.095203
+          }
+        ],
+        "n_characteristics": 10,
+        "constant_on_train": [],
+        "screened_out": [
+          "delinq_2yrs",
+          "dti",
+          "loan_amnt",
+          "mths_since_last_delinq",
+          "open_acc",
+          "pub_rec",
+          "pub_rec_bankruptcies",
+          "revol_util",
+          "verification_status"
+        ],
+        "dropped_wrong_sign": [
+          "fico_range_low"
+        ],
+        "neutral_missing": [],
+        "iv_all": [
+          {
+            "name": "sub_grade",
+            "iv": 0.324242
+          },
+          {
+            "name": "inq_last_6mths",
+            "iv": 0.084968
+          },
+          {
+            "name": "purpose",
+            "iv": 0.07703
+          },
+          {
+            "name": "fico_range_low",
+            "iv": 0.074284
+          },
+          {
+            "name": "annual_inc",
+            "iv": 0.065006
+          },
+          {
+            "name": "credit_history_months",
+            "iv": 0.044505
+          },
+          {
+            "name": "home_ownership",
+            "iv": 0.03792
+          },
+          {
+            "name": "term",
+            "iv": 0.026537
+          },
+          {
+            "name": "total_acc",
+            "iv": 0.024729
+          },
+          {
+            "name": "revol_bal",
+            "iv": 0.022469
+          },
+          {
+            "name": "emp_length",
+            "iv": 0.020549
+          },
+          {
+            "name": "revol_util",
+            "iv": 0.014873
+          },
+          {
+            "name": "open_acc",
+            "iv": 0.014468
+          },
+          {
+            "name": "loan_amnt",
+            "iv": 0.00866
+          },
+          {
+            "name": "verification_status",
+            "iv": 0.007952
+          },
+          {
+            "name": "mths_since_last_delinq",
+            "iv": 0.004089
+          },
+          {
+            "name": "delinq_2yrs",
+            "iv": 0.000596
+          },
+          {
+            "name": "pub_rec",
+            "iv": 0.000496
+          },
+          {
+            "name": "pub_rec_bankruptcies",
+            "iv": 0.000472
+          },
+          {
+            "name": "dti",
+            "iv": 0.0
+          }
+        ],
+        "notes": []
+      }
+    },
+    "gbm": {
+      "model": "gbm",
+      "context_seed": null,
+      "train_rows": 323026,
+      "pool_rows": 323026,
+      "context_is_whole_pool": false,
+      "fit_seconds": 193.17,
+      "summary": {
+        "policy": {
+          "num_leaves": [
+            7,
+            15,
+            31
+          ],
+          "learning_rate": [
+            0.03,
+            0.1
+          ],
+          "min_child_samples": [
+            200,
+            1000
+          ],
+          "feature_fraction": [
+            0.4,
+            0.6,
+            1.0
+          ],
+          "grid_points": 36,
+          "max_rounds": 2000,
+          "early_stopping_rounds": 50,
+          "validation_quarters_max": 4,
+          "validation_row_share": 0.2,
+          "min_validation_rows": 1000,
+          "seed": 20260904
+        },
+        "params": {
+          "objective": "binary",
+          "boosting_type": "gbdt",
+          "metric": "binary_logloss",
+          "bagging_fraction": 1.0,
+          "bagging_freq": 0,
+          "lambda_l1": 0.0,
+          "lambda_l2": 0.0,
+          "min_split_gain": 0.0,
+          "max_bin": 255,
+          "deterministic": true,
+          "force_row_wise": true,
+          "num_leaves": 7,
+          "learning_rate": 0.1,
+          "min_child_samples": 1000,
+          "feature_fraction": 0.6,
+          "seed": 20260904,
+          "num_threads": 0
+        },
+        "rounds": 241,
+        "seed": 20260904,
+        "train_rows": 323026,
+        "fit_rows": 220267,
+        "train_default_rate": 0.023329,
+        "train_quarters": [
+          "2010Q2",
+          "2010Q3",
+          "2010Q4",
+          "2011Q1",
+          "2011Q2",
+          "2011Q3",
+          "2011Q4",
+          "2012Q1",
+          "2012Q2",
+          "2012Q3",
+          "2012Q4",
+          "2013Q1",
+          "2013Q2",
+          "2013Q3",
+          "2013Q4",
+          "2014Q1",
+          "2014Q2"
+        ],
+        "validation_quarters": [
+          "2014Q1",
+          "2014Q2"
+        ],
+        "validation_rows": 102759,
+        "validation_logloss": 0.10431214,
+        "n_features": 20,
+        "unseen_categories": {
+          "home_ownership": 5,
+          "purpose": 14,
+          "verification_status": 3
+        },
+        "trials": [
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 518,
+            "validation_logloss": 0.10455315,
+            "seconds": 6.842
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 499,
+            "validation_logloss": 0.10451624,
+            "seconds": 7.046
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 441,
+            "validation_logloss": 0.10459902,
+            "seconds": 6.69
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 840,
+            "validation_logloss": 0.10440363,
+            "seconds": 10.91
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 677,
+            "validation_logloss": 0.10436182,
+            "seconds": 9.993
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 646,
+            "validation_logloss": 0.10439129,
+            "seconds": 9.582
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 171,
+            "validation_logloss": 0.10450087,
+            "seconds": 2.673
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 143,
+            "validation_logloss": 0.10448881,
+            "seconds": 2.717
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 174,
+            "validation_logloss": 0.10460837,
+            "seconds": 3.802
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 257,
+            "validation_logloss": 0.10437022,
+            "seconds": 5.128
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 241,
+            "validation_logloss": 0.10431214,
+            "seconds": 4.27
+          },
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 217,
+            "validation_logloss": 0.10444747,
+            "seconds": 4.624
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 323,
+            "validation_logloss": 0.10449512,
+            "seconds": 6.08
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 392,
+            "validation_logloss": 0.1044784,
+            "seconds": 7.858
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 368,
+            "validation_logloss": 0.10447396,
+            "seconds": 7.23
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 419,
+            "validation_logloss": 0.10439488,
+            "seconds": 7.869
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 297,
+            "validation_logloss": 0.1043727,
+            "seconds": 6.482
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 346,
+            "validation_logloss": 0.10434206,
+            "seconds": 7.278
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 82,
+            "validation_logloss": 0.10451742,
+            "seconds": 1.919
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 78,
+            "validation_logloss": 0.10458977,
+            "seconds": 2.17
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 71,
+            "validation_logloss": 0.10452358,
+            "seconds": 2.102
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 110,
+            "validation_logloss": 0.10437186,
+            "seconds": 3.114
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 146,
+            "validation_logloss": 0.10446893,
+            "seconds": 3.885
+          },
+          {
+            "params": {
+              "num_leaves": 15,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 139,
+            "validation_logloss": 0.10438057,
+            "seconds": 4.482
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 306,
+            "validation_logloss": 0.10439399,
+            "seconds": 6.048
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 185,
+            "validation_logloss": 0.10450437,
+            "seconds": 5.494
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 200,
+            "validation_logloss": 0.10449689,
+            "seconds": 5.342
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 216,
+            "validation_logloss": 0.10440094,
+            "seconds": 5.622
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 220,
+            "validation_logloss": 0.10443621,
+            "seconds": 5.973
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.03,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 210,
+            "validation_logloss": 0.10434304,
+            "seconds": 6.507
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.4
+            },
+            "rounds": 63,
+            "validation_logloss": 0.10461836,
+            "seconds": 2.994
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 0.6
+            },
+            "rounds": 42,
+            "validation_logloss": 0.1046755,
+            "seconds": 2.669
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 200,
+              "feature_fraction": 1.0
+            },
+            "rounds": 39,
+            "validation_logloss": 0.10468252,
+            "seconds": 2.35
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.4
+            },
+            "rounds": 77,
+            "validation_logloss": 0.10440499,
+            "seconds": 2.382
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 57,
+            "validation_logloss": 0.10452844,
+            "seconds": 2.647
+          },
+          {
+            "params": {
+              "num_leaves": 31,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 1.0
+            },
+            "rounds": 48,
+            "validation_logloss": 0.10445202,
+            "seconds": 2.538
+          }
+        ],
+        "importances": [
+          {
+            "feature": "sub_grade",
+            "gain": 12186.031443,
+            "splits": 133,
+            "gain_share": 0.414083
+          },
+          {
+            "feature": "purpose",
+            "gain": 2655.532336,
+            "splits": 129,
+            "gain_share": 0.090235
+          },
+          {
+            "feature": "annual_inc",
+            "gain": 2434.406347,
+            "splits": 134,
+            "gain_share": 0.082722
+          },
+          {
+            "feature": "inq_last_6mths",
+            "gain": 1913.095212,
+            "splits": 54,
+            "gain_share": 0.065007
+          },
+          {
+            "feature": "credit_history_months",
+            "gain": 1465.382777,
+            "splits": 115,
+            "gain_share": 0.049794
+          },
+          {
+            "feature": "revol_bal",
+            "gain": 1322.024945,
+            "splits": 119,
+            "gain_share": 0.044923
+          },
+          {
+            "feature": "revol_util",
+            "gain": 1111.667441,
+            "splits": 130,
+            "gain_share": 0.037775
+          },
+          {
+            "feature": "dti",
+            "gain": 1019.929151,
+            "splits": 97,
+            "gain_share": 0.034657
+          },
+          {
+            "feature": "loan_amnt",
+            "gain": 935.40119,
+            "splits": 110,
+            "gain_share": 0.031785
+          },
+          {
+            "feature": "mths_since_last_delinq",
+            "gain": 842.182206,
+            "splits": 79,
+            "gain_share": 0.028617
+          },
+          {
+            "feature": "emp_length",
+            "gain": 726.727144,
+            "splits": 60,
+            "gain_share": 0.024694
+          },
+          {
+            "feature": "fico_range_low",
+            "gain": 705.756615,
+            "splits": 65,
+            "gain_share": 0.023982
+          },
+          {
+            "feature": "home_ownership",
+            "gain": 684.815948,
+            "splits": 21,
+            "gain_share": 0.02327
+          },
+          {
+            "feature": "total_acc",
+            "gain": 505.230498,
+            "splits": 70,
+            "gain_share": 0.017168
+          },
+          {
+            "feature": "open_acc",
+            "gain": 375.786269,
+            "splits": 57,
+            "gain_share": 0.012769
+          },
+          {
+            "feature": "pub_rec",
+            "gain": 196.870761,
+            "splits": 23,
+            "gain_share": 0.00669
+          },
+          {
+            "feature": "verification_status",
+            "gain": 193.873811,
+            "splits": 23,
+            "gain_share": 0.006588
+          },
+          {
+            "feature": "term",
+            "gain": 104.96492,
+            "splits": 20,
+            "gain_share": 0.003567
+          },
+          {
+            "feature": "delinq_2yrs",
+            "gain": 40.55873,
+            "splits": 6,
+            "gain_share": 0.001378
+          },
+          {
+            "feature": "pub_rec_bankruptcies",
+            "gain": 8.7022,
+            "splits": 1,
+            "gain_share": 0.000296
+          }
+        ],
+        "notes": [
+          "the chosen point sits on the grid's edge: num_leaves=7",
+          "chosen over the runner-up by 2.99e-05 in log-loss"
+        ]
+      }
+    },
+    "gbm-50k/20260911": {
+      "model": "gbm-50k",
+      "context_seed": 20260911,
+      "train_rows": 50000,
+      "pool_rows": 323026,
+      "context_is_whole_pool": false,
+      "fit_seconds": 1.19,
+      "summary": {
+        "policy": {
+          "num_leaves": [
+            7,
+            15,
+            31
+          ],
+          "learning_rate": [
+            0.03,
+            0.1
+          ],
+          "min_child_samples": [
+            200,
+            1000
+          ],
+          "feature_fraction": [
+            0.4,
+            0.6,
+            1.0
+          ],
+          "grid_points": 36,
+          "max_rounds": 2000,
+          "early_stopping_rounds": 50,
+          "validation_quarters_max": 4,
+          "validation_row_share": 0.2,
+          "min_validation_rows": 1000,
+          "seed": 20260904
+        },
+        "params": {
+          "objective": "binary",
+          "boosting_type": "gbdt",
+          "metric": "binary_logloss",
+          "bagging_fraction": 1.0,
+          "bagging_freq": 0,
+          "lambda_l1": 0.0,
+          "lambda_l2": 0.0,
+          "min_split_gain": 0.0,
+          "max_bin": 255,
+          "deterministic": true,
+          "force_row_wise": true,
+          "num_leaves": 7,
+          "learning_rate": 0.1,
+          "min_child_samples": 1000,
+          "feature_fraction": 0.6,
+          "seed": 20260904,
+          "num_threads": 0
+        },
+        "rounds": 44,
+        "seed": 20260904,
+        "train_rows": 50000,
+        "fit_rows": 34099,
+        "train_default_rate": 0.02248,
+        "train_quarters": [
+          "2010Q2",
+          "2010Q3",
+          "2010Q4",
+          "2011Q1",
+          "2011Q2",
+          "2011Q3",
+          "2011Q4",
+          "2012Q1",
+          "2012Q2",
+          "2012Q3",
+          "2012Q4",
+          "2013Q1",
+          "2013Q2",
+          "2013Q3",
+          "2013Q4",
+          "2014Q1",
+          "2014Q2"
+        ],
+        "validation_quarters": [
+          "2014Q1",
+          "2014Q2"
+        ],
+        "validation_rows": 15901,
+        "validation_logloss": 0.10566031,
+        "n_features": 20,
+        "unseen_categories": {
+          "home_ownership": 5,
+          "purpose": 14,
+          "verification_status": 3
+        },
+        "trials": [
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 44,
+            "validation_logloss": 0.10566031,
+            "seconds": 0.348
+          }
+        ],
+        "importances": [
+          {
+            "feature": "sub_grade",
+            "gain": 1704.872845,
+            "splits": 46,
+            "gain_share": 0.409
+          },
+          {
+            "feature": "inq_last_6mths",
+            "gain": 402.62771,
+            "splits": 23,
+            "gain_share": 0.096591
+          },
+          {
+            "feature": "purpose",
+            "gain": 359.2951,
+            "splits": 27,
+            "gain_share": 0.086195
+          },
+          {
+            "feature": "annual_inc",
+            "gain": 261.492121,
+            "splits": 20,
+            "gain_share": 0.062732
+          },
+          {
+            "feature": "home_ownership",
+            "gain": 184.899479,
+            "splits": 10,
+            "gain_share": 0.044358
+          },
+          {
+            "feature": "revol_util",
+            "gain": 176.999089,
+            "splits": 20,
+            "gain_share": 0.042462
+          },
+          {
+            "feature": "revol_bal",
+            "gain": 162.802022,
+            "splits": 14,
+            "gain_share": 0.039056
+          },
+          {
+            "feature": "total_acc",
+            "gain": 158.913018,
+            "splits": 16,
+            "gain_share": 0.038123
+          },
+          {
+            "feature": "dti",
+            "gain": 146.500041,
+            "splits": 19,
+            "gain_share": 0.035145
+          },
+          {
+            "feature": "loan_amnt",
+            "gain": 124.467132,
+            "splits": 12,
+            "gain_share": 0.02986
+          },
+          {
+            "feature": "fico_range_low",
+            "gain": 112.501359,
+            "splits": 10,
+            "gain_share": 0.026989
+          },
+          {
+            "feature": "open_acc",
+            "gain": 106.78447,
+            "splits": 13,
+            "gain_share": 0.025618
+          },
+          {
+            "feature": "mths_since_last_delinq",
+            "gain": 88.434719,
+            "splits": 10,
+            "gain_share": 0.021216
+          },
+          {
+            "feature": "credit_history_months",
+            "gain": 78.727429,
+            "splits": 10,
+            "gain_share": 0.018887
+          },
+          {
+            "feature": "emp_length",
+            "gain": 62.53716,
+            "splits": 9,
+            "gain_share": 0.015003
+          },
+          {
+            "feature": "verification_status",
+            "gain": 16.99644,
+            "splits": 2,
+            "gain_share": 0.004077
+          },
+          {
+            "feature": "pub_rec",
+            "gain": 10.76441,
+            "splits": 2,
+            "gain_share": 0.002582
+          },
+          {
+            "feature": "pub_rec_bankruptcies",
+            "gain": 8.77662,
+            "splits": 1,
+            "gain_share": 0.002106
+          },
+          {
+            "feature": "delinq_2yrs",
+            "gain": 0.0,
+            "splits": 0,
+            "gain_share": 0.0
+          },
+          {
+            "feature": "term",
+            "gain": 0.0,
+            "splits": 0,
+            "gain_share": 0.0
+          }
+        ],
+        "notes": [
+          "every search point stopped within the early-stopping patience; the learning rates in the grid are too high for this pool"
+        ]
+      }
+    },
+    "gbm-50k/20260912": {
+      "model": "gbm-50k",
+      "context_seed": 20260912,
+      "train_rows": 50000,
+      "pool_rows": 323026,
+      "context_is_whole_pool": false,
+      "fit_seconds": 1.22,
+      "summary": {
+        "policy": {
+          "num_leaves": [
+            7,
+            15,
+            31
+          ],
+          "learning_rate": [
+            0.03,
+            0.1
+          ],
+          "min_child_samples": [
+            200,
+            1000
+          ],
+          "feature_fraction": [
+            0.4,
+            0.6,
+            1.0
+          ],
+          "grid_points": 36,
+          "max_rounds": 2000,
+          "early_stopping_rounds": 50,
+          "validation_quarters_max": 4,
+          "validation_row_share": 0.2,
+          "min_validation_rows": 1000,
+          "seed": 20260904
+        },
+        "params": {
+          "objective": "binary",
+          "boosting_type": "gbdt",
+          "metric": "binary_logloss",
+          "bagging_fraction": 1.0,
+          "bagging_freq": 0,
+          "lambda_l1": 0.0,
+          "lambda_l2": 0.0,
+          "min_split_gain": 0.0,
+          "max_bin": 255,
+          "deterministic": true,
+          "force_row_wise": true,
+          "num_leaves": 7,
+          "learning_rate": 0.1,
+          "min_child_samples": 1000,
+          "feature_fraction": 0.6,
+          "seed": 20260904,
+          "num_threads": 0
+        },
+        "rounds": 59,
+        "seed": 20260904,
+        "train_rows": 50000,
+        "fit_rows": 34121,
+        "train_default_rate": 0.02278,
+        "train_quarters": [
+          "2010Q2",
+          "2010Q3",
+          "2010Q4",
+          "2011Q1",
+          "2011Q2",
+          "2011Q3",
+          "2011Q4",
+          "2012Q1",
+          "2012Q2",
+          "2012Q3",
+          "2012Q4",
+          "2013Q1",
+          "2013Q2",
+          "2013Q3",
+          "2013Q4",
+          "2014Q1",
+          "2014Q2"
+        ],
+        "validation_quarters": [
+          "2014Q1",
+          "2014Q2"
+        ],
+        "validation_rows": 15879,
+        "validation_logloss": 0.10215046,
+        "n_features": 20,
+        "unseen_categories": {
+          "home_ownership": 5,
+          "purpose": 14,
+          "verification_status": 3
+        },
+        "trials": [
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 59,
+            "validation_logloss": 0.10215046,
+            "seconds": 0.401
+          }
+        ],
+        "importances": [
+          {
+            "feature": "sub_grade",
+            "gain": 2084.441603,
+            "splits": 49,
+            "gain_share": 0.393916
+          },
+          {
+            "feature": "purpose",
+            "gain": 419.516322,
+            "splits": 36,
+            "gain_share": 0.07928
+          },
+          {
+            "feature": "inq_last_6mths",
+            "gain": 366.2075,
+            "splits": 21,
+            "gain_share": 0.069206
+          },
+          {
+            "feature": "annual_inc",
+            "gain": 362.851819,
+            "splits": 32,
+            "gain_share": 0.068571
+          },
+          {
+            "feature": "emp_length",
+            "gain": 288.049296,
+            "splits": 28,
+            "gain_share": 0.054435
+          },
+          {
+            "feature": "dti",
+            "gain": 271.29293,
+            "splits": 29,
+            "gain_share": 0.051269
+          },
+          {
+            "feature": "credit_history_months",
+            "gain": 221.137499,
+            "splits": 17,
+            "gain_share": 0.04179
+          },
+          {
+            "feature": "total_acc",
+            "gain": 194.307218,
+            "splits": 20,
+            "gain_share": 0.03672
+          },
+          {
+            "feature": "revol_util",
+            "gain": 184.218529,
+            "splits": 24,
+            "gain_share": 0.034813
+          },
+          {
+            "feature": "revol_bal",
+            "gain": 183.532531,
+            "splits": 28,
+            "gain_share": 0.034684
+          },
+          {
+            "feature": "mths_since_last_delinq",
+            "gain": 160.642979,
+            "splits": 11,
+            "gain_share": 0.030358
+          },
+          {
+            "feature": "loan_amnt",
+            "gain": 151.845738,
+            "splits": 15,
+            "gain_share": 0.028696
+          },
+          {
+            "feature": "open_acc",
+            "gain": 129.92555,
+            "splits": 16,
+            "gain_share": 0.024553
+          },
+          {
+            "feature": "fico_range_low",
+            "gain": 128.75772,
+            "splits": 12,
+            "gain_share": 0.024333
+          },
+          {
+            "feature": "home_ownership",
+            "gain": 90.82991,
+            "splits": 7,
+            "gain_share": 0.017165
+          },
+          {
+            "feature": "verification_status",
+            "gain": 22.6254,
+            "splits": 3,
+            "gain_share": 0.004276
+          },
+          {
+            "feature": "term",
+            "gain": 13.38935,
+            "splits": 2,
+            "gain_share": 0.00253
+          },
+          {
+            "feature": "delinq_2yrs",
+            "gain": 12.0996,
+            "splits": 3,
+            "gain_share": 0.002287
+          },
+          {
+            "feature": "pub_rec",
+            "gain": 5.92128,
+            "splits": 1,
+            "gain_share": 0.001119
+          },
+          {
+            "feature": "pub_rec_bankruptcies",
+            "gain": 0.0,
+            "splits": 0,
+            "gain_share": 0.0
+          }
+        ],
+        "notes": []
+      }
+    },
+    "gbm-50k/20260913": {
+      "model": "gbm-50k",
+      "context_seed": 20260913,
+      "train_rows": 50000,
+      "pool_rows": 323026,
+      "context_is_whole_pool": false,
+      "fit_seconds": 1.25,
+      "summary": {
+        "policy": {
+          "num_leaves": [
+            7,
+            15,
+            31
+          ],
+          "learning_rate": [
+            0.03,
+            0.1
+          ],
+          "min_child_samples": [
+            200,
+            1000
+          ],
+          "feature_fraction": [
+            0.4,
+            0.6,
+            1.0
+          ],
+          "grid_points": 36,
+          "max_rounds": 2000,
+          "early_stopping_rounds": 50,
+          "validation_quarters_max": 4,
+          "validation_row_share": 0.2,
+          "min_validation_rows": 1000,
+          "seed": 20260904
+        },
+        "params": {
+          "objective": "binary",
+          "boosting_type": "gbdt",
+          "metric": "binary_logloss",
+          "bagging_fraction": 1.0,
+          "bagging_freq": 0,
+          "lambda_l1": 0.0,
+          "lambda_l2": 0.0,
+          "min_split_gain": 0.0,
+          "max_bin": 255,
+          "deterministic": true,
+          "force_row_wise": true,
+          "num_leaves": 7,
+          "learning_rate": 0.1,
+          "min_child_samples": 1000,
+          "feature_fraction": 0.6,
+          "seed": 20260904,
+          "num_threads": 0
+        },
+        "rounds": 51,
+        "seed": 20260904,
+        "train_rows": 50000,
+        "fit_rows": 34038,
+        "train_default_rate": 0.0234,
+        "train_quarters": [
+          "2010Q2",
+          "2010Q3",
+          "2010Q4",
+          "2011Q1",
+          "2011Q2",
+          "2011Q3",
+          "2011Q4",
+          "2012Q1",
+          "2012Q2",
+          "2012Q3",
+          "2012Q4",
+          "2013Q1",
+          "2013Q2",
+          "2013Q3",
+          "2013Q4",
+          "2014Q1",
+          "2014Q2"
+        ],
+        "validation_quarters": [
+          "2014Q1",
+          "2014Q2"
+        ],
+        "validation_rows": 15962,
+        "validation_logloss": 0.1041444,
+        "n_features": 20,
+        "unseen_categories": {
+          "home_ownership": 5,
+          "purpose": 14,
+          "verification_status": 3
+        },
+        "trials": [
+          {
+            "params": {
+              "num_leaves": 7,
+              "learning_rate": 0.1,
+              "min_child_samples": 1000,
+              "feature_fraction": 0.6
+            },
+            "rounds": 51,
+            "validation_logloss": 0.1041444,
+            "seconds": 0.366
+          }
+        ],
+        "importances": [
+          {
+            "feature": "sub_grade",
+            "gain": 1945.963284,
+            "splits": 55,
+            "gain_share": 0.426471
+          },
+          {
+            "feature": "annual_inc",
+            "gain": 373.008402,
+            "splits": 29,
+            "gain_share": 0.081747
+          },
+          {
+            "feature": "inq_last_6mths",
+            "gain": 267.731605,
+            "splits": 19,
+            "gain_share": 0.058675
+          },
+          {
+            "feature": "purpose",
+            "gain": 241.016739,
+            "splits": 28,
+            "gain_share": 0.05282
+          },
+          {
+            "feature": "credit_history_months",
+            "gain": 235.485626,
+            "splits": 13,
+            "gain_share": 0.051608
+          },
+          {
+            "feature": "revol_util",
+            "gain": 205.580719,
+            "splits": 24,
+            "gain_share": 0.045054
+          },
+          {
+            "feature": "revol_bal",
+            "gain": 205.25523,
+            "splits": 20,
+            "gain_share": 0.044983
+          },
+          {
+            "feature": "fico_range_low",
+            "gain": 175.757129,
+            "splits": 16,
+            "gain_share": 0.038518
+          },
+          {
+            "feature": "mths_since_last_delinq",
+            "gain": 155.614551,
+            "splits": 16,
+            "gain_share": 0.034104
+          },
+          {
+            "feature": "emp_length",
+            "gain": 155.369442,
+            "splits": 18,
+            "gain_share": 0.03405
+          },
+          {
+            "feature": "dti",
+            "gain": 148.89916,
+            "splits": 14,
+            "gain_share": 0.032632
+          },
+          {
+            "feature": "loan_amnt",
+            "gain": 140.08901,
+            "splits": 18,
+            "gain_share": 0.030701
+          },
+          {
+            "feature": "home_ownership",
+            "gain": 102.568541,
+            "splits": 8,
+            "gain_share": 0.022479
+          },
+          {
+            "feature": "total_acc",
+            "gain": 90.569481,
+            "splits": 10,
+            "gain_share": 0.019849
+          },
+          {
+            "feature": "open_acc",
+            "gain": 54.098409,
+            "splits": 8,
+            "gain_share": 0.011856
+          },
+          {
+            "feature": "pub_rec_bankruptcies",
+            "gain": 44.061679,
+            "splits": 7,
+            "gain_share": 0.009656
+          },
+          {
+            "feature": "term",
+            "gain": 21.871571,
+            "splits": 3,
+            "gain_share": 0.004793
+          },
+          {
+            "feature": "delinq_2yrs",
+            "gain": 0.0,
+            "splits": 0,
+            "gain_share": 0.0
+          },
+          {
+            "feature": "pub_rec",
+            "gain": 0.0,
+            "splits": 0,
+            "gain_share": 0.0
+          },
+          {
+            "feature": "verification_status",
+            "gain": 0.0,
+            "splits": 0,
+            "gain_share": 0.0
+          }
+        ],
+        "notes": []
+      }
+    }
+  },
+  "checks": {
+    "scorecard": {
+      "recorded": "experiments/2026-09-04-lc-scorecard-byvalue3/cohorts.csv",
+      "cells": 11,
+      "max_gap": {
+        "gini": 0.0,
+        "ks": 0.0,
+        "brier": 0.0,
+        "observed_over_expected": 0.0
+      }
+    },
+    "gbm": {
+      "recorded": "experiments/2026-09-04-lc-gbm-wide2/cohorts.csv",
+      "cells": 11,
+      "max_gap": {
+        "gini": 0.0,
+        "ks": 0.0,
+        "brier": 0.0,
+        "observed_over_expected": 0.0
+      }
+    },
+    "gbm-50k": {
+      "recorded": "experiments/2026-09-04-lc-gbm-wide2/cohorts.csv",
+      "cells": 33,
+      "max_gap": {
+        "gini": 0.0,
+        "ks": 0.0,
+        "brier": 0.0,
+        "observed_over_expected": 0.0
+      }
+    }
+  },
+  "scored_rows": 1100000,
+  "reference_rows": 796052,
+  "wall_seconds": 374.6
+}

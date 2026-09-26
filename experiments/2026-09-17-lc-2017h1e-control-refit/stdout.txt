@@ -1,0 +1,19 @@
+rows                  : 2,260,668
+snapshot from data    : 2019-03-01
+loaded in             : 138s
+features              : 20
+2017H1-E: train 1108732 rows 2010-04-01..2016-06-01 (25 quarters), blind 404896 rows, test 60000 rows over 3 cohorts
+
+| cohort | rows |
+| --- | --- |
+| 2017Q3 | 20000 |
+| 2017Q4 | 20000 |
+| 2018Q1 | 20000 | 
+
+gbm-50k@share/20260911    50,000 rows  fit    4.4s  gini 0.428->0.377  O/E 1.13->1.40
+gbm-50k@share/20260912    50,000 rows  fit    2.0s  gini 0.406->0.384  O/E 1.14->1.38
+gbm-50k@share/20260913    50,000 rows  fit    2.4s  gini 0.407->0.384  O/E 1.13->1.38
+
+scored rows           : 180,000
+reference rows        : 150,000
+wall                  : 169s

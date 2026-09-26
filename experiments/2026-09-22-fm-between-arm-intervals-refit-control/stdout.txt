@@ -1,0 +1,156 @@
+build dates           : 8: 2004H2, 2006H2, 2008H2, 2010H2, 2012H2, 2014H2, 2016H2, 2018H2
+builds                : 2004H2-E / 2004H2-R, 2006H2-E / 2006H2-R, 2008H2-E / 2008H2-R, 2010H2-E / 2010H2-R, 2012H2-E / 2012H2-R, 2014H2-E / 2014H2-R, 2016H2-E / 2016H2-R, 2018H2-E / 2018H2-R
+shared cells          : 192 over 38 distinct cohorts; 160 enter the criterion
+under the floors      : 2013H1, 2014H2, 2015H1, 2020H2, 2021H1, scored and pooled into nothing
+outcome read          : outcome
+models                : scorecard, gbm, gbm-50k (3 draws), tabicl (3 draws), tabicl@t1 (3 draws), tabpfn (3 draws), tabpfn@t1 (3 draws), gbm-50k@share (3 draws)
+matrix                : primary; columns recorded by build.json, node.json, the same on both arms
+loaded in             : 37s
+bootstrap all                   : 200 resamples in 1439s
+bootstrap all, cohorts resampled: 200 resamples in 1442s
+bootstrap seed 20260906         : every pooling again in 3076s
+bootstrap seed 20260907         : every pooling again in 3027s
+draw 20260911 held fixed   : 200 resamples in 1494s
+draw 20260912 held fixed   : 200 resamples in 1503s
+draw 20260913 held fixed   : 200 resamples in 1501s
+
+|Cox slope - 1| over the 160 shared criterion cells, the mean on each arm and E - R (value [lo, hi], * excludes zero, ! draws disagree, ? star changes with the bootstrap seed, ~ reads derived rows, their error below):
+  scorecard   E 0.1630  R 0.2435  E - R -0.0805 [-0.0859, -0.0648] *  
+  gbm         E 0.1758  R 0.2069  E - R -0.0311 [-0.0355, -0.0233] *  
+  gbm-50k     E 0.1899  R 0.2031  E - R -0.0132 [-0.0474, +0.0308]  ! 
+  tabpfn      E 0.2182  R 0.2476  E - R -0.0294 [-0.0483, -0.0067] *! 
+  tabicl      E 0.2107  R 0.2270  E - R -0.0164 [-0.0281, +0.0024]  ! 
+  gbm-50k@share E 0.1693  R 0.2031  E - R -0.0338 [-0.0582, +0.0049]  ! 
+  tabicl@t1   E 0.1467  R 0.1700  E - R -0.0232 [-0.0355, -0.0103] *  ~
+  tabpfn@t1   E 0.1489  R 0.1870  E - R -0.0381 [-0.0509, -0.0152] *! ~
+
+H4, each model's E - R minus gbm-50k@share's, on the same resample:
+  arm       scorecard   -0.0467 [-0.0838, -0.0153] *! 
+  arm       gbm         +0.0027 [-0.0355, +0.0264]  ! 
+  arm       gbm-50k     +0.0206 [+0.0019, +0.0353] *! 
+  arm       tabpfn      +0.0044 [-0.0168, +0.0223]  ! 
+  arm       tabicl      +0.0174 [-0.0072, +0.0356]  ! 
+  arm       tabicl@t1   +0.0106 [-0.0199, +0.0342]  ! ~
+  arm       tabpfn@t1   -0.0043 [-0.0250, +0.0164]  ! ~
+  builds    scorecard   -0.0640 [-0.0980, -0.0157] *! 
+  builds    gbm         +0.0033 [-0.0295, +0.0437]  ! 
+  builds    gbm-50k     +0.0298 [-0.0258, +0.0673]  ! 
+  builds    tabpfn      -0.0073 [-0.0397, +0.0184]  ! 
+  builds    tabicl      +0.0034 [-0.0300, +0.0394]  ! 
+  builds    tabicl@t1   -0.0046 [-0.0282, +0.0354]  ! ~
+  builds    tabpfn@t1   -0.0176 [-0.0465, +0.0157]  ! ~
+  pre-flag  scorecard   -0.0036 [-0.0629, +0.0416]  ! 
+  pre-flag  gbm         +0.0105 [-0.0463, +0.0566]  ! 
+  pre-flag  gbm-50k     +0.0244 [+0.0039, +0.0455] *! 
+  pre-flag  tabpfn      +0.0472 [-0.0080, +0.1053]  ! 
+  pre-flag  tabicl      +0.0660 [+0.0158, +0.1187] *! 
+  pre-flag  tabicl@t1   +0.0445 [-0.0008, +0.0909]  ! ~
+  pre-flag  tabpfn@t1   +0.0324 [-0.0105, +0.0811]  ! ~
+  flagged   scorecard   -0.0558 [-0.0907, -0.0158] *! 
+  flagged   gbm         +0.0067 [-0.0302, +0.0378]  ! 
+  flagged   gbm-50k     +0.0216 [-0.0082, +0.0489]  ! 
+  flagged   tabpfn      -0.0022 [-0.0179, +0.0169]    
+  flagged   tabicl      +0.0098 [-0.0110, +0.0379]  ! 
+  flagged   tabicl@t1   +0.0069 [-0.0214, +0.0365]  ! ~
+  flagged   tabpfn@t1   -0.0098 [-0.0274, +0.0143]  ! ~
+  resampled scorecard   -0.0467 [-0.0941, -0.0090] *! 
+  resampled gbm         +0.0027 [-0.0409, +0.0338]  ! 
+  resampled gbm-50k     +0.0206 [-0.0085, +0.0406]  ! 
+  resampled tabpfn      +0.0044 [-0.0203, +0.0327]  ! 
+  resampled tabicl      +0.0174 [-0.0115, +0.0438]  ! 
+  resampled tabicl@t1   +0.0106 [-0.0243, +0.0359]  ! ~
+  resampled tabpfn@t1   -0.0043 [-0.0281, +0.0209]  ! ~
+
+H4 on the pre-flag scope minus H4 on the flagged scope, on the same resample (beside kill criterion 4, no criterion):
+  scorecard   +0.0522 [+0.0014, +0.0886] *! 
+  gbm         +0.0037 [-0.0318, +0.0480]  ! 
+  gbm-50k     +0.0029 [-0.0427, +0.0497]  ! 
+  tabpfn      +0.0494 [-0.0042, +0.1172]  ! 
+  tabicl      +0.0562 [-0.0012, +0.1178]  ! 
+  tabicl@t1   +0.0376 [-0.0029, +0.0906]  !?~
+  tabpfn@t1   +0.0421 [+0.0042, +0.1014] *!?~
+  arm gbm-50k: E - R: draw intervals 20260911 [+0.0147, +0.0329]; 20260912 [-0.0506, -0.0240]; 20260913 [-0.0305, -0.0104]
+  arm tabpfn: E - R: draw intervals 20260911 [-0.0168, -0.0049]; 20260912 [-0.0393, -0.0272]; 20260913 [-0.0497, -0.0387]
+  arm tabicl: E - R: draw intervals 20260911 [-0.0070, +0.0049]; 20260912 [-0.0306, -0.0177]; 20260913 [-0.0280, -0.0170]
+  arm gbm-50k@share: E - R: draw intervals 20260911 [-0.0080, +0.0075]; 20260912 [-0.0551, -0.0333]; 20260913 [-0.0607, -0.0417]
+  arm tabpfn@t1: E - R: draw intervals 20260911 [-0.0271, -0.0120]; 20260912 [-0.0545, -0.0370]; 20260913 [-0.0507, -0.0368]
+  arm scorecard - gbm-50k@share: E - R: draw intervals 20260911 [-0.0872, -0.0619]; 20260912 [-0.0418, -0.0199]; 20260913 [-0.0358, -0.0136]
+  arm gbm - gbm-50k@share: E - R: draw intervals 20260911 [-0.0371, -0.0229]; 20260912 [+0.0055, +0.0256]; 20260913 [+0.0133, +0.0306]
+  arm gbm-50k - gbm-50k@share: E - R: draw intervals 20260911 [+0.0144, +0.0331]; 20260912 [+0.0018, +0.0132]; 20260913 [+0.0260, +0.0380]
+  arm tabpfn - gbm-50k@share: E - R: draw intervals 20260911 [-0.0192, -0.0031]; 20260912 [-0.0019, +0.0252]; 20260913 [-0.0023, +0.0160]
+  arm tabicl - gbm-50k@share: E - R: draw intervals 20260911 [-0.0095, +0.0062]; 20260912 [+0.0079, +0.0332]; 20260913 [+0.0184, +0.0379]
+  arm tabicl@t1 - gbm-50k@share: E - R: draw intervals 20260911 [-0.0230, -0.0060]; 20260912 [+0.0029, +0.0278]; 20260913 [+0.0190, +0.0347]
+  arm tabpfn@t1 - gbm-50k@share: E - R: draw intervals 20260911 [-0.0283, -0.0115]; 20260912 [-0.0136, +0.0119]; 20260913 [+0.0004, +0.0167]
+  pre-flag gbm-50k: E - R: draw intervals 20260911 [-0.0193, +0.0085]; 20260912 [-0.0942, -0.0420]; 20260913 [-0.0812, -0.0461]
+  pre-flag tabpfn: E - R: draw intervals 20260911 [-0.0295, -0.0153]; 20260912 [-0.0281, -0.0091]; 20260913 [-0.0549, -0.0420]
+  pre-flag tabicl: E - R: draw intervals 20260911 [-0.0102, +0.0063]; 20260912 [-0.0161, +0.0042]; 20260913 [-0.0326, -0.0236]
+  pre-flag gbm-50k@share: E - R: draw intervals 20260911 [-0.0409, -0.0111]; 20260912 [-0.1274, -0.0847]; 20260913 [-0.0880, -0.0543]
+  pre-flag scorecard - gbm-50k@share: E - R: draw intervals 20260911 [-0.0659, -0.0353]; 20260912 [+0.0061, +0.0488]; 20260913 [-0.0271, +0.0102]
+  pre-flag gbm - gbm-50k@share: E - R: draw intervals 20260911 [-0.0494, -0.0125]; 20260912 [+0.0331, +0.0636]; 20260913 [-0.0049, +0.0268]
+  pre-flag gbm-50k - gbm-50k@share: E - R: draw intervals 20260911 [+0.0156, +0.0273]; 20260912 [+0.0298, +0.0464]; 20260913 [+0.0006, +0.0110]
+  pre-flag tabpfn - gbm-50k@share: E - R: draw intervals 20260911 [-0.0107, +0.0209]; 20260912 [+0.0593, +0.1134]; 20260913 [+0.0041, +0.0401]
+  pre-flag tabicl - gbm-50k@share: E - R: draw intervals 20260911 [+0.0081, +0.0436]; 20260912 [+0.0721, +0.1277]; 20260913 [+0.0250, +0.0599]
+  pre-flag tabicl@t1 - gbm-50k@share: E - R: draw intervals 20260911 [-0.0080, +0.0227]; 20260912 [+0.0498, +0.1006]; 20260913 [+0.0254, +0.0593]
+  pre-flag tabpfn@t1 - gbm-50k@share: E - R: draw intervals 20260911 [-0.0150, +0.0122]; 20260912 [+0.0413, +0.0914]; 20260913 [+0.0131, +0.0409]
+  flagged gbm-50k: E - R: draw intervals 20260911 [+0.0124, +0.0374]; 20260912 [-0.0505, -0.0189]; 20260913 [-0.0200, +0.0040]
+  flagged tabpfn: E - R: draw intervals 20260911 [-0.0161, -0.0005]; 20260912 [-0.0505, -0.0330]; 20260913 [-0.0514, -0.0369]
+  flagged tabicl: E - R: draw intervals 20260911 [-0.0104, +0.0065]; 20260912 [-0.0399, -0.0225]; 20260913 [-0.0301, -0.0152]
+  flagged gbm-50k@share: E - R: draw intervals 20260911 [-0.0096, +0.0100]; 20260912 [-0.0443, -0.0211]; 20260913 [-0.0653, -0.0401]
+  flagged tabpfn@t1: E - R: draw intervals 20260911 [-0.0266, -0.0070]; 20260912 [-0.0634, -0.0404]; 20260913 [-0.0548, -0.0370]
+  flagged scorecard - gbm-50k@share: E - R: draw intervals 20260911 [-0.0971, -0.0606]; 20260912 [-0.0582, -0.0340]; 20260913 [-0.0402, -0.0133]
+  flagged gbm - gbm-50k@share: E - R: draw intervals 20260911 [-0.0308, -0.0145]; 20260912 [-0.0015, +0.0246]; 20260913 [+0.0204, +0.0411]
+  flagged gbm-50k - gbm-50k@share: E - R: draw intervals 20260911 [+0.0115, +0.0366]; 20260912 [-0.0094, +0.0065]; 20260913 [+0.0366, +0.0530]
+  flagged tabicl - gbm-50k@share: E - R: draw intervals 20260911 [-0.0122, +0.0061]; 20260912 [-0.0110, +0.0163]; 20260913 [+0.0170, +0.0426]
+  flagged tabicl@t1 - gbm-50k@share: E - R: draw intervals 20260911 [-0.0248, -0.0019]; 20260912 [-0.0086, +0.0187]; 20260913 [+0.0160, +0.0387]
+  flagged tabpfn@t1 - gbm-50k@share: E - R: draw intervals 20260911 [-0.0287, -0.0070]; 20260912 [-0.0300, -0.0039]; 20260913 [-0.0038, +0.0183]
+  cox_slope_deviation (all, arm): 0 cells not estimable left out on both arms, averaged over the context draws, at most 0 of any resample
+  cox_slope_deviation (all, builds): 0 build dates not estimable left out on both arms, averaged over the context draws, at most 0 of any resample
+  cox_slope_deviation (all, cohorts resampled, arm): 0 cells not estimable left out on both arms, averaged over the context draws, at most 0 of any resample
+  cox_slope_deviation (all, draw 20260911, arm): 0 cells not estimable left out on both arms, at most 0 of any resample
+  cox_slope_deviation (all, draw 20260911, builds): 0 build dates not estimable left out on both arms, at most 0 of any resample
+  cox_slope_deviation (all, draw 20260912, arm): 0 cells not estimable left out on both arms, at most 0 of any resample
+  cox_slope_deviation (all, draw 20260912, builds): 0 build dates not estimable left out on both arms, at most 0 of any resample
+  cox_slope_deviation (all, draw 20260913, arm): 0 cells not estimable left out on both arms, at most 0 of any resample
+  cox_slope_deviation (all, draw 20260913, builds): 0 build dates not estimable left out on both arms, at most 0 of any resample
+  ~ tabicl@t1 on 2004H2-E: derived exactly, 121,595 rows checked on build 2004H2-E, largest |d pd| 1.4e-07; 113 cells unchecked by row
+  ~ tabicl@t1 on 2006H2-E: derived exactly, 121,595 rows checked on build 2004H2-E, largest |d pd| 1.4e-07; 105 cells unchecked by row
+  ~ tabicl@t1 on 2008H2-E: derived exactly, 121,595 rows checked on build 2004H2-E, largest |d pd| 1.4e-07; 93 cells unchecked by row
+  ~ tabicl@t1 on 2010H2-E: derived exactly, 121,595 rows checked on build 2004H2-E, largest |d pd| 1.4e-07; 81 cells unchecked by row
+  ~ tabicl@t1 on 2012H2-E: derived exactly, 121,595 rows checked on build 2004H2-E, largest |d pd| 1.4e-07; 69 cells unchecked by row
+  ~ tabicl@t1 on 2014H2-E: derived exactly, 121,595 rows checked on build 2004H2-E, largest |d pd| 1.4e-07; 57 cells unchecked by row
+  ~ tabicl@t1 on 2016H2-E: derived exactly, 121,595 rows checked on build 2004H2-E, largest |d pd| 1.4e-07; 45 cells unchecked by row
+  ~ tabicl@t1 on 2018H2-E: derived exactly, 121,595 rows checked on build 2004H2-E, largest |d pd| 1.4e-07; 33 cells unchecked by row
+  ~ tabicl@t1 on 2004H2-R: derived exactly, 121,595 rows checked on build 2004H2-E, largest |d pd| 1.4e-07; 117 cells unchecked by row
+  ~ tabicl@t1 on 2006H2-R: derived exactly, 121,595 rows checked on build 2004H2-E, largest |d pd| 1.4e-07; 105 cells unchecked by row
+  ~ tabicl@t1 on 2008H2-R: derived exactly, 121,595 rows checked on build 2004H2-E, largest |d pd| 1.4e-07; 93 cells unchecked by row
+  ~ tabicl@t1 on 2010H2-R: derived exactly, 121,595 rows checked on build 2004H2-E, largest |d pd| 1.4e-07; 81 cells unchecked by row
+  ~ tabicl@t1 on 2012H2-R: derived exactly, 121,595 rows checked on build 2004H2-E, largest |d pd| 1.4e-07; 69 cells unchecked by row
+  ~ tabicl@t1 on 2014H2-R: derived exactly, 121,595 rows checked on build 2004H2-E, largest |d pd| 1.4e-07; 57 cells unchecked by row
+  ~ tabicl@t1 on 2016H2-R: derived exactly, 121,595 rows checked on build 2004H2-E, largest |d pd| 1.4e-07; 45 cells unchecked by row
+  ~ tabicl@t1 on 2018H2-R: derived exactly, 121,595 rows checked on build 2004H2-E, largest |d pd| 1.4e-07; 33 cells unchecked by row
+  ~ tabpfn@t1 on 2004H2-R: derived approximately, checked on build 2004H2-E: |b - 1| worst 6.63e-04, mean 1.21e-04, 0 of 117 cells above 0.00084; Cox slope derived - scored worst +5.90e-04, mean +1.35e-04; O/E derived - scored worst -4.48e-03, mean -1.19e-03
+  ~ tabpfn@t1 on 2006H2-R: derived approximately, checked on build 2006H2-E: |b - 1| worst 5.04e-04, mean 1.25e-04, 0 of 105 cells above 0.00084; Cox slope derived - scored worst +6.83e-04, mean +7.43e-05; O/E derived - scored worst -4.70e-03, mean -1.28e-03
+  ~ tabpfn@t1 on 2008H2-R: derived approximately, checked on build 2008H2-E: |b - 1| worst 1.83e-03, mean 2.24e-04, 8 of 93 cells above 0.00084; Cox slope derived - scored worst -1.89e-03, mean -1.97e-04; O/E derived - scored worst -3.92e-03, mean -1.05e-03
+  ~ tabpfn@t1 on 2010H2-R: derived approximately, checked on build 2010H2-E: |b - 1| worst 8.92e-04, mean 1.18e-04, 1 of 81 cells above 0.00084; Cox slope derived - scored worst +7.80e-04, mean -3.82e-05; O/E derived - scored worst -1.78e-03, mean -7.41e-04
+  ~ tabpfn@t1 on 2012H2-R: derived approximately, checked on build 2012H2-E: |b - 1| worst 2.52e-04, mean 1.11e-04, 0 of 69 cells above 0.00084; Cox slope derived - scored worst +4.04e-04, mean +4.78e-05; O/E derived - scored worst -9.93e-04, mean -3.88e-04
+  ~ tabpfn@t1 on 2014H2-R: derived approximately, checked on build 2014H2-E: |b - 1| worst 3.27e-04, mean 1.49e-04, 0 of 57 cells above 0.00084; Cox slope derived - scored worst +8.69e-04, mean +1.83e-04; O/E derived - scored worst -1.35e-03, mean -4.82e-04
+  ~ tabpfn@t1 on 2016H2-R: derived approximately, checked on build 2016H2-E: |b - 1| worst 3.85e-04, mean 1.44e-04, 0 of 45 cells above 0.00084; Cox slope derived - scored worst +4.89e-04, mean +1.90e-04; O/E derived - scored worst -1.34e-03, mean -5.08e-04
+  ~ tabpfn@t1 on 2018H2-R: derived approximately, checked on build 2018H2-E: |b - 1| worst 1.33e-04, mean 4.77e-05, 0 of 33 cells above 0.00084; Cox slope derived - scored worst +7.59e-04, mean -2.69e-05; O/E derived - scored worst -2.12e-03, mean -8.32e-04
+
+per build date, H4 with its interval and the arm contrast:
+  2004H2   scorecard -0.0380 [-0.1160, +0.0390]  gbm -0.0032 [-0.0807, +0.0750]  gbm-50k +0.0000 [+0.0000, +0.0000]  tabpfn +0.0171 [-0.0387, +0.0819]  tabicl +0.0189 [-0.0539, +0.1103]  tabicl@t1 +0.0250 [-0.0526, +0.1116]  tabpfn@t1 +0.0207 [-0.0397, +0.0832]   (score runs' build.json: rolling holds 54.9% of 176,092; contrast record: rolling holds 54.9%, mean row 3.38 quarters younger)
+  2006H2   scorecard +0.0101 [-0.1297, +0.0871]  gbm +0.0088 [-0.1281, +0.0863]  gbm-50k +0.0010 [-0.0272, +0.0391]  tabpfn +0.0696 [-0.0635, +0.1758]  tabicl +0.1291 [+0.0168, +0.1882]*  tabicl@t1 +0.1147 [-0.0227, +0.1809]  tabpfn@t1 +0.0737 [-0.0636, +0.1713]   (score runs' build.json: rolling holds 35.5% of 272,936; contrast record: rolling holds 35.5%, mean row 7.33 quarters younger)
+  2008H2   scorecard +0.0196 [-0.0194, +0.0522]  gbm +0.0177 [-0.0145, +0.0487]  gbm-50k +0.0937 [-0.0028, +0.2296]  tabpfn +0.0426 [-0.0052, +0.0794]  tabicl +0.0494 [+0.0067, +0.0809]*  tabicl@t1 +0.0069 [-0.0600, +0.0417]  tabpfn@t1 +0.0024 [-0.0615, +0.0370]   (score runs' build.json: rolling holds 25.9% of 368,551; contrast record: rolling holds 25.9%, mean row 11.34 quarters younger)
+  2010H2   scorecard -0.0444 [-0.0973, +0.0191]  gbm +0.0226 [-0.0550, +0.0766]  gbm-50k -0.0416 [-0.1041, +0.0000]  tabpfn -0.0717 [-0.1887, -0.0103]*  tabicl -0.0588 [-0.1804, +0.0287]  tabicl@t1 -0.0552 [-0.1478, +0.0289]  tabpfn@t1 -0.0760 [-0.1725, -0.0125]*   (score runs' build.json: rolling holds 20.8% of 465,066; contrast record: rolling holds 20.8%, mean row 15.38 quarters younger)
+  2012H2   scorecard -0.1760 [-0.2683, -0.0631]*  gbm -0.0663 [-0.1571, +0.0286]  gbm-50k -0.0247 [-0.0498, +0.0315]  tabpfn -0.0958 [-0.1429, -0.0072]*  tabicl -0.0867 [-0.1413, +0.0107]  tabicl@t1 -0.0681 [-0.1378, +0.0228]  tabpfn@t1 -0.0889 [-0.1396, +0.0014]   (score runs' build.json: rolling holds 17.6% of 564,228; contrast record: rolling holds 17.6%, mean row 19.23 quarters younger)
+  2014H2   scorecard -0.1203 [-0.1648, -0.0294]*  gbm -0.0326 [-0.0796, +0.0402]  gbm-50k +0.0526 [-0.0071, +0.0898]  tabpfn +0.0384 [-0.0467, +0.1018]  tabicl -0.0094 [-0.0826, +0.0818]  tabicl@t1 +0.0113 [-0.0391, +0.0777]  tabpfn@t1 +0.0199 [-0.0333, +0.0702]   (score runs' build.json: rolling holds 14.8% of 662,396; contrast record: rolling holds 14.8%, mean row 23.19 quarters younger)
+  2016H2   scorecard +0.0097 [-0.0699, +0.0541]  gbm +0.0861 [+0.0115, +0.1389]*  gbm-50k +0.0404 [-0.0550, +0.1664]  tabpfn +0.0202 [-0.0472, +0.0970]  tabicl +0.0397 [-0.0311, +0.1133]  tabicl@t1 +0.0230 [-0.0366, +0.0999]  tabpfn@t1 -0.0038 [-0.0525, +0.0547]   (score runs' build.json: rolling holds 12.8% of 759,434; contrast record: rolling holds 12.8%, mean row 27.21 quarters younger)
+  2018H2   scorecard -0.1728 [-0.3745, -0.0135]*  gbm -0.0069 [-0.2084, +0.1449]  gbm-50k +0.1174 [-0.3325, +0.3518]  tabpfn -0.0785 [-0.4058, +0.0958]  tabicl -0.0547 [-0.3675, +0.1369]  tabicl@t1 -0.0942 [-0.3274, +0.0778]  tabpfn@t1 -0.0888 [-0.3762, +0.0796]   (score runs' build.json: rolling holds 11.4% of 856,861; contrast record: rolling holds 11.4%, mean row 31.23 quarters younger)
+
+the criterion, per foundation model at its library settings, on the 160 shared criterion cells under the outcome column:
+  tabpfn      undetermined on this book (kill criterion 4): the pre-flag and flagged scopes disagree in sign; on the arm row alone: killed: inside the interval
+  tabicl      killed: inside the interval
+
+bootstrap seed check over seeds 20260906, 20260907: 13 of 30 pooled differences starred under seed 20260905, 0 change their star; 66 of 202 at every scope, 7 change; largest movement of an interval bound 0.0181
+
+wall                  : 13628s

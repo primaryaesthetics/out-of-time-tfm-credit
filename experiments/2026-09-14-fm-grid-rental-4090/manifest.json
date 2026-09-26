@@ -1,0 +1,175 @@
+{
+ "slug": "fm-grid-rental-4090",
+ "recorded_utc": "2026-09-14T08:52:00+00:00",
+ "git_sha": "001b24bd38526af6c15eecfc49fef93c9263b782",
+ "git_dirty": false,
+ "written_by_hand": "The archive-level record of the Freddie Mac grid's foundation-model side on the rented RTX 4090: the node's whole console log, the job list the runner walked and its tally, copied unchanged from the result archive, and the facts that belong to the archive rather than to one job. The 43 job directories listed under jobs hold the rows and a manifest each.",
+ "host": "Rented instance, 1x NVIDIA GeForce RTX 4090 (24564 MiB), driver 595.58.03, 8 vCPU, 15 GB RAM, Ubuntu Linux x86_64, Python 3.12.3, CUDA 13.2 at the driver, torch built against CUDA 13.0",
+ "gpu": "NVIDIA GeForce RTX 4090, 24564 MiB (25.25 GB reported by torch), torch 2.14.0 on cuda",
+ "job_archive": {
+  "path": "data/derived/node/outoftime-run-grid-fm.tar.gz",
+  "sha256": "9203534536c9e362e8eb17b5270fbe3b2d85259a143cdcf3974b027b9c9ce74b",
+  "built_by": "scripts/pack_node_run.py --format cuda over the 17 bundles of the grid (nine E builds 2002H2-E to 2018H2-E and eight R builds 2004H2-R to 2018H2-R, the primary matrix only), as a tar for node_run_cuda.sh, sidecars outoftime-run-grid-fm.tar.gz.sha256 and .jobs.json beside it",
+  "score_context_py_sha256": "66e8933d67fea5f8140f31f5229a305a15d3f1eb20e0fd67e15546037ff9f0dc",
+  "score_context_py_provenance": "Byte-identical to scripts/score_context.py at HEAD 001b24b (diffed directly against the git blob, zero bytes differ).",
+  "checkpoint": {
+   "name": "tabpfn-v3-classifier-v3_default.ckpt",
+   "sha256": "d0d865d54dfbc524f5703104be90620182dca7e5fb2c16de72e9959ea18f3988",
+   "provenance": "Travelled inside the job archive; hash checked directly against the pinned value, matches."
+  }
+ },
+ "result_archive": {
+  "name": "outoftime-result-grid-fm.tar.gz",
+  "sha256": "21d6a40a805f6953bd82d93fcd623edfcf1add18a069805cd0f25da847da09b9",
+  "contents": "43 output directories (17 bundles x tabicl and tabpfn, plus tabpfn-t1 on the nine E bundles: 17 + 17 + 9 = 43), each node.json, scores.parquet, reference.parquet, parts/; score.log, jobs.json, jobs-done.json, gpu.txt; no scorer, no bundle files; kept under data/derived/node/ with a .sha256 sidecar.",
+  "row_level_data_note": "scores.parquet, reference.parquet and parts/ under every -fm- experiment directory are covered by experiments/*-fm-*/**/*.parquet and experiments/*-fm-*/**/parts/ in .gitignore (the Freddie Mac dataset's terms forbid distributing the data or any derived product); only manifest.json, node.json, score.log and this index's jobs.json/jobs-done.json/gpu.txt are trackable. Verified below."
+ },
+ "process": {
+  "purpose": "The foundation-model side of EXP-005's grid (docs/experiments/EXP-005-tfm-out-of-time-second-book.md), budget recorded in experiments/2026-09-13-fm-grid-budget: tabicl and tabpfn on all 17 bundles of the primary matrix (nine E builds 2002H2-E to 2018H2-E, eight R builds 2004H2-R to 2018H2-R), tabpfn at softmax_temperature 1.0 on the nine E bundles only, every cohort of every build, all three context seeds, --chunk 20000.",
+  "one_process": "One process, 43 jobs, one continuous run.sh call: first job finished 2026-09-13T12:21:17+00:00, last job finished 2026-09-14T06:36:13+00:00 (jobs-done.json); tally_seconds sums to 67011.6s over the 43 jobs. The instance was dedicated and otherwise idle throughout.",
+  "console_log": "score.log is the file run-score.sh appends the scorer's console to on the node, 3,909 lines for the whole session, one block per job in job-list order; the 43 per-job slices copied into the 43 job directories are lines-exact cuts of this file. Read in full: no home path beyond /home/node/outoftime-node, no account name; one occurrence of the word 'token' anywhere in the file, the Hugging Face Hub's own unauthenticated-request warning on the first tabicl job (the checkpoint is not re-downloaded on later tabicl jobs in the same session, so the warning appears once)."
+ },
+ "checks_over_all_43": {
+  "archive_sha256": "All three archives (outoftime-run-grid-fm.tar.gz, outoftime-result-grid-fm.tar.gz, outoftime-result-grid-fm-rerun-tabicl-r.tar.gz) hash-checked directly against their .sha256 sidecars: equal, all three.",
+  "scripts": "score_context.py, node_jobs.py, run.sh (node_run_cuda.sh), bootstrap_macnode.sh and timing_probe.py in the job archive are byte-identical to scripts/ at commits e7e2978, dc50bdc, 001b24b and HEAD; score_context.py's identity to HEAD was independently re-diffed here (zero bytes differ).",
+  "checkpoint": "The TabPFN checkpoint that travelled in the job archive hashes to d0d865d54dfbc524f5703104be90620182dca7e5fb2c16de72e9959ea18f3988, equal to the pin; re-hashed directly here.",
+  "bundle_hashes": "node.json's bundle hashes equal bundle.json of the relevant bundle directory, all 17, and bundle.json's parsed build block equals node.json's own bundle.build block exactly on every job; none of the 17 bundle directories are tracked files yet (git status shows them untracked), so there is no git-HEAD comparison for bundle.json itself, and the working-tree copies differ from the archive's copies only in line endings (CRLF locally against LF from the Linux node).",
+  "parts": "3,387 part files total across the 43 jobs, equal to the expected count (seeds x (cohorts + reference)) on every job; concatenated parts equal scores.parquet and reference.parquet on every job.",
+  "rows": "80,154,162 scored rows and 6,450,000 reference rows total; every scored (cohort, row), its outcome and age quarters match both the full-GBM and GBM-50k rows of the bundle's own score run, and the bundle's own scored.parquet; every reference row and outcome match the GBM-50k reference of the same context seed and the bundle's own context.parquet; zero mismatches, no missing probability, no probability outside [0, 1], on all 43 jobs.",
+  "repeats": {
+   "total": 129,
+   "count_differing": 6,
+   "differing": [
+    {
+     "job": "tabicl@2026-09-13-fm-2016h2r-bundle",
+     "model": "tabicl",
+     "context_seed": 20260911,
+     "cell": "2017H1",
+     "max_abs_difference": 0.00015775486826896667,
+     "mean_abs_difference": 9.259146394392775e-07,
+     "rows_differing": 4316
+    },
+    {
+     "job": "tabicl@2026-09-13-fm-2016h2r-bundle",
+     "model": "tabicl",
+     "context_seed": 20260912,
+     "cell": "2017H1",
+     "max_abs_difference": 0.00017074309289455414,
+     "mean_abs_difference": 1.079326678853535e-06,
+     "rows_differing": 4348
+    },
+    {
+     "job": "tabicl@2026-09-13-fm-2016h2r-bundle",
+     "model": "tabicl",
+     "context_seed": 20260913,
+     "cell": "2017H1",
+     "max_abs_difference": 0.00015548616647720337,
+     "mean_abs_difference": 9.260833651043493e-07,
+     "rows_differing": 4360
+    },
+    {
+     "job": "tabicl@2026-09-13-fm-2018h2r-bundle",
+     "model": "tabicl",
+     "context_seed": 20260911,
+     "cell": "2019H1",
+     "max_abs_difference": 0.0006619542837142944,
+     "mean_abs_difference": 3.173528819455615e-06,
+     "rows_differing": 4695
+    },
+    {
+     "job": "tabicl@2026-09-13-fm-2018h2r-bundle",
+     "model": "tabicl",
+     "context_seed": 20260912,
+     "cell": "2019H1",
+     "max_abs_difference": 0.0010293945670127869,
+     "mean_abs_difference": 3.611456157285222e-06,
+     "rows_differing": 4693
+    },
+    {
+     "job": "tabicl@2026-09-13-fm-2018h2r-bundle",
+     "model": "tabicl",
+     "context_seed": 20260913,
+     "cell": "2019H1",
+     "max_abs_difference": 0.00026187673211097717,
+     "mean_abs_difference": 1.8327391750185102e-06,
+     "rows_differing": 4648
+    }
+   ],
+   "reading": "The first cohort of each job is scored twice from a fresh fit as the repeat check (one repeat per context seed, so 3 x 43 = 129 total). 123 reproduce with zero difference. The six that do not are all tabicl, all on the two R bundles whose tabicl pass was rerun standalone afterward (2016H2-R's first cohort 2017H1 and 2018H2-R's first cohort 2019H1), all three context seeds each; magnitudes and row counts are listed above."
+  },
+  "parameters": "softmax_temperature 0.9 on tabicl/tabpfn and 1.0 on tabpfn-t1, on every bundle; every other parameter at the library default; 50,000 context rows on every model, drawn from the build's own training pool.",
+  "environment": "Python 3.12.3, Linux-6.17.0-20-generic-x86_64-with-glibc2.39, torch 2.14.0 on cuda, tabpfn 8.5.0 and tabicl 2.1.1 on every job (only values seen for either pin across all 43); peak GPU about 1.07 GB on tabpfn/tabpfn-t1 and about 14.5-14.8 GB on tabicl.",
+  "secrets_scan": "score.log, gpu.txt, jobs.json, jobs-done.json and the 43 node.json files hold no token, key, e-mail address or account/host name beyond /home/node/outoftime-node, on every line matched; the sole 'token' hit is the HF Hub warning noted above."
+ },
+ "timing": {
+  "cell_median_seconds_by_label_kind": {
+   "tabpfn/cohort": 22.752,
+   "tabpfn/reference": 36.339,
+   "tabicl/cohort": 11.748,
+   "tabicl/reference": 18.792,
+   "tabpfn-t1/cohort": 22.769,
+   "tabpfn-t1/reference": 36.635
+  },
+  "cells_over_2x_median": 0,
+  "tally_seconds_total": 67011.6,
+  "reading": "No cell in the grid ran over twice its own label-and-kind median; the instance was idle and dedicated across all 43 jobs, so these are measurements, not caveated readings."
+ },
+ "jobs": {
+  "tabicl@2026-09-13-fm-2006h2e-bundle": "experiments/2026-09-14-fm-2006h2e-tabicl-rental-4090",
+  "tabpfn@2026-09-13-fm-2006h2e-bundle": "experiments/2026-09-14-fm-2006h2e-tabpfn-rental-4090",
+  "tabpfn-t1@2026-09-13-fm-2006h2e-bundle": "experiments/2026-09-14-fm-2006h2e-tabpfn-t1-rental-4090",
+  "tabicl@2026-09-13-fm-2002h2e-bundle": "experiments/2026-09-14-fm-2002h2e-tabicl-rental-4090",
+  "tabpfn@2026-09-13-fm-2002h2e-bundle": "experiments/2026-09-14-fm-2002h2e-tabpfn-rental-4090",
+  "tabpfn-t1@2026-09-13-fm-2002h2e-bundle": "experiments/2026-09-14-fm-2002h2e-tabpfn-t1-rental-4090",
+  "tabicl@2026-09-13-fm-2004h2e-bundle": "experiments/2026-09-14-fm-2004h2e-tabicl-rental-4090",
+  "tabpfn@2026-09-13-fm-2004h2e-bundle": "experiments/2026-09-14-fm-2004h2e-tabpfn-rental-4090",
+  "tabpfn-t1@2026-09-13-fm-2004h2e-bundle": "experiments/2026-09-14-fm-2004h2e-tabpfn-t1-rental-4090",
+  "tabicl@2026-09-13-fm-2008h2e-bundle": "experiments/2026-09-14-fm-2008h2e-tabicl-rental-4090",
+  "tabpfn@2026-09-13-fm-2008h2e-bundle": "experiments/2026-09-14-fm-2008h2e-tabpfn-rental-4090",
+  "tabpfn-t1@2026-09-13-fm-2008h2e-bundle": "experiments/2026-09-14-fm-2008h2e-tabpfn-t1-rental-4090",
+  "tabicl@2026-09-13-fm-2010h2e-bundle": "experiments/2026-09-14-fm-2010h2e-tabicl-rental-4090",
+  "tabpfn@2026-09-13-fm-2010h2e-bundle": "experiments/2026-09-14-fm-2010h2e-tabpfn-rental-4090",
+  "tabpfn-t1@2026-09-13-fm-2010h2e-bundle": "experiments/2026-09-14-fm-2010h2e-tabpfn-t1-rental-4090",
+  "tabicl@2026-09-13-fm-2012h2e-bundle": "experiments/2026-09-14-fm-2012h2e-tabicl-rental-4090",
+  "tabpfn@2026-09-13-fm-2012h2e-bundle": "experiments/2026-09-14-fm-2012h2e-tabpfn-rental-4090",
+  "tabpfn-t1@2026-09-13-fm-2012h2e-bundle": "experiments/2026-09-14-fm-2012h2e-tabpfn-t1-rental-4090",
+  "tabicl@2026-09-13-fm-2014h2e-bundle": "experiments/2026-09-14-fm-2014h2e-tabicl-rental-4090",
+  "tabpfn@2026-09-13-fm-2014h2e-bundle": "experiments/2026-09-14-fm-2014h2e-tabpfn-rental-4090",
+  "tabpfn-t1@2026-09-13-fm-2014h2e-bundle": "experiments/2026-09-14-fm-2014h2e-tabpfn-t1-rental-4090",
+  "tabicl@2026-09-13-fm-2016h2e-bundle": "experiments/2026-09-14-fm-2016h2e-tabicl-rental-4090",
+  "tabpfn@2026-09-13-fm-2016h2e-bundle": "experiments/2026-09-14-fm-2016h2e-tabpfn-rental-4090",
+  "tabpfn-t1@2026-09-13-fm-2016h2e-bundle": "experiments/2026-09-14-fm-2016h2e-tabpfn-t1-rental-4090",
+  "tabicl@2026-09-13-fm-2018h2e-bundle": "experiments/2026-09-14-fm-2018h2e-tabicl-rental-4090",
+  "tabpfn@2026-09-13-fm-2018h2e-bundle": "experiments/2026-09-14-fm-2018h2e-tabpfn-rental-4090",
+  "tabpfn-t1@2026-09-13-fm-2018h2e-bundle": "experiments/2026-09-14-fm-2018h2e-tabpfn-t1-rental-4090",
+  "tabicl@2026-09-13-fm-2004h2r-bundle": "experiments/2026-09-14-fm-2004h2r-tabicl-rental-4090",
+  "tabpfn@2026-09-13-fm-2004h2r-bundle": "experiments/2026-09-14-fm-2004h2r-tabpfn-rental-4090",
+  "tabicl@2026-09-13-fm-2006h2r-bundle": "experiments/2026-09-14-fm-2006h2r-tabicl-rental-4090",
+  "tabpfn@2026-09-13-fm-2006h2r-bundle": "experiments/2026-09-14-fm-2006h2r-tabpfn-rental-4090",
+  "tabicl@2026-09-13-fm-2008h2r-bundle": "experiments/2026-09-14-fm-2008h2r-tabicl-rental-4090",
+  "tabpfn@2026-09-13-fm-2008h2r-bundle": "experiments/2026-09-14-fm-2008h2r-tabpfn-rental-4090",
+  "tabicl@2026-09-13-fm-2010h2r-bundle": "experiments/2026-09-14-fm-2010h2r-tabicl-rental-4090",
+  "tabpfn@2026-09-13-fm-2010h2r-bundle": "experiments/2026-09-14-fm-2010h2r-tabpfn-rental-4090",
+  "tabicl@2026-09-13-fm-2012h2r-bundle": "experiments/2026-09-14-fm-2012h2r-tabicl-rental-4090",
+  "tabpfn@2026-09-13-fm-2012h2r-bundle": "experiments/2026-09-14-fm-2012h2r-tabpfn-rental-4090",
+  "tabicl@2026-09-13-fm-2014h2r-bundle": "experiments/2026-09-14-fm-2014h2r-tabicl-rental-4090",
+  "tabpfn@2026-09-13-fm-2014h2r-bundle": "experiments/2026-09-14-fm-2014h2r-tabpfn-rental-4090",
+  "tabicl@2026-09-13-fm-2016h2r-bundle": "experiments/2026-09-14-fm-2016h2r-tabicl-rental-4090",
+  "tabpfn@2026-09-13-fm-2016h2r-bundle": "experiments/2026-09-14-fm-2016h2r-tabpfn-rental-4090",
+  "tabicl@2026-09-13-fm-2018h2r-bundle": "experiments/2026-09-14-fm-2018h2r-tabicl-rental-4090",
+  "tabpfn@2026-09-13-fm-2018h2r-bundle": "experiments/2026-09-14-fm-2018h2r-tabpfn-rental-4090"
+ },
+ "rerun": {
+  "archive": {
+   "name": "outoftime-result-grid-fm-rerun-tabicl-r.tar.gz",
+   "sha256": "a48486081c1f4d1e3d1e38c4591ab784f381060f157820dde0c6f5b93472d4d8",
+   "provenance": "A second pass of tabicl on 2016H2-R and 2018H2-R, run by hand in the node directory after the grid finished, outside run.sh: same command as the grid's tabicl jobs on those two bundles, but not through node_jobs.py and not sharing run.sh's checkpoint cache, so the TabICL checkpoint was fetched again from Hugging Face Hub for the rerun (same hash as the grid's, bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0); node.json for each rerun job accordingly lists only that one checkpoint, not the TabPFN one."
+  },
+  "dirs": {
+   "2026-09-14-fm-2016h2r-tabicl-rerun-rental-4090": "experiments/2026-09-14-fm-2016h2r-tabicl-rerun-rental-4090",
+   "2026-09-14-fm-2018h2r-tabicl-rerun-rental-4090": "experiments/2026-09-14-fm-2018h2r-tabicl-rerun-rental-4090"
+  },
+  "summary": "Both reruns' rows equal the grid's first pass exactly (zero rows differing on the concatenated parts, on scores.parquet and on reference.parquet), and each rerun's own repeat check reproduces the first pass's repeat values exactly. The only environment field that differs from the first pass is checkpoints: the rerun's node.json lists only the TabICL checkpoint (it ran standalone, outside run.sh's session, so the TabPFN checkpoint already on the node from earlier jobs was never loaded into this process)."
+ },
+ "not_in_this_run": "tabicl-t1 and tabpfn-t1 on the eight R bundles (only the nine E bundles got a t1 pass, per the grid budget). The dti-kept and upb-nominal ablations of every build (the grid covers the primary matrix only; those ablations were scored earlier, for build 2004H2-E only, by the falsifying run in experiments/2026-09-13-fm-2004h2e-dti-kept-* and -upb-nominal-*)."
+}

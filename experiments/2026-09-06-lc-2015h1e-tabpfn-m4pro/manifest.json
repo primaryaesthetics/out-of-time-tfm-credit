@@ -1,0 +1,51 @@
+{
+  "slug": "lc-2015h1e-tabpfn-m4pro",
+  "recorded_utc": "2026-09-06T12:17:35+00:00",
+  "git_sha": "723170fce85efb14b8ad6e75ceb310c698fe8ff8",
+  "git_dirty": false,
+  "written_by_hand": "This run was made on a node that holds no copy of the repository, so record_run.py could not record it. The manifest is assembled here from what the node returned; node.json is the node's own account of its environment and its cells, and score.log is its console output.",
+  "host": "Apple M4 Pro laptop, 24 GB unified memory, macOS 26.6.2, the machine of experiments/2026-09-04-m4pro-tabpfn-timing",
+  "gpu": "Apple Silicon GPU (arm64), Metal via torch 2.14.0 MPS, memory shared with the system",
+  "command": "bash run.sh from the job archive, which run-score.sh expanded to: python score_context.py 2026-09-05-lc-2015h1e-bundle --out-dir 2026-09-05-lc-2015h1e-bundle-scored --models tabpfn --nearest 3 --seeds 20260911",
+  "job_archive": {
+    "path": "data/derived/node/outoftime-run-2026-09-05-lc-2015h1e-bundle.tar.gz",
+    "sha256": "2348ddcad9eaa9cc6ec020dbe498669c8c5fe56255d5511ca9bb75a782a8940f",
+    "built_by": "scripts/pack_node_run.py at commit 304d00d",
+    "score_context_py_sha256": "1778a1674e9e85a96d7d6f7cc4f7a8ee5cfb74e3ec6ee01189e1ee869ef28f67",
+    "score_context_py_provenance": "LF-normalised hash of the copy inside the archive; equal to scripts/score_context.py in this tree, unchanged since commit 6ff4872. The node copies the script with CR bytes stripped and does not re-hash it, so the identity of what ran rests on the archive rather than on a check made there."
+  },
+  "result_archive": {
+    "name": "outoftime-result-2026-09-05-lc-2015h1e-bundle.tar.gz",
+    "sha256": "4c025e40d7f980772df0c98cbfac1d4e6d6fb8880e36fc40bcd6ffcfcac7756e",
+    "contents": "2026-09-05-lc-2015h1e-bundle-scored/ (node.json, scores.parquet, reference.parquet, parts/) and score.log, copied here unchanged"
+  },
+  "bundle_check": {
+    "context.parquet": "6416fe6560268bef4b0341e545c37918a1ef2aabed6689cdff5287e45a9738c6",
+    "scored.parquet": "0e7bc300b9bc16360152be39e0d9ea0c663289897dcf90ea9536a748438bc09e",
+    "how": "The hashes the node recorded in node.json for the bundle it read, equal to the files of experiments/2026-09-05-lc-2015h1e-bundle on this machine. The scorer refuses a bundle whose hashes differ from bundle.json, so the node scored the recorded rows."
+  },
+  "row_check": {
+    "scored": "60,000 rows over 2015Q3, 2015Q4, 2016Q1; every (cohort, row) pair and its outcome and age match the gbm rows of experiments/2026-09-05-lc-2015h1e-scores/scores.parquet, zero mismatches",
+    "reference": "50,000 rows; every row and its outcome match the gbm-50k reference of context seed 20260911 in experiments/2026-09-05-lc-2015h1e-scores/reference.parquet, zero mismatches"
+  },
+  "console_log": "score.log is included. It is ten lines of the scorer's own summary; it was read in full and holds no home path, no account name and no token.",
+  "question_this_run_was_sent_to_answer": "The TabPFN side of the cheapest falsifying run of EXP-002: one build (2015H1-E), one context seed, the three cohorts nearest the build date, so that the paired intervals of experiments/2026-09-05-lc-2015h1e-intervals2 can be read against a foundation model on the same rows.",
+  "what_it_measured": {
+    "model": "tabpfn 8.5.0, checkpoint tabpfn-v3-classifier-v3_default.ckpt (sha256 d0d865d5...3988), tabicl 2.1.1 present and not used",
+    "device": "mps",
+    "context": "50,000 rows of seed 20260911, categorical_features_indices [6, 13, 19], ignore_pretraining_limits true, every other parameter at its default (node.json)",
+    "cells_seconds": {
+      "reference, 50,000 rows": 433.97,
+      "2015Q3, 20,000 rows": 313.613,
+      "2015Q4, 20,000 rows": 317.95,
+      "2016Q1, 20,000 rows": 320.31
+    },
+    "peak_gpu_gb_max": 3.619,
+    "fit_seconds": 32.945,
+    "wall_seconds": 1743.7,
+    "repeat": "2015Q3 scored twice from a fresh fit: largest absolute disagreement 0.0, no row differs"
+  },
+  "tuning_budget": "Added 2026-09-06 after the seventh cold audit, which found the baseline gate's budget statement missing from the run manifests. TabPFN: zero trials, no validation split, every parameter at the library default except categorical_features_indices and ignore_pretraining_limits (node.json params); n_estimators is 'auto' and the realised ensemble size is not recorded. The classical models it is paired with were tuned on their own pool (build.json of experiments/2026-09-05-lc-2015h1e-scores), and the asymmetry runs both ways: the foundation model gets no tuning, the 50,000-row control inherits the point chosen on the 323,026-row pool.",
+  "against_the_timing_run": "experiments/2026-09-04-m4pro-tabpfn-timing measured 319.5 s for 20,000 scored rows at a 50,000 context; the three cohort cells here took 313.6 to 320.3 s.",
+  "not_in_this_run": "TabICL. It does not fit a 24 GB Apple machine at a 10,000-row context (the timing run's manifest); its side of the falsifying run is scored on a CUDA node from the same bundle with --models tabicl."
+}

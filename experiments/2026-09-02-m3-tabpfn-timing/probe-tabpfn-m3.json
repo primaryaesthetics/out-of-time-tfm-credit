@@ -1,0 +1,63 @@
+{
+  "environment": {
+    "python": "3.12.13",
+    "platform": "macOS-14.6.1-arm64-arm-64bit",
+    "processor": "arm",
+    "packages": {
+      "torch": "2.13.0",
+      "tabpfn": "8.5.0",
+      "tabicl": "2.1.1",
+      "numpy": "2.5.2",
+      "scikit-learn": "1.9.0"
+    },
+    "device": "mps",
+    "device_name": "Apple Silicon GPU (arm64)",
+    "cuda": null,
+    "device_memory_gb": 17.18,
+    "memory_is_unified": true
+  },
+  "results": [
+    {
+      "model": "tabpfn",
+      "context_rows": 1000,
+      "test_rows": 5000,
+      "features": 30,
+      "seconds": [
+        9.873,
+        9.368
+      ],
+      "peak_gpu_gb": 1.411,
+      "status": "ok",
+      "spread_seconds": 0.505,
+      "spread_fraction": 0.0511
+    },
+    {
+      "model": "tabpfn",
+      "context_rows": 10000,
+      "test_rows": 5000,
+      "features": 30,
+      "seconds": [
+        44.45,
+        44.461
+      ],
+      "peak_gpu_gb": 1.461,
+      "status": "ok",
+      "spread_seconds": 0.011,
+      "spread_fraction": 0.0002
+    },
+    {
+      "model": "tabpfn",
+      "context_rows": 50000,
+      "test_rows": 5000,
+      "features": 30,
+      "seconds": [
+        596.983,
+        603.252
+      ],
+      "peak_gpu_gb": 2.611,
+      "status": "ok",
+      "spread_seconds": 6.269,
+      "spread_fraction": 0.0104
+    }
+  ]
+}

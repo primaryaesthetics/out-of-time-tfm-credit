@@ -1,0 +1,9 @@
+derived tabicl@t1 at 1 from experiments/2026-09-13-lc-2015h1e-folds-tabicl-colab-t4
+library               : tabicl 2.1.1
+  experiments/2026-09-13-lc-2015h1e-folds-tabicl-colab-t4: seeds [20260911, 20260912, 20260913], from [0.9], 120,000 scored + 150,000 reference rows
+check                 : experiments/2026-09-13-lc-2015h1e-folds-tabicl-t1-check-colab-t4
+  20260911/fold1-test  20,000 rows  max |d pd| 1.11e-07  max |d logit| 1.15e-06
+  20260911/reference  50,000 rows  max |d pd| 1.03e-07  max |d logit| 1.06e-06
+rows checked          : 70,000 of 270,000, worst |d pd| 1.11e-07 within 1e-06
+unchecked cells       : 20260911/fold1-validation, 20260912/fold1-test, 20260912/fold1-validation, 20260912/reference, 20260913/fold1-test, 20260913/fold1-validation, 20260913/reference (derived under the same library and checkpoint)
+written               : experiments/2026-09-14-lc-2015h1e-folds-tabicl-t1-derived

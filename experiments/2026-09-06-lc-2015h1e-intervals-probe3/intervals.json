@@ -1,0 +1,151 @@
+{
+  "build_id": "2015H1-E",
+  "models": {
+    "scorecard": [],
+    "gbm": [],
+    "gbm-50k": [
+      20260911
+    ],
+    "tabpfn": [
+      20260911
+    ],
+    "tabicl": [
+      20260911
+    ],
+    "tabicl@t1": [
+      20260911
+    ],
+    "tabpfn@t1+bal": [
+      20260911
+    ],
+    "tabpfn@t1": [
+      20260911
+    ]
+  },
+  "sources": [
+    "experiments/2026-09-05-lc-2015h1e-scores",
+    "experiments/2026-09-06-lc-2015h1e-tabpfn-m4pro",
+    "experiments/2026-09-06-lc-2015h1e-tabicl-colab-t4",
+    "experiments/2026-09-06-lc-2015h1e-probe3-colab-t4"
+  ],
+  "cohorts": [
+    "2015Q3",
+    "2015Q4",
+    "2016Q1"
+  ],
+  "cohorts_pooled": 3,
+  "cohorts_scored": 11,
+  "cohorts_not_pooled": {
+    "2016Q2": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1+bal/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2016Q3": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1+bal/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2016Q4": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1+bal/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2017Q1": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1+bal/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2017Q2": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1+bal/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2017Q3": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1+bal/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2017Q4": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1+bal/20260911",
+      "tabpfn@t1/20260911"
+    ],
+    "2018Q1": [
+      "tabicl/20260911",
+      "tabicl@t1/20260911",
+      "tabpfn/20260911",
+      "tabpfn@t1+bal/20260911",
+      "tabpfn@t1/20260911"
+    ]
+  },
+  "draws_not_pooled": {
+    "gbm-50k": [
+      20260912,
+      20260913
+    ]
+  },
+  "nearest": [
+    "2015Q3",
+    "2015Q4",
+    "2016Q1"
+  ],
+  "bootstrap": {
+    "resamples": 200,
+    "seed": 20260905,
+    "alpha": 0.05,
+    "blocking": "cohort",
+    "context_draw": "one draw shared by every seeded model, so the draw is fixed and every interval is conditional on it; the seed spread is not measured",
+    "poolings": [
+      "all",
+      "all, cohorts resampled"
+    ],
+    "pooled_metrics": [
+      "gini",
+      "abs_log_oe",
+      "cox_slope_deviation",
+      "psi"
+    ],
+    "per_draw": null,
+    "draws_disagree": null,
+    "multiplicity": "none: every interval is reported at alpha on its own, and the pairs are not adjusted for one another"
+  },
+  "calibration": {
+    "observed_over_expected": "observed defaults over the mean predicted probability, Clopper-Pearson on the count; the level",
+    "cox": "logit P(y) = intercept + slope * logit(score), Newton on the logistic likelihood, Wald intervals; a level shift is the intercept, a stretch or compression of the scale is the slope; the pooled statistic is |slope - 1|",
+    "brier": "with the CORP decomposition of Dimitriadis, Gneiting and Jordan (2021): miscalibration - discrimination + uncertainty, recalibrated by isotonic regression",
+    "reliability": "ten quantile bins of each cell's own scores, reliability.png on the youngest and oldest pooled cohort"
+  },
+  "psi": {
+    "bins": 10,
+    "edges": "the cell's own reference deciles",
+    "critical": "Yurdakul, alpha 0.05, at the cell's sample sizes"
+  },
+  "reference_sizes": {
+    "gbm": 323026,
+    "gbm-50k/20260911": 50000,
+    "gbm-50k/20260912": 50000,
+    "gbm-50k/20260913": 50000,
+    "scorecard": 323026,
+    "tabicl/20260911": 50000,
+    "tabicl@t1/20260911": 50000,
+    "tabpfn/20260911": 50000,
+    "tabpfn@t1/20260911": 50000,
+    "tabpfn@t1+bal/20260911": 50000
+  },
+  "wall_seconds": 141.8
+}

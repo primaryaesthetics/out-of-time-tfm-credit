@@ -1,0 +1,296 @@
+{
+  "ablation": "upb_nominal",
+  "book": {
+    "loaded": 1362500,
+    "redated": 7095,
+    "without_performance_record": 10,
+    "book": 1355395
+  },
+  "inputs_sha256": {
+    "loans_1999.parquet": "73b358157489bf4ba307ddaceafe8b30973157f1c0a3825ce484f02d4cf194a0",
+    "loans_2000.parquet": "229706511ceb541be0ad1784ff710dfd8d0c4c382a42e532666350fef439f61f",
+    "loans_2001.parquet": "02d7f7b55a6a29e52664426cf1fa7de609dfdf81510a43a77a4ce011756d29d0",
+    "loans_2002.parquet": "f23c20e92999473d596de35a35fe44dda10aa1f542ca7c4cdbbe01e815dd7420",
+    "loans_2003.parquet": "54b1ba86e17a1b0a5487b13d8d6a01e63f20f45ed9d13a142da77db073efb337",
+    "loans_2004.parquet": "a46faebaa4dca0eb8a177e6d0e3a61905e641c76f7bcb4c10b5cb9031c4eb527",
+    "loans_2005.parquet": "4f44259fbba8982eff4172a947aa9c8e258d461af22897d9aafb40a4e12ad28b",
+    "loans_2006.parquet": "b61816a2fbef6d3bf07aa66661fb1ab965a2b86f5a1f767a4a334033482ab161",
+    "loans_2007.parquet": "93fce25667a3739e6757bc23f0d22c4ce3799f7d521f5c8af0f233d784032372",
+    "loans_2008.parquet": "b5bc95b3555025422db9d5d8520b43f05a2701a816783ec929424a8e687d9bb2",
+    "loans_2009.parquet": "e49d74d80b6713822e28566f24aa29bd52d248afce8cf09ef3da0c39efd993c5",
+    "loans_2010.parquet": "0ae288ad437ac9ecc496355c074ea4a1c49b7435c37120fec9e4a2f612cd7cf0",
+    "loans_2011.parquet": "a681ea8140087be5b524a98c5b4fde6865ccdf7ea5408905baf6ff552c387ca2",
+    "loans_2012.parquet": "7fc982854089efa47074e4c3f016f9069763dec834f3395a3ff405171ae09df1",
+    "loans_2013.parquet": "1202353208f7a5d4d9946debd7d0c04fd31b18f08ad9528288277a455cbd0ccc",
+    "loans_2014.parquet": "f305e1ec8871ee80d63d03f50cbc996251343afdf8df22f0640004cd4fcb5b05",
+    "loans_2015.parquet": "5cd965bcbf449b4f9057aaceb4d604c84104dd732225d8b5a790aa9af3bee9d4",
+    "loans_2016.parquet": "63b5e74cf0833b1db856e32dc4b88950da1b1f2bafc094257b462113be9e3b6c",
+    "loans_2017.parquet": "7a6789b10f90884fa829a28482b38daa947e0d7f70bd3d238a53fa37c5df1112",
+    "loans_2018.parquet": "c9cbeefa46b8a425cad546e1c76934ddcd11562f7977b2ff3641d79850a20713",
+    "loans_2019.parquet": "adeabe35d0bfdb6d48a2a91b7c9cb7d19f07b7876a35b25984a55c235b7167f2",
+    "loans_2020.parquet": "e42176844979c66c6c8dc60277579c05433d20448030ff47696cf5e5ea219bf3",
+    "loans_2021.parquet": "a9164fc2f52a486b5d3d555af8d9f91ac15f11178015ba1790f1daf1b11aa6f7",
+    "loans_2022.parquet": "3b2a4d9eeccb8d0b5eb7f94284f057420cfcbf37ac3e1a66401169e686940231",
+    "loans_2023.parquet": "465c71450a02319093cc0119b1408e8c8262aefec81cb08f53b5d578e934cead",
+    "loans_2024.parquet": "489692672072a288d45fac3eb7f55c4f976aaff23b102b1f33fa8c0e8a4ed281",
+    "loans_2025.parquet": "ddfc0c44d39f666bdf6a13a273fa42f208d8839886dfa476c67cab4396121cc1",
+    "loans_2026.parquet": "93731a6674d78041feb1588555a08e79af858d4812ec5e181d6f64014c456285"
+  },
+  "span": {
+    "first_cohort": "1999Q1",
+    "last_cohort": "2023H2"
+  },
+  "kept": [
+    "borrowers",
+    "cltv",
+    "fico",
+    "first_time_homebuyer",
+    "ltv",
+    "mi_pct",
+    "occupancy",
+    "prepayment_penalty",
+    "property_type",
+    "purpose",
+    "state",
+    "term",
+    "units",
+    "upb"
+  ],
+  "categorical": [
+    "first_time_homebuyer",
+    "occupancy",
+    "prepayment_penalty",
+    "property_type",
+    "purpose",
+    "state"
+  ],
+  "dropped": {
+    "postal_code": {
+      "gates": [
+        "a priori"
+      ],
+      "clauses": [
+        "geography below the state"
+      ]
+    },
+    "rate": {
+      "gates": [
+        "a priori"
+      ],
+      "clauses": [
+        "the calendar on this book"
+      ]
+    },
+    "amortization_type": {
+      "gates": [
+        "value"
+      ],
+      "clauses": [
+        "constant on the first cohort"
+      ]
+    },
+    "channel": {
+      "gates": [
+        "value"
+      ],
+      "clauses": [
+        "a level present on the first cohort and absent from the last"
+      ]
+    },
+    "dti": {
+      "gates": [
+        "value"
+      ],
+      "clauses": [
+        "missing share differs between the first and the last cohort"
+      ]
+    },
+    "harp": {
+      "gates": [
+        "value"
+      ],
+      "clauses": [
+        "constant on the first cohort",
+        "a level absent from the first cohort"
+      ]
+    },
+    "interest_only": {
+      "gates": [
+        "value"
+      ],
+      "clauses": [
+        "constant on the first cohort"
+      ]
+    },
+    "msa": {
+      "gates": [
+        "value"
+      ],
+      "clauses": [
+        "missing share differs between the first and the last cohort"
+      ]
+    },
+    "seller": {
+      "gates": [
+        "value"
+      ],
+      "clauses": [
+        "a level absent from the first cohort"
+      ]
+    },
+    "special_eligibility_program": {
+      "gates": [
+        "coverage",
+        "value"
+      ],
+      "clauses": [
+        "constant on the first cohort",
+        "missing share differs between the first and the last cohort"
+      ]
+    },
+    "super_conforming": {
+      "gates": [
+        "value"
+      ],
+      "clauses": [
+        "constant on the first cohort"
+      ]
+    },
+    "valuation_method": {
+      "gates": [
+        "coverage",
+        "value"
+      ],
+      "clauses": [
+        "constant on the first cohort",
+        "a level absent from the first cohort",
+        "missing share differs between the first and the last cohort"
+      ]
+    },
+    "vantage_score": {
+      "gates": [
+        "coverage",
+        "value"
+      ],
+      "clauses": [
+        "constant on the first cohort"
+      ]
+    }
+  },
+  "derived": {},
+  "replaced": {},
+  "clip": {
+    "borrowers": [
+      1.0,
+      2.0
+    ],
+    "cltv": [
+      6.0,
+      100.0
+    ],
+    "fico": [
+      601.0,
+      826.0
+    ],
+    "ltv": [
+      6.0,
+      100.0
+    ],
+    "mi_pct": [
+      0.0,
+      35.0
+    ],
+    "term": [
+      96.0,
+      360.0
+    ],
+    "units": [
+      1.0,
+      4.0
+    ],
+    "upb": [
+      19000.0,
+      461000.0
+    ]
+  },
+  "calendar_share": {
+    "cells": "the first payment month and the loan term",
+    "rate": 0.931143,
+    "borrowers": 0.027678,
+    "cltv": 0.117234,
+    "fico": 0.096372,
+    "ltv": 0.121872,
+    "mi_pct": 0.100046,
+    "term": 1.0,
+    "units": 0.004845,
+    "upb": 0.249949,
+    "upb_to_limit": 0.06801
+  },
+  "conforming_limit": {
+    "1999": 240000,
+    "2000": 252700,
+    "2001": 275000,
+    "2002": 300700,
+    "2003": 322700,
+    "2004": 333700,
+    "2005": 359650,
+    "2006": 417000,
+    "2007": 417000,
+    "2008": 417000,
+    "2009": 417000,
+    "2010": 417000,
+    "2011": 417000,
+    "2012": 417000,
+    "2013": 417000,
+    "2014": 417000,
+    "2015": 417000,
+    "2016": 417000,
+    "2017": 424100,
+    "2018": 453100,
+    "2019": 484350,
+    "2020": 510400,
+    "2021": 548250,
+    "2022": 647200,
+    "2023": 726200,
+    "2024": 766550,
+    "2025": 806500,
+    "2026": 832750
+  },
+  "matrix": {
+    "columns": [
+      "borrowers",
+      "cltv",
+      "fico",
+      "first_time_homebuyer",
+      "ltv",
+      "mi_pct",
+      "occupancy",
+      "prepayment_penalty",
+      "property_type",
+      "purpose",
+      "state",
+      "term",
+      "units",
+      "upb"
+    ],
+    "dtypes": {
+      "borrowers": "float64",
+      "cltv": "float64",
+      "fico": "float64",
+      "first_time_homebuyer": "object",
+      "ltv": "float64",
+      "mi_pct": "float64",
+      "occupancy": "object",
+      "prepayment_penalty": "object",
+      "property_type": "object",
+      "purpose": "object",
+      "state": "object",
+      "term": "float64",
+      "units": "float64",
+      "upb": "float64"
+    },
+    "rows": 1355395
+  },
+  "shifts_flagged": {},
+  "wall_seconds": 107.3
+}

@@ -1,0 +1,40 @@
+tabpfn@t1/20260911: context 50,000 rows read in 1.1s
+  reference   50,000 rows    446.2s  mean pd 0.0241
+  2016Q1      20,000 rows    321.2s  mean pd 0.0221
+  2016Q2      20,000 rows    322.5s  mean pd 0.0219
+  2016Q3      20,000 rows    322.2s  mean pd 0.0234
+  2016Q4      20,000 rows    323.2s  mean pd 0.0227
+  2017Q1      20,000 rows    323.5s  mean pd 0.0217
+  2017Q2      20,000 rows    323.3s  mean pd 0.0217
+  2017Q3      20,000 rows    323.6s  mean pd 0.0227
+  2017Q4      20,000 rows    324.0s  mean pd 0.0211
+  2018Q1      20,000 rows    322.6s  mean pd 0.0198
+  repeat 2016Q1: largest disagreement 0.00e+00, 0 rows differ
+tabpfn@t1/20260912: context 50,000 rows read in 0.3s
+  reference   50,000 rows    446.8s  mean pd 0.0241
+  2016Q1      20,000 rows    321.9s  mean pd 0.0226
+  2016Q2      20,000 rows    322.0s  mean pd 0.0223
+  2016Q3      20,000 rows    321.6s  mean pd 0.0238
+  2016Q4      20,000 rows    321.4s  mean pd 0.0232
+  2017Q1      20,000 rows    321.8s  mean pd 0.0224
+  2017Q2      20,000 rows    322.1s  mean pd 0.0222
+  2017Q3      20,000 rows    322.1s  mean pd 0.0232
+  2017Q4      20,000 rows    322.6s  mean pd 0.0216
+  2018Q1      20,000 rows    321.8s  mean pd 0.0203
+  repeat 2016Q1: largest disagreement 0.00e+00, 0 rows differ
+tabpfn@t1/20260913: context 50,000 rows read in 0.3s
+  reference   50,000 rows    446.8s  mean pd 0.0231
+  2016Q1      20,000 rows    322.1s  mean pd 0.0211
+  2016Q2      20,000 rows    323.3s  mean pd 0.0209
+  2016Q3      20,000 rows    322.2s  mean pd 0.0225
+  2016Q4      20,000 rows    322.9s  mean pd 0.0217
+  2017Q1      20,000 rows    322.3s  mean pd 0.0209
+  2017Q2      20,000 rows    321.6s  mean pd 0.0208
+  2017Q3      20,000 rows    321.1s  mean pd 0.0216
+  2017Q4      20,000 rows    320.4s  mean pd 0.0198
+  2018Q1      20,000 rows    320.7s  mean pd 0.0184
+  repeat 2016Q1: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 540,000
+reference rows        : 150,000
+wall                  : 11010s

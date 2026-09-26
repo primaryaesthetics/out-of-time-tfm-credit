@@ -1,0 +1,54 @@
+rows                  : 2,260,668
+loaded in             : 115s
+2015H1-E: train 323026 rows 2010-04-01..2014-06-01 (17 quarters), blind 312972 rows, test 220000 rows over 11 cohorts
+
+| cohort | rows |
+| --- | --- |
+| 2015Q3 | 20000 |
+| 2015Q4 | 20000 |
+| 2016Q1 | 20000 |
+| 2016Q2 | 20000 |
+| 2016Q3 | 20000 |
+| 2016Q4 | 20000 |
+| 2017Q1 | 20000 |
+| 2017Q2 | 20000 |
+| 2017Q3 | 20000 |
+| 2017Q4 | 20000 |
+| 2018Q1 | 20000 | 
+
+fold 2: fit 206,737  validation 51,684  test 64,605  defaults 0.0233 / 0.0233 / 0.0233
+  fold2/scorecard               206,737 rows  fit    9.0s  auc 0.6924  O/E 0.999  threshold 0.0447 (F1 0.098, 10.026% positive)
+  fold2/gbm                     206,737 rows  fit  181.0s  auc 0.7064  O/E 1.003  threshold 0.0567 (F1 0.107, 5.567% positive)
+  fold2/gbm-50k/20260911         50,000 rows  fit    3.8s  auc 0.6960  O/E 0.953  threshold 0.0620 (F1 0.096, 4.456% positive)
+  fold2/gbm-50k/20260912         50,000 rows  fit    4.1s  auc 0.6957  O/E 0.976  threshold 0.0449 (F1 0.100, 11.149% positive)
+  fold2/gbm-50k/20260913         50,000 rows  fit    3.3s  auc 0.6942  O/E 0.983  threshold 0.0449 (F1 0.096, 10.297% positive)
+fold 2 in 213s
+
+fold 3: fit 206,737  validation 51,684  test 64,605  defaults 0.0233 / 0.0233 / 0.0233
+  fold3/scorecard               206,737 rows  fit    4.2s  auc 0.6832  O/E 0.999  threshold 0.0482 (F1 0.100, 8.179% positive)
+  fold3/gbm                     206,737 rows  fit  156.8s  auc 0.6974  O/E 1.000  threshold 0.0433 (F1 0.108, 11.982% positive)
+  fold3/gbm-50k/20260911         50,000 rows  fit    2.0s  auc 0.6821  O/E 1.020  threshold 0.0426 (F1 0.105, 10.777% positive)
+  fold3/gbm-50k/20260912         50,000 rows  fit    1.9s  auc 0.6798  O/E 1.035  threshold 0.0418 (F1 0.100, 8.426% positive)
+  fold3/gbm-50k/20260913         50,000 rows  fit    1.8s  auc 0.6856  O/E 1.040  threshold 0.0514 (F1 0.101, 6.081% positive)
+fold 3 in 172s
+
+fold 4: fit 206,737  validation 51,684  test 64,605  defaults 0.0233 / 0.0233 / 0.0233
+  fold4/scorecard               206,737 rows  fit    3.8s  auc 0.6847  O/E 1.001  threshold 0.0474 (F1 0.097, 8.962% positive)
+  fold4/gbm                     206,737 rows  fit  174.3s  auc 0.6991  O/E 0.999  threshold 0.0496 (F1 0.105, 8.293% positive)
+  fold4/gbm-50k/20260911         50,000 rows  fit    2.1s  auc 0.6840  O/E 1.006  threshold 0.0478 (F1 0.097, 8.233% positive)
+  fold4/gbm-50k/20260912         50,000 rows  fit    1.9s  auc 0.6916  O/E 1.023  threshold 0.0431 (F1 0.097, 9.419% positive)
+  fold4/gbm-50k/20260913         50,000 rows  fit    2.1s  auc 0.6905  O/E 0.995  threshold 0.0449 (F1 0.096, 9.353% positive)
+fold 4 in 190s
+
+fold 5: fit 206,737  validation 51,684  test 64,605  defaults 0.0233 / 0.0233 / 0.0233
+  fold5/scorecard               206,737 rows  fit    3.6s  auc 0.6874  O/E 1.002  threshold 0.0399 (F1 0.093, 13.946% positive)
+  fold5/gbm                     206,737 rows  fit  199.2s  auc 0.6965  O/E 1.002  threshold 0.0568 (F1 0.105, 6.153% positive)
+  fold5/gbm-50k/20260911         50,000 rows  fit    2.1s  auc 0.6811  O/E 0.991  threshold 0.0513 (F1 0.095, 7.761% positive)
+  fold5/gbm-50k/20260912         50,000 rows  fit    2.2s  auc 0.6841  O/E 0.966  threshold 0.0567 (F1 0.099, 5.719% positive)
+  fold5/gbm-50k/20260913         50,000 rows  fit    2.1s  auc 0.6800  O/E 0.993  threshold 0.0541 (F1 0.100, 7.761% positive)
+fold 5 in 215s
+
+scored rows           : 2,325,780
+reference rows        : 2,253,896
+context rows          : 600,000; cells 160,000 rows over 8 cells
+wall                  : 925s

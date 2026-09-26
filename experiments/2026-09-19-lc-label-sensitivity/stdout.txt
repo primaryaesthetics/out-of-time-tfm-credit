@@ -1,0 +1,29 @@
+rows                  : 2,260,668
+snapshot from data    : 2019-03-01
+
+--- charge-off lag, 12-month window, 28 cohorts ---
+  lag  mean rate  rank corr vs 5  unrecognised
+    0     5.68%          0.7537        34,014
+    2     4.49%          0.8622         1,069
+    3     3.89%          0.9294           495
+    5     2.75%          1.0000             0
+    8     1.23%          0.8675             0
+   11     0.24%          0.6528             0
+
+level spans 0.24% to 5.68%, a factor of 23.5
+
+--- grade mix, standardised to 2015Q2 ---
+  cohort   realised  standardised    E/F/G
+  2011Q2     2.67%        2.95%   13.0%
+  2012Q2     2.83%        3.15%    8.9%
+  2013Q2     2.35%        2.27%   11.9%
+  2014Q2     2.43%        2.31%   12.1%
+  2015Q2     2.80%        2.80%   12.4%
+  2016Q2     3.44%        3.94%    8.4%
+  2017Q2     3.35%        3.82%    7.0%
+  2018Q1     3.14%        3.98%    4.2%
+
+--- borrower proxy ---
+member_id non-null    : 0
+rows in keys spanning more than one quarter: 358,431 (15.9%)
+  upper bound only; the proxy collides unrelated borrowers

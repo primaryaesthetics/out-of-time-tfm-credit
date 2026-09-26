@@ -1,0 +1,327 @@
+{
+  "build_id": "2017H1-E",
+  "models": {
+    "scorecard": [],
+    "gbm": [],
+    "gbm-50k": [
+      20260911,
+      20260912,
+      20260913
+    ],
+    "tabicl": [
+      20260911,
+      20260912,
+      20260913
+    ],
+    "tabicl@t1": [
+      20260911,
+      20260912,
+      20260913
+    ]
+  },
+  "sources": [
+    "experiments/2026-09-06-lc-2017h1e-scores",
+    "experiments/2026-09-08-lc-2017h1e-tabicl-colab-t4",
+    "experiments/2026-09-08-lc-2017h1e-tabicl-t1-derived"
+  ],
+  "cohorts": [
+    "2017Q3",
+    "2017Q4",
+    "2018Q1"
+  ],
+  "cohorts_pooled": 3,
+  "cohorts_scored": 3,
+  "cohorts_not_pooled": {},
+  "draws_not_pooled": {},
+  "models_dropped": [],
+  "nearest": [
+    "2017Q3",
+    "2017Q4",
+    "2018Q1"
+  ],
+  "bootstrap": {
+    "resamples": 200,
+    "seed": 20260905,
+    "alpha": 0.05,
+    "blocking": "cohort",
+    "context_draw": "drawn with the resample, jointly",
+    "poolings": [
+      "all",
+      "all, cohorts resampled"
+    ],
+    "pooled_metrics": [
+      "gini",
+      "abs_log_oe",
+      "cox_slope_deviation",
+      "psi"
+    ],
+    "per_draw": "the 'all' pooling repeated with each context draw held fixed, in the rows of paired.csv whose draw is set",
+    "draws_disagree": {
+      "abs_log_oe|tabicl - gbm": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.3078743481521935,
+          "ci_hi": 0.32945510680910267
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.30270118088836145,
+          "ci_hi": 0.3266131586888584
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.2828737008303888,
+          "ci_hi": 0.30489514938434087
+        }
+      ],
+      "abs_log_oe|tabicl - gbm-50k": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.272973441205228,
+          "ci_hi": 0.27951494522247333
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.27607296766679684,
+          "ci_hi": 0.28250397435286817
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.2538104847538967,
+          "ci_hi": 0.2605233963392724
+        }
+      ],
+      "abs_log_oe|tabicl - scorecard": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.25395800037552546,
+          "ci_hi": 0.26141578950219296
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.2512964463280187,
+          "ci_hi": 0.2579289062146932
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.22931373757897855,
+          "ci_hi": 0.23728464730922494
+        }
+      ],
+      "cox_slope_deviation|gbm-50k - gbm": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.054061793995015955,
+          "ci_hi": 0.19236111981837958
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.011354632860773727,
+          "ci_hi": 0.09808843999619964
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.043042443452241355,
+          "ci_hi": 0.0330657340888353
+        }
+      ],
+      "cox_slope_deviation|gbm-50k - scorecard": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.02149007401022947,
+          "ci_hi": 0.17681477268545506
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.0460305698537222,
+          "ci_hi": 0.0794717060024271
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.08407180012067753,
+          "ci_hi": 0.004535610394274475
+        }
+      ],
+      "cox_slope_deviation|tabicl@t1 - gbm-50k": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.2165794131757765,
+          "ci_hi": -0.03496750298244037
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.062463030780747435,
+          "ci_hi": 0.009865062731963756
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.010844735756718493,
+          "ci_hi": 0.03715623189156769
+        }
+      ],
+      "psi|gbm-50k - gbm": [
+        {
+          "draw": 20260911,
+          "ci_lo": 0.011844709842850803,
+          "ci_hi": 0.015484792595318939
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": 0.0005491520000972431,
+          "ci_hi": 0.0035137845195901546
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": 0.005894168864686798,
+          "ci_hi": 0.009057447912023613
+        }
+      ],
+      "psi|gbm-50k - scorecard": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.009604445790233439,
+          "ci_hi": -0.006378787133469413
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.021204916962868206,
+          "ci_hi": -0.01744259890321432
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.016335858827572883,
+          "ci_hi": -0.01244738948130438
+        }
+      ],
+      "psi|tabicl - gbm": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.0015631638122727296,
+          "ci_hi": 0.0008452219982092025
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.0017041866517914206,
+          "ci_hi": 0.002387713482965942
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.0045971072042260055,
+          "ci_hi": -0.0023517679763282884
+        }
+      ],
+      "psi|tabicl - gbm-50k": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.016073093518948332,
+          "ci_hi": -0.012377398314411474
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.004049015812846703,
+          "ci_hi": -0.0003107668858909016
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.012646040711613462,
+          "ci_hi": -0.009315770607149752
+        }
+      ],
+      "psi|tabicl@t1 - gbm": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.0015631638122727296,
+          "ci_hi": 0.0008452219982092025
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.0017041866517914206,
+          "ci_hi": 0.002387713482965942
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.0045971072042260055,
+          "ci_hi": -0.0023517679763282884
+        }
+      ],
+      "psi|tabicl@t1 - gbm-50k": [
+        {
+          "draw": 20260911,
+          "ci_lo": -0.016073093518948332,
+          "ci_hi": -0.012377398314411474
+        },
+        {
+          "draw": 20260912,
+          "ci_lo": -0.004049015812846703,
+          "ci_hi": -0.0003107668858909016
+        },
+        {
+          "draw": 20260913,
+          "ci_lo": -0.012646040711613462,
+          "ci_hi": -0.009315770607149752
+        }
+      ]
+    },
+    "seed_check": {
+      "seeds": [
+        20260906,
+        20260907
+      ],
+      "differences": 80,
+      "starred": 46,
+      "star_changed": [
+        {
+          "cohorts": "all",
+          "metric": "abs_log_oe",
+          "pair": "tabicl@t1 - gbm",
+          "value": -0.03143180935531884,
+          "primary": {
+            "excludes_zero": false,
+            "ci_lo": -0.044830291316056176,
+            "ci_hi": 0.006559822021379439
+          },
+          "under": {
+            "20260906": {
+              "excludes_zero": true,
+              "ci_lo": -0.04471687037704909,
+              "ci_hi": -0.0005116238007179547
+            },
+            "20260907": {
+              "excludes_zero": true,
+              "ci_lo": -0.04452175872691013,
+              "ci_hi": -0.001034577614421461
+            }
+          },
+          "bound_movement": 0.0075943996358009
+        }
+      ],
+      "largest_bound_movement": 0.03747286445341999
+    },
+    "multiplicity": "none: every interval is reported at alpha on its own, and the pairs are not adjusted for one another"
+  },
+  "calibration": {
+    "observed_over_expected": "observed defaults over the mean predicted probability, Clopper-Pearson on the count; the level",
+    "cox": "logit P(y) = intercept + slope * logit(score), Newton on the logistic likelihood, Wald intervals; a level shift is the intercept, a stretch or compression of the scale is the slope; the pooled statistic is |slope - 1|",
+    "brier": "with the CORP decomposition of Dimitriadis, Gneiting and Jordan (2021): miscalibration - discrimination + uncertainty, recalibrated by isotonic regression",
+    "reliability": "ten quantile bins of each cell's own scores, reliability.png on the youngest and oldest pooled cohort"
+  },
+  "psi": {
+    "bins": 10,
+    "edges": "the cell's own reference deciles",
+    "critical": "Yurdakul, alpha 0.05, at the cell's sample sizes"
+  },
+  "reference_sizes": {
+    "gbm": 1108732,
+    "gbm-50k/20260911": 50000,
+    "gbm-50k/20260912": 50000,
+    "gbm-50k/20260913": 50000,
+    "scorecard": 1108732,
+    "tabicl/20260911": 50000,
+    "tabicl/20260912": 50000,
+    "tabicl/20260913": 50000,
+    "tabicl@t1/20260911": 50000,
+    "tabicl@t1/20260912": 50000,
+    "tabicl@t1/20260913": 50000
+  },
+  "wall_seconds": 383.1
+}

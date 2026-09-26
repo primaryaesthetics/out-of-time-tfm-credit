@@ -1,0 +1,30 @@
+### tabicl@2026-09-06-lc-2016h2e-bundle: python score_context.py 2026-09-06-lc-2016h2e-bundle --out-dir 2026-09-06-lc-2016h2e-bundle-scored-tabicl --models tabicl --chunk 20000
+tabicl/20260911: context 50,000 rows read in 2.5s
+  reference   50,000 rows    214.3s  mean pd 0.0177
+  2017Q1      20,000 rows     74.4s  mean pd 0.0188
+  2017Q2      20,000 rows     74.7s  mean pd 0.0188
+  2017Q3      20,000 rows     74.7s  mean pd 0.0196
+  2017Q4      20,000 rows     74.6s  mean pd 0.0185
+  2018Q1      20,000 rows     74.7s  mean pd 0.0175
+  repeat 2017Q1: largest disagreement 0.00e+00, 0 rows differ
+tabicl/20260912: context 50,000 rows read in 1.5s
+  reference   50,000 rows    213.3s  mean pd 0.0169
+  2017Q1      20,000 rows     74.5s  mean pd 0.0179
+  2017Q2      20,000 rows     74.6s  mean pd 0.0179
+  2017Q3      20,000 rows     74.7s  mean pd 0.0188
+  2017Q4      20,000 rows     74.3s  mean pd 0.0177
+  2018Q1      20,000 rows     74.5s  mean pd 0.0168
+  repeat 2017Q1: largest disagreement 0.00e+00, 0 rows differ
+tabicl/20260913: context 50,000 rows read in 2.1s
+  reference   50,000 rows    212.9s  mean pd 0.0180
+  2017Q1      20,000 rows     74.5s  mean pd 0.0188
+  2017Q2      20,000 rows     74.6s  mean pd 0.0187
+  2017Q3      20,000 rows     74.7s  mean pd 0.0198
+  2017Q4      20,000 rows     74.4s  mean pd 0.0190
+  2018Q1      20,000 rows     74.7s  mean pd 0.0181
+  repeat 2017Q1: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 300,000
+reference rows        : 150,000
+wall                  : 2000s
+

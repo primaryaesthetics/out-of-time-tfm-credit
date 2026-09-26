@@ -1,0 +1,97 @@
+{
+  "slug": "m3-tabpfn-timing",
+  "recorded_utc": "2026-09-02T09:48:39.028580+00:00",
+  "git_sha": "e7b1b080d767880bb62fa6655e96e99e22a5e4a7",
+  "git_dirty": false,
+  "host": "Apple M3 laptop, 17.18 GB unified memory, macOS 14.6.1",
+  "gpu": "Apple Silicon GPU (arm64), Metal via torch MPS, memory shared with the system",
+  "probe_source_sha256": "ed9bb56fc07ee23d39abefdba7994691ee40d260bc8c3ab9f625d08c8cfac427",
+  "probe_source_caveat": "The hash is of scripts/timing_probe.py in this tree at the recorded commit. The node was given a copy of that file and the copy was not re-hashed there, so provenance rests on the transfer rather than on a check.",
+  "command": "./run-probe.sh --models tabpfn --context-sizes 1000,10000,50000 --test-rows 5000 --out mac-tabpfn.json",
+  "raw_output": "probe-tabpfn-m3.json",
+  "console_log_withheld": "The session transcript is not recorded here. It carries the node owner's account name, home path and two licence tokens, none of which may reach a file that goes public. The JSON was checked for all three before being copied in.",
+  "question_this_run_was_sent_to_answer": "Whether the Apple M3 node can carry the study's forward passes, and therefore whether any GPU has to be rented at all.",
+  "what_it_measured": {
+    "model": "tabpfn 8.5.0",
+    "device": "mps",
+    "features": 30,
+    "test_rows": 5000,
+    "context_rows": [
+      1000,
+      10000,
+      50000
+    ],
+    "repeats": 2,
+    "seconds_median": {
+      "1000": 9.873,
+      "10000": 44.461,
+      "50000": 603.252
+    },
+    "spread_fraction": {
+      "1000": 0.0511,
+      "10000": 0.0002,
+      "50000": 0.0104
+    }
+  },
+  "the_gpu_was_used_and_the_probe_says_otherwise": {
+    "what_the_console_said": "No CUDA device. These timings measure the CPU path and are not the numbers the study is budgeted against.",
+    "why_that_line_is_wrong": "The guard in timing_probe.main tests `device != cuda`, so it fires on mps as well as on cpu. The model was constructed with device='mps' by the same environment block that printed the line.",
+    "evidence_the_work_ran_on_metal": "The MPS allocator reported 1.411, 1.461 and 2.611 GB as the context grew from 1,000 to 50,000 rows. A process that never places a tensor on Metal allocates nothing through that allocator, and nothing that stayed on the CPU would grow with context there.",
+    "consequence": "The line is a defect in the probe's reporting, not a description of this run. The caption is now derived from the device that was used and a test constructs the mistake, so runs taken before that fix are the ones that carry the wrong caption and this manifest is their correction."
+  },
+  "the_matched_comparison": {
+    "configuration": "tabpfn, 50,000-row context, 5,000 rows scored, 30 features",
+    "t4_seconds": [
+      104.675,
+      107.949
+    ],
+    "m3_seconds": [
+      596.983,
+      603.252
+    ],
+    "t4_from_run": "2026-08-30-colab-t4-memory-law/probe-tabpfn-ceiling.json",
+    "ratio_of_means": 5.65,
+    "ratio_of_medians": 5.59,
+    "how_many_matched_configurations_exist": 1,
+    "note": "This is the only shape both machines ran at the same context and the same scoring batch. Every other pair differs in test rows and cannot be divided."
+  },
+  "the_shape_is_the_same_and_only_the_constant_differs": {
+    "t4_exponent_in_context": 1.634,
+    "t4_from": "20,000 -> 50,000 rows at a 5,000-row batch",
+    "m3_exponent_in_context": 1.617,
+    "m3_from": "10,000 -> 50,000 rows at a 5,000-row batch",
+    "they_agree_within": "1.1%",
+    "what_it_means": "Two machines, two vendors, two backends, and the same super-linear growth in context. The M3 is a T4 divided by about 5.6 rather than a different regime, so the T4's design conclusions about where TabPFN becomes expensive carry over and only the wall-clock changes.",
+    "how_far_to_trust_it": "Each exponent rests on two points. It is indicative and is not a fit. The small-context end disagrees on both machines - the M3 shows 0.665 from 1,000 to 10,000 rows - because a fixed per-pass overhead of several seconds dominates there.",
+    "the_available_check": "The M3 at a 20,000-row context is predicted at 136 s, which would put the ratio at 5.7. Measuring it is one configuration and about five minutes, and it would turn a single matched point into two."
+  },
+  "memory_was_not_compared_and_cannot_be": {
+    "m3_readings_gb": [
+      1.411,
+      1.461,
+      2.611
+    ],
+    "t4_readings_gb": [
+      0.646,
+      0.987
+    ],
+    "why_not_comparable": "The CUDA reading is max_memory_allocated, a high-water mark over live tensors. The MPS reading is the driver's allocated pool, which includes cache and is taken after the pass rather than at the peak. They are different quantities and their ratio means nothing.",
+    "what_does_survive": "TabPFN at a 50,000-row context is spending single-digit gigabytes on a machine that has 17.18. It is not memory-bound here either, which is what the T4 already showed."
+  },
+  "what_this_run_did_not_answer": {
+    "tabicl": "Not run. It is the memory-bound model and it is the one at risk on this node: the T4 needed 11.35 GB at exactly this shape, against 17.18 GB here that is unified and shared with the operating system and with the machine's own use. The T4 memory law was fitted on CUDA and does not transfer to Metal. Whether tabicl 2.1.1 supports the mps device at all is also unestablished.",
+    "scoring_a_real_cohort": "Every timing here scores 5,000 rows. Lending Club quarterly cohorts run past 100,000 loans from 2015 onward, and evaluating a vintage means scoring the whole cohort. How seconds grow in test rows was never measured on either machine, so the per-pass cost of the actual study is not the number in this file.",
+    "preprocessing": "The probe carries no data, by design. Preprocessing on real columns is outside every timing here."
+  },
+  "what_follows_for_the_budget": {
+    "at_the_operating_point": "50,000-row context, 5,000 rows scored, 29 cohorts at three seeds = 87 passes.",
+    "tabpfn_on_the_t4_hours": 2.6,
+    "tabpfn_on_the_m3_hours": 14.5,
+    "tabicl_on_the_t4_hours": 1.5,
+    "tabicl_on_the_m3_hours": null,
+    "caveat": "All of these score 5,000 rows per pass, which is not a cohort. They are a floor.",
+    "the_licence_blocker_is_gone": "ADR-0004 recorded that TabPFN did not run on Colab at all, because version 8.5.0 wants a one-time licence acceptance that a notebook has no terminal to give. The acceptance has now been made and a working token exists. That reopens the free T4 for TabPFN, which is the larger of today's two results.",
+    "what_the_m3_is_actually_for": "Not speed. It is 5.6 times slower than a card that costs nothing. What it has that Colab does not is an unattended night with no session timeout and no unpublished revocable quota, and Colab's disconnects already cut two sweeps short on 2026-08-30.",
+    "does_anything_have_to_be_rented": "Nothing measured so far says yes. The only path to a rental is TabICL failing on the M3, and the T4 already runs TabICL at a 50,000-row context with 4.3 GB to spare."
+  }
+}

@@ -1,0 +1,42 @@
+### tabicl@2026-09-12-lc-2015h2r-bundle: python score_context.py 2026-09-12-lc-2015h2r-bundle --out-dir 2026-09-12-lc-2015h2r-bundle-scored-tabicl --models tabicl --chunk 20000
+tabicl/20260911: context 50,000 rows read in 2.5s
+  reference   50,000 rows    205.9s  mean pd 0.0172
+  2016Q1      20,000 rows     72.2s  mean pd 0.0170
+  2016Q2      20,000 rows     72.3s  mean pd 0.0168
+  2016Q3      20,000 rows     71.9s  mean pd 0.0179
+  2016Q4      20,000 rows     71.7s  mean pd 0.0173
+  2017Q1      20,000 rows     71.9s  mean pd 0.0165
+  2017Q2      20,000 rows     72.3s  mean pd 0.0166
+  2017Q3      20,000 rows     72.4s  mean pd 0.0177
+  2017Q4      20,000 rows     72.4s  mean pd 0.0165
+  2018Q1      20,000 rows     72.3s  mean pd 0.0154
+  repeat 2016Q1: largest disagreement 0.00e+00, 0 rows differ
+tabicl/20260912: context 50,000 rows read in 1.6s
+  reference   50,000 rows    207.0s  mean pd 0.0168
+  2016Q1      20,000 rows     71.8s  mean pd 0.0172
+  2016Q2      20,000 rows     72.4s  mean pd 0.0168
+  2016Q3      20,000 rows     72.2s  mean pd 0.0180
+  2016Q4      20,000 rows     72.2s  mean pd 0.0174
+  2017Q1      20,000 rows     72.3s  mean pd 0.0167
+  2017Q2      20,000 rows     72.2s  mean pd 0.0167
+  2017Q3      20,000 rows     72.2s  mean pd 0.0177
+  2017Q4      20,000 rows     72.2s  mean pd 0.0164
+  2018Q1      20,000 rows     72.2s  mean pd 0.0153
+  repeat 2016Q1: largest disagreement 0.00e+00, 0 rows differ
+tabicl/20260913: context 50,000 rows read in 2.1s
+  reference   50,000 rows    205.3s  mean pd 0.0159
+  2016Q1      20,000 rows     71.5s  mean pd 0.0159
+  2016Q2      20,000 rows     72.4s  mean pd 0.0157
+  2016Q3      20,000 rows     72.0s  mean pd 0.0168
+  2016Q4      20,000 rows     71.6s  mean pd 0.0162
+  2017Q1      20,000 rows     71.6s  mean pd 0.0155
+  2017Q2      20,000 rows     71.3s  mean pd 0.0155
+  2017Q3      20,000 rows     72.0s  mean pd 0.0164
+  2017Q4      20,000 rows     72.0s  mean pd 0.0150
+  2018Q1      20,000 rows     72.2s  mean pd 0.0139
+  repeat 2016Q1: largest disagreement 0.00e+00, 0 rows differ
+
+scored rows           : 540,000
+reference rows        : 150,000
+wall                  : 2803s
+

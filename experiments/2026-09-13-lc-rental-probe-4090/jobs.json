@@ -1,0 +1,76 @@
+{
+  "name": "rental-probe-2015h1e",
+  "command": [
+    "python",
+    "score_context.py"
+  ],
+  "bundles": [
+    "2026-09-05-lc-2015h1e-bundle"
+  ],
+  "jobs": [
+    {
+      "name": "tabpfn@2026-09-05-lc-2015h1e-bundle",
+      "bundle": "2026-09-05-lc-2015h1e-bundle",
+      "out": "2026-09-05-lc-2015h1e-bundle-scored-tabpfn",
+      "args": [
+        "--models",
+        "tabpfn",
+        "--nearest",
+        "3",
+        "--seeds",
+        "20260911",
+        "--chunk",
+        "20000"
+      ]
+    },
+    {
+      "name": "tabpfn-t1@2026-09-05-lc-2015h1e-bundle",
+      "bundle": "2026-09-05-lc-2015h1e-bundle",
+      "out": "2026-09-05-lc-2015h1e-bundle-scored-tabpfn-t1",
+      "args": [
+        "--models",
+        "tabpfn",
+        "--temperature",
+        "1.0",
+        "--nearest",
+        "3",
+        "--seeds",
+        "20260911",
+        "--chunk",
+        "20000"
+      ]
+    },
+    {
+      "name": "tabicl@2026-09-05-lc-2015h1e-bundle",
+      "bundle": "2026-09-05-lc-2015h1e-bundle",
+      "out": "2026-09-05-lc-2015h1e-bundle-scored-tabicl",
+      "args": [
+        "--models",
+        "tabicl",
+        "--nearest",
+        "3",
+        "--seeds",
+        "20260911",
+        "--chunk",
+        "20000"
+      ]
+    },
+    {
+      "name": "tabicl-t1@2026-09-05-lc-2015h1e-bundle",
+      "bundle": "2026-09-05-lc-2015h1e-bundle",
+      "out": "2026-09-05-lc-2015h1e-bundle-scored-tabicl-t1",
+      "args": [
+        "--models",
+        "tabicl",
+        "--temperature",
+        "1.0",
+        "--nearest",
+        "3",
+        "--seeds",
+        "20260911",
+        "--chunk",
+        "20000"
+      ]
+    }
+  ]
+}

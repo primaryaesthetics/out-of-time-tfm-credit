@@ -1,0 +1,130 @@
+{
+  "model": "tabicl",
+  "derived_as": "tabicl@t1",
+  "to_temperature": 1.0,
+  "formula": "logit(pd_to) = logit(pd_from) * (from_temperature / to_temperature)",
+  "library": {
+    "tabicl": "2.1.1"
+  },
+  "checkpoints": {
+    "tabicl-classifier-v2-20260212.ckpt": "bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0"
+  },
+  "sources": [
+    {
+      "directory": "experiments/2026-09-08-lc-2016h2e-tabicl-colab-t4",
+      "sha256": {
+        "scores.parquet": "7ba3239716fce957086ea36ce9200238295061441925373676db833a629b31aa",
+        "reference.parquet": "34d7b124ea8711db6aa2fb3f86f1759b0baf8db8433afb83c85e0a9d4ea9b3de",
+        "node.json": "2ce8ae989ca7aa5efc7505f7af4ac3a373daea1a9411254ec9a41d863ae3e140"
+      },
+      "context_seeds": [
+        20260911,
+        20260912,
+        20260913
+      ],
+      "from_temperature": {
+        "20260911": 0.9,
+        "20260912": 0.9,
+        "20260913": 0.9
+      },
+      "scored_rows": 300000,
+      "reference_rows": 150000
+    }
+  ],
+  "check": {
+    "directory": "experiments/2026-09-08-lc-2016h2e-tabicl-t1-check-colab-t4",
+    "sha256": {
+      "scores.parquet": "b6cdd68444291075b8a472bea4853160ba8ff0f5dbc1bd6c6e871c25f752bd0c",
+      "reference.parquet": "3ee3de6982238733106fb2e91cbe94f457ada05958671e46a6e2d204501e8e16",
+      "node.json": "03d8dbb46af14d686f7609f62baf6ea609499dc03d5e1547eb3c567d94c49227"
+    },
+    "tolerance_on_pd": 1e-06,
+    "cells": [
+      {
+        "context_seed": 20260911,
+        "cell": "2017Q1",
+        "rows": 20000,
+        "max_abs_pd_gap": 1.1746803646461856e-07,
+        "max_abs_logit_gap": 1.1491960245635369e-06
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "reference",
+        "rows": 50000,
+        "max_abs_pd_gap": 9.869166317511002e-08,
+        "max_abs_logit_gap": 1.0881802570139598e-06
+      }
+    ],
+    "rows_checked": 70000,
+    "max_abs_pd_gap": 1.1746803646461856e-07,
+    "max_abs_logit_gap": 1.1491960245635369e-06,
+    "unchecked_cells": [
+      {
+        "context_seed": 20260911,
+        "cell": "2017Q2"
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2017Q3"
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2017Q4"
+      },
+      {
+        "context_seed": 20260911,
+        "cell": "2018Q1"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2017Q1"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2017Q2"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2017Q3"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2017Q4"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "2018Q1"
+      },
+      {
+        "context_seed": 20260912,
+        "cell": "reference"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2017Q1"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2017Q2"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2017Q3"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2017Q4"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "2018Q1"
+      },
+      {
+        "context_seed": 20260913,
+        "cell": "reference"
+      }
+    ]
+  },
+  "scored_rows": 300000,
+  "reference_rows": 150000
+}

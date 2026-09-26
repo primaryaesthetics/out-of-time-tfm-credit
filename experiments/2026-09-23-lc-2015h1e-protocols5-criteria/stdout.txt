@@ -1,0 +1,21 @@
+criterion 1 (ranking unchanged)   : does not fire
+  gbm - scorecard        out +0.0197 [+0.0139, +0.0251]  in +0.0306 [+0.0089, +0.0470]  same sign True, spread clear True
+  tabpfn - scorecard     out +0.0233 [+0.0168, +0.0317]  in +0.0284 [+0.0153, +0.0475]  same sign True, spread clear True
+  tabicl - scorecard     out +0.0270 [+0.0207, +0.0331]  in +0.0233 [+0.0099, +0.0374]  same sign True, spread clear True
+  gbm-50k - gbm          out -0.0128 [-0.0222, -0.0044]  in -0.0290 [-0.0468, -0.0022]  same sign True, spread clear True
+  tabicl - gbm           out +0.0073 [+0.0011, +0.0129]  in -0.0073 [-0.0244, +0.0147]  same sign False, spread clear False
+  tabpfn - gbm-50k       out +0.0164 [+0.0066, +0.0314]  in +0.0268 [+0.0141, +0.0474]  same sign True, spread clear True
+  tabicl - gbm-50k       out +0.0201 [+0.0113, +0.0306]  in +0.0217 [+0.0065, +0.0387]  same sign True, spread clear True
+criterion 2 (scalar sees level)   : does not fire
+  in time, random fold           abs_log_oe  gbm-50k < scorecard < gbm < tabicl < tabpfn
+  in time, random fold           brier       gbm < scorecard < tabicl < gbm-50k < tabpfn
+  in time, random fold           log_loss    gbm < scorecard < gbm-50k < tabicl < tabpfn
+  out of time, vintage cohorts   abs_log_oe  gbm < gbm-50k < scorecard < tabicl < tabpfn
+  out of time, vintage cohorts   brier       gbm < gbm-50k < scorecard < tabicl < tabpfn
+  out of time, vintage cohorts   log_loss    gbm < gbm-50k < scorecard < tabicl < tabpfn
+criterion 3 (threshold unreadable): does not fire; predicted positive share 0.0250 to 0.2145
+branch kill (protocol irrelevant) : does not fire
+  tabpfn - gbm   gini        in -0.0022 [-0.0214, +0.0176]  out +0.0036 [-0.0036, +0.0115]  in-in-out True  out-in-in True
+  tabpfn - gbm   abs_log_oe  in +0.3434 [+0.2680, +0.4106]  out +0.4099 [+0.3778, +0.4322]  in-in-out False  out-in-in True
+  tabicl - gbm   gini        in -0.0073 [-0.0244, +0.0147]  out +0.0073 [+0.0011, +0.0129]  in-in-out False  out-in-in True
+  tabicl - gbm   abs_log_oe  in +0.2755 [+0.1849, +0.3420]  out +0.2773 [+0.2442, +0.3007]  in-in-out True  out-in-in True

@@ -1,0 +1,52 @@
+{
+  "slug": "lc-2015h2r-tabicl-t1-check-colab-t4",
+  "recorded_utc": "2026-09-13T09:30:00+00:00",
+  "git_sha": "001b24bd38526af6c15eecfc49fef93c9263b782",
+  "git_dirty": false,
+  "scorer_commit": "The score_context.py and node_jobs.py that ran are byte-identical to scripts/score_context.py and scripts/node_jobs.py in this tree at commits adfdb3d, 09d8f53 and HEAD; neither file changed across that range.",
+  "written_by_hand": "This run was made on a hosted notebook that holds no copy of the repository, so record_run.py could not record it. The manifest is assembled from what the notebook returned; node.json is the scorer's own account of its environment and its cells, and score.log is the slice of the runner's console log that belongs to this job.",
+  "host": "Google Colab, free tier, Linux x86_64, Python 3.13.15",
+  "gpu": "NVIDIA Tesla T4, 15.64 GB, CUDA 12.8, torch 2.11.0+cu128",
+  "job": "tabicl-t1-check@2026-09-12-lc-2015h2r-bundle",
+  "command": "python score_context.py 2026-09-12-lc-2015h2r-bundle --out-dir 2026-09-12-lc-2015h2r-bundle-scored-tabicl-t1-check --models tabicl --temperature 1.0 --nearest 1 --seeds 20260911 --chunk 20000, run by node_jobs.py from the unpacked job archive",
+  "grid_index": "experiments/2026-09-13-lc-grid-r-tabicl-colab-t4 holds the whole runner log, the job list and the archive-level checks; this directory is one of the eighteen it indexes.",
+  "job_archive": {
+    "path": "data/derived/node/outoftime-run-grid-r-tabicl.zip",
+    "sha256": "508ea990cff6e48d38eb30dd9158aeab9b1f6275f47efb306cab22bea6bca78c",
+    "built_by": "scripts/pack_node_run.py over the nine rolling-arm R bundles, as a zip for the notebook's upload cell; sidecars outoftime-run-grid-r-tabicl.zip.sha256 and .jobs.json beside it.",
+    "score_context_py_sha256": "66e8933d67fea5f8140f31f5229a305a15d3f1eb20e0fd67e15546037ff9f0dc",
+    "score_context_py_provenance": "Hash of the copy inside the archive, LF-ended; equal to scripts/score_context.py in this tree at commits adfdb3d, 09d8f53 and HEAD."
+  },
+  "result_archive": {
+    "name": "outoftime-result-grid-r-tabicl.zip",
+    "sha256": "5479c0733b0dd4a6aa7e4e198490aa181d5a82e280b1cc4d6f254b64b27137a4",
+    "contents": "2026-09-12-lc-2015h2r-bundle-scored-tabicl-t1-check/ (node.json, scores.parquet, reference.parquet, parts/) copied here unchanged; grid.log, jobs.json and jobs-done.json of the archive are in experiments/2026-09-13-lc-grid-r-tabicl-colab-t4"
+  },
+  "bundle_check": {
+    "context.parquet": "eb731091161c4099cbfb342a97c7b2c470fc1973b7293322eade7f963d9526cf",
+    "scored.parquet": "c13bf31cc13ced9d382d5263cf5f9e6c8fb608269a28e85f09125ff9e22e4c74",
+    "how": "The hashes the scorer recorded in node.json for the bundle it read equal bundle.json of experiments/2026-09-12-lc-2015h2r-bundle. The scorer refuses a bundle whose hashes differ from bundle.json, so the notebook scored the recorded rows."
+  },
+  "parts_check": "2 part files under parts/, one per (model, context seed, cell), equal to the 2 cell records of node.json; the parts concatenated are scores.parquet and reference.parquet row for row and probability for probability.",
+  "row_check": {
+    "scored": "20,000 rows for context seed 20260911, cohort 2016Q1; every (cohort, row) pair, its outcome and its age match the gbm rows of experiments/2026-09-12-lc-2015h2r-scores/scores.parquet, zero mismatches, no missing probability",
+    "reference": "50,000 rows per context seed drawn from a 235,629-row training pool; every row and its outcome match the gbm-50k reference of the same context seed in experiments/2026-09-12-lc-2015h2r-scores/reference.parquet, zero mismatches",
+    "seeds": [
+      20260911
+    ]
+  },
+  "console_log": "score.log is the runner's console output for this job, sliced from grid.log. Read in full; grid.log's log scan (secrets, home paths, account names, tokens) came back empty for the whole archive.",
+  "question_this_run_was_sent_to_answer": "The derivation check for build 2015H2-R: one cell of one context draw scored by the library at softmax temperature 1.0, so that derive_temperature.py can derive the 1.0 rows of every cell of this build from the rows at the shipped 0.9 and refuse unless its derivation agrees with these rows to 1e-6.",
+  "what_it_measured": {
+    "model": "tabicl 2.1.1, checkpoint tabicl-classifier-v2-20260212.ckpt (sha256 bdc7dbd5...4ed0) downloaded from Hugging Face by the library, tabpfn not installed",
+    "device": "cuda",
+    "context": "50,000 rows per context seed (20260911) drawn from the 235,629-row training pool",
+    "chunk": "20,000 scored rows per forward call (--chunk 20000); rows are scored independently and the chunking changes no probability",
+    "cells": "1 cohort cell of 20,000 rows and one reference cell, seed 20260911 only",
+    "peak_gpu_gb_max": 10.966,
+    "softmax_temperature": 1.0,
+    "timing": "This job ran on a hosted, shared free-tier notebook, not a dedicated node; the seconds node.json records for each cell are the scorer's own timer reading on whatever the host gave the process that second and are not a quotable performance measurement. They are kept in node.json unedited."
+  },
+  "tuning_budget": "Zero trials, no validation split, every parameter at the library default except those the command names. The classical models these rows pair with were tuned on their own pool (build.json of the experiments/2026-09-12-lc-2015h2r-scores score run), and the asymmetry runs both ways: the foundation model gets no tuning, the 50,000-row-or-pool control inherits the point chosen on the full pool.",
+  "not_in_this_run": "Every other cell of this build at 1.0: those are derived, not scored. TabICL at the shipped 0.9 temperature on every cohort, which is scored in the sibling job experiments/2026-09-13-lc-2015h2r-tabicl-colab-t4. TabPFN, scored on a separate node."
+}
