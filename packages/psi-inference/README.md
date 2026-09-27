@@ -224,6 +224,14 @@ than a random sample, which drops the `1/n` term. That mode is not
 implemented here. The PRS covers the fixed-reference case with a null that
 is built for it.
 
+## Used in
+
+The stability readings of *Out of Time: A Pre-Registered Vintage, Calibration
+and Stability Evaluation of Tabular Foundation Models for Credit Default*
+(Khobotov, 2026) are made with this package. Its Section 2.4 quotes the
+z-test simulation above. The preprint is
+[10.5281/zenodo.22999138](https://doi.org/10.5281/zenodo.22999138).
+
 ## Citing
 
 The package is archived on Zenodo. The concept DOI 10.5281/zenodo.22342343
