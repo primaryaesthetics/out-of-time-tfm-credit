@@ -4,7 +4,8 @@
 
 The code and the record behind *Out of Time: A Pre-Registered Vintage,
 Calibration and Stability Evaluation of Tabular Foundation Models for Credit
-Default* (Nikolai Khobotov, 2026).
+Default* (Nikolai Khobotov, 2026),
+[10.5281/zenodo.22999138](https://doi.org/10.5281/zenodo.22999138).
 
 The study reads TabPFN-3 and TabICLv2 as shipped, beside a weight-of-evidence
 scorecard and a tuned gradient-boosting model, out of time on the origination
@@ -150,8 +151,10 @@ imports it.
 
 ## Citing
 
-`CITATION.cff` gives the citation for the paper. The repository is archived
-on Zenodo: release v1.0.0 is
+`CITATION.cff` gives the citation for the paper. The paper is a preprint on
+Zenodo. Its DOI,
+[10.5281/zenodo.22999138](https://doi.org/10.5281/zenodo.22999138), resolves
+to the latest version. The repository is archived on Zenodo: release v1.0.0 is
 [10.5281/zenodo.22994435](https://doi.org/10.5281/zenodo.22994435), and the
 concept DOI [10.5281/zenodo.22994434](https://doi.org/10.5281/zenodo.22994434)
 resolves to the latest release. The archived protocol is
