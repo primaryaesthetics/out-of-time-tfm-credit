@@ -261,6 +261,40 @@ the same pass, arXiv:2609.04901 v2 and arXiv:2606.04564 v2: both evaluate on
 SurvSet data under five-fold cross-validation, and credit, loan and
 out-of-time do not occur in either. Outside the premise.
 
+### Addendum 2026-09-27: a targeted check before the preprint
+
+Not a full sweep: the standing query list was not rerun, so the date above
+stays the one the gate reads. The check asked one question, whether any work
+measures for a tabular foundation model on credit data two of a time-ordered
+split, calibration beyond one scalar, and population stability, or releases
+the Population Resemblance Statistic or the du Pisanie tests in Python. None
+does. arXiv submissions of 2026-09-25 to 2026-09-27 were not yet public: the
+index and every `/new` listing end with 2026-09-24.
+
+- **OpenReview 8Zxm19jTVM**, Zhou, Xu, Kumar and Statnikov, "Learned Sequence
+  Representations over Raw Credit Events for Credit-Abuse Scoring", 2nd ICML
+  Workshop on Foundation Models for Structured Data. Submitted 2026-05-08, so
+  not new, and absent from the landscape until now. TabPFN v3 in context
+  beside XGBoost on a proprietary early-life default label, on one
+  out-of-time window after the training cutoff, by AUPR and recall at a 0.5%
+  decline rate; no calibration and no population stability. Read in full;
+  row added, verified. It makes the paper's sentence that one credit paper
+  reads foundation models under a time-ordered split false, and the sentence
+  now names two. Legs 1 to 3 are unchanged.
+- `andreasgoethals/CreditICL` at `7ba6828` (2026-09-25) prints a
+  calibration slope for 49 models, tabpfn3 and tabiclv2 among them, on 14
+  PD datasets; its runner still refuses a temporal split. Random splits only.
+- du Pisanie and Visagie, ORiON 36(1), 2020, read for §3–4: a composite null
+  with a materiality constant and a maximum-relative-difference statistic
+  with tabulated critical values, computed in R, no package. It precedes the
+  2023 review and is a different test from the two `psi-inference` carries.
+- No new version of any neighbour: arXiv 2605.18147, 2605.18635, 2606.30410,
+  2604.02351, 2609.16102, 2609.17895; SSRN 7431058 and 6336198; Zenodo
+  22849261 and 22950210. `kabartay/fintfm` had 30 commits from 2026-09-25 to
+  2026-09-27, all on grouped folds or TabArena. `tabpfn` is at 9.0.0 and
+  `tabicl` at 2.2.0. On PyPI, 22 candidate names for a PSI or PRS package
+  return 404.
+
 ## 2026-09-17
 
 Five days after the last entry, over submissions and releases from 2026-09-12.
