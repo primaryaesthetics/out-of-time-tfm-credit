@@ -1,5 +1,7 @@
 # Out of Time
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22994434.svg)](https://doi.org/10.5281/zenodo.22994434)
+
 The code and the record behind *Out of Time: A Pre-Registered Vintage,
 Calibration and Stability Evaluation of Tabular Foundation Models for Credit
 Default* (Nikolai Khobotov, 2026).
@@ -148,7 +150,11 @@ imports it.
 
 ## Citing
 
-`CITATION.cff` gives the citation for the paper. The archived protocol is
+`CITATION.cff` gives the citation for the paper. The repository is archived
+on Zenodo: release v1.0.0 is
+[10.5281/zenodo.22994435](https://doi.org/10.5281/zenodo.22994435), and the
+concept DOI [10.5281/zenodo.22994434](https://doi.org/10.5281/zenodo.22994434)
+resolves to the latest release. The archived protocol is
 [10.5281/zenodo.22803069](https://doi.org/10.5281/zenodo.22803069).
 
 ## Licences
