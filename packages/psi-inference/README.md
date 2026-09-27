@@ -131,16 +131,16 @@ seven), which is this package's test with a noisier scale estimate.
 
 The z-test's power is uninformative for the same reason. The shifted cells
 move one or two percentage points of mass from the first bin into the
-second, for both fixed binnings, both bin counts and all four sample-size
-pairs, 20,000 simulated pairs per cell. Against a one-point shift between
+second. Every fixed binning is shifted at every bin count and at all four
+sample-size pairs, with 20,000 simulated pairs per cell. Against a one-point shift between
 two of ten equal bins, the Yurdakul–Naranjo test rejects in 8.9%, 29.0%,
 98.1% and all but one of the samples at 1,000 against 1,000, 5,000 against
 5,000, 50,000 against 20,000 and 50,000 against 50,000; the z-test rejects
 in 97.8% or more of samples in every shifted cell, against 97.4% or more
 with no shift.
 
-Replications with an empty bin on either side, where both the PSI and the
-standard error are infinite, are excluded and counted: 109 of 50,000 in one
+An empty bin on either side makes the PSI and its standard error
+infinite. Such replications are excluded and counted: 109 of 50,000 in one
 null cell (1,000 rows per side, 20 bins with skewed shares), 43 and 40 of
 20,000 in the two shifted cells of the same shape, none elsewhere.
 
@@ -216,9 +216,9 @@ table; the effect-size and overlapping statistics to the paper's example of
 a two-category shift from 50/50 to 50.5/49.5. Each matches to the digits the
 source prints, and the test names say which table.
 
-The PSI null agrees everywhere it was checked: Yurdakul and Naranjo's own
-equation, the `rpsi` R source, `iyipada` and `feature-engine` all reduce to
-the same line, `chi2.ppf(1 - alpha, bins - 1) * (1/n + 1/m)`. `rpsi` also
+The PSI null agrees everywhere it was checked. Yurdakul and Naranjo's own
+equation reduces to the line `chi2.ppf(1 - alpha, bins - 1) * (1/n + 1/m)`,
+and so does the `rpsi` R source; `iyipada` and `feature-engine` compute it too. `rpsi` also
 offers a mode that treats the base distribution as a fixed population rather
 than a random sample, which drops the `1/n` term. That mode is not
 implemented here. The PRS covers the fixed-reference case with a null that

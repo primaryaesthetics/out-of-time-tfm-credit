@@ -11,8 +11,8 @@ jobs:
     name: leakage and determinism gates
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v5
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v7
       - run: uv venv --python 3.12
       # The suite imports the optional dependencies at collection, so the
       # project is installed with every extra. Tests that read a raw book skip
@@ -25,8 +25,8 @@ jobs:
     name: claim, hygiene and sweep gates
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - run: python scripts/check_claims.py
@@ -46,8 +46,8 @@ jobs:
     name: psi-inference package
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v5
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v7
       - run: uv venv --python 3.12
       - run: uv pip install pytest ruff iyipada feature-engine
       - run: uv pip install -e packages/psi-inference
